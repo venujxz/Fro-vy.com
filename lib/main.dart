@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'views/home_screen.dart';
 import 'views/theme_notifier.dart'; // Import the new notifier
+import 'package:easy_localization/easy_localization.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,7 +16,14 @@ Future<void> main() async {
   }
 
   // 2. Start the app
-  runApp(FrovyApp(cameras: cameras));
+  runApp(
+    EasyLocalization(
+       supportedLocales: const [Locale('en'), Locale('si'), Locale('ta')],
+      path: 'assests/translations',
+      fallbackLocale: const Locale('en'),
+      child: FrovyApp(cameras: cameras),
+    ),
+  );  
 }
 
 class FrovyApp extends StatelessWidget {
@@ -66,6 +74,9 @@ class FrovyApp extends StatelessWidget {
               color: Color(0xFF2C2C2C), // Dark cards
             ),
           ),
+          locale: context.locale,
+          supportedLocales: context.supportedLocales,
+          localizationsDelegates: context.localizationDelegates,
           
           home: HomeScreen(cameras: cameras),
         );
