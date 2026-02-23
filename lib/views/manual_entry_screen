@@ -1,0 +1,127 @@
+import 'package:flutter/material.dart';
+
+class ManualEntryScreen extends StatelessWidget {
+  const ManualEntryScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFFF5F5F5),
+      appBar: AppBar(
+        leading: const Icon(Icons.arrow_back),
+        title: const Text('Manual Entry', style: TextStyle(fontSize: 18)),
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
+        elevation: 0.5,
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            _buildInputCard(),
+            const SizedBox(height: 20),
+            _buildTipsSection(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildInputCard() {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text("Product Name", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blueGrey)),
+          const SizedBox(height: 8),
+          TextField(
+            decoration: InputDecoration(
+              hintText: "e.g., Organic Granola Bar",
+              filled: true,
+              fillColor: const Color(0xFFF3F4F6),
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: BorderSide.none),
+            ),
+          ),
+          const SizedBox(height: 20),
+          const Text("Ingredient List", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blueGrey)),
+          const Text("Enter each ingredient separated by commas", style: TextStyle(fontSize: 12, color: Colors.grey)),
+          const SizedBox(height: 8),
+          TextField(
+            maxLines: 4,
+            decoration: InputDecoration(
+              hintText: "e.g., Whole grain oats, honey, almonds...",
+              filled: true,
+              fillColor: const Color(0xFFF3F4F6),
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: BorderSide.none),
+            ),
+          ),
+          const SizedBox(height: 24),
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton.icon(
+              onPressed: () {},
+              icon: const Icon(Icons.check_circle_outline),
+              label: const Text("Analyze Ingredients"),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF5BA354),
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(vertical: 14),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildTipsSection() {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: const Color(0xFFEFE9D9),
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text("Tips for entering ingredients", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+          const SizedBox(height: 12),
+          _tipRow("Copy ingredients directly from the product label"),
+          _tipRow("Separate ingredients with commas or line breaks"),
+          _tipRow("Include all ingredients for accurate analysis"),
+          _tipRow("You don't need to include percentages or measurements"),
+        ],
+      ),
+    );
+  }
+
+  Widget _tipRow(String text) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Padding(
+            padding: EdgeInsets.only(top: 6.0),
+            child: Icon(Icons.circle, size: 6, color: Colors.green),
+          ),
+          const SizedBox(width: 10),
+          Expanded(child: Text(text, style: const TextStyle(color: Colors.black87, fontSize: 13))),
+        ],
+      ),
+    );
+  }
+}
