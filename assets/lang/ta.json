@@ -1,5 +1,18 @@
 {
-  "hello": "ஹலோ",
-  "changeLanguage": "மொழியை மாற்றவும்",
-  "welcome": "Fro-vy க்கு வரவேற்கின்றோம்!"
+  "account_details": "கணக்கு விவரங்கள்",
+  "edit_profile": "சுயவிவரம் திருத்து",
+  "full_name": "முழு பெயர்",
+  "email": "மின்னஞ்சல்",
+  "phone_number": "தொலைபேசி எண்",
+  "date_of_birth": "பிறந்த தேதி",
+  "gender": "பாலினம்",
+  "account_statistics": "கணக்கு புள்ளிவிவரங்கள்",
+  "scans_made": "செய்த ஸ்கேன்கள்",
+  "plan_type": "திட்ட வகை",
+  "free_plan": "இலவசம்",
+  "health_profile": "ஆரோக்கிய சுயவிவரம்",
+  "edit": "திருத்து",
+  "allergies": "அலர்ஜிகள்",
+  "medical_conditions": "மருத்துவ நிலைகள்",
+  "other_sensitivities": "மற்ற உணர்திறன்கள்"
 }
