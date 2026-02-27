@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart'; 
+import 'package:easy_localization/easy_localization.dart';
 
 // --- IMPORTS FOR ALL APP SCREENS ---
 import 'camera_screen.dart';       // 1. Camera Feature
@@ -8,6 +9,9 @@ import 'subscription_screen.dart'; // 3. Premium Plans
 import 'history_screen.dart';      // 4. Analysis History
 import 'settings_screen.dart';     // 5. Settings
 import 'help_support_screen.dart'; // 6. Help & Support
+
+//imports the language switcher widget
+import 'widgets/language_switcher.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<CameraDescription> cameras;
@@ -37,6 +41,11 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: headerColor,
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.white), 
+
+        actions: const[
+          LanguageSwitcher(),
+        ],
+        
         title: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
