@@ -7,6 +7,9 @@ import 'package:easy_localization/easy_localization.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+
+  await EasyLocalization.ensureInitialized();   
+
   // 1. Try to find cameras
   List<CameraDescription> cameras = [];
   try {
@@ -19,7 +22,7 @@ Future<void> main() async {
   runApp(
     EasyLocalization(
        supportedLocales: const [Locale('en'), Locale('si'), Locale('ta')],
-      path: 'assests/translations',
+      path: 'assets/translations',
       fallbackLocale: const Locale('en'),
       child: FrovyApp(cameras: cameras),
     ),
