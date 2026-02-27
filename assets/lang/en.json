@@ -1,7 +1,18 @@
 {
-  "profile": "Profile",
-  "settings": "Settings",
-  "subscription": "Subscription",
-  "analysis_results": "Analysis Results",
-  "check_another_product": "Check Another Product"
+  "account_details": "Account Details",
+  "edit_profile": "Edit Profile",
+  "full_name": "Full Name",
+  "email": "Email",
+  "phone_number": "Phone Number",
+  "date_of_birth": "Date of Birth",
+  "gender": "Gender",
+  "account_statistics": "Account Statistics",
+  "scans_made": "Scans Made",
+  "plan_type": "Plan Type",
+  "free_plan": "Free",
+  "health_profile": "Health Profile",
+  "edit": "Edit",
+  "allergies": "Allergies",
+  "medical_conditions": "Medical Conditions",
+  "other_sensitivities": "Other Sensitivities"
 }
