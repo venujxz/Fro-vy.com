@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
         actions: const[
           LanguageSwitcher(),
         ],
-        
+
         title: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -108,7 +108,7 @@ class HomeScreen extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.history), 
-              title: const Text("Analysis History"),
+              title: const Text("Analysis History").tr(),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const HistoryScreen()));
@@ -116,7 +116,7 @@ class HomeScreen extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.settings), 
-              title: const Text("Settings"),
+              title: const Text("Settings").tr(),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingsScreen()));
@@ -124,7 +124,7 @@ class HomeScreen extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.help_outline), 
-              title: const Text("Help & Support"),
+              title: const Text("Help & Support").tr(),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const HelpSupportScreen()));
@@ -158,16 +158,16 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       Icon(Icons.eco, color: frovyGreen),
                       const SizedBox(width: 8),
-                      Text("FRO-VY", style: TextStyle(color: frovyGreen, fontWeight: FontWeight.bold, fontSize: 18)),
+                      Text("FRO-VY", style: TextStyle(color: frovyGreen, fontWeight: FontWeight.bold, fontSize: 18)).tr(),
                     ],
                   ),
                 ),
                 const SizedBox(height: 16),
-                const Text(
+                Text(
                   "Scan, search, or enter ingredients to check if they're safe for you",
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white, fontSize: 14),
-                ),
+                  style: const TextStyle(color: Colors.white, fontSize: 14),
+                ).tr(),
               ],
             ),
           ),
@@ -201,12 +201,12 @@ class HomeScreen extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("Your Health Profile", style: TextStyle(fontWeight: FontWeight.bold, color: textColor)),
+                              Text("Your Health Profile", style: TextStyle(fontWeight: FontWeight.bold, color: textColor)).tr(),
                               GestureDetector(
                                 onTap: () {
                                   Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen()));
                                 },
-                                child: Text("Edit Profile", style: TextStyle(color: frovyGreen, fontSize: 12, fontWeight: FontWeight.bold)),
+                                child: Text("Edit Profile", style: TextStyle(color: frovyGreen, fontSize: 12, fontWeight: FontWeight.bold)).tr(),
                               ),
                             ],
                           ),
@@ -219,7 +219,7 @@ class HomeScreen extends StatelessWidget {
                     ),
 
                     const SizedBox(height: 24),
-                    Text("How would you like to check ingredients?", style: TextStyle(fontWeight: FontWeight.bold, color: textColor)),
+                    Text("How would you like to check ingredients?", style: TextStyle(fontWeight: FontWeight.bold, color: textColor)).tr(),
                     const SizedBox(height: 16),
 
                     // --- BIG ACTION BUTTONS ---
@@ -286,11 +286,11 @@ class HomeScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("How it works", style: TextStyle(fontWeight: FontWeight.bold, color: textColor)),
+                          Text("How it works", style: TextStyle(fontWeight: FontWeight.bold, color: textColor)).tr(),
                           const SizedBox(height: 8),
-                          Text("• Choose your preferred input method", style: TextStyle(color: textColor)),
-                          Text("• We'll analyze ingredients against your health profile", style: TextStyle(color: textColor)),
-                          Text("• Get instant risk assessment", style: TextStyle(color: textColor)),
+                          Text("• Choose your preferred input method", style: TextStyle(color: textColor)).tr(),
+                          Text("• We'll analyze ingredients against your health profile", style: TextStyle(color: textColor)).tr(),
+                          Text("• Get instant risk assessment", style: TextStyle(color: textColor)).tr(),
                         ],
                       ),
                     ),
@@ -356,9 +356,9 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: textColor)),
+                  Text(title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: textColor)).tr(),
                   const SizedBox(height: 4),
-                  Text(subtitle, style: TextStyle(color: Colors.grey[600], fontSize: 12)),
+                  Text(subtitle, style: TextStyle(color: Colors.grey[600], fontSize: 12)).tr(),
                 ],
               ),
             ),
