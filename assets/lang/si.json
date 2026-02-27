@@ -1,7 +1,18 @@
 {
-  "profile": "පැතිකඩ",
-  "settings": "සැකසුම්",
-  "subscription": "දායකතා",
-  "analysis_results": "විශ්ලේෂණ ප්‍රතිඵල",
-  "check_another_product": "තවත් නිෂ්පාදනයක් පරික්ෂා කරන්න"
+  "account_details": "ගිණුම් විස්තර",
+  "edit_profile": "පැතිකඩ සංස්කරණය",
+  "full_name": "සම්පූර්ණ නම",
+  "email": "ඊමේල්",
+  "phone_number": "දුරකථන අංකය",
+  "date_of_birth": "උපන් දිනය",
+  "gender": "ස්ත්‍රී / පුරුෂ",
+  "account_statistics": "ගිණුම් සංඛ්‍යාලේඛන",
+  "scans_made": "සිදු කළ ස්කෑන්",
+  "plan_type": "සැලසුම් වර්ගය",
+  "free_plan": "නොමිලේ",
+  "health_profile": "සෞඛ්‍ය පැතිකඩ",
+  "edit": "සංස්කරණය",
+  "allergies": "අලර්ජි",
+  "medical_conditions": "වෛද්‍ය තත්ව",
+  "other_sensitivities": "වෙනත් සංවේදීතා"
 }
