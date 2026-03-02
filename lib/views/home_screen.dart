@@ -8,6 +8,8 @@ import 'subscription_screen.dart'; // 3. Premium Plans
 import 'history_screen.dart';      // 4. Analysis History
 import 'settings_screen.dart';     // 5. Settings
 import 'help_support_screen.dart'; // 6. Help & Support
+import 'manual_entry_screen.dart'; // 7. Manual Entry
+import 'search_products.dart';    // 8. Search Products
 
 class HomeScreen extends StatelessWidget {
   final List<CameraDescription> cameras;
@@ -244,7 +246,11 @@ class HomeScreen extends StatelessWidget {
                       cardColor: cardColor,
                       textColor: textColor,
                       onTap: () {
-                        // TODO: Navigate to Search
+                        // CONNECTED: Navigate to Search Screen
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const search_products()),
+                        );
                       },
                     ),
 
@@ -261,7 +267,11 @@ class HomeScreen extends StatelessWidget {
                       cardColor: cardColor,
                       textColor: textColor,
                       onTap: () {
-                        // TODO: Navigate to Manual Entry
+                        // CONNECTED: Navigate to Manual Entry Screen
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ManualEntryScreen()),
+                        );
                       },
                     ),
                     

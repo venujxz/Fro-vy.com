@@ -15,7 +15,11 @@ Future<void> main() async {
   }
 
   // 2. Start the app
-  runApp(FrovyApp(cameras: cameras));
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    theme: ThemeData(useMaterial3: true),
+    home: HomeScreen(cameras: cameras),
+  ));
 }
 
 class FrovyApp extends StatelessWidget {
