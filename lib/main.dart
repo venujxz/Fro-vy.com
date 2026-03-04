@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'views/home_screen.dart';
 import 'views/theme_notifier.dart'; // Import the new notifier
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
 
   // 1. Try to find cameras
   List<CameraDescription> cameras = [];
@@ -15,7 +17,14 @@ Future<void> main() async {
   }
 
   // 2. Start the app
-  runApp(FrovyApp(cameras: cameras));
+  runApp(
+    EasyLocalization(
+      supportedLocales: const [Locale('en')],
+      path: 'lib/assets/lang',
+      fallbackLocale: const Locale('en'),
+      child: FrovyApp(cameras: cameras),
+    ),
+  );
 }
 
 class FrovyApp extends StatelessWidget {
@@ -33,6 +42,9 @@ class FrovyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Fro-vy',
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
           
           // --- THEME CONFIGURATION ---
           themeMode: currentMode, // This is the magic line that switches modes
