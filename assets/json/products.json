@@ -1,0 +1,1822 @@
+[
+  {
+    "brandName": "Kotmale",
+    "productName": "Stawberry milk",
+    "ingredients": [
+      "Whole Milk",
+      "Skimmed Milk",
+      "Sugar",
+      "Permited Food Stabilizers (Mono and Diglycerides of Fatty Acids-INS471",
+      "Carrageenan-INS471",
+      "Guar Gum-INS412)",
+      "Trisodium Phosphate ( INS339 (iii))",
+      "Nature Identical Rose Flavour",
+      "Perimtted Food Colour (Carmoisine-INS122)"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.412840"
+  },
+  {
+    "brandName": "Kotmale",
+    "productName": "Vanilla milk",
+    "ingredients": [
+      "Raw milk",
+      "Skimmed Milk",
+      "Whey liquid",
+      "Sugar",
+      "Permitted Food Emulsifier and stabilizers (Sodium Alginate-INS401",
+      "Carrageenan-INS471",
+      "Guar Gum-INS412",
+      "Mono and diglycerides of Fatty acids-INS471)",
+      "Natural Identical Vanilla Flavour",
+      "Trisodium Phosphate ( INS339 (iii))",
+      "Permitted Natural Food Color (Curcumin-INS100)"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.412969"
+  },
+  {
+    "brandName": "Kotmale",
+    "productName": "Chocolate milk",
+    "ingredients": [
+      "Raw milk",
+      "Skimmed Milk",
+      "Whey Liquid",
+      "Sugar",
+      "Cocoa Powder",
+      "Permitted Food Emulsifiers and Stabilizers (Sodium Alginate-INS401",
+      "Carrageenan-INS 407",
+      "Guar Gum-INS 412",
+      "Mono-and diglycerides of fatty acids-INS 471)",
+      "Artificial Chocolate Flavours",
+      "Trisodium Phosphate(INS 341(iii))",
+      "Trisodium Citrate (INS 331(iii))"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.413067"
+  },
+  {
+    "brandName": "Kotmale",
+    "productName": "Curd",
+    "ingredients": [
+      "Fresh Cow's Milk",
+      "Milk Fat",
+      "Skimmed Milk",
+      "Permitted Food Preservative( Potassium Sorbate-INS202)",
+      "Curd Culture"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.413143"
+  },
+  {
+    "brandName": "Kotmale",
+    "productName": "Swiss Cheese",
+    "ingredients": [
+      "Fresh Milk",
+      "Salt",
+      "Starter Culture",
+      "Enzyme (100% Microbial Origin)"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.413229"
+  },
+  {
+    "brandName": "Ambewela",
+    "productName": "Processed Cheese",
+    "ingredients": [
+      "Cheese",
+      "Water",
+      "Butter",
+      "Skimmed Milk Powder",
+      "Permitted Stabilizers (Sodium Phosphates - INS 339",
+      "Polyphosphates - INS 452)",
+      "Starch Acetate (INS 1420)",
+      "Milk Solids",
+      "Salt",
+      "Potassium Sorbate - INS 202",
+      "Citric Acid - INS 330",
+      "Carotenes - INS 160 a (ii)."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.413320"
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "Kiri",
+    "ingredients": [
+      "Whole Milk Powder"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.413401"
+  },
+  {
+    "brandName": "Pelwatte",
+    "productName": "Full Cream Powder",
+    "ingredients": [
+      "Full Cream Milk"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.413464"
+  },
+  {
+    "brandName": "Nestle",
+    "productName": "Milo",
+    "ingredients": [
+      "Malt Extract (34%) (contains Barley)",
+      "Sugar",
+      "Milk Solids (21%)",
+      "Cocoa Powder (9%)",
+      "Palm Oil",
+      "Minerals (Dicalcium Phosphate",
+      "Ferric Pyrophosphate)",
+      "Vitamins (C",
+      "B3",
+      "B2",
+      "B3",
+      "B6",
+      "B12)",
+      "Disodium Phosphate (INS 339ii)",
+      "Sodium Carbonate (INS 500i)."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.413526"
+  },
+  {
+    "brandName": "Anchor",
+    "productName": "Hot Chocolate",
+    "ingredients": [
+      "Anchor Hot Chocolate",
+      "Hot Water 220ml"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.413589"
+  },
+  {
+    "brandName": "The Bakerchik Collection",
+    "productName": "Hot Chocolate",
+    "ingredients": [
+      "Sugar",
+      "Cocoa powder",
+      "Artificial Vanilla flavor",
+      "Salt."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.413645"
+  },
+  {
+    "brandName": "Kotmale",
+    "productName": "Vanilla Drinking Yoghurt",
+    "ingredients": [
+      "Fresh Milk",
+      "Milk Solids",
+      "Sugar",
+      "Modified Starch-INS 1442",
+      "Yoghurt Culture (with probiotic culture)",
+      "Permitted Food Preservative (Potassium Sorbate-INS 202)",
+      "Natural Vanilla Flavour."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.413702"
+  },
+  {
+    "brandName": "Anchor",
+    "productName": "Vanilla Flavoured Low Fat Drinking Yoghurt",
+    "ingredients": [
+      "Fresh milk",
+      "sugar",
+      "milk solids",
+      "modified starch - INS 1442",
+      "gelatine - animal origin",
+      "nature identical vanilla flavour",
+      "potassium sorbate - INS 202",
+      "artificial milk flavour & yoghurt culture [Including probiotic Lactocaseibacillus rhamnosus HN001/DR20™ (Contains $1.0 \\times 10^6$ minimum colony forming units (cfu) per gram)]."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.413759"
+  },
+  {
+    "brandName": "Highland",
+    "productName": "Yoghurt",
+    "ingredients": [
+      "Cow Milk",
+      "Sugar",
+      "Milk Solids",
+      "Gelatine (INS 428)",
+      "Nature Identical Vanilla Flavour",
+      "Yoghurt Culture."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.413815"
+  },
+  {
+    "brandName": "Ambewela",
+    "productName": "Yoghurt",
+    "ingredients": [
+      "Fresh Milk",
+      "Sugar",
+      "Milk Solids",
+      "Gelatine",
+      "Nature Identical Vanilla Flavour",
+      "Potassium Sorbate-INS 202",
+      "Yoghurt Culture",
+      "Curcumin-INS 100(i)."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.413869"
+  },
+  {
+    "brandName": "Happy Cow",
+    "productName": "Cheese",
+    "ingredients": [
+      "Cheese (cow milk",
+      "microbial rennet)",
+      "water",
+      "butter",
+      "cream",
+      "skimmed milk powder",
+      "emulsifying salts (E 339",
+      "E 450",
+      "E 452)",
+      "whey powder",
+      "salt",
+      "acidifier: citric acid."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.413931"
+  },
+  {
+    "brandName": "Kotmale",
+    "productName": "Cheese",
+    "ingredients": [
+      "Cheese",
+      "Fresh Cream",
+      "Milk Solids",
+      "Permitted emulsifier & Stabilizer (INS 452",
+      "INS 450",
+      "INS 471)",
+      "Nature Identical Cheese Flavour",
+      "Salt",
+      "Pepper and Permitted Food Additive (INS 202)."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.414048"
+  },
+  {
+    "brandName": "Astra",
+    "productName": "Butter",
+    "ingredients": [
+      "Palm based oils",
+      "Water",
+      "Salt",
+      "Milk solids",
+      "Monoglyceride (INS 471)",
+      "Soya lecithin (INS 322)",
+      "Ascorbyl palmitate (INS 304)",
+      "Potassium sorbate (INS 202)",
+      "Citric acid (INS 330)",
+      "Annatto red (INS 160b)",
+      "Vitamins (E",
+      "A",
+      "D)",
+      "EDTA (INS 385)",
+      "Nature identical butter flavours."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.414109"
+  },
+  {
+    "brandName": "Flora",
+    "productName": "Butter",
+    "ingredients": [
+      "Vegetable oils (Canola oil (36%)",
+      "Sunflower oil (14.5%)",
+      "Palm based oils)",
+      "Water",
+      "Salt",
+      "Milk solids",
+      "Monoglyceride (INS 471)",
+      "Soya lecithin (INS 322)",
+      "Potassium sorbate (INS 202)",
+      "Rosemary extract (INS 392)",
+      "Citric acid (INS 330)",
+      "Vitamins (E",
+      "A",
+      "D)",
+      "Nature identical butter flavours",
+      "Annatto red (INS 160b)",
+      "EDTA (INS 385)."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.414186"
+  },
+  {
+    "brandName": "Ciao",
+    "productName": "Greek Yoghurt",
+    "ingredients": [
+      "Pasteurized Fresh Cow's Milk",
+      "Yoghurt Culture."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.414239"
+  },
+  {
+    "brandName": "Ambewela",
+    "productName": "Strawberry Flavoured Drinking Yoghurt",
+    "ingredients": [
+      "Fresh milk",
+      "Sugar",
+      "Milk solids",
+      "Modified starch - INS 1442",
+      "Pectin - INS 440",
+      "Nature identical strawberry flavour",
+      "Permitted food preservative (Potassium sorbate - INS 202)",
+      "Yoghurt culture",
+      "Permitted natural food colour (Anthocyanin - INS 163 (ii))."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.414293"
+  },
+  {
+    "brandName": "Chello",
+    "productName": "Mango Drinking Yoghurt",
+    "ingredients": [
+      "Fresh milk",
+      "Sugar",
+      "Gelatin",
+      "Probiotic yoghurt culture",
+      "Basil seeds",
+      "Permitted food preservatives (INS 202)",
+      "Nature identical mango flavor",
+      "Permitted food colour (INS 110)."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.414346"
+  },
+  {
+    "brandName": "nan",
+    "productName": "nan",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.414403"
+  },
+  {
+    "brandName": "Product Name",
+    "productName": "Manufacturer",
+    "ingredients": [
+      "Ingredients (as listed on package)"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.414468"
+  },
+  {
+    "brandName": "Chicken Sandwich Slices",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Halal Chicken",
+      "Soy Protein",
+      "Salt",
+      "Sodium Di-",
+      "Tri- and Polyphosphates (INS 450",
+      "INS 451",
+      "INS 452)",
+      "Sugar",
+      "Sodium Nitrite (INS 250)",
+      "Mixed Spices."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.414536"
+  },
+  {
+    "brandName": "Chicken Sandwich Slices",
+    "productName": "Crescent Fine Foods",
+    "ingredients": [
+      "Ingredients not fully visible in the provided front-facing image."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.414589"
+  },
+  {
+    "brandName": "Crispy Chicken Bacon",
+    "productName": "Crescent Fine Foods",
+    "ingredients": [
+      "Halal Chicken",
+      "Salt",
+      "Soy Protein",
+      "Corn Starch",
+      "Sodium Di-",
+      "Tri- and Polyphosphates (INS 450",
+      "INS 451",
+      "INS 452)",
+      "Sugar",
+      "Ascorbic Acid (INS 300)",
+      "Sodium Nitrite (INS 250)",
+      "Mixed Spices."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.414644"
+  },
+  {
+    "brandName": "Chicken Meatballs",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Chicken",
+      "Cereal Binders",
+      "Isolated Soya Protein",
+      "Refined Deodorized Palm Oil",
+      "B. Onion",
+      "Sugar",
+      "Yeast Extract",
+      "Ascorbic Acid (INS 300)",
+      "Sodium Ascorbate (INS 301)",
+      "Natural Color (Beetroot Red)",
+      "Permitted Food Color (INS 161g)."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.414699"
+  },
+  {
+    "brandName": "Frankie Cheesy Blast Chicken Sausages",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Chicken",
+      "Cheese",
+      "Cereal Binders",
+      "Iodized Salt",
+      "Refined Deodorized Palm Oil",
+      "B. Onion",
+      "Mixed Spices",
+      "Isolated Soya Protein",
+      "Binder (INS 451)",
+      "Full Cream Milk Powder",
+      "Nature Identical Chicken Flavour",
+      "Nature Identical Cheese Flavour",
+      "Sodium Ascorbate (INS 301)",
+      "Ascorbic Acid (INS 300)",
+      "Permitted Food Colour (INS 161g)."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.414756"
+  },
+  {
+    "brandName": "Garlic Chicken Sausages",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Chicken",
+      "Wheat Flour",
+      "Refined Deodorized Palm Oil",
+      "Isolated Soya Protein",
+      "Iodized Salt",
+      "Garlic",
+      "Ginger",
+      "Nutmeg",
+      "Cinnamon",
+      "White Pepper",
+      "Phosphates (INS 450 i",
+      "iii",
+      "INS 451 i",
+      "INS 452 ii)",
+      "Nature Identical Chicken Flavour",
+      "Natural Color (Beetroot Red)."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.414813"
+  },
+  {
+    "brandName": "Chicken Sandwich Slices",
+    "productName": "Bairaha Foods (Pvt) Ltd",
+    "ingredients": [
+      "Chicken",
+      "Ice & Water",
+      "Cereal Binders",
+      "Iodized Salt",
+      "Isolated Soya Protein",
+      "Mixed Spices",
+      "Phosphates (INS 450",
+      "INS 451",
+      "INS 452)",
+      "Curing Salt (INS 250)",
+      "Permitted Colouring (INS 122)."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.414868"
+  },
+  {
+    "brandName": "Vegetarian Sausages",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Textured Vegetable Protein",
+      "Soy Milk Protein",
+      "Soy Protein Isolate",
+      "Modified Potato Starch",
+      "Vegetable Oil",
+      "Seaweed Extract",
+      "Sugar",
+      "Common Salt."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.414923"
+  },
+  {
+    "brandName": "Chicken Slices",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Chicken",
+      "Cereal Binders",
+      "Refined Deodorized Palm Oil",
+      "Isolated Soya Protein",
+      "Iodized Salt",
+      "Mixed Spices",
+      "Natural Color (Beetroot Red)",
+      "Phosphate Binders (INS 451)",
+      "Nature Identical Chicken Flavor",
+      "Yeast Extract",
+      "Permitted Food Colors (INS 161g)",
+      "Ascorbic Acid (INS 300)",
+      "Sodium Ascorbate (INS 301)."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.414978"
+  },
+  {
+    "brandName": "Chicken Bratwurst",
+    "productName": "Elephant House (Keells)",
+    "ingredients": [
+      "Chicken",
+      "Cereal Binders",
+      "Iodized Salt",
+      "Mixed Spices",
+      "Phosphates (INS 451)",
+      "Natural Color (Beetroot Red)",
+      "Ascorbic Acid (INS 300)",
+      "Yeast Extract",
+      "Sodium Ascorbate (INS 301)."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.415032"
+  },
+  {
+    "brandName": "Smoky Cheesy Chicken Sausages",
+    "productName": "Elephant House (Keells)",
+    "ingredients": [
+      "Chicken",
+      "Cheese",
+      "Cereal Binders",
+      "Isolated Soya Protein",
+      "B. Onion",
+      "Iodized Salt",
+      "Mixed Spices",
+      "Phosphate Binders (INS 451 i)",
+      "Natural Colour (Beetroot Red)",
+      "Fresh Garlic",
+      "Yeast Extract",
+      "Ascorbic Acid (INS 300)",
+      "Sodium Ascorbate (INS 301)."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.415086"
+  },
+  {
+    "brandName": "Chicken Sausage Meat",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Chicken",
+      "Isolated Soya Protein",
+      "Cereal Binders",
+      "Deodorized Palm Oil",
+      "Iodized Salt",
+      "Mixed Phosphate Binders (INS 451)",
+      "Nature Identical Flavor",
+      "Ascorbic Acid (INS 300)",
+      "Sodium Ascorbate (INS 301)",
+      "Natural Color (Beetroot Red)",
+      "Permitted Food Color (INS 161g)",
+      "Yeast Extract."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.415140"
+  },
+  {
+    "brandName": "Heat & Eat Devilled Chicken",
+    "productName": "Crescent Fine Foods",
+    "ingredients": [
+      "Halal Chicken",
+      "Onion",
+      "Soya Bean Sauce",
+      "Capsicum",
+      "Tomato Paste",
+      "Sugar",
+      "Wheat Flour",
+      "Salt",
+      "Mixed Spices",
+      "Garlic",
+      "Sodium Di-",
+      "Tri- and Polyphosphates (INS 450",
+      "INS 451",
+      "INS 452)."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.415195"
+  },
+  {
+    "brandName": "Heat & Eat Chicken Kheema",
+    "productName": "Crescent Fine Foods",
+    "ingredients": [
+      "Halal Chicken",
+      "Onion",
+      "Cereal Binder",
+      "Rice Bran Oil",
+      "Tomato Sauce",
+      "Mixed Spices",
+      "Garlic",
+      "Tomato Paste",
+      "Salt",
+      "Ginger",
+      "Herbs",
+      "Corn Flour."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.415267"
+  },
+  {
+    "brandName": "Chicken Wings (Marinated)",
+    "productName": "Bairaha Foods (Pvt) Ltd",
+    "ingredients": [
+      "Chicken Wings",
+      "Cereals",
+      "Cold Water",
+      "Mixed Spices",
+      "Iodized Salt",
+      "Tomato & Soya Sauce",
+      "Phosphates (INS 450",
+      "INS 451",
+      "INS 452)",
+      "Sugar",
+      "Curing Salt (INS 250)",
+      "Permitted Colouring (INS 110",
+      "INS 122",
+      "INS 102)."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.415343"
+  },
+  {
+    "brandName": "Popcorn Chicken",
+    "productName": "Crescent Fine Foods",
+    "ingredients": [
+      "Halal Chicken",
+      "Wheat Flour",
+      "Corn Starch",
+      "Spices",
+      "Salt",
+      "Phosphate Binders (INS 451)",
+      "Soy Sauce",
+      "Sugar",
+      "Baking Powder (INS 500(i))",
+      "Yeast Extract",
+      "Soy Protein."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.415421"
+  },
+  {
+    "brandName": "WOW-B Chicken Drumlets",
+    "productName": "Bairaha Foods (Pvt) Ltd",
+    "ingredients": [
+      "Ingredients not fully visible in the provided image."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.415502"
+  },
+  {
+    "brandName": "nan",
+    "productName": "nan",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.415593"
+  },
+  {
+    "brandName": "Product Name",
+    "productName": "Product ID",
+    "ingredients": [
+      "Brand"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.415688"
+  },
+  {
+    "brandName": "Bran Cracker",
+    "productName": "1",
+    "ingredients": [
+      "Maliban"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.415758"
+  },
+  {
+    "brandName": "Cream Cracker",
+    "productName": "2",
+    "ingredients": [
+      "Maliban"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.415810"
+  },
+  {
+    "brandName": "Lemon Puff",
+    "productName": "3",
+    "ingredients": [
+      "Maliban"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.415863"
+  },
+  {
+    "brandName": "Lemon Puff",
+    "productName": "4",
+    "ingredients": [
+      "Munchee"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.415916"
+  },
+  {
+    "brandName": "Spicy Crackers",
+    "productName": "5",
+    "ingredients": [
+      "Maliban"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.415969"
+  },
+  {
+    "brandName": "nan",
+    "productName": "nan",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.416021"
+  },
+  {
+    "brandName": "nan",
+    "productName": "nan",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.416072"
+  },
+  {
+    "brandName": "Sun Cracker",
+    "productName": "8",
+    "ingredients": [
+      "Munchee"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.416124"
+  },
+  {
+    "brandName": "nan",
+    "productName": "9",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.416175"
+  },
+  {
+    "brandName": "Potato cracker",
+    "productName": "10",
+    "ingredients": [
+      "Munchee"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.416227"
+  },
+  {
+    "brandName": "Sugar Cracker",
+    "productName": "11",
+    "ingredients": [
+      "Julie's"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.416279"
+  },
+  {
+    "brandName": "Tiffin Original",
+    "productName": "12",
+    "ingredients": [
+      "Munchee"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.416367"
+  },
+  {
+    "brandName": "Cheesebits",
+    "productName": "13",
+    "ingredients": [
+      "Maliban"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.416451"
+  },
+  {
+    "brandName": "Chick Bits Savoury Biscuits",
+    "productName": "14",
+    "ingredients": [
+      "Maliban"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.416509"
+  },
+  {
+    "brandName": "Salsa Biscuits",
+    "productName": "15",
+    "ingredients": [
+      "Munchee"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.416562"
+  },
+  {
+    "brandName": "Krisco Snack Crackers",
+    "productName": "16",
+    "ingredients": [
+      "Maliban"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.416626"
+  },
+  {
+    "brandName": "Savoury Nuts Biscuits",
+    "productName": "17",
+    "ingredients": [
+      "Munchee"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.416685"
+  },
+  {
+    "brandName": "Cheese Buttons Biscuits",
+    "productName": "18",
+    "ingredients": [
+      "Munchee"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.416738"
+  },
+  {
+    "brandName": "Stix Rolled Wafer Chocolate Flavoured",
+    "productName": "19",
+    "ingredients": [
+      "Munchee"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.416792"
+  },
+  {
+    "brandName": "nan",
+    "productName": "20",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.416847"
+  },
+  {
+    "brandName": "nan",
+    "productName": "21",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.416901"
+  },
+  {
+    "brandName": "Wafers Chocolate Flavour",
+    "productName": "22",
+    "ingredients": [
+      "Maliban"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.416953"
+  },
+  {
+    "brandName": "Wafers Vanilla Cream",
+    "productName": "23",
+    "ingredients": [
+      "Maliban"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.417008"
+  },
+  {
+    "brandName": "nan",
+    "productName": "24",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.417060"
+  },
+  {
+    "brandName": "nan",
+    "productName": "25",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.417113"
+  },
+  {
+    "brandName": "Milky Cookies",
+    "productName": "26",
+    "ingredients": [
+      "Little Lion"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.417164"
+  },
+  {
+    "brandName": "Hawaian Cookies",
+    "productName": "27",
+    "ingredients": [
+      "Munchee"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.417230"
+  },
+  {
+    "brandName": "Banana Sandwich",
+    "productName": "28",
+    "ingredients": [
+      "Julie's"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.417281"
+  },
+  {
+    "brandName": "Peanult Butter Sandwich",
+    "productName": "29",
+    "ingredients": [
+      "Julie's"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.417334"
+  },
+  {
+    "brandName": "nan",
+    "productName": "30",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.417385"
+  },
+  {
+    "brandName": "Orange Cream Biscuit",
+    "productName": "31",
+    "ingredients": [
+      "Maliban"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.417438"
+  },
+  {
+    "brandName": "Real Chocolate Cream Biscuit",
+    "productName": "32",
+    "ingredients": [
+      "Maliban"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.417490"
+  },
+  {
+    "brandName": "Custard Cream Biscuit",
+    "productName": "33",
+    "ingredients": [
+      "Maliban"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.417541"
+  },
+  {
+    "brandName": "Milk Cream Biscuit",
+    "productName": "34",
+    "ingredients": [
+      "Munchee"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.417592"
+  },
+  {
+    "brandName": "Ginger Biscuit",
+    "productName": "35",
+    "ingredients": [
+      "Munchee"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.417644"
+  },
+  {
+    "brandName": "Nice",
+    "productName": "36",
+    "ingredients": [
+      "Maliban"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.417714"
+  },
+  {
+    "brandName": "Tikiri Marie",
+    "productName": "37",
+    "ingredients": [
+      "Munchee"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.417791"
+  },
+  {
+    "brandName": "Choclate Marie",
+    "productName": "38",
+    "ingredients": [
+      "Munchee"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.417844"
+  },
+  {
+    "brandName": "nan",
+    "productName": "nan",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.417908"
+  },
+  {
+    "brandName": "nan",
+    "productName": "nan",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.417971"
+  },
+  {
+    "brandName": "nan",
+    "productName": "nan",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.418025"
+  },
+  {
+    "brandName": "nan",
+    "productName": "nan",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.418079"
+  },
+  {
+    "brandName": "nan",
+    "productName": "nan",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.418131"
+  },
+  {
+    "brandName": "nan",
+    "productName": "nan",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.418181"
+  },
+  {
+    "brandName": "nan",
+    "productName": "nan",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.418233"
+  },
+  {
+    "brandName": "nan",
+    "productName": "nan",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.418283"
+  },
+  {
+    "brandName": "nan",
+    "productName": "nan",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.418334"
+  },
+  {
+    "brandName": "Mayonnaise",
+    "productName": "1",
+    "ingredients": [
+      "Edinborough"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.418385"
+  },
+  {
+    "brandName": "Mustard Cream",
+    "productName": "2",
+    "ingredients": [
+      "Keells"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.418436"
+  },
+  {
+    "brandName": "Mustard Cream Spread",
+    "productName": "3",
+    "ingredients": [
+      "Edinborough"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.418487"
+  },
+  {
+    "brandName": "Lemon Mustard",
+    "productName": "4",
+    "ingredients": [
+      "Dad's garden"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.418537"
+  },
+  {
+    "brandName": "Teriyaki Cooking Sauce",
+    "productName": "5",
+    "ingredients": [
+      "Dad's garden"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.418588"
+  },
+  {
+    "brandName": "Fish Sauce",
+    "productName": "6",
+    "ingredients": [
+      "Edinborough"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.418640"
+  },
+  {
+    "brandName": "Chilli Sauce",
+    "productName": "7",
+    "ingredients": [
+      "MD"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.418690"
+  },
+  {
+    "brandName": "Tomato Sauce",
+    "productName": "8",
+    "ingredients": [
+      "MD"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.418742"
+  },
+  {
+    "brandName": "Kochchi Sauce",
+    "productName": "9",
+    "ingredients": [
+      "Edinborough"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.418815"
+  },
+  {
+    "brandName": "Soya Bean Sauce",
+    "productName": "10",
+    "ingredients": [
+      "Edinborough"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.418868"
+  },
+  {
+    "brandName": "Thai Sweet Chilli",
+    "productName": "11",
+    "ingredients": [
+      "Dad's garden"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.418920"
+  },
+  {
+    "brandName": "Sweet Chiili Sauce",
+    "productName": "12",
+    "ingredients": [
+      "Edinborough"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.418971"
+  },
+  {
+    "brandName": "Mango BBQ",
+    "productName": "13",
+    "ingredients": [
+      "Dad's garden"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.419023"
+  },
+  {
+    "brandName": "Green Chilli Sauce",
+    "productName": "14",
+    "ingredients": [
+      "MD"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.419074"
+  },
+  {
+    "brandName": "Soya Sauce",
+    "productName": "15",
+    "ingredients": [
+      "Edinborough"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.419127"
+  },
+  {
+    "brandName": "nan",
+    "productName": "nan",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.419184"
+  },
+  {
+    "brandName": "Pasta Sauce",
+    "productName": "17",
+    "ingredients": [
+      "Edinborough"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.419237"
+  },
+  {
+    "brandName": "BBQ Sauce",
+    "productName": "18",
+    "ingredients": [
+      "Edinborough"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.419289"
+  },
+  {
+    "brandName": "Steak and Grill Sauce",
+    "productName": "19",
+    "ingredients": [
+      "Dad's garden"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.419340"
+  },
+  {
+    "brandName": "Garlic and Chilli Sauce",
+    "productName": "20",
+    "ingredients": [
+      "Dad's garden"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.419392"
+  },
+  {
+    "brandName": "Korean Spicy BBQ Sauce",
+    "productName": "21",
+    "ingredients": [
+      "Dad's garden"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.419443"
+  },
+  {
+    "brandName": "Sweet and Sour Wok Sauce",
+    "productName": "22",
+    "ingredients": [
+      "Ma's Kitchen"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.419494"
+  },
+  {
+    "brandName": "Chilli Mayonise",
+    "productName": "23",
+    "ingredients": [
+      "Edinborough"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.419548"
+  },
+  {
+    "brandName": "Nai Miris Red Sauce",
+    "productName": "24",
+    "ingredients": [
+      "Keells"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.419599"
+  },
+  {
+    "brandName": "nan",
+    "productName": "nan",
+    "ingredients": [
+      "nan"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.419663"
+  },
+  {
+    "brandName": "Product Name",
+    "productName": "Brand",
+    "ingredients": [
+      "Ingredients"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.419716"
+  },
+  {
+    "brandName": "Mango Nectar",
+    "productName": "Kist",
+    "ingredients": [
+      "Water",
+      "Mango",
+      "Sugar",
+      "Stabilizer (INS440)",
+      "Citric Acid (INS330)",
+      "Natural Mango Flavour",
+      "Ascorbic Acid (INS300)",
+      "Permitted Preservatives (INS223",
+      "INS202)",
+      "Salt",
+      "Natural Colour (INS160a(ii))",
+      "Sodium Citrate (INS331)"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.419771"
+  },
+  {
+    "brandName": "Orange Nectar",
+    "productName": "Kist",
+    "ingredients": [
+      "Water",
+      "Orange Concentrate",
+      "Sugar",
+      "Stabilizer (INS440)",
+      "Citric Acid (INS330)",
+      "Salt",
+      "Natural Orange Flavour",
+      "Permitted Preservatives (INS223",
+      "INS202)"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.419835"
+  },
+  {
+    "brandName": "Woodapple Nectar",
+    "productName": "Kist",
+    "ingredients": [
+      "Water",
+      "Woodapple",
+      "Kithul Treacle",
+      "Sugar",
+      "Full Cream Milk Powder",
+      "Salt",
+      "Stabilizer (INS440)",
+      "Natural Colours (INS150d/INS150c)",
+      "Permitted Preservatives (INS223",
+      "INS202)"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.419895"
+  },
+  {
+    "brandName": "Mixed Fruit Nectar",
+    "productName": "Kist",
+    "ingredients": [
+      "Water",
+      "Mango",
+      "Sugar",
+      "Pineapple",
+      "Passion Fruit",
+      "Orange Concentrate",
+      "Stabilizer (INS440)",
+      "Citric Acid (INS330)",
+      "Natural Colour (INS160b)",
+      "Natural (Passion Fruit",
+      "Pineapple and Mango) Flavours",
+      "Ascorbic Acid (Vitamin C/INS300)",
+      "Permitted Preservatives (INS223",
+      "INS202)",
+      "Sodium Citrate (INS331)"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.419953"
+  },
+  {
+    "brandName": "Apple Nectar",
+    "productName": "Kist",
+    "ingredients": [
+      "Water",
+      "Apple Concentrate",
+      "Sugar",
+      "Citric Acid (INS330)",
+      "Stabilizer (INS440)",
+      "Natural Apple Flavour",
+      "Ascorbic Acid (INS300)",
+      "Natural Colours (INS150d/INS150c)",
+      "Permitted Preservatives (INS223",
+      "INS202)"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.420006"
+  },
+  {
+    "brandName": "Aloe Vera Drink",
+    "productName": "Kist",
+    "ingredients": [
+      "Water",
+      "Aloe Vera Pulp",
+      "Sugar",
+      "Pear Juice Concentrate",
+      "Stabilizer (INS415)",
+      "Salt",
+      "Natural (Orange",
+      "Pineapple",
+      "Lime) Flavours",
+      "Ascorbic Acid (INS300)",
+      "Citric Acid (INS330)",
+      "Permitted Preservatives (INS223",
+      "INS202)"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.420062"
+  },
+  {
+    "brandName": "Pink Guava & Strawberry Squash Concentrate",
+    "productName": "Sunquick",
+    "ingredients": [
+      "Sugar",
+      "guava puree and strawberry",
+      "grape and apple juice from concentrate",
+      "natural guava and strawberry flavouring",
+      "acidity regulator (citric acid INS 330)",
+      "potassium dihydrogen citrate (INS 332(i))",
+      "stabilizer (cellulose gum INS 466)",
+      "pectin (INS 440)",
+      "guar gum (INS 412)",
+      "preservative (potassium sorbate INS 202)",
+      "sodium metabisulphite (INS 223)",
+      "vitamin C",
+      "natural colour (carmine INS 120) (animal origin)"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.420118"
+  },
+  {
+    "brandName": "Passion Fruit Mix Squash Concentrate",
+    "productName": "Sunquick",
+    "ingredients": [
+      "Sugar",
+      "fruit juices (passion fruit",
+      "apple",
+      "grape and lemon juice from concentrate)",
+      "acidity regulator (citric acid (INS 330)",
+      "potassium dihydrogen citrate (INS 332(i)))",
+      "natural passion fruit flavouring",
+      "stabilizer (cellulose gum (INS 466)",
+      "guar gum (INS 412)",
+      "pectin (INS 440))",
+      "preservative (potassium sorbate (INS 202)",
+      "sodium metabisulphite (INS 223))",
+      "vitamin C",
+      "natural colour (beta-apo-8'-carotenal (INS 160e))"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.420191"
+  },
+  {
+    "brandName": "Fruit Cocktail Squash Concentrate",
+    "productName": "Sunquick",
+    "ingredients": [
+      "Sugar",
+      "fruit juice (pineapple",
+      "orange",
+      "and passion fruit juice from concentrate and mango",
+      "banana",
+      "and apricot puree)",
+      "acidity regulator (citric acid (INS 330)",
+      "potassium dihydrogen citrate (INS 332(i)))",
+      "water",
+      "natural fruit cocktail flavourings",
+      "stabilizer (cellulose gum (INS 466)",
+      "guar gum (INS 412)",
+      "pectin (INS 440))",
+      "preservative (potassium sorbate (INS 202)",
+      "sodium metabisulphite (INS 223))",
+      "natural colour (beta-apo-8'-carotenal (INS 160e))",
+      "vitamin C",
+      "vitamin A"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.420250"
+  },
+  {
+    "brandName": "Mandarin Squash Concentrate",
+    "productName": "Sunquick",
+    "ingredients": [
+      "Sugar",
+      "mandarin and apple juice from concentrate",
+      "acidity regulator (citric acid (INS 330)",
+      "potassium dihydrogen citrate (INS 332(i)))",
+      "water",
+      "natural mandarin flavouring",
+      "stabilizer (cellulose gum (INS 466)",
+      "guar gum (INS 412)",
+      "pectin (INS 440))",
+      "preservative (potassium sorbate (INS 202)",
+      "sodium metabisulphite (INS 223))",
+      "natural colour (beta-apo-8'-carotenal (INS 160e))",
+      "vitamin C",
+      "vitamin A"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.420331"
+  },
+  {
+    "brandName": "Lemon Squash Concentrate",
+    "productName": "Sunquick",
+    "ingredients": [
+      "Sugar",
+      "lemon and apple juice from concentrate",
+      "acidity regulator (citric acid (INS 330)",
+      "potassium dihydrogen citrate (INS 332(i)))",
+      "water",
+      "natural lemon flavourings",
+      "stabilizer (cellulose gum (INS 466)",
+      "guar gum (INS 412)",
+      "pectin (INS 440))",
+      "vitamin C",
+      "preservative (potassium sorbate (INS 202)",
+      "sodium metabisulphite (INS 223))",
+      "natural colour (beta-carotenes (INS 160a(ii)))",
+      "chlorophylls (INS 141(i))"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.420400"
+  },
+  {
+    "brandName": "Blackcurrant Squash Concentrate",
+    "productName": "Sunquick",
+    "ingredients": [
+      "Sugar",
+      "blackcurrant and grape juice from concentrate",
+      "black carrot concentrate",
+      "acidity regulator (citric acid (INS 330)",
+      "potassium dihydrogen citrate (INS 332(ii)))",
+      "vitamin C",
+      "natural blackcurrant flavourings",
+      "stabilizer (pectin (INS 440)",
+      "cellulose gum (INS 466)",
+      "guar gum (INS 412))",
+      "preservative (potassium sorbate (INS 202)",
+      "sodium metabisulphite (INS 223))"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.420456"
+  },
+  {
+    "brandName": "Mango Cordial",
+    "productName": "MD",
+    "ingredients": [
+      "Sugar",
+      "Water",
+      "Mango Pulp",
+      "Citric Acid (INS 330)",
+      "Permitted Colours (INS 102",
+      "INS 110",
+      "INS 124",
+      "INS 160)",
+      "Natural Mango Flavour and Permitted Preservative Sodium Metabisulphite (INS 223)"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.420510"
+  },
+  {
+    "brandName": "Mixed Fruit Cordial",
+    "productName": "MD",
+    "ingredients": [
+      "Sugar",
+      "Pulp / Juices of Pineapple",
+      "Mango",
+      "Papaya",
+      "Passion Fruit",
+      "Lime (minimum of 4 fruits)",
+      "Citric Acid (INS 330)",
+      "Pectin (INS 440)",
+      "Vitamin C (INS 300)",
+      "beta-Carotene (INS 160a)",
+      "Permitted Preservative Sodium Metabisulphite (INS 223)"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.420566"
+  },
+  {
+    "brandName": "Orange Cordial",
+    "productName": "MD",
+    "ingredients": [
+      "Sugar",
+      "Water",
+      "Concentrated Orange Juice",
+      "Citric Acid (INS 330)",
+      "Pectin (INS 440)",
+      "Natural Orange Flavour",
+      "Vitamin C (INS 300)",
+      "Permitted Colours (INS 102",
+      "INS 110",
+      "INS 124) and Permitted Preservative Sodium Metabisulphite (INS 223)"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.420619"
+  },
+  {
+    "brandName": "Fit O Mixed Fruit Drink",
+    "productName": "Elephant House",
+    "ingredients": [
+      "Water",
+      "Sugar",
+      "Fruit Mix (Mango Pulp",
+      "Orange Juice Concentrate",
+      "Pineapple Juice",
+      "Passion Fruit Juice) (16%)",
+      "Stabilizers (Sodium Carboxy Methyl Cellulose (INS 466)",
+      "Xanthan Gum (INS 415))",
+      "Natural Mango Flavour",
+      "Citric Acid (INS 330)",
+      "Natural Pineapple Flavour",
+      "Ascorbic Acid (INS 300)",
+      "Natural Colour Annatto (INS 160b)",
+      "Natural Passion Fruit Flavour",
+      "Table Salt"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.420675"
+  },
+  {
+    "brandName": "Twist Apple with Green Tea",
+    "productName": "Elephant House",
+    "ingredients": [
+      "Water",
+      "Sugar",
+      "Natural Apple Juice Concentrate (6%)",
+      "Pure Ceylon Green Tea Extract (0.2%)",
+      "Citric Acid (INS 330)",
+      "Steviol Glycoside (INS 960)",
+      "Ascorbic Acid (INS 300)",
+      "Nature Identical Apple Flavour"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.420728"
+  },
+  {
+    "brandName": "Chocolate Flavoured Ice Cream",
+    "productName": "Elephant House",
+    "ingredients": [
+      "Fresh Milk",
+      "Sugar",
+      "Vegetable Fat",
+      "Milk Solids",
+      "Cocoa Powder (2.5%)",
+      "Mono and Diglycerides of Fatty Acids (INS 471)",
+      "Guar Gum (INS 412)",
+      "Sodium Carboxy Methyl Cellulose (INS 466)",
+      "Locust Bean Gum (INS 410)",
+      "Carrageenan (INS 407)",
+      "Natural Vanilla Extract",
+      "Artificial Vanilla Flavor"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.420780"
+  },
+  {
+    "brandName": "Fruit 'n' Nut Ice Cream",
+    "productName": "Elephant House",
+    "ingredients": [
+      "Milk (Reconstituted)",
+      "Sugar",
+      "Vegetable Fat",
+      "Pumpkin Preserves (7%)",
+      "Sultana (4%)",
+      "Cashew Nut (3%)",
+      "Mono and Diglycerides of Fatty Acids (INS 471)",
+      "Guar Gum (INS 412)",
+      "Sodium Carboxy Methyl Cellulose (INS 466)",
+      "Locust Bean Gum (INS 410)",
+      "Carrageenan (INS 407)",
+      "Natural Vanilla Extract",
+      "Artificial Vanilla Flavour",
+      "Tartrazine (INS 102)",
+      "Brilliant Blue (INS 133)",
+      "Ponceau 4R (INS 124)"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.420835"
+  },
+  {
+    "brandName": "Strawberry Flavoured Ice Cream",
+    "productName": "Elephant House",
+    "ingredients": [
+      "Milk (Reconstituted)",
+      "Sugar",
+      "Vegetable Fat",
+      "Mono and Diglycerides of Fatty Acids (INS 471)",
+      "Guar Gum (INS 412)",
+      "Sodium Carboxy Methyl Cellulose (INS 466)",
+      "Locust Bean Gum (INS 410)",
+      "Carrageenan (INS 407)",
+      "Nature Identical Strawberry Flavour",
+      "Citric Acid (INS 330)",
+      "Ponceau 4R (INS 124)",
+      "Carmoisine (INS 122)"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.420888"
+  },
+  {
+    "brandName": "Twist - Vanilla Flavoured Ice Cream with Chocolate Sauce",
+    "productName": "Elephant House",
+    "ingredients": [
+      "Milk (Reconstituted)",
+      "Sugar",
+      "Vegetable Fat",
+      "Cocoa Powder (3%)",
+      "Mono and Diglycerides of Fatty Acids (INS 471)",
+      "Guar Gum (INS 412)",
+      "Sodium Carboxy Methyl Cellulose (INS 466)",
+      "Locust Bean Gum (INS 410)",
+      "Carrageenan (INS 407)",
+      "Xanthan Gum (INS 415)",
+      "Natural Vanilla Extract",
+      "Artificial Vanilla Flavour",
+      "Tartrazine (INS 102)",
+      "Ponceau 4R (INS 124)"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.420961"
+  },
+  {
+    "brandName": "IMORICH - Rocky Road",
+    "productName": "Elephant House",
+    "ingredients": [
+      "Dairy Cream",
+      "Sugar",
+      "Marshmallow Mix (Sugar",
+      "Gelatine",
+      "Egg White Powder",
+      "Natural Vanilla Extract",
+      "Artificial Vanilla Flavour) (2.4%)",
+      "Fried Cashew Nuts (4%)",
+      "Cocoa Powder",
+      "Mono and Diglycerides of Fatty Acids (INS 471)",
+      "Guar Gum (INS 412)",
+      "Sodium Carboxy Methyl Cellulose (INS 466)",
+      "Locust Bean Gum (INS 410)",
+      "Carrageenan (INS 407)",
+      "Natural Vanilla Extract",
+      "Artificial Vanilla Flavour",
+      "Natural Caramel Colour Class I (INS 150a)"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.421018"
+  },
+  {
+    "brandName": "IMORICH - Cookie Cream",
+    "productName": "Elephant House",
+    "ingredients": [
+      "Fresh Milk",
+      "Sugar",
+      "Dairy Cream (22%)",
+      "Cookies (9%)",
+      "Milk Solids",
+      "Mono and Diglycerides of Fatty Acids (INS 471)",
+      "Guar Gum (INS 412)",
+      "Sodium Carboxy Methyl Cellulose (INS 466)",
+      "Locust Bean Gum (INS 410)",
+      "Carrageenan (INS 407)",
+      "Cocoa Powder",
+      "Nature Identical Butter Flavour",
+      "Nature Identical Cookie Flavour"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.421074"
+  },
+  {
+    "brandName": "IMORICH - Very Berry",
+    "productName": "Elephant House",
+    "ingredients": [
+      "Fresh Milk",
+      "Sugar",
+      "Dairy Cream",
+      "Mixed Berries (Strawberry",
+      "Raspberry",
+      "Black Currant",
+      "Red Currant",
+      "Black Cherry",
+      "Blackberry) (14%)",
+      "Mono and Diglycerides of Fatty Acids (INS 471)",
+      "Guar Gum (INS 412)",
+      "Sodium Carboxy Methyl Cellulose (INS 466)",
+      "Locust Bean Gum (INS 410)",
+      "Carrageenan (INS 407)",
+      "Nature Identical Mixed Berry Flavour",
+      "Citric Acid (INS 330)",
+      "Carmoisine (INS 122)",
+      "Brilliant Blue (INS 133)"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.421130"
+  },
+  {
+    "brandName": "Chocolate Dairy Ice Cream",
+    "productName": "Highland",
+    "ingredients": [
+      "Cow Milk",
+      "Sugar",
+      "Milk Solids",
+      "Glucose Syrup",
+      "Cocoa Powder (1.5%)",
+      "Permitted Stabilizers (Mono and Diglycerides of Fatty Acids (INS 471)",
+      "Guar Gum (INS 412)",
+      "Sodium Carboxymethylcellulose (INS 466)",
+      "Locust Bean Gum (INS 410)",
+      "Carrageenan (INS 407))"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.421185"
+  },
+  {
+    "brandName": "Fruit & Nut Dairy Ice Cream",
+    "productName": "Highland",
+    "ingredients": [
+      "Cow Milk",
+      "Sugar",
+      "Milk Solids",
+      "Fruit & Nuts Mix (14.5%) (Pumpkin Preserve",
+      "Cashew Nuts",
+      "Plums",
+      "Tutti Fruitti",
+      "Ginger Preserve)",
+      "Glucose Syrup",
+      "Permitted Stabilizers (Mono and Diglycerides of Fatty Acids (INS 471)",
+      "Guar Gum (INS 412)",
+      "Sodium Carboxymethylcellulose (INS 466)",
+      "Locust Bean Gum (INS 410)",
+      "Carrageenan (INS 407))",
+      "Nature Identical Vanilla Flavour",
+      "Natural Food Color (Annatto Extracts (INS 160b))"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.421239"
+  },
+  {
+    "brandName": "Vanilla Flavoured Dairy Ice Cream",
+    "productName": "Highland",
+    "ingredients": [
+      "Cow Milk",
+      "Sugar",
+      "Milk Solids",
+      "Glucose Syrup",
+      "Permitted Stabilizers (Mono and Diglycerides of Fatty Acids (INS 471)",
+      "Guar Gum (INS 412)",
+      "Sodium Carboxymethylcellulose (INS 466)",
+      "Locust Bean Gum (INS 410)",
+      "Carrageenan (INS 407))",
+      "Nature Identical Vanilla Flavour",
+      "Natural Food Color (Annatto Extracts (INS 160b))"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.421293"
+  },
+  {
+    "brandName": "Magic - Vanilla Ice Cream",
+    "productName": "Cargills",
+    "ingredients": [
+      "Skimmed Fresh Cow's Milk",
+      "Sugar",
+      "Milk Fat",
+      "Vegetable Fat",
+      "Milk Solids",
+      "Permitted Food Emulsifier & Stabilizers (Carrageenan-INS 407",
+      "Guar Gum-INS 412",
+      "Cellulose Gum-INS 466",
+      "Mono-and Diglycerides of Fatty Acids-INS 471)",
+      "Artificial Vanilla Flavour",
+      "Natural Food Colours (Annatto-INS 160b",
+      "Curcumin-INS 100i)"
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.421346"
+  },
+  {
+    "brandName": "Magic - Chocolate Ice Cream",
+    "productName": "Cargills",
+    "ingredients": [
+      "Skimmed Fresh Cow's Milk",
+      "Sugar",
+      "Milk Fat",
+      "Vegetable Fat",
+      "Milk Solids",
+      "Cocoa Powder",
+      "Permitted Food Emulsifier & Stabilizers (Carrageenan-INS 407",
+      "Guar Gum-INS 412",
+      "Cellulose Gum-INS 466",
+      "Mono-and Diglycerides of Fatty Acids-INS 471)."
+    ],
+    "lastUpdated": "2026-02-17T11:45:34.421399"
+  }
+]
