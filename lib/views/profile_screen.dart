@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 import 'edit_profile_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -62,9 +63,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
-          "Account Details",
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        title: Text(
+          "account_details".tr(),
+          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
       body: SingleChildScrollView(
@@ -129,11 +130,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               )
                             ],
                           ),
-                          // Edit Profile Button (Now Functional)
+                          // Edit Profile Button
                           OutlinedButton.icon(
                             onPressed: () => _navigateAndEdit(0), // 0 = Personal Tab
                             icon: const Icon(Icons.edit, size: 14),
-                            label: const Text("Edit Profile", style: TextStyle(fontSize: 12)),
+                            label: Text("edit_profile".tr(), style: const TextStyle(fontSize: 12)),
                             style: OutlinedButton.styleFrom(
                               foregroundColor: Colors.grey[700],
                               side: BorderSide(color: Colors.grey.shade300),
@@ -146,24 +147,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       const SizedBox(height: 20),
                       
-                      // User Details (Now using Variables)
-                      _buildLabel("Full Name", name),
-                      _buildLabel("Email", email),
-                      _buildLabel("Phone Number", phone),
-                      _buildLabel("Date of Birth", dob),
-                      _buildLabel("Gender", "Male"), // You can make this dynamic too if needed
+                      // User Details 
+                      _buildLabel("full_name".tr(), name),
+                      _buildLabel("email".tr(), email),
+                      _buildLabel("phone_number".tr(), phone),
+                      _buildLabel("date_of_birth".tr(), dob),
+                      _buildLabel("gender".tr(), "male".tr()), 
 
                       const SizedBox(height: 24),
                       const Divider(),
                       const SizedBox(height: 16),
 
-                      const Text("Account Statistics", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+                      Text("account_statistics".tr(), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
                       const SizedBox(height: 12),
                       Row(
                         children: [
-                          Expanded(child: _buildStatCard("0", "Scans Made")),
+                          Expanded(child: _buildStatCard("0", "scans_made".tr())),
                           const SizedBox(width: 12),
-                          Expanded(child: _buildStatCard("Free", "Plan Type")),
+                          Expanded(child: _buildStatCard("free".tr(), "plan_type".tr())),
                         ],
                       ),
                     ],
@@ -195,15 +196,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
-                        "Health Profile",
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      Text(
+                        "health_profile".tr(),
+                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                       ),
-                      // Edit Health Button (Now Functional)
+                      // Edit Health Button
                       TextButton.icon(
                         onPressed: () => _navigateAndEdit(1), // 1 = Health Tab
                         icon: const Icon(Icons.edit, size: 16),
-                        label: const Text("Edit"),
+                        label: Text("edit_profile".tr()),
                         style: TextButton.styleFrom(foregroundColor: Colors.grey[700]),
                       ),
                     ],
@@ -211,10 +212,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   const Divider(),
                   const SizedBox(height: 10),
                   
-                  // Health Details (Now using Variables)
-                  _buildHealthItem("Allergies", allergies),
-                  _buildHealthItem("Medical Conditions", conditions),
-                  _buildHealthItem("Other Sensitivities", sensitivities),
+                  // Health Details
+                  _buildHealthItem("allergies".tr(), allergies),
+                  _buildHealthItem("medical_conditions".tr(), conditions),
+                  _buildHealthItem("other_sensitivities".tr(), sensitivities),
                 ],
               ),
             ),

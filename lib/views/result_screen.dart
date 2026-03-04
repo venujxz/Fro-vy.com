@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 
 class ResultScreen extends StatefulWidget {
   final String analysisResult;
@@ -31,7 +32,7 @@ class _ResultScreenState extends State<ResultScreen> {
     }
 
     // Default values if data is missing
-    String productName = data['productName'] ?? "Scanned Product";
+    String productName = data['productName'] ?? "scanned_product".tr();
     String status = data['status'] ?? "UNKNOWN"; // SAFE, UNSAFE, CAUTION
     List<dynamic> ingredients = data['ingredients'] ?? [];
     List<dynamic> warnings = data['warnings'] ?? []; 
@@ -48,31 +49,30 @@ class _ResultScreenState extends State<ResultScreen> {
       statusColor = frovyGreen;
       statusBgColor = frovyLightGreen;
       statusIcon = Icons.check_circle;
-      mainTitle = "Safe to Consume";
-      mainDescription =
-          "This product does not contain any ingredients that conflict with your health profile. It appears safe for you to consume.";
+      mainTitle = "safe_to_consume".tr();
+      mainDescription = "safe_description".tr();
     } else if (status == "UNSAFE") {
       statusColor = frovyRed;
       statusBgColor = frovyLightRed;
       statusIcon = Icons.cancel;
-      mainTitle = "Avoid This Product";
-      // Construct dynamic warning message from list
+      mainTitle = "avoid_this_product".tr();
+      // Construct dynamic warning message from list, fallback to JSON translation
       mainDescription = warnings.isNotEmpty
-          ? warnings.join("\n") // Lists allergies or toxins
-          : "This product contains ingredients that may be harmful to you.";
+          ? warnings.join("\n") 
+          : "unsafe_description".tr();
     } else {
       // CAUTION (e.g., Drug Interactions or ambiguous ingredients)
       statusColor = frovyAmber;
       statusBgColor = frovyLightAmber;
       statusIcon = Icons.warning_amber_rounded;
-      mainTitle = "Use with Caution";
+      mainTitle = "use_with_caution".tr();
       mainDescription = warnings.isNotEmpty
           ? warnings.join("\n")
-          : "Some ingredients may interact with your medication or have moderate toxicity.";
+          : "caution_description".tr();
     }
 
     return Scaffold(
-      backgroundColor: Colors.white, // Clean white background like screenshot
+      backgroundColor: Colors.white, 
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -80,9 +80,9 @@ class _ResultScreenState extends State<ResultScreen> {
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
-          "Analysis Results",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        title: Text(
+          "analysis_results".tr(),
+          style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
@@ -107,7 +107,7 @@ class _ResultScreenState extends State<ResultScreen> {
               width: double.infinity,
               padding: const EdgeInsets.all(24),
               decoration: BoxDecoration(
-                color: statusBgColor, // Light background (Green/Red/Amber)
+                color: statusBgColor, 
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(color: statusColor.withOpacity(0.3), width: 1.5),
               ),
@@ -157,7 +157,7 @@ class _ResultScreenState extends State<ResultScreen> {
                 data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
                 child: ExpansionTile(
                   title: Text(
-                    "All Ingredients (${ingredients.length})",
+                    "${"all_ingredients".tr()} (${ingredients.length})",
                     style: const TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 16,
@@ -212,9 +212,9 @@ class _ResultScreenState extends State<ResultScreen> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                 ),
-                child: const Text(
-                  "Check Another Product",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                child: Text(
+                  "check_another_product".tr(),
+                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
               ),
             ),
@@ -225,11 +225,11 @@ class _ResultScreenState extends State<ResultScreen> {
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: frovyBeige, // The beige color from your UI
+                color: frovyBeige, 
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Text(
-                "This analysis is based on your health profile and our ingredient database. Always consult with a healthcare professional for medical advice.",
+                "medical_disclaimer".tr(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 12,

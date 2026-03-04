@@ -1,6 +1,7 @@
-import 'dart:convert'; // Required to encode data for ResultScreen
+import 'dart:convert'; 
 import 'package:flutter/material.dart';
-import 'result_screen.dart'; // Import to navigate to details
+import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
+import 'result_screen.dart'; 
 
 class HistoryScreen extends StatefulWidget {
   const HistoryScreen({super.key});
@@ -50,7 +51,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
       historyItems.removeAt(index);
     });
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text("Item deleted from history"), duration: Duration(seconds: 1)),
+      SnackBar(content: Text("item_deleted".tr()), duration: const Duration(seconds: 1)),
     );
   }
 
@@ -59,12 +60,12 @@ class _HistoryScreenState extends State<HistoryScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text("Clear History?"),
-        content: const Text("This action cannot be undone."),
+        title: Text("clear_history_q".tr()),
+        content: Text("action_undone".tr()),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text("Cancel"),
+            child: Text("cancel".tr()),
           ),
           TextButton(
             onPressed: () {
@@ -73,7 +74,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
               });
               Navigator.pop(context);
             },
-            child: Text("Clear All", style: TextStyle(color: frovyRed)),
+            child: Text("clear_all".tr(), style: TextStyle(color: frovyRed)),
           ),
         ],
       ),
@@ -82,8 +83,6 @@ class _HistoryScreenState extends State<HistoryScreen> {
 
   // --- LOGIC: Navigate to Details ---
   void _navigateToResult(Map<String, dynamic> item) {
-    // ResultScreen expects a JSON string. We must re-encode our map.
-    // We filter the map to match the structure ResultScreen expects.
     Map<String, dynamic> resultData = {
       "productName": item['productName'],
       "status": item['status'],
@@ -107,7 +106,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
     int flaggedCount = historyItems.where((i) => i['status'] != 'SAFE').length;
 
     return Scaffold(
-      backgroundColor: frovyGreen, // Green background for the top
+      backgroundColor: frovyGreen, 
       appBar: AppBar(
         backgroundColor: frovyGreen,
         elevation: 0,
@@ -116,9 +115,9 @@ class _HistoryScreenState extends State<HistoryScreen> {
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
-          "Analysis History",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        title: Text(
+          "analysis_history".tr(),
+          style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
       ),
       body: Column(
@@ -135,14 +134,14 @@ class _HistoryScreenState extends State<HistoryScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text("Summary", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                  Text("summary".tr(), style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      _buildSummaryItem(totalScans.toString(), "Total Scans"),
-                      _buildSummaryItem(safeCount.toString(), "Safe Products", color: frovyGreen),
-                      _buildSummaryItem(flaggedCount.toString(), "Flagged", color: frovyRed),
+                      _buildSummaryItem(totalScans.toString(), "total_scans".tr()),
+                      _buildSummaryItem(safeCount.toString(), "safe_products".tr(), color: frovyGreen),
+                      _buildSummaryItem(flaggedCount.toString(), "flagged".tr(), color: frovyRed),
                     ],
                   ),
                 ],
@@ -161,7 +160,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [frovyGreen, frovyGreen.withOpacity(0.8), const Color(0xFFFFF9C4)], // Green to Yellowish fade
+                  colors: [frovyGreen, frovyGreen.withOpacity(0.8), const Color(0xFFFFF9C4)], 
                 ),
               ),
               child: historyItems.isEmpty
@@ -177,7 +176,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
             ),
           ),
           
-          // 3. Clear History Button (Only show if there are items)
+          // 3. Clear History Button 
           if (historyItems.isNotEmpty)
             Padding(
               padding: const EdgeInsets.fromLTRB(24, 0, 24, 40),
@@ -194,7 +193,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
-                  child: const Text("Clear All History", style: TextStyle(fontWeight: FontWeight.bold)),
+                  child: Text("clear_all_history".tr(), style: const TextStyle(fontWeight: FontWeight.bold)),
                 ),
               ),
             ),
@@ -212,14 +211,14 @@ class _HistoryScreenState extends State<HistoryScreen> {
         children: [
           Icon(Icons.history_toggle_off, size: 80, color: Colors.white.withOpacity(0.5)),
           const SizedBox(height: 16),
-          const Text(
-            "No scan history yet",
-            style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+          Text(
+            "no_scan_history".tr(),
+            style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 8),
-          const Text(
-            "Scan a product to see it here!",
-            style: TextStyle(color: Colors.white70),
+          Text(
+            "scan_to_see_here".tr(),
+            style: const TextStyle(color: Colors.white70),
           ),
         ],
       ),
@@ -260,7 +259,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
     }
 
     return GestureDetector(
-      onTap: () => _navigateToResult(item), // Make the whole card clickable
+      onTap: () => _navigateToResult(item), 
       child: Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
@@ -308,6 +307,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                       Icon(statusIcon, color: Colors.white, size: 16),
                       const SizedBox(width: 4),
                       Text(
+                        // Mock data status - keeping it in English for the badge for now
                         status == "SAFE" ? "Good" : (status == "UNSAFE" ? "Bad" : "Medium"), 
                         style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12)
                       ),

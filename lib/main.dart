@@ -19,8 +19,14 @@ Future<void> main() async {
   // 2. Start the app
   runApp(
     EasyLocalization(
-      supportedLocales: const [Locale('en')],
-      path: 'lib/assets/lang',
+      // --- ADDED NEW LOCALES HERE ---
+      supportedLocales: const [
+        Locale('en'), // English
+        Locale('si'), // Sinhala
+        Locale('ta'), // Tamil
+      ],
+      // Make sure this path exactly matches where your JSON files are saved!
+      path: 'assets/lang', 
       fallbackLocale: const Locale('en'),
       child: FrovyApp(cameras: cameras),
     ),
@@ -42,6 +48,8 @@ class FrovyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Fro-vy',
+          
+          // --- LOCALIZATION HOOKS ---
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,

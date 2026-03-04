@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 
 class HelpSupportScreen extends StatelessWidget {
   const HelpSupportScreen({super.key});
@@ -19,15 +20,15 @@ class HelpSupportScreen extends StatelessWidget {
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
-          "Help & Support",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        title: Text(
+          "help_support".tr(),
+          style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
       ),
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -40,7 +41,7 @@ class HelpSupportScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // 1. Contact Us Section
-              const Text("Contact Us", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black87)),
+              Text("contact_us".tr(), style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black87)),
               const SizedBox(height: 12),
               Container(
                 padding: const EdgeInsets.all(20),
@@ -53,11 +54,11 @@ class HelpSupportScreen extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    _buildContactTile(Icons.chat_bubble_outline, "Live Chat", "Available 9am - 6pm EST"),
+                    _buildContactTile(Icons.chat_bubble_outline, "live_chat".tr(), "available_time".tr()),
                     const Divider(height: 30),
-                    _buildContactTile(Icons.email_outlined, "Email Support", "support@fro-vy.com"),
+                    _buildContactTile(Icons.email_outlined, "email_support".tr(), "support@fro-vy.com"), // Email stays hardcoded
                     const Divider(height: 30),
-                    _buildContactTile(Icons.phone_outlined, "Phone Support", "1-800-FRO-VY-HELP"),
+                    _buildContactTile(Icons.phone_outlined, "phone_support".tr(), "1-800-FRO-VY-HELP"), // Phone stays hardcoded
                   ],
                 ),
               ),
@@ -65,7 +66,7 @@ class HelpSupportScreen extends StatelessWidget {
               const SizedBox(height: 24),
 
               // 2. Quick Help Section
-              const Text("Quick Help", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black87)),
+              Text("quick_help".tr(), style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black87)),
               const SizedBox(height: 12),
               Container(
                 padding: const EdgeInsets.all(20),
@@ -78,9 +79,9 @@ class HelpSupportScreen extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    _buildNavTile(Icons.menu_book_outlined, "User Guide"),
+                    _buildNavTile(Icons.menu_book_outlined, "user_guide".tr()),
                     const Divider(height: 24),
-                    _buildNavTile(Icons.play_circle_outline, "Video Tutorials"),
+                    _buildNavTile(Icons.play_circle_outline, "video_tutorials".tr()),
                   ],
                 ),
               ),
@@ -88,7 +89,7 @@ class HelpSupportScreen extends StatelessWidget {
               const SizedBox(height: 24),
 
               // 3. FAQ Section (Interactive)
-              const Text("Frequently Asked Questions", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black87)),
+              Text("faq".tr(), style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black87)),
               const SizedBox(height: 12),
               Container(
                 decoration: BoxDecoration(
@@ -100,14 +101,10 @@ class HelpSupportScreen extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    _buildFAQTile("How accurate is the ingredient analysis?", 
-                        "Our analysis uses a comprehensive database of ingredients and their potential health impacts. However, always consult a medical professional."),
-                    _buildFAQTile("Can I scan products in any language?", 
-                        "Currently, Fro-vy supports ingredient labels in English. We are working on adding support for Sinhala and Tamil in upcoming updates."),
-                    _buildFAQTile("How do I update my health profile?", 
-                        "You can update your allergies and medical conditions anytime from your Account Details page."),
-                    _buildFAQTile("Is my health data private?", 
-                        "Absolutely. Your health information is encrypted and never shared with third parties. You can request data deletion at any time."),
+                    _buildFAQTile("faq_q1".tr(), "faq_a1".tr()),
+                    _buildFAQTile("faq_q2".tr(), "faq_a2".tr()),
+                    _buildFAQTile("faq_q3".tr(), "faq_a3".tr()),
+                    _buildFAQTile("faq_q4".tr(), "faq_a4".tr()),
                   ],
                 ),
               ),
@@ -128,10 +125,10 @@ class HelpSupportScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text("Have Feedback?", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                    Text("have_feedback".tr(), style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                     const SizedBox(height: 8),
                     Text(
-                      "We'd love to hear your thoughts on how we can improve Fro-vy!",
+                      "feedback_subtitle".tr(),
                       style: TextStyle(color: Colors.grey[600], fontSize: 14),
                     ),
                     const SizedBox(height: 20),
@@ -150,7 +147,7 @@ class HelpSupportScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
-                        child: const Text("Send Feedback", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                        child: Text("send_feedback".tr(), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
                       ),
                     ),
                   ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 import 'theme_notifier.dart'; // Import the notifier
 
 class SettingsScreen extends StatefulWidget {
@@ -37,7 +38,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          "Settings",
+          "settings".tr(),
           style: TextStyle(
             color: isDarkMode ? Colors.white : Colors.black, 
             fontWeight: FontWeight.bold
@@ -63,13 +64,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
               // 1. Appearance Section (THE DARK MODE TOGGLE)
               _buildSectionCard(
                 context,
-                title: "Appearance",
+                title: "appearance".tr(),
                 icon: Icons.dark_mode_outlined,
                 iconColor: Colors.purple,
                 children: [
                   _buildToggleTile(
-                    "Dark Mode", 
-                    "Switch to dark theme", 
+                    "dark_mode".tr(), 
+                    "switch_dark_theme".tr(), 
                     isDarkMode, // The switch position depends on the actual theme
                     (val) {
                        // This triggers the global theme change
@@ -84,12 +85,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
               // 2. Notifications
               _buildSectionCard(
                 context,
-                title: "Notifications",
+                title: "notifications".tr(),
                 icon: Icons.notifications_none,
                 iconColor: const Color(0xFFFF8A65),
                 children: [
-                  _buildToggleTile("Push Notifications", "Receive alerts", _pushNotifications, (v) => setState(() => _pushNotifications = v)),
-                  _buildToggleTile("Email Updates", "Health tips", _emailUpdates, (v) => setState(() => _emailUpdates = v)),
+                  _buildToggleTile("push_notifications".tr(), "receive_alerts".tr(), _pushNotifications, (v) => setState(() => _pushNotifications = v)),
+                  _buildToggleTile("email_updates".tr(), "health_tips".tr(), _emailUpdates, (v) => setState(() => _emailUpdates = v)),
                 ],
               ),
               
@@ -98,13 +99,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
               // 3. Language
               _buildSectionCard(
                 context,
-                title: "Language",
+                title: "language".tr(),
                 icon: Icons.language,
                 iconColor: Colors.blue,
                 children: [
                    ListTile(
                     contentPadding: EdgeInsets.zero,
-                    title: const Text("Language", style: TextStyle(fontWeight: FontWeight.w500)),
+                    title: Text("language".tr(), style: const TextStyle(fontWeight: FontWeight.w500)),
                     trailing: Text(_selectedLanguage, style: const TextStyle(color: Colors.grey)),
                     onTap: () {
                       // Simple Dialog Logic
@@ -125,7 +126,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Danger Zone", style: TextStyle(color: frovyRed, fontWeight: FontWeight.bold)),
+                    Text("danger_zone".tr(), style: TextStyle(color: frovyRed, fontWeight: FontWeight.bold)),
                     const SizedBox(height: 16),
                     SizedBox(
                       width: double.infinity,
@@ -135,7 +136,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           foregroundColor: frovyRed, 
                           side: BorderSide(color: frovyRed)
                         ),
-                        child: const Text("Delete Account"),
+                        child: Text("delete_account".tr()),
                       ),
                     ),
                   ],
