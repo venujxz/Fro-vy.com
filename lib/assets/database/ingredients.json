@@ -1,0 +1,39 @@
+[
+  {
+    "brandName": "Kotmale",
+    "productName": "Stawberry milk",
+    "ingredients": [
+      "Whole Milk",
+      "Skimmed Milk",
+      "Sugar",
+      "Permited Food Stabilizers (Mono and Diglycerides of Fatty Acids-INS471",
+      "Carrageenan-INS471",
+      "Guar Gum-INS412)",
+      "Trisodium Phosphate ( INS339 (iii))",
+      "Nature Identical Rose Flavour",
+      "Perimtted Food Colour (Carmoisine-INS122)"
+    ], 
+  }
+
+{
+    "brandName": "Kotmale",
+    "productName": "Vanilla milk",
+    "ingredients": [
+      "Raw milk",
+      "Skimmed Milk",
+      "Whey liquid",
+      "Sugar",
+      "Permitted Food Emulsifier and stabilizers (Sodium Alginate-INS401",
+      "Carrageenan-INS471",
+      "Guar Gum-INS412",
+      "Mono and diglycerides of Fatty acids-INS471)",
+      "Natural Identical Vanilla Flavour",
+      "Trisodium Phosphate ( INS339 (iii))",
+      "Permitted Natural Food Color (Curcumin-INS100)"
+    ],
+},
+
+
+
+
+]
