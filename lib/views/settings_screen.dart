@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use, prefer_final_fields
+
 import 'package:flutter/material.dart';
 import 'theme_notifier.dart'; // Import the notifier
 

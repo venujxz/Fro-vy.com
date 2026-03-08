@@ -11,8 +11,8 @@ Future<void> main() async {
   try {
     cameras = await availableCameras();
   } catch (e) {
-    print("Camera Error: $e");
-  }
+  debugPrint("Camera Error: $e");
+}
 
   // 2. Start the app
   runApp(FrovyApp(cameras: cameras));

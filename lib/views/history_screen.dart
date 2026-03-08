@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'dart:convert'; // Required to encode data for ResultScreen
 import 'package:flutter/material.dart';
 import 'result_screen.dart'; // Import to navigate to details
