@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart'; 
-import 'package:easy_localization/easy_localization.dart';
+import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 
 // --- IMPORTS FOR ALL APP SCREENS ---
 import 'camera_screen.dart';       // 1. Camera Feature
@@ -10,7 +10,7 @@ import 'history_screen.dart';      // 4. Analysis History
 import 'settings_screen.dart';     // 5. Settings
 import 'help_support_screen.dart'; // 6. Help & Support
 
-//imports the language switcher widget
+//imports the lanuage switcher button
 import 'widgets/language_switcher.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -29,7 +29,6 @@ class HomeScreen extends StatelessWidget {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     
     // 2. DEFINE DYNAMIC COLORS
-    // If Dark Mode: Use Dark Grey. If Light Mode: Use Green.
     final Color headerColor = isDarkMode ? const Color(0xFF1F1F1F) : frovyGreen;
     final Color bodyColor = isDarkMode ? const Color(0xFF121212) : frovyLightBg;
     final Color cardColor = isDarkMode ? const Color(0xFF2C2C2C) : Colors.white;
@@ -41,19 +40,17 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: headerColor,
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.white), 
-
         actions: const[
           LanguageSwitcher(),
         ],
-
         title: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
-              children: const [
-                Text("Welcome back,", style: TextStyle(fontSize: 10, color: Colors.white)),
-                Text("John Doe", style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white)),
+              children: [
+                Text("welcome_back".tr(), style: const TextStyle(fontSize: 10, color: Colors.white)),
+                const Text("John Doe", style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white)), // Kept name hardcoded
               ],
             ),
             const SizedBox(width: 10),
@@ -72,27 +69,26 @@ class HomeScreen extends StatelessWidget {
       
       // --- THE SIDEBAR (DRAWER) ---
       drawer: Drawer(
-        // In Dark Mode, drawer automatically matches theme, but we can style it explicitly
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
               decoration: BoxDecoration(color: headerColor),
-              child: const Column(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Icon(Icons.eco, size: 40, color: Colors.white),
-                  SizedBox(height: 10),
-                  Text("Fro-vy", style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)),
-                  Text("Free Plan", style: TextStyle(color: Colors.white70, fontSize: 12)),
+                  const Icon(Icons.eco, size: 40, color: Colors.white),
+                  const SizedBox(height: 10),
+                  const Text("Fro-vy", style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)),
+                  Text("free_plan".tr(), style: const TextStyle(color: Colors.white70, fontSize: 12)),
                 ],
               ),
             ),
-            ListTile(leading: const Icon(Icons.home), title: const Text("Home"), onTap: () => Navigator.pop(context)),
+            ListTile(leading: const Icon(Icons.home), title: Text("home".tr()), onTap: () => Navigator.pop(context)),
             ListTile(
               leading: const Icon(Icons.person), 
-              title: const Text("Account Details"), 
+              title: Text("account_details".tr()), 
               onTap: () {
                 Navigator.pop(context);
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen()));
@@ -100,7 +96,7 @@ class HomeScreen extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.workspace_premium, color: Color(0xFFFFA000)), 
-              title: const Text("Premium Plans"), 
+              title: Text("premium_plans".tr()), 
               onTap: () {
                 Navigator.pop(context); 
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const SubscriptionScreen()));
@@ -108,7 +104,7 @@ class HomeScreen extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.history), 
-              title: const Text("Analysis History").tr(),
+              title: Text("analysis_history".tr()),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const HistoryScreen()));
@@ -116,7 +112,7 @@ class HomeScreen extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.settings), 
-              title: const Text("Settings").tr(),
+              title: Text("settings".tr()),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingsScreen()));
@@ -124,14 +120,14 @@ class HomeScreen extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.help_outline), 
-              title: const Text("Help & Support").tr(),
+              title: Text("help_support".tr()),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const HelpSupportScreen()));
               },
             ),
             const Divider(),
-            const ListTile(leading: Icon(Icons.logout, color: Colors.red), title: Text("Logout", style: TextStyle(color: Colors.red))),
+            ListTile(leading: const Icon(Icons.logout, color: Colors.red), title: Text("logout".tr(), style: const TextStyle(color: Colors.red))),
           ],
         ),
       ),
@@ -143,31 +139,31 @@ class HomeScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.fromLTRB(24, 10, 24, 30),
             width: double.infinity,
-            color: headerColor, // DYNAMIC COLOR
+            color: headerColor,
             child: Column(
               children: [
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   decoration: BoxDecoration(
-                    color: isDarkMode ? const Color(0xFF2C2C2C) : Colors.white, // Dark card in dark mode
+                    color: isDarkMode ? const Color(0xFF2C2C2C) : Colors.white, 
                     borderRadius: BorderRadius.circular(12),
-                    boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10, offset: const Offset(0, 4))],
+                    boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 10, offset: Offset(0, 4))],
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(Icons.eco, color: frovyGreen),
                       const SizedBox(width: 8),
-                      Text("FRO-VY", style: TextStyle(color: frovyGreen, fontWeight: FontWeight.bold, fontSize: 18)).tr(),
+                      Text("FRO-VY", style: TextStyle(color: frovyGreen, fontWeight: FontWeight.bold, fontSize: 18)),
                     ],
                   ),
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  "Scan, search, or enter ingredients to check if they're safe for you",
+                  "header_description".tr(),
                   textAlign: TextAlign.center,
                   style: const TextStyle(color: Colors.white, fontSize: 14),
-                ).tr(),
+                ),
               ],
             ),
           ),
@@ -177,7 +173,7 @@ class HomeScreen extends StatelessWidget {
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                color: bodyColor, // DYNAMIC COLOR
+                color: bodyColor, 
                 borderRadius: const BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30)),
               ),
               child: SingleChildScrollView(
@@ -189,7 +185,7 @@ class HomeScreen extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: cardColor, // DYNAMIC COLOR
+                        color: cardColor,
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                            if (!isDarkMode) BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10)
@@ -201,25 +197,25 @@ class HomeScreen extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("Your Health Profile", style: TextStyle(fontWeight: FontWeight.bold, color: textColor)).tr(),
+                              Text("health_profile".tr(), style: TextStyle(fontWeight: FontWeight.bold, color: textColor)),
                               GestureDetector(
                                 onTap: () {
                                   Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen()));
                                 },
-                                child: Text("Edit Profile", style: TextStyle(color: frovyGreen, fontSize: 12, fontWeight: FontWeight.bold)).tr(),
+                                child: Text("edit_profile".tr(), style: TextStyle(color: frovyGreen, fontSize: 12, fontWeight: FontWeight.bold)),
                               ),
                             ],
                           ),
                           const Divider(height: 20),
-                          _buildProfileRow("Allergies", "Peanuts, Shellfish", textColor),
-                          _buildProfileRow("Medical Conditions", "None", textColor),
-                          _buildProfileRow("Other Sensitivities", "Lactose", textColor),
+                          _buildProfileRow("allergies".tr(), "Peanuts, Shellfish", textColor),
+                          _buildProfileRow("medical_conditions".tr(), "None", textColor),
+                          _buildProfileRow("other_sensitivities".tr(), "Lactose", textColor),
                         ],
                       ),
                     ),
 
                     const SizedBox(height: 24),
-                    Text("How would you like to check ingredients?", style: TextStyle(fontWeight: FontWeight.bold, color: textColor)).tr(),
+                    Text("how_check_ingredients".tr(), style: TextStyle(fontWeight: FontWeight.bold, color: textColor)),
                     const SizedBox(height: 16),
 
                     // --- BIG ACTION BUTTONS ---
@@ -228,11 +224,11 @@ class HomeScreen extends StatelessWidget {
                     _buildActionCard(
                       context,
                       icon: Icons.camera_alt_outlined,
-                      title: "Scan Ingredients",
-                      subtitle: "Use your camera to scan product labels",
+                      title: "scan_ingredients".tr(),
+                      subtitle: "scan_subtitle".tr(),
                       color: frovyGreen,
-                      cardColor: cardColor, // Pass dynamic card color
-                      textColor: textColor, // Pass dynamic text color
+                      cardColor: cardColor, 
+                      textColor: textColor, 
                       onTap: () {
                         Navigator.push(
                           context,
@@ -247,8 +243,8 @@ class HomeScreen extends StatelessWidget {
                     _buildActionCard(
                       context,
                       icon: Icons.search,
-                      title: "Search Products",
-                      subtitle: "Search our database of popular products",
+                      title: "search_products".tr(),
+                      subtitle: "search_subtitle".tr(),
                       color: frovyGreen.withOpacity(0.8),
                       cardColor: cardColor,
                       textColor: textColor,
@@ -263,10 +259,10 @@ class HomeScreen extends StatelessWidget {
                     _buildActionCard(
                       context,
                       icon: Icons.edit_note,
-                      title: "Manual Entry",
-                      subtitle: "Type in the ingredient list manually",
+                      title: "manual_entry".tr(),
+                      subtitle: "manual_subtitle".tr(),
                       color: frovyYellow,
-                      iconColor: Colors.black87, // Icon inside the colored box
+                      iconColor: Colors.black87,
                       cardColor: cardColor,
                       textColor: textColor,
                       onTap: () {
@@ -286,11 +282,12 @@ class HomeScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("How it works", style: TextStyle(fontWeight: FontWeight.bold, color: textColor)).tr(),
+                          Text("how_it_works".tr(), style: TextStyle(fontWeight: FontWeight.bold, color: textColor)),
                           const SizedBox(height: 8),
-                          Text("• Choose your preferred input method", style: TextStyle(color: textColor)).tr(),
-                          Text("• We'll analyze ingredients against your health profile", style: TextStyle(color: textColor)).tr(),
-                          Text("• Get instant risk assessment", style: TextStyle(color: textColor)).tr(),
+                          // String interpolation handles the bullets nicely
+                          Text("• ${"step_1".tr()}", style: TextStyle(color: textColor)),
+                          Text("• ${"step_2".tr()}", style: TextStyle(color: textColor)),
+                          Text("• ${"step_3".tr()}", style: TextStyle(color: textColor)),
                         ],
                       ),
                     ),
@@ -356,9 +353,9 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: textColor)).tr(),
+                  Text(title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: textColor)),
                   const SizedBox(height: 4),
-                  Text(subtitle, style: TextStyle(color: Colors.grey[600], fontSize: 12)).tr(),
+                  Text(subtitle, style: TextStyle(color: Colors.grey[600], fontSize: 12)),
                 ],
               ),
             ),

@@ -7,7 +7,7 @@ class LanguageSwitcher extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton<Locale>(
-      icon: const Icon(Icons.language),
+      icon: const Icon(Icons.language, color: Colors.black,),
       onSelected: (locale){
         context.setLocale(locale);
       },
