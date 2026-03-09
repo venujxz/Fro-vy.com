@@ -1,0 +1,604 @@
+[
+  {
+    "brandName": "Kotmale",
+    "productName": "Strawberry milk",
+    "ingredients": [
+      "Whole Milk",
+      "Skimmed Milk",
+      "Sugar",
+      "Permited Food Stabilizers (Mono and Diglycerides of Fatty Acids-INS471",
+      "Sodium Alginate-INS401",
+      "Carrageenan-INS471",
+      "Guar Gum-INS412)",
+      "Trisodium Phosphate (INS339 (iii))",
+      "Nature Identical Rose Flavour",
+      "Perimtted Food Colour (Carmoisine-INS122)"
+    ], 
+  }
+
+  {
+    "brandName": "Kotmale",
+    "productName": "Vanilla milk",
+    "ingredients": [
+      "Raw milk",
+      "Skimmed Milk",
+      "Whey liquid",
+      "Sugar",
+      "Permitted Food Emulsifier & stabilizers (Sodium Alginate-INS401",
+      "Carrageenan-INS471",
+      "Guar Gum-INS412",
+      "Mono and diglycerides of Fatty acids-INS471)",
+      "Natural Identical Vanilla Flavour",
+      "Trisodium Phosphate (INS339 (iii))",
+      "Trisodium Citrate (INS 331(iii))",
+      "Permitted Natural Food Color (Curcumin-INS100)"
+    ],
+  },
+  
+  {
+    "brandName": "Kotmale",
+    "productName": "Chocolate milk",
+    "ingredients": [
+      "Raw milk",
+      "Skimmed Milk",
+      "Whey Liquid",
+      "Sugar",
+      "Cocoa Powder",
+      "Permitted Food Emulsifiers and Stabilizers (Sodium Alginate-INS401",
+      "Carrageenan-INS 407",
+      "Guar Gum-INS 412",
+      "Mono-and diglycerides of fatty acids-INS 471)",
+      "Artificial Chocolate Flavour",
+      "Trisodium Phosphate(INS 341(iii))",
+      "Trisodium Citrate (INS 331(iii))"
+    ],
+    
+  },
+   {
+    "brandName": "Kotmale",
+    "productName": "Curd",
+    "ingredients": [
+      "Fresh Cow's Milk",
+      "Milk Fat",
+      "Skimmed Milk",
+      "Permitted Food Preservative( Potassium Sorbate-INS202)",
+      "Curd Culture"
+    ],
+  },
+  {
+    "brandName": "Kotmale",
+    "productName": "Swiss Cheese",
+    "ingredients": [
+      "Fresh Milk",
+      "Salt",
+      "Starter Culture",
+      "Enzyme (100% Microbial Origin)"
+    ],
+  },
+  {
+    "brandName": "Ambewela",
+    "productName": "Processed Cheese",
+    "ingredients": [
+      "Cheese",
+      "Water",
+      "Butter",
+      "Skimmed Milk Powder",
+      "Permitted Stabilizers (Sodium Phosphates - INS 339",
+      "Polyphosphates - INS 452)",
+      "Starch Acetate (INS 1420)",
+      "Milk Solids",
+      "Salt",
+      "Potassium Sorbate - INS 202",
+      "Citric Acid - INS 330",
+      "Carotenes - INS 160 a (ii)."
+    ],
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "Kiri",
+    "ingredients": [
+      "Whole Milk Powder"
+    ],
+  },
+  {
+    "brandName": "Pelwatte",
+    "productName": "Full Cream Powder",
+    "ingredients": [
+      "Full Cream Milk"
+    ],
+  },
+  {
+    "brandName": "Nestle",
+    "productName": "Milo",
+    "ingredients": [
+      "Malt Extract(34%)(contains Barley)",
+      "Sugar",
+      "Milk Solids(21%)",
+      "Cocoa Powder(9%)",
+      "Palm Oil",
+      "Minerals(Dicalcium Phosphate",
+      "Ferric Pyrophosphate)",
+      "Vitamins (C",
+      "B3",
+      "B2",
+      "B3",
+      "B6",
+      "B12)",
+      "Disodium Phosphate (INS 339ii)",
+      "Sodium Carbonate (INS 500i)."
+    ],
+  },
+  {
+    "brandName": "Anchor",
+    "productName": "Hot Chocolate",
+    "ingredients": [
+      "Anchor Hot Chocolate",
+      "Hot Water 220ml"
+    ],
+  },
+  {
+    "brandName": "The Bakerchik Collection",
+    "productName": "Hot Chocolate",
+    "ingredients": [
+      "Sugar",
+      "Cocoa powder",
+      "Artificial Vanilla flavor",
+      "Salt."
+    ],
+  },
+  {
+    "brandName": "Kotmale",
+    "productName": "Vanilla Drinking Yoghurt",
+    "ingredients": [
+      "Fresh Milk",
+      "Milk Solids",
+      "Sugar",
+      "Modified Starch-INS 1442",
+      "Yoghurt Culture (with probiotic culture)",
+      "Permitted Food Preservative (Potassium Sorbate-INS 202)",
+      "Natural Vanilla Flavour."
+    ],
+  },
+  {
+    "brandName": "Anchor",
+    "productName": "Vanilla Flavoured Low Fat Drinking Yoghurt",
+    "ingredients": [
+      "Fresh milk",
+      "sugar",
+      "milk solids",
+      "modified starch - INS 1442",
+      "gelatine - animal origin",
+      "nature identical vanilla flavour",
+      "potassium sorbate - INS 202",
+      "artificial milk flavour & yoghurt culture [Including probiotic Lactocaseibacillus rhamnosus HN001/DR20™ (Contains $1.0 \\times 10^6$ minimum colony forming units (cfu) per gram)]."
+    ],
+  },
+  {
+    "brandName": "Highland",
+    "productName": "Yoghurt",
+    "ingredients": [
+      "Cow Milk",
+      "Sugar",
+      "Milk Solids",
+      "Gelatine (INS 428)",
+      "Nature Identical Vanilla Flavour",
+      "Yoghurt Culture."
+    ],
+  },
+  {
+    "brandName": "Ambewela",
+    "productName": "Yoghurt",
+    "ingredients": [
+      "Fresh Milk",
+      "Sugar",
+      "Milk Solids",
+      "Gelatine",
+      "Nature Identical Vanilla Flavour",
+      "Potassium Sorbate-INS 202",
+      "Yoghurt Culture",
+      "Curcumin-INS 100(i)."
+    ],
+  },
+  {
+    "brandName": "Happy Cow",
+    "productName": "Cheese",
+    "ingredients": [
+      "Cheese (cow milk",
+      "microbial rennet)",
+      "water",
+      "butter",
+      "cream",
+      "skimmed milk powder",
+      "emulsifying salts (E 339",
+      "E 450",
+      "E 452)",
+      "whey powder",
+      "salt",
+      "acidifier: citric acid."
+    ],
+  },
+  {
+    "brandName": "Kotmale",
+    "productName": "Cheese",
+    "ingredients": [
+      "Cheese",
+      "Fresh Cream",
+      "Milk Solids",
+      "Permitted emulsifier & Stabilizer (INS452",
+      "INS450",
+      "INS471)",
+      "Nature Identical Cheese Flavour",
+      "Salt",
+      "Pepper and Permitted Food Additive (INS202)."
+    ],
+  },
+  {
+    "brandName": "Astra",
+    "productName": "Butter",
+    "ingredients": [
+      "Palm based oils",
+      "Water",
+      "Salt",
+      "Milk solids",
+      "Monoglyceride (INS 471)",
+      "Soya lecithin (INS 322)",
+      "Ascorbyl palmitate (INS 304)",
+      "Potassium sorbate (INS 202)",
+      "Citric acid (INS 330)",
+      "Annatto red (INS 160b)",
+      "Vitamins (E",
+      "A",
+      "D)",
+      "EDTA (INS 385)",
+      "Nature identical butter flavours."
+    ],
+  },
+  {
+    "brandName": "Flora",
+    "productName": "Butter",
+    "ingredients": [
+      "Vegetable oils (Canola oil (36%)",
+      "Sunflower oil (14.5%)",
+      "Palm based oils)",
+      "Water",
+      "Salt",
+      "Milk solids",
+      "Monoglyceride (INS 471)",
+      "Soya lecithin (INS 322)",
+      "Potassium sorbate (INS 202)",
+      "Rosemary extract (INS 392)",
+      "Citric acid (INS 330)",
+      "Vitamins (E",
+      "A",
+      "D)",
+      "Nature identical butter flavours",
+      "Annatto red (INS 160b)",
+      "EDTA (INS 385)."
+    ],
+  },
+  {
+    "brandName": "Ciao",
+    "productName": "Greek Yoghurt",
+    "ingredients": [
+      "Pasteurized Fresh Cow's Milk",
+      "Yoghurt Culture."
+    ],
+  },
+  {
+    "brandName": "Ambewela",
+    "productName": "Strawberry Flavoured Drinking Yoghurt",
+    "ingredients": [
+      "Fresh milk",
+      "Sugar",
+      "Milk solids",
+      "Modified starch - INS 1442",
+      "Pectin - INS 440",
+      "Nature identical strawberry flavour",
+      "Permitted food preservative (Potassium sorbate - INS 202)",
+      "Yoghurt culture",
+      "Permitted natural food colour (Anthocyanin - INS 163 (i))."
+    ],
+  },
+  {
+    "brandName": "Chello",
+    "productName": "Mango Drinking Yoghurt",
+    "ingredients": [
+      "Fresh milk",
+      "Sugar",
+      "Gelatin",
+      "Probiotic yoghurt culture",
+      "Basil seeds",
+      "Permitted food preservatives (INS 202)",
+      "Nature identical mango flavor",
+      "Permitted food colour (INS 110)."
+    ],
+  },
+   
+  {
+    "brandName": "Chicken Sandwich Slices",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Halal Chicken",
+      "Soy Protein",
+      "Salt",
+      "Sodium Di-",
+      "Tri- and Polyphosphates (INS 450",
+      "INS 451",
+      "INS 452)",
+      "Sugar",
+      "Sodium Nitrite (INS 250)",
+      "Mixed Spices."
+    ],
+  },
+  {
+    "brandName": "Chicken Sandwich Slices",
+    "productName": "Crescent Fine Foods",
+    "ingredients": [
+      "Ingredients not fully visible in the provided front-facing image."
+    ],
+  },
+  {
+    "brandName": "Crispy Chicken Bacon",
+    "productName": "Crescent Fine Foods",
+    "ingredients": [
+      "Halal Chicken",
+      "Salt",
+      "Soy Protein",
+      "Corn Starch",
+      "Sodium Di-",
+      "Tri- and Polyphosphates (INS 450",
+      "INS 451",
+      "INS 452)",
+      "Sugar",
+      "Ascorbic Acid (INS 300)",
+      "Sodium Nitrite (INS 250)",
+      "Mixed Spices."
+    ],
+  },
+  {
+    "brandName": "Chicken Meatballs",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Chicken",
+      "Cereal Binders",
+      "Isolated Soya Protein",
+      "Refined Deodorized Palm Oil",
+      "B. Onion",
+      "Sugar",
+      "Yeast Extract",
+      "Ascorbic Acid (INS 300)",
+      "Sodium Ascorbate (INS 301)",
+      "Natural Color (Beetroot Red)",
+      "Permitted Food Color (INS 161g)."
+    ],
+  },
+  {
+    "brandName": "Frankie Cheesy Blast Chicken Sausages",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Chicken",
+      "Cheese",
+      "Cereal Binders",
+      "Iodized Salt",
+      "Refined Deodorized Palm Oil",
+      "B. Onion",
+      "Mixed Spices",
+      "Isolated Soya Protein",
+      "Binder (INS 451)",
+      "Full Cream Milk Powder",
+      "Nature Identical Chicken Flavour",
+      "Nature Identical Cheese Flavour",
+      "Sodium Ascorbate (INS 301)",
+      "Ascorbic Acid (INS 300)",
+      "Permitted Food Colour (INS 161g)."
+    ],
+  },
+
+  {
+    "brandName": "Garlic Chicken Sausages",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Chicken",
+      "Wheat Flour",
+      "Refined Deodorized Palm Oil",
+      "Isolated Soya Protein",
+      "Iodized Salt",
+      "Garlic",
+      "Ginger",
+      "Nutmeg",
+      "Cinnamon",
+      "White Pepper",
+      "Phosphates (INS 450 i",
+      "iii",
+      "INS 451 i",
+      "INS 452 ii)",
+      "Nature Identical Chicken Flavour",
+      "Natural Color (Beetroot Red)."
+    ],
+  },
+  {
+    "brandName": "Chicken Sandwich Slices",
+    "productName": "Bairaha Foods (Pvt) Ltd",
+    "ingredients": [
+      "Chicken",
+      "Ice & Water",
+      "Cereal Binders",
+      "Iodized Salt",
+      "Isolated Soya Protein",
+      "Mixed Spices",
+      "Phosphates (INS 450",
+      "INS 451",
+      "INS 452)",
+      "Curing Salt (INS 250)",
+      "Permitted Colouring (INS 122)."
+    ],
+  },
+  {
+    "brandName": "Vegetarian Sausages",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Textured Vegetable Protein",
+      "Soy Milk Protein",
+      "Soy Protein Isolate",
+      "Modified Potato Starch",
+      "Vegetable Oil",
+      "Seaweed Extract",
+      "Sugar",
+      "Common Salt."
+    ],
+  },
+  {
+    "brandName": "Chicken Slices",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Chicken",
+      "Cereal Binders",
+      "Refined Deodorized Palm Oil",
+      "Isolated Soya Protein",
+      "Iodized Salt",
+      "Mixed Spices",
+      "Natural Color (Beetroot Red)",
+      "Phosphate Binders (INS 451)",
+      "Nature Identical Chicken Flavor",
+      "Yeast Extract",
+      "Permitted Food Colors (INS 161g)",
+      "Ascorbic Acid (INS 300)",
+      "Sodium Ascorbate (INS 301)."
+    ],
+  },
+  {
+    "brandName": "Chicken Bratwurst",
+    "productName": "Elephant House (Keells)",
+    "ingredients": [
+      "Chicken",
+      "Cereal Binders",
+      "Iodized Salt",
+      "Mixed Spices",
+      "Phosphates (INS 451)",
+      "Natural Color (Beetroot Red)",
+      "Ascorbic Acid (INS 300)",
+      "Yeast Extract",
+      "Sodium Ascorbate (INS 301)."
+    ],
+  },
+  {
+    "brandName": "Smoky Cheesy Chicken Sausages",
+    "productName": "Elephant House (Keells)",
+    "ingredients": [
+      "Chicken",
+      "Cheese",
+      "Cereal Binders",
+      "Isolated Soya Protein",
+      "B. Onion",
+      "Iodized Salt",
+      "Mixed Spices",
+      "Phosphate Binders (INS 451 i)",
+      "Natural Colour (Beetroot Red)",
+      "Fresh Garlic",
+      "Yeast Extract",
+      "Ascorbic Acid (INS 300)",
+      "Sodium Ascorbate (INS 301)."
+    ],
+  },
+  {
+    "brandName": "Chicken Sausage Meat",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Chicken",
+      "Isolated Soya Protein",
+      "Cereal Binders",
+      "Deodorized Palm Oil",
+      "Iodized Salt",
+      "Mixed Phosphate Binders (INS 451)",
+      "Nature Identical Flavor",
+      "Ascorbic Acid (INS 300)",
+      "Sodium Ascorbate (INS 301)",
+      "Natural Color (Beetroot Red)",
+      "Permitted Food Color (INS 161g)",
+      "Yeast Extract."
+    ],
+  },
+  {
+    "brandName": "Heat & Eat Devilled Chicken",
+    "productName": "Crescent Fine Foods",
+    "ingredients": [
+      "Halal Chicken",
+      "Onion",
+      "Soya Bean Sauce",
+      "Capsicum",
+      "Tomato Paste",
+      "Sugar",
+      "Wheat Flour",
+      "Salt",
+      "Mixed Spices",
+      "Garlic",
+      "Sodium Di-",
+      "Tri- and Polyphosphates (INS 450",
+      "INS 451",
+      "INS 452)."
+    ],
+  }
+  {
+    "brandName": "Heat & Eat Chicken Kheema",
+    "productName": "Crescent Fine Foods",
+    "ingredients": [
+      "Halal Chicken",
+      "Onion",
+      "Cereal Binder",
+      "Rice Bran Oil",
+      "Tomato Sauce",
+      "Mixed Spices",
+      "Garlic",
+      "Tomato Paste",
+      "Salt",
+      "Ginger",
+      "Herbs",
+      "Corn Flour."
+    ],
+  },
+  {
+    "brandName": "Chicken Wings (Marinated)",
+    "productName": "Bairaha Foods (Pvt) Ltd",
+    "ingredients": [
+      "Chicken Wings",
+      "Cereals",
+      "Cold Water",
+      "Mixed Spices",
+      "Iodized Salt",
+      "Tomato & Soya Sauce",
+      "Phosphates (INS 450",
+      "INS 451",
+      "INS 452)",
+      "Sugar",
+      "Curing Salt (INS 250)",
+      "Permitted Colouring (INS 110",
+      "INS 122",
+      "INS 102)."
+    ],
+  },
+  {
+    "brandName": "Popcorn Chicken",
+    "productName": "Crescent Fine Foods",
+    "ingredients": [
+      "Halal Chicken",
+      "Wheat Flour",
+      "Corn Starch",
+      "Spices",
+      "Salt",
+      "Phosphate Binders (INS 451)",
+      "Soy Sauce",
+      "Sugar",
+      "Baking Powder (INS 500(i))",
+      "Yeast Extract",
+      "Soy Protein."
+    ],
+  },
+  {
+    "brandName": "WOW-B Chicken Drumlets",
+    "productName": "Bairaha Foods (Pvt) Ltd",
+    "ingredients": [
+      "Ingredients not fully visible in the provided image."
+    ],
+  },
+]
+ 
