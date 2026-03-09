@@ -9,6 +9,7 @@ class AuthService {
   // ─────────────────────────────────────────
   // FUNCTION 1: Register a brand new user
   // ─────────────────────────────────────────
+
   Future<String?> registerUser({
     required String email,
     required String password,
@@ -17,27 +18,21 @@ class AuthService {
     required String gender,
   }) async {
     try {
-      // STEP A: Create the Firebase Auth account
-      UserCredential credential = await _auth
-          .createUserWithEmailAndPassword(email: email, password: password)
-          .timeout(
-            const Duration(seconds: 15),
-            onTimeout: () => throw Exception(
-              'Connection timed out. Check your internet and try again.',
-            ),
-          );
+      UserCredential credential = await _auth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
 
       String uid = credential.user!.uid;
 
-      // STEP B: Write the Firestore document
-      // Uses merge:true so a partial write doesn't leave a broken document
+      await credential.user!.sendEmailVerification();
+
       await _db.collection('users').doc(uid).set({
         'profile': {
           'userName': userName,
           'email': email,
           'dateOfBirth': Timestamp.fromDate(dateOfBirth),
           'gender': gender,
-          'phone': '',
           'accountCreatedDate': FieldValue.serverTimestamp(),
           'lastLoginDate': FieldValue.serverTimestamp(),
         },
@@ -47,53 +42,29 @@ class AuthService {
           'concerns': [],
           'skinType': '',
         },
-        'meta': {
-          'planType': 'Free',
-          'totalScans': 0,
-          'emailVerified': false,
-        },
-      }, SetOptions(merge: true)).timeout(
-        const Duration(seconds: 15),
-        onTimeout: () => throw Exception(
-          'Could not save profile. Check your internet and try again.',
-        ),
-      );
-
-      // STEP C: Send verification email — fire-and-forget so it never blocks
-      // If this fails, user can request resend later
-      credential.user!.sendEmailVerification().catchError((_) {});
+      });
 
       return uid;
 
     } on FirebaseAuthException catch (e) {
-      // These are specific, actionable errors we can show the user
-      switch (e.code) {
-        case 'email-already-in-use':
-          throw Exception('An account with this email already exists.');
-        case 'weak-password':
-          throw Exception('Password is too weak. Use at least 8 characters.');
-        case 'invalid-email':
-          throw Exception('The email address is not valid.');
-        case 'network-request-failed':
-          throw Exception('No internet connection. Please check your network.');
-        case 'operation-not-allowed':
-          throw Exception('Email/password sign-in is not enabled in Firebase Console.');
-        default:
-          // NOW we surface the real Firebase error code so you can debug it
-          throw Exception('Registration failed [${e.code}]: ${e.message}');
+      if (e.code == 'email-already-in-use') {
+        throw Exception('An account with this email already exists.');
+      } else if (e.code == 'weak-password') {
+        throw Exception('Password is too weak. Use at least 8 characters.');
+      } else if (e.code == 'invalid-email') {
+        throw Exception('The email address is not valid.');
+      } else {
+        throw Exception('Registration failed: ${e.message}');
       }
-    } on Exception {
-      // Re-throw exceptions we already constructed above (timeout, Firestore)
-      rethrow;
     } catch (e) {
-      throw Exception('Unexpected error: $e');
+      throw Exception('Something went wrong. Please try again.');
     }
   }
 
   // ─────────────────────────────────────────
   // FUNCTION 2: Save health profile
-  // Encrypts conditions + allergies before storing
   // ─────────────────────────────────────────
+
   Future<bool> saveHealthProfile({
     required String userId,
     required List<String> conditions,
@@ -102,15 +73,19 @@ class AuthService {
     required String skinType,
   }) async {
     try {
-      final encryptedConditions = await EncryptionService.encryptList(conditions);
-      final encryptedAllergies = await EncryptionService.encryptList(allergies);
+      final encryptedConditions =
+          await EncryptionService.encryptList(conditions);
+      final encryptedAllergies =
+          await EncryptionService.encryptList(allergies);
 
       await _db.collection('users').doc(userId).update({
-        'healthProfile.conditions': encryptedConditions,
-        'healthProfile.allergies': encryptedAllergies,
-        'healthProfile.concerns': concerns,
-        'healthProfile.skinType': skinType,
-      }).timeout(const Duration(seconds: 15));
+        'healthProfile': {
+          'conditions': encryptedConditions,
+          'allergies': encryptedAllergies,
+          'concerns': concerns,
+          'skinType': skinType,
+        },
+      });
 
       return true;
     } catch (e) {
@@ -121,65 +96,61 @@ class AuthService {
   // ─────────────────────────────────────────
   // FUNCTION 3: Log in existing user
   // ─────────────────────────────────────────
+
   Future<String?> loginUser({
     required String email,
     required String password,
   }) async {
     try {
-      UserCredential credential = await _auth
-          .signInWithEmailAndPassword(email: email, password: password)
-          .timeout(const Duration(seconds: 15));
+      UserCredential credential = await _auth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
 
-      await _db.collection('users').doc(credential.user!.uid).update({
+      await _db
+          .collection('users')
+          .doc(credential.user!.uid)
+          .update({
         'profile.lastLoginDate': FieldValue.serverTimestamp(),
-      }).timeout(const Duration(seconds: 10));
+      });
 
       return credential.user!.uid;
 
     } on FirebaseAuthException catch (e) {
-      switch (e.code) {
-        case 'user-not-found':
-          throw Exception('No account found with this email.');
-        case 'wrong-password':
-          throw Exception('Incorrect password. Please try again.');
-        case 'invalid-credential':
-          throw Exception('Incorrect email or password.');
-        case 'user-disabled':
-          throw Exception('This account has been disabled.');
-        case 'too-many-requests':
-          throw Exception('Too many attempts. Please try again later.');
-        case 'network-request-failed':
-          throw Exception('No internet connection. Please check your network.');
-        default:
-          throw Exception('Login failed [${e.code}]: ${e.message}');
+      if (e.code == 'user-not-found') {
+        throw Exception('No account found with this email.');
+      } else if (e.code == 'wrong-password') {
+        throw Exception('Incorrect password. Please try again.');
+      } else if (e.code == 'user-disabled') {
+        throw Exception('This account has been disabled.');
+      } else if (e.code == 'too-many-requests') {
+        throw Exception('Too many attempts. Please try again later.');
+      } else {
+        throw Exception('Login failed: ${e.message}');
       }
-    } on Exception {
-      rethrow;
     } catch (e) {
-      throw Exception('Unexpected error: $e');
+      throw Exception('Something went wrong. Please try again.');
     }
   }
 
   // ─────────────────────────────────────────
-  // FUNCTION 4: Get user profile (with decryption)
+  // FUNCTION 4: Get user profile
   // ─────────────────────────────────────────
+
   Future<Map<String, dynamic>?> getUserProfile(String userId) async {
     try {
-      final doc = await _db
-          .collection('users')
-          .doc(userId)
-          .get()
-          .timeout(const Duration(seconds: 15));
+      final doc = await _db.collection('users').doc(userId).get();
 
       if (!doc.exists) return null;
 
       final data = doc.data()!;
-      final profile = data['profile'] as Map<String, dynamic>? ?? {};
-      final health = data['healthProfile'] as Map<String, dynamic>? ?? {};
-      final meta = data['meta'] as Map<String, dynamic>? ?? {};
+      final profile = data['profile'] as Map<String, dynamic>;
+      final health = data['healthProfile'] as Map<String, dynamic>;
 
-      List<String> rawConditions = List<String>.from(health['conditions'] ?? []);
-      List<String> rawAllergies = List<String>.from(health['allergies'] ?? []);
+      List<String> rawConditions =
+          List<String>.from(health['conditions'] ?? []);
+      List<String> rawAllergies =
+          List<String>.from(health['allergies'] ?? []);
 
       final decryptedConditions = rawConditions.isEmpty
           ? <String>[]
@@ -193,7 +164,6 @@ class AuthService {
         'userId': userId,
         'userName': profile['userName'] ?? '',
         'email': profile['email'] ?? '',
-        'phone': profile['phone'] ?? '',
         'dateOfBirth': profile['dateOfBirth'],
         'gender': profile['gender'] ?? '',
         'accountCreatedDate': profile['accountCreatedDate'],
@@ -202,8 +172,6 @@ class AuthService {
         'allergies': decryptedAllergies,
         'concerns': List<String>.from(health['concerns'] ?? []),
         'skinType': health['skinType'] ?? '',
-        'planType': meta['planType'] ?? 'Free',
-        'totalScans': meta['totalScans'] ?? 0,
       };
     } catch (e) {
       return null;
@@ -213,6 +181,7 @@ class AuthService {
   // ─────────────────────────────────────────
   // FUNCTION 5: Update health profile
   // ─────────────────────────────────────────
+
   Future<bool> updateHealthProfile({
     required String userId,
     required List<String> conditions,
@@ -221,15 +190,17 @@ class AuthService {
     String skinType = '',
   }) async {
     try {
-      final encryptedConditions = await EncryptionService.encryptList(conditions);
-      final encryptedAllergies = await EncryptionService.encryptList(allergies);
+      final encryptedConditions =
+          await EncryptionService.encryptList(conditions);
+      final encryptedAllergies =
+          await EncryptionService.encryptList(allergies);
 
       await _db.collection('users').doc(userId).update({
         'healthProfile.conditions': encryptedConditions,
         'healthProfile.allergies': encryptedAllergies,
         'healthProfile.concerns': concerns,
         'healthProfile.skinType': skinType,
-      }).timeout(const Duration(seconds: 15));
+      });
 
       return true;
     } catch (e) {
@@ -240,6 +211,7 @@ class AuthService {
   // ─────────────────────────────────────────
   // FUNCTION 6: Update personal profile
   // ─────────────────────────────────────────
+
   Future<bool> updatePersonalProfile({
     required String userId,
     required String userName,
@@ -251,7 +223,7 @@ class AuthService {
         'profile.userName': userName,
         'profile.gender': gender,
         'profile.phone': phone,
-      }).timeout(const Duration(seconds: 15));
+      });
 
       return true;
     } catch (e) {
@@ -260,24 +232,24 @@ class AuthService {
   }
 
   // ─────────────────────────────────────────
-  // FUNCTION 7: Increment scan count
-  // Call this every time a scan succeeds
+  // FUNCTION 7: Log out
   // ─────────────────────────────────────────
-  Future<void> incrementScanCount(String userId) async {
-    try {
-      await _db.collection('users').doc(userId).update({
-        'meta.totalScans': FieldValue.increment(1),
-      });
-    } catch (_) {}
+
+  Future<void> logoutUser() async {
+    await _auth.signOut();
   }
 
   // ─────────────────────────────────────────
-  // FUNCTION 8–12: Auth utilities (unchanged)
+  // FUNCTION 8: Get currently logged in user
   // ─────────────────────────────────────────
 
-  Future<void> logoutUser() async => await _auth.signOut();
+  User? getCurrentUser() {
+    return _auth.currentUser;
+  }
 
-  User? getCurrentUser() => _auth.currentUser;
+  // ─────────────────────────────────────────
+  // FUNCTION 9: Send password reset email
+  // ─────────────────────────────────────────
 
   Future<bool> sendPasswordReset(String email) async {
     try {
@@ -288,31 +260,43 @@ class AuthService {
         throw Exception('No account found with this email.');
       }
       throw Exception('Failed to send reset email: ${e.message}');
-    } catch (_) {
+    } catch (e) {
       return false;
     }
   }
+
+  // ─────────────────────────────────────────
+  // FUNCTION 10: Check if email is verified
+  // ─────────────────────────────────────────
 
   Future<bool> isEmailVerified() async {
     await _auth.currentUser?.reload();
     return _auth.currentUser?.emailVerified ?? false;
   }
 
+  // ─────────────────────────────────────────
+  // FUNCTION 11: Resend verification email
+  // ─────────────────────────────────────────
+
   Future<bool> resendVerificationEmail() async {
     try {
       await _auth.currentUser?.sendEmailVerification();
       return true;
-    } catch (_) {
+    } catch (e) {
       return false;
     }
   }
+
+  // ─────────────────────────────────────────
+  // FUNCTION 12: Delete account
+  // ─────────────────────────────────────────
 
   Future<bool> deleteAccount(String userId) async {
     try {
       await _db.collection('users').doc(userId).delete();
       await _auth.currentUser?.delete();
       return true;
-    } catch (_) {
+    } catch (e) {
       return false;
     }
   }
