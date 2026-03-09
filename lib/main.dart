@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
+import 'package:firebase_core/firebase_core.dart'; // YOUR ADDITION
+import 'firebase_options.dart'; // YOUR ADDITION
 import 'views/home_screen.dart';
-import 'views/theme_notifier.dart'; // Import the new notifier
+import 'views/theme_notifier.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // 1. Try to find cameras
+  // 1. Initialize Firebase (Required for your features)
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  // 2. Try to find cameras
   List<CameraDescription> cameras = [];
   try {
     cameras = await availableCameras();
@@ -14,7 +19,7 @@ Future<void> main() async {
     print("Camera Error: $e");
   }
 
-  // 2. Start the app
+  // 3. Start the app
   runApp(FrovyApp(cameras: cameras));
 }
 
@@ -25,22 +30,18 @@ class FrovyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Wrap the entire app in a ValueListenableBuilder
-    // This listens to 'themeNotifier' and rebuilds when it changes
     return ValueListenableBuilder<ThemeMode>(
       valueListenable: themeNotifier,
       builder: (context, currentMode, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Fro-vy',
-          
-          // --- THEME CONFIGURATION ---
-          themeMode: currentMode, // This is the magic line that switches modes
-
-          // 1. LIGHT THEME DEFINITION
+          themeMode: currentMode,
           theme: ThemeData(
             brightness: Brightness.light,
-            colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF6AA15E)),
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: const Color(0xFF6AA15E),
+            ),
             scaffoldBackgroundColor: const Color(0xFFF8F9FA),
             useMaterial3: true,
             appBarTheme: const AppBarTheme(
@@ -48,25 +49,21 @@ class FrovyApp extends StatelessWidget {
               foregroundColor: Colors.white,
             ),
           ),
-
-          // 2. DARK THEME DEFINITION
           darkTheme: ThemeData(
             brightness: Brightness.dark,
             colorScheme: ColorScheme.fromSeed(
               seedColor: const Color(0xFF6AA15E),
               brightness: Brightness.dark,
             ),
-            scaffoldBackgroundColor: const Color(0xFF121212), // Dark grey background
+            scaffoldBackgroundColor: const Color(0xFF121212),
             useMaterial3: true,
             appBarTheme: const AppBarTheme(
-              backgroundColor: Color(0xFF1F1F1F), // Darker header
+              backgroundColor: Color(0xFF1F1F1F),
               foregroundColor: Colors.white,
             ),
-            cardTheme: const CardThemeData(
-              color: Color(0xFF2C2C2C), // Dark cards
-            ),
+            cardTheme: const CardThemeData(color: Color(0xFF2C2C2C)),
           ),
-          
+          // Ensure this passes the cameras if the team's HomeScreen needs them
           home: HomeScreen(cameras: cameras),
         );
       },
