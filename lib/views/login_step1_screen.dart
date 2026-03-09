@@ -246,7 +246,7 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
       width: double.infinity,
       height: 48,
       child: OutlinedButton.icon(
-        onPressed: null, // TODO: Implement Google Sign In
+        onPressed: null, 
         icon: const Icon(Icons.g_mobiledata),
         label: const Text('Continue with Google'),
         style: OutlinedButton.styleFrom(
@@ -263,7 +263,7 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
       width: double.infinity,
       height: 48,
       child: ElevatedButton.icon(
-        onPressed: null, // TODO: Implement Apple Sign In
+        onPressed: null, 
         icon: const Icon(Icons.apple),
         label: const Text('Continue with Apple'),
         style: ElevatedButton.styleFrom(
@@ -285,7 +285,7 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
       children: [
         const Text("Already have an account? "),
         TextButton(
-          onPressed: null, // TODO: Navigate to Login screen
+          onPressed: null, 
           child: const Text(
             'Log in',
             style: TextStyle(

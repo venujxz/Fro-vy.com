@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'home_screen.dart';
 
 class VerificationSentScreen extends StatefulWidget {
   final String email;
@@ -14,22 +16,25 @@ class _VerificationSentScreenState extends State<VerificationSentScreen> {
   Timer? _timer;
 
   @override
-  void initState() {
-    super.initState();
+void initState() {
+  super.initState();
 
-    // Auto redirect after a short delay
-    _timer = Timer(const Duration(seconds: 3), () {
+  // Poll every 3 seconds to check if email has been verified
+  _timer = Timer.periodic(const Duration(seconds: 3), (timer) async {
+    await FirebaseAuth.instance.currentUser?.reload();
+    final user = FirebaseAuth.instance.currentUser;
+    
+    if (user != null && user.emailVerified) {
+      timer.cancel();
       if (!mounted) return;
-
-      // TODO: Replace this with your real dashboard screen
-      // Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const DashboardScreen()));
-
-      // For now: just go back to first screen OR show a snackbar
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Redirect (connect to Dashboard later)")),
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (_) => HomeScreen(cameras: const [])),
+        (route) => false,
       );
-    });
-  }
+    }
+  });
+}
 
   @override
   void dispose() {
