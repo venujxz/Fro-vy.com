@@ -313,4 +313,292 @@
       "Permitted food colour (INS 110)."
     ],
   },
+   
+  {
+    "brandName": "Chicken Sandwich Slices",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Halal Chicken",
+      "Soy Protein",
+      "Salt",
+      "Sodium Di-",
+      "Tri- and Polyphosphates (INS 450",
+      "INS 451",
+      "INS 452)",
+      "Sugar",
+      "Sodium Nitrite (INS 250)",
+      "Mixed Spices."
+    ],
+  },
+  {
+    "brandName": "Chicken Sandwich Slices",
+    "productName": "Crescent Fine Foods",
+    "ingredients": [
+      "Ingredients not fully visible in the provided front-facing image."
+    ],
+  },
+  {
+    "brandName": "Crispy Chicken Bacon",
+    "productName": "Crescent Fine Foods",
+    "ingredients": [
+      "Halal Chicken",
+      "Salt",
+      "Soy Protein",
+      "Corn Starch",
+      "Sodium Di-",
+      "Tri- and Polyphosphates (INS 450",
+      "INS 451",
+      "INS 452)",
+      "Sugar",
+      "Ascorbic Acid (INS 300)",
+      "Sodium Nitrite (INS 250)",
+      "Mixed Spices."
+    ],
+  },
+  {
+    "brandName": "Chicken Meatballs",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Chicken",
+      "Cereal Binders",
+      "Isolated Soya Protein",
+      "Refined Deodorized Palm Oil",
+      "B. Onion",
+      "Sugar",
+      "Yeast Extract",
+      "Ascorbic Acid (INS 300)",
+      "Sodium Ascorbate (INS 301)",
+      "Natural Color (Beetroot Red)",
+      "Permitted Food Color (INS 161g)."
+    ],
+  },
+  {
+    "brandName": "Frankie Cheesy Blast Chicken Sausages",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Chicken",
+      "Cheese",
+      "Cereal Binders",
+      "Iodized Salt",
+      "Refined Deodorized Palm Oil",
+      "B. Onion",
+      "Mixed Spices",
+      "Isolated Soya Protein",
+      "Binder (INS 451)",
+      "Full Cream Milk Powder",
+      "Nature Identical Chicken Flavour",
+      "Nature Identical Cheese Flavour",
+      "Sodium Ascorbate (INS 301)",
+      "Ascorbic Acid (INS 300)",
+      "Permitted Food Colour (INS 161g)."
+    ],
+  },
+
+  {
+    "brandName": "Garlic Chicken Sausages",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Chicken",
+      "Wheat Flour",
+      "Refined Deodorized Palm Oil",
+      "Isolated Soya Protein",
+      "Iodized Salt",
+      "Garlic",
+      "Ginger",
+      "Nutmeg",
+      "Cinnamon",
+      "White Pepper",
+      "Phosphates (INS 450 i",
+      "iii",
+      "INS 451 i",
+      "INS 452 ii)",
+      "Nature Identical Chicken Flavour",
+      "Natural Color (Beetroot Red)."
+    ],
+  },
+  {
+    "brandName": "Chicken Sandwich Slices",
+    "productName": "Bairaha Foods (Pvt) Ltd",
+    "ingredients": [
+      "Chicken",
+      "Ice & Water",
+      "Cereal Binders",
+      "Iodized Salt",
+      "Isolated Soya Protein",
+      "Mixed Spices",
+      "Phosphates (INS 450",
+      "INS 451",
+      "INS 452)",
+      "Curing Salt (INS 250)",
+      "Permitted Colouring (INS 122)."
+    ],
+  },
+  {
+    "brandName": "Vegetarian Sausages",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Textured Vegetable Protein",
+      "Soy Milk Protein",
+      "Soy Protein Isolate",
+      "Modified Potato Starch",
+      "Vegetable Oil",
+      "Seaweed Extract",
+      "Sugar",
+      "Common Salt."
+    ],
+  },
+  {
+    "brandName": "Chicken Slices",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Chicken",
+      "Cereal Binders",
+      "Refined Deodorized Palm Oil",
+      "Isolated Soya Protein",
+      "Iodized Salt",
+      "Mixed Spices",
+      "Natural Color (Beetroot Red)",
+      "Phosphate Binders (INS 451)",
+      "Nature Identical Chicken Flavor",
+      "Yeast Extract",
+      "Permitted Food Colors (INS 161g)",
+      "Ascorbic Acid (INS 300)",
+      "Sodium Ascorbate (INS 301)."
+    ],
+  },
+  {
+    "brandName": "Chicken Bratwurst",
+    "productName": "Elephant House (Keells)",
+    "ingredients": [
+      "Chicken",
+      "Cereal Binders",
+      "Iodized Salt",
+      "Mixed Spices",
+      "Phosphates (INS 451)",
+      "Natural Color (Beetroot Red)",
+      "Ascorbic Acid (INS 300)",
+      "Yeast Extract",
+      "Sodium Ascorbate (INS 301)."
+    ],
+  },
+  {
+    "brandName": "Smoky Cheesy Chicken Sausages",
+    "productName": "Elephant House (Keells)",
+    "ingredients": [
+      "Chicken",
+      "Cheese",
+      "Cereal Binders",
+      "Isolated Soya Protein",
+      "B. Onion",
+      "Iodized Salt",
+      "Mixed Spices",
+      "Phosphate Binders (INS 451 i)",
+      "Natural Colour (Beetroot Red)",
+      "Fresh Garlic",
+      "Yeast Extract",
+      "Ascorbic Acid (INS 300)",
+      "Sodium Ascorbate (INS 301)."
+    ],
+  },
+  {
+    "brandName": "Chicken Sausage Meat",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Chicken",
+      "Isolated Soya Protein",
+      "Cereal Binders",
+      "Deodorized Palm Oil",
+      "Iodized Salt",
+      "Mixed Phosphate Binders (INS 451)",
+      "Nature Identical Flavor",
+      "Ascorbic Acid (INS 300)",
+      "Sodium Ascorbate (INS 301)",
+      "Natural Color (Beetroot Red)",
+      "Permitted Food Color (INS 161g)",
+      "Yeast Extract."
+    ],
+  },
+  {
+    "brandName": "Heat & Eat Devilled Chicken",
+    "productName": "Crescent Fine Foods",
+    "ingredients": [
+      "Halal Chicken",
+      "Onion",
+      "Soya Bean Sauce",
+      "Capsicum",
+      "Tomato Paste",
+      "Sugar",
+      "Wheat Flour",
+      "Salt",
+      "Mixed Spices",
+      "Garlic",
+      "Sodium Di-",
+      "Tri- and Polyphosphates (INS 450",
+      "INS 451",
+      "INS 452)."
+    ],
+  }
+  {
+    "brandName": "Heat & Eat Chicken Kheema",
+    "productName": "Crescent Fine Foods",
+    "ingredients": [
+      "Halal Chicken",
+      "Onion",
+      "Cereal Binder",
+      "Rice Bran Oil",
+      "Tomato Sauce",
+      "Mixed Spices",
+      "Garlic",
+      "Tomato Paste",
+      "Salt",
+      "Ginger",
+      "Herbs",
+      "Corn Flour."
+    ],
+  },
+  {
+    "brandName": "Chicken Wings (Marinated)",
+    "productName": "Bairaha Foods (Pvt) Ltd",
+    "ingredients": [
+      "Chicken Wings",
+      "Cereals",
+      "Cold Water",
+      "Mixed Spices",
+      "Iodized Salt",
+      "Tomato & Soya Sauce",
+      "Phosphates (INS 450",
+      "INS 451",
+      "INS 452)",
+      "Sugar",
+      "Curing Salt (INS 250)",
+      "Permitted Colouring (INS 110",
+      "INS 122",
+      "INS 102)."
+    ],
+  },
+  {
+    "brandName": "Popcorn Chicken",
+    "productName": "Crescent Fine Foods",
+    "ingredients": [
+      "Halal Chicken",
+      "Wheat Flour",
+      "Corn Starch",
+      "Spices",
+      "Salt",
+      "Phosphate Binders (INS 451)",
+      "Soy Sauce",
+      "Sugar",
+      "Baking Powder (INS 500(i))",
+      "Yeast Extract",
+      "Soy Protein."
+    ],
+  },
+  {
+    "brandName": "WOW-B Chicken Drumlets",
+    "productName": "Bairaha Foods (Pvt) Ltd",
+    "ingredients": [
+      "Ingredients not fully visible in the provided image."
+    ],
+  },
 ]
+ 
