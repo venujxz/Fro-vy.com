@@ -154,5 +154,21 @@
   "faq_a4": "Absolutely. Your health information is encrypted and never shared with third parties. You can request data deletion at any time.",
   "have_feedback": "Have Feedback?",
   "feedback_subtitle": "We'd love to hear your thoughts on how we can improve Fro-vy!",
-  "send_feedback": "Send Feedback"
+  "send_feedback": "Send Feedback",
+
+  
+  "help_support": "Help & Support",
+  "contact_us": "Contact Us",
+  "live_chat": "Live Chat",
+  "live_chat_timing": "Available 9am - 6pm EST",
+  "faq_q1": "How accurate is the ingredient analysis?",
+  "faq_a1": "Our analysis uses a comprehensive database...",
+  "send_feedback": "Send Feedback",
+  "faq_title": "FAQ",
+
+  "support_email_address": "support@fro-vy.com",
+  "support_phone_number" : "1-800-FRO-VY-HELP",
+  "feedback_description" : "We'd love to hear your thoughts on how we can improve Fro-vy!"
+
+
 }

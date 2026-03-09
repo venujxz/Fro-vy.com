@@ -126,9 +126,7 @@ class CameraScreenState extends State<CameraScreen> {
 
         centerTitle: true,
 
-        actions: const [
-          LanguageSwitcher(),
-        ],
+    
       ),
 
       // ---------- BODY ----------

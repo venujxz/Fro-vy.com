@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 import 'theme_notifier.dart'; // Import the notifier
 
 class SettingsScreen extends StatefulWidget {
@@ -9,14 +10,13 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  // Brand Colors (Getters allow them to adapt if needed)
+  // Brand Colors
   Color get frovyGreen => const Color(0xFF6AA15E);
   Color get frovyRed => const Color(0xFFD32F2F);
   
-  // Local state for other toggles
+  // Local state for notification toggles
   bool _pushNotifications = true;
   bool _emailUpdates = true;
-  String _selectedLanguage = "English";
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +24,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
-      // In Dark Mode, we don't want the green background
       backgroundColor: isDarkMode ? null : frovyGreen, 
       
       appBar: AppBar(
-        // In Dark Mode, AppBar color comes from the theme
         backgroundColor: isDarkMode ? null : frovyGreen,
         elevation: 0,
         centerTitle: true,
@@ -37,7 +35,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          "Settings",
+          "settings".tr(), // Localized Title
           style: TextStyle(
             color: isDarkMode ? Colors.white : Colors.black, 
             fontWeight: FontWeight.bold
@@ -48,7 +46,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         width: double.infinity,
         height: double.infinity,
         decoration: isDarkMode 
-            ? null // No gradient in dark mode
+            ? null 
             : BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
@@ -60,19 +58,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
           padding: const EdgeInsets.all(24),
           child: Column(
             children: [
-              // 1. Appearance Section (THE DARK MODE TOGGLE)
+              // 1. Appearance Section
               _buildSectionCard(
                 context,
-                title: "Appearance",
+                title: "appearance".tr(),
                 icon: Icons.dark_mode_outlined,
                 iconColor: Colors.purple,
                 children: [
                   _buildToggleTile(
-                    "Dark Mode", 
-                    "Switch to dark theme", 
-                    isDarkMode, // The switch position depends on the actual theme
+                    "dark_mode".tr(), 
+                    "dark_mode_desc".tr(), 
+                    isDarkMode, 
                     (val) {
-                       // This triggers the global theme change
                        themeNotifier.toggleTheme(val);
                     }
                   ),
@@ -81,41 +78,31 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
               const SizedBox(height: 20),
 
-              // 2. Notifications
+              // 2. Notifications Section
               _buildSectionCard(
                 context,
-                title: "Notifications",
+                title: "notifications".tr(),
                 icon: Icons.notifications_none,
                 iconColor: const Color(0xFFFF8A65),
                 children: [
-                  _buildToggleTile("Push Notifications", "Receive alerts", _pushNotifications, (v) => setState(() => _pushNotifications = v)),
-                  _buildToggleTile("Email Updates", "Health tips", _emailUpdates, (v) => setState(() => _emailUpdates = v)),
+                  _buildToggleTile(
+                    "push_notifications".tr(), 
+                    "receive_alerts".tr(), 
+                    _pushNotifications, 
+                    (v) => setState(() => _pushNotifications = v)
+                  ),
+                  _buildToggleTile(
+                    "email_updates".tr(), 
+                    "health_tips".tr(), 
+                    _emailUpdates, 
+                    (v) => setState(() => _emailUpdates = v)
+                  ),
                 ],
               ),
               
               const SizedBox(height: 20),
 
-              // 3. Language
-              _buildSectionCard(
-                context,
-                title: "Language",
-                icon: Icons.language,
-                iconColor: Colors.blue,
-                children: [
-                   ListTile(
-                    contentPadding: EdgeInsets.zero,
-                    title: const Text("Language", style: TextStyle(fontWeight: FontWeight.w500)),
-                    trailing: Text(_selectedLanguage, style: const TextStyle(color: Colors.grey)),
-                    onTap: () {
-                      // Simple Dialog Logic
-                    },
-                   )
-                ],
-              ),
-
-              const SizedBox(height: 20),
-
-              // 4. Danger Zone
+              // 3. Danger Zone
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
@@ -125,17 +112,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Danger Zone", style: TextStyle(color: frovyRed, fontWeight: FontWeight.bold)),
+                    Text("danger_zone".tr(), style: TextStyle(color: frovyRed, fontWeight: FontWeight.bold)),
                     const SizedBox(height: 16),
                     SizedBox(
                       width: double.infinity,
                       child: OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          // Action for account deletion
+                        },
                         style: OutlinedButton.styleFrom(
                           foregroundColor: frovyRed, 
                           side: BorderSide(color: frovyRed)
                         ),
-                        child: const Text("Delete Account"),
+                        child: Text("delete_account".tr()),
                       ),
                     ),
                   ],
@@ -151,16 +140,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
   // --- Helper Widgets ---
 
   Widget _buildSectionCard(BuildContext context, {required String title, required IconData icon, required Color iconColor, required List<Widget> children}) {
-    // Check theme for card color
     final isDark = Theme.of(context).brightness == Brightness.dark;
     
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF2C2C2C) : Colors.white, // Dark grey for cards in Dark Mode
+        color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
-          if (!isDark) // Only show shadow in light mode
+          if (!isDark) 
             BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 4))
         ],
       ),

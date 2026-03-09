@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 
 class EditProfileScreen extends StatefulWidget {
   final int initialIndex; // To open specific tab (0 = Personal, 1 = Health)
@@ -23,7 +24,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
   final TextEditingController _dobController = TextEditingController(text: "2000-11-22");
 
   // Health Data State
-  // We use a Set for allergies so we can toggle them on/off easily
   final Set<String> _selectedAllergies = {"Peanuts", "Shellfish"};
   final List<String> _commonAllergies = [
     "Peanuts", "Shellfish", "Milk", "Eggs", "Soy", "Wheat", "Fish", "Tree Nuts", "Gluten"
@@ -57,14 +57,13 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
       appBar: AppBar(
         backgroundColor: frovyGreen,
         elevation: 0,
-        title: const Text("Edit Profile", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
+        title: Text("edit_profile".tr(), style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.close, color: Colors.white),
           onPressed: () => Navigator.pop(context),
         ),
         actions: [
-          // --- THE SAVE BUTTON LOGIC ---
           TextButton(
             onPressed: () {
               // 1. Capture the updated data into a Map
@@ -73,19 +72,19 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
                 "email": _emailController.text,
                 "phone": _phoneController.text,
                 "dob": _dobController.text,
-                "allergies": _selectedAllergies.toList(), // Convert Set to List
+                "allergies": _selectedAllergies.toList(), 
                 "conditions": _medicalConditionsController.text,
                 "sensitivities": _otherSensitivitiesController.text,
               };
 
-              // 2. Send it back to the previous screen (ProfileScreen)
+              // 2. Send it back to the previous screen
               Navigator.pop(context, updatedData); 
               
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text("Profile Updated Successfully!")),
+                SnackBar(content: Text("profile_updated".tr())),
               );
             },
-            child: const Text("SAVE", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+            child: Text("save".tr(), style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
           )
         ],
         bottom: TabBar(
@@ -94,9 +93,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
           indicatorWeight: 3,
           labelColor: Colors.white,
           unselectedLabelColor: Colors.white70,
-          tabs: const [
-            Tab(text: "Personal Details"),
-            Tab(text: "Health Profile"),
+          tabs: [
+            Tab(text: "personal_details".tr()),
+            Tab(text: "health_profile".tr()),
           ],
         ),
       ),
@@ -110,10 +109,11 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
               children: [
                 _buildProfilePhoto(),
                 const SizedBox(height: 30),
-                _buildTextField("Full Name", _nameController, Icons.person_outline),
-                _buildTextField("Email", _emailController, Icons.email_outlined),
-                _buildTextField("Phone Number", _phoneController, Icons.phone_outlined),
-                _buildTextField("Date of Birth", _dobController, Icons.calendar_today),
+                _buildTextField("full_name".tr(), _nameController, Icons.person_outline),
+                _buildTextField("email".tr(), _emailController, Icons.email_outlined),
+                _buildTextField("phone_number".tr(), _phoneController, Icons.phone_outlined),
+                _buildTextField("date_of_birth".tr(), _dobController, Icons.calendar_today),
+                
                 // Gender Dropdown
                 Container(
                   margin: const EdgeInsets.only(bottom: 20),
@@ -126,9 +126,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
                   child: DropdownButtonHideUnderline(
                     child: DropdownButton<String>(
                       isExpanded: true,
-                      value: "Male",
-                      items: ["Male", "Female", "Other", "Prefer not to say"]
-                          .map((e) => DropdownMenuItem(value: e, child: Text(e)))
+                      value: "male", // Using the key from en.json
+                      items: ["male", "female", "other", "prefer_not_to_say"]
+                          .map((e) => DropdownMenuItem(value: e, child: Text(e.tr())))
                           .toList(),
                       onChanged: (val) {},
                     ),
@@ -144,13 +144,12 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text("Food Allergies", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                Text("food_allergies".tr(), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
                 const SizedBox(height: 8),
-                const Text("Select all that apply. We will warn you if any product contains these ingredients.", 
-                  style: TextStyle(color: Colors.grey, fontSize: 12)),
+                Text("allergy_instruction".tr(), 
+                  style: const TextStyle(color: Colors.grey, fontSize: 12)),
                 const SizedBox(height: 16),
                 
-                // Interactive Chip Grid
                 Wrap(
                   spacing: 8,
                   runSpacing: 8,
@@ -180,15 +179,15 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
 
                 const SizedBox(height: 30),
                 
-                const Text("Medical Conditions", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                Text("medical_conditions".tr(), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
                 const SizedBox(height: 8),
-                _buildTextField("Enter conditions (e.g. Diabetes)", _medicalConditionsController, Icons.medical_services_outlined, maxLines: 2),
+                _buildTextField("enter_conditions".tr(), _medicalConditionsController, Icons.medical_services_outlined, maxLines: 2),
 
                 const SizedBox(height: 10),
 
-                const Text("Other Sensitivities", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                Text("other_sensitivities".tr(), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
                 const SizedBox(height: 8),
-                _buildTextField("E.g. Lactose, Caffeine", _otherSensitivitiesController, Icons.warning_amber_rounded),
+                _buildTextField("enter_sensitivities".tr(), _otherSensitivitiesController, Icons.warning_amber_rounded),
               ],
             ),
           ),
