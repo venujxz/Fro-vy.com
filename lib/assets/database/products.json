@@ -331,13 +331,6 @@
     ],
   },
   {
-    "brandName": "Chicken Sandwich Slices",
-    "productName": "Crescent Fine Foods",
-    "ingredients": [
-      "Ingredients not fully visible in the provided front-facing image."
-    ],
-  },
-  {
     "brandName": "Crispy Chicken Bacon",
     "productName": "Crescent Fine Foods",
     "ingredients": [
@@ -594,11 +587,600 @@
     ],
   },
   {
-    "brandName": "WOW-B Chicken Drumlets",
-    "productName": "Bairaha Foods (Pvt) Ltd",
+    "brandName": "Bairaha",
+    "productName": "Chicken Drumlets",
     "ingredients": [
-      "Ingredients not fully visible in the provided image."
-    ],
+      "Chicken Drumlets",
+      "Iodized Salt",
+      "Mixed Spices",
+      "Wheat Flour",
+      "Sodium Bicarbonate (INS 500 (ii))",
+      "Sunset Yellow Colorant (INS 110)",
+      "Flashed Fried in Vegetable Oil (RBD Palm Olein)"
+    ]
+  }
+  {
+    "brandName": "Maliban",
+    "productName": "Bran Cracker",
+    "ingredients": [
+      "Wheat Flour",
+      "Atta flour"
+      "Whole Meal Flour",
+      "Edible Wheat Bran 6%",
+      "Malt Extract",
+      "Vegetable oil (Palm)",
+      "Salt",
+      "Yeast",
+      "Leavening agent(Sodium Bicarbonate-INS 500ii)",
+    ]
   },
-]
- 
+  {
+    "brandName": "Maliban",
+    "productName": "Spicy Crackers",
+    "ingredients": [
+      "Wheat flour",
+      "Vegetable fat(Palm Oil)",
+      "Salt",
+      "Chili flakes",
+      "Yeast",
+      "Malt",
+      "Emulsifier (INS 481i)",
+      "Leavening Agent (INS 500ii)",
+      "Nature identical (Chili) flavour",
+      "Artificial (Milk) flavour",
+      "Natural spices(Chili,Pepper,Cumin)"
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "Sun Cracker",
+    "ingredients": [
+      "Wheat Flour",
+      "Palm Olein",
+      "Iodized Salt(23%)",
+      "Yeast",
+      "Malt",
+      "Leavening Agent [Sodium Bicarbonate (500ii)]",
+      "Pepper Pieces(1%) and Emulsifier [Soya Lecithin (322]"
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "Potato Cracker",
+    "ingredients": [
+      "Wheat Flour",
+      "Potato Flour",
+      "Vegetable Oil",
+      "Salt",
+      "Yeast",
+      "Leavening Agent (500ii)",
+      "Soya Lecithin",
+      "Plant Extract(Rosemary)"
+    ]
+  },
+
+  {
+    "brandName": "Munchee",
+    "productName": "POTATO CRACKER",
+    "ingredients": [
+      "Wheat Flour",
+      "Potato Flour",
+      "Vegetable Oil",
+      "Salt",
+      "Yeast",
+      "Leavening Agent (500ii)",
+      "Soya Lecithin",
+      "Plant Extract (Rosemary)."
+    ]
+  },
+  {
+    "brandName": "Julie's",
+    "productName": "SUGAR CRACKERS",
+    "ingredients": [
+      "Wheat Flour (45%)",
+      "Vegetable Oil (Palm Oil)",
+      "Sugar (11%)",
+      "Corn Starch",
+      "Leavening Agents [Ammonium Bicarbonate (INS 503(ii))",
+      "Sodium Bicarbonate (INS 500(ii))",
+      "Disodium Diphosphate (INS 450(i))]",
+      "Whey Powder",
+      "Salt",
+      "Glucose Syrup",
+      "Tapioca Starch",
+      "Yeast",
+      "Flavourings."
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "TiFiN Original",
+    "ingredients": [
+      "Wheat Flour",
+      "Palm Olein",
+      "Glucose",
+      "Corn Flour",
+      "Malt",
+      "Leavening Agents (Sodium Bicarbonate (500ii)",
+      "Ammonium Bicarbonate (503ii))",
+      "Iodized Salt",
+      "Milk Powder",
+      "Sugar",
+      "Emulsifier [Soya Lecithin (322)]."
+    ]
+  },
+
+{
+    "brandName": "Maliban",
+    "productName": "Cheesebits",
+    "ingredients": [
+      "Wheat flour",
+      "Vegetable oil (Palm)",
+      "Cheese powder 7%",
+      "Salt",
+      "Yeast extract",
+      "Nature identical cheese flavour",
+      "Yeast",
+      "Pepper powder",
+      "Emulsifier (Soya lecithin-INS 322)",
+      "Leavening agent (Sodium bicarbonate-INS 500ii)",
+      "Flour treatment agent (Sodium metabisulphite-INS 223)",
+      "Malt(Barley)extract."
+    ]
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "CHICK BITS",
+    "ingredients": [
+      "Wheat flour",
+      "Vegetable oil (Palm, Coconut)",
+      "Nature identical chicken flavor",
+      "Salt",
+      "Yeast extract",
+      "Yeast",
+      "Leavening agent (Sodium bicarbonate- INS 500ii)",
+      "Pepper Powder",
+      "Emulsifier (Soy lecithin- INS 322)",
+      "Flour treatment agent (Sodium metabisulphite -INS 223)."
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "SALSA BISCUITS MEXICANA",
+    "ingredients": [
+      "Wheat Flour",
+      "Palm Olein",
+      "Corn Flour",
+      "Spices (Chilli (0.29%)",
+      "Pepper",
+      "Onion",
+      "and Coriander)",
+      "Iodized Salt",
+      "Malt",
+      "Yeast",
+      "Leavening Agent [Sodium Bicarbonate (500ii)]",
+      "and Emulsifier [Soya Lecithin (322)]."
+    ]
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "KRISCO Snack Crackers",
+    "ingredients": [
+      "Wheat flour",
+      "Vegetable oil (Palm, Coconut)",
+      "Yeast",
+      "Malt (Barley) extract",
+      "Salt",
+      "Natural spices (Pepper, Chili)",
+      "Humectant (Glycerol -INS 422)",
+      "Leavening agent (Sodium bicarbonate -INS 500ii)",
+      "Emulsifier (Soya lecithin -INS 322)",
+      "Yeast extract",
+      "Flour treatment agent (Sodium Metabisulphite - INS 223)."
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "Savoury Nuts BISCUITS",
+    "ingredients": [
+      "Wheat Flour",
+      "Palm Olein",
+      "Iodized Salt",
+      "Milk Powder",
+      "Sugar",
+      "Chilli Powder (1.5%)",
+      "Leavening Agents [Sodium Bicarbonate (500ii)",
+      "Ammonium Bicarbonate (503ii)]",
+      "and Yeast."
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "Cheese Buttons BISCUITS",
+    "ingredients": [
+      "Wheat Flour",
+      "Palm Olein",
+      "Cheese Powder (8.4%)",
+      "Sugar",
+      "Yeast",
+      "Iodized Salt",
+      "Milk Powder",
+      "Leavening Agents [Sodium Bicarbonate (500ii)",
+      "Ammonium Bicarbonate (503ii)]",
+      "Chilli Powder",
+      "Nature Identical (Cheese) Flavour",
+      "and Permitted Natural Colours [Paprika Oleoresin (160c)",
+      "Curcumin (100(i))]."
+    ]
+  },
+  {
+    "brandName": "KIST",
+    "productName": "Wafers STRAWBERRY Crispy Creamy",
+    "ingredients": [
+      "Wheat Flour",
+      "Sugar",
+      "Vegetable Fat",
+      "Dextrose",
+      "Salt",
+      "Corn Flour",
+      "Leavening Agents [Ammonium Bicarbonate (INS503(ii))",
+      "Sodium Bicarbonate (INS500(ii))]",
+      "Nature Identical Strawberry Flavour",
+      "Permitted Colours [Ponceau 4R (INS124)]",
+      "Soya Lecithin (INS322)",
+      "Permitted Dough Conditioner [Sodium Metabisulfite (INS223)]."
+    ]
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "WAFERS CRUNCHIER Lemon Cream",
+    "ingredients": [
+      "Wheat flour",
+      "Sugar",
+      "Vegetable fat (palm oil)",
+      "Glucose",
+      "Corn starch",
+      "Milk powder",
+      "Natural lemon flavour",
+      "Emulsifier (Soya lecithin - INS 322)",
+      "Leavening agents (Sodium bicarbonate - INS 500ii",
+      "Ammonium bicarbonate - INS 503ii)",
+      "Salt",
+      "Acidity regulators (Citric acid - INS 330)",
+      "Permitted natural colours (Natural Carotenes Extracts (Vegetable) INS 160a(ii))."
+    ]
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "WAFERS CRUNCHIER Chocolate Flavoured Wafers",
+    "ingredients": [
+      "Wheat flour",
+      "Sugar",
+      "Vegetable fat(Palm)",
+      "Glucose",
+      "Corn starch",
+      "Cocoa powder 2%",
+      "Milk powder",
+      "Emulsifier (Soya lecithin- INS 322)",
+      "Leavening agents (Sodium bicarbonate - INS 500ii",
+      "Ammonium bicarbonate-INS 503ii",
+      "Salt",
+      "Nature identical chocolate flavour",
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "Ginger Biscuits",
+    "ingredients": [
+      "Wheat Flour",
+      "Sugar",
+      "Vegetable Oil",
+      "Ginger Powder",
+      "Leavening Agents [Sodium Bicarbonate (500ii)",
+      "Ammonium Bicarbonate (503ii)]",
+      "Salt",
+      "Pepper Powder",
+      "and Emulsifier [Soya Lecithin (322)]."
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "Milk Cream BISCUITS",
+    "ingredients": [
+      "Wheat Flour",
+      "Sugar",
+      "Hydrogenated Palm Kernel Oil",
+      "Palm Olein",
+      "Corn Starch",
+      "Glucose",
+      "Rice Flour",
+      "Whey Powder",
+      "Milk Powder (0.5%)",
+      "Leavening Agents (Sodium Bicarbonate (500ii)",
+      "Ammonium Bicarbonate (503ii))",
+      "Iodized Salt",
+      "Emulsifier [Soya Lecithin (322)]",
+      "and Nature Identical (Milk and Vanilla) Flavours."
+    ]
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "Custard Cream Biscuit",
+    "ingredients": [
+      "Wheat flour",
+      "Sugar",
+      "Vegetable fat (Palm Oil)",
+      "Sugar Syrup",
+      "Milk powder",
+      "Leavening Agents (INS 500ii, INS 503ii)",
+      "Salt",
+      "Emulsifier (Soya lecithin)",
+      "Artificial (Vanilla, Custard, Butter) flavors",
+      "Corn starch",
+      "Humectant (INS 422)",
+      "Permitted Natural colours (INS 160a(ii), INS 100(i))."
+    ]
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "Real Chocolate CREAM BISCUIT",
+    "ingredients": [
+      "Wheat flour",
+      "Sugar",
+      "Vegetable fat (Palm oil)",
+      "Glucose",
+      "Cocoa powder",
+      "Starch (Corn, Potato)",
+      "Milk powder",
+      "Glucose syrup",
+      "Permitted natural color (Caramel class IV-INS 150d)",
+      "Leavening agents (Ammonium bicarbonate-INS 503ii",
+      "Sodium bicarbonate-INS 500ii)",
+      "Salt",
+      "Chocolate 0.5%",
+      "Nature identical (Chocolate, Milk, Vanilla) flavours",
+      "Emulsifier (Soya lecithin-INS 322)."
+    ]
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "Orange Cream Biscuit",
+    "ingredients": [
+      "Wheat flour",
+      "Sugar",
+      "Vegetable fat (palm)",
+      "Glucose",
+      "Starch (Corn, Potato)",
+      "Sugar syrup",
+      "Milk powder 0.4%",
+      "Emulsifier (Soya lecithin-INS 322)",
+      "Leavening agents (Sodium bicarbonate-INS 500ii",
+      "Ammonium bicarbonate-INS 503ii)",
+      "Salt",
+      "Nature identical (Milk, Vanilla) flavours",
+      "Natural orange flavour",
+      "Permitted natural colour (Paprika oleoresin- INS 160c)",
+      "Acidity regulator (Citric acid-INS 330)."
+    ]
+  },
+  {
+    "brandName": "Julie's",
+    "productName": "Choco More Sandwich",
+    "ingredients": [
+      "Wheat Flour",
+      "Sugar",
+      "Vegetable Oil (Palm Oil)",
+      "Cocoa Powder (7.2%)",
+      "Corn Starch",
+      "Cocoa Mass (1.6%)",
+      "Glucose Syrup",
+      "Skimmed Milk Powder",
+      "Lactose",
+      "Salt",
+      "Leavening Agents [Sodium Bicarbonate (INS 500(ii))",
+      "Disodium Diphosphate (INS 450(i))]",
+      "Emulsifier [Soya Lecithin (INS 322(i))]",
+      "Flavourings."
+    ]
+  },
+  {
+    "brandName": "OREO",
+    "productName": "Mini OREO Original",
+    "ingredients": [
+      "Sugar",
+      "Wheat Flour",
+      "Hydrogenated and Non-hydrogenated Vegetable Fat (Palm)",
+      "Fat-reduced Cocoa Powder",
+      "Glucose Syrup",
+      "Raising Agents (Sodium and Ammonium Bicarbonate)",
+      "Corn Starch",
+      "Salt",
+      "Emulsifier (Soya Lecithin)",
+      "Artificial Flavor (Vanillin)."
+    ]
+  },
+  {
+    "brandName": "Julie's",
+    "productName": "Banana Sandwich",
+    "ingredients": [
+      "Wheat Flour",
+      "Vegetable Oil (Palm Oil)",
+      "Sugar",
+      "Glucose Syrup",
+      "Skimmed Milk Powder",
+      "Corn Starch",
+      "Leavening Agents (Ammonium Bicarbonate (INS 503(ii))",
+      "Sodium Bicarbonate (INS 500(ii)))",
+      "Disodium Diphosphate (INS 450(i))",
+      "Whey Powder",
+      "Salt",
+      "Cheese Powder",
+      "Flavourings",
+      "Banana Pulp Powder (0.04%)",
+      "Yeast."
+    ]
+  }
+  {
+    "brandName": "Maliban",
+    "productName": "Real Chocolate CREAM BISCUIT (30% Less Sugar)",
+    "ingredients": [
+      "Wheat flour",
+      "Vegetable fat (Palm oil)",
+      "Sugar",
+      "Inulin (Chicory)",
+      "Cocoa powder",
+      "Milk powder",
+      "Potato starch",
+      "Glucose",
+      "Corn starch",
+      "Chocolate",
+      "Permitted natural colour (Caramel class IV - INS 150d)",
+      "Leavening agents (Ammonium bicarbonate - INS 503ii",
+      "Sodium bicarbonate - INS 500ii)",
+      "Salt",
+      "Emulsifier (Soya lecithin - INS 322)",
+      "Nature identical (Chocolate, Milk, Vanilla) flavours."
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "Hawaiian Cookies",
+    "ingredients": [
+      "Wheat Flour",
+      "Sugar",
+      "Desiccated Coconut (16%)",
+      "Palm Olein",
+      "Corn Flour",
+      "Whey Powder",
+      "Iodized Salt",
+      "Leavening Agents [Sodium Bicarbonate (500ii)",
+      "Ammonium Bicarbonate (503ii)]",
+      "and Emulsifier [Soya Lecithin (322)]."
+    ]
+  },
+  {
+    "brandName": "Little Lion",
+    "productName": "Milky COOKIES",
+    "ingredients": [
+      "Wheat Flour",
+      "Sugar",
+      "Vegetable Oil (Palm) / Vegetable Fat",
+      "Milk Powder",
+      "Corn Starch",
+      "Margarine",
+      "Butter",
+      "Leavening Agents [Ammonium bicarbonate (INS 503ii)",
+      "Sodium bicarbonate (INS 500ii)]",
+      "Salt",
+      "Nature Identical Flavours (Butter, Vanillin, Almond)",
+      "Natural Colour [Carotenes (INS 160a(ii))]",
+      "Emulsifier [Soya Lecithin (INS 322)]",
+      "Plant Extract (Rosemary)."
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "Chocolate Chip Cookies",
+    "ingredients": [
+      "Wheat Flour",
+      "Sugar",
+      "Vegetable Fat",
+      "Chocolate Chips",
+      "Corn Flour",
+      "Glucose",
+      "Cocoa Powder",
+      "Leavening Agents [Sodium bicarbonate (500ii)",
+      "Ammonium Bicarbonate (503ii)]",
+      "Milk Powder",
+      "Salt",
+      "Emulsifier [Soya Lecithin (322)]",
+      "and Plant Extract (Rosemary)."
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "ChocShock",
+    "ingredients": [
+      "Wheat Flour",
+      "Choco Filling (Sugar, Vegetable Oil, Cocoa Powder, Hazelnuts, Milk Powder, Emulsifier [Soya Lecithin (322)])",
+      "Sugar",
+      "Vegetable Oil",
+      "Corn Starch",
+      "Milk Powder",
+      "Glucose Syrup",
+      "Salt",
+      "Leavening Agents [Sodium Bicarbonate (500ii)",
+      "Ammonium Bicarbonate (503ii)]",
+      "Emulsifier [Soya Lecithin (322)]",
+      "Nature Identical (Vanilla) Flavour",
+      "and Plant Extract (Rosemary)."
+    ]
+  }
+  {
+    "brandName": "Munchee",
+    "productName": "CHOCOLATE MARIE BISCUIT",
+    "ingredients": [
+      "Wheat Flour",
+      "Sugar",
+      "Palm Olein",
+      "Corn Starch",
+      "Milk Powder",
+      "Cocoa Powder",
+      "Malt",
+      "Glucose",
+      "Iodized Salt",
+      "Leavening Agents [Sodium Bicarbonate (500ii)",
+      "Ammonium Bicarbonate (503ii)]",
+      "Nature Identical (Chocolate) Flavour",
+      "Chocolate (0.1%)",
+      "Emulsifier [Soya Lecithin (322)]",
+      "Flour Treatment Agent [Sodium Metabisulphite (223)]",
+      "and Permitted Natural Colour [Caramel Class IV (150d)]."
+    ]
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "GOLD MARIE BISCUIT",
+    "ingredients": [
+      "Wheat flour",
+      "Sugar",
+      "Vegetable oil (Palm)",
+      "Sugar syrup",
+      "Corn starch",
+      "Milk powder 1.5%",
+      "Malt (Barley) extract",
+      "Salt",
+      "Leavening agents (Ammonium bicarbonate - INS 503ii",
+      "Sodium bicarbonate - INS 500ii)",
+      "Nature identical (Milk, Marie, Vanilla, Butter) flavours",
+      "Emulsifier (Soya lecithin - INS 322)",
+      "Flour treatment agent (Sodium metabisulphite - INS 223)",
+      "Vitamins & mineral premix."
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "ChocShock Choco centered biscuits",
+    "ingredients": [
+      "Wheat Flour",
+      "Choco Filling (33%) [Sugar, Palm Olein",
+      "Cocoa Powder (7%)",
+      "Hazelnut",
+      "Milk Powder",
+      "Emulsifier (Soya Lecithin (322))",
+      "Natural (Coffee) Flavour",
+      "Coffee Powder (0.1%)]",
+      "Sugar",
+      "Palm Olein",
+      "Corn Starch",
+      "Milk Powder",
+      "Glucose Syrup",
+      "Iodized Salt",
+      "Leavening Agents [Sodium Bicarbonate (500ii)",
+      "Ammonium Bicarbonate (503ii)]",
+      "Emulsifier [Soya Lecithin (322)]",
+      "and Nature Identical (Vanilla) Flavour."
+    ]
+  }
+] 
+  
