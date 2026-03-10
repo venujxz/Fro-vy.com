@@ -1,10 +1,59 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'encryption_service.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _db = FirebaseFirestore.instance;
+
+  Future<String?> signInWithGoogle() async {
+  try {
+    final GoogleSignIn googleSignIn = GoogleSignIn(
+      clientId: '1014519853798-7cdv61reb50o5djpnddnp33q1tj7fi88.apps.googleusercontent.com',
+      scopes: ['email', 'profile'],
+    );
+
+    final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
+    if (googleUser == null) return null; // User cancelled
+
+    final GoogleSignInAuthentication googleAuth =
+        await googleUser.authentication;
+
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+
+    final UserCredential userCredential =
+        await _auth.signInWithCredential(credential);
+
+    final String uid = userCredential.user!.uid;
+
+    final doc = await _db.collection('users').doc(uid).get();
+    if (!doc.exists) {
+      await _db.collection('users').doc(uid).set({
+        'profile': {
+          'userName': googleUser.displayName ?? '',
+          'email': googleUser.email,
+          'accountCreatedDate': FieldValue.serverTimestamp(),
+          'lastLoginDate': FieldValue.serverTimestamp(),
+          'gender': '',
+        },
+        'healthProfile': {
+          'conditions': [],
+          'allergies': [],
+          'concerns': [],
+          'skinType': '',
+        },
+      });
+    }
+
+    return uid;
+  } catch (e) {
+    throw Exception('Google Sign In failed: $e');
+  }
+}
 
   // ─────────────────────────────────────────
   // FUNCTION 1: Register a brand new user

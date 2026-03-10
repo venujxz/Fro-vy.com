@@ -1,7 +1,11 @@
 // ignore_for_file: deprecated_member_use
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:camera/camera.dart';
 import 'login_step2_screen.dart';
+import 'home_screen.dart';
+import '../services/auth_service.dart';
+
 
 class LoginStep1Screen extends StatefulWidget {
   const LoginStep1Screen({super.key});
@@ -15,8 +19,8 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
   final _nameCtrl  = TextEditingController();
   final _emailCtrl = TextEditingController();
   final _dobCtrl   = TextEditingController();
-
   DateTime? _dob;
+  bool _isGoogleLoading = false;
 
   static const Color _green = Color(0xFF4CAF50);
 
@@ -44,9 +48,7 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
       firstDate: DateTime(1900),
       lastDate: now,
     );
-
-    if (!mounted) return; // ← fix: check mounted after await
-
+    if (!mounted) return;
     if (picked != null) {
       setState(() {
         _dob = picked;
@@ -67,6 +69,31 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
           ),
         ),
       );
+    }
+  }
+
+  Future<void> _handleGoogleSignIn() async {
+    setState(() => _isGoogleLoading = true);
+    try {
+      final authService = AuthService();
+      final uid = await authService.signInWithGoogle();
+      if (!mounted) return;
+      if (uid != null) {
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+            builder: (_) => HomeScreen(cameras: const <CameraDescription>[]),
+          ),
+          (route) => false,
+        );
+      }
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(e.toString().replaceAll('Exception: ', ''))),
+      );
+    } finally {
+      if (mounted) setState(() => _isGoogleLoading = false);
     }
   }
 
@@ -164,11 +191,7 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
         borderRadius: BorderRadius.circular(18),
         border: Border.all(color: const Color(0xFFE2E8F0)),
         boxShadow: const [
-          BoxShadow(
-            blurRadius: 10,
-            offset: Offset(0, 4),
-            color: Colors.black12,
-          ),
+          BoxShadow(blurRadius: 10, offset: Offset(0, 4), color: Colors.black12),
         ],
       ),
       child: Form(
@@ -246,9 +269,15 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
       width: double.infinity,
       height: 48,
       child: OutlinedButton.icon(
-        onPressed: null, 
-        icon: const Icon(Icons.g_mobiledata),
-        label: const Text('Continue with Google'),
+        onPressed: _isGoogleLoading ? null : _handleGoogleSignIn,
+        icon: _isGoogleLoading
+            ? const SizedBox(
+                height: 18,
+                width: 18,
+                child: CircularProgressIndicator(strokeWidth: 2),
+              )
+            : const Icon(Icons.g_mobiledata),
+        label: Text(_isGoogleLoading ? 'Signing in...' : 'Continue with Google'),
         style: OutlinedButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -263,14 +292,16 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
       width: double.infinity,
       height: 48,
       child: ElevatedButton.icon(
-        onPressed: null, 
+        onPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text("Apple Sign In coming soon!")),
+          );
+        },
         icon: const Icon(Icons.apple),
         label: const Text('Continue with Apple'),
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.black,
           foregroundColor: Colors.white,
-          disabledBackgroundColor: Colors.black,
-          disabledForegroundColor: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
@@ -285,13 +316,14 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
       children: [
         const Text("Already have an account? "),
         TextButton(
-          onPressed: null, 
+          onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text("Login screen coming soon!")),
+            );
+          },
           child: const Text(
             'Log in',
-            style: TextStyle(
-              color: _green,
-              fontWeight: FontWeight.w600,
-            ),
+            style: TextStyle(color: _green, fontWeight: FontWeight.w600),
           ),
         ),
       ],
@@ -354,7 +386,6 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide.none,
         ),
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
       );
 }
