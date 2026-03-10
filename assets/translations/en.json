@@ -168,7 +168,63 @@
 
   "support_email_address": "support@fro-vy.com",
   "support_phone_number" : "1-800-FRO-VY-HELP",
-  "feedback_description" : "We'd love to hear your thoughts on how we can improve Fro-vy!"
+  "feedback_description" : "We'd love to hear your thoughts on how we can improve Fro-vy!",
+
+  
+  "premium_plans_title": "Premium Plans",
+  "upgrade_journey_title": "Upgrade Your Health Journey",
+  "upgrade_journey_subtitle": "Choose the perfect plan for your needs",
+  "most_popular": "Most Popular",
+  "current_plan": "Current Plan",
+  "upgrade_now": "Upgrade Now",
+  "downgrade": "Downgrade",
+  "per_month": "per month",
+  "forever": "forever",
+
+  "plan_free_title": "Free",
+  "plan_pro_title": "Pro",
+  "plan_premium_title": "Premium",
+
+  "feature_10_scans": "10 scans per month",
+  "feature_basic_analysis": "Basic ingredient analysis",
+  "feature_manual_entry": "Manual ingredient entry",
+  "feature_unlimited_scans": "Unlimited scans",
+  "feature_barcode_ocr": "Barcode & OCR scanning",
+  "feature_detailed_insights": "Detailed health insights",
+  "feature_everything_pro": "Everything in Pro",
+  "feature_ai_recommendations": "AI-powered recommendations",
+  "feature_dietitian_consult": "Direct dietitian consultation",
+
+  
+  "history_title": "Analysis History",
+  "summary": "Summary",
+  "total_scans": "Total Scans",
+  "safe_products": "Safe Products",
+  "flagged": "Flagged",
+  "clear_history": "Clear History?",
+  "clear_history_desc": "This action cannot be undone.",
+  "cancel": "Cancel",
+  "clear_all": "Clear All",
+  "clear_all_history_btn": "Clear All History",
+  "no_history_title": "No scan history yet",
+  "no_history_subtitle": "Scan a product to see it here!",
+  "item_deleted": "Item deleted from history",
+  "status_good": "Good",
+  "status_medium": "Medium",
+  "status_bad": "Bad",
+
+  
+  "analysis_results_title": "Analysis Results",
+  "safe_title": "Safe to Consume",
+  "safe_desc": "This product does not contain any ingredients that conflict with your health profile.",
+  "unsafe_title": "Avoid This Product",
+  "unsafe_desc": "This product contains ingredients that may be harmful to you.",
+  "caution_title": "Use with Caution",
+  "caution_desc": "Some ingredients may interact with your health profile or medication.",
+  "all_ingredients": "All Ingredients",
+  "check_another": "Check Another",
+  "medical_disclaimer": "This analysis is based on your health profile. Always consult a healthcare professional for medical advice.",
+  "scanned_product": "Scanned Product"
 
 
 }

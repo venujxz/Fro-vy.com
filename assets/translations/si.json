@@ -17,7 +17,7 @@
   "manual_subtitle": "අමුද්‍රව්‍ය ටයිප් කරන්න",
 
   "health_profile": "සෞඛ්‍ය පැතිකඩ",
-  "edit_profile": "පැතිකඩ සංස්කරණය",
+  "edit_profile": "සංස්කරණය (edit)",
   "allergies": "ඇලර්ජි",
   "medical_conditions": "රෝග තත්ත්ව",
   "other_sensitivities": "වෙනත් සංවේදීතා",
@@ -107,7 +107,67 @@
   "faq_a4": "අනිවාර්යයෙන්ම. ඔබේ සෞඛ්‍ය තොරතුරු සංකේතනය කර ඇති අතර ඒවා කිසිවිටෙකත් තෙවන පාර්ශවයන් සමඟ බෙදා නොගනී. ඔබට ඕනෑම වේලාවක දත්ත මකා දැමීමට ඉල්ලුම් කළ හැකිය.",
 
   "user_guide": "පරිශීලක මාර්ගෝපදේශය",
-  "video_tutorials": "වීඩියෝ මාර්ගෝපදේශය"
+  "video_tutorials": "වීඩියෝ මාර්ගෝපදේශය",
+
+  
+  "premium_plans_title": "ප්‍රිමියම් සැලසුම්",
+  "upgrade_journey_title": "ඔබේ සෞඛ්‍ය ගමන සාර්ථක කරගන්න",
+  "upgrade_journey_subtitle": "ඔබට ගැළපෙන සැලසුම තෝරාගන්න",
+  "most_popular": "වඩාත් ජනප්‍රිය",
+  "current_plan": "වත්මන් සැලසුම",
+  "upgrade_now": "දැන්ම උසස් කරන්න",
+  "downgrade": "පහළ මට්ටමකට මාරු වන්න",
+  "per_month": "මසකට",
+  "forever": "සදාකාලිකව",
+
+  "plan_free_title": "නොමිලේ (Free)",
+  "plan_pro_title": "Pro",
+  "plan_premium_title": "Premium",
+
+  "feature_10_scans": "මසකට ස්කෑන් 10 ක්",
+  "feature_basic_analysis": "මූලික අමුද්‍රව්‍ය විශ්ලේෂණය",
+  "feature_manual_entry": "අමුද්‍රව්‍ය හස්තීයව ඇතුළත් කිරීම",
+  "feature_unlimited_scans": "සීමා රහිත ස්කෑන් කිරීම්",
+  "feature_barcode_ocr": "බාර්කෝඩ් සහ OCR ස්කෑන් කිරීම",
+  "feature_detailed_insights": "සවිස්තරාත්මක සෞඛ්‍ය අවබෝධය",
+  "feature_everything_pro": "Pro සැලසුමේ ඇති සියල්ල",
+  "feature_ai_recommendations": "AI මගින් මෙහෙයවන නිර්දේශ",
+  "feature_dietitian_consult": "පෝෂණවේදී උපදේශනය",
+
+
+  "history_title": "පරීක්ෂණ ඉතිහාසය",
+  "summary": "සාරාංශය",
+  "total_scans": "මුළු ස්කෑන්",
+  "safe_products": "ආරක්ෂිත ඒවා",
+  "flagged": "අහිතකර ඒවා",
+  "clear_history": "මකා දමන්නද?",
+  "clear_history_desc": "මෙය නැවත ලබාගත නොහැක.",
+  "cancel": "අවලංගු කරන්න",
+  "clear_all": "ඔක්කොම මකන්න",
+  "clear_all_history_btn": "සම්පූර්ණ ඉතිහාසය මකන්න",
+  "no_history_title": "තවම ස්කෑන් කර නැත",
+  "no_history_subtitle": "පරීක්ෂා කළ පසු මෙතැනින් බලන්න!",
+  "item_deleted": "ඉතිහාසයෙන් මකා දැමුවා",
+  "status_good": "හොඳයි",
+  "status_medium": "මධ්‍යස්ථයි",
+  "status_bad": "නරකයි",
+
+  
+  "analysis_results_title": "පරීක්ෂණ ප්‍රතිඵල",
+  "safe_title": "භාවිතයට ආරක්ෂිතයි",
+  "safe_desc": "මෙහි ඔබේ සෞඛ්‍යයට අහිතකර කිසිවක් අඩංගු නොවේ.",
+  "unsafe_title": "භාවිතයෙන් වළකින්න",
+  "unsafe_desc": "මෙහි ඔබට අහිතකර අමුද්‍රව්‍ය අඩංගු විය හැක.",
+  "caution_title": "පරෙස්සමෙන් පාවිච්චි කරන්න",
+  "caution_desc": "මෙහි ඇති සමහර දේවල් ඔබේ සෞඛ්‍යයට බලපෑම් කළ හැක.",
+  "all_ingredients": "අමුද්‍රව්‍ය ලැයිස්තුව",
+  "check_another": "තව පරීක්ෂා කරන්න",
+  "medical_disclaimer": "මෙම දත්ත ඔබ ලබාදුන් තොරතුරු මත පදනම් වේ. වෛද්‍ය උපදෙස් සඳහා වෛද්‍යවරයකු හමුවන්න.",
+  "scanned_product": "පරීක්ෂිත භාණ්ඩය",
+  "how_to_scan" : "ස්කෑන් කරන්නේ කොහොමද?"
+
+
+
 
 
  

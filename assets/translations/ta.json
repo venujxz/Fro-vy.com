@@ -17,7 +17,7 @@
   "manual_subtitle": "சேர்வுகளை টাইப் செய்யவும்",
 
   "health_profile": "சுகாதார சுயவிவரம்",
-  "edit_profile": "சுயவிவரம் திருத்து",
+  "edit_profile": "திருத்து (edit)",
   "allergies": "அலர்ஜி",
   "medical_conditions": "மருத்துவ நிலைகள்",
   "other_sensitivities": "மற்ற உணர்திறன்",
@@ -109,6 +109,65 @@
   "faq_a4": "நிச்சயமாக. உங்கள் சுகாதாரத் தகவல்கள் குறியாக்கம் (Encrypted) செய்யப்பட்டுள்ளன, அவை ஒருபோதும் மூன்றாம் தரப்பினருடன் பகிரப்படாது. நீங்கள் எந்த நேரத்திலும் தரவு நீக்கத்தைக் கோரலாம்.",
 
   "user_guide": "பயனர் வழிகாட்டி",
-  "video_tutorials": "வீடியோ வழிகாட்டி"
+  "video_tutorials": "வீடியோ வழிகாட்டி",
+
+  
+  "premium_plans_title": "பிரீமியம் திட்டங்கள்",
+  "upgrade_journey_title": "உங்கள் ஆரோக்கியத்தை மேம்படுத்துங்கள்",
+  "upgrade_journey_subtitle": "உங்களுக்கு ஏற்ற திட்டத்தைத் தேர்வுசெய்யுங்கள்",
+  "most_popular": "மிகவும் பிரபலம்",
+  "current_plan": "தற்போதைய திட்டம்",
+  "upgrade_now": "இப்போதே சேருங்கள்",
+  "downgrade": "குறைந்த திட்டம்",
+  "per_month": "மாதத்திற்கு",
+  "forever": "எப்பொழுதும்",
+
+  "plan_free_title": "இலவசம்",
+  "plan_pro_title": "Pro",
+  "plan_premium_title": "Premium",
+
+  "feature_10_scans": "மாதத்திற்கு 10 ஸ்கேன்கள்",
+  "feature_basic_analysis": "அடிப்படை விவரங்கள்",
+  "feature_manual_entry": "கைமுறையாக உள்ளிடும் வசதி",
+  "feature_unlimited_scans": "வரம்பற்ற ஸ்கேன்கள்",
+  "feature_barcode_ocr": "Barcode ஸ்கேன் செய்யும் வசதி",
+  "feature_detailed_insights": "மேலதிக சுகாதார விவரங்கள்",
+  "feature_everything_pro": "Pro-வில் உள்ள அனைத்தும்",
+  "feature_ai_recommendations": "AI ஆலோசனைகள்",
+  "feature_dietitian_consult": "உணவு நிபுணர் ஆலோசனை",
+
+  
+  "history_title": "பகுப்பாய்வு வரலாறு",
+  "summary": "சுருக்கம்",
+  "total_scans": "மொத்தம்",
+  "safe_products": "பாதுகாப்பு",
+  "flagged": "ஆபத்து",
+  "clear_history": "நீக்க வேண்டுமா?",
+  "clear_history_desc": "இதை மீண்டும் மாற்ற முடியாது.",
+  "cancel": "ரத்து செய்",
+  "clear_all": "அனைத்தையும் நீக்கு",
+  "clear_all_history_btn": "முழு வரலாற்றையும் நீக்கு",
+  "no_history_title": "வரலாறு எதுவும் இல்லை",
+  "no_history_subtitle": "பொருளை ஸ்கேன் செய்தபின் இங்கே பார்க்கலாம்!",
+  "item_deleted": "வரலாற்றிலிருந்து நீக்கப்பட்டது",
+  "status_good": "நல்லது",
+  "status_medium": "சுமாரானது",
+  "status_bad": "மோசமானது",
+
+
+  "analysis_results_title": "பகுப்பாய்வு முடிவுகள்",
+  "safe_title": "பாதுகாப்பானது",
+  "safe_desc": "இதில் உங்கள் ஆரோக்கியத்திற்கு தீங்கு விளைவிக்கும் பொருட்கள் எதுவுமில்லை.",
+  "unsafe_title": "தவிர்க்கவும்",
+  "unsafe_desc": "இதில் உங்களுக்கு ஒவ்வாத அல்லது தீங்கு விளைவிக்கும் பொருட்கள் இருக்கலாம்.",
+  "caution_title": "கவனமாக இருக்கவும்",
+  "caution_desc": "சில பொருட்கள் உங்கள் உடல்நிலைக்கு பாதிப்பை ஏற்படுத்தலாம்.",
+  "all_ingredients": "அனைத்து பொருட்கள்",
+  "check_another": "மீண்டும் சோதிக்க",
+  "medical_disclaimer": "இது உங்கள் உடல்நல விவரங்களின் அடிப்படையிலானது. மருத்துவ ஆலோசனைக்கு மருத்துவரை அணுகவும்.",
+  "scanned_product": "சோதிக்கப்பட்ட பொருள்",
+  "how_to_scan" : "ஸ்கேன் செய்வது எப்படி?"
+
+
 
 }
