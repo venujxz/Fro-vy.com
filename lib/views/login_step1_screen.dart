@@ -122,8 +122,6 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
               _buildDivider(),
               const SizedBox(height: 14),
               _buildGoogleButton(),
-              const SizedBox(height: 12),
-              _buildAppleButton(),
               const SizedBox(height: 18),
               _buildLoginRow(),
             ],
@@ -287,28 +285,7 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
     );
   }
 
-  Widget _buildAppleButton() {
-    return SizedBox(
-      width: double.infinity,
-      height: 48,
-      child: ElevatedButton.icon(
-        onPressed: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text("Apple Sign In coming soon!")),
-          );
-        },
-        icon: const Icon(Icons.apple),
-        label: const Text('Continue with Apple'),
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.black,
-          foregroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-        ),
-      ),
-    );
-  }
+  
 
   Widget _buildLoginRow() {
     return Row(
