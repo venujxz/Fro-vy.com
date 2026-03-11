@@ -66,16 +66,6 @@
     ],
   },
   {
-    "brandName": "Kotmale",
-    "productName": "Swiss Cheese",
-    "ingredients": [
-      "Fresh Milk",
-      "Salt",
-      "Starter Culture",
-      "Enzyme (100% Microbial Origin)"
-    ],
-  },
-  {
     "brandName": "Ambewela",
     "productName": "Processed Cheese",
     "ingredients": [
@@ -312,8 +302,7 @@
       "Nature identical mango flavor",
       "Permitted food colour (INS 110)."
     ],
-  },
-   
+  }, 
   {
     "brandName": "Chicken Sandwich Slices",
     "productName": "Keells Food Products PLC",
@@ -386,7 +375,6 @@
       "Permitted Food Colour (INS 161g)."
     ],
   },
-
   {
     "brandName": "Garlic Chicken Sausages",
     "productName": "Keells Food Products PLC",
@@ -658,7 +646,6 @@
       "Plant Extract(Rosemary)"
     ]
   },
-
   {
     "brandName": "Munchee",
     "productName": "POTATO CRACKER",
@@ -709,8 +696,7 @@
       "Emulsifier [Soya Lecithin (322)]."
     ]
   },
-
-{
+  {
     "brandName": "Maliban",
     "productName": "Cheesebits",
     "ingredients": [
@@ -1182,7 +1168,6 @@
       "and Nature Identical (Vanilla) Flavour."
     ]
   }
-  [
   {
     "brandName": "Edinborough",
     "productName": "Mayonnaise",
@@ -1268,7 +1253,6 @@
       "Stabilisers (xanthan gum INS-415 pectin INS-440)"
     ]
   }
-  [
   {
     "brandName": "Dad's Garden by MA'S Kitchen",
     "productName": "Teriyaki Cooking Sauce",
@@ -1350,9 +1334,6 @@
       "Stabilizer (INS 415)"
     ]
   }
-]
-]
-  [
   {
     "brandName": "Dad's Garden by MA'S Kitchen",
     "productName": "Thai Sweet Chilli Sauce",
@@ -1431,7 +1412,6 @@
       "Permitted Colours (E 102, E 133)"
     ]
   }
-  [
   {
     "brandName": "MD",
     "productName": "Original Tomato Ketchup",
@@ -1516,7 +1496,246 @@
       "Calcium disodium EDTA (INS 385)"
     ]
   }
+  {
+    "brandName": "Keells",
+    "productName": "Nai Miris Red Sauce",
+    "ingredients": [
+      "Tomato Paste",
+      "Sugar",
+      "Water",
+      "Mango Paste",
+      "Nai Miris Paste",
+      "Corn Starch",
+      "Tapioca Starch",
+      "Sodium carboxymethyl cellulose (INS 466)",
+      "Common Salt",
+      "Acetic acid (INS 260)",
+      "Potassium sorbate (INS 202)",
+      "Chilli Powder",
+      "Annatto Extracts (INS 160b)",
+      "Clove Powder",
+      "Garlic Powder",
+      "Ginger Powder",
+      "Nutmeg Powder",
+      "Cinnamon Powder"
+    ]
+  },
+  [
+  {
+    "brandName": "Ritzbury",
+    "productName": "Chit-Chat with Real Hazelnut Cream",
+    "ingredients": [
+      "Choco Coating (50%) {Sugar, Hydrogenated Palm Kernel Oil, Milk Powder, Cocoa Powder, Iodized Salt, Emulsifiers [Soya Lecithin (322), Polyglycerol Polyricinoleate (476)], Nature Identical (Vanilla) Flavour}",
+      "Wheat Flour",
+      "Corn Flour",
+      "Palm Olein",
+      "Hazelnut Paste (5%)",
+      "Emulsifier [Soya Lecithin (322)]",
+      "Iodized Salt",
+      "and Leavening Agents [Sodium Bicarbonate (500ii), Ammonium Bicarbonate (503ii)]"
+    ]
+  },
+  {
+    "brandName": "K Super",
+    "productName": "Choconuts Milk Choco Coated Peanuts",
+    "ingredients": [
+      "Sugar",
+      "Cocoa Butter Substitute",
+      "Peanut 20%",
+      "Full Cream Milk Powder",
+      "Cocoa Powder",
+      "Emulsifier (Soya Lecithin INS322)",
+      "Salt",
+      "Antioxidant 0.02% (Ascorbyl Palmitate INS304)",
+      "Nature Identical Vanilla Flavour"
+    ]
+  },
+  {
+    "brandName": "Snickers",
+    "productName": "Milk Chocolate with soft nougat and caramel centre with peanuts",
+    "ingredients": [
+      "sugar",
+      "glucose syrup",
+      "peanuts (22%)",
+      "skimmed milk powder",
+      "cocoa butter",
+      "cocoa mass",
+      "whey permeate (milk)",
+      "sunflower oil",
+      "milk fat",
+      "palm fat",
+      "salt",
+      "emulsifier (soya lecithin)",
+      "egg white powder"
+      "hazelnuts"
+    ]
+  }
+  {
+    "brandName": "Kandos",
+    "productName": "Cashewnut Chocolate",
+    "ingredients": [
+      "Sugar",
+      "Full Cream Milk Powder",
+      "Cocoa Butter",
+      "Cocoa Mass",
+      "Cashewnut",
+      "Soya Lecithin (INS322)",
+      "Salt",
+      "Nature Identical Vanilla Flavour"
+    ]
+  },
+  {
+    "brandName": "Zellers",
+    "productName": "Cashew Nut Chocolate",
+    "ingredients": [
+      "Sugar",
+      "Milk Powder",
+      "Cocoa Butter",
+      "Cocoa Mass",
+      "Cashew Nut",
+      "Emulsifiers (Soya Lecithin (INS 322), Polyglycerol polyricinoleate (INS 476))",
+      "Salt",
+      "Natural Vanilla Flavour"
+    ]
+  },
+  {
+    "brandName": "Tiara",
+    "productName": "Rollo Choco Coated Swiss Roll (Strawberry Flavoured)",
+    "ingredients": [
+      "Sugar",
+      "Wheat Flour",
+      "Hydrogenated Palm Kernel Oil",
+      "Milk Powder",
+      "Humectant [Glycerol (422)]",
+      "Egg",
+      "Sugar Syrup",
+      "Cocoa Powder Coating (23%) {Sugar, Hydrogenated Palm Kernel Oil, Milk Powder, Cocoa Powder, Emulsifier [Polyglycerol Polyricinoleate (476)], Iodized Salt and Nature Identical (Vanilla) Flavour}",
+      "Emulsifiers [Mono and Diglycerides of Fatty Acids (471), Polyglycerol Esters of Fatty Acids (475), Soya Lecithin (322ii), Propylene Glycol (1520)]",
+      "Jam",
+      "Corn Starch",
+      "Iodized Salt",
+      "Leavening Agent [Sodium Bicarbonate (500ii)]",
+      "Nature Identical (Vanilla & Strawberry) Flavours",
+      "Permitted Preservatives [Potassium Sorbate (202), Sodium Propionate (281)]",
+      "Acidity Regulator [Citric Acid (330)]"
+    ]
+  },
+  {
+    "brandName": "Uswatte",
+    "productName": "March Mallows",
+    "ingredients": [
+      "Sugar",
+      "Liquid Glucose",
+      "Gelatin - INS 428",
+      "Citric Acid - INS 330",
+      "Nature Identical Vanilla & Strawberry Flavours",
+      "Permitted Food Colours (Carmoisine - INS122, Tartrazine - INS102, Brilliant Blue FCF - INS133)"
+    ]
+  }
+  {
+    "brandName": "Zellers",
+    "productName": "Cashew Nut Chocolate",
+    "ingredients": [
+      "Sugar",
+      "Milk Powder",
+      "Cocoa Butter",
+      "Cocoa Mass",
+      "Cashew Nut",
+      "Emulsifiers (Soya Lecithin (INS 322), Polyglycerol polyricinoleate (INS 476))",
+      "Salt",
+      "Natural Vanilla Flavour"
+    ]
+  },
+  {
+    "brandName": "Kandos",
+    "productName": "Milk Chocolate",
+    "ingredients": [
+      "Sugar",
+      "Full Cream Milk Powder",
+      "Cocoa Butter",
+      "Cocoa Mass",
+      "Emulsifiers (Soya Lecithin INS322, Polyglycerol Polyricinoleate INS476)",
+      "Salt",
+      "Nature Identical Vanilla Flavour"
+    ]
+  },
+  {
+    "brandName": "Ritzbury",
+    "productName": "Bubbles Aerated Milk Choco",
+    "ingredients": [
+      "Sugar",
+      "Hydrogenated Palm Kernel Oil",
+      "Milk Powder (14%)",
+      "Cocoa Powder",
+      "Whey Powder",
+      "Emulsifiers [Soya Lecithin (322), Polyglycerol Polyricinoleate (476)]",
+      "Iodized Salt",
+      "Nature Identical (Vanilla & Chocolate) Flavours"
+    ]
+  },
+  {
+    "brandName": "Ritzbury",
+    "productName": "Deckers Milk Choco with Coffee Flavoured Milk Choco with Cookies",
+    "ingredients": [
+      "Milk Sweet [Sugar, Hydrogenated Palm Kernel Oil, Milk Powder (17%), Cookies (6%), Whey Powder, Emulsifier (Soya Lecithin (322)), Iodized Salt, Nature Identical (Vanilla) Flavour and Natural (Coffee) Flavour]",
+      "Sugar",
+      "Hydrogenated Palm Kernel Oil",
+      "Milk Powder (14%)",
+      "Cocoa Powder",
+      "Whey Powder",
+      "Emulsifiers [Soya Lecithin (322), Polyglycerol Polyricinoleate (476)]",
+      "Iodized Salt",
+      "Nature Identical (Vanilla & Chocolate) Flavours"
+    ]
+  },
+  {
+    "brandName": "Ritzbury",
+    "productName": "Milk Chocolate",
+    "ingredients": [
+      "Sugar",
+      "Vegetable Fat",
+      "Milk Powder",
+      "Cocoa Powder",
+      "Emulsifier [Soya Lecithin (322)]",
+      "Salt",
+      "and Nature Identical (Vanilla) Flavour"
+    ]
+  }
+  {
+    "brandName": "Ritzbury",
+    "productName": "Roccoa with Fruit & Nut",
+    "ingredients": [
+      "Sugar",
+      "Milk Powder",
+      "Cocoa Butter",
+      "Cocoa Mass",
+      "Cashew",
+      "Raisins",
+      "Vegetable Fat",
+      "Whey Powder",
+      "Cocoa Powder",
+      "Emulsifiers [Soya Lecithin (322), Polyglycerol Polyricinoleate (476)]",
+      "Nature Identical (Vanilla) Flavour",
+      "Salt"
+    ]
+  },
+  {
+    "brandName": "Revello",
+    "productName": "Coconut",
+    "ingredients": [
+      "Sugar",
+      "Milk Powder",
+      "Cocoa Butter",
+      "Cocoa Mass",
+      "Desiccated Coconut",
+      "Emulsifiers [Polyglycerol Polyricinoleate (476), Soya Lecithin (322)]",
+      "Nature Identical (Vanilla) Flavour",
+      "and Salt"
+    ]
+  }
+
 
 ]
+
 
   
