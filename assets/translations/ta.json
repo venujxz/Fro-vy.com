@@ -166,8 +166,14 @@
   "check_another": "மீண்டும் சோதிக்க",
   "medical_disclaimer": "இது உங்கள் உடல்நல விவரங்களின் அடிப்படையிலானது. மருத்துவ ஆலோசனைக்கு மருத்துவரை அணுகவும்.",
   "scanned_product": "சோதிக்கப்பட்ட பொருள்",
-  "how_to_scan" : "ஸ்கேன் செய்வது எப்படி?"
+  "how_to_scan" : "ஸ்கேன் செய்வது எப்படி?",
 
+  "push_notifications" : "Push Notifications",
+  "email_updates" : "Email Updates",
+  "danger_zone" : "Danger Zone",
+  "delete_account": "கணக்கை நீக்கு",
 
+  "receive_alerts" : "எச்சரிக்கைகளை பெறுக",
+  "health_tips" : "ஆரோக்கிய குறிப்புகள்"
 
 }

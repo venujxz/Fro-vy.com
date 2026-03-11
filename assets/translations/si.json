@@ -164,7 +164,16 @@
   "check_another": "තව පරීක්ෂා කරන්න",
   "medical_disclaimer": "මෙම දත්ත ඔබ ලබාදුන් තොරතුරු මත පදනම් වේ. වෛද්‍ය උපදෙස් සඳහා වෛද්‍යවරයකු හමුවන්න.",
   "scanned_product": "පරීක්ෂිත භාණ්ඩය",
-  "how_to_scan" : "ස්කෑන් කරන්නේ කොහොමද?"
+  "how_to_scan" : "ස්කෑන් කරන්නේ කොහොමද?",
+
+  "push_notifications" : "Push Notifications",
+  "email_updates" : "Email Updates",
+  "danger_zone" : "Danger Zone",
+  "delete_account": "ගිණුම මකා දමන්න",
+
+  "receive_alerts" : "අවවාද ලබා ගන්න",
+  "health_tips" : "සෞඛ්‍ය උපදෙස්"
+
 
 
 
