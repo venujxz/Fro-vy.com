@@ -1182,5 +1182,341 @@
       "and Nature Identical (Vanilla) Flavour."
     ]
   }
-] 
+  [
+  {
+    "brandName": "Edinborough",
+    "productName": "Mayonnaise",
+    "ingredients": [
+      "Rapeseed oil/Sunflower oil (48%)",
+      "Water",
+      "Sugar",
+      "Modified maize starch (INS 1442, INS 1450)",
+      "Iodized table salt",
+      "Acetic acid (INS 260)",
+      "Sodium carboxymethyl cellulose (INS 466)",
+      "Mustard (1%)",
+      "Potassium sorbate (INS 202)",
+      "Citric acid (INS 330)",
+      "Artificial/Nature identical vanilla flavour",
+      "Calcium disodium EDTA (INS 385)",
+      "Carmoisine colour (INS 122)",
+      "Tartrazine colour (INS 102)"
+    ]
+  },
+  {
+    "brandName": "Noor",
+    "productName": "Original Mayonnaise",
+    "ingredients": [
+      "Vegetable Oil-Soybean/Sunflower oil (non-hydrogenated)",
+      "Water",
+      "Natural Vinegar",
+      "Sugar",
+      "Modified Food Starch",
+      "Salt",
+      "Egg yolk",
+      "Thickener (E415)",
+      "Preservative (E202)",
+      "Spice extracts (Mustard)",
+      "Lemon Juice Concentrate",
+      "Sequestering Agent (E385)",
+      "Natural color (E160a)"
+    ]
+  },
+  {
+    "brandName": "Keells",
+    "productName": "Mustard Cream",
+    "ingredients": [
+      "Margarine",
+      "Corn Flour",
+      "Water",
+      "Mustard",
+      "Turmeric",
+      "Sugar",
+      "Common Salt",
+      "Citric Acid (INS 330)",
+      "Vinegar",
+      "Potassium Sorbate (INS 202)"
+    ]
+  },
+  {
+    "brandName": "Edinborough",
+    "productName": "Mustard Cream Spread",
+    "ingredients": [
+      "Water",
+      "Margarine (23%)",
+      "Wheat flour",
+      "Mustard powder (4%)",
+      "Sugar",
+      "Iodized table salt",
+      "Cinnamon",
+      "Cardamom",
+      "Clove",
+      "Acetic acid (INS 260)",
+      "Sodium metabisulphite (INS 223)"
+    ]
+  },
+  {
+    "brandName": "Dad's Garden by MA'S Kitchen",
+    "productName": "Lemon Mustard Sauce",
+    "ingredients": [
+      "sugar",
+      "vinegar",
+      "spices & herbs (mustard [4.4%], ginger, turmeric)",
+      "salt",
+      "corn starch",
+      "lemon (1%)",
+      "Stabilisers (xanthan gum INS-415 pectin INS-440)"
+    ]
+  }
+  [
+  {
+    "brandName": "Dad's Garden by MA'S Kitchen",
+    "productName": "Teriyaki Cooking Sauce",
+    "ingredients": [
+      "sugar",
+      "salt",
+      "rice",
+      "corn flour",
+      "yeast extract",
+      "alcohol (1.1%)",
+      "onion",
+      "sesame",
+      "soybean",
+      "garlic",
+      "lime",
+      "spices & herbs (chilli, ginger)",
+      "acidity regulator (citric acid INS-330)",
+      "antioxidant (succinic acid INS-363)"
+    ]
+  },
+  {
+    "brandName": "Edinborough",
+    "productName": "Fish Sauce (Thai Style)",
+    "ingredients": [
+      "Natural Fish Extract (65%)",
+      "Water",
+      "Soya",
+      "Wheat/Rice",
+      "Salt",
+      "Potassium sorbate (INS 202)"
+    ]
+  },
+  {
+    "brandName": "Edinborough",
+    "productName": "Oyster Sauce",
+    "ingredients": [
+      "Water",
+      "Extract of Soya & Wheat/ Rice",
+      "Sugar",
+      "Modified maize/ tapioca starch (INS 1442)",
+      "Flavour enhancer used (Monosodium glutamate INS 621)",
+      "Iodized table salt",
+      "Sea food extract (5%)",
+      "Citric acid (INS 330)",
+      "Xanthan stabilizer (INS 415)",
+      "Potassium sorbate (INS 202)",
+      "Caramel (INS 150c)",
+      "Sodium metabisulphite (INS 223)"
+    ]
+  },
+  {
+    "brandName": "Edinborough",
+    "productName": "Soya Sauce",
+    "ingredients": [
+      "Water",
+      "Soya sauce extract (42%) [Water, Soya beans, Wheat/ Rice, Crystal salt]",
+      "Natural caramel colour (INS 150c)",
+      "Seed",
+      "tapioca (Sago)",
+      "Potassium sorbate (INS 202)"
+    ]
+  },
+  {
+    "brandName": "KIST",
+    "productName": "Chilli Sauce",
+    "ingredients": [
+      "Tomato (Tomato Paste + Water)",
+      "Sugar",
+      "Salt",
+      "Chilli",
+      "Acetic Acid (INS 260)",
+      "Edible Starch (INS 1442)",
+      "Garlic",
+      "Onion",
+      "Ascorbic Acid (Vitamin C/INS 300)",
+      "Spices",
+      "Permitted Preservative (INS 223)",
+      "Natural Ginger Extract",
+      "Stabilizer (INS 415)"
+    ]
+  }
+]
+]
+  [
+  {
+    "brandName": "Dad's Garden by MA'S Kitchen",
+    "productName": "Thai Sweet Chilli Sauce",
+    "ingredients": [
+      "sugar",
+      "vinegar",
+      "garlic",
+      "salt",
+      "spices & herbs (chilli [0.7%])",
+      "stabilisers (xanthan gum INS-415, sodium carboxymethyl cellulose INS-466)"
+    ]
+  },
+  {
+    "brandName": "Edinborough",
+    "productName": "Sweet Chilli Sauce",
+    "ingredients": [
+      "Water",
+      "Sugar (31%)",
+      "Chilli (10%)",
+      "Garlic",
+      "Modified maize/tapioca starch (INS 1442)",
+      "Iodized table salt",
+      "Acetic acid (INS 260)",
+      "Potassium sorbate (INS 202)"
+    ]
+  },
+  {
+    "brandName": "Dad's Garden by MA'S Kitchen",
+    "productName": "Mango BBQ Sauce",
+    "ingredients": [
+      "sugar",
+      "mango (11%)",
+      "vinegar",
+      "garlic",
+      "tomato",
+      "spices & herbs (ginger, tamarind, pepper, mustard, chilli)",
+      "salt",
+      "natural smoke flavour",
+      "stabiliser (xanthan gum INS-415)"
+    ]
+  },
+  {
+    "brandName": "KIST",
+    "productName": "Kochchi Sauce",
+    "ingredients": [
+      "Water",
+      "Sugar",
+      "Red Chilli Paste",
+      "Kochchi Paste",
+      "Tomato Paste",
+      "Salt",
+      "Modified Tapioca Starch (INS1442/INS1422)",
+      "Garlic",
+      "onion",
+      "Acetic Acid (INS260)",
+      "Spices",
+      "Chilli powder",
+      "Ascorbic Acid (INS300)",
+      "Stabilizer - Xanthun Gum (INS415)",
+      "Permitted Preservative - Sodium Metabisulfite (INS223)"
+    ]
+  },
+  {
+    "brandName": "MD",
+    "productName": "Original Green Chilli Sauce",
+    "ingredients": [
+      "Green Chilli Pulp",
+      "Sugar",
+      "Vinegar",
+      "Salt",
+      "Ginger & Garlic Paste",
+      "Cinnamon",
+      "Cardamom",
+      "Cloves",
+      "Nutmeg",
+      "Permitted Colours (E 102, E 133)"
+    ]
+  }
+  [
+  {
+    "brandName": "MD",
+    "productName": "Original Tomato Ketchup",
+    "ingredients": [
+      "Tomato Paste",
+      "Water",
+      "Sugar",
+      "Vinegar",
+      "Salt",
+      "Xanthan gum (INS 415)",
+      "Guar gum (INS 412)",
+      "Pectin (INS 440)",
+      "Permitted Preservatives Sodium Metabisulphite (INS 223)",
+      "Potassium Sorbate (INS 202)"
+    ]
+  },
+  {
+    "brandName": "Edinborough",
+    "productName": "Soya Sauce",
+    "ingredients": [
+      "Water",
+      "Soya sauce extract (42%) [Water, Soya beans, Wheat/ Rice, Crystal salt]",
+      "Natural caramel colour (INS 150c)",
+      "Seed",
+      "tapioca (Sago)",
+      "Potassium sorbate (INS 202)"
+    ]
+  },
+  {
+    "brandName": "Keells",
+    "productName": "Thousand Island Salad Dressing",
+    "ingredients": [
+      "Palm oil",
+      "Water",
+      "Sugar",
+      "Milk Solid",
+      "Tomato Paste",
+      "Dextrose monohydrate",
+      "Iodized Salt",
+      "Acetylated distarch adipate (INS 1422)",
+      "Guar Gum (INS 412)",
+      "Xanthan Gum (INS 415)",
+      "Citric acid (INS 330)",
+      "Acetic acid (INS 260)",
+      "Potassium sorbate (INS 202)",
+      "Annatto extracts (INS 160b)",
+      "Natural Gherkin"
+    ]
+  },
+  {
+    "brandName": "MA'S Kitchen",
+    "productName": "Sweet & Sour Wok Sauce",
+    "ingredients": [
+      "Sugar",
+      "Vinegar",
+      "Pineapple",
+      "Tomato",
+      "Garlic",
+      "Spice & Herbs (Ginger, Chilli, Pepper, Turmeric)",
+      "Corn flour",
+      "Salt",
+      "Soybean",
+      "Wheat flour"
+    ]
+  },
+  {
+    "brandName": "Edinborough",
+    "productName": "Chilli Mayonnaise",
+    "ingredients": [
+      "Rapeseed oil/Sunflower oil (46%)",
+      "Water",
+      "Chilli (12%)",
+      "Sugar",
+      "Modified maize starches (INS 1442, INS 1450)",
+      "Acetic acid (INS 260)",
+      "Iodized table salt",
+      "Egg (1.1%)",
+      "Citric acid (INS 330)",
+      "Mustard (1%)",
+      "Sodium carboxymethyl cellulose (INS 466)",
+      "Potassium sorbate (INS 202)",
+      "Calcium disodium EDTA (INS 385)"
+    ]
+  }
+
+]
+
   
