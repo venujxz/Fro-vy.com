@@ -26,7 +26,7 @@ Future<void> main() async {
         Locale('ta'), // Tamil
       ],
       // Make sure this path exactly matches where your JSON files are saved!
-      path: 'assets/lang', 
+      path: 'assets/translations', 
       fallbackLocale: const Locale('en'),
       child: FrovyApp(cameras: cameras),
     ),

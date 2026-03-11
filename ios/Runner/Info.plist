@@ -45,11 +45,12 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	
 	<key>NSCameraUsageDescription</key>
-    <string>Fro-vy needs camera access to scan ingredients.</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>Fro-vy needs photos access to upload ingredients.</string>
-    <key>NSMicrophoneUsageDescription</key>
-    <string>Fro-vy needs microphone access for video.</string>
+	<string>Fro-vy needs access to your camera to scan ingredient labels for safety analysis.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Fro-vy needs access to your photo library so you can upload pictures of ingredient labels.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Fro-vy needs microphone access for video capture.</string>
 </dict>
 </plist>

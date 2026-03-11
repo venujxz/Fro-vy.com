@@ -5,6 +5,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 import '../services/ocr_service.dart';
 import 'result_screen.dart';
+import 'widgets/language_switcher.dart'; // Keeping your language switcher import
 
 class CameraScreen extends StatefulWidget {
   final List<CameraDescription> cameras;
@@ -46,7 +47,7 @@ class CameraScreenState extends State<CameraScreen> {
     super.dispose();
   }
 
-  // --- LOGIC: Process the Image (Used by both Camera & Gallery) ---
+  // --- LOGIC: Process the Image Locally using Google ML Kit ---
   Future<void> _processImage(String imagePath) async {
     if (!mounted) return;
     
@@ -56,27 +57,41 @@ class CameraScreenState extends State<CameraScreen> {
     );
 
     try {
-      // 2. Call OCR Service
+      // 2. Extract Text using Google ML Kit LOCALLY on the phone
       OCRService ocrService = OCRService();
+      String? extractedIngredients = await ocrService.processImageForText(File(imagePath));
       
-      String? result = await ocrService.uploadImage(File(imagePath));
+      // Close the ML kit recognizer to free up memory
+      ocrService.dispose();
 
-      if (result != null) {
+      if (extractedIngredients != null && extractedIngredients.isNotEmpty) {
+        // --- 3. SEND TEXT TO BACKEND (Mocked for now) ---
+        // TODO: Later, we will send 'extractedIngredients' to Akshara's API
+        // For now, we wrap the extracted text in our mock JSON structure so the Result Screen works!
+        String mockBackendResponse = '''
+        {
+          "productName": "Scanned Product", 
+          "status": "CAUTION", 
+          "ingredients": ["$extractedIngredients"], 
+          "warnings": ["Pending AI analysis from backend..."]
+        }
+        ''';
+
         if (!mounted) return;
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => ResultScreen(analysisResult: result),
+            builder: (context) => ResultScreen(analysisResult: mockBackendResponse),
           ),
         );
       } else {
         if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('upload_failed'.tr())),
+          const SnackBar(content: Text("Could not read any text. Please try again.")),
         );
       }
     } catch (e) {
-      print(e);
+      print("Error processing image: $e");
     }
   }
 
@@ -105,7 +120,7 @@ class CameraScreenState extends State<CameraScreen> {
           onPressed: () => Navigator.of(context).pop(), 
         ),
         title: Text(
-          "scan_ingredients".tr(), // Using key already in en.json from home screen
+          "scan_ingredients".tr(), 
           style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,

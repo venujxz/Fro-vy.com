@@ -89,7 +89,7 @@ class HelpSupportScreen extends StatelessWidget {
               const SizedBox(height: 24),
 
               // 3. FAQ Section (Interactive)
-              Text("faq".tr(), style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black87)),
+              Text("faq_title".tr(), style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black87)),
               const SizedBox(height: 12),
               Container(
                 decoration: BoxDecoration(

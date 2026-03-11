@@ -53,7 +53,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          "premium_plans".tr(),
+          "premium_plans_title".tr(),
           style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),

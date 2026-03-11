@@ -1,70 +1,39 @@
 import 'dart:io';
-import 'package:http/http.dart' as http;
-import 'package:flutter_image_compress/flutter_image_compress.dart';
-import 'package:path/path.dart' as p;
-import 'package:path_provider/path_provider.dart';
+import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 
 class OCRService {
-  // This URL will point to Thisal's backend. 
-  // For iOS Simulator, 'localhost' works. 
-  // For Android Emulator, use '10.0.2.2'.
-  final String _baseUrl = 'http://localhost:3000';
+  // 1. Initialize the Google ML Kit Text Recognizer
+  final TextRecognizer _textRecognizer = TextRecognizer(script: TextRecognitionScript.latin);
 
-  /// 1. Compress the image to meet NFR-01 (Speed)
-  Future<File?> compressImage(File file) async {
-    final tempDir = await getTemporaryDirectory();
-    final path = tempDir.path;
-    final targetPath = p.join(path, "temp_scan.jpg");
-
-    var result = await FlutterImageCompress.compressAndGetFile(
-      file.absolute.path,
-      targetPath,
-      quality: 70, // Reduce quality to 70% to save bandwidth
-      minWidth: 1080, // Resize to a standard width
-      minHeight: 1920,
-    );
-
-    print("Original size: ${file.lengthSync()} bytes");
-    print("Compressed size: ${await result?.length()} bytes");
-
-    return result != null ? File(result.path) : null;
-  }
-
-  /// 2. Upload the image (Sequence Diagram Step 9)
-  Future<String?> uploadImage(File imageFile) async {
-    // A. Compress first
-    File? processedFile = await compressImage(imageFile);
-    if (processedFile == null) return null;
-
-    // B. Prepare the POST request
-    var uri = Uri.parse('$_baseUrl/analyze-image');
-    var request = http.MultipartRequest('POST', uri);
-
-    // C. Attach the file
-    var stream = http.ByteStream(processedFile.openRead());
-    var length = await processedFile.length();
-    var multipartFile = http.MultipartFile(
-      'image', // This must match the key Thisal uses in his backend
-      stream,
-      length,
-      filename: p.basename(processedFile.path),
-    );
-
-    request.files.add(multipartFile);
-
-    // D. Send and wait for response
+  /// This function takes the photo file, reads the text, and returns a single string of ingredients
+  Future<String?> processImageForText(File imageFile) async {
     try {
-      var response = await request.send();
-      if (response.statusCode == 200) {
-        var responseData = await response.stream.bytesToString();
-        return responseData; // This will be the JSON with "Safe/Unsafe"
-      } else {
-        print("Failed to upload: ${response.statusCode}");
-        return null;
+      // 2. Convert the Flutter File into an ML Kit InputImage
+      final inputImage = InputImage.fromFile(imageFile);
+
+      // 3. Process the image and extract the text
+      final RecognizedText recognizedText = await _textRecognizer.processImage(inputImage);
+
+      // 4. Combine all the extracted text into one string
+      String extractedText = recognizedText.text;
+      
+      // Optional: Clean up the text (remove newlines, extra spaces)
+      extractedText = extractedText.replaceAll('\n', ' ').replaceAll(RegExp(r'\s+'), ' ').trim();
+
+      if (extractedText.isEmpty) {
+        return null; // Return null if no text was found
       }
+
+      return extractedText;
+      
     } catch (e) {
-      print("Error sending image: $e");
+      print("OCR Error: $e");
       return null;
     }
+  }
+
+  /// IMPORTANT: Always dispose of the recognizer when done to prevent memory leaks!
+  void dispose() {
+    _textRecognizer.close();
   }
 }

@@ -49,26 +49,21 @@ class _ResultScreenState extends State<ResultScreen> {
       statusColor = frovyGreen;
       statusBgColor = frovyLightGreen;
       statusIcon = Icons.check_circle;
-      mainTitle = "safe_to_consume".tr();
-      mainDescription = "safe_description".tr();
+      mainTitle = "safe_title".tr();
+      mainDescription = "safe_desc".tr();
     } else if (status == "UNSAFE") {
       statusColor = frovyRed;
       statusBgColor = frovyLightRed;
       statusIcon = Icons.cancel;
-      mainTitle = "avoid_this_product".tr();
-      // Construct dynamic warning message from list, fallback to JSON translation
-      mainDescription = warnings.isNotEmpty
-          ? warnings.join("\n") 
-          : "unsafe_description".tr();
+      mainTitle = "unsafe_title".tr();
+      mainDescription = warnings.isNotEmpty ? warnings.join("\n") : "unsafe_desc".tr();
     } else {
       // CAUTION (e.g., Drug Interactions or ambiguous ingredients)
       statusColor = frovyAmber;
       statusBgColor = frovyLightAmber;
       statusIcon = Icons.warning_amber_rounded;
-      mainTitle = "use_with_caution".tr();
-      mainDescription = warnings.isNotEmpty
-          ? warnings.join("\n")
-          : "caution_description".tr();
+      mainTitle = "caution_title".tr();
+      mainDescription = warnings.isNotEmpty ? warnings.join("\n") : "caution_desc".tr();
     }
 
     return Scaffold(
@@ -81,7 +76,7 @@ class _ResultScreenState extends State<ResultScreen> {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          "analysis_results".tr(),
+          "analysis_results_title".tr(),
           style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -231,11 +226,7 @@ class _ResultScreenState extends State<ResultScreen> {
               child: Text(
                 "medical_disclaimer".tr(),
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 12,
-                  color: Colors.grey[700],
-                  height: 1.4,
-                ),
+                style: TextStyle(fontSize: 11, color: Colors.grey[700], height: 1.4),
               ),
             ),
           ],

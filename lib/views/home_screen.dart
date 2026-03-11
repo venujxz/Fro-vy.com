@@ -9,6 +9,11 @@ import 'subscription_screen.dart'; // 3. Premium Plans
 import 'history_screen.dart';      // 4. Analysis History
 import 'settings_screen.dart';     // 5. Settings
 import 'help_support_screen.dart'; // 6. Help & Support
+import 'search_products.dart';     // 7. Search Products
+import 'manual_entry_screen.dart'; // 8. Manual Entry
+
+//imports the lanuage switcher button
+import 'widgets/language_switcher.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<CameraDescription> cameras;
@@ -36,7 +41,10 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: headerColor,
         elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white), 
+        actions: const[
+          LanguageSwitcher(),
+        ],
         title: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -243,7 +251,10 @@ class HomeScreen extends StatelessWidget {
                       cardColor: cardColor,
                       textColor: textColor,
                       onTap: () {
-                        // TODO: Navigate to Search
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const SearchProductsScreen()),
+                        );
                       },
                     ),
 
@@ -260,7 +271,10 @@ class HomeScreen extends StatelessWidget {
                       cardColor: cardColor,
                       textColor: textColor,
                       onTap: () {
-                        // TODO: Navigate to Manual Entry
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ManualEntryScreen()),
+                        );
                       },
                     ),
                     

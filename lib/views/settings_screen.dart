@@ -14,10 +14,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Color get frovyGreen => const Color(0xFF6AA15E);
   Color get frovyRed => const Color(0xFFD32F2F);
   
-  // Local state for other toggles
+  // Local state for notification toggles
   bool _pushNotifications = true;
   bool _emailUpdates = true;
-  String _selectedLanguage = "English";
 
   @override
   Widget build(BuildContext context) {
@@ -94,29 +93,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ],
               ),
               
+              
               const SizedBox(height: 20),
 
-              // 3. Language
-              _buildSectionCard(
-                context,
-                title: "language".tr(),
-                icon: Icons.language,
-                iconColor: Colors.blue,
-                children: [
-                   ListTile(
-                    contentPadding: EdgeInsets.zero,
-                    title: Text("language".tr(), style: const TextStyle(fontWeight: FontWeight.w500)),
-                    trailing: Text(_selectedLanguage, style: const TextStyle(color: Colors.grey)),
-                    onTap: () {
-                      // Simple Dialog Logic
-                    },
-                   )
-                ],
-              ),
-
-              const SizedBox(height: 20),
-
-              // 4. Danger Zone
+              // 3. Danger Zone
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(

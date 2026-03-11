@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
+import 'package:easy_localization/easy_localization.dart';
+import 'widgets/language_switcher.dart';
 
 class CheckoutScreen extends StatefulWidget {
   final String planName;
@@ -37,9 +38,16 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          "checkout".tr(),
-          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          'checkout'.tr(),
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
         ),
+
+        actions: const [
+          LanguageSwitcher(),
+        ],
       ),
       body: Column(
         children: [

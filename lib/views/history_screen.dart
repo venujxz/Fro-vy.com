@@ -60,8 +60,8 @@ class _HistoryScreenState extends State<HistoryScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text("clear_history_q".tr()),
-        content: Text("action_undone".tr()),
+        title: Text("clear_history".tr()),
+        content: Text("clear_history_desc".tr()),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
@@ -245,17 +245,20 @@ class _HistoryScreenState extends State<HistoryScreen> {
     String status = item['status'];
     Color statusColor;
     IconData statusIcon;
+    String statusLabel;
 
-    // Determine colors based on status string
     if (status == "SAFE") {
       statusColor = frovyGreen;
       statusIcon = Icons.check_circle_outline;
+      statusLabel = "status_good".tr();
     } else if (status == "UNSAFE") {
       statusColor = frovyRed;
       statusIcon = Icons.cancel_outlined;
+      statusLabel = "status_bad".tr();
     } else {
       statusColor = frovyAmber;
       statusIcon = Icons.warning_amber_rounded;
+      statusLabel = "status_medium".tr();
     }
 
     return GestureDetector(
@@ -307,8 +310,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                       Icon(statusIcon, color: Colors.white, size: 16),
                       const SizedBox(width: 4),
                       Text(
-                        // Mock data status - keeping it in English for the badge for now
-                        status == "SAFE" ? "Good" : (status == "UNSAFE" ? "Bad" : "Medium"), 
+                        statusLabel, 
                         style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12)
                       ),
                     ],
