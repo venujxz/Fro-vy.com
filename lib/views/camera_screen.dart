@@ -1,11 +1,13 @@
 import 'dart:io';
+import 'dart:convert'; // Required for jsonEncode
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart'; 
 import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
+import 'package:http/http.dart' as http; // IMPORT FOR BACKEND REQUESTS
 import '../services/ocr_service.dart';
 import 'result_screen.dart';
-import 'widgets/language_switcher.dart'; // Keeping your language switcher import
+import 'widgets/language_switcher.dart';
 
 class CameraScreen extends StatefulWidget {
   final List<CameraDescription> cameras;
@@ -47,7 +49,7 @@ class CameraScreenState extends State<CameraScreen> {
     super.dispose();
   }
 
-  // --- LOGIC: Process the Image Locally using Google ML Kit ---
+  // --- LOGIC: Process the Image Locally & Send to Backend ---
   Future<void> _processImage(String imagePath) async {
     if (!mounted) return;
     
@@ -65,25 +67,45 @@ class CameraScreenState extends State<CameraScreen> {
       ocrService.dispose();
 
       if (extractedIngredients != null && extractedIngredients.isNotEmpty) {
-        // --- 3. SEND TEXT TO BACKEND (Mocked for now) ---
-        // TODO: Later, we will send 'extractedIngredients' to Akshara's API
-        // For now, we wrap the extracted text in our mock JSON structure so the Result Screen works!
-        String mockBackendResponse = '''
-        {
-          "productName": "Scanned Product", 
-          "status": "CAUTION", 
-          "ingredients": ["$extractedIngredients"], 
-          "warnings": ["Pending AI analysis from backend..."]
-        }
-        ''';
+        
+        // --- 3. SEND TEXT TO BACKEND API ---
+        
+        // IMPORTANT: Replace this URL with your actual backend URL when deployed!
+        // Using 10.0.2.2 for Android Emulator to connect to localhost:3000
+        final url = Uri.parse('http://10.0.2.2:3000/personalize-analysis'); 
 
-        if (!mounted) return;
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ResultScreen(analysisResult: mockBackendResponse),
-          ),
+        final response = await http.post(
+          url,
+          headers: {
+            'Content-Type': 'application/json',
+            // 'Authorization': 'Bearer YOUR_TOKEN_HERE', // Uncomment when Auth is ready
+          },
+          body: jsonEncode({
+            'extractedText': extractedIngredients,
+            // Hardcoded for now, but eventually pass the user's actual profile data
+            'allergies': ["Peanuts", "Shellfish"], 
+            'medicalConditions': "None"
+          }),
         );
+
+        if (response.statusCode == 200) {
+          // Success! Pass the real JSON from the backend directly to the Result Screen
+          if (!mounted) return;
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ResultScreen(analysisResult: response.body),
+            ),
+          );
+        } else {
+          // Server error (e.g., 404 Not Found, or 500 Internal Server Error)
+          if (!mounted) return;
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text("Server error. Please check backend connection.")),
+          );
+          print("Backend Error: ${response.statusCode} - ${response.body}");
+        }
+
       } else {
         if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
@@ -91,7 +113,12 @@ class CameraScreenState extends State<CameraScreen> {
         );
       }
     } catch (e) {
-      print("Error processing image: $e");
+      if (!mounted) return;
+      // This catches network connection errors (like if the backend isn't turned on)
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Failed to connect to server: $e")),
+      );
+      print("Network/Processing Error: $e");
     }
   }
 
