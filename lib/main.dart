@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:camera/camera.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'views/home_screen.dart';
 import 'views/theme_notifier.dart'; // Import the new notifier
+import 'util/app_colors.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,7 +15,7 @@ Future<void> main() async {
   try {
     cameras = await availableCameras();
   } catch (e) {
-    print("Camera Error: $e");
+    debugPrint("Camera Error: $e");
   }
 
   // 2. Start the app
@@ -60,11 +62,11 @@ class FrovyApp extends StatelessWidget {
           // 1. LIGHT THEME DEFINITION
           theme: ThemeData(
             brightness: Brightness.light,
-            colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF6AA15E)),
-            scaffoldBackgroundColor: const Color(0xFFF8F9FA),
+            colorScheme: ColorScheme.fromSeed(seedColor: AppColors.frovyGreen),
+            scaffoldBackgroundColor: AppColors.frovyLightBg,
             useMaterial3: true,
             appBarTheme: const AppBarTheme(
-              backgroundColor: Color(0xFF6AA15E),
+              backgroundColor: AppColors.frovyGreen,
               foregroundColor: Colors.white,
             ),
           ),
@@ -73,7 +75,7 @@ class FrovyApp extends StatelessWidget {
           darkTheme: ThemeData(
             brightness: Brightness.dark,
             colorScheme: ColorScheme.fromSeed(
-              seedColor: const Color(0xFF6AA15E),
+              seedColor: AppColors.frovyGreen,
               brightness: Brightness.dark,
             ),
             scaffoldBackgroundColor: const Color(0xFF121212), // Dark grey background
