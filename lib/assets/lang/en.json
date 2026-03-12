@@ -169,6 +169,13 @@
   "have_feedback": "Have Feedback?",
   "feedback_subtitle": "We'd love to hear your thoughts on how we can improve Fro-vy!",
   "send_feedback": "Send Feedback",
+  "feedback_form_title": "Share Your Feedback",
+  "feedback_form_subtitle": "Help us make Fro-vy better for everyone!",
+  "feedback_rating_label": "How would you rate your experience?",
+  "feedback_hint": "Tell us what you liked or what we can improve...",
+  "feedback_submit": "Submit Feedback",
+  "feedback_empty_error": "Please provide a rating or write some feedback.",
+  "feedback_thank_you": "Thank you for your feedback! 🎉",
 
   "search_title": "Search Products",
   "search_hint": "Search for a product...",
