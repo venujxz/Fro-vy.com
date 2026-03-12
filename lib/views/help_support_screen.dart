@@ -137,7 +137,7 @@ class HelpSupportScreen extends StatelessWidget {
                       height: 50,
                       child: ElevatedButton(
                         onPressed: () {
-                          // TODO: Open Feedback Form
+                          _showFeedbackForm(context);
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: frovyGreen,
@@ -158,6 +158,129 @@ class HelpSupportScreen extends StatelessWidget {
             ),
           ),
         ),
+      );
+    }
+
+    // --- Feedback Form Logic ---
+
+    void _showFeedbackForm(BuildContext context) {
+      final TextEditingController feedbackController = TextEditingController();
+      int selectedRating = 0;
+
+      showModalBottomSheet(
+        context: context,
+        isScrollControlled: true,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+        ),
+        builder: (context) {
+          return StatefulBuilder(
+            builder: (context, setModalState) {
+              return Padding(
+                padding: EdgeInsets.fromLTRB(
+                  24, 24, 24,
+                  MediaQuery.of(context).viewInsets.bottom + 24,
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Center(
+                      child: Container(
+                        width: 40,
+                        height: 4,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[300],
+                          borderRadius: BorderRadius.circular(2),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    Text(
+                      "feedback_form_title".tr(),
+                      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      "feedback_form_subtitle".tr(),
+                      style: TextStyle(color: Colors.grey[600], fontSize: 14),
+                    ),
+                    const SizedBox(height: 20),
+
+                    // Star Rating
+                    Text("feedback_rating_label".tr(), style: const TextStyle(fontWeight: FontWeight.w600)),
+                    const SizedBox(height: 8),
+                    Row(
+                      children: List.generate(5, (index) {
+                        return GestureDetector(
+                          onTap: () => setModalState(() => selectedRating = index + 1),
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 8.0),
+                            child: Icon(
+                              index < selectedRating ? Icons.star : Icons.star_border,
+                              color: frovyGreen,
+                              size: 36,
+                            ),
+                          ),
+                        );
+                      }),
+                    ),
+                    const SizedBox(height: 20),
+
+                    // Text Field
+                    TextField(
+                      controller: feedbackController,
+                      maxLines: 4,
+                      decoration: InputDecoration(
+                        hintText: "feedback_hint".tr(),
+                        filled: true,
+                        fillColor: const Color(0xFFF8F9FA),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(color: Colors.grey[200]!),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(color: Colors.grey[200]!),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 24),
+
+                    // Submit Button
+                    SizedBox(
+                      width: double.infinity,
+                      height: 50,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          if (feedbackController.text.trim().isEmpty && selectedRating == 0) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text("feedback_empty_error".tr())),
+                            );
+                            return;
+                          }
+                          Navigator.pop(context);
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text("feedback_thank_you".tr())),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: frovyGreen,
+                          foregroundColor: Colors.white,
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                        child: Text("feedback_submit".tr(), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          );
+        },
       );
     }
 
