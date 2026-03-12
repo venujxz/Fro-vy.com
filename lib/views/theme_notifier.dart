@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+import '../services/prefs_service.dart';
 
 // This class holds the current theme state (Light or Dark)
 class ThemeNotifier extends ValueNotifier<ThemeMode> {
-  ThemeNotifier() : super(ThemeMode.light); // Start with Light Mode by default
+  ThemeNotifier() : super(ThemeMode.light) {
+    // Load saved theme preference on startup
+    _loadTheme();
+  }
 
-  // Function to switch the theme
+  Future<void> _loadTheme() async {
+    value = await PrefsService.getThemeMode();
+  }
+
+  // Function to switch the theme and persist the choice
   void toggleTheme(bool isDark) {
     value = isDark ? ThemeMode.dark : ThemeMode.light;
+    PrefsService.setThemeMode(value);
   }
 }
 
