@@ -111,7 +111,41 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     SizedBox(
                       width: double.infinity,
                       child: OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (ctx) => AlertDialog(
+                              title: Row(
+                                children: [
+                                  Icon(Icons.warning_amber_rounded, color: frovyRed),
+                                  const SizedBox(width: 8),
+                                  Text("delete_account".tr()),
+                                ],
+                              ),
+                              content: Text("delete_account_confirm".tr()),
+                              actions: [
+                                TextButton(
+                                  onPressed: () => Navigator.pop(ctx),
+                                  child: Text("cancel".tr()),
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(ctx);
+                                    // Pop back to home screen
+                                    Navigator.of(context).popUntil((route) => route.isFirst);
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(content: Text("delete_account_success".tr())),
+                                    );
+                                  },
+                                  child: Text(
+                                    "delete_account_btn".tr(),
+                                    style: TextStyle(color: frovyRed, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
                         style: OutlinedButton.styleFrom(
                           foregroundColor: frovyRed, 
                           side: BorderSide(color: frovyRed)
