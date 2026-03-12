@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart'; // Import localization
 import 'result_screen.dart';
 import 'dart:convert';
+import '../util/app_colors.dart';
 
 class SearchProductsScreen extends StatefulWidget {
   const SearchProductsScreen({super.key});
@@ -11,9 +12,27 @@ class SearchProductsScreen extends StatefulWidget {
 }
 
 class _SearchProductsScreenState extends State<SearchProductsScreen> {
-  final Color frovyGreen = const Color(0xFF6AA15E);
-  String selectedCategory = "cat_all"; // Use the localization key as the ID
-  
+  final Color frovyGreen = AppColors.frovyGreen;
+  String selectedCategory = "cat_all";
+  final TextEditingController _searchController = TextEditingController();
+  String _searchQuery = "";
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  // Filtered products based on category + search query
+  List<Map<String, dynamic>> get _filteredProducts {
+    return products.where((product) {
+      final matchesCategory = selectedCategory == "cat_all" || product['category'] == selectedCategory;
+      final matchesSearch = _searchQuery.isEmpty ||
+          (product['name'] as String).toLowerCase().contains(_searchQuery.toLowerCase());
+      return matchesCategory && matchesSearch;
+    }).toList();
+  }
+
   // Define categories using their localization keys
   final List<String> categories = [
     "cat_all", 
@@ -33,18 +52,17 @@ class _SearchProductsScreenState extends State<SearchProductsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      backgroundColor: const Color(0xFFF8F9FA),
       appBar: AppBar(
-        backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          icon: Icon(Icons.arrow_back, color: isDark ? Colors.white : Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
           "search_title".tr(), 
-          style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold)
+          style: TextStyle(color: isDark ? Colors.white : Colors.black, fontWeight: FontWeight.bold)
         ),
         centerTitle: true,
       ),
@@ -54,11 +72,22 @@ class _SearchProductsScreenState extends State<SearchProductsScreen> {
           Padding(
             padding: const EdgeInsets.all(24.0),
             child: TextField(
+              controller: _searchController,
+              onChanged: (value) => setState(() => _searchQuery = value),
               decoration: InputDecoration(
                 hintText: "search_hint".tr(),
                 prefixIcon: const Icon(Icons.search),
+                suffixIcon: _searchQuery.isNotEmpty
+                    ? IconButton(
+                        icon: const Icon(Icons.clear),
+                        onPressed: () {
+                          _searchController.clear();
+                          setState(() => _searchQuery = "");
+                        },
+                      )
+                    : null,
                 filled: true,
-                fillColor: Colors.white,
+                fillColor: isDark ? const Color(0xFF2C2C2C) : Colors.white,
                 contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
@@ -103,20 +132,34 @@ class _SearchProductsScreenState extends State<SearchProductsScreen> {
 
           const SizedBox(height: 24),
 
-          // 3. Product List
+          // 3. Product List (filtered)
           Expanded(
-            child: ListView.builder(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
-              itemCount: products.length,
-              itemBuilder: (context, index) {
-                final product = products[index];
-                // Matching logic using the key
-                if (selectedCategory != "cat_all" && product['category'] != selectedCategory) {
-                  return const SizedBox.shrink();
-                }
-                return _buildProductCard(product);
-              },
-            ),
+            child: _filteredProducts.isEmpty
+                ? Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.search_off, size: 64, color: Colors.grey[300]),
+                        const SizedBox(height: 16),
+                        Text(
+                          "no_results_found".tr(),
+                          style: TextStyle(fontSize: 16, color: Colors.grey[500], fontWeight: FontWeight.w600),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          "try_different_search".tr(),
+                          style: TextStyle(fontSize: 13, color: Colors.grey[400]),
+                        ),
+                      ],
+                    ),
+                  )
+                : ListView.builder(
+                    padding: const EdgeInsets.symmetric(horizontal: 24),
+                    itemCount: _filteredProducts.length,
+                    itemBuilder: (context, index) {
+                      return _buildProductCard(_filteredProducts[index]);
+                    },
+                  ),
           ),
         ],
       ),
@@ -124,12 +167,15 @@ class _SearchProductsScreenState extends State<SearchProductsScreen> {
   }
 
   Widget _buildProductCard(Map<String, dynamic> product) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
       margin: const EdgeInsets.only(bottom: 16),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
         borderRadius: BorderRadius.circular(16),
-        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 10)],
+        boxShadow: [
+          if (!isDark) BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 10)
+        ],
       ),
       child: ListTile(
         contentPadding: const EdgeInsets.all(16),
