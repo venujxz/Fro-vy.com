@@ -7,7 +7,7 @@ import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 import 'package:http/http.dart' as http; // IMPORT FOR BACKEND REQUESTS
 import '../services/ocr_service.dart';
 import 'result_screen.dart';
-import 'widgets/language_switcher.dart';
+import 'manual_entry_screen.dart';
 
 class CameraScreen extends StatefulWidget {
   final List<CameraDescription> cameras;
@@ -298,7 +298,10 @@ class CameraScreenState extends State<CameraScreen> {
               ),
               TextButton(
                 onPressed: () {
-                  // TODO: Navigate to manual entry screen
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ManualEntryScreen()),
+                  );
                 },
                 child: Text(
                   "try_manual_entry".tr(),
