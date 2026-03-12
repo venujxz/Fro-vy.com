@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http; // IMPORT FOR BACKEND REQUESTS
 import '../services/ocr_service.dart';
 import 'result_screen.dart';
 import 'manual_entry_screen.dart';
+import '../util/app_colors.dart';
 
 class CameraScreen extends StatefulWidget {
   final List<CameraDescription> cameras;
@@ -19,14 +20,14 @@ class CameraScreen extends StatefulWidget {
 }
 
 class CameraScreenState extends State<CameraScreen> {
-  late CameraController controller;
+  CameraController? controller;
   bool _isCameraInitialized = false;
   final ImagePicker _picker = ImagePicker(); // For Gallery Uploads
 
   // Define Fro-vy Brand Colors based on your design
-  static const Color frovyGreen = Color(0xFF6AA15E); 
-  static const Color frovyBeige = Color(0xFFEEE8D6); 
-  static const Color frovyText = Color(0xFF2C3E28); 
+  static const Color frovyGreen = AppColors.frovyGreen; 
+  static const Color frovyBeige = AppColors.frovyBeige; 
+  static const Color frovyText = AppColors.frovyText; 
 
   @override
   void initState() {
@@ -34,18 +35,20 @@ class CameraScreenState extends State<CameraScreen> {
     // Initialize Camera
     if (widget.cameras.isNotEmpty) {
       controller = CameraController(widget.cameras[0], ResolutionPreset.high);
-      controller.initialize().then((_) {
+      controller!.initialize().then((_) {
         if (!mounted) return;
         setState(() {
           _isCameraInitialized = true;
         });
+      }).catchError((e) {
+        debugPrint('Camera initialization error: $e');
       });
     }
   }
 
   @override
   void dispose() {
-    controller.dispose();
+    controller?.dispose();
     super.dispose();
   }
 
@@ -103,7 +106,7 @@ class CameraScreenState extends State<CameraScreen> {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text("Server error. Please check backend connection.")),
           );
-          print("Backend Error: ${response.statusCode} - ${response.body}");
+          debugPrint("Backend Error: ${response.statusCode} - ${response.body}");
         }
 
       } else {
@@ -116,9 +119,9 @@ class CameraScreenState extends State<CameraScreen> {
       if (!mounted) return;
       // This catches network connection errors (like if the backend isn't turned on)
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Failed to connect to server: $e")),
+        SnackBar(content: Text('upload_failed'.tr())),
       );
-      print("Network/Processing Error: $e");
+      debugPrint("Network/Processing Error: $e");
     }
   }
 
@@ -130,25 +133,24 @@ class CameraScreenState extends State<CameraScreen> {
   }
 
   Future<void> _takePhoto() async {
-    if (!_isCameraInitialized) return;
-    final XFile image = await controller.takePicture();
+    if (!_isCameraInitialized || controller == null) return;
+    final XFile image = await controller!.takePicture();
     await _processImage(image.path);
   }
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      backgroundColor: const Color(0xFFF8F9FA), 
       appBar: AppBar(
-        backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          icon: Icon(Icons.arrow_back, color: isDark ? Colors.white : Colors.black),
           onPressed: () => Navigator.of(context).pop(), 
         ),
         title: Text(
           "scan_ingredients".tr(), 
-          style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          style: TextStyle(color: isDark ? Colors.white : Colors.black, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
@@ -160,14 +162,15 @@ class CameraScreenState extends State<CameraScreen> {
               // 1. The Camera Card Container
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
-                      blurRadius: 10,
-                      offset: const Offset(0, 4),
-                    ),
+                    if (!isDark)
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.05),
+                        blurRadius: 10,
+                        offset: const Offset(0, 4),
+                      ),
                   ],
                 ),
                 padding: const EdgeInsets.all(16),
@@ -183,11 +186,11 @@ class CameraScreenState extends State<CameraScreen> {
                         border: Border.all(color: Colors.grey[300]!),
                       ),
                       clipBehavior: Clip.hardEdge,
-                      child: _isCameraInitialized
+                      child: _isCameraInitialized && controller != null
                           ? Stack(
                               fit: StackFit.expand,
                               children: [
-                                CameraPreview(controller),
+                                CameraPreview(controller!),
                                 // The Green Focus Frame
                                 Center(
                                   child: Container(
