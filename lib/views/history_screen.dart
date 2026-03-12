@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 import 'result_screen.dart'; 
+import '../util/app_colors.dart';
 
 class HistoryScreen extends StatefulWidget {
   const HistoryScreen({super.key});
@@ -12,9 +13,9 @@ class HistoryScreen extends StatefulWidget {
 
 class _HistoryScreenState extends State<HistoryScreen> {
   // Brand Colors
-  final Color frovyGreen = const Color(0xFF6AA15E);
-  final Color frovyRed = const Color(0xFFD32F2F);
-  final Color frovyAmber = const Color(0xFFFFA000);
+  final Color frovyGreen = AppColors.frovyGreen;
+  final Color frovyRed = AppColors.frovyRed;
+  final Color frovyAmber = AppColors.frovyAmber;
 
   // --- MOCK DATA: List of History Items ---
   // In a real app, this would come from a database (SQLite/Firebase)

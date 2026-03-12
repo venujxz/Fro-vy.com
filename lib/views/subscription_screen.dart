@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 import 'checkout_screen.dart'; 
+import '../util/app_colors.dart';
 
 class SubscriptionScreen extends StatefulWidget {
   const SubscriptionScreen({super.key});
@@ -11,9 +12,9 @@ class SubscriptionScreen extends StatefulWidget {
 
 class _SubscriptionScreenState extends State<SubscriptionScreen> {
   // Brand Colors
-  static const Color frovyGreen = Color(0xFF6AA15E);
-  static const Color frovyGold = Color(0xFFFFC107);
-  static const Color frovyLightBg = Color(0xFFF8F9FA);
+  static const Color frovyGreen = AppColors.frovyGreen;
+  static const Color frovyGold = AppColors.frovyGold;
+  static const Color frovyLightBg = AppColors.frovyLightBg;
 
   // State Variable to track the active plan
   String _currentPlan = "Free"; // Defaults to Free

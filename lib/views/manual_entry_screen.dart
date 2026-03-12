@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart'; // IMPORT
 import 'result_screen.dart';
 import 'dart:convert';
+import '../util/app_colors.dart';
 
 class ManualEntryScreen extends StatefulWidget {
   const ManualEntryScreen({super.key});
@@ -13,7 +14,7 @@ class ManualEntryScreen extends StatefulWidget {
 class _ManualEntryScreenState extends State<ManualEntryScreen> {
   final TextEditingController _ingredientController = TextEditingController();
   
-  final Color frovyGreen = const Color(0xFF6AA15E);
+  final Color frovyGreen = AppColors.frovyGreen;
 
   void _analyzeText() {
     final String text = _ingredientController.text.trim();
@@ -49,18 +50,17 @@ class _ManualEntryScreenState extends State<ManualEntryScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          icon: Icon(Icons.arrow_back, color: isDark ? Colors.white : Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
           "manual_title".tr(), // LOCALIZED TITLE
-          style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold)
+          style: TextStyle(color: isDark ? Colors.white : Colors.black, fontWeight: FontWeight.bold)
         ),
         centerTitle: true,
       ),
@@ -74,7 +74,7 @@ class _ManualEntryScreenState extends State<ManualEntryScreen> {
               decoration: InputDecoration(
                 hintText: "manual_hint".tr(), // LOCALIZED HINT
                 filled: true,
-                fillColor: const Color(0xFFF8F9FA),
+                fillColor: isDark ? const Color(0xFF2C2C2C) : const Color(0xFFF8F9FA),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                   borderSide: BorderSide(color: Colors.grey[200]!),

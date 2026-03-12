@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'widgets/language_switcher.dart';
+import '../util/app_colors.dart';
 
 class CheckoutScreen extends StatefulWidget {
   final String planName;
@@ -20,8 +20,8 @@ class CheckoutScreen extends StatefulWidget {
 
 class _CheckoutScreenState extends State<CheckoutScreen> {
   // Brand Colors
-  final Color frovyGreen = const Color(0xFF6AA15E);
-  final Color frovyLightBg = const Color(0xFFF8F9FA);
+  final Color frovyGreen = AppColors.frovyGreen;
+  final Color frovyLightBg = AppColors.frovyLightBg;
 
   int _selectedPaymentMethod = 0; // 0 = Card, 1 = PayPal, 2 = Apple Pay
 
@@ -45,9 +45,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           ),
         ),
 
-        actions: const [
-          LanguageSwitcher(),
-        ],
+        actions: const [],
       ),
       body: Column(
         children: [

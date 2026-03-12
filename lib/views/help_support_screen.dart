@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
+import '../util/app_colors.dart';
 
 class HelpSupportScreen extends StatelessWidget {
   const HelpSupportScreen({super.key});
 
   // Brand Colors
-  static const Color frovyGreen = Color(0xFF6AA15E);
-  static const Color frovyYellowGradient = Color(0xFFFFF9C4);
+  static const Color frovyGreen = AppColors.frovyGreen;
+  static const Color frovyYellowGradient = AppColors.frovyYellowGradient;
 
   @override
   Widget build(BuildContext context) {

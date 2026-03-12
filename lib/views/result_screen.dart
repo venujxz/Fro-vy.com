@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
+import '../util/app_colors.dart';
 
 class ResultScreen extends StatefulWidget {
   final String analysisResult;
@@ -12,14 +13,14 @@ class ResultScreen extends StatefulWidget {
 }
 
 class _ResultScreenState extends State<ResultScreen> {
-  // Brand Colors from your design
-  static const Color frovyGreen = Color(0xFF6AA15E);
-  static const Color frovyRed = Color(0xFFD32F2F);
-  static const Color frovyAmber = Color(0xFFFFA000);
-  static const Color frovyBeige = Color(0xFFEEE8D6);
-  static const Color frovyLightGreen = Color(0xFFE8F5E9);
-  static const Color frovyLightRed = Color(0xFFFFEBEE);
-  static const Color frovyLightAmber = Color(0xFFFFF8E1);
+  // Brand Colors from centralized AppColors
+  static const Color frovyGreen = AppColors.frovyGreen;
+  static const Color frovyRed = AppColors.frovyRed;
+  static const Color frovyAmber = AppColors.frovyAmber;
+  static const Color frovyBeige = AppColors.frovyBeige;
+  static const Color frovyLightGreen = AppColors.frovyLightGreen;
+  static const Color frovyLightRed = AppColors.frovyLightRed;
+  static const Color frovyLightAmber = AppColors.frovyLightAmber;
 
   @override
   Widget build(BuildContext context) {
@@ -66,18 +67,18 @@ class _ResultScreenState extends State<ResultScreen> {
       mainDescription = warnings.isNotEmpty ? warnings.join("\n") : "caution_desc".tr();
     }
 
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
-      backgroundColor: Colors.white, 
       appBar: AppBar(
-        backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          icon: Icon(Icons.arrow_back, color: isDark ? Colors.white : Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
           "analysis_results_title".tr(),
-          style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          style: TextStyle(color: isDark ? Colors.white : Colors.black, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
@@ -89,10 +90,10 @@ class _ResultScreenState extends State<ResultScreen> {
             // Product Name Header
             Text(
               productName,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
-                color: Colors.black87,
+                color: isDark ? Colors.white : Colors.black87,
               ),
             ),
             const SizedBox(height: 20),

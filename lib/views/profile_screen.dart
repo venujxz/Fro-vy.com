@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 import 'edit_profile_screen.dart';
+import '../util/app_colors.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -11,9 +12,9 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   // Brand Colors
-  final Color frovyGreen = const Color(0xFF6AA15E);
-  final Color frovyText = const Color(0xFF2C3E28);
-  final Color frovyLightBg = const Color(0xFFF8F9FA);
+  final Color frovyGreen = AppColors.frovyGreen;
+  final Color frovyText = AppColors.frovyText;
+  final Color frovyLightBg = AppColors.frovyLightBg;
 
   // --- STATE VARIABLES (Data that can change) ---
   String name = "John Doe";
@@ -53,10 +54,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      backgroundColor: frovyLightBg,
       appBar: AppBar(
-        backgroundColor: frovyGreen,
+        backgroundColor: isDark ? null : frovyGreen,
         elevation: 0,
         centerTitle: true,
         leading: IconButton(

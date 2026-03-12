@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 
 class OCRService {
@@ -27,7 +28,7 @@ class OCRService {
       return extractedText;
       
     } catch (e) {
-      print("OCR Error: $e");
+      debugPrint("OCR Error: $e");
       return null;
     }
   }

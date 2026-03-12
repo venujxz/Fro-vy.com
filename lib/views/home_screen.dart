@@ -14,16 +14,17 @@ import 'manual_entry_screen.dart'; // 8. Manual Entry
 
 //imports the lanuage switcher button
 import 'widgets/language_switcher.dart';
+import '../util/app_colors.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<CameraDescription> cameras;
 
   const HomeScreen({super.key, required this.cameras});
 
-  // Brand Colors
-  static const Color frovyGreen = Color(0xFF6AA15E);
-  static const Color frovyYellow = Color(0xFFFBE156);
-  static const Color frovyLightBg = Color(0xFFF8F9FA);
+  // Use centralized AppColors
+  static const Color frovyGreen = AppColors.frovyGreen;
+  static const Color frovyYellow = AppColors.frovyYellow;
+  static const Color frovyLightBg = AppColors.frovyLightBg;
 
   @override
   Widget build(BuildContext context) {
