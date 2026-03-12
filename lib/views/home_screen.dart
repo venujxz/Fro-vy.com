@@ -129,7 +129,36 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             const Divider(),
-            ListTile(leading: const Icon(Icons.logout, color: Colors.red), title: Text("logout".tr(), style: const TextStyle(color: Colors.red))),
+            ListTile(
+              leading: const Icon(Icons.logout, color: Colors.red),
+              title: Text("logout".tr(), style: const TextStyle(color: Colors.red)),
+              onTap: () {
+                Navigator.pop(context); // Close drawer first
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: Text("logout".tr()),
+                    content: Text("logout_confirm".tr()),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: Text("cancel".tr()),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          // Pop dialog, then reset to home (simulates logout)
+                          Navigator.of(context).popUntil((route) => route.isFirst);
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text("logout_success".tr())),
+                          );
+                        },
+                        child: Text("logout".tr(), style: const TextStyle(color: Colors.red)),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
