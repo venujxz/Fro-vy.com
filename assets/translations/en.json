@@ -195,5 +195,8 @@
   "logout_success": "You have been logged out successfully.",
   "delete_account_confirm": "This will permanently delete your account and all your data including scan history, health profile, and preferences. This action cannot be undone.",
   "delete_account_btn": "Yes, Delete My Account",
-  "delete_account_success": "Your account has been deleted."
+  "delete_account_success": "Your account has been deleted.",
+
+  "no_results_found": "No products found",
+  "try_different_search": "Try a different search term or category"
 }
