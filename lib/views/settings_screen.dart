@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 import 'theme_notifier.dart'; // Import the notifier
+import '../util/app_colors.dart';
+import '../services/prefs_service.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -11,12 +13,29 @@ class SettingsScreen extends StatefulWidget {
 
 class _SettingsScreenState extends State<SettingsScreen> {
   // Brand Colors (Getters allow them to adapt if needed)
-  Color get frovyGreen => const Color(0xFF6AA15E);
-  Color get frovyRed => const Color(0xFFD32F2F);
+  Color get frovyGreen => AppColors.frovyGreen;
+  Color get frovyRed => AppColors.frovyRed;
   
   // Local state for notification toggles
   bool _pushNotifications = true;
   bool _emailUpdates = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadPrefs();
+  }
+
+  Future<void> _loadPrefs() async {
+    final push = await PrefsService.getPushNotifications();
+    final email = await PrefsService.getEmailUpdates();
+    if (mounted) {
+      setState(() {
+        _pushNotifications = push;
+        _emailUpdates = email;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,8 +107,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 icon: Icons.notifications_none,
                 iconColor: const Color(0xFFFF8A65),
                 children: [
-                  _buildToggleTile("push_notifications".tr(), "receive_alerts".tr(), _pushNotifications, (v) => setState(() => _pushNotifications = v)),
-                  _buildToggleTile("email_updates".tr(), "health_tips".tr(), _emailUpdates, (v) => setState(() => _emailUpdates = v)),
+                  _buildToggleTile("push_notifications".tr(), "receive_alerts".tr(), _pushNotifications, (v) {
+                    setState(() => _pushNotifications = v);
+                    PrefsService.setPushNotifications(v);
+                  }),
+                  _buildToggleTile("email_updates".tr(), "health_tips".tr(), _emailUpdates, (v) {
+                    setState(() => _emailUpdates = v);
+                    PrefsService.setEmailUpdates(v);
+                  }),
                 ],
               ),
               
@@ -129,7 +154,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   child: Text("cancel".tr()),
                                 ),
                                 TextButton(
-                                  onPressed: () {
+                                  onPressed: () async {
+                                    await PrefsService.clearAll();
+                                    if (!context.mounted) return;
                                     Navigator.pop(ctx);
                                     // Pop back to home screen
                                     Navigator.of(context).popUntil((route) => route.isFirst);
@@ -201,7 +228,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       trailing: Switch(
         value: value, 
         onChanged: onChanged, 
-        activeColor: const Color(0xFF6AA15E)
+        activeColor: AppColors.frovyGreen
       ),
     );
   }
