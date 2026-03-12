@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
+import '../util/app_colors.dart';
+import '../util/validators.dart';
 
 class EditProfileScreen extends StatefulWidget {
   final int initialIndex; // To open specific tab (0 = Personal, 1 = Health)
@@ -12,10 +14,11 @@ class EditProfileScreen extends StatefulWidget {
 
 class _EditProfileScreenState extends State<EditProfileScreen> with SingleTickerProviderStateMixin {
   // Brand Colors
-  final Color frovyGreen = const Color(0xFF6AA15E);
-  final Color frovyLightBg = const Color(0xFFF8F9FA);
+  final Color frovyGreen = AppColors.frovyGreen;
+  final Color frovyLightBg = AppColors.frovyLightBg;
 
   late TabController _tabController;
+  final _formKey = GlobalKey<FormState>();
 
   // Form Controllers (Personal)
   final TextEditingController _nameController = TextEditingController(text: "John Doe");
@@ -32,6 +35,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
 
   final TextEditingController _medicalConditionsController = TextEditingController(text: "None");
   final TextEditingController _otherSensitivitiesController = TextEditingController(text: "Lactose Intolerance");
+
+  // Gender selection: store the KEY, not the translated string
+  String _selectedGender = "male";
+  final List<String> _genderKeys = ["male", "female", "other", "prefer_not_to_say"];
 
   @override
   void initState() {
@@ -53,10 +60,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      backgroundColor: frovyLightBg,
       appBar: AppBar(
-        backgroundColor: frovyGreen,
+        backgroundColor: isDark ? null : frovyGreen,
         elevation: 0,
         title: Text("edit_profile".tr(), style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
         centerTitle: true,
@@ -68,23 +75,24 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
           // --- THE SAVE BUTTON LOGIC ---
           TextButton(
             onPressed: () {
-              // 1. Capture the updated data into a Map
-              Map<String, dynamic> updatedData = {
-                "name": _nameController.text,
-                "email": _emailController.text,
-                "phone": _phoneController.text,
-                "dob": _dobController.text,
-                "allergies": _selectedAllergies.toList(), // Convert Set to List
-                "conditions": _medicalConditionsController.text,
-                "sensitivities": _otherSensitivitiesController.text,
-              };
+              // Validate the form first
+              if (_formKey.currentState?.validate() ?? false) {
+                Map<String, dynamic> updatedData = {
+                  "name": _nameController.text.trim(),
+                  "email": _emailController.text.trim(),
+                  "phone": _phoneController.text.trim(),
+                  "dob": _dobController.text.trim(),
+                  "gender": _selectedGender,
+                  "allergies": _selectedAllergies.toList(),
+                  "conditions": _medicalConditionsController.text.trim(),
+                  "sensitivities": _otherSensitivitiesController.text.trim(),
+                };
 
-              // 2. Send it back to the previous screen (ProfileScreen)
-              Navigator.pop(context, updatedData); 
-              
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text("profile_updated".tr())),
-              );
+                Navigator.pop(context, updatedData);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text("profile_updated".tr())),
+                );
+              }
             },
             child: Text("save".tr(), style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
           )
@@ -105,17 +113,25 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
         controller: _tabController,
         children: [
           // TAB 1: Personal Details Form
-          SingleChildScrollView(
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              children: [
-                _buildProfilePhoto(),
-                const SizedBox(height: 30),
-                _buildTextField("full_name".tr(), _nameController, Icons.person_outline),
-                _buildTextField("email".tr(), _emailController, Icons.email_outlined),
-                _buildTextField("phone_number".tr(), _phoneController, Icons.phone_outlined),
-                _buildTextField("date_of_birth".tr(), _dobController, Icons.calendar_today),
-                // Gender Dropdown
+          Form(
+            key: _formKey,
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                children: [
+                  _buildProfilePhoto(),
+                  const SizedBox(height: 30),
+                  _buildValidatedField("full_name".tr(), _nameController, Icons.person_outline,
+                      validator: (v) => Validators.validateRequired(v, fieldName: "full_name".tr())),
+                  _buildValidatedField("email".tr(), _emailController, Icons.email_outlined,
+                      validator: Validators.validateEmail,
+                      keyboardType: TextInputType.emailAddress),
+                  _buildValidatedField("phone_number".tr(), _phoneController, Icons.phone_outlined,
+                      validator: Validators.validatePhone,
+                      keyboardType: TextInputType.phone),
+                  // DOB with DatePicker
+                  _buildDatePickerField(),
+                  // Gender Dropdown
                 Container(
                   margin: const EdgeInsets.only(bottom: 20),
                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
@@ -127,19 +143,23 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
                   child: DropdownButtonHideUnderline(
                     child: DropdownButton<String>(
                       isExpanded: true,
-                      value: "male".tr(), // Defaulting to translated "Male" for UI mockup
-                      items: [
-                        "male".tr(), 
-                        "female".tr(), 
-                        "other".tr(), 
-                        "prefer_not_to_say".tr()
-                      ].map((e) => DropdownMenuItem(value: e, child: Text(e))).toList(),
-                      onChanged: (val) {},
+                      icon: Icon(Icons.arrow_drop_down, color: Colors.grey[600]),
+                      value: _selectedGender,
+                      items: _genderKeys.map((key) => DropdownMenuItem(
+                        value: key,
+                        child: Text(key.tr()),
+                      )).toList(),
+                      onChanged: (val) {
+                        if (val != null) {
+                          setState(() => _selectedGender = val);
+                        }
+                      },
                     ),
                   ),
                 ),
               ],
             ),
+          ),
           ),
 
           // TAB 2: Health Profile Form
@@ -186,13 +206,13 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
                 
                 Text("medical_conditions".tr(), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
                 const SizedBox(height: 8),
-                _buildTextField("enter_conditions".tr(), _medicalConditionsController, Icons.medical_services_outlined, maxLines: 2),
+                _buildValidatedField("enter_conditions".tr(), _medicalConditionsController, Icons.medical_services_outlined, maxLines: 2),
 
                 const SizedBox(height: 10),
 
                 Text("other_sensitivities".tr(), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
                 const SizedBox(height: 8),
-                _buildTextField("enter_sensitivities".tr(), _otherSensitivitiesController, Icons.warning_amber_rounded),
+                _buildValidatedField("enter_sensitivities".tr(), _otherSensitivitiesController, Icons.warning_amber_rounded),
               ],
             ),
           ),
@@ -203,7 +223,11 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
 
   // --- Helper Widgets ---
 
-  Widget _buildTextField(String label, TextEditingController controller, IconData icon, {int maxLines = 1}) {
+  Widget _buildValidatedField(String label, TextEditingController controller, IconData icon, {
+    int maxLines = 1,
+    String? Function(String?)? validator,
+    TextInputType? keyboardType,
+  }) {
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
       decoration: BoxDecoration(
@@ -213,9 +237,11 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
           BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 10, offset: const Offset(0, 4)),
         ],
       ),
-      child: TextField(
+      child: TextFormField(
         controller: controller,
         maxLines: maxLines,
+        keyboardType: keyboardType,
+        validator: validator,
         decoration: InputDecoration(
           labelText: label,
           prefixIcon: Icon(icon, color: Colors.grey),
@@ -224,6 +250,45 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
           fillColor: Colors.white,
           contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         ),
+      ),
+    );
+  }
+
+  Widget _buildDatePickerField() {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 20),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 10, offset: const Offset(0, 4)),
+        ],
+      ),
+      child: TextFormField(
+        controller: _dobController,
+        readOnly: true,
+        validator: Validators.validateDate,
+        decoration: InputDecoration(
+          labelText: "date_of_birth".tr(),
+          prefixIcon: const Icon(Icons.calendar_today, color: Colors.grey),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
+          filled: true,
+          fillColor: Colors.white,
+          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        ),
+        onTap: () async {
+          final DateTime? picked = await showDatePicker(
+            context: context,
+            initialDate: DateTime.tryParse(_dobController.text) ?? DateTime(2000, 1, 1),
+            firstDate: DateTime(1920),
+            lastDate: DateTime.now(),
+          );
+          if (picked != null) {
+            setState(() {
+              _dobController.text = '${picked.year}-${picked.month.toString().padLeft(2, '0')}-${picked.day.toString().padLeft(2, '0')}';
+            });
+          }
+        },
       ),
     );
   }
