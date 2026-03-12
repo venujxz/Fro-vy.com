@@ -189,5 +189,11 @@
   "manual_hint": "Paste or type ingredient list here, separated by commas...",
   "analyze_btn": "Analyze Ingredients",
   "error_empty": "Please enter some ingredients first.",
-  "manual_product_name": "Manual Entry Product"
+  "manual_product_name": "Manual Entry Product",
+
+  "logout_confirm": "Are you sure you want to log out?",
+  "logout_success": "You have been logged out successfully.",
+  "delete_account_confirm": "This will permanently delete your account and all your data including scan history, health profile, and preferences. This action cannot be undone.",
+  "delete_account_btn": "Yes, Delete My Account",
+  "delete_account_success": "Your account has been deleted."
 }
