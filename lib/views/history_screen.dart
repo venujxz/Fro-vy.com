@@ -106,20 +106,21 @@ class _HistoryScreenState extends State<HistoryScreen> {
     int totalScans = historyItems.length;
     int safeCount = historyItems.where((i) => i['status'] == 'SAFE').length;
     int flaggedCount = historyItems.where((i) => i['status'] != 'SAFE').length;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
-      backgroundColor: frovyGreen, 
+      backgroundColor: isDark ? null : frovyGreen,
       appBar: AppBar(
-        backgroundColor: frovyGreen,
+        backgroundColor: isDark ? null : frovyGreen,
         elevation: 0,
         centerTitle: true,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          icon: Icon(Icons.arrow_back, color: isDark ? Colors.white : Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
           "analysis_history".tr(),
-          style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          style: TextStyle(color: isDark ? Colors.white : Colors.black, fontWeight: FontWeight.bold),
         ),
       ),
       body: Column(
@@ -130,7 +131,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
             child: Container(
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Column(
@@ -158,13 +159,15 @@ class _HistoryScreenState extends State<HistoryScreen> {
             child: Container(
               width: double.infinity,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [frovyGreen, frovyGreen.withOpacity(0.8), const Color(0xFFFFF9C4)], 
-                ),
-              ),
+              decoration: isDark
+                  ? null
+                  : BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [frovyGreen, frovyGreen.withOpacity(0.8), const Color(0xFFFFF9C4)],
+                      ),
+                    ),
               child: historyItems.isEmpty
                   ? _buildEmptyState()
                   : ListView.separated(
@@ -268,7 +271,9 @@ class _HistoryScreenState extends State<HistoryScreen> {
       child: Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Theme.of(context).brightness == Brightness.dark
+              ? const Color(0xFF2C2C2C)
+              : Colors.white,
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
@@ -329,7 +334,11 @@ class _HistoryScreenState extends State<HistoryScreen> {
                 Text(
                   item['summary'],
                   style: TextStyle(
-                    color: status == "UNSAFE" ? Colors.red[700] : Colors.grey[700],
+                    color: status == "UNSAFE"
+                        ? Colors.red[700]
+                        : (Theme.of(context).brightness == Brightness.dark
+                            ? Colors.grey[400]
+                            : Colors.grey[700]),
                     fontSize: 13,
                   ),
                 ),
