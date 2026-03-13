@@ -1,11 +1,17 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'history_screen.dart';
+import 'package:camera/camera.dart';
+import 'home_screen.dart';
 
 class VerificationSentScreen extends StatefulWidget {
   final String email;
+  final List<CameraDescription>? cameras;
 
-  const VerificationSentScreen({super.key, required this.email});
+  const VerificationSentScreen({
+    super.key,
+    required this.email,
+    this.cameras,
+  });
 
   @override
   State<VerificationSentScreen> createState() => _VerificationSentScreenState();
@@ -22,9 +28,13 @@ class _VerificationSentScreenState extends State<VerificationSentScreen> {
     _timer = Timer(const Duration(seconds: 3), () {
       if (!mounted) return;
 
-      debugPrint("Timer completed. Navigating to HistoryScreen...");
+      debugPrint("Timer completed. Navigating to HomeScreen...");
       Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (context) => const HistoryScreen()),
+        MaterialPageRoute(
+          builder: (context) => HomeScreen(
+            cameras: widget.cameras ?? [],
+          ),
+        ),
         (route) => false,
       );
     });
@@ -135,7 +145,9 @@ class _VerificationSentScreenState extends State<VerificationSentScreen> {
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (context) => const HistoryScreen(),
+                      builder: (context) => HomeScreen(
+                        cameras: widget.cameras ?? [],
+                      ),
                     ),
                   );
                 },
