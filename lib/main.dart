@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:camera/camera.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'views/home_screen.dart';
 import 'views/theme_notifier.dart'; // Import the new notifier
 import 'util/app_colors.dart';
+import 'views/welcome_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -89,7 +89,7 @@ class FrovyApp extends StatelessWidget {
             ),
           ),
           
-          home: HomeScreen(cameras: cameras),
+          home: WelcomeScreen(),
         );
       },
     );
