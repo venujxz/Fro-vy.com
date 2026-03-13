@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
 import 'login_step1_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+  final List<CameraDescription>? cameras;
+
+  const WelcomeScreen({super.key, this.cameras});
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +83,9 @@ class WelcomeScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (_) => const LoginStep1Screen()),
+                    MaterialPageRoute(
+                      builder: (_) => LoginStep1Screen(cameras: cameras),
+                    ),
                   );
                 },
                 child: const Text(
