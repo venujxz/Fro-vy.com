@@ -43,10 +43,11 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      backgroundColor: frovyGreen,
+      backgroundColor: isDark ? null : frovyGreen,
       appBar: AppBar(
-        backgroundColor: frovyGreen,
+        backgroundColor: isDark ? null : frovyGreen,
         elevation: 0,
         centerTitle: true,
         leading: IconButton(
@@ -84,9 +85,9 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
             // Plan Cards
             Container(
               padding: const EdgeInsets.all(24),
-              decoration: const BoxDecoration(
-                color: frovyLightBg,
-                borderRadius: BorderRadius.only(
+              decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF121212) : frovyLightBg,
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),
                 ),
@@ -204,10 +205,11 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
     Color textColor = Colors.white,
     required bool isCurrent,
   }) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
         borderRadius: BorderRadius.circular(20),
         border: isCurrent ? Border.all(color: frovyGreen, width: 2) : null,
         boxShadow: [
@@ -226,11 +228,11 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(title, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  Text(title, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: isDark ? Colors.white : Colors.black87)),
                   Text(period, style: TextStyle(color: Colors.grey[600], fontSize: 12)),
                 ],
               ),
-              Text(price, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+              Text(price, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: isDark ? Colors.white : Colors.black87)),
             ],
           ),
           const SizedBox(height: 20),
