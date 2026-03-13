@@ -27,10 +27,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      backgroundColor: frovyGreen,
+      backgroundColor: isDark ? null : frovyGreen,
       appBar: AppBar(
-        backgroundColor: frovyGreen,
+        backgroundColor: isDark ? null : frovyGreen,
         elevation: 0,
         centerTitle: true,
         leading: IconButton(
@@ -74,7 +75,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             child: Container(
               padding: const EdgeInsets.all(24),
               decoration: BoxDecoration(
-                color: frovyLightBg,
+                color: isDark ? const Color(0xFF1A1A1A) : frovyLightBg,
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),
@@ -88,7 +89,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     Container(
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 4)),
@@ -190,13 +191,14 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
 
   Widget _buildPaymentOption(int index, String title, IconData icon) {
     bool isSelected = _selectedPaymentMethod == index;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return GestureDetector(
       onTap: () => setState(() => _selectedPaymentMethod = index),
       child: Container(
         margin: const EdgeInsets.only(bottom: 12),
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: isSelected ? frovyGreen : Colors.grey.shade200,
@@ -212,7 +214,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 title,
                 style: TextStyle(
                   fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                  color: Colors.black87,
+                  color: isDark ? Colors.white70 : Colors.black87,
                 ),
               ),
             ),
