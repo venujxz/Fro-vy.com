@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
+import 'package:easy_localization/easy_localization.dart';
 import '../util/app_colors.dart';
 
 class ResultScreen extends StatefulWidget {
@@ -13,18 +13,9 @@ class ResultScreen extends StatefulWidget {
 }
 
 class _ResultScreenState extends State<ResultScreen> {
-  // Brand Colors from centralized AppColors
-  static const Color frovyGreen = AppColors.frovyGreen;
-  static const Color frovyRed = AppColors.frovyRed;
-  static const Color frovyAmber = AppColors.frovyAmber;
-  static const Color frovyBeige = AppColors.frovyBeige;
-  static const Color frovyLightGreen = AppColors.frovyLightGreen;
-  static const Color frovyLightRed = AppColors.frovyLightRed;
-  static const Color frovyLightAmber = AppColors.frovyLightAmber;
-
   @override
   Widget build(BuildContext context) {
-    // 1. Parse Data (Robust parsing for Safety)
+    // Robust JSON parsing
     Map<String, dynamic> data;
     try {
       data = jsonDecode(widget.analysisResult);
@@ -32,40 +23,11 @@ class _ResultScreenState extends State<ResultScreen> {
       data = {};
     }
 
-    // Default values if data is missing
-    String productName = data['productName'] ?? "scanned_product".tr();
-    String status = data['status'] ?? "UNKNOWN"; // SAFE, UNSAFE, CAUTION
-    List<dynamic> ingredients = data['ingredients'] ?? [];
-    List<dynamic> warnings = data['warnings'] ?? []; 
-    // Warnings can be specific: "Contains Peanuts", "Interacts with Aspirin"
-
-    // 2. Determine Theme based on Report Logic (Toxicity, Allergy, Meds)
-    Color statusColor;
-    Color statusBgColor;
-    IconData statusIcon;
-    String mainTitle;
-    String mainDescription;
-
-    if (status == "SAFE") {
-      statusColor = frovyGreen;
-      statusBgColor = frovyLightGreen;
-      statusIcon = Icons.check_circle;
-      mainTitle = "safe_title".tr();
-      mainDescription = "safe_desc".tr();
-    } else if (status == "UNSAFE") {
-      statusColor = frovyRed;
-      statusBgColor = frovyLightRed;
-      statusIcon = Icons.cancel;
-      mainTitle = "unsafe_title".tr();
-      mainDescription = warnings.isNotEmpty ? warnings.join("\n") : "unsafe_desc".tr();
-    } else {
-      // CAUTION (e.g., Drug Interactions or ambiguous ingredients)
-      statusColor = frovyAmber;
-      statusBgColor = frovyLightAmber;
-      statusIcon = Icons.warning_amber_rounded;
-      mainTitle = "caution_title".tr();
-      mainDescription = warnings.isNotEmpty ? warnings.join("\n") : "caution_desc".tr();
-    }
+    // Support both 'productName' (new format) and 'name' (search product fallback)
+    String productName = data['productName'] ?? data['name'] ?? "scanned_product".tr();
+    List<dynamic> beneficial = data['beneficial'] ?? [];
+    List<dynamic> caution    = data['caution']    ?? [];
+    List<dynamic> avoid      = data['avoid']      ?? [];
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
@@ -78,16 +40,18 @@ class _ResultScreenState extends State<ResultScreen> {
         ),
         title: Text(
           "analysis_results_title".tr(),
-          style: TextStyle(color: isDark ? Colors.white : Colors.black, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            color: isDark ? Colors.white : Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(24.0),
+        padding: const EdgeInsets.all(24),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Product Name Header
+            // Product name
             Text(
               productName,
               style: TextStyle(
@@ -98,110 +62,31 @@ class _ResultScreenState extends State<ResultScreen> {
             ),
             const SizedBox(height: 20),
 
-            // 3. The Main Status Card (Visual Badge)
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                color: statusBgColor, 
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: statusColor.withOpacity(0.3), width: 1.5),
-              ),
-              child: Column(
-                children: [
-                  Icon(statusIcon, size: 64, color: statusColor),
-                  const SizedBox(height: 16),
-                  Text(
-                    mainTitle,
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: statusColor,
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  Text(
-                    mainDescription,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey[800],
-                      height: 1.5,
-                    ),
-                  ),
-                ],
-              ),
+            // Pie chart placeholder
+            const Center(
+              child: Icon(Icons.pie_chart, size: 100, color: AppColors.frovyGreen),
             ),
+
+            const SizedBox(height: 30),
+
+            // Three category tiles
+            _buildExpansionTile(
+              "result_beneficial".tr(), beneficial, AppColors.frovyGreen, isDark),
+            _buildExpansionTile(
+              "result_caution".tr(),    caution,    AppColors.frovyAmber,  isDark),
+            _buildExpansionTile(
+              "result_avoid".tr(),      avoid,      AppColors.frovyRed,    isDark),
 
             const SizedBox(height: 24),
 
-            // 4. Ingredients Dropdown (Expansion Logic)
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.grey[200]!),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
-                    blurRadius: 10,
-                    offset: const Offset(0, 4),
-                  ),
-                ],
-              ),
-              child: Theme(
-                data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
-                child: ExpansionTile(
-                  title: Text(
-                    "${"all_ingredients".tr()} (${ingredients.length})",
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16,
-                    ),
-                  ),
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Divider(),
-                          // List ingredients nicely
-                          ...ingredients.map((ing) => Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 4),
-                                child: Row(
-                                  children: [
-                                    Icon(Icons.circle, size: 6, color: Colors.grey[400]),
-                                    const SizedBox(width: 8),
-                                    Expanded(
-                                      child: Text(
-                                        ing.toString(),
-                                        style: TextStyle(color: Colors.grey[700]),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              )),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-
-            const SizedBox(height: 24),
-
-            // 5. "Check Another Product" Button
+            // Check another product button
             SizedBox(
               width: double.infinity,
               height: 52,
               child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+                onPressed: () => Navigator.pop(context),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: frovyGreen,
+                  backgroundColor: AppColors.frovyGreen,
                   foregroundColor: Colors.white,
                   elevation: 0,
                   shape: RoundedRectangleBorder(
@@ -217,11 +102,11 @@ class _ResultScreenState extends State<ResultScreen> {
 
             const SizedBox(height: 20),
 
-            // 6. Medical Disclaimer (Required by Report Logic)
+            // Medical disclaimer
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: frovyBeige, 
+                color: AppColors.frovyBeige,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Text(
@@ -232,6 +117,44 @@ class _ResultScreenState extends State<ResultScreen> {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildExpansionTile(
+      String title, List<dynamic> items, Color color, bool isDark) {
+    return Card(
+      color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
+      margin: const EdgeInsets.only(bottom: 12),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      elevation: isDark ? 0 : 1,
+      child: ExpansionTile(
+        title: Text(
+          title,
+          style: TextStyle(color: color, fontWeight: FontWeight.bold),
+        ),
+        children: items.isEmpty
+            ? [
+                ListTile(
+                  title: Text(
+                    "—",
+                    style: TextStyle(color: Colors.grey[400]),
+                  ),
+                )
+              ]
+            : items
+                .map(
+                  (item) => ListTile(
+                    leading: Icon(Icons.circle, size: 8, color: color),
+                    title: Text(
+                      item.toString(),
+                      style: TextStyle(
+                        color: isDark ? Colors.white70 : Colors.black87,
+                      ),
+                    ),
+                  ),
+                )
+                .toList(),
       ),
     );
   }
