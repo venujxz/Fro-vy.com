@@ -198,5 +198,9 @@
   "delete_account_success": "ඔබේ ගිණුම මකා දමා ඇත.",
 
   "no_results_found": "නිෂ්පාදන හමු නොවීය",
-  "try_different_search": "වෙනත් සෙවුම් පදයක් හෝ වර්ගයක් උත්සාහ කරන්න"
+  "try_different_search": "වෙනත් සෙවුම් පදයක් හෝ වර්ගයක් උත්සාහ කරන්න",
+
+  "result_beneficial": "ප්‍රයෝජනවත්",
+  "result_caution": "ප්‍රවේශම් වන්න",
+  "result_avoid": "වළකින්න"
 }
