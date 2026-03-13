@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
 import 'verification_sent_screen.dart';
 
 class LoginStep3Screen extends StatefulWidget {
   final String email;
+  final List<CameraDescription>? cameras;
 
-  const LoginStep3Screen({super.key, required this.email});
+  const LoginStep3Screen({
+    super.key,
+    required this.email,
+    this.cameras,
+  });
 
   @override
   State<LoginStep3Screen> createState() => _LoginStep3ScreenState();
@@ -159,6 +165,7 @@ class _LoginStep3ScreenState extends State<LoginStep3Screen> {
                                 MaterialPageRoute(
                                   builder: (_) => VerificationSentScreen(
                                     email: widget.email,
+                                    cameras: widget.cameras,
                                   ),
                                 ),
                               );
