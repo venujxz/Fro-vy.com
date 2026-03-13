@@ -14,7 +14,7 @@ class LoginStep1Screen extends StatefulWidget {
 
 class _LoginStep1ScreenState extends State<LoginStep1Screen> {
   final _formKey = GlobalKey<FormState>();
-  final _nameCtrl = TextEditingController(text: "John Doe");
+  final _nameCtrl = TextEditingController();
   final _emailCtrl = TextEditingController();
   final _dobCtrl = TextEditingController();
 
@@ -97,6 +97,7 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
                     _label("Full Name"),
                     TextFormField(
                       controller: _nameCtrl,
+                      style: _inputTextStyle,
                       decoration: _input("Enter your full name"),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -109,6 +110,7 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
                     _label("Email Address"),
                     TextFormField(
                       controller: _emailCtrl,
+                      style: _inputTextStyle,
                       decoration: _input("Enter your email"),
                       keyboardType: TextInputType.emailAddress,
                       validator: (value) {
@@ -125,6 +127,7 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
                     _label("Date of Birth"),
                     TextFormField(
                       controller: _dobCtrl,
+                      style: _inputTextStyle,
                       decoration: _input("Select your date of birth"),
                       readOnly: true,
                       onTap: _pickDob,
@@ -223,6 +226,10 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
 
   static InputDecoration _input(String hint) => InputDecoration(
         hintText: hint,
+        hintStyle: const TextStyle(
+          color: Color(0xFF64748B),
+          fontWeight: FontWeight.w400,
+        ),
         filled: true,
         fillColor: const Color(0xFFF1F5F9),
         border: OutlineInputBorder(
@@ -231,5 +238,10 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
         ),
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
+      );
+
+  static TextStyle get _inputTextStyle => const TextStyle(
+        color: Colors.black,
+        fontWeight: FontWeight.w500,
       );
 }

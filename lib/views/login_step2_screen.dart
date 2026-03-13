@@ -209,8 +209,16 @@ class _LoginStep2ScreenState extends State<LoginStep2Screen> {
             Expanded(
               child: TextField(
                 controller: controller,
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w500,
+                ),
                 decoration: InputDecoration(
                   hintText: "Add $title",
+                  hintStyle: const TextStyle(
+                    color: Color(0xFF64748B),
+                    fontWeight: FontWeight.w400,
+                  ),
                   filled: true,
                   fillColor: const Color(0xFFF1F5F9),
                   border: OutlineInputBorder(

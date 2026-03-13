@@ -97,6 +97,10 @@ class _LoginStep3ScreenState extends State<LoginStep3Screen> {
                       _label("Password"),
                       TextFormField(
                         controller: _pwCtrl,
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                        ),
                         obscureText: !_showPw,
                         decoration: _input("Enter your password").copyWith(
                           suffixIcon: IconButton(
@@ -124,6 +128,10 @@ class _LoginStep3ScreenState extends State<LoginStep3Screen> {
                       _label("Confirm Password"),
                       TextFormField(
                         controller: _cpwCtrl,
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                        ),
                         obscureText: !_showCpw,
                         decoration: _input("Confirm your password").copyWith(
                           suffixIcon: IconButton(
@@ -243,6 +251,10 @@ class _LoginStep3ScreenState extends State<LoginStep3Screen> {
 
   static InputDecoration _input(String hint) => InputDecoration(
         hintText: hint,
+        hintStyle: const TextStyle(
+          color: Color(0xFF64748B),
+          fontWeight: FontWeight.w400,
+        ),
         filled: true,
         fillColor: const Color(0xFFF1F5F9),
         border: OutlineInputBorder(
