@@ -136,7 +136,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
                   margin: const EdgeInsets.only(bottom: 20),
                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(color: Colors.grey.shade300),
                   ),
@@ -186,7 +186,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
                       selectedColor: frovyGreen.withOpacity(0.2),
                       checkmarkColor: frovyGreen,
                       labelStyle: TextStyle(
-                        color: isSelected ? frovyGreen : Colors.black87,
+                        color: isSelected ? frovyGreen : (isDark ? Colors.white70 : Colors.black87),
                         fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
                       ),
                       onSelected: (bool selected) {
@@ -228,13 +228,14 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
     String? Function(String?)? validator,
     TextInputType? keyboardType,
   }) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 10, offset: const Offset(0, 4)),
+          if (!isDark) BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 10, offset: const Offset(0, 4)),
         ],
       ),
       child: TextFormField(
@@ -247,7 +248,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
           prefixIcon: Icon(icon, color: Colors.grey),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
           filled: true,
-          fillColor: Colors.white,
+          fillColor: isDark ? const Color(0xFF2C2C2C) : Colors.white,
           contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         ),
       ),
@@ -255,13 +256,14 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
   }
 
   Widget _buildDatePickerField() {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 10, offset: const Offset(0, 4)),
+          if (!isDark) BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 10, offset: const Offset(0, 4)),
         ],
       ),
       child: TextFormField(
@@ -273,7 +275,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
           prefixIcon: const Icon(Icons.calendar_today, color: Colors.grey),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
           filled: true,
-          fillColor: Colors.white,
+          fillColor: isDark ? const Color(0xFF2C2C2C) : Colors.white,
           contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         ),
         onTap: () async {
