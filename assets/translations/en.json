@@ -198,5 +198,9 @@
   "delete_account_success": "Your account has been deleted.",
 
   "no_results_found": "No products found",
-  "try_different_search": "Try a different search term or category"
+  "try_different_search": "Try a different search term or category",
+
+  "result_beneficial": "Beneficial",
+  "result_caution": "Caution",
+  "result_avoid": "Avoid"
 }
