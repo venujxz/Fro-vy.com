@@ -3,6 +3,7 @@ import 'package:easy_localization/easy_localization.dart'; // IMPORT
 import 'result_screen.dart';
 import 'dart:convert';
 import '../util/app_colors.dart';
+import '../util/page_transitions.dart';
 
 class ManualEntryScreen extends StatefulWidget {
   const ManualEntryScreen({super.key});
@@ -36,8 +37,8 @@ class _ManualEntryScreenState extends State<ManualEntryScreen> {
     
     Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (context) => ResultScreen(analysisResult: jsonEncode(mockData))
+      PageTransitions.fade(
+        ResultScreen(analysisResult: jsonEncode(mockData))
       ),
     );
   }

@@ -9,6 +9,7 @@ import '../services/ocr_service.dart';
 import 'result_screen.dart';
 import 'manual_entry_screen.dart';
 import '../util/app_colors.dart';
+import '../util/page_transitions.dart';
 
 class CameraScreen extends StatefulWidget {
   final List<CameraDescription> cameras;
@@ -96,9 +97,7 @@ class CameraScreenState extends State<CameraScreen> {
           if (!mounted) return;
           Navigator.push(
             context,
-            MaterialPageRoute(
-              builder: (context) => ResultScreen(analysisResult: response.body),
-            ),
+            PageTransitions.fade(ResultScreen(analysisResult: response.body)),
           );
         } else {
           // Server error (e.g., 404 Not Found, or 500 Internal Server Error)
@@ -303,7 +302,7 @@ class CameraScreenState extends State<CameraScreen> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const ManualEntryScreen()),
+                    PageTransitions.slideRight(const ManualEntryScreen()),
                   );
                 },
                 child: Text(

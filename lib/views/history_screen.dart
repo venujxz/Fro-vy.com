@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 import 'result_screen.dart'; 
 import '../util/app_colors.dart';
+import '../util/page_transitions.dart';
 
 class HistoryScreen extends StatefulWidget {
   const HistoryScreen({super.key});
@@ -93,8 +94,8 @@ class _HistoryScreenState extends State<HistoryScreen> {
 
     Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (context) => ResultScreen(analysisResult: jsonEncode(resultData)),
+      PageTransitions.fade(
+        ResultScreen(analysisResult: jsonEncode(resultData)),
       ),
     );
   }

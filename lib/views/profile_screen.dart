@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 import 'edit_profile_screen.dart';
 import '../util/app_colors.dart';
+import '../util/page_transitions.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -31,11 +32,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
     // Wait for the Edit Screen to return data
     final result = await Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => EditProfileScreen(initialIndex: tabIndex)),
+      PageTransitions.slideUp<Map<String, dynamic>>(EditProfileScreen(initialIndex: tabIndex)),
     );
 
     // If data was returned, update the UI
-    if (result != null && result is Map<String, dynamic>) {
+    if (result != null) {
       setState(() {
         name = result['name'];
         email = result['email'];

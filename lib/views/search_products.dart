@@ -3,6 +3,7 @@ import 'package:easy_localization/easy_localization.dart'; // Import localizatio
 import 'result_screen.dart';
 import 'dart:convert';
 import '../util/app_colors.dart';
+import '../util/page_transitions.dart';
 
 class SearchProductsScreen extends StatefulWidget {
   const SearchProductsScreen({super.key});
@@ -188,8 +189,8 @@ class _SearchProductsScreenState extends State<SearchProductsScreen> {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(
-              builder: (context) => ResultScreen(analysisResult: jsonEncode(product)),
+            PageTransitions.fade(
+              ResultScreen(analysisResult: jsonEncode(product)),
             ),
           );
         },

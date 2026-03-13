@@ -15,6 +15,7 @@ import 'manual_entry_screen.dart'; // 8. Manual Entry
 //imports the lanuage switcher button
 import 'widgets/language_switcher.dart';
 import '../util/app_colors.dart';
+import '../util/page_transitions.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<CameraDescription> cameras;
@@ -59,7 +60,7 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(width: 10),
             GestureDetector(
               onTap: () {
-                 Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen()));
+                 Navigator.push(context, PageTransitions.slideRight(const ProfileScreen()));
               },
               child: const CircleAvatar(
                 backgroundColor: Colors.white24,
@@ -94,7 +95,7 @@ class HomeScreen extends StatelessWidget {
               title: Text("account_details".tr()), 
               onTap: () {
                 Navigator.pop(context);
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen()));
+                Navigator.push(context, PageTransitions.slideRight(const ProfileScreen()));
               },
             ),
             ListTile(
@@ -102,7 +103,7 @@ class HomeScreen extends StatelessWidget {
               title: Text("premium_plans".tr()), 
               onTap: () {
                 Navigator.pop(context); 
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const SubscriptionScreen()));
+                Navigator.push(context, PageTransitions.slideRight(const SubscriptionScreen()));
               },
             ),
             ListTile(
@@ -110,7 +111,7 @@ class HomeScreen extends StatelessWidget {
               title: Text("analysis_history".tr()),
               onTap: () {
                 Navigator.pop(context);
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const HistoryScreen()));
+                Navigator.push(context, PageTransitions.slideRight(const HistoryScreen()));
               },
             ),
             ListTile(
@@ -118,7 +119,7 @@ class HomeScreen extends StatelessWidget {
               title: Text("settings".tr()),
               onTap: () {
                 Navigator.pop(context);
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingsScreen()));
+                Navigator.push(context, PageTransitions.slideRight(const SettingsScreen()));
               },
             ),
             ListTile(
@@ -126,7 +127,7 @@ class HomeScreen extends StatelessWidget {
               title: Text("help_support".tr()),
               onTap: () {
                 Navigator.pop(context);
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const HelpSupportScreen()));
+                Navigator.push(context, PageTransitions.slideRight(const HelpSupportScreen()));
               },
             ),
             const Divider(),
@@ -232,7 +233,7 @@ class HomeScreen extends StatelessWidget {
                               Text("health_profile".tr(), style: TextStyle(fontWeight: FontWeight.bold, color: textColor)),
                               GestureDetector(
                                 onTap: () {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen()));
+                                  Navigator.push(context, PageTransitions.slideRight(const ProfileScreen()));
                                 },
                                 child: Text("edit_profile".tr(), style: TextStyle(color: frovyGreen, fontSize: 12, fontWeight: FontWeight.bold)),
                               ),
@@ -264,7 +265,7 @@ class HomeScreen extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => CameraScreen(cameras: cameras)),
+                          PageTransitions.scale(CameraScreen(cameras: cameras)),
                         );
                       },
                     ),
@@ -283,7 +284,7 @@ class HomeScreen extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const SearchProductsScreen()),
+                          PageTransitions.slideRight(const SearchProductsScreen()),
                         );
                       },
                     ),
@@ -303,7 +304,7 @@ class HomeScreen extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const ManualEntryScreen()),
+                          PageTransitions.slideRight(const ManualEntryScreen()),
                         );
                       },
                     ),

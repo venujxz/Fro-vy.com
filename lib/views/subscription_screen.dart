@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 import 'checkout_screen.dart'; 
 import '../util/app_colors.dart';
+import '../util/page_transitions.dart';
 
 class SubscriptionScreen extends StatefulWidget {
   const SubscriptionScreen({super.key});
@@ -24,8 +25,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
     // Wait for the checkout screen to return a result
     final result = await Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (context) => CheckoutScreen(
+      PageTransitions.slideUp<String>(CheckoutScreen(
           planName: planName,
           price: price,
           period: "Monthly",
@@ -34,7 +34,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
     );
 
     // If we received a result (plan name), update the state
-    if (result != null && result is String) {
+    if (result != null) {
       setState(() {
         _currentPlan = result;
       });
