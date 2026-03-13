@@ -11,43 +11,46 @@ class HelpSupportScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      backgroundColor: frovyGreen,
+      backgroundColor: isDark ? null : frovyGreen,
       appBar: AppBar(
-        backgroundColor: frovyGreen,
+        backgroundColor: isDark ? null : frovyGreen,
         elevation: 0,
         centerTitle: true,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          icon: Icon(Icons.arrow_back, color: isDark ? Colors.white : Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
           "help_support".tr(),
-          style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          style: TextStyle(color: isDark ? Colors.white : Colors.black, fontWeight: FontWeight.bold),
         ),
       ),
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [frovyGreen, frovyYellowGradient], // Green to Yellow gradient
-          ),
-        ),
+        decoration: isDark
+            ? null
+            : const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [frovyGreen, frovyYellowGradient],
+                ),
+              ),
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // 1. Contact Us Section
-              Text("contact_us".tr(), style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black87)),
+              Text("contact_us".tr(), style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: isDark ? Colors.white : Colors.black87)),
               const SizedBox(height: 12),
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 4)),
@@ -67,12 +70,12 @@ class HelpSupportScreen extends StatelessWidget {
               const SizedBox(height: 24),
 
               // 2. Quick Help Section
-              Text("quick_help".tr(), style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black87)),
+              Text("quick_help".tr(), style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: isDark ? Colors.white : Colors.black87)),
               const SizedBox(height: 12),
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 4)),
@@ -90,11 +93,11 @@ class HelpSupportScreen extends StatelessWidget {
               const SizedBox(height: 24),
 
               // 3. FAQ Section (Interactive)
-              Text("faq_title".tr(), style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black87)),
+              Text("faq_title".tr(), style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: isDark ? Colors.white : Colors.black87)),
               const SizedBox(height: 12),
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 4)),
@@ -102,10 +105,10 @@ class HelpSupportScreen extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    _buildFAQTile("faq_q1".tr(), "faq_a1".tr()),
-                    _buildFAQTile("faq_q2".tr(), "faq_a2".tr()),
-                    _buildFAQTile("faq_q3".tr(), "faq_a3".tr()),
-                    _buildFAQTile("faq_q4".tr(), "faq_a4".tr()),
+                    _buildFAQTile("faq_q1".tr(), "faq_a1".tr(), context),
+                    _buildFAQTile("faq_q2".tr(), "faq_a2".tr(), context),
+                    _buildFAQTile("faq_q3".tr(), "faq_a3".tr(), context),
+                    _buildFAQTile("faq_q4".tr(), "faq_a4".tr(), context),
                   ],
                 ),
               ),
@@ -117,7 +120,7 @@ class HelpSupportScreen extends StatelessWidget {
                 width: double.infinity,
                 padding: const EdgeInsets.all(24),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 4)),
@@ -235,7 +238,9 @@ class HelpSupportScreen extends StatelessWidget {
                       decoration: InputDecoration(
                         hintText: "feedback_hint".tr(),
                         filled: true,
-                        fillColor: const Color(0xFFF8F9FA),
+                        fillColor: Theme.of(context).brightness == Brightness.dark
+                            ? const Color(0xFF2C2C2C)
+                            : const Color(0xFFF8F9FA),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                           borderSide: BorderSide(color: Colors.grey[200]!),
@@ -327,9 +332,9 @@ class HelpSupportScreen extends StatelessWidget {
       );
     }
 
-    Widget _buildFAQTile(String question, String answer) {
+    Widget _buildFAQTile(String question, String answer, BuildContext context) {
       return Theme(
-        data: ThemeData().copyWith(dividerColor: Colors.transparent),
+        data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
         child: ExpansionTile(
           title: Text(question, style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14)),
           iconColor: frovyGreen,
