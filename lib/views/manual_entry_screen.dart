@@ -27,12 +27,18 @@ class _ManualEntryScreenState extends State<ManualEntryScreen> {
       return;
     }
 
-    // Prepare mock data with localized product name
+    // Build mock result using the entered text as ingredient list
+    final List<String> enteredItems = text
+        .split(',')
+        .map((e) => e.trim())
+        .where((e) => e.isNotEmpty)
+        .toList();
+
     Map<String, dynamic> mockData = {
       "productName": "manual_product_name".tr(),
-      "status": "CAUTION", // Just for example
-      "ingredients": text.split(','), // Simple split logic
-      "warnings": ["Analysis based on text input"]
+      "beneficial": ["Fiber", "Protein"],
+      "caution": enteredItems,
+      "avoid": ["Artificial Color"],
     };
     
     Navigator.push(
