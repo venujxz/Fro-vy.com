@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:camera/camera.dart';
 import 'login_step2_screen.dart';
 
 class LoginStep1Screen extends StatefulWidget {
-  const LoginStep1Screen({super.key});
+  final List<CameraDescription>? cameras;
+
+  const LoginStep1Screen({super.key, this.cameras});
 
   @override
   State<LoginStep1Screen> createState() => _LoginStep1ScreenState();
@@ -148,7 +151,9 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (_) => const LoginStep2Screen(),
+                                builder: (_) => LoginStep2Screen(
+                                  cameras: widget.cameras,
+                                ),
                               ),
                             );
                           }
