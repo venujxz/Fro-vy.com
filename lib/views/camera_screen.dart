@@ -6,6 +6,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 import 'package:http/http.dart' as http; // IMPORT FOR BACKEND REQUESTS
 import '../services/ocr_service.dart';
+import '../util/platform_config.dart';
 import 'result_screen.dart';
 import 'manual_entry_screen.dart';
 import '../util/app_colors.dart';
@@ -74,38 +75,54 @@ class CameraScreenState extends State<CameraScreen> {
         
         // --- 3. SEND TEXT TO BACKEND API ---
         
-        // IMPORTANT: Replace this URL with your actual backend URL when deployed!
-        // Using 10.0.2.2 for Android Emulator to connect to localhost:3000
-        final url = Uri.parse('http://10.0.2.2:3000/personalize-analysis'); 
+        final url = Uri.parse(PlatformConfig.getBackendUrl());
 
-        final response = await http.post(
-          url,
-          headers: {
-            'Content-Type': 'application/json',
-            // 'Authorization': 'Bearer YOUR_TOKEN_HERE', // Uncomment when Auth is ready
-          },
-          body: jsonEncode({
-            'extractedText': extractedIngredients,
-            // Hardcoded for now, but eventually pass the user's actual profile data
-            'allergies': ["Peanuts", "Shellfish"], 
-            'medicalConditions': "None"
-          }),
-        );
+        try {
+          final response = await http.post(
+            url,
+            headers: {
+              'Content-Type': 'application/json',
+              // 'Authorization': 'Bearer YOUR_TOKEN_HERE', // Uncomment when Auth is ready
+            },
+            body: jsonEncode({
+              'extractedText': extractedIngredients,
+              // Hardcoded for now, but eventually pass the user's actual profile data
+              'allergies': ["Peanuts", "Shellfish"], 
+              'medicalConditions': "None"
+            }),
+          ).timeout(PlatformConfig.getHttpTimeout());
 
-        if (response.statusCode == 200) {
-          // Success! Pass the real JSON from the backend directly to the Result Screen
-          if (!mounted) return;
-          Navigator.push(
-            context,
-            PageTransitions.fade(ResultScreen(analysisResult: response.body)),
-          );
-        } else {
-          // Server error (e.g., 404 Not Found, or 500 Internal Server Error)
+          if (response.statusCode == 200) {
+            // Success! Pass the real JSON from the backend directly to the Result Screen
+            if (!mounted) return;
+            Navigator.push(
+              context,
+              PageTransitions.fade(ResultScreen(analysisResult: response.body)),
+            );
+          } else {
+            // Server error (e.g., 404 Not Found, or 500 Internal Server Error)
+            if (!mounted) return;
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text("Server error: ${response.statusCode}. Please check backend connection."),
+              ),
+            );
+            debugPrint("Backend Error: ${response.statusCode} - ${response.body}");
+          }
+        } on SocketException catch (e) {
           if (!mounted) return;
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text("Server error. Please check backend connection.")),
+            SnackBar(
+              content: Text("Network error: ${e.message}. Check internet connection."),
+            ),
           );
-          debugPrint("Backend Error: ${response.statusCode} - ${response.body}");
+          debugPrint("Socket Error: $e");
+        } catch (e) {
+          if (!mounted) return;
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('upload_failed'.tr())),
+          );
+          debugPrint("Network/Processing Error: $e");
         }
 
       } else {
