@@ -80,6 +80,7 @@ class _ManualEntryScreenState extends State<ManualEntryScreen> {
               maxLines: 10,
               decoration: InputDecoration(
                 hintText: "manual_hint".tr(), // LOCALIZED HINT
+                hintStyle: const TextStyle(color: Colors.black87),
                 filled: true,
                 fillColor: isDark ? const Color(0xFF2C2C2C) : const Color(0xFFF8F9FA),
                 border: OutlineInputBorder(

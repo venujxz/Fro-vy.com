@@ -54,7 +54,7 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text("welcome_back".tr(), style: const TextStyle(fontSize: 10, color: Colors.white)),
-                const Text("John Doe", style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white)), // Kept name hardcoded
+                Text("user".tr(), style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white)),
               ],
             ),
             const SizedBox(width: 10),

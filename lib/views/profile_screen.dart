@@ -18,14 +18,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
   final Color frovyLightBg = AppColors.frovyLightBg;
 
   // --- STATE VARIABLES (Data that can change) ---
-  String name = "John Doe";
-  String email = "john.doe@example.com";
-  String phone = "+94 77 123 4567";
-  String dob = "2000-11-22";
+  String name = "";
+  String email = "";
+  String phone = "";
+  String dob = "";
   
-  String allergies = "Peanuts, Shellfish";
-  String conditions = "None";
-  String sensitivities = "Lactose Intolerance";
+  String allergies = "";
+  String conditions = "";
+  String sensitivities = "";
 
   // --- FUNCTION TO HANDLE EDITING ---
   Future<void> _navigateAndEdit(int tabIndex) async {

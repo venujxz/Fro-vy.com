@@ -21,20 +21,20 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
   final _formKey = GlobalKey<FormState>();
 
   // Form Controllers (Personal)
-  final TextEditingController _nameController = TextEditingController(text: "John Doe");
-  final TextEditingController _emailController = TextEditingController(text: "john.doe@example.com");
-  final TextEditingController _phoneController = TextEditingController(text: "+94 77 123 4567");
-  final TextEditingController _dobController = TextEditingController(text: "2000-11-22");
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _dobController = TextEditingController();
 
   // Health Data State
   // We use a Set for allergies so we can toggle them on/off easily
-  final Set<String> _selectedAllergies = {"Peanuts", "Shellfish"};
+  final Set<String> _selectedAllergies = {};
   final List<String> _commonAllergies = [
     "Peanuts", "Shellfish", "Milk", "Eggs", "Soy", "Wheat", "Fish", "Tree Nuts", "Gluten"
   ];
 
-  final TextEditingController _medicalConditionsController = TextEditingController(text: "None");
-  final TextEditingController _otherSensitivitiesController = TextEditingController(text: "Lactose Intolerance");
+  final TextEditingController _medicalConditionsController = TextEditingController();
+  final TextEditingController _otherSensitivitiesController = TextEditingController();
 
   // Gender selection: store the KEY, not the translated string
   String _selectedGender = "male";
