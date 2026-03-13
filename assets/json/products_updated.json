@@ -1,0 +1,2391 @@
+[
+  {
+    "brandName": "Kotmale",
+    "productName": "Strawberry milk",
+    "ingredients": [
+      "Whole Milk",
+      "Skimmed Milk",
+      "Sugar",
+      "Permited Food Stabilizers (Mono and Diglycerides of Fatty Acids-INS471",
+      "Sodium Alginate-INS401",
+      "Carrageenan-INS471",
+      "Guar Gum-INS412)",
+      "Trisodium Phosphate (INS339 (iii))",
+      "Nature Identical Rose Flavour",
+      "Perimtted Food Colour (Carmoisine-INS122)"
+    ], 
+  }
+
+  {
+    "brandName": "Kotmale",
+    "productName": "Vanilla milk",
+    "ingredients": [
+      "Raw milk",
+      "Skimmed Milk",
+      "Whey liquid",
+      "Sugar",
+      "Permitted Food Emulsifier & stabilizers (Sodium Alginate-INS401",
+      "Carrageenan-INS471",
+      "Guar Gum-INS412",
+      "Mono and diglycerides of Fatty acids-INS471)",
+      "Natural Identical Vanilla Flavour",
+      "Trisodium Phosphate (INS339 (iii))",
+      "Trisodium Citrate (INS 331(iii))",
+      "Permitted Natural Food Color (Curcumin-INS100)"
+    ],
+  },
+  
+  {
+    "brandName": "Kotmale",
+    "productName": "Chocolate milk",
+    "ingredients": [
+      "Raw milk",
+      "Skimmed Milk",
+      "Whey Liquid",
+      "Sugar",
+      "Cocoa Powder",
+      "Permitted Food Emulsifiers and Stabilizers (Sodium Alginate-INS401",
+      "Carrageenan-INS 407",
+      "Guar Gum-INS 412",
+      "Mono-and diglycerides of fatty acids-INS 471)",
+      "Artificial Chocolate Flavour",
+      "Trisodium Phosphate(INS 341(iii))",
+      "Trisodium Citrate (INS 331(iii))"
+    ],
+    
+  },
+   {
+    "brandName": "Kotmale",
+    "productName": "Curd",
+    "ingredients": [
+      "Fresh Cow's Milk",
+      "Milk Fat",
+      "Skimmed Milk",
+      "Permitted Food Preservative( Potassium Sorbate-INS202)",
+      "Curd Culture"
+    ],
+  },
+  {
+    "brandName": "Ambewela",
+    "productName": "Processed Cheese",
+    "ingredients": [
+      "Cheese",
+      "Water",
+      "Butter",
+      "Skimmed Milk Powder",
+      "Permitted Stabilizers (Sodium Phosphates - INS 339",
+      "Polyphosphates - INS 452)",
+      "Starch Acetate (INS 1420)",
+      "Milk Solids",
+      "Salt",
+      "Potassium Sorbate - INS 202",
+      "Citric Acid - INS 330",
+      "Carotenes - INS 160 a (ii)."
+    ],
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "Kiri",
+    "ingredients": [
+      "Whole Milk Powder"
+    ],
+  },
+  {
+    "brandName": "Pelwatte",
+    "productName": "Full Cream Powder",
+    "ingredients": [
+      "Full Cream Milk"
+    ],
+  },
+  {
+    "brandName": "Nestle",
+    "productName": "Milo",
+    "ingredients": [
+      "Malt Extract(34%)(contains Barley)",
+      "Sugar",
+      "Milk Solids(21%)",
+      "Cocoa Powder(9%)",
+      "Palm Oil",
+      "Minerals(Dicalcium Phosphate",
+      "Ferric Pyrophosphate)",
+      "Vitamins (C",
+      "B3",
+      "B2",
+      "B3",
+      "B6",
+      "B12)",
+      "Disodium Phosphate (INS 339ii)",
+      "Sodium Carbonate (INS 500i)."
+    ],
+  },
+  {
+    "brandName": "Anchor",
+    "productName": "Hot Chocolate",
+    "ingredients": [
+      "Anchor Hot Chocolate",
+      "Hot Water 220ml"
+    ],
+  },
+  {
+    "brandName": "The Bakerchik Collection",
+    "productName": "Hot Chocolate",
+    "ingredients": [
+      "Sugar",
+      "Cocoa powder",
+      "Artificial Vanilla flavor",
+      "Salt."
+    ],
+  },
+  {
+    "brandName": "Kotmale",
+    "productName": "Vanilla Drinking Yoghurt",
+    "ingredients": [
+      "Fresh Milk",
+      "Milk Solids",
+      "Sugar",
+      "Modified Starch-INS 1442",
+      "Yoghurt Culture (with probiotic culture)",
+      "Permitted Food Preservative (Potassium Sorbate-INS 202)",
+      "Natural Vanilla Flavour."
+    ],
+  },
+  {
+    "brandName": "Anchor",
+    "productName": "Vanilla Flavoured Low Fat Drinking Yoghurt",
+    "ingredients": [
+      "Fresh milk",
+      "sugar",
+      "milk solids",
+      "modified starch - INS 1442",
+      "gelatine - animal origin",
+      "nature identical vanilla flavour",
+      "potassium sorbate - INS 202",
+      "artificial milk flavour & yoghurt culture [Including probiotic Lactocaseibacillus rhamnosus HN001/DR20™ (Contains $1.0 \\times 10^6$ minimum colony forming units (cfu) per gram)]."
+    ],
+  },
+  {
+    "brandName": "Highland",
+    "productName": "Yoghurt",
+    "ingredients": [
+      "Cow Milk",
+      "Sugar",
+      "Milk Solids",
+      "Gelatine (INS 428)",
+      "Nature Identical Vanilla Flavour",
+      "Yoghurt Culture."
+    ],
+  },
+  {
+    "brandName": "Ambewela",
+    "productName": "Yoghurt",
+    "ingredients": [
+      "Fresh Milk",
+      "Sugar",
+      "Milk Solids",
+      "Gelatine",
+      "Nature Identical Vanilla Flavour",
+      "Potassium Sorbate-INS 202",
+      "Yoghurt Culture",
+      "Curcumin-INS 100(i)."
+    ],
+  },
+  {
+    "brandName": "Happy Cow",
+    "productName": "Cheese",
+    "ingredients": [
+      "Cheese (cow milk",
+      "microbial rennet)",
+      "water",
+      "butter",
+      "cream",
+      "skimmed milk powder",
+      "emulsifying salts (E 339",
+      "E 450",
+      "E 452)",
+      "whey powder",
+      "salt",
+      "acidifier: citric acid."
+    ],
+  },
+  {
+    "brandName": "Kotmale",
+    "productName": "Cheese",
+    "ingredients": [
+      "Cheese",
+      "Fresh Cream",
+      "Milk Solids",
+      "Permitted emulsifier & Stabilizer (INS452",
+      "INS450",
+      "INS471)",
+      "Nature Identical Cheese Flavour",
+      "Salt",
+      "Pepper and Permitted Food Additive (INS202)."
+    ],
+  },
+  {
+    "brandName": "Astra",
+    "productName": "Butter",
+    "ingredients": [
+      "Palm based oils",
+      "Water",
+      "Salt",
+      "Milk solids",
+      "Monoglyceride (INS 471)",
+      "Soya lecithin (INS 322)",
+      "Ascorbyl palmitate (INS 304)",
+      "Potassium sorbate (INS 202)",
+      "Citric acid (INS 330)",
+      "Annatto red (INS 160b)",
+      "Vitamins (E",
+      "A",
+      "D)",
+      "EDTA (INS 385)",
+      "Nature identical butter flavours."
+    ],
+  },
+  {
+    "brandName": "Flora",
+    "productName": "Butter",
+    "ingredients": [
+      "Vegetable oils (Canola oil (36%)",
+      "Sunflower oil (14.5%)",
+      "Palm based oils)",
+      "Water",
+      "Salt",
+      "Milk solids",
+      "Monoglyceride (INS 471)",
+      "Soya lecithin (INS 322)",
+      "Potassium sorbate (INS 202)",
+      "Rosemary extract (INS 392)",
+      "Citric acid (INS 330)",
+      "Vitamins (E",
+      "A",
+      "D)",
+      "Nature identical butter flavours",
+      "Annatto red (INS 160b)",
+      "EDTA (INS 385)."
+    ],
+  },
+  {
+    "brandName": "Ciao",
+    "productName": "Greek Yoghurt",
+    "ingredients": [
+      "Pasteurized Fresh Cow's Milk",
+      "Yoghurt Culture."
+    ],
+  },
+  {
+    "brandName": "Ambewela",
+    "productName": "Strawberry Flavoured Drinking Yoghurt",
+    "ingredients": [
+      "Fresh milk",
+      "Sugar",
+      "Milk solids",
+      "Modified starch - INS 1442",
+      "Pectin - INS 440",
+      "Nature identical strawberry flavour",
+      "Permitted food preservative (Potassium sorbate - INS 202)",
+      "Yoghurt culture",
+      "Permitted natural food colour (Anthocyanin - INS 163 (i))."
+    ],
+  },
+  {
+    "brandName": "Chello",
+    "productName": "Mango Drinking Yoghurt",
+    "ingredients": [
+      "Fresh milk",
+      "Sugar",
+      "Gelatin",
+      "Probiotic yoghurt culture",
+      "Basil seeds",
+      "Permitted food preservatives (INS 202)",
+      "Nature identical mango flavor",
+      "Permitted food colour (INS 110)."
+    ],
+  }, 
+  {
+    "brandName": "Chicken Sandwich Slices",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Halal Chicken",
+      "Soy Protein",
+      "Salt",
+      "Sodium Di-",
+      "Tri- and Polyphosphates (INS 450",
+      "INS 451",
+      "INS 452)",
+      "Sugar",
+      "Sodium Nitrite (INS 250)",
+      "Mixed Spices."
+    ],
+  },
+  {
+    "brandName": "Crispy Chicken Bacon",
+    "productName": "Crescent Fine Foods",
+    "ingredients": [
+      "Halal Chicken",
+      "Salt",
+      "Soy Protein",
+      "Corn Starch",
+      "Sodium Di-",
+      "Tri- and Polyphosphates (INS 450",
+      "INS 451",
+      "INS 452)",
+      "Sugar",
+      "Ascorbic Acid (INS 300)",
+      "Sodium Nitrite (INS 250)",
+      "Mixed Spices."
+    ],
+  },
+  {
+    "brandName": "Chicken Meatballs",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Chicken",
+      "Cereal Binders",
+      "Isolated Soya Protein",
+      "Refined Deodorized Palm Oil",
+      "B. Onion",
+      "Sugar",
+      "Yeast Extract",
+      "Ascorbic Acid (INS 300)",
+      "Sodium Ascorbate (INS 301)",
+      "Natural Color (Beetroot Red)",
+      "Permitted Food Color (INS 161g)."
+    ],
+  },
+  {
+    "brandName": "Frankie Cheesy Blast Chicken Sausages",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Chicken",
+      "Cheese",
+      "Cereal Binders",
+      "Iodized Salt",
+      "Refined Deodorized Palm Oil",
+      "B. Onion",
+      "Mixed Spices",
+      "Isolated Soya Protein",
+      "Binder (INS 451)",
+      "Full Cream Milk Powder",
+      "Nature Identical Chicken Flavour",
+      "Nature Identical Cheese Flavour",
+      "Sodium Ascorbate (INS 301)",
+      "Ascorbic Acid (INS 300)",
+      "Permitted Food Colour (INS 161g)."
+    ],
+  },
+  {
+    "brandName": "Garlic Chicken Sausages",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Chicken",
+      "Wheat Flour",
+      "Refined Deodorized Palm Oil",
+      "Isolated Soya Protein",
+      "Iodized Salt",
+      "Garlic",
+      "Ginger",
+      "Nutmeg",
+      "Cinnamon",
+      "White Pepper",
+      "Phosphates (INS 450 i",
+      "iii",
+      "INS 451 i",
+      "INS 452 ii)",
+      "Nature Identical Chicken Flavour",
+      "Natural Color (Beetroot Red)."
+    ],
+  },
+  {
+    "brandName": "Chicken Sandwich Slices",
+    "productName": "Bairaha Foods (Pvt) Ltd",
+    "ingredients": [
+      "Chicken",
+      "Ice & Water",
+      "Cereal Binders",
+      "Iodized Salt",
+      "Isolated Soya Protein",
+      "Mixed Spices",
+      "Phosphates (INS 450",
+      "INS 451",
+      "INS 452)",
+      "Curing Salt (INS 250)",
+      "Permitted Colouring (INS 122)."
+    ],
+  },
+  {
+    "brandName": "Vegetarian Sausages",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Textured Vegetable Protein",
+      "Soy Milk Protein",
+      "Soy Protein Isolate",
+      "Modified Potato Starch",
+      "Vegetable Oil",
+      "Seaweed Extract",
+      "Sugar",
+      "Common Salt."
+    ],
+  },
+  {
+    "brandName": "Chicken Slices",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Chicken",
+      "Cereal Binders",
+      "Refined Deodorized Palm Oil",
+      "Isolated Soya Protein",
+      "Iodized Salt",
+      "Mixed Spices",
+      "Natural Color (Beetroot Red)",
+      "Phosphate Binders (INS 451)",
+      "Nature Identical Chicken Flavor",
+      "Yeast Extract",
+      "Permitted Food Colors (INS 161g)",
+      "Ascorbic Acid (INS 300)",
+      "Sodium Ascorbate (INS 301)."
+    ],
+  },
+  {
+    "brandName": "Chicken Bratwurst",
+    "productName": "Elephant House (Keells)",
+    "ingredients": [
+      "Chicken",
+      "Cereal Binders",
+      "Iodized Salt",
+      "Mixed Spices",
+      "Phosphates (INS 451)",
+      "Natural Color (Beetroot Red)",
+      "Ascorbic Acid (INS 300)",
+      "Yeast Extract",
+      "Sodium Ascorbate (INS 301)."
+    ],
+  },
+  {
+    "brandName": "Smoky Cheesy Chicken Sausages",
+    "productName": "Elephant House (Keells)",
+    "ingredients": [
+      "Chicken",
+      "Cheese",
+      "Cereal Binders",
+      "Isolated Soya Protein",
+      "B. Onion",
+      "Iodized Salt",
+      "Mixed Spices",
+      "Phosphate Binders (INS 451 i)",
+      "Natural Colour (Beetroot Red)",
+      "Fresh Garlic",
+      "Yeast Extract",
+      "Ascorbic Acid (INS 300)",
+      "Sodium Ascorbate (INS 301)."
+    ],
+  },
+  {
+    "brandName": "Chicken Sausage Meat",
+    "productName": "Keells Food Products PLC",
+    "ingredients": [
+      "Chicken",
+      "Isolated Soya Protein",
+      "Cereal Binders",
+      "Deodorized Palm Oil",
+      "Iodized Salt",
+      "Mixed Phosphate Binders (INS 451)",
+      "Nature Identical Flavor",
+      "Ascorbic Acid (INS 300)",
+      "Sodium Ascorbate (INS 301)",
+      "Natural Color (Beetroot Red)",
+      "Permitted Food Color (INS 161g)",
+      "Yeast Extract."
+    ],
+  },
+  {
+    "brandName": "Heat & Eat Devilled Chicken",
+    "productName": "Crescent Fine Foods",
+    "ingredients": [
+      "Halal Chicken",
+      "Onion",
+      "Soya Bean Sauce",
+      "Capsicum",
+      "Tomato Paste",
+      "Sugar",
+      "Wheat Flour",
+      "Salt",
+      "Mixed Spices",
+      "Garlic",
+      "Sodium Di-",
+      "Tri- and Polyphosphates (INS 450",
+      "INS 451",
+      "INS 452)."
+    ],
+  }
+  {
+    "brandName": "Heat & Eat Chicken Kheema",
+    "productName": "Crescent Fine Foods",
+    "ingredients": [
+      "Halal Chicken",
+      "Onion",
+      "Cereal Binder",
+      "Rice Bran Oil",
+      "Tomato Sauce",
+      "Mixed Spices",
+      "Garlic",
+      "Tomato Paste",
+      "Salt",
+      "Ginger",
+      "Herbs",
+      "Corn Flour."
+    ],
+  },
+  {
+    "brandName": "Chicken Wings (Marinated)",
+    "productName": "Bairaha Foods (Pvt) Ltd",
+    "ingredients": [
+      "Chicken Wings",
+      "Cereals",
+      "Cold Water",
+      "Mixed Spices",
+      "Iodized Salt",
+      "Tomato & Soya Sauce",
+      "Phosphates (INS 450",
+      "INS 451",
+      "INS 452)",
+      "Sugar",
+      "Curing Salt (INS 250)",
+      "Permitted Colouring (INS 110",
+      "INS 122",
+      "INS 102)."
+    ],
+  },
+  {
+    "brandName": "Popcorn Chicken",
+    "productName": "Crescent Fine Foods",
+    "ingredients": [
+      "Halal Chicken",
+      "Wheat Flour",
+      "Corn Starch",
+      "Spices",
+      "Salt",
+      "Phosphate Binders (INS 451)",
+      "Soy Sauce",
+      "Sugar",
+      "Baking Powder (INS 500(i))",
+      "Yeast Extract",
+      "Soy Protein."
+    ],
+  },
+  {
+    "brandName": "Bairaha",
+    "productName": "Chicken Drumlets",
+    "ingredients": [
+      "Chicken Drumlets",
+      "Iodized Salt",
+      "Mixed Spices",
+      "Wheat Flour",
+      "Sodium Bicarbonate (INS 500 (ii))",
+      "Sunset Yellow Colorant (INS 110)",
+      "Flashed Fried in Vegetable Oil (RBD Palm Olein)"
+    ]
+  }
+  {
+    "brandName": "Maliban",
+    "productName": "Bran Cracker",
+    "ingredients": [
+      "Wheat Flour",
+      "Atta flour"
+      "Whole Meal Flour",
+      "Edible Wheat Bran 6%",
+      "Malt Extract",
+      "Vegetable oil (Palm)",
+      "Salt",
+      "Yeast",
+      "Leavening agent(Sodium Bicarbonate-INS 500ii)",
+    ]
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "Spicy Crackers",
+    "ingredients": [
+      "Wheat flour",
+      "Vegetable fat(Palm Oil)",
+      "Salt",
+      "Chili flakes",
+      "Yeast",
+      "Malt",
+      "Emulsifier (INS 481i)",
+      "Leavening Agent (INS 500ii)",
+      "Nature identical (Chili) flavour",
+      "Artificial (Milk) flavour",
+      "Natural spices(Chili,Pepper,Cumin)"
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "Sun Cracker",
+    "ingredients": [
+      "Wheat Flour",
+      "Palm Olein",
+      "Iodized Salt(23%)",
+      "Yeast",
+      "Malt",
+      "Leavening Agent [Sodium Bicarbonate (500ii)]",
+      "Pepper Pieces(1%) and Emulsifier [Soya Lecithin (322]"
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "Potato Cracker",
+    "ingredients": [
+      "Wheat Flour",
+      "Potato Flour",
+      "Vegetable Oil",
+      "Salt",
+      "Yeast",
+      "Leavening Agent (500ii)",
+      "Soya Lecithin",
+      "Plant Extract(Rosemary)"
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "POTATO CRACKER",
+    "ingredients": [
+      "Wheat Flour",
+      "Potato Flour",
+      "Vegetable Oil",
+      "Salt",
+      "Yeast",
+      "Leavening Agent (500ii)",
+      "Soya Lecithin",
+      "Plant Extract (Rosemary)."
+    ]
+  },
+  {
+    "brandName": "Julie's",
+    "productName": "SUGAR CRACKERS",
+    "ingredients": [
+      "Wheat Flour (45%)",
+      "Vegetable Oil (Palm Oil)",
+      "Sugar (11%)",
+      "Corn Starch",
+      "Leavening Agents [Ammonium Bicarbonate (INS 503(ii))",
+      "Sodium Bicarbonate (INS 500(ii))",
+      "Disodium Diphosphate (INS 450(i))]",
+      "Whey Powder",
+      "Salt",
+      "Glucose Syrup",
+      "Tapioca Starch",
+      "Yeast",
+      "Flavourings."
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "TiFiN Original",
+    "ingredients": [
+      "Wheat Flour",
+      "Palm Olein",
+      "Glucose",
+      "Corn Flour",
+      "Malt",
+      "Leavening Agents (Sodium Bicarbonate (500ii)",
+      "Ammonium Bicarbonate (503ii))",
+      "Iodized Salt",
+      "Milk Powder",
+      "Sugar",
+      "Emulsifier [Soya Lecithin (322)]."
+    ]
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "Cheesebits",
+    "ingredients": [
+      "Wheat flour",
+      "Vegetable oil (Palm)",
+      "Cheese powder 7%",
+      "Salt",
+      "Yeast extract",
+      "Nature identical cheese flavour",
+      "Yeast",
+      "Pepper powder",
+      "Emulsifier (Soya lecithin-INS 322)",
+      "Leavening agent (Sodium bicarbonate-INS 500ii)",
+      "Flour treatment agent (Sodium metabisulphite-INS 223)",
+      "Malt(Barley)extract."
+    ]
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "CHICK BITS",
+    "ingredients": [
+      "Wheat flour",
+      "Vegetable oil (Palm, Coconut)",
+      "Nature identical chicken flavor",
+      "Salt",
+      "Yeast extract",
+      "Yeast",
+      "Leavening agent (Sodium bicarbonate- INS 500ii)",
+      "Pepper Powder",
+      "Emulsifier (Soy lecithin- INS 322)",
+      "Flour treatment agent (Sodium metabisulphite -INS 223)."
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "SALSA BISCUITS MEXICANA",
+    "ingredients": [
+      "Wheat Flour",
+      "Palm Olein",
+      "Corn Flour",
+      "Spices (Chilli (0.29%)",
+      "Pepper",
+      "Onion",
+      "and Coriander)",
+      "Iodized Salt",
+      "Malt",
+      "Yeast",
+      "Leavening Agent [Sodium Bicarbonate (500ii)]",
+      "and Emulsifier [Soya Lecithin (322)]."
+    ]
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "KRISCO Snack Crackers",
+    "ingredients": [
+      "Wheat flour",
+      "Vegetable oil (Palm, Coconut)",
+      "Yeast",
+      "Malt (Barley) extract",
+      "Salt",
+      "Natural spices (Pepper, Chili)",
+      "Humectant (Glycerol -INS 422)",
+      "Leavening agent (Sodium bicarbonate -INS 500ii)",
+      "Emulsifier (Soya lecithin -INS 322)",
+      "Yeast extract",
+      "Flour treatment agent (Sodium Metabisulphite - INS 223)."
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "Savoury Nuts BISCUITS",
+    "ingredients": [
+      "Wheat Flour",
+      "Palm Olein",
+      "Iodized Salt",
+      "Milk Powder",
+      "Sugar",
+      "Chilli Powder (1.5%)",
+      "Leavening Agents [Sodium Bicarbonate (500ii)",
+      "Ammonium Bicarbonate (503ii)]",
+      "and Yeast."
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "Cheese Buttons BISCUITS",
+    "ingredients": [
+      "Wheat Flour",
+      "Palm Olein",
+      "Cheese Powder (8.4%)",
+      "Sugar",
+      "Yeast",
+      "Iodized Salt",
+      "Milk Powder",
+      "Leavening Agents [Sodium Bicarbonate (500ii)",
+      "Ammonium Bicarbonate (503ii)]",
+      "Chilli Powder",
+      "Nature Identical (Cheese) Flavour",
+      "and Permitted Natural Colours [Paprika Oleoresin (160c)",
+      "Curcumin (100(i))]."
+    ]
+  },
+  {
+    "brandName": "KIST",
+    "productName": "Wafers STRAWBERRY Crispy Creamy",
+    "ingredients": [
+      "Wheat Flour",
+      "Sugar",
+      "Vegetable Fat",
+      "Dextrose",
+      "Salt",
+      "Corn Flour",
+      "Leavening Agents [Ammonium Bicarbonate (INS503(ii))",
+      "Sodium Bicarbonate (INS500(ii))]",
+      "Nature Identical Strawberry Flavour",
+      "Permitted Colours [Ponceau 4R (INS124)]",
+      "Soya Lecithin (INS322)",
+      "Permitted Dough Conditioner [Sodium Metabisulfite (INS223)]."
+    ]
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "WAFERS CRUNCHIER Lemon Cream",
+    "ingredients": [
+      "Wheat flour",
+      "Sugar",
+      "Vegetable fat (palm oil)",
+      "Glucose",
+      "Corn starch",
+      "Milk powder",
+      "Natural lemon flavour",
+      "Emulsifier (Soya lecithin - INS 322)",
+      "Leavening agents (Sodium bicarbonate - INS 500ii",
+      "Ammonium bicarbonate - INS 503ii)",
+      "Salt",
+      "Acidity regulators (Citric acid - INS 330)",
+      "Permitted natural colours (Natural Carotenes Extracts (Vegetable) INS 160a(ii))."
+    ]
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "WAFERS CRUNCHIER Chocolate Flavoured Wafers",
+    "ingredients": [
+      "Wheat flour",
+      "Sugar",
+      "Vegetable fat(Palm)",
+      "Glucose",
+      "Corn starch",
+      "Cocoa powder 2%",
+      "Milk powder",
+      "Emulsifier (Soya lecithin- INS 322)",
+      "Leavening agents (Sodium bicarbonate - INS 500ii",
+      "Ammonium bicarbonate-INS 503ii",
+      "Salt",
+      "Nature identical chocolate flavour",
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "Ginger Biscuits",
+    "ingredients": [
+      "Wheat Flour",
+      "Sugar",
+      "Vegetable Oil",
+      "Ginger Powder",
+      "Leavening Agents [Sodium Bicarbonate (500ii)",
+      "Ammonium Bicarbonate (503ii)]",
+      "Salt",
+      "Pepper Powder",
+      "and Emulsifier [Soya Lecithin (322)]."
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "Milk Cream BISCUITS",
+    "ingredients": [
+      "Wheat Flour",
+      "Sugar",
+      "Hydrogenated Palm Kernel Oil",
+      "Palm Olein",
+      "Corn Starch",
+      "Glucose",
+      "Rice Flour",
+      "Whey Powder",
+      "Milk Powder (0.5%)",
+      "Leavening Agents (Sodium Bicarbonate (500ii)",
+      "Ammonium Bicarbonate (503ii))",
+      "Iodized Salt",
+      "Emulsifier [Soya Lecithin (322)]",
+      "and Nature Identical (Milk and Vanilla) Flavours."
+    ]
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "Custard Cream Biscuit",
+    "ingredients": [
+      "Wheat flour",
+      "Sugar",
+      "Vegetable fat (Palm Oil)",
+      "Sugar Syrup",
+      "Milk powder",
+      "Leavening Agents (INS 500ii, INS 503ii)",
+      "Salt",
+      "Emulsifier (Soya lecithin)",
+      "Artificial (Vanilla, Custard, Butter) flavors",
+      "Corn starch",
+      "Humectant (INS 422)",
+      "Permitted Natural colours (INS 160a(ii), INS 100(i))."
+    ]
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "Real Chocolate CREAM BISCUIT",
+    "ingredients": [
+      "Wheat flour",
+      "Sugar",
+      "Vegetable fat (Palm oil)",
+      "Glucose",
+      "Cocoa powder",
+      "Starch (Corn, Potato)",
+      "Milk powder",
+      "Glucose syrup",
+      "Permitted natural color (Caramel class IV-INS 150d)",
+      "Leavening agents (Ammonium bicarbonate-INS 503ii",
+      "Sodium bicarbonate-INS 500ii)",
+      "Salt",
+      "Chocolate 0.5%",
+      "Nature identical (Chocolate, Milk, Vanilla) flavours",
+      "Emulsifier (Soya lecithin-INS 322)."
+    ]
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "Orange Cream Biscuit",
+    "ingredients": [
+      "Wheat flour",
+      "Sugar",
+      "Vegetable fat (palm)",
+      "Glucose",
+      "Starch (Corn, Potato)",
+      "Sugar syrup",
+      "Milk powder 0.4%",
+      "Emulsifier (Soya lecithin-INS 322)",
+      "Leavening agents (Sodium bicarbonate-INS 500ii",
+      "Ammonium bicarbonate-INS 503ii)",
+      "Salt",
+      "Nature identical (Milk, Vanilla) flavours",
+      "Natural orange flavour",
+      "Permitted natural colour (Paprika oleoresin- INS 160c)",
+      "Acidity regulator (Citric acid-INS 330)."
+    ]
+  },
+  {
+    "brandName": "Julie's",
+    "productName": "Choco More Sandwich",
+    "ingredients": [
+      "Wheat Flour",
+      "Sugar",
+      "Vegetable Oil (Palm Oil)",
+      "Cocoa Powder (7.2%)",
+      "Corn Starch",
+      "Cocoa Mass (1.6%)",
+      "Glucose Syrup",
+      "Skimmed Milk Powder",
+      "Lactose",
+      "Salt",
+      "Leavening Agents [Sodium Bicarbonate (INS 500(ii))",
+      "Disodium Diphosphate (INS 450(i))]",
+      "Emulsifier [Soya Lecithin (INS 322(i))]",
+      "Flavourings."
+    ]
+  },
+  {
+    "brandName": "OREO",
+    "productName": "Mini OREO Original",
+    "ingredients": [
+      "Sugar",
+      "Wheat Flour",
+      "Hydrogenated and Non-hydrogenated Vegetable Fat (Palm)",
+      "Fat-reduced Cocoa Powder",
+      "Glucose Syrup",
+      "Raising Agents (Sodium and Ammonium Bicarbonate)",
+      "Corn Starch",
+      "Salt",
+      "Emulsifier (Soya Lecithin)",
+      "Artificial Flavor (Vanillin)."
+    ]
+  },
+  {
+    "brandName": "Julie's",
+    "productName": "Banana Sandwich",
+    "ingredients": [
+      "Wheat Flour",
+      "Vegetable Oil (Palm Oil)",
+      "Sugar",
+      "Glucose Syrup",
+      "Skimmed Milk Powder",
+      "Corn Starch",
+      "Leavening Agents (Ammonium Bicarbonate (INS 503(ii))",
+      "Sodium Bicarbonate (INS 500(ii)))",
+      "Disodium Diphosphate (INS 450(i))",
+      "Whey Powder",
+      "Salt",
+      "Cheese Powder",
+      "Flavourings",
+      "Banana Pulp Powder (0.04%)",
+      "Yeast."
+    ]
+  }
+  {
+    "brandName": "Maliban",
+    "productName": "Real Chocolate CREAM BISCUIT (30% Less Sugar)",
+    "ingredients": [
+      "Wheat flour",
+      "Vegetable fat (Palm oil)",
+      "Sugar",
+      "Inulin (Chicory)",
+      "Cocoa powder",
+      "Milk powder",
+      "Potato starch",
+      "Glucose",
+      "Corn starch",
+      "Chocolate",
+      "Permitted natural colour (Caramel class IV - INS 150d)",
+      "Leavening agents (Ammonium bicarbonate - INS 503ii",
+      "Sodium bicarbonate - INS 500ii)",
+      "Salt",
+      "Emulsifier (Soya lecithin - INS 322)",
+      "Nature identical (Chocolate, Milk, Vanilla) flavours."
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "Hawaiian Cookies",
+    "ingredients": [
+      "Wheat Flour",
+      "Sugar",
+      "Desiccated Coconut (16%)",
+      "Palm Olein",
+      "Corn Flour",
+      "Whey Powder",
+      "Iodized Salt",
+      "Leavening Agents [Sodium Bicarbonate (500ii)",
+      "Ammonium Bicarbonate (503ii)]",
+      "and Emulsifier [Soya Lecithin (322)]."
+    ]
+  },
+  {
+    "brandName": "Little Lion",
+    "productName": "Milky COOKIES",
+    "ingredients": [
+      "Wheat Flour",
+      "Sugar",
+      "Vegetable Oil (Palm) / Vegetable Fat",
+      "Milk Powder",
+      "Corn Starch",
+      "Margarine",
+      "Butter",
+      "Leavening Agents [Ammonium bicarbonate (INS 503ii)",
+      "Sodium bicarbonate (INS 500ii)]",
+      "Salt",
+      "Nature Identical Flavours (Butter, Vanillin, Almond)",
+      "Natural Colour [Carotenes (INS 160a(ii))]",
+      "Emulsifier [Soya Lecithin (INS 322)]",
+      "Plant Extract (Rosemary)."
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "Chocolate Chip Cookies",
+    "ingredients": [
+      "Wheat Flour",
+      "Sugar",
+      "Vegetable Fat",
+      "Chocolate Chips",
+      "Corn Flour",
+      "Glucose",
+      "Cocoa Powder",
+      "Leavening Agents [Sodium bicarbonate (500ii)",
+      "Ammonium Bicarbonate (503ii)]",
+      "Milk Powder",
+      "Salt",
+      "Emulsifier [Soya Lecithin (322)]",
+      "and Plant Extract (Rosemary)."
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "ChocShock",
+    "ingredients": [
+      "Wheat Flour",
+      "Choco Filling (Sugar, Vegetable Oil, Cocoa Powder, Hazelnuts, Milk Powder, Emulsifier [Soya Lecithin (322)])",
+      "Sugar",
+      "Vegetable Oil",
+      "Corn Starch",
+      "Milk Powder",
+      "Glucose Syrup",
+      "Salt",
+      "Leavening Agents [Sodium Bicarbonate (500ii)",
+      "Ammonium Bicarbonate (503ii)]",
+      "Emulsifier [Soya Lecithin (322)]",
+      "Nature Identical (Vanilla) Flavour",
+      "and Plant Extract (Rosemary)."
+    ]
+  }
+  {
+    "brandName": "Munchee",
+    "productName": "CHOCOLATE MARIE BISCUIT",
+    "ingredients": [
+      "Wheat Flour",
+      "Sugar",
+      "Palm Olein",
+      "Corn Starch",
+      "Milk Powder",
+      "Cocoa Powder",
+      "Malt",
+      "Glucose",
+      "Iodized Salt",
+      "Leavening Agents [Sodium Bicarbonate (500ii)",
+      "Ammonium Bicarbonate (503ii)]",
+      "Nature Identical (Chocolate) Flavour",
+      "Chocolate (0.1%)",
+      "Emulsifier [Soya Lecithin (322)]",
+      "Flour Treatment Agent [Sodium Metabisulphite (223)]",
+      "and Permitted Natural Colour [Caramel Class IV (150d)]."
+    ]
+  },
+  {
+    "brandName": "Maliban",
+    "productName": "GOLD MARIE BISCUIT",
+    "ingredients": [
+      "Wheat flour",
+      "Sugar",
+      "Vegetable oil (Palm)",
+      "Sugar syrup",
+      "Corn starch",
+      "Milk powder 1.5%",
+      "Malt (Barley) extract",
+      "Salt",
+      "Leavening agents (Ammonium bicarbonate - INS 503ii",
+      "Sodium bicarbonate - INS 500ii)",
+      "Nature identical (Milk, Marie, Vanilla, Butter) flavours",
+      "Emulsifier (Soya lecithin - INS 322)",
+      "Flour treatment agent (Sodium metabisulphite - INS 223)",
+      "Vitamins & mineral premix."
+    ]
+  },
+  {
+    "brandName": "Munchee",
+    "productName": "ChocShock Choco centered biscuits",
+    "ingredients": [
+      "Wheat Flour",
+      "Choco Filling (33%) [Sugar, Palm Olein",
+      "Cocoa Powder (7%)",
+      "Hazelnut",
+      "Milk Powder",
+      "Emulsifier (Soya Lecithin (322))",
+      "Natural (Coffee) Flavour",
+      "Coffee Powder (0.1%)]",
+      "Sugar",
+      "Palm Olein",
+      "Corn Starch",
+      "Milk Powder",
+      "Glucose Syrup",
+      "Iodized Salt",
+      "Leavening Agents [Sodium Bicarbonate (500ii)",
+      "Ammonium Bicarbonate (503ii)]",
+      "Emulsifier [Soya Lecithin (322)]",
+      "and Nature Identical (Vanilla) Flavour."
+    ]
+  }
+  {
+    "brandName": "Edinborough",
+    "productName": "Mayonnaise",
+    "ingredients": [
+      "Rapeseed oil/Sunflower oil (48%)",
+      "Water",
+      "Sugar",
+      "Modified maize starch (INS 1442, INS 1450)",
+      "Iodized table salt",
+      "Acetic acid (INS 260)",
+      "Sodium carboxymethyl cellulose (INS 466)",
+      "Mustard (1%)",
+      "Potassium sorbate (INS 202)",
+      "Citric acid (INS 330)",
+      "Artificial/Nature identical vanilla flavour",
+      "Calcium disodium EDTA (INS 385)",
+      "Carmoisine colour (INS 122)",
+      "Tartrazine colour (INS 102)"
+    ]
+  },
+  {
+    "brandName": "Noor",
+    "productName": "Original Mayonnaise",
+    "ingredients": [
+      "Vegetable Oil-Soybean/Sunflower oil (non-hydrogenated)",
+      "Water",
+      "Natural Vinegar",
+      "Sugar",
+      "Modified Food Starch",
+      "Salt",
+      "Egg yolk",
+      "Thickener (E415)",
+      "Preservative (E202)",
+      "Spice extracts (Mustard)",
+      "Lemon Juice Concentrate",
+      "Sequestering Agent (E385)",
+      "Natural color (E160a)"
+    ]
+  },
+  {
+    "brandName": "Keells",
+    "productName": "Mustard Cream",
+    "ingredients": [
+      "Margarine",
+      "Corn Flour",
+      "Water",
+      "Mustard",
+      "Turmeric",
+      "Sugar",
+      "Common Salt",
+      "Citric Acid (INS 330)",
+      "Vinegar",
+      "Potassium Sorbate (INS 202)"
+    ]
+  },
+  {
+    "brandName": "Edinborough",
+    "productName": "Mustard Cream Spread",
+    "ingredients": [
+      "Water",
+      "Margarine (23%)",
+      "Wheat flour",
+      "Mustard powder (4%)",
+      "Sugar",
+      "Iodized table salt",
+      "Cinnamon",
+      "Cardamom",
+      "Clove",
+      "Acetic acid (INS 260)",
+      "Sodium metabisulphite (INS 223)"
+    ]
+  },
+  {
+    "brandName": "Dad's Garden by MA'S Kitchen",
+    "productName": "Lemon Mustard Sauce",
+    "ingredients": [
+      "sugar",
+      "vinegar",
+      "spices & herbs (mustard [4.4%], ginger, turmeric)",
+      "salt",
+      "corn starch",
+      "lemon (1%)",
+      "Stabilisers (xanthan gum INS-415 pectin INS-440)"
+    ]
+  }
+  {
+    "brandName": "Dad's Garden by MA'S Kitchen",
+    "productName": "Teriyaki Cooking Sauce",
+    "ingredients": [
+      "sugar",
+      "salt",
+      "rice",
+      "corn flour",
+      "yeast extract",
+      "alcohol (1.1%)",
+      "onion",
+      "sesame",
+      "soybean",
+      "garlic",
+      "lime",
+      "spices & herbs (chilli, ginger)",
+      "acidity regulator (citric acid INS-330)",
+      "antioxidant (succinic acid INS-363)"
+    ]
+  },
+  {
+    "brandName": "Edinborough",
+    "productName": "Fish Sauce (Thai Style)",
+    "ingredients": [
+      "Natural Fish Extract (65%)",
+      "Water",
+      "Soya",
+      "Wheat/Rice",
+      "Salt",
+      "Potassium sorbate (INS 202)"
+    ]
+  },
+  {
+    "brandName": "Edinborough",
+    "productName": "Oyster Sauce",
+    "ingredients": [
+      "Water",
+      "Extract of Soya & Wheat/ Rice",
+      "Sugar",
+      "Modified maize/ tapioca starch (INS 1442)",
+      "Flavour enhancer used (Monosodium glutamate INS 621)",
+      "Iodized table salt",
+      "Sea food extract (5%)",
+      "Citric acid (INS 330)",
+      "Xanthan stabilizer (INS 415)",
+      "Potassium sorbate (INS 202)",
+      "Caramel (INS 150c)",
+      "Sodium metabisulphite (INS 223)"
+    ]
+  },
+  {
+    "brandName": "Edinborough",
+    "productName": "Soya Sauce",
+    "ingredients": [
+      "Water",
+      "Soya sauce extract (42%) [Water, Soya beans, Wheat/ Rice, Crystal salt]",
+      "Natural caramel colour (INS 150c)",
+      "Seed",
+      "tapioca (Sago)",
+      "Potassium sorbate (INS 202)"
+    ]
+  },
+  {
+    "brandName": "KIST",
+    "productName": "Chilli Sauce",
+    "ingredients": [
+      "Tomato (Tomato Paste + Water)",
+      "Sugar",
+      "Salt",
+      "Chilli",
+      "Acetic Acid (INS 260)",
+      "Edible Starch (INS 1442)",
+      "Garlic",
+      "Onion",
+      "Ascorbic Acid (Vitamin C/INS 300)",
+      "Spices",
+      "Permitted Preservative (INS 223)",
+      "Natural Ginger Extract",
+      "Stabilizer (INS 415)"
+    ]
+  }
+  {
+    "brandName": "Dad's Garden by MA'S Kitchen",
+    "productName": "Thai Sweet Chilli Sauce",
+    "ingredients": [
+      "sugar",
+      "vinegar",
+      "garlic",
+      "salt",
+      "spices & herbs (chilli [0.7%])",
+      "stabilisers (xanthan gum INS-415, sodium carboxymethyl cellulose INS-466)"
+    ]
+  },
+  {
+    "brandName": "Edinborough",
+    "productName": "Sweet Chilli Sauce",
+    "ingredients": [
+      "Water",
+      "Sugar (31%)",
+      "Chilli (10%)",
+      "Garlic",
+      "Modified maize/tapioca starch (INS 1442)",
+      "Iodized table salt",
+      "Acetic acid (INS 260)",
+      "Potassium sorbate (INS 202)"
+    ]
+  },
+  {
+    "brandName": "Dad's Garden by MA'S Kitchen",
+    "productName": "Mango BBQ Sauce",
+    "ingredients": [
+      "sugar",
+      "mango (11%)",
+      "vinegar",
+      "garlic",
+      "tomato",
+      "spices & herbs (ginger, tamarind, pepper, mustard, chilli)",
+      "salt",
+      "natural smoke flavour",
+      "stabiliser (xanthan gum INS-415)"
+    ]
+  },
+  {
+    "brandName": "KIST",
+    "productName": "Kochchi Sauce",
+    "ingredients": [
+      "Water",
+      "Sugar",
+      "Red Chilli Paste",
+      "Kochchi Paste",
+      "Tomato Paste",
+      "Salt",
+      "Modified Tapioca Starch (INS1442/INS1422)",
+      "Garlic",
+      "onion",
+      "Acetic Acid (INS260)",
+      "Spices",
+      "Chilli powder",
+      "Ascorbic Acid (INS300)",
+      "Stabilizer - Xanthun Gum (INS415)",
+      "Permitted Preservative - Sodium Metabisulfite (INS223)"
+    ]
+  },
+  {
+    "brandName": "MD",
+    "productName": "Original Green Chilli Sauce",
+    "ingredients": [
+      "Green Chilli Pulp",
+      "Sugar",
+      "Vinegar",
+      "Salt",
+      "Ginger & Garlic Paste",
+      "Cinnamon",
+      "Cardamom",
+      "Cloves",
+      "Nutmeg",
+      "Permitted Colours (E 102, E 133)"
+    ]
+  }
+  {
+    "brandName": "MD",
+    "productName": "Original Tomato Ketchup",
+    "ingredients": [
+      "Tomato Paste",
+      "Water",
+      "Sugar",
+      "Vinegar",
+      "Salt",
+      "Xanthan gum (INS 415)",
+      "Guar gum (INS 412)",
+      "Pectin (INS 440)",
+      "Permitted Preservatives Sodium Metabisulphite (INS 223)",
+      "Potassium Sorbate (INS 202)"
+    ]
+  },
+  {
+    "brandName": "Edinborough",
+    "productName": "Soya Sauce",
+    "ingredients": [
+      "Water",
+      "Soya sauce extract (42%) [Water, Soya beans, Wheat/ Rice, Crystal salt]",
+      "Natural caramel colour (INS 150c)",
+      "Seed",
+      "tapioca (Sago)",
+      "Potassium sorbate (INS 202)"
+    ]
+  },
+  {
+    "brandName": "Keells",
+    "productName": "Thousand Island Salad Dressing",
+    "ingredients": [
+      "Palm oil",
+      "Water",
+      "Sugar",
+      "Milk Solid",
+      "Tomato Paste",
+      "Dextrose monohydrate",
+      "Iodized Salt",
+      "Acetylated distarch adipate (INS 1422)",
+      "Guar Gum (INS 412)",
+      "Xanthan Gum (INS 415)",
+      "Citric acid (INS 330)",
+      "Acetic acid (INS 260)",
+      "Potassium sorbate (INS 202)",
+      "Annatto extracts (INS 160b)",
+      "Natural Gherkin"
+    ]
+  },
+  {
+    "brandName": "MA'S Kitchen",
+    "productName": "Sweet & Sour Wok Sauce",
+    "ingredients": [
+      "Sugar",
+      "Vinegar",
+      "Pineapple",
+      "Tomato",
+      "Garlic",
+      "Spice & Herbs (Ginger, Chilli, Pepper, Turmeric)",
+      "Corn flour",
+      "Salt",
+      "Soybean",
+      "Wheat flour"
+    ]
+  },
+  {
+    "brandName": "Edinborough",
+    "productName": "Chilli Mayonnaise",
+    "ingredients": [
+      "Rapeseed oil/Sunflower oil (46%)",
+      "Water",
+      "Chilli (12%)",
+      "Sugar",
+      "Modified maize starches (INS 1442, INS 1450)",
+      "Acetic acid (INS 260)",
+      "Iodized table salt",
+      "Egg (1.1%)",
+      "Citric acid (INS 330)",
+      "Mustard (1%)",
+      "Sodium carboxymethyl cellulose (INS 466)",
+      "Potassium sorbate (INS 202)",
+      "Calcium disodium EDTA (INS 385)"
+    ]
+  }
+  {
+    "brandName": "Keells",
+    "productName": "Nai Miris Red Sauce",
+    "ingredients": [
+      "Tomato Paste",
+      "Sugar",
+      "Water",
+      "Mango Paste",
+      "Nai Miris Paste",
+      "Corn Starch",
+      "Tapioca Starch",
+      "Sodium carboxymethyl cellulose (INS 466)",
+      "Common Salt",
+      "Acetic acid (INS 260)",
+      "Potassium sorbate (INS 202)",
+      "Chilli Powder",
+      "Annatto Extracts (INS 160b)",
+      "Clove Powder",
+      "Garlic Powder",
+      "Ginger Powder",
+      "Nutmeg Powder",
+      "Cinnamon Powder"
+    ]
+  },
+  [
+  {
+    "brandName": "Ritzbury",
+    "productName": "Chit-Chat with Real Hazelnut Cream",
+    "ingredients": [
+      "Choco Coating (50%) {Sugar, Hydrogenated Palm Kernel Oil, Milk Powder, Cocoa Powder, Iodized Salt, Emulsifiers [Soya Lecithin (322), Polyglycerol Polyricinoleate (476)], Nature Identical (Vanilla) Flavour}",
+      "Wheat Flour",
+      "Corn Flour",
+      "Palm Olein",
+      "Hazelnut Paste (5%)",
+      "Emulsifier [Soya Lecithin (322)]",
+      "Iodized Salt",
+      "and Leavening Agents [Sodium Bicarbonate (500ii), Ammonium Bicarbonate (503ii)]"
+    ]
+  },
+  {
+    "brandName": "K Super",
+    "productName": "Choconuts Milk Choco Coated Peanuts",
+    "ingredients": [
+      "Sugar",
+      "Cocoa Butter Substitute",
+      "Peanut 20%",
+      "Full Cream Milk Powder",
+      "Cocoa Powder",
+      "Emulsifier (Soya Lecithin INS322)",
+      "Salt",
+      "Antioxidant 0.02% (Ascorbyl Palmitate INS304)",
+      "Nature Identical Vanilla Flavour"
+    ]
+  },
+  {
+    "brandName": "Snickers",
+    "productName": "Milk Chocolate with soft nougat and caramel centre with peanuts",
+    "ingredients": [
+      "sugar",
+      "glucose syrup",
+      "peanuts (22%)",
+      "skimmed milk powder",
+      "cocoa butter",
+      "cocoa mass",
+      "whey permeate (milk)",
+      "sunflower oil",
+      "milk fat",
+      "palm fat",
+      "salt",
+      "emulsifier (soya lecithin)",
+      "egg white powder"
+      "hazelnuts"
+    ]
+  }
+  {
+    "brandName": "Kandos",
+    "productName": "Cashewnut Chocolate",
+    "ingredients": [
+      "Sugar",
+      "Full Cream Milk Powder",
+      "Cocoa Butter",
+      "Cocoa Mass",
+      "Cashewnut",
+      "Soya Lecithin (INS322)",
+      "Salt",
+      "Nature Identical Vanilla Flavour"
+    ]
+  },
+  {
+    "brandName": "Zellers",
+    "productName": "Cashew Nut Chocolate",
+    "ingredients": [
+      "Sugar",
+      "Milk Powder",
+      "Cocoa Butter",
+      "Cocoa Mass",
+      "Cashew Nut",
+      "Emulsifiers (Soya Lecithin (INS 322), Polyglycerol polyricinoleate (INS 476))",
+      "Salt",
+      "Natural Vanilla Flavour"
+    ]
+  },
+  {
+    "brandName": "Tiara",
+    "productName": "Rollo Choco Coated Swiss Roll (Strawberry Flavoured)",
+    "ingredients": [
+      "Sugar",
+      "Wheat Flour",
+      "Hydrogenated Palm Kernel Oil",
+      "Milk Powder",
+      "Humectant [Glycerol (422)]",
+      "Egg",
+      "Sugar Syrup",
+      "Cocoa Powder Coating (23%) {Sugar, Hydrogenated Palm Kernel Oil, Milk Powder, Cocoa Powder, Emulsifier [Polyglycerol Polyricinoleate (476)], Iodized Salt and Nature Identical (Vanilla) Flavour}",
+      "Emulsifiers [Mono and Diglycerides of Fatty Acids (471), Polyglycerol Esters of Fatty Acids (475), Soya Lecithin (322ii), Propylene Glycol (1520)]",
+      "Jam",
+      "Corn Starch",
+      "Iodized Salt",
+      "Leavening Agent [Sodium Bicarbonate (500ii)]",
+      "Nature Identical (Vanilla & Strawberry) Flavours",
+      "Permitted Preservatives [Potassium Sorbate (202), Sodium Propionate (281)]",
+      "Acidity Regulator [Citric Acid (330)]"
+    ]
+  },
+  {
+    "brandName": "Uswatte",
+    "productName": "March Mallows",
+    "ingredients": [
+      "Sugar",
+      "Liquid Glucose",
+      "Gelatin - INS 428",
+      "Citric Acid - INS 330",
+      "Nature Identical Vanilla & Strawberry Flavours",
+      "Permitted Food Colours (Carmoisine - INS122, Tartrazine - INS102, Brilliant Blue FCF - INS133)"
+    ]
+  }
+  {
+    "brandName": "Zellers",
+    "productName": "Cashew Nut Chocolate",
+    "ingredients": [
+      "Sugar",
+      "Milk Powder",
+      "Cocoa Butter",
+      "Cocoa Mass",
+      "Cashew Nut",
+      "Emulsifiers (Soya Lecithin (INS 322), Polyglycerol polyricinoleate (INS 476))",
+      "Salt",
+      "Natural Vanilla Flavour"
+    ]
+  },
+  {
+    "brandName": "Kandos",
+    "productName": "Milk Chocolate",
+    "ingredients": [
+      "Sugar",
+      "Full Cream Milk Powder",
+      "Cocoa Butter",
+      "Cocoa Mass",
+      "Emulsifiers (Soya Lecithin INS322, Polyglycerol Polyricinoleate INS476)",
+      "Salt",
+      "Nature Identical Vanilla Flavour"
+    ]
+  },
+  {
+    "brandName": "Ritzbury",
+    "productName": "Bubbles Aerated Milk Choco",
+    "ingredients": [
+      "Sugar",
+      "Hydrogenated Palm Kernel Oil",
+      "Milk Powder (14%)",
+      "Cocoa Powder",
+      "Whey Powder",
+      "Emulsifiers [Soya Lecithin (322), Polyglycerol Polyricinoleate (476)]",
+      "Iodized Salt",
+      "Nature Identical (Vanilla & Chocolate) Flavours"
+    ]
+  },
+  {
+    "brandName": "Ritzbury",
+    "productName": "Deckers Milk Choco with Coffee Flavoured Milk Choco with Cookies",
+    "ingredients": [
+      "Milk Sweet [Sugar, Hydrogenated Palm Kernel Oil, Milk Powder (17%), Cookies (6%), Whey Powder, Emulsifier (Soya Lecithin (322)), Iodized Salt, Nature Identical (Vanilla) Flavour and Natural (Coffee) Flavour]",
+      "Sugar",
+      "Hydrogenated Palm Kernel Oil",
+      "Milk Powder (14%)",
+      "Cocoa Powder",
+      "Whey Powder",
+      "Emulsifiers [Soya Lecithin (322), Polyglycerol Polyricinoleate (476)]",
+      "Iodized Salt",
+      "Nature Identical (Vanilla & Chocolate) Flavours"
+    ]
+  },
+  {
+    "brandName": "Ritzbury",
+    "productName": "Milk Chocolate",
+    "ingredients": [
+      "Sugar",
+      "Vegetable Fat",
+      "Milk Powder",
+      "Cocoa Powder",
+      "Emulsifier [Soya Lecithin (322)]",
+      "Salt",
+      "and Nature Identical (Vanilla) Flavour"
+    ]
+  }
+  {
+    "brandName": "Ritzbury",
+    "productName": "Roccoa with Fruit & Nut",
+    "ingredients": [
+      "Sugar",
+      "Milk Powder",
+      "Cocoa Butter",
+      "Cocoa Mass",
+      "Cashew",
+      "Raisins",
+      "Vegetable Fat",
+      "Whey Powder",
+      "Cocoa Powder",
+      "Emulsifiers [Soya Lecithin (322), Polyglycerol Polyricinoleate (476)]",
+      "Nature Identical (Vanilla) Flavour",
+      "Salt"
+    ]
+  },
+  {
+    "brandName": "Revello",
+    "productName": "Coconut",
+    "ingredients": [
+      "Sugar",
+      "Milk Powder",
+      "Cocoa Butter",
+      "Cocoa Mass",
+      "Desiccated Coconut",
+      "Emulsifiers [Polyglycerol Polyricinoleate (476), Soya Lecithin (322)]",
+      "Nature Identical (Vanilla) Flavour",
+      "and Salt"
+    ]
+  }
+  {
+    "brandName": "7up",
+    "productName": "Carbonated Beverage",
+    "ingredients": [
+      "Carbonated Water",
+      "Sugar",
+      "Acidity Regulators (INS 330, INS 331 (iii), INS 296)",
+      "Natural Lemon Flavour",
+      "Preservative (INS 211)",
+      "Sweetener (INS 960)"
+    ]
+  },
+  {
+    "brandName": "Red Bull",
+    "productName": "Energy Drink",
+    "ingredients": [
+      "Carbonated Water",
+      "Sucrose",
+      "Glucose",
+      "Citric Acid",
+      "Taurine (0.4%)",
+      "Sodium Bicarbonate",
+      "Natural and Artificial (Fruit Blend - Vanilla and Pineapple) Flavours",
+      "Magnesium Carbonate",
+      "Caramel I",
+      "Caffeine (0.03%)",
+      "Niacin",
+      "Pantothenic Acid",
+      "Vitamin B6",
+      "Riboflavin",
+      "Vitamin B12"
+    ]
+  },
+  {
+    "brandName": "Sting",
+    "productName": "Formulated Caffeinated Beverage (Berry Flavor)",
+    "ingredients": [
+      "Carbonated Water",
+      "Sugar",
+      "Acidity Regulators (INS 330, INS 331 (iii))",
+      "Nature Identical Berry Flavour",
+      "Sequestrants (INS 452 (i), INS 385)",
+      "Caffeine (0.03%)",
+      "Preservative (INS 202)",
+      "Sweeteners (INS 955, 950)",
+      "Permitted Colour (INS 129)"
+    ]
+  }
+  {
+    "brandName": "Mirinda",
+    "productName": "Orange Flavour Carbonated Beverage",
+    "ingredients": [
+      "Carbonated Water",
+      "Sugar",
+      "Acidity Regulators (INS 330, INS 331 (iii))",
+      "Natural Orange Flavour",
+      "Stabilizer (INS 444)",
+      "Preservative (INS 211)",
+      "Sweeteners (INS 950, INS 955)",
+      "Permitted Colour (INS 110)"
+    ]
+  },
+  {
+    "brandName": "Elephant House",
+    "productName": "Necto Carbonated Water",
+    "ingredients": [
+      "Carbonated Water",
+      "Sugar",
+      "Citric Acid (INS 330)",
+      "Artificial Necto Flavour",
+      "Steviol Glycoside",
+      "Preservative (INS 211)",
+      "Colours (INS 124, INS 122, INS 133)",
+      "Permitted Sweetener Steviol Glycoside"
+    ]
+  },
+  {
+    "brandName": "Red Bull",
+    "productName": "Sugarfree Energy Drink",
+    "ingredients": [
+      "Carbonated Water",
+      "Citric Acid",
+      "Taurine (0.4%)",
+      "Natural and Artificial (Fruit Blend - Vanilla and Pineapple) Flavours",
+      "Sodium Bicarbonate",
+      "Magnesium Carbonate",
+      "Caramel I",
+      "Caffeine (0.03%)",
+      "Sucralose",
+      "Xanthan Gum",
+      "Niacin",
+      "Acesulfame K",
+      "Pantothenic Acid",
+      "Vitamin B6",
+      "Riboflavin",
+      "Vitamin B12"
+    ]
+  },
+  {
+    "brandName": "Monster Energy",
+    "productName": "Monster Energy Original",
+    "ingredients": [
+      "Carbonated Water",
+      "Sucrose",
+      "Glucose",
+      "Citric Acid",
+      "Natural Mixed Fruit Flavours",
+      "Taurine (401 mg/100 ml)",
+      "Sodium Citrate",
+      "Panax Ginseng Extract (82 mg/100 ml)",
+      "Caffeine (30 mg/100 ml)",
+      "Sorbic Acid",
+      "Sucralose",
+      "Colour (Grape Skin Extract)",
+      "Niacinamide (Vit. B3)",
+      "Sodium Chloride",
+      "Benzoic Acid",
+      "Inositol (2 mg/100 ml)",
+      "Guarana Seed Extract (2 mg/100 ml)",
+      "Glucuronolactone (2 mg/100 ml)",
+      "Pyridoxine Hydrochloride (Vit. B6)",
+      "Riboflavin (Vit. B2)",
+      "Cyanocobalamin (Vit. B12)"
+    ]
+  }
+  [
+  {
+    "brandName": "Edinborough",
+    "productName": "Mayonnaise",
+    "ingredients": [
+      "Rapeseed oil/Sunflower oil (48%)",
+      "Water",
+      "Sugar",
+      "Modified maize starch (INS 1442, INS 1450)",
+      "Iodized table salt",
+      "Acetic acid (INS 260)",
+      "Sodium carboxymethyl cellulose (INS 466)",
+      "Mustard (1%)",
+      "Potassium sorbate (INS 202)",
+      "Citric acid (INS 330)",
+      "Artificial/Nature identical vanilla flavour",
+      "Calcium disodium EDTA (INS 385)",
+      "Carmoisine colour (INS 122)",
+      "Tartrazine colour (INS 102)"
+    ]
+  },
+  {
+    "brandName": "Noor",
+    "productName": "Original Mayonnaise",
+    "ingredients": [
+      "Vegetable Oil-Soybean/Sunflower oil (non-hydrogenated)",
+      "Water",
+      "Natural Vinegar",
+      "Sugar",
+      "Modified Food Starch",
+      "Salt",
+      "Egg yolk",
+      "Thickener (E415)",
+      "Preservative (E202)",
+      "Spice extracts (Mustard)",
+      "Lemon Juice Concentrate",
+      "Sequestering Agent (E385)",
+      "Natural color (E160a)"
+    ]
+  },
+  {
+    "brandName": "Keells",
+    "productName": "Mustard Cream",
+    "ingredients": [
+      "Margarine",
+      "Corn Flour",
+      "Water",
+      "Mustard",
+      "Turmeric",
+      "Sugar",
+      "Common Salt",
+      "Citric Acid (INS 330)",
+      "Vinegar",
+      "Potassium Sorbate (INS 202)"
+    ]
+  },
+  {
+    "brandName": "Edinborough",
+    "productName": "Mustard Cream Spread",
+    "ingredients": [
+      "Water",
+      "Margarine (23%)",
+      "Wheat flour",
+      "Mustard powder (4%)",
+      "Sugar",
+      "Iodized table salt",
+      "Cinnamon",
+      "Cardamom",
+      "Clove",
+      "Acetic acid (INS 260)",
+      "Sodium metabisulphite (INS 223)"
+    ]
+  },
+  {
+    "brandName": "Dad's Garden by MA'S Kitchen",
+    "productName": "Lemon Mustard Sauce",
+    "ingredients": [
+      "Sugar",
+      "Vinegar",
+      "Spices & herbs (mustard [4.4%], ginger, turmeric)",
+      "Salt",
+      "Corn starch",
+      "Lemon (1%)",
+      "Stabilisers (xanthan gum INS-415 pectin INS-440)"
+    ]
+  },
+  {
+    "brandName": "Dad's Garden by MA'S Kitchen",
+    "productName": "Teriyaki Cooking Sauce",
+    "ingredients": [
+      "sugar",
+      "salt",
+      "rice",
+      "corn flour",
+      "yeast extract",
+      "alcohol (1.1%)",
+      "onion",
+      "sesame",
+      "soybean",
+      "garlic",
+      "lime",
+      "spices & herbs (chilli, ginger)",
+      "acidity regulator (citric acid INS-330)",
+      "antioxidant (succinic acid INS-363)"
+    ]
+  },
+  {
+    "brandName": "Edinborough",
+    "productName": "Fish Sauce (Thai Style)",
+    "ingredients": [
+      "Natural Fish Extract (65%)",
+      "Water",
+      "Soya",
+      "Wheat/Rice",
+      "Salt",
+      "Potassium sorbate (INS 202)"
+    ]
+  },
+  {
+    "brandName": "Edinborough",
+    "productName": "Oyster Sauce",
+    "ingredients": [
+      "Water",
+      "Extract of Soya & Wheat/ Rice",
+      "Sugar",
+      "Modified maize/ tapioca starch (INS 1442)",
+      "Flavour enhancer used (Monosodium glutamate INS 621)",
+      "Iodized table salt",
+      "Sea food extract (5%)",
+      "Citric acid (INS 330)",
+      "Xanthan stabilizer (INS 415)",
+      "Potassium sorbate (INS 202)",
+      "Caramel (INS 150c)",
+      "Sodium metabisulphite (INS 223)"
+    ]
+  },
+  {
+    "brandName": "Edinborough",
+    "productName": "Soya Sauce",
+    "ingredients": [
+      "Water",
+      "Soya sauce extract (42%) [Water, Soya beans, Wheat/ Rice, Crystal salt]",
+      "Natural caramel colour (INS 150c)",
+      "Seed",
+      "tapioca (Sago)",
+      "Potassium sorbate (INS 202)"
+    ]
+  },
+  {
+    "brandName": "KIST",
+    "productName": "Chilli Sauce",
+    "ingredients": [
+      "Tomato (Tomato Paste + Water)",
+      "Sugar",
+      "Salt",
+      "Chilli",
+      "Acetic Acid (INS 260)",
+      "Edible Starch (INS 1442)",
+      "Garlic",
+      "Onion",
+      "Ascorbic Acid (Vitamin C/INS 300)",
+      "Spices",
+      "Permitted Preservative (INS 223)",
+      "Natural Ginger Extract",
+      "Stabilizer (INS 415)"
+    ]
+  },
+  {
+    "brandName": "Dad's Garden by MA'S Kitchen",
+    "productName": "Thai Sweet Chilli Sauce",
+    "ingredients": [
+      "sugar",
+      "vinegar",
+      "garlic",
+      "salt",
+      "spices & herbs (chilli [0.7%])",
+      "stabilisers (xanthan gum INS-415, sodium carboxymethyl cellulose INS-466)"
+    ]
+  },
+  {
+    "brandName": "Edinborough",
+    "productName": "Sweet Chilli Sauce",
+    "ingredients": [
+      "Water",
+      "Sugar (31%)",
+      "Chilli (10%)",
+      "Garlic",
+      "Modified maize/tapioca starch (INS 1442)",
+      "Iodized table salt",
+      "Acetic acid (INS 260)",
+      "Potassium sorbate (INS 202)"
+    ]
+  },
+  {
+    "brandName": "Dad's Garden by MA'S Kitchen",
+    "productName": "Mango BBQ Sauce",
+    "ingredients": [
+      "sugar",
+      "mango (11%)",
+      "vinegar",
+      "garlic",
+      "tomato",
+      "spices & herbs (ginger, tamarind, pepper, mustard, chilli)",
+      "salt",
+      "natural smoke flavour",
+      "stabiliser (xanthan gum INS-415)"
+    ]
+  },
+  {
+    "brandName": "KIST",
+    "productName": "Kochchi Sauce",
+    "ingredients": [
+      "Water",
+      "Sugar",
+      "Red Chilli Paste",
+      "Kochchi Paste",
+      "Tomato Paste",
+      "Salt",
+      "Modified Tapioca Starch (INS1442/INS1422)",
+      "Garlic",
+      "onion",
+      "Acetic Acid (INS260)",
+      "Spices",
+      "Chilli powder",
+      "Ascorbic Acid (INS300)",
+      "Stabilizer - Xanthun Gum (INS415)",
+      "Permitted Preservative - Sodium Metabisulfite (INS223)"
+    ]
+  },
+  {
+    "brandName": "MD",
+    "productName": "Original Green Chilli Sauce",
+    "ingredients": [
+      "Green Chilli Pulp",
+      "Sugar",
+      "Vinegar",
+      "Salt",
+      "Ginger & Garlic Paste",
+      "Cinnamon",
+      "Cardamom",
+      "Cloves",
+      "Nutmeg",
+      "Permitted Colours (E 102, E 133)"
+    ]
+  },
+  {
+    "brandName": "MD",
+    "productName": "Original Tomato Ketchup",
+    "ingredients": [
+      "Tomato Paste",
+      "Water",
+      "Sugar",
+      "Vinegar",
+      "Salt",
+      "Xanthan gum (INS 415)",
+      "Guar gum (INS 412)",
+      "Pectin (INS 440)",
+      "Permitted Preservatives Sodium Metabisulphite (INS 223)",
+      "Potassium Sorbate (INS 202)"
+    ]
+  },
+  {
+    "brandName": "Keells",
+    "productName": "Thousand Island Salad Dressing",
+    "ingredients": [
+      "Palm oil",
+      "Water",
+      "Sugar",
+      "Milk Solid",
+      "Tomato Paste",
+      "Dextrose monohydrate",
+      "Iodized Salt",
+      "Acetylated distarch adipate (INS 1422)",
+      "Guar Gum (INS 412)",
+      "Xanthan Gum (INS 415)",
+      "Citric acid (INS 330)",
+      "Acetic acid (INS 260)",
+      "Potassium sorbate (INS 202)",
+      "Annatto extracts (INS 160b)",
+      "Natural Gherkin"
+    ]
+  },
+  {
+    "brandName": "MA'S Kitchen",
+    "productName": "Sweet & Sour Wok Sauce",
+    "ingredients": [
+      "Sugar",
+      "Vinegar",
+      "Pineapple",
+      "Tomato",
+      "Garlic",
+      "Spice & Herbs (Ginger, Chilli, Pepper, Turmeric)",
+      "Corn flour",
+      "Salt",
+      "Soybean",
+      "Wheat flour"
+    ]
+  },
+  {
+    "brandName": "Edinborough",
+    "productName": "Chilli Mayonnaise",
+    "ingredients": [
+      "Rapeseed oil/Sunflower oil (46%)",
+      "Water",
+      "Chilli (12%)",
+      "Sugar",
+      "Modified maize starches (INS 1442, INS 1450)",
+      "Acetic acid (INS 260)",
+      "Iodized table salt",
+      "Egg (1.1%)",
+      "Citric acid (INS 330)",
+      "Mustard (1%)",
+      "Sodium carboxymethyl cellulose (INS 466)",
+      "Potassium sorbate (INS 202)",
+      "Calcium disodium EDTA (INS 385)"
+    ]
+  },
+  {
+    "brandName": "Yeti",
+    "productName": "Burn Green Apple Flavoured Drink",
+    "ingredients": [
+      "Water",
+      "Citric Acid (INS 330)",
+      "Potassium Citrate (INS 332(ii))",
+      "Calcium Chloride",
+      "Magnesium Sulphate",
+      "Sodium Chloride",
+      "L-Carnitine",
+      "Sucralose (INS 955)",
+      "Potassium Sorbate (INS 202)",
+      "Potassium Phosphate",
+      "Nature Identical Green Apple Flavour",
+      "B-Vitamin Premix",
+      "Permitted Colour Tartrazine (INS 102) and Brilliant Blue (INS 133)"
+    ]
+  },
+  {
+    "brandName": "Ride",
+    "productName": "Classic Formulated Caffeinated Drink",
+    "ingredients": [
+      "Carbonated Water",
+      "Sugar",
+      "Glucose-Fructose Syrup",
+      "Citric Acid (INS330)",
+      "Sodium Citrate (INS331)",
+      "Taurine (400.00mg/100ml)",
+      "Caffeine (32.00mg/100ml)",
+      "Natural Caramel Colour (INS150c)",
+      "Inositol",
+      "Artificial (Raspberry, Strawberry, Blackcurrant, Vanilla) Flavours",
+      "Niacin",
+      "Pantothenic Acid",
+      "Vitamin B6",
+      "Vitamin B12",
+      "Permitted Preservative - Sodium Benzoate (INS211)"
+    ]
+  },
+  {
+    "brandName": "Ride",
+    "productName": "Sugar Free Formulated Caffeinated Drink",
+    "ingredients": [
+      "Carbonated Water",
+      "Citric Acid (INS 330)",
+      "Tri Sodium Citrate (INS 331(iii))",
+      "Taurine (400.00mg/100ml)",
+      "Caffeine (32.00mg/100ml)",
+      "Natural Caramel Colour (INS 150c)",
+      "Inositol",
+      "Artificial (Raspberry, Strawberry, Blackcurrent, Vanilla) Flavours",
+      "Permitted Sweeteners (Aspartame-INS951, Acesulfame K - INS950)",
+      "Niacin",
+      "Pantothenic Acid",
+      "Vitamin B6",
+      "Permitted Preservative (Sodium Benzoate - INS211)",
+      "Vitamin B12"
+    ]
+  },
+  {
+    "brandName": "Coca-Cola",
+    "productName": "Original Taste (Energy Reduced)",
+    "ingredients": [
+      "Carbonated Water",
+      "Sugar",
+      "Phosphoric Acid (INS 338)",
+      "Caffeine",
+      "Caramel (INS 150d)",
+      "Sucralose (INS 955)",
+      "Natural Cola-type Flavours"
+    ]
+  },
+  {
+    "brandName": "Pepsi",
+    "productName": "Carbonated Beverage",
+    "ingredients": [
+      "Carbonated Water",
+      "Sugar",
+      "Natural Colour (INS 150d)",
+      "Acidity Regulator (INS 338)",
+      "Caffeine",
+      "Natural Cola Flavour"
+    ]
+  }
+  {
+    "brandName": "Fanta",
+    "productName": "Cream Soda",
+    "ingredients": [
+      "Carbonated water",
+      "Sugar",
+      "Citric acid (INS 330)",
+      "Sodium benzoate (INS 211)",
+      "Steviol glycoside (INS 960)",
+      "Tartrazine (INS 102)",
+      "Artificial cream flavour"
+    ]
+  },
+  {
+    "brandName": "KIK",
+    "productName": "Kik Cola",
+    "ingredients": [
+      "Carbonated water",
+      "Sugar",
+      "Nature identical cola compound",
+      "Phosphoric acid (INS 338)",
+      "Steviol glycoside (INS 960)",
+      "Sodium benzoate (INS 211)",
+      "Natural caramel colour (INS 150d)",
+      "Caffeine"
+    ]
+  },
+  {
+    "brandName": "Elephant House",
+    "productName": "EGB (Elephant House Ginger Beer)",
+    "ingredients": [
+      "Carbonated water",
+      "Sugar",
+      "Citric acid (INS 330)",
+      "Natural ginger flavour",
+      "Quillaia extract type 1 (INS 999 i)",
+      "Sodium benzoate (INS 211)"
+    ]
+  },
+  {
+    "brandName": "Elephant House",
+    "productName": "Orange Crush",
+    "ingredients": [
+      "Carbonated water",
+      "Sugar",
+      "Nature identical orange emulsion",
+      "Stabilizer/Emulsifier (INS 1450, INS 445)",
+      "Citric acid (INS 330)",
+      "Steviol glycoside",
+      "Preservative (INS 211)",
+      "Colour (INS 110)"
+    ]
+  },
+  {
+    "brandName": "Sprite",
+    "productName": "Lemon-Lime",
+    "ingredients": [
+      "Carbonated water",
+      "Sugar",
+      "Citric acid (INS 330)",
+      "Tri-sodium citrate (INS 331iii)",
+      "Sodium benzoate (INS 211)",
+      "Natural lemon flavours"
+    ]
+  }
+  {
+    "brandName": "Ride",
+    "productName": "Glow Apple",
+    "ingredients": [
+      "Carbonated Water",
+      "Sugar",
+      "Glucose-Fructose Syrup",
+      "Citric Acid (INS330)",
+      "Sodium Citrate (INS331)",
+      "Taurine (400.00mg/100ml)",
+      "Caffeine (32.00mg/100ml)",
+      "Permitted Colours (Tartrazine- INS102, Brilliant blue FCF- INS133)",
+      "Inositol",
+      "Natural Green Apple Flavour",
+      "Niacin",
+      "Pantothenic Acid",
+      "Vitamin B6",
+      "Vitamin B12",
+      "Permitted Preservative - Sodium Benzoate (INS211)"
+    ]
+  },
+  {
+    "brandName": "Spinner",
+    "productName": "Watermelon Flavoured",
+    "ingredients": [
+      "Carbonated Water",
+      "Sugar",
+      "Citric Acid (INS 330)",
+      "Taurine",
+      "Tri Sodium Citrate (INS 331(iii))",
+      "Nature Identical Mixed Fruit, Berry and Watermelon Flavouring Substances",
+      "Permitted Colour (Allura Red - INS 129)",
+      "Caffeine",
+      "Permitted Preservative (Sodium Benzoate - INS 211)",
+      "Vitamin B3 (Niacinamide)",
+      "Vitamin B6 (Pyridoxine)",
+      "Vitamin B2 (Riboflavin)",
+      "Vitamin B12 (Cobalamin)"
+    ]
+  },
+  {
+    "brandName": "Spinner",
+    "productName": "Sugar Free (Caffeinated Beverage)",
+    "ingredients": [
+      "Carbonated Water",
+      "Citric Acid (INS 330)",
+      "Taurine",
+      "Tri Sodium Citrate (INS 331(iii))",
+      "Nature Identical Mixed Fruit and Berry Flavouring Substances",
+      "Permitted Colour (Caramel - INS 150a)",
+      "Caffeine",
+      "Permitted Preservative (Sodium Benzoate - INS 211)",
+      "Permitted Sweetener (Sucralose (INS 955))",
+      "Vitamin B3 (Niacinamide)",
+      "Vitamin B6 (Pyridoxine)",
+      "Vitamin B2 (Riboflavin)",
+      "Vitamin B12 (Cobalamin)"
+    ]
+  }
+
+]
+
+
+  
