@@ -89,7 +89,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   margin: const EdgeInsets.fromLTRB(24, 20, 24, 0),
                   padding: const EdgeInsets.all(24),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
@@ -138,7 +138,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             icon: const Icon(Icons.edit, size: 14),
                             label: Text("edit_profile".tr(), style: const TextStyle(fontSize: 12)),
                             style: OutlinedButton.styleFrom(
-                              foregroundColor: Colors.grey[700],
+                              foregroundColor: isDark ? Colors.grey[300] : Colors.grey[700],
                               side: BorderSide(color: Colors.grey.shade300),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8),
@@ -182,7 +182,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               margin: const EdgeInsets.symmetric(horizontal: 24),
               padding: const EdgeInsets.all(24),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
@@ -207,7 +207,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         onPressed: () => _navigateAndEdit(1), // 1 = Health Tab
                         icon: const Icon(Icons.edit, size: 16),
                         label: Text("edit_profile".tr()),
-                        style: TextButton.styleFrom(foregroundColor: Colors.grey[700]),
+                        style: TextButton.styleFrom(foregroundColor: isDark ? Colors.grey[300] : Colors.grey[700]),
                       ),
                     ],
                   ),
@@ -232,6 +232,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   // --- Helper Widgets ---
 
   Widget _buildLabel(String label, String value) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Padding(
       padding: const EdgeInsets.only(bottom: 16.0),
       child: Column(
@@ -244,7 +245,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           const SizedBox(height: 4),
           Text(
             value,
-            style: TextStyle(color: frovyText, fontSize: 16, fontWeight: FontWeight.w500),
+            style: TextStyle(color: isDark ? Colors.white : frovyText, fontSize: 16, fontWeight: FontWeight.w500),
           ),
         ],
       ),
@@ -252,10 +253,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   Widget _buildStatCard(String title, String subtitle) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 16),
       decoration: BoxDecoration(
-        color: frovyLightBg,
+        color: isDark ? const Color(0xFF1A1A1A) : frovyLightBg,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
@@ -275,6 +277,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   Widget _buildHealthItem(String title, String value) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Padding(
       padding: const EdgeInsets.only(bottom: 16.0),
       child: Column(
@@ -284,7 +287,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           const SizedBox(height: 4),
           Text(
             value,
-            style: const TextStyle(color: Colors.black87, fontSize: 14),
+            style: TextStyle(color: isDark ? Colors.white70 : Colors.black87, fontSize: 14),
           ),
         ],
       ),
