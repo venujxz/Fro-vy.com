@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
 import 'package:camera/camera.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'views/theme_notifier.dart'; // Import the new notifier
@@ -89,7 +88,7 @@ class FrovyApp extends StatelessWidget {
             ),
           ),
           
-          home: WelcomeScreen(),
+          home: WelcomeScreen(cameras: cameras),
         );
       },
     );
