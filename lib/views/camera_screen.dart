@@ -268,7 +268,7 @@ class CameraScreenState extends State<CameraScreen> {
                 width: double.infinity,
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: frovyBeige, 
+                  color: isDark ? const Color(0xFF2C2C2C) : frovyBeige, 
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Column(
@@ -276,17 +276,17 @@ class CameraScreenState extends State<CameraScreen> {
                   children: [
                     Text(
                       "how_to_scan".tr(),
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: frovyText,
+                        color: isDark ? Colors.white : frovyText,
                       ),
                     ),
                     const SizedBox(height: 12),
-                    _buildBulletPoint("scan_instruction_1".tr()),
-                    _buildBulletPoint("scan_instruction_2".tr()),
-                    _buildBulletPoint("scan_instruction_3".tr()),
-                    _buildBulletPoint("scan_instruction_4".tr()),
+                    _buildBulletPoint("scan_instruction_1".tr(), isDark),
+                    _buildBulletPoint("scan_instruction_2".tr(), isDark),
+                    _buildBulletPoint("scan_instruction_3".tr(), isDark),
+                    _buildBulletPoint("scan_instruction_4".tr(), isDark),
                   ],
                 ),
               ),
@@ -318,7 +318,7 @@ class CameraScreenState extends State<CameraScreen> {
   }
 
   // Helper widget for the bullet points
-  Widget _buildBulletPoint(String text) {
+  Widget _buildBulletPoint(String text, bool isDark) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 8.0),
       child: Row(
@@ -332,7 +332,11 @@ class CameraScreenState extends State<CameraScreen> {
           Expanded(
             child: Text(
               text,
-              style: const TextStyle(color: frovyText, fontSize: 14, height: 1.4),
+              style: TextStyle(
+                color: isDark ? Colors.white70 : frovyText,
+                fontSize: 14,
+                height: 1.4,
+              ),
             ),
           ),
         ],
