@@ -198,5 +198,9 @@
   "delete_account_success": "உங்கள் கணக்கு நீக்கப்பட்டது.",
 
   "no_results_found": "தயாரிப்புகள் இல்லை",
-  "try_different_search": "வேறொரு தேடல் சொல் அல்லது வகையை முயற்சிக்கவும்"
+  "try_different_search": "வேறொரு தேடல் சொல் அல்லது வகையை முயற்சிக்கவும்",
+
+  "result_beneficial": "பயனுள்ளது",
+  "result_caution": "எச்சரிக்கை",
+  "result_avoid": "தவிர்க்கவும்"
 }
