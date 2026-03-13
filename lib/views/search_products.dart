@@ -29,7 +29,7 @@ class _SearchProductsScreenState extends State<SearchProductsScreen> {
     return products.where((product) {
       final matchesCategory = selectedCategory == "cat_all" || product['category'] == selectedCategory;
       final matchesSearch = _searchQuery.isEmpty ||
-          (product['name'] as String).toLowerCase().contains(_searchQuery.toLowerCase());
+          (product['productName'] as String).toLowerCase().contains(_searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     }).toList();
   }
@@ -43,12 +43,36 @@ class _SearchProductsScreenState extends State<SearchProductsScreen> {
     "cat_bakery"
   ];
 
-  // Mock Database - Keep category internal names in English for logic matching
+  // Mock database using new beneficial/caution/avoid format
   final List<Map<String, dynamic>> products = [
-    {"name": "Greek Yogurt", "category": "cat_dairy", "status": "SAFE", "ingredients": ["Milk", "Live Cultures"]},
-    {"name": "Milk Chocolate", "category": "cat_snacks", "status": "UNSAFE", "ingredients": ["Milk", "Sugar", "Cocoa Butter", "Peanuts"]},
-    {"name": "Oat Milk", "category": "cat_dairy", "status": "SAFE", "ingredients": ["Water", "Oats", "Sea Salt"]},
-    {"name": "Potato Chips", "category": "cat_snacks", "status": "CAUTION", "ingredients": ["Potatoes", "Vegetable Oil", "Salt", "MSG"]},
+    {
+      "productName": "Greek Yogurt",
+      "category": "cat_dairy",
+      "beneficial": ["Probiotics", "Calcium", "Protein"],
+      "caution": [],
+      "avoid": [],
+    },
+    {
+      "productName": "Milk Chocolate",
+      "category": "cat_snacks",
+      "beneficial": ["Iron"],
+      "caution": ["Sugar", "Milk"],
+      "avoid": ["Peanuts"],
+    },
+    {
+      "productName": "Oat Milk",
+      "category": "cat_dairy",
+      "beneficial": ["Fiber", "Vitamin D", "Calcium"],
+      "caution": [],
+      "avoid": [],
+    },
+    {
+      "productName": "Potato Chips",
+      "category": "cat_snacks",
+      "beneficial": [],
+      "caution": ["Sodium", "MSG"],
+      "avoid": ["Vegetable Oil"],
+    },
   ];
 
   @override
@@ -180,7 +204,7 @@ class _SearchProductsScreenState extends State<SearchProductsScreen> {
       ),
       child: ListTile(
         contentPadding: const EdgeInsets.all(16),
-        title: Text(product['name'], style: const TextStyle(fontWeight: FontWeight.bold)),
+        title: Text(product['productName'], style: const TextStyle(fontWeight: FontWeight.bold)),
         subtitle: Text(
           (product['category'] as String).tr(), // Localize the category label in the card
           style: TextStyle(color: Colors.grey[600], fontSize: 12)
