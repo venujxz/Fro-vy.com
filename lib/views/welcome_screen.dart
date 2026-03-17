@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'login_step1_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -9,12 +10,16 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
       body: Container(
         width: double.infinity,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF4CAF50), Color(0xFFF4E04D)],
+            colors: isDark
+                ? [const Color(0xFF1F1F1F), const Color(0xFF121212)]
+                : [const Color(0xFF4CAF50), const Color(0xFFF4E04D)],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -32,7 +37,9 @@ class WelcomeScreen extends StatelessWidget {
                   vertical: 20,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.9),
+                  color: isDark
+                      ? const Color(0xFF2C2C2C).withOpacity(0.9)
+                      : Colors.white.withOpacity(0.9),
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: const Text(
@@ -45,23 +52,23 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
 
-              const Column(
+              Column(
                 children: [
                   Text(
-                    "Your Personal Health Guardian",
-                    style: TextStyle(
+                    "welcome_tagline".tr(),
+                    style: const TextStyle(
                       fontSize: 20,
                       color: Colors.white,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    padding: const EdgeInsets.symmetric(horizontal: 30),
                     child: Text(
-                      "Analyze food products instantly against your health profile. Get real-time risk assessments based on your allergies and medical conditions to make safer food choices.",
+                      "welcome_description".tr(),
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      style: const TextStyle(color: Colors.white, fontSize: 16),
                     ),
                   ),
                 ],
@@ -70,7 +77,7 @@ class WelcomeScreen extends StatelessWidget {
               // Get Started Button
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
+                  backgroundColor: isDark ? const Color(0xFF2C2C2C) : Colors.white,
                   foregroundColor: const Color(0xFF4CAF50),
                   padding: const EdgeInsets.symmetric(
                     horizontal: 50,
@@ -88,17 +95,17 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text(
-                  "Get Started",
-                  style: TextStyle(fontSize: 18),
+                child: Text(
+                  "get_started".tr(),
+                  style: const TextStyle(fontSize: 18),
                 ),
               ),
 
-              const Padding(
-                padding: EdgeInsets.only(bottom: 20),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 20),
                 child: Text(
-                  "© 2025 Fro-vy. All rights reserved.",
-                  style: TextStyle(color: Colors.white),
+                  "copyright".tr(),
+                  style: const TextStyle(color: Colors.white),
                 ),
               ),
             ],
