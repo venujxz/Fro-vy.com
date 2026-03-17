@@ -7,6 +7,7 @@ import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 import 'package:http/http.dart' as http; // IMPORT FOR BACKEND REQUESTS
 import '../services/ocr_service.dart';
 import '../util/platform_config.dart';
+import '../services/prefs_service.dart';
 import 'result_screen.dart';
 import 'manual_entry_screen.dart';
 import '../util/app_colors.dart';
@@ -26,14 +27,19 @@ class CameraScreenState extends State<CameraScreen> {
   bool _isCameraInitialized = false;
   final ImagePicker _picker = ImagePicker(); // For Gallery Uploads
 
+  // User health data loaded from PrefsService
+  List<String> _userAllergies = [];
+  String _userMedicalConditions = "";
+
   // Define Fro-vy Brand Colors based on your design
-  static const Color frovyGreen = AppColors.frovyGreen; 
-  static const Color frovyBeige = AppColors.frovyBeige; 
-  static const Color frovyText = AppColors.frovyText; 
+  static const Color frovyGreen = AppColors.frovyGreen;
+  static const Color frovyBeige = AppColors.frovyBeige;
+  static const Color frovyText = AppColors.frovyText;
 
   @override
   void initState() {
     super.initState();
+    _loadHealthProfile();
     // Initialize Camera
     if (widget.cameras.isNotEmpty) {
       controller = CameraController(widget.cameras[0], ResolutionPreset.high);
@@ -46,6 +52,15 @@ class CameraScreenState extends State<CameraScreen> {
         debugPrint('Camera initialization error: $e');
       });
     }
+  }
+
+  Future<void> _loadHealthProfile() async {
+    final healthProfile = await PrefsService.getHealthProfile();
+    if (!mounted) return;
+    setState(() {
+      _userAllergies = healthProfile.allergies;
+      _userMedicalConditions = healthProfile.medicalConditions;
+    });
   }
 
   @override
@@ -86,9 +101,8 @@ class CameraScreenState extends State<CameraScreen> {
             },
             body: jsonEncode({
               'extractedText': extractedIngredients,
-              // Hardcoded for now, but eventually pass the user's actual profile data
-              'allergies': ["Peanuts", "Shellfish"], 
-              'medicalConditions': "None"
+              'allergies': _userAllergies,
+              'medicalConditions': _userMedicalConditions,
             }),
           ).timeout(PlatformConfig.getHttpTimeout());
 
