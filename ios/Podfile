@@ -39,5 +39,76 @@ end
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     flutter_additional_ios_build_settings(target)
+    target.build_configurations.each do |config|
+      # Remove arm64 from excluded archs so we can build for Apple Silicon simulator
+      config.build_settings.delete('EXCLUDED_ARCHS[sdk=iphonesimulator*]')
+      config.build_settings['ONLY_ACTIVE_ARCH'] = 'YES'
+    end
+  end
+  # Set project-level excluded archs (only i386)
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'i386'
+  end
+
+  # Patch the generated Pods-Runner xcconfig files to remove arm64 from EXCLUDED_ARCHS
+  # CocoaPods generates these with "arm64" excluded for simulator, blocking Apple Silicon builds
+  Dir.glob(File.join(installer.sandbox.root, 'Target Support Files', 'Pods-*', '*.xcconfig')).each do |xcconfig_path|
+    content = File.read(xcconfig_path)
+    if content.include?('EXCLUDED_ARCHS[sdk=iphonesimulator*] = arm64')
+      content.gsub!('EXCLUDED_ARCHS[sdk=iphonesimulator*] = arm64', 'EXCLUDED_ARCHS[sdk=iphonesimulator*] = i386')
+      File.write(xcconfig_path, content)
+      puts "Patched #{File.basename(xcconfig_path)} - removed arm64 from simulator exclusion"
+    end
+  end
+
+  # Patch pre-built static frameworks to change platform from iOS to iOS Simulator
+  # Required for GoogleMLKit which ships device-only arm64 static libraries
+  # We directly binary-patch the arm64 slice, changing LC_BUILD_VERSION platform
+  # from iOS (2) to iOS Simulator (7) without disassembling/reassembling archives
+  frameworks_to_patch = [
+    'MLImage/Frameworks/MLImage.framework/MLImage',
+    'MLKitCommon/Frameworks/MLKitCommon.framework/MLKitCommon',
+    'MLKitTextRecognition/Frameworks/MLKitTextRecognition.framework/MLKitTextRecognition',
+    'MLKitTextRecognitionCommon/Frameworks/MLKitTextRecognitionCommon.framework/MLKitTextRecognitionCommon',
+    'MLKitVision/Frameworks/MLKitVision.framework/MLKitVision',
+  ]
+
+  pods_dir = installer.sandbox.root.to_s
+  frameworks_to_patch.each do |fw_path|
+    full_path = "#{pods_dir}/#{fw_path}"
+    next unless File.exist?(full_path)
+
+    file_info = `file "#{full_path}" 2>&1`
+    next unless file_info.include?('arm64')
+
+    Dir.mktmpdir do |tmpdir|
+      arm64_thin = "#{tmpdir}/arm64_thin"
+
+      # Extract arm64 thin slice from fat binary
+      system("lipo -thin arm64 \"#{full_path}\" -output \"#{arm64_thin}\" 2>/dev/null") ||
+        system("cp \"#{full_path}\" \"#{arm64_thin}\"")
+
+      # Binary-patch all LC_BUILD_VERSION platform fields in the arm64 slice
+      # LC_BUILD_VERSION: cmd=0x32(50) cmdsize=0x18(24) platform=0x02(iOS) -> 0x07(iOS Sim)
+      data = File.binread(arm64_thin)
+      ios_pattern = [0x32, 0x00, 0x00, 0x00, 0x18, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00].pack('C*')
+      sim_pattern = [0x32, 0x00, 0x00, 0x00, 0x18, 0x00, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00].pack('C*')
+
+      count = data.scan(ios_pattern).length
+      if count > 0
+        data.gsub!(ios_pattern, sim_pattern)
+        File.binwrite(arm64_thin, data)
+
+        # Re-create fat binary with patched arm64 and original x86_64
+        if file_info.include?('x86_64')
+          x86_thin = "#{tmpdir}/x86_64_thin"
+          system("lipo -thin x86_64 \"#{full_path}\" -output \"#{x86_thin}\"")
+          system("lipo -create \"#{x86_thin}\" \"#{arm64_thin}\" -output \"#{full_path}\"")
+        else
+          FileUtils.cp(arm64_thin, full_path)
+        end
+        puts "Patched #{fw_path} for iOS Simulator arm64 (#{count} objects)"
+      end
+    end
   end
 end
