@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'home_screen.dart';
 
 class VerificationSentScreen extends StatefulWidget {
@@ -49,9 +50,15 @@ class _VerificationSentScreenState extends State<VerificationSentScreen> {
   @override
   Widget build(BuildContext context) {
     const green = Color(0xFF4CAF50);
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final bgColor = isDark ? const Color(0xFF121212) : Colors.white;
+    final cardColor = isDark ? const Color(0xFF1F1F1F) : Colors.white;
+    final subtitleColor = isDark ? Colors.grey[400]! : const Color(0xFF475569);
+    final cardBorder = isDark ? Colors.grey[700]! : const Color(0xFFE2E8F0);
+    final bodyTextColor = isDark ? Colors.white70 : Colors.black87;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: bgColor,
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
@@ -71,9 +78,9 @@ class _VerificationSentScreenState extends State<VerificationSentScreen> {
 
               const SizedBox(height: 14),
 
-              const Text(
-                "Verification Email Sent!",
-                style: TextStyle(
+              Text(
+                "verification_sent".tr(),
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w700,
                   color: green,
@@ -84,8 +91,8 @@ class _VerificationSentScreenState extends State<VerificationSentScreen> {
               const SizedBox(height: 12),
 
               Text(
-                "We've sent a verification link to ${widget.email}",
-                style: const TextStyle(fontSize: 15, color: Color(0xFF475569)),
+                "verification_link_sent".tr(namedArgs: {'email': widget.email}),
+                style: TextStyle(fontSize: 15, color: subtitleColor),
                 textAlign: TextAlign.center,
               ),
 
@@ -98,39 +105,41 @@ class _VerificationSentScreenState extends State<VerificationSentScreen> {
                   vertical: 16,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: cardColor,
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: const Color(0xFFE2E8F0)),
-                  boxShadow: const [
-                    BoxShadow(
-                      blurRadius: 10,
-                      offset: Offset(0, 4),
-                      color: Colors.black12,
-                    ),
+                  border: Border.all(color: cardBorder),
+                  boxShadow: [
+                    if (!isDark)
+                      const BoxShadow(
+                        blurRadius: 10,
+                        offset: Offset(0, 4),
+                        color: Colors.black12,
+                      ),
                   ],
                 ),
-                child: const Column(
+                child: Column(
                   children: [
                     Text(
-                      "Please check your email and click the\nverification link to complete your registration.",
+                      "check_email_instructions".tr(),
                       style: TextStyle(
                         height: 1.4,
+                        color: bodyTextColor,
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height: 14),
+                    const SizedBox(height: 14),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Didn't receive the email?",
-                          style: TextStyle(color: Color(0xFF64748B)),
+                          "didnt_receive".tr(),
+                          style: TextStyle(color: subtitleColor),
                         ),
                         TextButton(
                           onPressed: null,
                           child: Text(
-                            "Resend",
-                            style: TextStyle(color: green),
+                            "resend".tr(),
+                            style: const TextStyle(color: green),
                           ),
                         ),
                       ],
@@ -143,6 +152,7 @@ class _VerificationSentScreenState extends State<VerificationSentScreen> {
 
               TextButton(
                 onPressed: () {
+                  _timer?.cancel();
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
                       builder: (context) => HomeScreen(
@@ -151,9 +161,9 @@ class _VerificationSentScreenState extends State<VerificationSentScreen> {
                     ),
                   );
                 },
-                child: const Text(
-                  "Back",
-                  style: TextStyle(color: Color(0xFF64748B)),
+                child: Text(
+                  "back".tr(),
+                  style: TextStyle(color: isDark ? Colors.grey[400] : const Color(0xFF64748B)),
                 ),
               ),
             ],
