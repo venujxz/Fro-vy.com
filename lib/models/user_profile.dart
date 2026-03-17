@@ -7,11 +7,11 @@ class UserProfile {
   String gender;
 
   UserProfile({
-    this.name = 'John Doe',
-    this.email = 'john.doe@example.com',
-    this.phone = '+94 77 123 4567',
-    this.dob = '2000-11-22',
-    this.gender = 'male',
+    this.name = '',
+    this.email = '',
+    this.phone = '',
+    this.dob = '',
+    this.gender = '',
   });
 
   Map<String, dynamic> toJson() => {
@@ -23,10 +23,10 @@ class UserProfile {
   };
 
   factory UserProfile.fromJson(Map<String, dynamic> json) => UserProfile(
-    name: json['name'] ?? 'John Doe',
-    email: json['email'] ?? 'john.doe@example.com',
-    phone: json['phone'] ?? '+94 77 123 4567',
-    dob: json['dob'] ?? '2000-11-22',
-    gender: json['gender'] ?? 'male',
+    name: json['name'] ?? '',
+    email: json['email'] ?? '',
+    phone: json['phone'] ?? '',
+    dob: json['dob'] ?? '',
+    gender: json['gender'] ?? '',
   );
 }

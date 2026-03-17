@@ -6,9 +6,9 @@ class HealthProfile {
 
   HealthProfile({
     List<String>? allergies,
-    this.medicalConditions = 'None',
-    this.otherSensitivities = 'Lactose Intolerance',
-  }) : allergies = allergies ?? ['Peanuts', 'Shellfish'];
+    this.medicalConditions = '',
+    this.otherSensitivities = '',
+  }) : allergies = allergies ?? [];
 
   Map<String, dynamic> toJson() => {
     'allergies': allergies,
@@ -17,9 +17,9 @@ class HealthProfile {
   };
 
   factory HealthProfile.fromJson(Map<String, dynamic> json) => HealthProfile(
-    allergies: (json['allergies'] as List<dynamic>?)?.cast<String>() ?? ['Peanuts', 'Shellfish'],
-    medicalConditions: json['medicalConditions'] ?? 'None',
-    otherSensitivities: json['otherSensitivities'] ?? 'Lactose Intolerance',
+    allergies: (json['allergies'] as List<dynamic>?)?.cast<String>() ?? [],
+    medicalConditions: json['medicalConditions'] ?? '',
+    otherSensitivities: json['otherSensitivities'] ?? '',
   );
 
   /// Returns a comma-separated string of allergies for display
