@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
-import 'checkout_screen.dart'; 
+import 'checkout_screen.dart';
 import '../util/app_colors.dart';
 import '../util/page_transitions.dart';
+import '../services/prefs_service.dart';
 
 class SubscriptionScreen extends StatefulWidget {
   const SubscriptionScreen({super.key});
@@ -19,6 +20,20 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
 
   // State Variable to track the active plan
   String _currentPlan = "Free"; // Defaults to Free
+
+  @override
+  void initState() {
+    super.initState();
+    _loadPlan();
+  }
+
+  Future<void> _loadPlan() async {
+    final plan = await PrefsService.getCurrentPlan();
+    if (!mounted) return;
+    setState(() {
+      _currentPlan = plan;
+    });
+  }
 
   // Logic to handle navigation and update state
   Future<void> _handleUpgrade(String planName, String price) async {
@@ -38,6 +53,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
       setState(() {
         _currentPlan = result;
       });
+      await PrefsService.setCurrentPlan(result);
     }
   }
 
@@ -111,7 +127,10 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                     // Otherwise, allow "Downgrade" (or switch)
                     isCurrent: _currentPlan == "Free",
                     buttonText: _currentPlan == "Free" ? "current_plan".tr() : "downgrade".tr(),
-                    onTap: () => setState(() => _currentPlan = "Free"),
+                    onTap: () {
+                      setState(() => _currentPlan = "Free");
+                      PrefsService.setCurrentPlan("Free");
+                    },
                   ),
 
                   const SizedBox(height: 24),
