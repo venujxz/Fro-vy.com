@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 import 'theme_notifier.dart'; // Import the notifier
+import 'welcome_screen.dart';
 import '../util/app_colors.dart';
 import '../services/prefs_service.dart';
 
@@ -158,8 +159,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                     await PrefsService.clearAll();
                                     if (!context.mounted) return;
                                     Navigator.pop(ctx);
-                                    // Pop back to home screen
-                                    Navigator.of(context).popUntil((route) => route.isFirst);
+                                    Navigator.of(context).pushAndRemoveUntil(
+                                      MaterialPageRoute(
+                                        builder: (_) => const WelcomeScreen(),
+                                      ),
+                                      (route) => false,
+                                    );
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(content: Text("delete_account_success".tr())),
                                     );
