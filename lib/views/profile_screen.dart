@@ -3,6 +3,7 @@ import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 import 'edit_profile_screen.dart';
 import '../util/app_colors.dart';
 import '../util/page_transitions.dart';
+import '../services/prefs_service.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -22,10 +23,39 @@ class _ProfileScreenState extends State<ProfileScreen> {
   String email = "";
   String phone = "";
   String dob = "";
-  
+  String _gender = "";
+  int _scanCount = 0;
+  String _currentPlan = "Free";
+
   String allergies = "";
   String conditions = "";
   String sensitivities = "";
+
+  @override
+  void initState() {
+    super.initState();
+    _loadProfile();
+  }
+
+  Future<void> _loadProfile() async {
+    final userProfile = await PrefsService.getUserProfile();
+    final healthProfile = await PrefsService.getHealthProfile();
+    final scanCount = await PrefsService.getScanCount();
+    final currentPlan = await PrefsService.getCurrentPlan();
+    if (!mounted) return;
+    setState(() {
+      name = userProfile.name;
+      email = userProfile.email;
+      phone = userProfile.phone;
+      dob = userProfile.dob;
+      _gender = userProfile.gender;
+      allergies = healthProfile.allergiesDisplay.isEmpty ? "None" : healthProfile.allergiesDisplay;
+      conditions = healthProfile.medicalConditions.isEmpty ? "None" : healthProfile.medicalConditions;
+      sensitivities = healthProfile.otherSensitivities.isEmpty ? "None" : healthProfile.otherSensitivities;
+      _scanCount = scanCount;
+      _currentPlan = currentPlan;
+    });
+  }
 
   // --- FUNCTION TO HANDLE EDITING ---
   Future<void> _navigateAndEdit(int tabIndex) async {
@@ -35,20 +65,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
       PageTransitions.slideUp<Map<String, dynamic>>(EditProfileScreen(initialIndex: tabIndex)),
     );
 
-    // If data was returned, update the UI
+    // If data was returned, update the UI and persist
     if (result != null) {
       setState(() {
         name = result['name'];
         email = result['email'];
         phone = result['phone'];
         dob = result['dob'];
-        
+        _gender = result['gender'];
+
         // Handle the list of allergies
         List<String> allergyList = result['allergies'];
         allergies = allergyList.isEmpty ? "None" : allergyList.join(", ");
-        
-        conditions = result['conditions'];
-        sensitivities = result['sensitivities'];
+
+        conditions = result['conditions'].toString().isEmpty ? "None" : result['conditions'];
+        sensitivities = result['sensitivities'].toString().isEmpty ? "None" : result['sensitivities'];
       });
     }
   }
@@ -154,7 +185,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       _buildLabel("email".tr(), email),
                       _buildLabel("phone_number".tr(), phone),
                       _buildLabel("date_of_birth".tr(), dob),
-                      _buildLabel("gender".tr(), "male".tr()), 
+                      _buildLabel("gender".tr(), _gender.isNotEmpty ? _gender.tr() : ""), 
 
                       const SizedBox(height: 24),
                       const Divider(),
@@ -164,9 +195,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       const SizedBox(height: 12),
                       Row(
                         children: [
-                          Expanded(child: _buildStatCard("0", "scans_made".tr())),
+                          Expanded(child: _buildStatCard("$_scanCount", "scans_made".tr())),
                           const SizedBox(width: 12),
-                          Expanded(child: _buildStatCard("free".tr(), "plan_type".tr())),
+                          Expanded(child: _buildStatCard(_currentPlan.toLowerCase().tr(), "plan_type".tr())),
                         ],
                       ),
                     ],

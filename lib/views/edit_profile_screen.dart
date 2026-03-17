@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 import '../util/app_colors.dart';
 import '../util/validators.dart';
+import '../services/prefs_service.dart';
+import '../models/user_profile.dart';
+import '../models/health_profile.dart';
 
 class EditProfileScreen extends StatefulWidget {
   final int initialIndex; // To open specific tab (0 = Personal, 1 = Health)
@@ -44,6 +47,23 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
   void initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this, initialIndex: widget.initialIndex);
+    _loadFromPrefs();
+  }
+
+  Future<void> _loadFromPrefs() async {
+    final userProfile = await PrefsService.getUserProfile();
+    final healthProfile = await PrefsService.getHealthProfile();
+    if (!mounted) return;
+    setState(() {
+      _nameController.text = userProfile.name;
+      _emailController.text = userProfile.email;
+      _phoneController.text = userProfile.phone;
+      _dobController.text = userProfile.dob;
+      _selectedGender = userProfile.gender.isNotEmpty ? userProfile.gender : "male";
+      _selectedAllergies.addAll(healthProfile.allergies);
+      _medicalConditionsController.text = healthProfile.medicalConditions;
+      _otherSensitivitiesController.text = healthProfile.otherSensitivities;
+    });
   }
 
   @override
@@ -74,7 +94,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
         actions: [
           // --- THE SAVE BUTTON LOGIC ---
           TextButton(
-            onPressed: () {
+            onPressed: () async {
               // Validate the form first
               if (_formKey.currentState?.validate() ?? false) {
                 Map<String, dynamic> updatedData = {
@@ -88,10 +108,25 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
                   "sensitivities": _otherSensitivitiesController.text.trim(),
                 };
 
-                Navigator.pop(context, updatedData);
+                // Persist to PrefsService
+                await PrefsService.setUserProfile(UserProfile(
+                  name: updatedData['name'],
+                  email: updatedData['email'],
+                  phone: updatedData['phone'],
+                  dob: updatedData['dob'],
+                  gender: updatedData['gender'],
+                ));
+                await PrefsService.setHealthProfile(HealthProfile(
+                  allergies: List<String>.from(updatedData['allergies']),
+                  medicalConditions: updatedData['conditions'],
+                  otherSensitivities: updatedData['sensitivities'],
+                ));
+
+                if (!mounted) return;
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text("profile_updated".tr())),
                 );
+                Navigator.pop(context, updatedData);
               }
             },
             child: Text("save".tr(), style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
