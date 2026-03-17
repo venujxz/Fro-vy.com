@@ -139,22 +139,24 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       width: double.infinity,
                       height: 55,
                       child: ElevatedButton(
-                        onPressed: () {
+                        onPressed: () async {
                           // Mock Payment Processing
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(content: Text("processing_payment".tr())),
                           );
-                          
+
                           // Simulate network delay
-                          Future.delayed(const Duration(seconds: 2), () {
-                            // 1. Send the plan name back to the previous screen
-                            Navigator.pop(context, widget.planName); 
-                            
-                            // 2. Show Success Message
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text("welcome_premium".tr())),
-                            );
-                          });
+                          await Future.delayed(const Duration(seconds: 2));
+
+                          if (!context.mounted) return;
+
+                          // Show success message BEFORE popping
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text("welcome_premium".tr())),
+                          );
+
+                          // Send the plan name back to the previous screen
+                          Navigator.pop(context, widget.planName);
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: frovyGreen,
