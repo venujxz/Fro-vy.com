@@ -224,7 +224,79 @@
   "all_ingredients": "All Ingredients",
   "check_another": "Check Another",
   "medical_disclaimer": "This analysis is based on your health profile. Always consult a healthcare professional for medical advice.",
-  "scanned_product": "Scanned Product"
+  "scanned_product": "Scanned Product",
 
+  
+  "search_title": "Search Products",
+  "search_hint": "Search brand or product...",
+  "cat_all": "All",
+  "cat_dairy": "Dairy",
+  "cat_snacks": "Snacks",
+  "cat_beverages": "Beverages",
+  "cat_bakery": "Bakery",
+
+  
+  "manual_title": "Manual Entry",
+  "manual_hint": "Type ingredients here...",
+  "analyze_btn": "Analyze Ingredients",
+  "error_empty": "Please enter some ingredients first.",
+  "manual_product_name": "Manual Entry Item",
+
+
+  "welcome_tagline": "Your Personal Health Guardian",
+  "welcome_desc": "Analyze food products instantly against your health profile. Get real-time risk assessments to make safer food choices.",
+  "get_started": "Get Started",
+  "copyright": "© 2026 Fro-vy. All rights reserved.",
+
+  
+  "login_intro": "Let's start by getting to know you",
+  "full_name": "Full Name",
+  "dob": "Date of Birth",
+  "email": "Email Address",
+  "hint_name": "John Doe",
+  "hint_dob": "Select date",
+  "continue": "Continue",
+  "or_continue": "Or continue with",
+  "google_sign_in": "Continue with Google",
+  "apple_sign_in": "Continue with Apple",
+  "have_account": "Already have an account? ",
+  "login_action": "Log in",
+  "err_name": "Enter name",
+  "err_dob": "Select DOB",
+  "err_email": "Enter a valid email",
+
+  
+  "health_title": "Your Health Profile",
+  "health_subtitle": "Help us understand your dietary needs",
+  "medical_title": "Medical Conditions",
+  "medical_subtitle": "e.g., Diabetes, Celiac Disease, Hypertension",
+  "allergy_title": "Allergies",
+  "allergy_subtitle": "e.g., Peanuts, Dairy, Shellfish, Gluten",
+  "other_title": "Other Sensitivities/Conditions",
+  "other_subtitle": "e.g., Lactose Intolerance, MSG Sensitivity",
+  "type_hint": "Type and press Enter",
+  "back": "Back",
+  "skip": "Skip for now",
+
+
+  "secure_title": "Secure Your Account",
+  "secure_subtitle": "Create a strong password to protect your data",
+  "password_label": "Password",
+  "password_hint": "Enter your password",
+  "password_requirement": "Must be at least 8 characters",
+  "confirm_password_label": "Confirm Password",
+  "confirm_password_hint": "Re-enter your password",
+  "verification_info": "A verification link will be sent to",
+  "create_account": "Create Account",
+  "err_pw_empty": "Enter a password",
+  "err_pw_length": "Password must be 8+ characters",
+  "err_cpw_empty": "Re-enter your password",
+  "err_cpw_match": "Passwords do not match",
+
+  "verify_title": "Verification Email Sent!",
+  "verify_subtitle": "We've sent a verification link to",
+  "verify_instruction": "Please check your email and click the\nverification link to complete your registration.",
+  "verify_redirect": "Redirecting you to the dashboard...",
+  "back": "Back"
 
 }
