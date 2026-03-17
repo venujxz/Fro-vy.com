@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:camera/camera.dart'; 
+import 'package:camera/camera.dart';
 import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 
 // --- IMPORTS FOR ALL APP SCREENS ---
@@ -16,16 +16,52 @@ import 'manual_entry_screen.dart'; // 8. Manual Entry
 import 'widgets/language_switcher.dart';
 import '../util/app_colors.dart';
 import '../util/page_transitions.dart';
+import 'welcome_screen.dart';
+import '../services/prefs_service.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   final List<CameraDescription> cameras;
 
   const HomeScreen({super.key, required this.cameras});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   // Use centralized AppColors
   static const Color frovyGreen = AppColors.frovyGreen;
   static const Color frovyYellow = AppColors.frovyYellow;
   static const Color frovyLightBg = AppColors.frovyLightBg;
+
+  String _userName = "";
+  String _allergies = "None";
+  String _conditions = "None";
+  String _sensitivities = "None";
+
+  @override
+  void initState() {
+    super.initState();
+    _loadProfiles();
+  }
+
+  Future<void> _loadProfiles() async {
+    final userProfile = await PrefsService.getUserProfile();
+    final healthProfile = await PrefsService.getHealthProfile();
+    if (!mounted) return;
+    setState(() {
+      _userName = userProfile.name;
+      _allergies = healthProfile.allergiesDisplay.isEmpty
+          ? "None"
+          : healthProfile.allergiesDisplay;
+      _conditions = healthProfile.medicalConditions.isEmpty
+          ? "None"
+          : healthProfile.medicalConditions;
+      _sensitivities = healthProfile.otherSensitivities.isEmpty
+          ? "None"
+          : healthProfile.otherSensitivities;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +90,7 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text("welcome_back".tr(), style: const TextStyle(fontSize: 10, color: Colors.white)),
-                Text("user".tr(), style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white)),
+                Text(_userName.isNotEmpty ? _userName : "user".tr(), style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white)),
               ],
             ),
             const SizedBox(width: 10),
@@ -148,10 +184,12 @@ class HomeScreen extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {
-                          // Pop dialog, then reset to home (simulates logout)
-                          Navigator.of(context).popUntil((route) => route.isFirst);
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text("logout_success".tr())),
+                          // Navigate to WelcomeScreen and clear the entire stack
+                          Navigator.of(context).pushAndRemoveUntil(
+                            MaterialPageRoute(
+                              builder: (_) => WelcomeScreen(cameras: widget.cameras),
+                            ),
+                            (route) => false,
                           );
                         },
                         child: Text("logout".tr(), style: const TextStyle(color: Colors.red)),
@@ -240,9 +278,9 @@ class HomeScreen extends StatelessWidget {
                             ],
                           ),
                           const Divider(height: 20),
-                          _buildProfileRow("allergies".tr(), "Peanuts, Shellfish", textColor),
-                          _buildProfileRow("medical_conditions".tr(), "None", textColor),
-                          _buildProfileRow("other_sensitivities".tr(), "Lactose", textColor),
+                          _buildProfileRow("allergies".tr(), _allergies, textColor),
+                          _buildProfileRow("medical_conditions".tr(), _conditions, textColor),
+                          _buildProfileRow("other_sensitivities".tr(), _sensitivities, textColor),
                         ],
                       ),
                     ),
@@ -265,7 +303,7 @@ class HomeScreen extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          PageTransitions.scale(CameraScreen(cameras: cameras)),
+                          PageTransitions.scale(CameraScreen(cameras: widget.cameras)),
                         );
                       },
                     ),
