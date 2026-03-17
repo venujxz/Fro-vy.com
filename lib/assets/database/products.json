@@ -2384,6 +2384,198 @@
       "Vitamin B12 (Cobalamin)"
     ]
   }
+  {
+    "brandName": "KIST",
+    "productName": "Apple Nectar",
+    "ingredients": [
+      "Water",
+      "Apple Concentrate",
+      "Sugar",
+      "Citric Acid (INS 330)",
+      "Stabilizer (INS 440)",
+      "Natural Apple Flavour",
+      "Ascorbic Acid (INS 300)",
+      "Natural Colours (INS 150d / INS 150c)",
+      "Permitted Preservatives (INS 223, INS 202)"
+    ]
+  },
+  {
+    "brandName": "KIST",
+    "productName": "Aloe Vera Drink",
+    "ingredients": [
+      "Water",
+      "Aloe Vera Pulp",
+      "Sugar",
+      "Pear Juice Concentrate",
+      "Stabilizer (INS 415)",
+      "Salt",
+      "Natural (Orange, Pineapple, Lime) Flavours",
+      "Ascorbic Acid (INS 300)",
+      "Citric Acid (INS 330)",
+      "Permitted Preservatives (INS 223, INS 202)"
+    ]
+  },
+  {
+    "brandName": "Sunquick",
+    "productName": "Passion Fruit Mix Squash concentrate",
+    "ingredients": [
+      "Sugar",
+      "Fruit juices (passion fruit, apple, grape and lemon juice from concentrate)",
+      "Acidity regulator (citric acid (INS 330), potassium dihydrogen citrate (INS 332(i)))",
+      "Natural passion fruit flavouring",
+      "Stabilizer (cellulose gum (INS 466), guar gum (INS 412), pectin (INS 440))",
+      "Preservative (potassium sorbate (INS 202), sodium metabisulphite (INS 223))",
+      "Vitamin C",
+      "Natural colour (beta-apo-8'-carotenal (INS 160e))"
+    ]
+  },
+  {
+    "brandName": "Sunquick",
+    "productName": "Fruit Cocktail Squash concentrate",
+    "ingredients": [
+      "Sugar",
+      "Fruit juice (pineapple, orange, and passion fruit juice from concentrate and mango, banana, and apricot puree)",
+      "Acidity regulator (citric acid (INS 330), potassium dihydrogen citrate (INS 332(ii)))",
+      "Water",
+      "Natural fruit cocktail flavourings",
+      "Stabilizer (cellulose gum (INS 466), guar gum (INS 412), pectin (INS 440))",
+      "Preservative (potassium sorbate (INS 202), sodium metabisulphite (INS 223))",
+      "Natural colour (beta-apo-8'-carotenal (INS 160e))",
+      "Vitamin C",
+      "Vitamin A"
+    ]
+  },
+  {
+    "brandName": "Sunquick",
+    "productName": "Mandarin Squash concentrate",
+    "ingredients": [
+      "Sugar",
+      "Mandarin and apple juice from concentrate",
+      "Acidity regulator (citric acid (INS 330), potassium dihydrogen citrate (INS 332(i)))",
+      "Water",
+      "Natural mandarin flavouring",
+      "Stabilizer (cellulose gum (INS 466), guar gum (INS 412), pectin (INS 440))",
+      "Preservative (potassium sorbate (INS 202), sodium metabisulphite (INS 223))",
+      "Natural colour (beta-apo-8'-carotenal (INS 160e))",
+      "Vitamin C",
+      "Vitamin A"
+    ]
+  },
+  {
+    "brandName": "Sunquick",
+    "productName": "Lemon Squash concentrate",
+    "ingredients": [
+      "Sugar",
+      "Lemon and apple juice from concentrate",
+      "Acidity regulator (citric acid (INS 330), potassium dihydrogen citrate (INS 332(i)))",
+      "Water",
+      "Natural lemon flavourings",
+      "Stabilizer (cellulose gum (INS 466), guar gum (INS 412), pectin (INS 440))",
+      "Vitamin C",
+      "Preservative (potassium sorbate (INS 202), sodium metabisulphite (INS 223))",
+      "Natural colour (beta-carotenes (INS 160a(ii)), chlorophylls (INS 141(i)))"
+    ]
+  },
+  {
+    "brandName": "Elephant House",
+    "productName": "Fit O Mixed Fruit Drink",
+    "ingredients": [
+      "Water",
+      "Sugar",
+      "Fruit Mix (Mango Pulp, Orange Juice Concentrate, Pineapple Juice, Passion Fruit Juice) 16%",
+      "Stabilizers (Sodium Carboxy Methyl Cellulose (INS 466), Xanthan Gum (INS 415))",
+      "Natural Mango Flavour",
+      "Citric Acid (INS 330)",
+      "Natural Pineapple Flavour",
+      "Ascorbic Acid (INS 300)",
+      "Natural Colour Annatto (INS 160b)",
+      "Natural Passion Fruit Flavour",
+      "Table Salt"
+    ]
+  },
+  {
+    "brandName": "Elephant House",
+    "productName": "Twistee Apple Fruit Juice with Green Tea",
+    "ingredients": [
+      "Water",
+      "Sugar",
+      "Natural Apple Juice Concentrate 6%",
+      "Pure Ceylon Green Tea Extract 0.2%",
+      "Citric Acid (INS 330)",
+      "Steviol Glycoside (INS 960)",
+      "Ascorbic Acid (INS 300)",
+      "Nature Identical Apple Flavour",
+      "Permitted Sweetener Steviol Glycoside"
+    ]
+  },
+  {
+    "brandName": "MD",
+    "productName": "Mixed Fruit Cordial",
+    "ingredients": [
+      "Sugar",
+      "Pulp / Juices of Pineapple, Mango, Papaya, Passion Fruit, Lime (minimum of 4 fruits)",
+      "Citric Acid (INS 330)",
+      "Pectin (INS 440)",
+      "Vitamin C (INS 300)",
+      "Beta-Carotene (INS 160a(i))",
+      "Permitted Preservative Sodium Metabisulphite (INS 223)"
+    ]
+  },
+  {
+    "brandName": "MD",
+    "productName": "Orange Cordial",
+    "ingredients": [
+      "Sugar",
+      "Water",
+      "Concentrated Orange Juice",
+      "Citric Acid (INS 330)",
+      "Pectin (INS 440)",
+      "Natural Orange Flavour",
+      "Vitamin C (INS 300)",
+      "Permitted Preservative Sodium Metabisulphite (INS 223)",
+      "Permitted Colours (INS 102, INS 110, INS 124)"
+    ]
+  },
+  {
+    "brandName": "MD",
+    "productName": "Mango Cordial",
+    "ingredients": [
+      "Sugar",
+      "Water",
+      "Mango Pulp",
+      "Citric Acid (INS 330)",
+      "Natural Mango Flavour",
+      "Permitted Preservative Sodium Metabisulphite (INS 223)",
+      "Permitted Colours (INS 102, INS 110, INS 124, INS 160)"
+    ]
+  },
+  {
+    "brandName": "Sunquick",
+    "productName": "Blackcurrant Squash concentrate",
+    "ingredients": [
+      "Sugar",
+      "Blackcurrant and grape juice from concentrate",
+      "Black carrot concentrate",
+      "Acidity regulator (citric acid (INS 330), potassium dihydrogen citrate (INS 332(ii)))",
+      "Preservative (potassium sorbate (INS 202), sodium metabisulphite (INS 223))",
+      "Vitamin C",
+      "Natural blackcurrant flavourings"
+    ]
+  },
+  {
+    "brandName": "Sunquick",
+    "productName": "Pink Guava & Strawberry Squash concentrate",
+    "ingredients": [
+      "Sugar",
+      "Guava puree and strawberry, grape and apple juice from concentrate",
+      "Natural guava and strawberry flavouring",
+      "Acidity regulator (citric acid (INS 330), potassium dihydrogen citrate (INS 332(i)))",
+      "Stabilizer (cellulose gum (INS 466), pectin (INS 440), guar gum (INS 412))",
+      "Preservative (potassium sorbate (INS 202), sodium metabisulphite (INS 223))",
+      "Vitamin C",
+      "Natural colour (carmine (INS 120) (animal origin))"
+    ]
+  }
 
 ]
 
