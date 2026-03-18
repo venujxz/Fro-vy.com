@@ -26,4 +26,18 @@ class AppColors {
   static const Color frovyLightGreen = Color(0xFFE8F5E9);
   static const Color frovyLightRed = Color(0xFFFFEBEE);
   static const Color frovyLightAmber = Color(0xFFFFF8E1);
+
+  // Dark Mode Colors
+  static const Color darkBackground = Color(0xFF121212);
+  static const Color darkCard = Color(0xFF2C2C2C);
+  static const Color darkBorder = Color(0xFF3A3A3A);
+  static const Color darkSubtitle = Color(0xFF9E9E9E);
+
+  // Light Mode Colors
+  static const Color lightText = Color(0xFF0F172A);
+  static const Color lightSubtitle = Color(0xFF64748B);
+  static const Color lightChipBg = Color(0xFFF5F3EF);
+  static const Color lightBorder = Color(0xFFE8E4DC);
+  static const Color lightProgressBg = Color(0xFFE2E8F0);
+  static const Color mutedText = Color(0xFF5A5A5A);
 }
