@@ -121,7 +121,7 @@ class _ResultScreenState extends State<ResultScreen> {
               decoration: BoxDecoration(
                 color: statusBgColor,
                 borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: statusColor.withOpacity(0.3), width: 1.5),
+                border: Border.all(color: statusColor.withValues(alpha: 0.3), width: 1.5),
               ),
               child: Column(
                 children: [
@@ -139,7 +139,7 @@ class _ResultScreenState extends State<ResultScreen> {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(color: Colors.grey[200]!),
-                boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 4))],
+                boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.3), blurRadius: 10, offset: const Offset(0, 4))],
               ),
               child: Theme(
                 data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
