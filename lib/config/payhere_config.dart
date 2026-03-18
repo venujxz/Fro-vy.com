@@ -1,18 +1,11 @@
-/// PayHere configuration for Sri Lanka
-///
-/// IMPORTANT: Replace these with your actual PayHere credentials
-/// Get your credentials from https://sandbox.payhere.lk (sandbox) or https://www.payhere.lk (production)
 class PayHereConfig {
   // Merchant ID from PayHere dashboard
-  static const String merchantId = '4OVybuzvTQe4JH5Ex67puH3Tc';
+  static const String merchantId = '1234576';
 
-  // Merchant Secret (keep this private - only use on backend for hash generation)
-  static const String merchantSecret = '4Pb1UIhvL9x4PVs5GrfKJp8MSO9yeeayS4kmeNRrDwna';
+  // REMOVED merchantSecret - it is now ONLY safely stored in the backend .env file!
 
   // Backend server URL for hash generation
-  // Use localhost for emulator, or your computer's IP for real device testing
-  // To find your IP: run `ipconfig getifaddr en0` on Mac
-  static const String backendUrl = 'http://192.168.1.40:3000';
+  static const String backendUrl = 'https://glowfly-cercarial-yetta.ngrok-free.dev';
 
   // Use sandbox for testing, set to false for production
   static const bool isSandbox = true;
@@ -22,34 +15,29 @@ class PayHereConfig {
     'Pro': PlanConfig(
       itemId: 'frovy_pro_monthly',
       itemName: 'Fro-vy Pro Plan',
-      amount: 2.99,  // USD price
-      amountLKR: 900.00,  // Approximate LKR price
-      currency: 'LKR',  // PayHere primarily uses LKR
+      amount: 2.99,  
+      amountLKR: 900.00,  
+      currency: 'LKR',  
     ),
     'Premium': PlanConfig(
       itemId: 'frovy_premium_monthly',
       itemName: 'Fro-vy Premium Plan',
-      amount: 6.99,  // USD price
-      amountLKR: 2100.00,  // Approximate LKR price
+      amount: 6.99,  
+      amountLKR: 2100.00,  
       currency: 'LKR',
     ),
   };
 
-  // Notification URL for payment status updates (your backend endpoint)
   static String get notifyUrl => '$backendUrl/payhere/notify';
-
-  // Return URL after payment (deep link back to app)
   static const String returnUrl = 'frovy://payment/return';
-
-  // Cancel URL if user cancels payment
   static const String cancelUrl = 'frovy://payment/cancel';
 }
 
 class PlanConfig {
   final String itemId;
   final String itemName;
-  final double amount;      // Price in USD (for display)
-  final double amountLKR;   // Price in LKR (for payment)
+  final double amount;      
+  final double amountLKR;   
   final String currency;
 
   const PlanConfig({
