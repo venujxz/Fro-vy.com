@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import '../util/app_colors.dart';
+import '../services/payment_service.dart';
+import '../services/prefs_service.dart';
 
 class CheckoutScreen extends StatefulWidget {
   final String planName;
@@ -19,11 +21,77 @@ class CheckoutScreen extends StatefulWidget {
 }
 
 class _CheckoutScreenState extends State<CheckoutScreen> {
-  // Brand Colors
   final Color frovyGreen = AppColors.frovyGreen;
   final Color frovyLightBg = AppColors.frovyLightBg;
 
-  int _selectedPaymentMethod = 0; // 0 = Card, 1 = PayPal, 2 = Apple Pay
+  bool _isProcessing = false;
+
+  Future<void> _processPayment() async {
+    if (_isProcessing) return;
+
+    setState(() => _isProcessing = true);
+
+    // Show processing message
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text("processing_payment".tr())),
+    );
+
+    // Get customer info from prefs
+    final userEmail = await PrefsService.getUserEmail();
+    final userProfile = await PrefsService.getUserProfile();
+
+    // Process the payment via PayHere
+    final result = await PaymentService.createSubscription(
+      planName: widget.planName,
+      customerEmail: userEmail ?? 'customer@example.com',
+      customerName: userProfile.name,
+      customerPhone: userProfile.phone,
+    );
+
+    if (!mounted) return;
+    setState(() => _isProcessing = false);
+
+    // Clear any existing snackbar
+    ScaffoldMessenger.of(context).clearSnackBars();
+
+    switch (result.status) {
+      case PaymentStatus.success:
+        // Save payment ID if returned
+        if (result.paymentId != null) {
+          await PrefsService.setSubscriptionId(result.paymentId!);
+        }
+
+        if (!mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text("welcome_premium".tr()),
+            backgroundColor: frovyGreen,
+          ),
+        );
+        // Send the plan name back to the previous screen
+        Navigator.pop(context, widget.planName);
+        break;
+
+      case PaymentStatus.cancelled:
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text("payment_cancelled".tr()),
+            backgroundColor: Colors.orange,
+          ),
+        );
+        break;
+
+      case PaymentStatus.failed:
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(result.errorMessage ?? "payment_failed".tr()),
+            backgroundColor: Colors.red,
+          ),
+        );
+        break;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +104,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.pop(context),
+          onPressed: _isProcessing ? null : () => Navigator.pop(context),
         ),
         title: Text(
           'checkout'.tr(),
@@ -45,7 +113,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             fontWeight: FontWeight.bold,
           ),
         ),
-
         actions: const [],
       ),
       body: Column(
@@ -92,7 +159,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
-                          BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 4)),
+                          BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 4)),
                         ],
                       ),
                       child: Column(
@@ -108,7 +175,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             ],
                           ),
                           const SizedBox(height: 8),
-                          // String interpolation for "Billed [Monthly]"
                           Text("${"billed".tr()} ${widget.period}", style: TextStyle(color: Colors.grey[600], fontSize: 12)),
                           const Divider(height: 30),
                           Row(
@@ -124,13 +190,30 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
 
                     const SizedBox(height: 24),
 
-                    // Payment Method Section
-                    Text("payment_method".tr(), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-                    const SizedBox(height: 12),
-                    
-                    _buildPaymentOption(0, "credit_debit_card".tr(), Icons.credit_card),
-                    _buildPaymentOption(1, "paypal".tr(), Icons.payment), 
-                    _buildPaymentOption(2, "apple_pay".tr(), Icons.phone_iphone),
+                    // Payment Info Section
+                    Container(
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: Colors.grey.shade200),
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(Icons.lock, color: frovyGreen, size: 20),
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: Text(
+                              "secure_payment_payhere".tr(),
+                              style: TextStyle(
+                                color: isDark ? Colors.white70 : Colors.black87,
+                                fontSize: 13,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
 
                     const SizedBox(height: 40),
 
@@ -139,41 +222,32 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       width: double.infinity,
                       height: 55,
                       child: ElevatedButton(
-                        onPressed: () async {
-                          // Mock Payment Processing
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text("processing_payment".tr())),
-                          );
-
-                          // Simulate network delay
-                          await Future.delayed(const Duration(seconds: 2));
-
-                          if (!context.mounted) return;
-
-                          // Show success message BEFORE popping
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text("welcome_premium".tr())),
-                          );
-
-                          // Send the plan name back to the previous screen
-                          Navigator.pop(context, widget.planName);
-                        },
+                        onPressed: _isProcessing ? null : _processPayment,
                         style: ElevatedButton.styleFrom(
                           backgroundColor: frovyGreen,
                           foregroundColor: Colors.white,
+                          disabledBackgroundColor: frovyGreen.withValues(alpha: 0.6),
                           elevation: 0,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
-                        child: Text(
-                          // Combine the translated "Pay" word with the dynamic price
-                          "${"pay".tr()} ${widget.price}",
-                          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                        ),
+                        child: _isProcessing
+                            ? const SizedBox(
+                                height: 24,
+                                width: 24,
+                                child: CircularProgressIndicator(
+                                  color: Colors.white,
+                                  strokeWidth: 2,
+                                ),
+                              )
+                            : Text(
+                                "${"pay".tr()} ${widget.price}",
+                                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                              ),
                       ),
                     ),
-                    
+
                     const SizedBox(height: 20),
                     Center(
                       child: Text(
@@ -187,43 +261,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _buildPaymentOption(int index, String title, IconData icon) {
-    bool isSelected = _selectedPaymentMethod == index;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return GestureDetector(
-      onTap: () => setState(() => _selectedPaymentMethod = index),
-      child: Container(
-        margin: const EdgeInsets.only(bottom: 12),
-        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-        decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(
-            color: isSelected ? frovyGreen : Colors.grey.shade200,
-            width: isSelected ? 2 : 1,
-          ),
-        ),
-        child: Row(
-          children: [
-            Icon(icon, color: isSelected ? frovyGreen : Colors.grey),
-            const SizedBox(width: 16),
-            Expanded(
-              child: Text(
-                title,
-                style: TextStyle(
-                  fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                  color: isDark ? Colors.white70 : Colors.black87,
-                ),
-              ),
-            ),
-            if (isSelected)
-              Icon(Icons.check_circle, color: frovyGreen, size: 20),
-          ],
-        ),
       ),
     );
   }
