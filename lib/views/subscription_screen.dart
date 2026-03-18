@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
-import 'checkout_screen.dart';
 import '../util/app_colors.dart';
-import '../util/page_transitions.dart';
 import '../services/prefs_service.dart';
+import '../services/payment_service.dart'; // ADDED: Import your Payment Service
 
 class SubscriptionScreen extends StatefulWidget {
   const SubscriptionScreen({super.key});
@@ -35,26 +34,44 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
     });
   }
 
-  // Logic to handle navigation and update state
-  Future<void> _handleUpgrade(String planName, String price) async {
-    // Wait for the checkout screen to return a result
-    final result = await Navigator.push(
-      context,
-      PageTransitions.slideUp<String>(CheckoutScreen(
-          planName: planName,
-          price: price,
-          period: "Monthly",
+  // --- TEMPORARILY DISABLED - SHOW COMING SOON ---
+  void _handleUpgrade(String planName, String price) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: Row(
+          children: [
+            Icon(Icons.rocket_launch, color: frovyGreen),
+            const SizedBox(width: 10),
+            const Text('Coming Soon!'),
+          ],
         ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text(
+              'Premium subscriptions are coming soon! We\'re working hard to bring you an amazing experience.',
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 16),
+            Text(
+              '$planName - $price/month',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: frovyGreen,
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text('Got it!', style: TextStyle(color: frovyGreen)),
+          ),
+        ],
       ),
     );
-
-    // If we received a result (plan name), update the state
-    if (result != null) {
-      setState(() {
-        _currentPlan = result;
-      });
-      await PrefsService.setCurrentPlan(result);
-    }
   }
 
   @override
@@ -121,10 +138,8 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                     features: [
                       "10_scans_month".tr(),
                       "basic_analysis".tr(),
-                      "manual_entry".tr(), // Reusing the key we made for the home screen!
+                      "manual_entry".tr(), 
                     ],
-                    // Logic: If _currentPlan is Free, show "Current Plan"
-                    // Otherwise, allow "Downgrade" (or switch)
                     isCurrent: _currentPlan == "Free",
                     buttonText: _currentPlan == "Free" ? "current_plan".tr() : "downgrade".tr(),
                     onTap: () async {
@@ -152,7 +167,6 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                           "detailed_insights".tr(),
                         ],
                         buttonColor: frovyGreen,
-                        // Logic: Check if Pro is active
                         isCurrent: _currentPlan == "Pro",
                         buttonText: _currentPlan == "Pro" ? "current_plan".tr() : "upgrade_now".tr(),
                         onTap: () {
@@ -192,7 +206,6 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                     ],
                     buttonColor: frovyGold,
                     textColor: Colors.black87,
-                    // Logic: Check if Premium is active
                     isCurrent: _currentPlan == "Premium",
                     buttonText: _currentPlan == "Premium" ? "current_plan".tr() : "upgrade_now".tr(),
                     onTap: () {
