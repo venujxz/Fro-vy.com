@@ -4,10 +4,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'views/theme_notifier.dart'; // Import the new notifier
 import 'util/app_colors.dart';
 import 'views/welcome_screen.dart';
+import 'services/payment_service.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+
+  // Initialize Stripe
+  await PaymentService.initialize();
 
   // 1. Try to find cameras
   List<CameraDescription> cameras = [];
