@@ -23,7 +23,7 @@ void main() {
         supportedLocales: const [Locale('en'), Locale('si'), Locale('ta')],
         path: 'assets/translations',
         fallbackLocale: const Locale('en'),
-        child: const FrovyApp(cameras: []),
+        child: const FrovyApp(cameras: [], isLoggedIn: false),
       ),
     );
 
