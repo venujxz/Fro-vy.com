@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:camera/camera.dart';
 import 'login_step2_screen.dart';
+import 'login_screen.dart';
 import 'home_screen.dart';
 import '../services/auth_service.dart';
 
@@ -293,13 +294,14 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
       children: [
         const Text("Already have an account? "),
         TextButton(
-          onPressed: () {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text("Login screen coming soon!")),
-            );
-          },
-          child: const Text(
-            'Log in',
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (_) => const LoginScreen()),
+    );
+  },
+  child: const Text(
+    'Log in',
             style: TextStyle(color: _green, fontWeight: FontWeight.w600),
           ),
         ),
