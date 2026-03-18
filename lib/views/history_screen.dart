@@ -160,16 +160,15 @@ class _HistoryScreenState extends State<HistoryScreen>
     Navigator.push(
       context,
       PageRouteBuilder(
-        pageBuilder: (_, a, __) =>
-            ResultScreen(analysisResult: jsonEncode(resultData)),
-        transitionsBuilder: (_, a, __, child) => SlideTransition(
-          position: Tween<Offset>(
-            begin: const Offset(1, 0),
-            end: Offset.zero,
-          ).animate(
-              CurvedAnimation(parent: a, curve: Curves.easeOutCubic)),
-          child: child,
-        ),
+        pageBuilder: (context, animation, secondaryAnimation) =>
+    ResultScreen(analysisResult: jsonEncode(resultData)),
+transitionsBuilder: (context, animation, secondaryAnimation, child) => SlideTransition(
+  position: Tween<Offset>(
+    begin: const Offset(1, 0),
+    end: Offset.zero,
+  ).animate(CurvedAnimation(parent: animation, curve: Curves.easeOutCubic)),
+  child: child,
+),
         transitionDuration: const Duration(milliseconds: 320),
       ),
     );
