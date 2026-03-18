@@ -4,7 +4,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'views/theme_notifier.dart'; // Import the new notifier
 import 'util/app_colors.dart';
 import 'views/welcome_screen.dart';
+import 'views/home_screen.dart';
 import 'services/payment_service.dart';
+import 'services/prefs_service.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +23,11 @@ Future<void> main() async {
     debugPrint("Camera Error: $e");
   }
 
-  // 2. Start the app
+  // 2. Check if user is already registered
+  final userProfile = await PrefsService.getUserProfile();
+  final isLoggedIn = userProfile.name.isNotEmpty;
+
+  // 3. Start the app
   runApp(
     EasyLocalization(
       // --- ADDED NEW LOCALES HERE ---
@@ -31,17 +37,18 @@ Future<void> main() async {
         Locale('ta'), // Tamil
       ],
       // Make sure this path exactly matches where your JSON files are saved!
-      path: 'assets/translations', 
+      path: 'assets/translations',
       fallbackLocale: const Locale('en'),
-      child: FrovyApp(cameras: cameras),
+      child: FrovyApp(cameras: cameras, isLoggedIn: isLoggedIn),
     ),
   );
 }
 
 class FrovyApp extends StatelessWidget {
   final List<CameraDescription> cameras;
+  final bool isLoggedIn;
 
-  const FrovyApp({super.key, required this.cameras});
+  const FrovyApp({super.key, required this.cameras, required this.isLoggedIn});
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +99,9 @@ class FrovyApp extends StatelessWidget {
             ),
           ),
           
-          home: WelcomeScreen(cameras: cameras),
+          home: isLoggedIn
+              ? HomeScreen(cameras: cameras)
+              : WelcomeScreen(cameras: cameras),
         );
       },
     );
