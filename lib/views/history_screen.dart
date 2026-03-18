@@ -165,7 +165,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                       gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
-                        colors: [frovyGreen, frovyGreen.withOpacity(0.8), const Color(0xFFFFF9C4)],
+                        colors: [frovyGreen, frovyGreen.withValues(alpha: 0.8), const Color(0xFFFFF9C4)],
                       ),
                     ),
               child: historyItems.isEmpty
@@ -214,7 +214,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.history_toggle_off, size: 80, color: Colors.white.withOpacity(0.5)),
+          Icon(Icons.history_toggle_off, size: 80, color: Colors.white.withValues(alpha: 0.5)),
           const SizedBox(height: 16),
           Text(
             "no_scan_history".tr(),
@@ -277,7 +277,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               blurRadius: 10,
               offset: const Offset(0, 4),
             ),
