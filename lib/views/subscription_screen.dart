@@ -127,9 +127,9 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                     // Otherwise, allow "Downgrade" (or switch)
                     isCurrent: _currentPlan == "Free",
                     buttonText: _currentPlan == "Free" ? "current_plan".tr() : "downgrade".tr(),
-                    onTap: () {
+                    onTap: () async {
                       setState(() => _currentPlan = "Free");
-                      PrefsService.setCurrentPlan("Free");
+                      await PrefsService.setCurrentPlan("Free");
                     },
                   ),
 
@@ -142,7 +142,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                       _buildPlanCard(
                         context,
                         title: "pro".tr(),
-                        price: "\$9.99",
+                        price: "\$2.99",
                         period: "per_month".tr(),
                         icon: Icons.bolt,
                         iconColor: frovyGreen,
@@ -156,7 +156,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                         isCurrent: _currentPlan == "Pro",
                         buttonText: _currentPlan == "Pro" ? "current_plan".tr() : "upgrade_now".tr(),
                         onTap: () {
-                          if (_currentPlan != "Pro") _handleUpgrade("Pro", "\$9.99");
+                          if (_currentPlan != "Pro") _handleUpgrade("Pro", "\$2.99");
                         },
                       ),
                       Positioned(
@@ -181,7 +181,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                   _buildPlanCard(
                     context,
                     title: "premium".tr(),
-                    price: "\$19.99",
+                    price: "\$6.99",
                     period: "per_month".tr(),
                     icon: Icons.workspace_premium,
                     iconColor: frovyGold,
@@ -196,7 +196,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                     isCurrent: _currentPlan == "Premium",
                     buttonText: _currentPlan == "Premium" ? "current_plan".tr() : "upgrade_now".tr(),
                     onTap: () {
-                      if (_currentPlan != "Premium") _handleUpgrade("Premium", "\$19.99");
+                      if (_currentPlan != "Premium") _handleUpgrade("Premium", "\$6.99");
                     },
                   ),
                   
@@ -233,7 +233,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
         border: isCurrent ? Border.all(color: frovyGreen, width: 2) : null,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
