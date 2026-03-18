@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
 import 'package:easy_localization/easy_localization.dart';
 import '../util/app_colors.dart';
+import '../services/prefs_service.dart';
+import '../models/user_profile.dart';
+import '../models/health_profile.dart';
 import 'home_screen.dart';
 
 class LoginStep2Screen extends StatefulWidget {
   final String email;
   final String name;
   final String dob;
+  final List<CameraDescription>? cameras;
 
   const LoginStep2Screen({
     super.key,
     required this.email,
     required this.name,
     required this.dob,
+    this.cameras,
   });
 
   @override
@@ -73,7 +79,22 @@ class _LoginStep2ScreenState extends State<LoginStep2Screen> {
     });
   }
 
-  void _handleContinue() {
+  void _handleContinue() async {
+    // Save user profile and health profile data
+    await PrefsService.setUserProfile(UserProfile(
+      name: widget.name,
+      email: widget.email,
+      dob: widget.dob,
+    ));
+
+    await PrefsService.setHealthProfile(HealthProfile(
+      allergies: _selectedAllergies.toList(),
+      medicalConditions: _medicalConditionsController.text.trim(),
+      otherSensitivities: '',
+    ));
+
+    if (!mounted) return;
+
     // Navigate to HomeScreen
     Navigator.pushReplacement(
       context,
