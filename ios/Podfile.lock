@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.10.2)
   - camera_avfoundation (0.0.1):
     - Flutter
   - Flutter (1.0.0)
@@ -80,6 +81,14 @@ PODS:
     - nanopb/encode (= 3.30910.0)
   - nanopb/decode (3.30910.0)
   - nanopb/encode (3.30910.0)
+  - ObjectMapper (4.4.2)
+  - payhere_mobilesdk_flutter (3.2.2):
+    - Flutter
+    - payHereSDK (= 3.2.1)
+  - payHereSDK (3.2.1):
+    - Alamofire (~> 5.10.2)
+    - ObjectMapper
+    - SDWebImage
   - PromisesObjC (2.4.0)
   - SDWebImage (5.21.7):
     - SDWebImage/Core (= 5.21.7)
@@ -98,10 +107,12 @@ DEPENDENCIES:
   - google_mlkit_commons (from `.symlinks/plugins/google_mlkit_commons/ios`)
   - google_mlkit_text_recognition (from `.symlinks/plugins/google_mlkit_text_recognition/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
+  - payhere_mobilesdk_flutter (from `.symlinks/plugins/payhere_mobilesdk_flutter/ios`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - GoogleDataTransport
     - GoogleMLKit
     - GoogleToolboxForMac
@@ -115,6 +126,8 @@ SPEC REPOS:
     - MLKitTextRecognitionCommon
     - MLKitVision
     - nanopb
+    - ObjectMapper
+    - payHereSDK
     - PromisesObjC
     - SDWebImage
     - SDWebImageWebPCoder
@@ -132,10 +145,13 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/google_mlkit_text_recognition/ios"
   image_picker_ios:
     :path: ".symlinks/plugins/image_picker_ios/ios"
+  payhere_mobilesdk_flutter:
+    :path: ".symlinks/plugins/payhere_mobilesdk_flutter/ios"
   shared_preferences_foundation:
     :path: ".symlinks/plugins/shared_preferences_foundation/darwin"
 
 SPEC CHECKSUMS:
+  Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
   camera_avfoundation: 5675ca25298b6f81fa0a325188e7df62cc217741
   Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
   flutter_image_compress_common: 1697a328fd72bfb335507c6bca1a65fa5ad87df1
@@ -155,6 +171,9 @@ SPEC CHECKSUMS:
   MLKitTextRecognitionCommon: 234ceb1cfdfb5fceb4fd664943046609a2961cc2
   MLKitVision: 39a5a812db83c4a0794445088e567f3631c11961
   nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
+  ObjectMapper: e6e4d91ff7f2861df7aecc536c92d8363f4c9677
+  payhere_mobilesdk_flutter: 09726a836fe2e173e67bc9cfe0582437238488c8
+  payHereSDK: aaa515de84eb7fe4f00d6a2b3ebced284d63e792
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   SDWebImage: e9fc87c1aab89a8ab1bbd74eba378c6f53be8abf
   SDWebImageWebPCoder: 0e06e365080397465cc73a7a9b472d8a3bd0f377

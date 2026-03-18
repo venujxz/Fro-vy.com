@@ -37,7 +37,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
   ];
 
   final TextEditingController _medicalConditionsController = TextEditingController();
-  final TextEditingController _otherSensitivitiesController = TextEditingController();
 
   // Gender selection: store the KEY, not the translated string
   String _selectedGender = "male";
@@ -62,7 +61,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
       _selectedGender = userProfile.gender.isNotEmpty ? userProfile.gender : "male";
       _selectedAllergies.addAll(healthProfile.allergies);
       _medicalConditionsController.text = healthProfile.medicalConditions;
-      _otherSensitivitiesController.text = healthProfile.otherSensitivities;
     });
   }
 
@@ -74,7 +72,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
     _phoneController.dispose();
     _dobController.dispose();
     _medicalConditionsController.dispose();
-    _otherSensitivitiesController.dispose();
     super.dispose();
   }
 
@@ -95,39 +92,47 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
           // --- THE SAVE BUTTON LOGIC ---
           TextButton(
             onPressed: () async {
-              // Validate the form first
-              if (_formKey.currentState?.validate() ?? false) {
-                Map<String, dynamic> updatedData = {
-                  "name": _nameController.text.trim(),
-                  "email": _emailController.text.trim(),
-                  "phone": _phoneController.text.trim(),
-                  "dob": _dobController.text.trim(),
-                  "gender": _selectedGender,
-                  "allergies": _selectedAllergies.toList(),
-                  "conditions": _medicalConditionsController.text.trim(),
-                  "sensitivities": _otherSensitivitiesController.text.trim(),
-                };
+              // Validate form only if we're on the personal tab and form exists
+              final isFormValid = _formKey.currentState?.validate() ?? true;
 
-                // Persist to PrefsService
-                await PrefsService.setUserProfile(UserProfile(
-                  name: updatedData['name'],
-                  email: updatedData['email'],
-                  phone: updatedData['phone'],
-                  dob: updatedData['dob'],
-                  gender: updatedData['gender'],
-                ));
-                await PrefsService.setHealthProfile(HealthProfile(
-                  allergies: List<String>.from(updatedData['allergies']),
-                  medicalConditions: updatedData['conditions'],
-                  otherSensitivities: updatedData['sensitivities'],
-                ));
-
-                if (!mounted) return;
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text("profile_updated".tr())),
-                );
-                Navigator.pop(context, updatedData);
+              if (!isFormValid && _tabController.index == 0) {
+                // Only block save if on personal tab and validation fails
+                return;
               }
+
+              Map<String, dynamic> updatedData = {
+                "name": _nameController.text.trim(),
+                "email": _emailController.text.trim(),
+                "phone": _phoneController.text.trim(),
+                "dob": _dobController.text.trim(),
+                "gender": _selectedGender,
+                "allergies": _selectedAllergies.toList(),
+                "conditions": _medicalConditionsController.text.trim(),
+              };
+
+              // Capture context-dependent objects before async gap
+              final scaffoldMessenger = ScaffoldMessenger.of(context);
+              final navigator = Navigator.of(context);
+
+              // Persist to PrefsService
+              await PrefsService.setUserProfile(UserProfile(
+                name: updatedData['name'],
+                email: updatedData['email'],
+                phone: updatedData['phone'],
+                dob: updatedData['dob'],
+                gender: updatedData['gender'],
+              ));
+              await PrefsService.setHealthProfile(HealthProfile(
+                allergies: List<String>.from(updatedData['allergies']),
+                medicalConditions: updatedData['conditions'],
+                otherSensitivities: '',
+              ));
+
+              if (!mounted) return;
+              scaffoldMessenger.showSnackBar(
+                SnackBar(content: Text("profile_updated".tr())),
+              );
+              navigator.pop(updatedData);
             },
             child: Text("save".tr(), style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
           )
@@ -218,7 +223,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
                     return FilterChip(
                       label: Text(allergy),
                       selected: isSelected,
-                      selectedColor: frovyGreen.withOpacity(0.2),
+                      selectedColor: frovyGreen.withValues(alpha: 0.2),
                       checkmarkColor: frovyGreen,
                       labelStyle: TextStyle(
                         color: isSelected ? frovyGreen : (isDark ? Colors.white70 : Colors.black87),
@@ -242,12 +247,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
                 Text("medical_conditions".tr(), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
                 const SizedBox(height: 8),
                 _buildValidatedField("enter_conditions".tr(), _medicalConditionsController, Icons.medical_services_outlined, maxLines: 2),
-
-                const SizedBox(height: 10),
-
-                Text("other_sensitivities".tr(), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-                const SizedBox(height: 8),
-                _buildValidatedField("enter_sensitivities".tr(), _otherSensitivitiesController, Icons.warning_amber_rounded),
               ],
             ),
           ),
@@ -270,7 +269,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
         color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
-          if (!isDark) BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 10, offset: const Offset(0, 4)),
+          if (!isDark) BoxShadow(color: Colors.black.withValues(alpha: 0.03), blurRadius: 10, offset: const Offset(0, 4)),
         ],
       ),
       child: TextFormField(
@@ -298,7 +297,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
         color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
-          if (!isDark) BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 10, offset: const Offset(0, 4)),
+          if (!isDark) BoxShadow(color: Colors.black.withValues(alpha: 0.03), blurRadius: 10, offset: const Offset(0, 4)),
         ],
       ),
       child: TextFormField(
@@ -338,7 +337,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
             width: 100,
             height: 100,
             decoration: BoxDecoration(
-              color: frovyGreen.withOpacity(0.2),
+              color: frovyGreen.withValues(alpha: 0.2),
               shape: BoxShape.circle,
             ),
             child: Icon(Icons.person, size: 60, color: frovyGreen),

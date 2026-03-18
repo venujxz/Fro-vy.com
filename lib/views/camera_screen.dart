@@ -197,7 +197,7 @@ class CameraScreenState extends State<CameraScreen> {
                   boxShadow: [
                     if (!isDark)
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
+                        color: Colors.black.withValues(alpha: 0.05),
                         blurRadius: 10,
                         offset: const Offset(0, 4),
                       ),
@@ -228,7 +228,7 @@ class CameraScreenState extends State<CameraScreen> {
                                     height: 200,
                                     decoration: BoxDecoration(
                                       border: Border.all(
-                                        color: Colors.white.withOpacity(0.8),
+                                        color: Colors.white.withValues(alpha: 0.8),
                                         width: 2,
                                       ),
                                       borderRadius: BorderRadius.circular(12),
@@ -281,7 +281,7 @@ class CameraScreenState extends State<CameraScreen> {
                         icon: const Icon(Icons.file_upload_outlined, color: frovyGreen),
                         label: Text("upload_from_gallery".tr(), style: const TextStyle(fontSize: 16, color: frovyGreen)),
                         style: OutlinedButton.styleFrom(
-                          side: BorderSide(color: frovyGreen.withOpacity(0.5)),
+                          side: BorderSide(color: frovyGreen.withValues(alpha: 0.5)),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),

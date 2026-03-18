@@ -208,7 +208,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           if (!isDark) // Only show shadow in light mode
-            BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 4))
+            BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 4))
         ],
       ),
       child: Column(
@@ -231,9 +231,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
       title: Text(title, style: const TextStyle(fontWeight: FontWeight.w500)),
       subtitle: Text(subtitle, style: const TextStyle(fontSize: 12, color: Colors.grey)),
       trailing: Switch(
-        value: value, 
-        onChanged: onChanged, 
-        activeColor: AppColors.frovyGreen
+        value: value,
+        onChanged: onChanged,
+        activeTrackColor: AppColors.frovyGreen
       ),
     );
   }

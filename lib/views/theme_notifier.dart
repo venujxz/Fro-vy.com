@@ -13,9 +13,9 @@ class ThemeNotifier extends ValueNotifier<ThemeMode> {
   }
 
   // Function to switch the theme and persist the choice
-  void toggleTheme(bool isDark) {
+  Future<void> toggleTheme(bool isDark) async {
     value = isDark ? ThemeMode.dark : ThemeMode.light;
-    PrefsService.setThemeMode(value);
+    await PrefsService.setThemeMode(value);
   }
 }
 

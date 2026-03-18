@@ -186,6 +186,9 @@ class _LoginStep3ScreenState extends State<LoginStep3Screen> {
                           ),
                           onPressed: () async {
                             if (_formKey.currentState!.validate()) {
+                              // Capture navigator before async gap
+                              final navigator = Navigator.of(context);
+
                               await PrefsService.setUserProfile(UserProfile(
                                 name: widget.name,
                                 email: widget.email,
@@ -198,8 +201,7 @@ class _LoginStep3ScreenState extends State<LoginStep3Screen> {
                               ));
 
                               if (!mounted) return;
-                              Navigator.push(
-                                context,
+                              navigator.push(
                                 MaterialPageRoute(
                                   builder: (_) => VerificationSentScreen(
                                     email: widget.email,

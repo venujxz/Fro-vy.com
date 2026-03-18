@@ -29,7 +29,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   String allergies = "";
   String conditions = "";
-  String sensitivities = "";
 
   @override
   void initState() {
@@ -51,7 +50,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
       _gender = userProfile.gender;
       allergies = healthProfile.allergiesDisplay.isEmpty ? "None" : healthProfile.allergiesDisplay;
       conditions = healthProfile.medicalConditions.isEmpty ? "None" : healthProfile.medicalConditions;
-      sensitivities = healthProfile.otherSensitivities.isEmpty ? "None" : healthProfile.otherSensitivities;
       _scanCount = scanCount;
       _currentPlan = currentPlan;
     });
@@ -79,7 +77,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
         allergies = allergyList.isEmpty ? "None" : allergyList.join(", ");
 
         conditions = result['conditions'].toString().isEmpty ? "None" : result['conditions'];
-        sensitivities = result['sensitivities'].toString().isEmpty ? "None" : result['sensitivities'];
       });
     }
   }
@@ -124,7 +121,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
+                        color: Colors.black.withValues(alpha: 0.05),
                         blurRadius: 10,
                         offset: const Offset(0, 4),
                       ),
@@ -144,7 +141,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 width: 80,
                                 height: 80,
                                 decoration: BoxDecoration(
-                                  color: frovyGreen.withOpacity(0.2),
+                                  color: frovyGreen.withValues(alpha: 0.2),
                                   shape: BoxShape.circle,
                                 ),
                                 child: Icon(Icons.person, size: 60, color: frovyGreen),
@@ -217,7 +214,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
+                    color: Colors.black.withValues(alpha: 0.05),
                     blurRadius: 10,
                     offset: const Offset(0, 4),
                   ),
@@ -248,7 +245,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   // Health Details
                   _buildHealthItem("allergies".tr(), allergies),
                   _buildHealthItem("medical_conditions".tr(), conditions),
-                  _buildHealthItem("other_sensitivities".tr(), sensitivities),
                 ],
               ),
             ),

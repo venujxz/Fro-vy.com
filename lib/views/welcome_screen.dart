@@ -38,8 +38,8 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   color: isDark
-                      ? const Color(0xFF2C2C2C).withOpacity(0.9)
-                      : Colors.white.withOpacity(0.9),
+                      ? const Color(0xFF2C2C2C).withValues(alpha: 0.9)
+                      : Colors.white.withValues(alpha: 0.9),
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: const Text(

@@ -37,7 +37,6 @@ class _HomeScreenState extends State<HomeScreen> {
   String _userName = "";
   String _allergies = "None";
   String _conditions = "None";
-  String _sensitivities = "None";
 
   @override
   void initState() {
@@ -57,9 +56,6 @@ class _HomeScreenState extends State<HomeScreen> {
       _conditions = healthProfile.medicalConditions.isEmpty
           ? "None"
           : healthProfile.medicalConditions;
-      _sensitivities = healthProfile.otherSensitivities.isEmpty
-          ? "None"
-          : healthProfile.otherSensitivities;
     });
   }
 
@@ -95,8 +91,9 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const SizedBox(width: 10),
             GestureDetector(
-              onTap: () {
-                 Navigator.push(context, PageTransitions.slideRight(const ProfileScreen()));
+              onTap: () async {
+                 await Navigator.push(context, PageTransitions.slideRight(const ProfileScreen()));
+                 _loadProfiles();
               },
               child: const CircleAvatar(
                 backgroundColor: Colors.white24,
@@ -127,11 +124,12 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             ListTile(leading: const Icon(Icons.home), title: Text("home".tr()), onTap: () => Navigator.pop(context)),
             ListTile(
-              leading: const Icon(Icons.person), 
-              title: Text("account_details".tr()), 
-              onTap: () {
+              leading: const Icon(Icons.person),
+              title: Text("account_details".tr()),
+              onTap: () async {
                 Navigator.pop(context);
-                Navigator.push(context, PageTransitions.slideRight(const ProfileScreen()));
+                await Navigator.push(context, PageTransitions.slideRight(const ProfileScreen()));
+                _loadProfiles();
               },
             ),
             ListTile(
@@ -259,7 +257,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         color: cardColor,
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
-                           if (!isDarkMode) BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10)
+                           if (!isDarkMode) BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10)
                         ],
                       ),
                       child: Column(
@@ -270,8 +268,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: [
                               Text("health_profile".tr(), style: TextStyle(fontWeight: FontWeight.bold, color: textColor)),
                               GestureDetector(
-                                onTap: () {
-                                  Navigator.push(context, PageTransitions.slideRight(const ProfileScreen()));
+                                onTap: () async {
+                                  await Navigator.push(context, PageTransitions.slideRight(const ProfileScreen()));
+                                  _loadProfiles();
                                 },
                                 child: Text("edit_profile".tr(), style: TextStyle(color: frovyGreen, fontSize: 12, fontWeight: FontWeight.bold)),
                               ),
@@ -280,7 +279,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           const Divider(height: 20),
                           _buildProfileRow("allergies".tr(), _allergies, textColor),
                           _buildProfileRow("medical_conditions".tr(), _conditions, textColor),
-                          _buildProfileRow("other_sensitivities".tr(), _sensitivities, textColor),
                         ],
                       ),
                     ),
@@ -316,7 +314,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       icon: Icons.search,
                       title: "search_products".tr(),
                       subtitle: "search_subtitle".tr(),
-                      color: frovyGreen.withOpacity(0.8),
+                      color: frovyGreen.withValues(alpha: 0.8),
                       cardColor: cardColor,
                       textColor: textColor,
                       onTap: () {
@@ -409,10 +407,10 @@ class _HomeScreenState extends State<HomeScreen> {
         decoration: BoxDecoration(
           color: cardColor,
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: Colors.grey.withOpacity(0.2)),
+          border: Border.all(color: Colors.grey.withValues(alpha: 0.2)),
           boxShadow: [
              if (Theme.of(context).brightness == Brightness.light)
-               BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 5, offset: const Offset(0, 2))
+               BoxShadow(color: Colors.black.withValues(alpha: 0.03), blurRadius: 5, offset: const Offset(0, 2))
           ],
         ),
         child: Row(
