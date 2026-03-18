@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'login_step1_screen.dart';
+import 'login_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -22,6 +22,8 @@ class WelcomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const SizedBox(height: 40),
+
+              // Logo
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                 decoration: BoxDecoration(
@@ -30,39 +32,92 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 child: const Text(
                   "FRO-VY",
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Color(0xFF4CAF50)),
+                  style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF4CAF50),
+                  ),
                 ),
               ),
+
+              // Tagline
               Column(
                 children: const [
-                  Text("Your Personal Health Guardian",
-                      style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.w600)),
+                  Text(
+                    "Your Personal Health Guardian",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                   SizedBox(height: 20),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 30),
                     child: Text(
                       "Analyze food products instantly against your health profile.",
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                      ),
                     ),
                   ),
                 ],
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  foregroundColor: const Color(0xFF4CAF50),
-                  padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-                ),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (_) => const LoginStep1Screen()));
-                },
-                child: const Text("Get Started", style: TextStyle(fontSize: 18)),
-              ),
-              const Padding(
-                padding: EdgeInsets.only(bottom: 20),
-                child: Text("© 2025 Fro-vy. All rights reserved.", style: TextStyle(color: Colors.white)),
+
+              // Buttons Section
+              Column(
+                children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: const Color(0xFF4CAF50),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 50,
+                        vertical: 15,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const LoginStep1Screen(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      "Get Started",
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ),
+
+                  const SizedBox(height: 14),
+
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const LoginScreen(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      "Already have an account? Log in",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 30),
+                ],
               ),
             ],
           ),
