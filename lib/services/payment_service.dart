@@ -88,9 +88,9 @@ class PaymentService {
         "first_name": firstName,
         "last_name": lastName,
         "email": customerEmail,
-        "phone": customerPhone ?? "",
-        "address": "",
-        "city": "",
+        "phone": customerPhone ?? "0771234567",
+        "address": "No 1, Galle Road", // PayHere blocks empty strings!
+        "city": "Colombo",             // PayHere blocks empty strings!
         "country": "Sri Lanka",
         "custom_1": planName,
         "custom_2": "",
