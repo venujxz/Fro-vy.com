@@ -15,6 +15,8 @@ class PrefsService {
   static const String _keyScanHistory = 'scan_history';
   static const String _keyCurrentPlan = 'current_plan';
   static const String _keyScanCount = 'scan_count';
+  static const String _keySubscriptionId = 'subscription_id';
+  static const String _keyUserEmail = 'user_email';
 
   // ── Theme ──────────────────────────────────────────────
 
@@ -137,6 +139,36 @@ class PrefsService {
     final prefs = await SharedPreferences.getInstance();
     final count = prefs.getInt(_keyScanCount) ?? 0;
     await prefs.setInt(_keyScanCount, count + 1);
+  }
+
+  // ── Subscription ──────────────────────────────────────
+
+  static Future<String?> getSubscriptionId() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(_keySubscriptionId);
+  }
+
+  static Future<void> setSubscriptionId(String subscriptionId) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_keySubscriptionId, subscriptionId);
+  }
+
+  static Future<void> clearSubscription() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove(_keySubscriptionId);
+    await prefs.setString(_keyCurrentPlan, 'Free');
+  }
+
+  // ── User Email ────────────────────────────────────────
+
+  static Future<String?> getUserEmail() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(_keyUserEmail);
+  }
+
+  static Future<void> setUserEmail(String email) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_keyUserEmail, email);
   }
 
   // ── Clear All (for account deletion) ───────────────────
