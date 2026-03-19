@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1014519853798",
+    "project_id": "fro-vy",
+    "storage_bucket": "fro-vy.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014519853798:android:04579a46bc090469d38127",
+        "android_client_info": {
+          "package_name": "com.example.fro_vy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1014519853798-abc123def456ghi789jkl012mno345pqr.firebaseapp.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDrcIlZ-rY7-Cn0YI4LqRTwLT2KiEx0co"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1014519853798-abc123def456ghi789jkl012mno345pqr.firebaseapp.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

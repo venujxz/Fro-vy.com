@@ -47,3 +47,9 @@ app.*.map.json
 # Node.js dependencies (backend only)
 node_modules/
 package-lock.json
+
+# Secrets
+.env
+.env.*
+
+secrets.json

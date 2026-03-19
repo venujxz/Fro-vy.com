@@ -2,8 +2,11 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class GeminiService {
-  // 1. Ensure this is a fresh key from https://aistudio.google.com/
-  static const String _apiKey = 'AIzaSyAVYwvlXe8DaPSyyE3PRjfMYzU8mkdfeVI';
+  // Using environment variable for API key - set with --dart-define
+  static const String _apiKey = String.fromEnvironment(
+    'api_key',
+    defaultValue: '',
+  );
 
   Future<List<String>> getPersonalisedWarnings({
     required String userName,
@@ -15,9 +18,17 @@ class GeminiService {
     required List<String> cautionIngredients,
     required List<String> allIngredients,
   }) async {
+    // 1. THE FIX: The 'if' check must be INSIDE the function body, not the parameter list.
+    if (_apiKey.isEmpty) {
+      return [
+        'Error: Gemini API key is missing. Ensure you run with --dart-define-from-file=secrets.json',
+      ];
+    }
+
     final age = _calculateAge(dob);
 
-    final prompt = '''
+    final prompt =
+        '''
 You are a health and nutrition advisor for an app called Frovy.
 
 User Profile:
@@ -46,18 +57,25 @@ Example format:
 
 ''';
 
-    // We try the most modern model (2.5-flash) across both API versions.
-    // Google recently retired many 1.5 aliases, which caused the 404s.
+    // Model endpoints
     final endpoints = [
       '/v1beta/models/gemini-2.5-flash:generateContent',
       '/v1/models/gemini-2.5-flash:generateContent',
+      // 1. Try the most stable current alias
+      '/v1beta/models/gemini-1.5-flash:generateContent',
+      // 2. Try the general "latest" alias (often fixes 404s)
+      '/v1beta/models/gemini-flash-latest:generateContent',
+      // 3. Try the stable v1 version
+      '/v1/models/gemini-1.5-flash:generateContent',
     ];
 
     String lastError = '';
 
     for (var endpoint in endpoints) {
       try {
-        final url = Uri.https('generativelanguage.googleapis.com', endpoint, {'key': _apiKey});
+        final url = Uri.https('generativelanguage.googleapis.com', endpoint, {
+          'key': _apiKey,
+        });
 
         final response = await http.post(
           url,
@@ -65,26 +83,28 @@ Example format:
           body: jsonEncode({
             'contents': [
               {
-                'parts': [{'text': prompt}]
-              }
+                'parts': [
+                  {'text': prompt},
+                ],
+              },
             ],
-            'generationConfig': {
-              'temperature': 0.1,
-              'responseMimeType': 'application/json'
-            }
+            'generationConfig': {'temperature': 0.1},
           }),
         );
 
         if (response.statusCode == 200) {
           final data = jsonDecode(response.body);
-          final String rawText = data['candidates'][0]['content']['parts'][0]['text'];
+          final String rawText =
+              data['candidates'][0]['content']['parts'][0]['text'];
 
-          // Because of responseMimeType, we expect clean JSON.
-          final List<dynamic> list = jsonDecode(rawText.trim());
-          return list.cast<String>();
+          try {
+            final List<dynamic> list = jsonDecode(rawText.trim());
+            return list.cast<String>();
+          } catch (e) {
+            return [rawText]; // Fallback to raw text if JSON parse fails
+          }
         } else {
           lastError = 'Status ${response.statusCode}: ${response.body}';
-          // Continue to next endpoint if 404 or 400
           continue;
         }
       } catch (e) {
@@ -92,29 +112,12 @@ Example format:
       }
     }
 
-    // If all attempts fail, return the error message for debugging
     return ['Error: $lastError'];
   }
 
   int _calculateAge(String dob) {
     try {
-      DateTime birthDate;
-      // Handle both YYYY-MM-DD and DD-MM-YYYY formats
-      if (dob.contains('-')) {
-        final parts = dob.split('-');
-        if (parts[0].length == 4) {
-          birthDate = DateTime.parse(dob); // YYYY-MM-DD
-        } else {
-          birthDate = DateTime(
-            int.parse(parts[2]), // Year
-            int.parse(parts[1]), // Month
-            int.parse(parts[0]), // Day
-          );
-        }
-      } else {
-        birthDate = DateTime.parse(dob);
-      }
-
+      DateTime birthDate = DateTime.parse(dob);
       final today = DateTime.now();
       int age = today.year - birthDate.year;
       if (today.month < birthDate.month ||
@@ -123,7 +126,6 @@ Example format:
       }
       return age;
     } catch (e) {
-      print('Age calculation error: $e');
       return 0;
     }
   }

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/ingredient_model.dart';
 import '../models/user_model.dart';
@@ -8,13 +9,23 @@ class FirestoreService {
   /// Loads ALL ingredients from your Firestore 'ingredients' collection
   /// Returns a map of lowercase ingredient name → IngredientModel
   Future<Map<String, IngredientModel>> getAllIngredients() async {
-    final snapshot = await _db.collection('ingredients').get();
-    final map = <String, IngredientModel>{};
-    for (var doc in snapshot.docs) {
-      final ingredient = IngredientModel.fromMap(doc.data());
-      map[ingredient.name.toLowerCase().trim()] = ingredient;
+    try {
+      final snapshot = await _db.collection('ingredients').get();
+      final map = <String, IngredientModel>{};
+      for (var doc in snapshot.docs) {
+        try {
+          final ingredient = IngredientModel.fromMap(doc.data());
+          map[ingredient.name.toLowerCase().trim()] = ingredient;
+        } catch (e) {
+          // Skip bad documents in the collection
+          debugPrint('Skipping malformed ingredient: $e');
+        }
+      }
+      return map;
+    } catch (e) {
+      debugPrint('Firebase getAllIngredients error: $e');
+      rethrow; // Let the caller handle this
     }
-    return map;
   }
 
   /// Gets a user's profile from Firestore using their UID
@@ -36,12 +47,44 @@ class FirestoreService {
 
   /// Searches products by name (case insensitive, contains)
   Future<List<Map<String, dynamic>>> searchProducts(String query) async {
-    final snapshot = await _db.collection('products').get();
-    final products = snapshot.docs.map((doc) => doc.data()).toList();
-    final lowerQuery = query.toLowerCase();
-    return products.where((product) {
-      final name = (product['productName'] as String?)?.toLowerCase() ?? '';
-      return name.contains(lowerQuery);
-    }).toList();
+    try {
+      if (query.trim().isEmpty) {
+        return [];
+      }
+
+      final snapshot = await _db.collection('products').get();
+
+      if (snapshot.docs.isEmpty) {
+        debugPrint('No products found in Firestore');
+        return [];
+      }
+
+      final products = snapshot.docs
+          .map((doc) {
+            try {
+              return doc.data();
+            } catch (e) {
+              debugPrint('Skipping malformed product document: $e');
+              return null;
+            }
+          })
+          .whereType<Map<String, dynamic>>()
+          .toList();
+
+      final lowerQuery = query.toLowerCase().trim();
+      return products.where((product) {
+        try {
+          final name = (product['productName'] as String?)?.toLowerCase() ?? '';
+          final brand = (product['brandName'] as String?)?.toLowerCase() ?? '';
+          return name.contains(lowerQuery) || brand.contains(lowerQuery);
+        } catch (e) {
+          debugPrint('Error filtering product: $e');
+          return false;
+        }
+      }).toList();
+    } catch (e) {
+      debugPrint('Firebase searchProducts error: $e');
+      rethrow; // Let the UI handle this with a fallback
+    }
   }
 }

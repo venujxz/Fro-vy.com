@@ -44,9 +44,13 @@ class _SearchProductsScreenState extends State<SearchProductsScreen> {
         _products = results;
         _isLoading = false;
       });
-    } catch (e) {
+    } catch (firebaseError) {
+      debugPrint('Firebase searchProducts error: $firebaseError');
+      // If search fails, show error and suggest manual entry
       setState(() {
-        _errorMessage = 'Error searching products: $e';
+        _errorMessage =
+            'Could not connect to product database. Try manual entry instead.';
+        _products = [];
         _isLoading = false;
       });
     }
