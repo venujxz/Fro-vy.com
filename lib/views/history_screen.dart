@@ -1,6 +1,53 @@
-import 'dart:convert'; // Required to encode data for ResultScreen
+import 'dart:convert';
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import 'result_screen.dart'; // Import to navigate to details
+import 'package:flutter/services.dart';
+import 'result_screen.dart';
+
+class _StatusStyle {
+  final String label;
+  final Color pill;
+  final Color pillText;
+  final Color cardTint;
+  final Color cardBorder;
+  final IconData icon;
+
+  const _StatusStyle({
+    required this.label,
+    required this.pill,
+    required this.pillText,
+    required this.cardTint,
+    required this.cardBorder,
+    required this.icon,
+  });
+}
+
+const Map<String, _StatusStyle> _kStatus = {
+  'SAFE': _StatusStyle(
+    label: 'Safe',
+    pill: Color(0xFF2D7A45),
+    pillText: Colors.white,
+    cardTint: Color(0xFFF0FAF3),
+    cardBorder: Color(0xFFB7E5C5),
+    icon: Icons.verified_rounded,
+  ),
+  'CAUTION': _StatusStyle(
+    label: 'Caution',
+    pill: Color(0xFFCA8A04),
+    pillText: Colors.white,
+    cardTint: Color(0xFFFFFBEB),
+    cardBorder: Color(0xFFFDE68A),
+    icon: Icons.info_outline_rounded,
+  ),
+  'UNSAFE': _StatusStyle(
+    label: 'Avoid',
+    pill: Color(0xFFDC2626),
+    pillText: Colors.white,
+    cardTint: Color(0xFFFFF1F1),
+    cardBorder: Color(0xFFFECACA),
+    icon: Icons.block_rounded,
+  ),
+};
 
 class HistoryScreen extends StatefulWidget {
   const HistoryScreen({super.key});
@@ -9,339 +56,896 @@ class HistoryScreen extends StatefulWidget {
   State<HistoryScreen> createState() => _HistoryScreenState();
 }
 
-class _HistoryScreenState extends State<HistoryScreen> {
-  // Brand Colors
-  final Color frovyGreen = const Color(0xFF6AA15E);
-  final Color frovyRed = const Color(0xFFD32F2F);
-  final Color frovyAmber = const Color(0xFFFFA000);
+class _HistoryScreenState extends State<HistoryScreen>
+    with TickerProviderStateMixin {
+  static const Color _bgTop = Color(0xFF5B9E49);
+  static const Color _bgBottom = Color(0xFFD4C94A);
+  static const Color _surface = Colors.white;
+  static const Color _textDark = Color(0xFF111827);
+  static const Color _textMuted = Color(0xFF6B7280);
 
-  // --- MOCK DATA: List of History Items ---
-  // In a real app, this would come from a database (SQLite/Firebase)
   List<Map<String, dynamic>> historyItems = [
     {
       "productName": "Almond Breeze Original",
       "date": "Nov 24, 2025",
       "status": "SAFE",
-      "ingredients": ["Almondmilk", "Calcium Carbonate", "Sea Salt", "Sunflower Lecithin"],
+      "ingredients": [
+        "Almondmilk",
+        "Calcium Carbonate",
+        "Sea Salt",
+        "Sunflower Lecithin",
+      ],
       "warnings": [],
-      "summary": "All 4 ingredients safe"
+      "summary": "All 4 ingredients are considered safe.",
     },
     {
       "productName": "Skippy Peanut Butter",
       "date": "Nov 23, 2025",
       "status": "UNSAFE",
-      "ingredients": ["Roasted Peanuts", "Sugar", "Hydrogenated Vegetable Oil", "Salt"],
+      "ingredients": [
+        "Roasted Peanuts",
+        "Sugar",
+        "Hydrogenated Vegetable Oil",
+        "Salt",
+      ],
       "warnings": ["Contains Peanuts (Allergen)", "High Sugar Content"],
-      "summary": "2 of 4 ingredients flagged"
+      "summary": "2 of 4 ingredients may not be suitable for some users.",
     },
     {
       "productName": "Coca-Cola Classic",
       "date": "Nov 22, 2025",
       "status": "CAUTION",
-      "ingredients": ["Carbonated Water", "High Fructose Corn Syrup", "Caramel Color", "Phosphoric Acid", "Caffeine"],
-      "warnings": ["High Fructose Corn Syrup (Sugar)", "Caffeine (Sensitivity)"],
-      "summary": "2 of 5 ingredients flagged"
+      "ingredients": [
+        "Carbonated Water",
+        "High Fructose Corn Syrup",
+        "Caramel Color",
+        "Phosphoric Acid",
+        "Caffeine",
+      ],
+      "warnings": [
+        "High Fructose Corn Syrup (Sugar)",
+        "Caffeine (Sensitivity)",
+      ],
+      "summary": "2 of 5 ingredients should be reviewed with caution.",
     },
   ];
 
-  // --- LOGIC: Delete Single Item ---
+  late final AnimationController _headerCtrl;
+  late final List<AnimationController> _cardCtrls;
+  late final List<Animation<double>> _cardFades;
+  late final List<Animation<Offset>> _cardSlides;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _headerCtrl = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 520),
+    )..forward();
+
+    _cardCtrls = List.generate(
+      historyItems.length,
+      (i) => AnimationController(
+        vsync: this,
+        duration: const Duration(milliseconds: 420),
+      ),
+    );
+
+    _cardFades = _cardCtrls
+        .map((c) => CurvedAnimation(parent: c, curve: Curves.easeOut))
+        .toList();
+
+    _cardSlides = _cardCtrls
+        .map(
+          (c) => Tween<Offset>(
+            begin: const Offset(0, 0.12),
+            end: Offset.zero,
+          ).animate(CurvedAnimation(parent: c, curve: Curves.easeOutCubic)),
+        )
+        .toList();
+
+    for (int i = 0; i < _cardCtrls.length; i++) {
+      Future.delayed(Duration(milliseconds: 180 + i * 110), () {
+        if (mounted) _cardCtrls[i].forward();
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _headerCtrl.dispose();
+    for (final c in _cardCtrls) {
+      c.dispose();
+    }
+    super.dispose();
+  }
+
   void _deleteItem(int index) {
-    setState(() {
-      historyItems.removeAt(index);
+    HapticFeedback.lightImpact();
+    final deletedItem = historyItems[index];
+    final ctrl = _cardCtrls[index];
+
+    ctrl.reverse().then((_) {
+      if (!mounted) return;
+      setState(() {
+        historyItems.removeAt(index);
+        _cardCtrls.removeAt(index);
+        _cardFades.removeAt(index);
+        _cardSlides.removeAt(index);
+      });
     });
+
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text("Item deleted from history"), duration: Duration(seconds: 1)),
+      SnackBar(
+        content: Text("${deletedItem['productName']} removed"),
+        duration: const Duration(seconds: 2),
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+        margin: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+        backgroundColor: const Color(0xFF1F2937),
+      ),
     );
   }
 
-  // --- LOGIC: Clear All History ---
   void _clearAllHistory() {
+    HapticFeedback.mediumImpact();
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        title: const Text("Clear History?"),
-        content: const Text("This action cannot be undone."),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text("Cancel"),
+      builder: (ctx) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
+        backgroundColor: _surface,
+        title: const Text(
+          "Clear history?",
+          style: TextStyle(
+            fontWeight: FontWeight.w800,
+            fontSize: 19,
+            color: _textDark,
           ),
-          TextButton(
+        ),
+        content: const Text(
+          "This will permanently remove your ingredient analysis history.",
+          style: TextStyle(color: _textMuted, height: 1.5),
+        ),
+        actionsPadding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 12,
+        ),
+        actions: [
+          OutlinedButton(
+            onPressed: () => Navigator.pop(ctx),
+            style: OutlinedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              side: const BorderSide(color: Color(0xFFE5E7EB)),
+            ),
+            child: const Text(
+              "Cancel",
+              style: TextStyle(color: _textDark, fontWeight: FontWeight.w600),
+            ),
+          ),
+          ElevatedButton(
             onPressed: () {
-              setState(() {
-                historyItems.clear();
-              });
-              Navigator.pop(context);
+              setState(() => historyItems.clear());
+              Navigator.pop(ctx);
             },
-            child: Text("Clear All", style: TextStyle(color: frovyRed)),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFFDC2626),
+              foregroundColor: Colors.white,
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+            child: const Text(
+              "Clear All",
+              style: TextStyle(fontWeight: FontWeight.w700),
+            ),
           ),
         ],
       ),
     );
   }
 
-  // --- LOGIC: Navigate to Details ---
   void _navigateToResult(Map<String, dynamic> item) {
-    // ResultScreen expects a JSON string. We must re-encode our map.
-    // We filter the map to match the structure ResultScreen expects.
-    Map<String, dynamic> resultData = {
+    final resultData = {
       "productName": item['productName'],
       "status": item['status'],
       "ingredients": item['ingredients'],
-      "warnings": item['warnings']
+      "warnings": item['warnings'],
     };
-
     Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (context) => ResultScreen(analysisResult: jsonEncode(resultData)),
+      PageRouteBuilder(
+        pageBuilder: (_, a, __) =>
+            ResultScreen(analysisResult: jsonEncode(resultData)),
+        transitionsBuilder: (_, a, __, child) => SlideTransition(
+          position: Tween<Offset>(
+            begin: const Offset(1, 0),
+            end: Offset.zero,
+          ).animate(CurvedAnimation(parent: a, curve: Curves.easeOutCubic)),
+          child: child,
+        ),
+        transitionDuration: const Duration(milliseconds: 320),
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    // Calculate Summary Stats dynamically
-    int totalScans = historyItems.length;
-    int safeCount = historyItems.where((i) => i['status'] == 'SAFE').length;
-    int flaggedCount = historyItems.where((i) => i['status'] != 'SAFE').length;
+    final int totalScans = historyItems.length;
+    final int safeCount =
+        historyItems.where((i) => i['status'] == 'SAFE').length;
+    final int attentionCount =
+        historyItems.where((i) => i['status'] != 'SAFE').length;
 
-    return Scaffold(
-      backgroundColor: frovyGreen, // Green background for the top
-      appBar: AppBar(
-        backgroundColor: frovyGreen,
-        elevation: 0,
-        centerTitle: true,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
-        ),
-        title: const Text(
-          "Analysis History",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-        ),
-      ),
-      body: Column(
-        children: [
-          // 1. Summary Statistics Card
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 10),
-            child: Container(
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle.dark,
+      child: Scaffold(
+        backgroundColor: _bgTop,
+        body: Stack(
+          children: [
+            const Positioned.fill(
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [_bgTop, Color(0xFF8EC56E), _bgBottom],
+                    stops: [0.0, 0.5, 1.0],
+                  ),
+                ),
               ),
+            ),
+            Positioned(
+              top: -60,
+              right: -60,
+              child:
+                  _Blob(size: 200, color: Colors.white.withValues(alpha: 0.08)),
+            ),
+            Positioned(
+              bottom: 120,
+              left: -40,
+              child:
+                  _Blob(size: 150, color: Colors.white.withValues(alpha: 0.06)),
+            ),
+            SafeArea(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text("Summary", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                  const SizedBox(height: 16),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      _buildSummaryItem(totalScans.toString(), "Total Scans"),
-                      _buildSummaryItem(safeCount.toString(), "Safe Products", color: frovyGreen),
-                      _buildSummaryItem(flaggedCount.toString(), "Flagged", color: frovyRed),
-                    ],
+                  _buildAppBar(),
+                  Expanded(
+                    child: historyItems.isEmpty
+                        ? _buildEmptyState()
+                        : _buildList(
+                            totalScans: totalScans,
+                            safeCount: safeCount,
+                            attentionCount: attentionCount,
+                          ),
                   ),
                 ],
               ),
             ),
-          ),
-
-          const SizedBox(height: 10),
-
-          // 2. The List of History Items
-          Expanded(
-            child: Container(
-              width: double.infinity,
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [frovyGreen, frovyGreen.withOpacity(0.8), const Color(0xFFFFF9C4)], // Green to Yellowish fade
-                ),
-              ),
-              child: historyItems.isEmpty
-                  ? _buildEmptyState()
-                  : ListView.separated(
-                      itemCount: historyItems.length,
-                      separatorBuilder: (context, index) => const SizedBox(height: 16),
-                      itemBuilder: (context, index) {
-                        final item = historyItems[index];
-                        return _buildHistoryCard(index, item);
-                      },
-                    ),
-            ),
-          ),
-          
-          // 3. Clear History Button (Only show if there are items)
-          if (historyItems.isNotEmpty)
-            Padding(
-              padding: const EdgeInsets.fromLTRB(24, 0, 24, 40),
-              child: SizedBox(
-                width: double.infinity,
-                height: 50,
-                child: ElevatedButton(
-                  onPressed: _clearAllHistory,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black,
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  child: const Text("Clear All History", style: TextStyle(fontWeight: FontWeight.bold)),
-                ),
-              ),
-            ),
-        ],
+          ],
+        ),
       ),
     );
   }
 
-  // --- Helper Widgets ---
-
-  Widget _buildEmptyState() {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(Icons.history_toggle_off, size: 80, color: Colors.white.withOpacity(0.5)),
-          const SizedBox(height: 16),
-          const Text(
-            "No scan history yet",
-            style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 8),
-          const Text(
-            "Scan a product to see it here!",
-            style: TextStyle(color: Colors.white70),
-          ),
-        ],
+  Widget _buildAppBar() {
+    return FadeTransition(
+      opacity: _headerCtrl,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 12, 20, 0),
+        child: Row(
+          children: [
+            _GlassButton(
+              icon: Icons.arrow_back_ios_new_rounded,
+              onTap: () => Navigator.maybePop(context),
+            ),
+            const Spacer(),
+            const Text(
+              "Analysis History",
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w800,
+                fontSize: 19,
+                letterSpacing: -0.3,
+              ),
+            ),
+            const Spacer(),
+            const SizedBox(width: 44),
+          ],
+        ),
       ),
     );
   }
 
-  Widget _buildSummaryItem(String value, String label, {Color color = Colors.black}) {
-    return Column(
+  Widget _buildList({
+    required int totalScans,
+    required int safeCount,
+    required int attentionCount,
+  }) {
+    return ListView(
+      padding: const EdgeInsets.fromLTRB(20, 20, 20, 100),
       children: [
-        Text(
-          value,
-          style: TextStyle(color: color, fontSize: 24, fontWeight: FontWeight.bold),
+        FadeTransition(
+          opacity: _headerCtrl,
+          child: SlideTransition(
+            position: Tween<Offset>(
+              begin: const Offset(0, -0.08),
+              end: Offset.zero,
+            ).animate(
+              CurvedAnimation(parent: _headerCtrl, curve: Curves.easeOut),
+            ),
+            child: _buildSummaryCard(
+              totalScans: totalScans,
+              safeCount: safeCount,
+              attentionCount: attentionCount,
+            ),
+          ),
         ),
-        const SizedBox(height: 4),
-        Text(
-          label,
-          style: TextStyle(color: Colors.grey[600], fontSize: 12),
+        const SizedBox(height: 22),
+        Row(
+          children: [
+            const Text(
+              "Recent Scans",
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w700,
+                fontSize: 15,
+                letterSpacing: 0.2,
+              ),
+            ),
+            const SizedBox(width: 8),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 3),
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.22),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Text(
+                "${historyItems.length}",
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 12,
+                ),
+              ),
+            ),
+          ],
         ),
+        const SizedBox(height: 12),
+        for (int i = 0; i < historyItems.length; i++) ...[
+          if (i < _cardFades.length)
+            FadeTransition(
+              opacity: _cardFades[i],
+              child: SlideTransition(
+                position: _cardSlides[i],
+                child: _buildHistoryCard(i, historyItems[i]),
+              ),
+            ),
+          if (i < historyItems.length - 1) const SizedBox(height: 14),
+        ],
+        const SizedBox(height: 22),
+        _ClearAllButton(onTap: _clearAllHistory),
       ],
     );
   }
 
-  Widget _buildHistoryCard(int index, Map<String, dynamic> item) {
-    String status = item['status'];
-    Color statusColor;
-    IconData statusIcon;
-
-    // Determine colors based on status string
-    if (status == "SAFE") {
-      statusColor = frovyGreen;
-      statusIcon = Icons.check_circle_outline;
-    } else if (status == "UNSAFE") {
-      statusColor = frovyRed;
-      statusIcon = Icons.cancel_outlined;
-    } else {
-      statusColor = frovyAmber;
-      statusIcon = Icons.warning_amber_rounded;
-    }
-
-    return GestureDetector(
-      onTap: () => _navigateToResult(item), // Make the whole card clickable
-      child: Container(
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.05),
-              blurRadius: 10,
-              offset: const Offset(0, 4),
-            ),
-          ],
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  Widget _buildSummaryCard({
+    required int totalScans,
+    required int safeCount,
+    required int attentionCount,
+  }) {
+    return Container(
+      padding: const EdgeInsets.fromLTRB(22, 22, 22, 22),
+      decoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: 0.95),
+        borderRadius: BorderRadius.circular(26),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.10),
+            blurRadius: 28,
+            offset: const Offset(0, 12),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFEAF6E7),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Icon(
+                  Icons.bar_chart_rounded,
+                  color: Color(0xFF2D7A45),
+                  size: 20,
+                ),
+              ),
+              const SizedBox(width: 12),
+              const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Your Overview",
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w800,
+                      color: _textDark,
+                      letterSpacing: -0.2,
+                    ),
+                  ),
+                  Text(
+                    "Scan summary",
+                    style: TextStyle(
+                      fontSize: 12.5,
+                      color: _textMuted,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          const Divider(height: 1, color: Color(0xFFF3F4F6)),
+          const SizedBox(height: 20),
+          IntrinsicHeight(
+            child: Row(
               children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(item['productName'], style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-                      const SizedBox(height: 4),
-                      Row(
+                _SummaryTile(
+                  value: totalScans,
+                  label: "Total Scans",
+                  color: _textDark,
+                  icon: Icons.qr_code_scanner_rounded,
+                ),
+                _VerticalDivider(),
+                _SummaryTile(
+                  value: safeCount,
+                  label: "Safe",
+                  color: const Color(0xFF2D7A45),
+                  icon: Icons.verified_rounded,
+                ),
+                _VerticalDivider(),
+                _SummaryTile(
+                  value: attentionCount,
+                  label: "Needs Review",
+                  color: const Color(0xFFDC2626),
+                  icon: Icons.flag_rounded,
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildHistoryCard(int index, Map<String, dynamic> item) {
+    final String statusKey = item['status'] as String;
+    final _StatusStyle style = _kStatus[statusKey] ?? _kStatus['CAUTION']!;
+    final List ingredients = item['ingredients'] ?? [];
+
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(24),
+        onTap: () => _navigateToResult(item),
+        splashColor: style.pill.withValues(alpha: 0.08),
+        highlightColor: style.pill.withValues(alpha: 0.04),
+        child: Ink(
+          decoration: BoxDecoration(
+            color: Colors.white.withValues(alpha: 0.97),
+            borderRadius: BorderRadius.circular(24),
+            border: Border.all(color: style.cardBorder, width: 1.4),
+            boxShadow: [
+              BoxShadow(
+                color: style.pill.withValues(alpha: 0.10),
+                blurRadius: 20,
+                offset: const Offset(0, 8),
+              ),
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // ── Top row ──────────────────────────────────
+              Padding(
+                padding: const EdgeInsets.fromLTRB(18, 18, 18, 0),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: 44,
+                      height: 44,
+                      decoration: BoxDecoration(
+                        color: style.cardTint,
+                        shape: BoxShape.circle,
+                        border: Border.all(color: style.cardBorder, width: 1.5),
+                      ),
+                      child: Icon(style.icon, color: style.pill, size: 22),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Icon(Icons.calendar_today, size: 12, color: Colors.grey),
-                          const SizedBox(width: 4),
-                          Text(item['date'], style: const TextStyle(color: Colors.grey, fontSize: 12)),
+                          Text(
+                            item['productName'],
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w800,
+                              color: _textDark,
+                              letterSpacing: -0.2,
+                              height: 1.2,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Row(
+                            children: [
+                              const Icon(
+                                Icons.calendar_today_outlined,
+                                size: 13,
+                                color: _textMuted,
+                              ),
+                              const SizedBox(width: 4),
+                              Text(
+                                item['date'],
+                                style: const TextStyle(
+                                  color: _textMuted,
+                                  fontSize: 12.5,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
                       ),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(width: 8),
+                    _StatusPill(style: style),
+                  ],
                 ),
-                // Status Badge
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                  decoration: BoxDecoration(
-                    color: statusColor,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Row(
+              ),
+
+              // ── Ingredient chips (top 3) ─────────────────
+              if (ingredients.isNotEmpty) ...[
+                const SizedBox(height: 14),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 18),
+                  child: Wrap(
+                    spacing: 6,
+                    runSpacing: 6,
                     children: [
-                      Icon(statusIcon, color: Colors.white, size: 16),
-                      const SizedBox(width: 4),
-                      Text(
-                        status == "SAFE" ? "Good" : (status == "UNSAFE" ? "Bad" : "Medium"), 
-                        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12)
-                      ),
+                      for (int i = 0; i < math.min(3, ingredients.length); i++)
+                        _Chip(label: ingredients[i] as String),
+                      if (ingredients.length > 3)
+                        _Chip(
+                          label: "+${ingredients.length - 3} more",
+                          faded: true,
+                        ),
                     ],
                   ),
                 ),
               ],
+
+              const SizedBox(height: 12),
+
+              // ── Footer row ───────────────────────────────
+              Container(
+                padding: const EdgeInsets.fromLTRB(18, 10, 10, 12),
+                decoration: const BoxDecoration(
+                  color: Color(0xFFF9FAFB),
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(24),
+                    bottomRight: Radius.circular(24),
+                  ),
+                ),
+                child: Row(
+                  children: [
+                    const Icon(
+                      Icons.touch_app_rounded,
+                      size: 14,
+                      color: _textMuted,
+                    ),
+                    const SizedBox(width: 6),
+                    const Expanded(
+                      child: Text(
+                        "Tap to view full analysis",
+                        style: TextStyle(
+                          color: _textMuted,
+                          fontSize: 12.5,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      borderRadius: BorderRadius.circular(12),
+                      onTap: () => _deleteItem(index),
+                      child: Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFFFE8E8),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: const Icon(
+                          Icons.delete_outline_rounded,
+                          color: Color(0xFFDC2626),
+                          size: 18,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildEmptyState() {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 32),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              height: 96,
+              width: 96,
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.15),
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: Colors.white.withValues(alpha: 0.3),
+                  width: 1.5,
+                ),
+              ),
+              child: const Icon(
+                Icons.history_rounded,
+                size: 44,
+                color: Colors.white,
+              ),
             ),
-            const SizedBox(height: 16),
-            const Divider(),
-            const SizedBox(height: 12),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  item['summary'],
-                  style: TextStyle(
-                    color: status == "UNSAFE" ? Colors.red[700] : Colors.grey[700],
-                    fontSize: 13,
-                  ),
-                ),
-                // Delete Icon Button
-                InkWell(
-                  onTap: () => _deleteItem(index),
-                  child: const Padding(
-                    padding: EdgeInsets.all(4.0),
-                    child: Icon(Icons.delete_outline, color: Colors.red, size: 20),
-                  ),
-                ),
-              ],
+            const SizedBox(height: 24),
+            const Text(
+              "No history yet",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+                fontWeight: FontWeight.w800,
+                letterSpacing: -0.4,
+              ),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              "Your scanned ingredient analyses will appear here once you start using Fro.vy.",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white.withValues(alpha: 0.75),
+                fontSize: 15,
+                height: 1.6,
+              ),
             ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class _StatusPill extends StatelessWidget {
+  final _StatusStyle style;
+  const _StatusPill({required this.style});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 7),
+      decoration: BoxDecoration(
+        color: style.pill,
+        borderRadius: BorderRadius.circular(999),
+        boxShadow: [
+          BoxShadow(
+            color: style.pill.withValues(alpha: 0.30),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(style.icon, color: style.pillText, size: 15),
+          const SizedBox(width: 5),
+          Text(
+            style.label,
+            style: TextStyle(
+              color: style.pillText,
+              fontWeight: FontWeight.w700,
+              fontSize: 13,
+              letterSpacing: 0.1,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _SummaryTile extends StatelessWidget {
+  final int value;
+  final String label;
+  final Color color;
+  final IconData icon;
+
+  const _SummaryTile({
+    required this.value,
+    required this.label,
+    required this.color,
+    required this.icon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(icon, color: color, size: 18),
+          const SizedBox(height: 6),
+          Text(
+            "$value",
+            style: TextStyle(
+              color: color,
+              fontSize: 28,
+              fontWeight: FontWeight.w800,
+              letterSpacing: -0.5,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            label,
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+              color: Color(0xFF6B7280),
+              fontSize: 11.5,
+              fontWeight: FontWeight.w500,
+              height: 1.3,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _VerticalDivider extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 1,
+      margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+      color: const Color(0xFFE5E7EB),
+    );
+  }
+}
+
+class _Chip extends StatelessWidget {
+  final String label;
+  final bool faded;
+  const _Chip({required this.label, this.faded = false});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      decoration: BoxDecoration(
+        color: faded ? const Color(0xFFF3F4F6) : const Color(0xFFF9FAFB),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: faded ? const Color(0xFFE5E7EB) : const Color(0xFFE9EBF0),
+          width: 1,
+        ),
+      ),
+      child: Text(
+        label,
+        style: TextStyle(
+          color: faded ? const Color(0xFF9CA3AF) : const Color(0xFF374151),
+          fontSize: 11.5,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+    );
+  }
+}
+
+class _GlassButton extends StatelessWidget {
+  final IconData icon;
+  final VoidCallback onTap;
+  const _GlassButton({required this.icon, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 44,
+        height: 44,
+        decoration: BoxDecoration(
+          color: Colors.white.withValues(alpha: 0.20),
+          shape: BoxShape.circle,
+          border:
+              Border.all(color: Colors.white.withValues(alpha: 0.35), width: 1),
+        ),
+        child: Icon(icon, color: Colors.white, size: 18),
+      ),
+    );
+  }
+}
+
+class _ClearAllButton extends StatelessWidget {
+  final VoidCallback onTap;
+  const _ClearAllButton({required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: double.infinity,
+        height: 56,
+        decoration: BoxDecoration(
+          color: Colors.white.withValues(alpha: 0.92),
+          borderRadius: BorderRadius.circular(18),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.08),
+              blurRadius: 16,
+              offset: const Offset(0, 6),
+            ),
+          ],
+        ),
+        child: const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.delete_sweep_rounded,
+                color: Color(0xFFDC2626), size: 20),
+            SizedBox(width: 8),
+            Text(
+              "Clear All History",
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w700,
+                color: Color(0xFF111827),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _Blob extends StatelessWidget {
+  final double size;
+  final Color color;
+  const _Blob({required this.size, required this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: size,
+      height: size,
+      decoration: BoxDecoration(color: color, shape: BoxShape.circle),
     );
   }
 }
