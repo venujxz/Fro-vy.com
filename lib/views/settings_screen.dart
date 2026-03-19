@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 import 'theme_notifier.dart'; // Import the notifier
+import 'welcome_screen.dart';
+import '../util/app_colors.dart';
+import '../services/prefs_service.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -10,13 +14,29 @@ class SettingsScreen extends StatefulWidget {
 
 class _SettingsScreenState extends State<SettingsScreen> {
   // Brand Colors (Getters allow them to adapt if needed)
-  Color get frovyGreen => const Color(0xFF6AA15E);
-  Color get frovyRed => const Color(0xFFD32F2F);
+  Color get frovyGreen => AppColors.frovyGreen;
+  Color get frovyRed => AppColors.frovyRed;
   
-  // Local state for other toggles
+  // Local state for notification toggles
   bool _pushNotifications = true;
   bool _emailUpdates = true;
-  String _selectedLanguage = "English";
+
+  @override
+  void initState() {
+    super.initState();
+    _loadPrefs();
+  }
+
+  Future<void> _loadPrefs() async {
+    final push = await PrefsService.getPushNotifications();
+    final email = await PrefsService.getEmailUpdates();
+    if (mounted) {
+      setState(() {
+        _pushNotifications = push;
+        _emailUpdates = email;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +57,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          "Settings",
+          "settings".tr(),
           style: TextStyle(
             color: isDarkMode ? Colors.white : Colors.black, 
             fontWeight: FontWeight.bold
@@ -63,13 +83,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
               // 1. Appearance Section (THE DARK MODE TOGGLE)
               _buildSectionCard(
                 context,
-                title: "Appearance",
+                title: "appearance".tr(),
                 icon: Icons.dark_mode_outlined,
                 iconColor: Colors.purple,
                 children: [
                   _buildToggleTile(
-                    "Dark Mode", 
-                    "Switch to dark theme", 
+                    "dark_mode".tr(), 
+                    "switch_dark_theme".tr(), 
                     isDarkMode, // The switch position depends on the actual theme
                     (val) {
                        // This triggers the global theme change
@@ -84,38 +104,25 @@ class _SettingsScreenState extends State<SettingsScreen> {
               // 2. Notifications
               _buildSectionCard(
                 context,
-                title: "Notifications",
+                title: "notifications".tr(),
                 icon: Icons.notifications_none,
                 iconColor: const Color(0xFFFF8A65),
                 children: [
-                  _buildToggleTile("Push Notifications", "Receive alerts", _pushNotifications, (v) => setState(() => _pushNotifications = v)),
-                  _buildToggleTile("Email Updates", "Health tips", _emailUpdates, (v) => setState(() => _emailUpdates = v)),
+                  _buildToggleTile("push_notifications".tr(), "receive_alerts".tr(), _pushNotifications, (v) {
+                    setState(() => _pushNotifications = v);
+                    PrefsService.setPushNotifications(v);
+                  }),
+                  _buildToggleTile("email_updates".tr(), "health_tips".tr(), _emailUpdates, (v) {
+                    setState(() => _emailUpdates = v);
+                    PrefsService.setEmailUpdates(v);
+                  }),
                 ],
               ),
               
+              
               const SizedBox(height: 20),
 
-              // 3. Language
-              _buildSectionCard(
-                context,
-                title: "Language",
-                icon: Icons.language,
-                iconColor: Colors.blue,
-                children: [
-                   ListTile(
-                    contentPadding: EdgeInsets.zero,
-                    title: const Text("Language", style: TextStyle(fontWeight: FontWeight.w500)),
-                    trailing: Text(_selectedLanguage, style: const TextStyle(color: Colors.grey)),
-                    onTap: () {
-                      // Simple Dialog Logic
-                    },
-                   )
-                ],
-              ),
-
-              const SizedBox(height: 20),
-
-              // 4. Danger Zone
+              // 3. Danger Zone
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
@@ -125,17 +132,57 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Danger Zone", style: TextStyle(color: frovyRed, fontWeight: FontWeight.bold)),
+                    Text("danger_zone".tr(), style: TextStyle(color: frovyRed, fontWeight: FontWeight.bold)),
                     const SizedBox(height: 16),
                     SizedBox(
                       width: double.infinity,
                       child: OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (ctx) => AlertDialog(
+                              title: Row(
+                                children: [
+                                  Icon(Icons.warning_amber_rounded, color: frovyRed),
+                                  const SizedBox(width: 8),
+                                  Text("delete_account".tr()),
+                                ],
+                              ),
+                              content: Text("delete_account_confirm".tr()),
+                              actions: [
+                                TextButton(
+                                  onPressed: () => Navigator.pop(ctx),
+                                  child: Text("cancel".tr()),
+                                ),
+                                TextButton(
+                                  onPressed: () async {
+                                    await PrefsService.clearAll();
+                                    if (!context.mounted) return;
+                                    Navigator.pop(ctx);
+                                    Navigator.of(context).pushAndRemoveUntil(
+                                      MaterialPageRoute(
+                                        builder: (_) => const WelcomeScreen(),
+                                      ),
+                                      (route) => false,
+                                    );
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(content: Text("delete_account_success".tr())),
+                                    );
+                                  },
+                                  child: Text(
+                                    "delete_account_btn".tr(),
+                                    style: TextStyle(color: frovyRed, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
                         style: OutlinedButton.styleFrom(
                           foregroundColor: frovyRed, 
                           side: BorderSide(color: frovyRed)
                         ),
-                        child: const Text("Delete Account"),
+                        child: Text("delete_account".tr()),
                       ),
                     ),
                   ],
@@ -161,7 +208,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           if (!isDark) // Only show shadow in light mode
-            BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 4))
+            BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 4))
         ],
       ),
       child: Column(
@@ -184,9 +231,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
       title: Text(title, style: const TextStyle(fontWeight: FontWeight.w500)),
       subtitle: Text(subtitle, style: const TextStyle(fontSize: 12, color: Colors.grey)),
       trailing: Switch(
-        value: value, 
-        onChanged: onChanged, 
-        activeColor: const Color(0xFF6AA15E)
+        value: value,
+        onChanged: onChanged,
+        activeTrackColor: AppColors.frovyGreen
       ),
     );
   }

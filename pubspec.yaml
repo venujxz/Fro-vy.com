@@ -18,6 +18,14 @@ dependencies:
   flutter_image_compress: ^2.3.0
   image_picker: ^1.0.7
 
+  # --- LOCALIZATION & STORAGE ---
+  easy_localization: ^3.0.8
+  google_mlkit_text_recognition: ^0.15.1
+  shared_preferences: ^2.5.4
+  intl: ^0.20.2
+  payhere_mobilesdk_flutter: ^3.2.2
+  crypto: ^3.0.6
+
   # --- YOUR FIREBASE MODULES ---
   firebase_core: ^3.0.0
   firebase_auth: ^5.0.0
@@ -35,5 +43,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  # assets:
-  #   - assets/images/
+  assets:
+    - assets/translations/

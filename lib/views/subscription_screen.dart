@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'checkout_screen.dart'; 
+import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
+import '../util/app_colors.dart';
+import '../services/prefs_service.dart';
+import '../services/payment_service.dart'; // ADDED: Import your Payment Service
 
 class SubscriptionScreen extends StatefulWidget {
   const SubscriptionScreen({super.key});
@@ -10,50 +13,83 @@ class SubscriptionScreen extends StatefulWidget {
 
 class _SubscriptionScreenState extends State<SubscriptionScreen> {
   // Brand Colors
-  static const Color frovyGreen = Color(0xFF6AA15E);
-  static const Color frovyGold = Color(0xFFFFC107);
-  static const Color frovyLightBg = Color(0xFFF8F9FA);
+  static const Color frovyGreen = AppColors.frovyGreen;
+  static const Color frovyGold = AppColors.frovyGold;
+  static const Color frovyLightBg = AppColors.frovyLightBg;
 
   // State Variable to track the active plan
   String _currentPlan = "Free"; // Defaults to Free
 
-  // Logic to handle navigation and update state
-  Future<void> _handleUpgrade(String planName, String price) async {
-    // Wait for the checkout screen to return a result
-    final result = await Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => CheckoutScreen(
-          planName: planName,
-          price: price,
-          period: "Monthly",
+  @override
+  void initState() {
+    super.initState();
+    _loadPlan();
+  }
+
+  Future<void> _loadPlan() async {
+    final plan = await PrefsService.getCurrentPlan();
+    if (!mounted) return;
+    setState(() {
+      _currentPlan = plan;
+    });
+  }
+
+  // --- TEMPORARILY DISABLED - SHOW COMING SOON ---
+  void _handleUpgrade(String planName, String price) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: Row(
+          children: [
+            Icon(Icons.rocket_launch, color: frovyGreen),
+            const SizedBox(width: 10),
+            const Text('Coming Soon!'),
+          ],
         ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text(
+              'Premium subscriptions are coming soon! We\'re working hard to bring you an amazing experience.',
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 16),
+            Text(
+              '$planName - $price/month',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: frovyGreen,
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text('Got it!', style: TextStyle(color: frovyGreen)),
+          ),
+        ],
       ),
     );
-
-    // If we received a result (plan name), update the state
-    if (result != null && result is String) {
-      setState(() {
-        _currentPlan = result;
-      });
-    }
   }
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      backgroundColor: frovyGreen,
+      backgroundColor: isDark ? null : frovyGreen,
       appBar: AppBar(
-        backgroundColor: frovyGreen,
+        backgroundColor: isDark ? null : frovyGreen,
         elevation: 0,
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
-          "Premium Plans",
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        title: Text(
+          "premium_plans_title".tr(),
+          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
       body: SingleChildScrollView(
@@ -63,16 +99,16 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 24),
               child: Column(
-                children: const [
+                children: [
                   Text(
-                    "Upgrade Your Health Journey",
-                    style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
+                    "upgrade_health_journey".tr(),
+                    style: const TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
-                    "Choose the perfect plan for your needs",
-                    style: TextStyle(color: Colors.white70, fontSize: 14),
+                    "choose_perfect_plan".tr(),
+                    style: const TextStyle(color: Colors.white70, fontSize: 14),
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -83,7 +119,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
             Container(
               padding: const EdgeInsets.all(24),
               decoration: BoxDecoration(
-                color: frovyLightBg,
+                color: isDark ? const Color(0xFF121212) : frovyLightBg,
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),
@@ -94,21 +130,22 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                   // --- FREE PLAN ---
                   _buildPlanCard(
                     context,
-                    title: "Free",
+                    title: "free".tr(),
                     price: "\$0",
-                    period: "forever",
+                    period: "forever".tr(),
                     icon: Icons.star_outline,
                     iconColor: Colors.grey,
                     features: [
-                      "10 scans per month",
-                      "Basic ingredient analysis",
-                      "Manual ingredient entry",
+                      "10_scans_month".tr(),
+                      "basic_analysis".tr(),
+                      "manual_entry".tr(), 
                     ],
-                    // Logic: If _currentPlan is Free, show "Current Plan"
-                    // Otherwise, allow "Downgrade" (or switch)
                     isCurrent: _currentPlan == "Free",
-                    buttonText: _currentPlan == "Free" ? "Current Plan" : "Downgrade",
-                    onTap: () => setState(() => _currentPlan = "Free"),
+                    buttonText: _currentPlan == "Free" ? "current_plan".tr() : "downgrade".tr(),
+                    onTap: () async {
+                      setState(() => _currentPlan = "Free");
+                      await PrefsService.setCurrentPlan("Free");
+                    },
                   ),
 
                   const SizedBox(height: 24),
@@ -119,22 +156,21 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                     children: [
                       _buildPlanCard(
                         context,
-                        title: "Pro",
-                        price: "\$9.99",
-                        period: "per month",
+                        title: "pro".tr(),
+                        price: "\$2.99",
+                        period: "per_month".tr(),
                         icon: Icons.bolt,
                         iconColor: frovyGreen,
                         features: [
-                          "Unlimited scans",
-                          "Barcode & OCR scanning",
-                          "Detailed health insights",
+                          "unlimited_scans".tr(),
+                          "barcode_ocr".tr(),
+                          "detailed_insights".tr(),
                         ],
                         buttonColor: frovyGreen,
-                        // Logic: Check if Pro is active
                         isCurrent: _currentPlan == "Pro",
-                        buttonText: _currentPlan == "Pro" ? "Current Plan" : "Upgrade Now",
+                        buttonText: _currentPlan == "Pro" ? "current_plan".tr() : "upgrade_now".tr(),
                         onTap: () {
-                          if (_currentPlan != "Pro") _handleUpgrade("Pro", "\$9.99");
+                          if (_currentPlan != "Pro") _handleUpgrade("Pro", "\$2.99");
                         },
                       ),
                       Positioned(
@@ -146,7 +182,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                               color: const Color(0xFFFF7043),
                               borderRadius: BorderRadius.circular(20),
                             ),
-                            child: const Text("Most Popular", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold)),
+                            child: Text("most_popular".tr(), style: const TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold)),
                           ),
                         ),
                       ),
@@ -158,23 +194,22 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                   // --- PREMIUM PLAN ---
                   _buildPlanCard(
                     context,
-                    title: "Premium",
-                    price: "\$19.99",
-                    period: "per month",
+                    title: "premium".tr(),
+                    price: "\$6.99",
+                    period: "per_month".tr(),
                     icon: Icons.workspace_premium,
                     iconColor: frovyGold,
                     features: [
-                      "Everything in Pro",
-                      "AI-powered recommendations",
-                      "Direct dietitian consultation",
+                      "everything_in_pro".tr(),
+                      "ai_recommendations".tr(),
+                      "dietitian_consult".tr(),
                     ],
                     buttonColor: frovyGold,
                     textColor: Colors.black87,
-                    // Logic: Check if Premium is active
                     isCurrent: _currentPlan == "Premium",
-                    buttonText: _currentPlan == "Premium" ? "Current Plan" : "Upgrade Now",
+                    buttonText: _currentPlan == "Premium" ? "current_plan".tr() : "upgrade_now".tr(),
                     onTap: () {
-                      if (_currentPlan != "Premium") _handleUpgrade("Premium", "\$19.99");
+                      if (_currentPlan != "Premium") _handleUpgrade("Premium", "\$6.99");
                     },
                   ),
                   
@@ -202,15 +237,16 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
     Color textColor = Colors.white,
     required bool isCurrent,
   }) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
         borderRadius: BorderRadius.circular(20),
         border: isCurrent ? Border.all(color: frovyGreen, width: 2) : null,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -224,11 +260,11 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(title, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  Text(title, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: isDark ? Colors.white : Colors.black87)),
                   Text(period, style: TextStyle(color: Colors.grey[600], fontSize: 12)),
                 ],
               ),
-              Text(price, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+              Text(price, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: isDark ? Colors.white : Colors.black87)),
             ],
           ),
           const SizedBox(height: 20),
@@ -237,7 +273,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
               padding: const EdgeInsets.only(bottom: 8.0),
               child: Row(
                 children: [
-                  Icon(Icons.check, size: 16, color: frovyGreen),
+                  const Icon(Icons.check, size: 16, color: frovyGreen),
                   const SizedBox(width: 8),
                   Expanded(child: Text(feature, style: TextStyle(color: Colors.grey[700], fontSize: 13))),
                 ],
@@ -251,7 +287,6 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
             child: ElevatedButton(
               onPressed: onTap,
               style: ElevatedButton.styleFrom(
-                // Grey out the button if it's the current plan
                 backgroundColor: isCurrent ? Colors.grey[300] : buttonColor,
                 foregroundColor: isCurrent ? Colors.black54 : textColor,
                 elevation: 0,
