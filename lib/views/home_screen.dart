@@ -9,7 +9,7 @@ import 'subscription_screen.dart'; // 3. Premium Plans
 import 'history_screen.dart';      // 4. Analysis History
 import 'settings_screen.dart';     // 5. Settings
 import 'help_support_screen.dart'; // 6. Help & Support
-import 'search_products.dart';     // 7. Search Products
+import 'search_products_screen.dart'; // 7. Search Products (Firebase-based)
 import 'manual_entry_screen.dart'; // 8. Manual Entry
 
 //imports the lanuage switcher button

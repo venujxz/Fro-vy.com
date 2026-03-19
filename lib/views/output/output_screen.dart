@@ -58,8 +58,16 @@ class _OutputScreenState extends State<OutputScreen> {
     try {
       final db = FirestoreService();
 
-      // 1. Fetch all ingredients from Firestore
-      final ingredientDb = await db.getAllIngredients();
+      // 1. Fetch all ingredients from Firestore (with error handling)
+      Map<String, IngredientModel> ingredientDb = {};
+      try {
+        ingredientDb = await db.getAllIngredients();
+      } catch (firebaseError) {
+        debugPrint('Firebase getAllIngredients error: $firebaseError');
+        // If Firestore fails, continue with empty DB
+        // Unknown ingredients will be marked as such
+        ingredientDb = {};
+      }
 
       // 2. Run the checker
       final result = IngredientCheckerService().checkIngredients(
@@ -201,9 +209,8 @@ class _OutputScreenState extends State<OutputScreen> {
           'Results',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: const BackButton(color: Colors.black),
+        backgroundColor: const Color(0xFF6AA15E),
+        leading: const BackButton(color: Colors.white),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.fromLTRB(20, 0, 20, 40),
@@ -244,20 +251,21 @@ class _OutputScreenState extends State<OutputScreen> {
             ),
             const SizedBox(height: 12),
             _buildCategoryDropdown(
-              emoji: '✅',
-              label: 'Beneficial',
+              emoji: '',
+              label: 'Beneficial | Supports health & wellbeing.',
               items: r.beneficial,
               color: _beneficialColor,
             ),
             _buildCategoryDropdown(
-              emoji: '⚠️',
-              label: 'Caution',
+              emoji: '',
+              label:
+                  'Caution | Generally safe, but frequent or large doses may be harmful.',
               items: r.caution,
               color: _cautionColor,
             ),
             _buildCategoryDropdown(
-              emoji: '🚫',
-              label: 'Avoid',
+              emoji: '',
+              label: 'Avoid | Strongly linked to negative health effects.',
               items: r.avoid,
               color: _avoidColor,
             ),
@@ -646,7 +654,7 @@ class _OutputScreenState extends State<OutputScreen> {
             ),
           ),
           title: Text(
-            '❓  Not in Database  (${unknowns.length})',
+            'Not in Database  (${unknowns.length})',
             style: const TextStyle(
               fontWeight: FontWeight.bold,
               color: _unknownColor,
