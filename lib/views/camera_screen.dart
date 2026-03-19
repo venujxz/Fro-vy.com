@@ -48,7 +48,7 @@ class CameraScreenState extends State<CameraScreen> {
   // --- LOGIC: Process the Image (Used by both Camera & Gallery) ---
   Future<void> _processImage(String imagePath) async {
     if (!mounted) return;
-    
+
     // 1. Show Loading UI
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Processing image...')),
@@ -57,9 +57,9 @@ class CameraScreenState extends State<CameraScreen> {
     try {
       // 2. Call OCR Service
       OCRService ocrService = OCRService();
-      
+
       // TEMPORARY: Fake delay to show UI, remove when backend is ready
-      // await Future.delayed(const Duration(seconds: 2)); 
+      // await Future.delayed(const Duration(seconds: 2));
       // String? result = '{"status": "UNSAFE", "ingredients": ["Peanuts", "Sugar"]}';
 
       // REAL CODE (Uncomment when backend is ready):
@@ -80,7 +80,7 @@ class CameraScreenState extends State<CameraScreen> {
         );
       }
     } catch (e) {
-      print(e);
+      debugPrint('Image processing error: $e');
     }
   }
 
@@ -106,7 +106,8 @@ class CameraScreenState extends State<CameraScreen> {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.of(context).pop(), // Just closes app if it's the only screen
+          onPressed: () => Navigator.of(context)
+              .pop(), // Just closes app if it's the only screen
         ),
         title: const Text(
           "Scan Ingredients",
@@ -126,7 +127,7 @@ class CameraScreenState extends State<CameraScreen> {
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.black.withValues(alpha: 0.05),
                       blurRadius: 10,
                       offset: const Offset(0, 4),
                     ),
@@ -157,7 +158,8 @@ class CameraScreenState extends State<CameraScreen> {
                                     height: 200,
                                     decoration: BoxDecoration(
                                       border: Border.all(
-                                        color: Colors.white.withOpacity(0.8),
+                                        color:
+                                            Colors.white.withValues(alpha: 0.8),
                                         width: 2,
                                       ),
                                       borderRadius: BorderRadius.circular(12),
@@ -170,14 +172,16 @@ class CameraScreenState extends State<CameraScreen> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Icon(Icons.camera_alt_outlined, size: 40, color: Colors.grey),
+                                  Icon(Icons.camera_alt_outlined,
+                                      size: 40, color: Colors.grey),
                                   SizedBox(height: 8),
-                                  Text("Camera preview", style: TextStyle(color: Colors.grey)),
+                                  Text("Camera preview",
+                                      style: TextStyle(color: Colors.grey)),
                                 ],
                               ),
                             ),
                     ),
-                    
+
                     const SizedBox(height: 20),
 
                     // "Take Photo" Button (Solid Green)
@@ -187,7 +191,8 @@ class CameraScreenState extends State<CameraScreen> {
                       child: ElevatedButton.icon(
                         onPressed: _takePhoto,
                         icon: const Icon(Icons.camera_alt),
-                        label: const Text("Take Photo", style: TextStyle(fontSize: 16)),
+                        label: const Text("Take Photo",
+                            style: TextStyle(fontSize: 16)),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: frovyGreen,
                           foregroundColor: Colors.white,
@@ -207,10 +212,13 @@ class CameraScreenState extends State<CameraScreen> {
                       height: 50,
                       child: OutlinedButton.icon(
                         onPressed: _pickFromGallery,
-                        icon: Icon(Icons.file_upload_outlined, color: frovyGreen),
-                        label: Text("Upload from Gallery", style: TextStyle(fontSize: 16, color: frovyGreen)),
+                        icon:
+                            const Icon(Icons.file_upload_outlined, color: frovyGreen),
+                        label: const Text("Upload from Gallery",
+                            style: TextStyle(fontSize: 16, color: frovyGreen)),
                         style: OutlinedButton.styleFrom(
-                          side: BorderSide(color: frovyGreen.withOpacity(0.5)),
+                          side: BorderSide(
+                              color: frovyGreen.withValues(alpha: 0.5)),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
@@ -234,7 +242,7 @@ class CameraScreenState extends State<CameraScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "How to scan",
                       style: TextStyle(
                         fontSize: 16,
@@ -243,7 +251,8 @@ class CameraScreenState extends State<CameraScreen> {
                       ),
                     ),
                     const SizedBox(height: 12),
-                    _buildBulletPoint("Position the ingredient list within the frame"),
+                    _buildBulletPoint(
+                        "Position the ingredient list within the frame"),
                     _buildBulletPoint("Ensure good lighting for best results"),
                     _buildBulletPoint("Hold your device steady when capturing"),
                     _buildBulletPoint("The text should be clear and readable"),
@@ -262,9 +271,10 @@ class CameraScreenState extends State<CameraScreen> {
                 onPressed: () {
                   // TODO: Navigate to manual entry screen
                 },
-                child: Text(
+                child: const Text(
                   "Try manual entry instead",
-                  style: TextStyle(color: frovyGreen, fontWeight: FontWeight.bold),
+                  style:
+                      TextStyle(color: frovyGreen, fontWeight: FontWeight.bold),
                 ),
               ),
             ],
@@ -281,15 +291,16 @@ class CameraScreenState extends State<CameraScreen> {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 6.0),
+          const Padding(
+            padding: EdgeInsets.only(top: 6.0),
             child: Icon(Icons.circle, size: 6, color: frovyGreen),
           ),
           const SizedBox(width: 10),
           Expanded(
             child: Text(
               text,
-              style: TextStyle(color: frovyText, fontSize: 14, height: 1.4),
+              style:
+                  const TextStyle(color: frovyText, fontSize: 14, height: 1.4),
             ),
           ),
         ],
