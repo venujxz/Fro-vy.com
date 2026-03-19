@@ -159,7 +159,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
                     return FilterChip(
                       label: Text(allergy),
                       selected: isSelected,
-                      selectedColor: frovyGreen.withOpacity(0.2),
+                      selectedColor: frovyGreen.withValues(alpha: 0.2),
                       checkmarkColor: frovyGreen,
                       labelStyle: TextStyle(
                         color: isSelected ? frovyGreen : Colors.black87,
@@ -206,7 +206,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 10, offset: const Offset(0, 4)),
+          BoxShadow(color: Colors.black.withValues(alpha: 0.03), blurRadius: 10, offset: const Offset(0, 4)),
         ],
       ),
       child: TextField(
@@ -232,7 +232,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
             width: 100,
             height: 100,
             decoration: BoxDecoration(
-              color: frovyGreen.withOpacity(0.2),
+              color: frovyGreen.withValues(alpha: 0.2),
               shape: BoxShape.circle,
             ),
             child: Icon(Icons.person, size: 60, color: frovyGreen),
