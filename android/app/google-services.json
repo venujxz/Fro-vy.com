@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "606035660571",
+    "project_id": "frovy-app",
+    "storage_bucket": "frovy-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606035660571:android:db902f348d93edc9084dbe",
+        "android_client_info": {
+          "package_name": "com.example.frovy_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDE9W44OR2_MMJ77gybAZ4bEKawP865aFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
