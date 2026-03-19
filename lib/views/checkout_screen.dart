@@ -46,11 +46,14 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           Container(
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 24),
             width: double.infinity,
-            child: Column(
-              children: const [
+            child: const Column(
+              children: [
                 Text(
                   "Complete Purchase",
-                  style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 8),
                 Text(
@@ -84,29 +87,47 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
-                          BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 4)),
+                          BoxShadow(
+                              color: Colors.black.withValues(alpha: 0.05),
+                              blurRadius: 10,
+                              offset: const Offset(0, 4)),
                         ],
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text("Order Summary", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                          const Text("Order Summary",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 16)),
                           const Divider(height: 30),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("Fro-vy ${widget.planName}", style: const TextStyle(fontSize: 16)),
-                              Text(widget.price, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                              Text("Fro-vy ${widget.planName}",
+                                  style: const TextStyle(fontSize: 16)),
+                              Text(widget.price,
+                                  style: const TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold)),
                             ],
                           ),
                           const SizedBox(height: 8),
-                          Text("Billed ${widget.period}", style: TextStyle(color: Colors.grey[600], fontSize: 12)),
+                          Text("Billed ${widget.period}",
+                              style: TextStyle(
+                                  color: Colors.grey[600], fontSize: 12)),
                           const Divider(height: 30),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Text("Total Today", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                              Text(widget.price, style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: frovyGreen)),
+                              const Text("Total Today",
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold)),
+                              Text(widget.price,
+                                  style: TextStyle(
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
+                                      color: frovyGreen)),
                             ],
                           ),
                         ],
@@ -116,11 +137,15 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     const SizedBox(height: 24),
 
                     // Payment Method Section
-                    const Text("Payment Method", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                    const Text("Payment Method",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16)),
                     const SizedBox(height: 12),
-                    
-                    _buildPaymentOption(0, "Credit / Debit Card", Icons.credit_card),
-                    _buildPaymentOption(1, "PayPal", Icons.payment), // Using generic icon for PayPal
+
+                    _buildPaymentOption(
+                        0, "Credit / Debit Card", Icons.credit_card),
+                    _buildPaymentOption(1, "PayPal",
+                        Icons.payment), // Using generic icon for PayPal
                     _buildPaymentOption(2, "Apple Pay", Icons.phone_iphone),
 
                     const SizedBox(height: 40),
@@ -133,17 +158,22 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         onPressed: () {
                           // Mock Payment Processing
                           ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text("Processing Payment... (Mock)")),
+                            const SnackBar(
+                                content: Text("Processing Payment... (Mock)")),
                           );
-                          
+
                           // Simulate network delay
                           Future.delayed(const Duration(seconds: 2), () {
+                            if (!mounted) return;
                             // 1. Send the plan name back to the previous screen
-                            Navigator.pop(context, widget.planName); 
-                            
+                            // ignore: use_build_context_synchronously
+                            Navigator.pop(context, widget.planName);
+
                             // 2. Show Success Message
+                            // ignore: use_build_context_synchronously
                             ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(content: Text("Welcome to Premium!")),
+                              const SnackBar(
+                                  content: Text("Welcome to Premium!")),
                             );
                           });
                         },
@@ -157,11 +187,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         ),
                         child: Text(
                           "Pay ${widget.price}",
-                          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                          style: const TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),
-                    
+
                     const SizedBox(height: 20),
                     Center(
                       child: Text(
