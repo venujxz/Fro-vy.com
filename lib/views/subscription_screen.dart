@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'checkout_screen.dart'; 
+import 'checkout_screen.dart';
 
 class SubscriptionScreen extends StatefulWidget {
   const SubscriptionScreen({super.key});
@@ -60,13 +60,16 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
         child: Column(
           children: [
             // Header
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 24),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 24),
               child: Column(
-                children: const [
+                children: [
                   Text(
                     "Upgrade Your Health Journey",
-                    style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 8),
@@ -82,9 +85,9 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
             // Plan Cards
             Container(
               padding: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: frovyLightBg,
-                borderRadius: const BorderRadius.only(
+                borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),
                 ),
@@ -107,7 +110,8 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                     // Logic: If _currentPlan is Free, show "Current Plan"
                     // Otherwise, allow "Downgrade" (or switch)
                     isCurrent: _currentPlan == "Free",
-                    buttonText: _currentPlan == "Free" ? "Current Plan" : "Downgrade",
+                    buttonText:
+                        _currentPlan == "Free" ? "Current Plan" : "Downgrade",
                     onTap: () => setState(() => _currentPlan = "Free"),
                   ),
 
@@ -132,21 +136,32 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                         buttonColor: frovyGreen,
                         // Logic: Check if Pro is active
                         isCurrent: _currentPlan == "Pro",
-                        buttonText: _currentPlan == "Pro" ? "Current Plan" : "Upgrade Now",
+                        buttonText: _currentPlan == "Pro"
+                            ? "Current Plan"
+                            : "Upgrade Now",
                         onTap: () {
-                          if (_currentPlan != "Pro") _handleUpgrade("Pro", "\$9.99");
+                          if (_currentPlan != "Pro") {
+                            _handleUpgrade("Pro", "\$9.99");
+                          }
                         },
                       ),
                       Positioned(
-                        top: -12, left: 0, right: 0,
+                        top: -12,
+                        left: 0,
+                        right: 0,
                         child: Center(
                           child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 6),
                             decoration: BoxDecoration(
                               color: const Color(0xFFFF7043),
                               borderRadius: BorderRadius.circular(20),
                             ),
-                            child: const Text("Most Popular", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold)),
+                            child: const Text("Most Popular",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold)),
                           ),
                         ),
                       ),
@@ -172,12 +187,16 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                     textColor: Colors.black87,
                     // Logic: Check if Premium is active
                     isCurrent: _currentPlan == "Premium",
-                    buttonText: _currentPlan == "Premium" ? "Current Plan" : "Upgrade Now",
+                    buttonText: _currentPlan == "Premium"
+                        ? "Current Plan"
+                        : "Upgrade Now",
                     onTap: () {
-                      if (_currentPlan != "Premium") _handleUpgrade("Premium", "\$19.99");
+                      if (_currentPlan != "Premium") {
+                        _handleUpgrade("Premium", "\$19.99");
+                      }
                     },
                   ),
-                  
+
                   const SizedBox(height: 40),
                 ],
               ),
@@ -210,7 +229,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
         border: isCurrent ? Border.all(color: frovyGreen, width: 2) : null,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -224,25 +243,35 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(title, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                  Text(period, style: TextStyle(color: Colors.grey[600], fontSize: 12)),
+                  Text(title,
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                  Text(period,
+                      style: TextStyle(color: Colors.grey[600], fontSize: 12)),
                 ],
               ),
-              Text(price, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+              Text(price,
+                  style: const TextStyle(
+                      fontSize: 24, fontWeight: FontWeight.bold)),
             ],
           ),
           const SizedBox(height: 20),
           Column(
-            children: features.map((feature) => Padding(
-              padding: const EdgeInsets.only(bottom: 8.0),
-              child: Row(
-                children: [
-                  Icon(Icons.check, size: 16, color: frovyGreen),
-                  const SizedBox(width: 8),
-                  Expanded(child: Text(feature, style: TextStyle(color: Colors.grey[700], fontSize: 13))),
-                ],
-              ),
-            )).toList(),
+            children: features
+                .map((feature) => Padding(
+                      padding: const EdgeInsets.only(bottom: 8.0),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.check, size: 16, color: frovyGreen),
+                          const SizedBox(width: 8),
+                          Expanded(
+                              child: Text(feature,
+                                  style: TextStyle(
+                                      color: Colors.grey[700], fontSize: 13))),
+                        ],
+                      ),
+                    ))
+                .toList(),
           ),
           const SizedBox(height: 20),
           SizedBox(
@@ -255,9 +284,11 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                 backgroundColor: isCurrent ? Colors.grey[300] : buttonColor,
                 foregroundColor: isCurrent ? Colors.black54 : textColor,
                 elevation: 0,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
               ),
-              child: Text(buttonText, style: const TextStyle(fontWeight: FontWeight.bold)),
+              child: Text(buttonText,
+                  style: const TextStyle(fontWeight: FontWeight.bold)),
             ),
           ),
         ],
