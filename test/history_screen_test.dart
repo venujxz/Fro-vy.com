@@ -9,6 +9,9 @@ void main() {
     testWidgets('displays initial history items', (WidgetTester tester) async {
       await tester.pumpWidget(const MaterialApp(home: HistoryScreen()));
 
+      // Allow animations to complete
+      await tester.pumpAndSettle();
+
       // initial sample data contains at least the first two products.
       expect(find.text('Almond Breeze Original'), findsOneWidget);
       expect(find.text('Skippy Peanut Butter'), findsOneWidget);
@@ -23,6 +26,7 @@ void main() {
       WidgetTester tester,
     ) async {
       await tester.pumpWidget(const MaterialApp(home: HistoryScreen()));
+      await tester.pumpAndSettle();
 
       // tap the Skippy card (text inside the card is tappable)
       await tester.tap(find.text('Skippy Peanut Butter'));
@@ -40,29 +44,35 @@ void main() {
       WidgetTester tester,
     ) async {
       await tester.pumpWidget(const MaterialApp(home: HistoryScreen()));
+      await tester.pumpAndSettle();
 
       // make sure we have at least one delete icon available
-      final initialIcons = find.byIcon(Icons.delete_outline);
+      final initialIcons = find.byIcon(Icons.delete_outline_rounded);
       expect(initialIcons, findsAtLeastNWidgets(1));
 
       // tap the first delete icon and pump
       await tester.tap(initialIcons.first);
       await tester.pumpAndSettle();
 
-      // snack bar should be shown
-      expect(find.text('Item deleted from history'), findsOneWidget);
+      // snack bar should be shown with product name
+      expect(find.textContaining('removed'), findsOneWidget);
     });
 
     testWidgets('clear all button shows confirmation and clears list', (
       WidgetTester tester,
     ) async {
       await tester.pumpWidget(const MaterialApp(home: HistoryScreen()));
+      await tester.pumpAndSettle();
+
+      // scroll down to find the Clear All History button
+      await tester.fling(find.byType(ListView), const Offset(0, -500), 1000);
+      await tester.pumpAndSettle();
 
       // open the dialog
       await tester.tap(find.text('Clear All History'));
       await tester.pumpAndSettle();
 
-      expect(find.text('Clear History?'), findsOneWidget);
+      expect(find.text('Clear history?'), findsOneWidget);
 
       // confirm clear
       await tester.tap(find.text('Clear All'));

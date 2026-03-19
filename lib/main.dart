@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
-import 'views/home_screen.dart';
+import 'package:frovy_app/views/home_screen.dart';
 import 'views/login_step1_screen.dart';
-import 'views/theme_notifier.dart'; // Import the new notifier
+import 'views/theme_notifier.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
@@ -10,7 +10,6 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  // 1. Try to find cameras
   List<CameraDescription> cameras = [];
   try {
     cameras = await availableCameras();
@@ -18,7 +17,6 @@ Future<void> main() async {
     debugPrint("Camera Error: $e");
   }
 
-  // 2. Start the app
   runApp(FrovyApp(cameras: cameras));
 }
 
@@ -29,20 +27,24 @@ class FrovyApp extends StatelessWidget {
 
   static const String homeRouteName = '/home';
 
+  Route<dynamic>? _onGenerateRoute(RouteSettings settings) {
+    if (settings.name == homeRouteName) {
+      return MaterialPageRoute(
+        builder: (context) => HomeScreen(cameras: cameras),
+      );
+    }
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
-    // Wrap the entire app in a ValueListenableBuilder
-    // This listens to 'themeNotifier' and rebuilds when it changes
     return ValueListenableBuilder<ThemeMode>(
       valueListenable: themeNotifier,
       builder: (context, currentMode, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Fro-vy',
-
-          // --- THEME CONFIGURATION ---
-          themeMode: currentMode, // This is the magic line that switches modes
-          // 1. LIGHT THEME DEFINITION
+          themeMode: currentMode,
           theme: ThemeData(
             brightness: Brightness.light,
             colorScheme: ColorScheme.fromSeed(
@@ -55,29 +57,24 @@ class FrovyApp extends StatelessWidget {
               foregroundColor: Colors.white,
             ),
           ),
-
-          // 2. DARK THEME DEFINITION
           darkTheme: ThemeData(
             brightness: Brightness.dark,
             colorScheme: ColorScheme.fromSeed(
               seedColor: const Color(0xFF6AA15E),
               brightness: Brightness.dark,
             ),
-            scaffoldBackgroundColor: const Color(
-              0xFF121212,
-            ), // Dark grey background
+            scaffoldBackgroundColor: const Color(0xFF121212),
             useMaterial3: true,
             appBarTheme: const AppBarTheme(
-              backgroundColor: Color(0xFF1F1F1F), // Darker header
+              backgroundColor: Color(0xFF1F1F1F),
               foregroundColor: Colors.white,
             ),
             cardTheme: const CardThemeData(
-              color: Color(0xFF2C2C2C), // Dark cards
+              color: Color(0xFF2C2C2C),
             ),
           ),
-
           home: const LoginStep1Screen(),
-          routes: {homeRouteName: (context) => HomeScreen(cameras: cameras)},
+          onGenerateRoute: _onGenerateRoute,
         );
       },
     );

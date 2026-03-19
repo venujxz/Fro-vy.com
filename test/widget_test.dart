@@ -10,11 +10,12 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:frovy_app/main.dart';
 
 void main() {
-  testWidgets('App loads with no cameras', (WidgetTester tester) async {
+  testWidgets('App loads and shows login screen', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const FrovyApp(cameras: []));
 
-    // Verify that the app displays the no camera message
-    expect(find.text('No Camera Found (Simulator Mode)'), findsOneWidget);
+    // Verify that the app displays the login screen with FRO-VY title
+    expect(find.text('FRO-VY'), findsOneWidget);
+    expect(find.text("Let's start by getting to know you"), findsOneWidget);
   });
 }
