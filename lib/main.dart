@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'views/home_screen.dart';
+import 'views/login_step1_screen.dart';
 import 'views/theme_notifier.dart'; // Import the new notifier
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   // 1. Try to find cameras
   List<CameraDescription> cameras = [];
   try {
     cameras = await availableCameras();
   } catch (e) {
-    print("Camera Error: $e");
+    debugPrint("Camera Error: $e");
   }
 
   // 2. Start the app
@@ -23,6 +27,8 @@ class FrovyApp extends StatelessWidget {
 
   const FrovyApp({super.key, required this.cameras});
 
+  static const String homeRouteName = '/home';
+
   @override
   Widget build(BuildContext context) {
     // Wrap the entire app in a ValueListenableBuilder
@@ -33,14 +39,15 @@ class FrovyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Fro-vy',
-          
+
           // --- THEME CONFIGURATION ---
           themeMode: currentMode, // This is the magic line that switches modes
-
           // 1. LIGHT THEME DEFINITION
           theme: ThemeData(
             brightness: Brightness.light,
-            colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF6AA15E)),
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: const Color(0xFF6AA15E),
+            ),
             scaffoldBackgroundColor: const Color(0xFFF8F9FA),
             useMaterial3: true,
             appBarTheme: const AppBarTheme(
@@ -56,7 +63,9 @@ class FrovyApp extends StatelessWidget {
               seedColor: const Color(0xFF6AA15E),
               brightness: Brightness.dark,
             ),
-            scaffoldBackgroundColor: const Color(0xFF121212), // Dark grey background
+            scaffoldBackgroundColor: const Color(
+              0xFF121212,
+            ), // Dark grey background
             useMaterial3: true,
             appBarTheme: const AppBarTheme(
               backgroundColor: Color(0xFF1F1F1F), // Darker header
@@ -66,8 +75,9 @@ class FrovyApp extends StatelessWidget {
               color: Color(0xFF2C2C2C), // Dark cards
             ),
           ),
-          
-          home: HomeScreen(cameras: cameras),
+
+          home: const LoginStep1Screen(),
+          routes: {homeRouteName: (context) => HomeScreen(cameras: cameras)},
         );
       },
     );
