@@ -177,6 +177,57 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
                         ),
                       ),
                     ),
+                    const SizedBox(height: 18),
+                    Row(
+                      children: [
+                        Expanded(child: Divider(color: subtitleColor.withAlpha(100))),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 12),
+                          child: Text(
+                            "or".tr(),
+                            style: TextStyle(color: subtitleColor, fontSize: 14),
+                          ),
+                        ),
+                        Expanded(child: Divider(color: subtitleColor.withAlpha(100))),
+                      ],
+                    ),
+                    const SizedBox(height: 18),
+                    SizedBox(
+                      width: double.infinity,
+                      child: OutlinedButton.icon(
+                        style: OutlinedButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          side: BorderSide(color: isDark ? Colors.grey[600]! : const Color(0xFFE2E8F0)),
+                        ),
+                        onPressed: () {
+                          // TODO: Implement Google Sign-In
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text("google_signin_coming_soon".tr())),
+                          );
+                        },
+                        icon: Image.asset(
+                          'assets/images/google_logo.png',
+                          height: 20,
+                          width: 20,
+                          errorBuilder: (context, error, stackTrace) => Icon(
+                            Icons.g_mobiledata,
+                            size: 24,
+                            color: textColor,
+                          ),
+                        ),
+                        label: Text(
+                          "sign_in_google".tr(),
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: textColor,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),

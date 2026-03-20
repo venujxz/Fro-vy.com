@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
-import 'theme_notifier.dart'; // Import the notifier
+import 'package:easy_localization/easy_localization.dart';
+import 'theme_notifier.dart';
 import 'welcome_screen.dart';
 import '../util/app_colors.dart';
 import '../services/prefs_service.dart';
@@ -13,11 +13,6 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  // Brand Colors (Getters allow them to adapt if needed)
-  Color get frovyGreen => AppColors.frovyGreen;
-  Color get frovyRed => AppColors.frovyRed;
-  
-  // Local state for notification toggles
   bool _pushNotifications = true;
   bool _emailUpdates = true;
 
@@ -40,200 +35,338 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Check if the system is currently in dark mode
-    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
-      // In Dark Mode, we don't want the green background
-      backgroundColor: isDarkMode ? null : frovyGreen, 
-      
+      backgroundColor: isDark ? AppColors.darkBackground : AppColors.frovyGreen,
       appBar: AppBar(
-        // In Dark Mode, AppBar color comes from the theme
-        backgroundColor: isDarkMode ? null : frovyGreen,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: isDarkMode ? Colors.white : Colors.black),
-          onPressed: () => Navigator.pop(context),
+        leading: GestureDetector(
+          onTap: () => Navigator.pop(context),
+          child: Container(
+            margin: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.2),
+              shape: BoxShape.circle,
+            ),
+            child: const Icon(Icons.chevron_left_rounded, color: Colors.white, size: 28),
+          ),
         ),
         title: Text(
           "settings".tr(),
-          style: TextStyle(
-            color: isDarkMode ? Colors.white : Colors.black, 
-            fontWeight: FontWeight.bold
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
           ),
         ),
       ),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: isDarkMode 
-            ? null // No gradient in dark mode
-            : BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [frovyGreen, const Color(0xFFFFF9C4)],
-                ),
-              ),
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            children: [
-              // 1. Appearance Section (THE DARK MODE TOGGLE)
-              _buildSectionCard(
-                context,
-                title: "appearance".tr(),
-                icon: Icons.dark_mode_outlined,
-                iconColor: Colors.purple,
-                children: [
-                  _buildToggleTile(
-                    "dark_mode".tr(), 
-                    "switch_dark_theme".tr(), 
-                    isDarkMode, // The switch position depends on the actual theme
-                    (val) {
-                       // This triggers the global theme change
-                       themeNotifier.toggleTheme(val);
-                    }
-                  ),
-                ],
-              ),
+      body: Column(
+        children: [
+          // Spacer for top area
+          const SizedBox(height: 8),
 
-              const SizedBox(height: 20),
-
-              // 2. Notifications
-              _buildSectionCard(
-                context,
-                title: "notifications".tr(),
-                icon: Icons.notifications_none,
-                iconColor: const Color(0xFFFF8A65),
-                children: [
-                  _buildToggleTile("push_notifications".tr(), "receive_alerts".tr(), _pushNotifications, (v) {
-                    setState(() => _pushNotifications = v);
-                    PrefsService.setPushNotifications(v);
-                  }),
-                  _buildToggleTile("email_updates".tr(), "health_tips".tr(), _emailUpdates, (v) {
-                    setState(() => _emailUpdates = v);
-                    PrefsService.setEmailUpdates(v);
-                  }),
-                ],
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF1A1A1A) : const Color(0xFFF2F7F2),
+                borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
               ),
-              
-              
-              const SizedBox(height: 20),
-
-              // 3. Danger Zone
-              Container(
+              child: SingleChildScrollView(
                 padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: isDarkMode ? const Color(0xFF2C2C2C) : Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                ),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("danger_zone".tr(), style: TextStyle(color: frovyRed, fontWeight: FontWeight.bold)),
+                    // ── Appearance ────────────────────
+                    _buildSection(
+                      isDark: isDark,
+                      icon: Icons.palette_outlined,
+                      iconColor: Colors.purple,
+                      title: "appearance".tr(),
+                      children: [
+                        _buildToggleRow(
+                          icon: isDark
+                              ? Icons.dark_mode_rounded
+                              : Icons.light_mode_rounded,
+                          iconColor:
+                              isDark ? Colors.indigo : Colors.orange,
+                          title: "dark_mode".tr(),
+                          subtitle: "switch_dark_theme".tr(),
+                          value: isDark,
+                          onChanged: (val) => themeNotifier.toggleTheme(val),
+                          isDark: isDark,
+                        ),
+                      ],
+                    ),
+
                     const SizedBox(height: 16),
-                    SizedBox(
-                      width: double.infinity,
-                      child: OutlinedButton(
-                        onPressed: () {
-                          showDialog(
-                            context: context,
-                            builder: (ctx) => AlertDialog(
-                              title: Row(
-                                children: [
-                                  Icon(Icons.warning_amber_rounded, color: frovyRed),
-                                  const SizedBox(width: 8),
-                                  Text("delete_account".tr()),
-                                ],
-                              ),
-                              content: Text("delete_account_confirm".tr()),
-                              actions: [
-                                TextButton(
-                                  onPressed: () => Navigator.pop(ctx),
-                                  child: Text("cancel".tr()),
+
+                    // ── Notifications ─────────────────
+                    _buildSection(
+                      isDark: isDark,
+                      icon: Icons.notifications_outlined,
+                      iconColor: const Color(0xFFFF8A65),
+                      title: "notifications".tr(),
+                      children: [
+                        _buildToggleRow(
+                          icon: Icons.phone_android_rounded,
+                          iconColor: AppColors.frovyGreen,
+                          title: "push_notifications".tr(),
+                          subtitle: "receive_alerts".tr(),
+                          value: _pushNotifications,
+                          onChanged: (v) {
+                            setState(() => _pushNotifications = v);
+                            PrefsService.setPushNotifications(v);
+                          },
+                          isDark: isDark,
+                        ),
+                        Divider(
+                            height: 1,
+                            color: Colors.grey.withValues(alpha: 0.1),
+                            indent: 52),
+                        _buildToggleRow(
+                          icon: Icons.email_outlined,
+                          iconColor: Colors.blue,
+                          title: "email_updates".tr(),
+                          subtitle: "health_tips".tr(),
+                          value: _emailUpdates,
+                          onChanged: (v) {
+                            setState(() => _emailUpdates = v);
+                            PrefsService.setEmailUpdates(v);
+                          },
+                          isDark: isDark,
+                          isLast: true,
+                        ),
+                      ],
+                    ),
+
+                    const SizedBox(height: 16),
+
+                    // ── Danger zone ───────────────────
+                    Container(
+                      decoration: BoxDecoration(
+                        color: isDark ? AppColors.darkCard : Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.04),
+                            blurRadius: 10,
+                          ),
+                        ],
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.all(8),
+                                  decoration: BoxDecoration(
+                                    color: AppColors.frovyRed
+                                        .withValues(alpha: 0.1),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: const Icon(Icons.warning_amber_rounded,
+                                      color: AppColors.frovyRed, size: 18),
                                 ),
-                                TextButton(
-                                  onPressed: () async {
-                                    await PrefsService.clearAll();
-                                    if (!context.mounted) return;
-                                    Navigator.pop(ctx);
-                                    Navigator.of(context).pushAndRemoveUntil(
-                                      MaterialPageRoute(
-                                        builder: (_) => const WelcomeScreen(),
-                                      ),
-                                      (route) => false,
-                                    );
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(content: Text("delete_account_success".tr())),
-                                    );
-                                  },
-                                  child: Text(
-                                    "delete_account_btn".tr(),
-                                    style: TextStyle(color: frovyRed, fontWeight: FontWeight.bold),
+                                const SizedBox(width: 10),
+                                Text(
+                                  "danger_zone".tr(),
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                    color: AppColors.frovyRed,
                                   ),
                                 ),
                               ],
                             ),
-                          );
-                        },
-                        style: OutlinedButton.styleFrom(
-                          foregroundColor: frovyRed, 
-                          side: BorderSide(color: frovyRed)
+                            const SizedBox(height: 16),
+                            SizedBox(
+                              width: double.infinity,
+                              child: OutlinedButton.icon(
+                                onPressed: () => _showDeleteDialog(context),
+                                icon: const Icon(Icons.delete_forever_rounded,
+                                    size: 18),
+                                label: Text("delete_account".tr()),
+                                style: OutlinedButton.styleFrom(
+                                  foregroundColor: AppColors.frovyRed,
+                                  side: BorderSide(
+                                      color: AppColors.frovyRed
+                                          .withValues(alpha: 0.4)),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 13),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                        child: Text("delete_account".tr()),
                       ),
                     ),
+
+                    const SizedBox(height: 30),
                   ],
                 ),
               ),
-            ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
 
-  // --- Helper Widgets ---
+  void _showDeleteDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: Row(
+          children: [
+            const Icon(Icons.warning_amber_rounded, color: AppColors.frovyRed),
+            const SizedBox(width: 8),
+            Text("delete_account".tr(),
+                style: const TextStyle(fontWeight: FontWeight.bold)),
+          ],
+        ),
+        content: Text("delete_account_confirm".tr()),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: Text("cancel".tr(),
+                style: TextStyle(color: Colors.grey[600])),
+          ),
+          ElevatedButton(
+            onPressed: () async {
+              await PrefsService.clearAll();
+              if (!context.mounted) return;
+              Navigator.pop(ctx);
+              Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(builder: (_) => const WelcomeScreen()),
+                (route) => false,
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppColors.frovyRed,
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              elevation: 0,
+            ),
+            child: Text("delete_account_btn".tr()),
+          ),
+        ],
+      ),
+    );
+  }
 
-  Widget _buildSectionCard(BuildContext context, {required String title, required IconData icon, required Color iconColor, required List<Widget> children}) {
-    // Check theme for card color
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+  Widget _buildSection({
+    required bool isDark,
+    required IconData icon,
+    required Color iconColor,
+    required String title,
+    required List<Widget> children,
+  }) {
     return Container(
-      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF2C2C2C) : Colors.white, // Dark grey for cards in Dark Mode
+        color: isDark ? AppColors.darkCard : Colors.white,
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
-          if (!isDark) // Only show shadow in light mode
-            BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 4))
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.04),
+            blurRadius: 10,
+          ),
         ],
       ),
       child: Column(
         children: [
-          Row(children: [
-            Icon(icon, color: iconColor), 
-            const SizedBox(width: 10), 
-            Text(title, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16))
-          ]),
-          const SizedBox(height: 10),
-          ...children
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 16, 16, 12),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: iconColor.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Icon(icon, color: iconColor, size: 18),
+                ),
+                const SizedBox(width: 10),
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                    color: isDark ? Colors.white : AppColors.frovyText,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Divider(height: 1, color: Colors.grey.withValues(alpha: 0.1)),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            child: Column(children: children),
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildToggleTile(String title, String subtitle, bool value, Function(bool) onChanged) {
-    return ListTile(
-      contentPadding: EdgeInsets.zero,
-      title: Text(title, style: const TextStyle(fontWeight: FontWeight.w500)),
-      subtitle: Text(subtitle, style: const TextStyle(fontSize: 12, color: Colors.grey)),
-      trailing: Switch(
-        value: value,
-        onChanged: onChanged,
-        activeTrackColor: AppColors.frovyGreen
+  Widget _buildToggleRow({
+    required IconData icon,
+    required Color iconColor,
+    required String title,
+    required String subtitle,
+    required bool value,
+    required Function(bool) onChanged,
+    required bool isDark,
+    bool isLast = false,
+  }) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 6),
+      child: Row(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(7),
+            decoration: BoxDecoration(
+              color: iconColor.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Icon(icon, color: iconColor, size: 16),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 14,
+                    color: isDark ? Colors.white : AppColors.frovyText,
+                  ),
+                ),
+                Text(
+                  subtitle,
+                  style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+                ),
+              ],
+            ),
+          ),
+          Switch(
+            value: value,
+            onChanged: onChanged,
+            activeColor: AppColors.frovyGreen,
+            activeTrackColor: AppColors.frovyGreen.withValues(alpha: 0.3),
+          ),
+        ],
       ),
     );
   }

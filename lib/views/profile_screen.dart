@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
+import 'package:easy_localization/easy_localization.dart';
 import 'edit_profile_screen.dart';
 import '../util/app_colors.dart';
 import '../util/page_transitions.dart';
@@ -13,12 +13,6 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  // Brand Colors
-  final Color frovyGreen = AppColors.frovyGreen;
-  final Color frovyText = AppColors.frovyText;
-  final Color frovyLightBg = AppColors.frovyLightBg;
-
-  // --- STATE VARIABLES (Data that can change) ---
   String name = "";
   String email = "";
   String phone = "";
@@ -26,7 +20,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   String _gender = "";
   int _scanCount = 0;
   String _currentPlan = "Free";
-
   String allergies = "";
   String conditions = "";
 
@@ -48,22 +41,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
       phone = userProfile.phone;
       dob = userProfile.dob;
       _gender = userProfile.gender;
-      allergies = healthProfile.allergiesDisplay.isEmpty ? "None" : healthProfile.allergiesDisplay;
-      conditions = healthProfile.medicalConditions.isEmpty ? "None" : healthProfile.medicalConditions;
+      allergies = healthProfile.allergiesDisplay.isEmpty
+          ? "None"
+          : healthProfile.allergiesDisplay;
+      conditions = healthProfile.medicalConditions.isEmpty
+          ? "None"
+          : healthProfile.medicalConditions;
       _scanCount = scanCount;
       _currentPlan = currentPlan;
     });
   }
 
-  // --- FUNCTION TO HANDLE EDITING ---
   Future<void> _navigateAndEdit(int tabIndex) async {
-    // Wait for the Edit Screen to return data
     final result = await Navigator.push(
       context,
-      PageTransitions.slideUp<Map<String, dynamic>>(EditProfileScreen(initialIndex: tabIndex)),
+      PageTransitions.slideUp<Map<String, dynamic>>(
+          EditProfileScreen(initialIndex: tabIndex)),
     );
-
-    // If data was returned, update the UI and persist
     if (result != null) {
       setState(() {
         name = result['name'];
@@ -71,12 +65,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
         phone = result['phone'];
         dob = result['dob'];
         _gender = result['gender'];
-
-        // Handle the list of allergies
-        List<String> allergyList = result['allergies'];
+        final List<String> allergyList = result['allergies'];
         allergies = allergyList.isEmpty ? "None" : allergyList.join(", ");
-
-        conditions = result['conditions'].toString().isEmpty ? "None" : result['conditions'];
+        conditions = result['conditions'].toString().isEmpty
+            ? "None"
+            : result['conditions'];
       });
     }
   }
@@ -84,240 +77,384 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
+      backgroundColor: isDark ? AppColors.darkBackground : AppColors.frovyGreen,
       appBar: AppBar(
-        backgroundColor: isDark ? null : frovyGreen,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.pop(context),
+        leading: GestureDetector(
+          onTap: () => Navigator.pop(context),
+          child: Container(
+            margin: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.2),
+              shape: BoxShape.circle,
+            ),
+            child: const Icon(Icons.chevron_left_rounded, color: Colors.white, size: 28),
+          ),
         ),
         title: Text(
           "account_details".tr(),
-          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
         ),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            // 1. The Green Header & Profile Card Stack
-            Stack(
-              clipBehavior: Clip.none,
-              alignment: Alignment.topCenter,
-              children: [
-                // Green Background Block
-                Container(
-                  height: 100,
-                  width: double.infinity,
-                  color: frovyGreen,
-                ),
-                // The White Profile Card
-                Container(
-                  margin: const EdgeInsets.fromLTRB(24, 20, 24, 0),
-                  padding: const EdgeInsets.all(24),
-                  decoration: BoxDecoration(
-                    color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.05),
-                        blurRadius: 10,
-                        offset: const Offset(0, 4),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Avatar and Edit Button Row
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Stack(
-                            children: [
-                              Container(
-                                width: 80,
-                                height: 80,
-                                decoration: BoxDecoration(
-                                  color: frovyGreen.withValues(alpha: 0.2),
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Icon(Icons.person, size: 60, color: frovyGreen),
-                              ),
-                              Positioned(
-                                bottom: 0,
-                                right: 0,
-                                child: Container(
-                                  padding: const EdgeInsets.all(4),
-                                  decoration: const BoxDecoration(
-                                    color: Colors.blue,
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: const Icon(Icons.camera_alt, color: Colors.white, size: 18),
-                                ),
-                              )
-                            ],
-                          ),
-                          // Edit Profile Button
-                          OutlinedButton.icon(
-                            onPressed: () => _navigateAndEdit(0), // 0 = Personal Tab
-                            icon: const Icon(Icons.edit, size: 14),
-                            label: Text("edit_profile".tr(), style: const TextStyle(fontSize: 12)),
-                            style: OutlinedButton.styleFrom(
-                              foregroundColor: isDark ? Colors.grey[300] : Colors.grey[700],
-                              side: BorderSide(color: Colors.grey.shade300),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 20),
-                      
-                      // User Details 
-                      _buildLabel("full_name".tr(), name),
-                      _buildLabel("email".tr(), email),
-                      _buildLabel("phone_number".tr(), phone),
-                      _buildLabel("date_of_birth".tr(), dob),
-                      _buildLabel("gender".tr(), _gender.isNotEmpty ? _gender.tr() : ""), 
-
-                      const SizedBox(height: 24),
-                      const Divider(),
-                      const SizedBox(height: 16),
-
-                      Text("account_statistics".tr(), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
-                      const SizedBox(height: 12),
-                      Row(
-                        children: [
-                          Expanded(child: _buildStatCard("$_scanCount", "scans_made".tr())),
-                          const SizedBox(width: 12),
-                          Expanded(child: _buildStatCard(_currentPlan.toLowerCase().tr(), "plan_type".tr())),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-
-            const SizedBox(height: 24),
-
-            // 2. Health Profile Section
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 24),
-              padding: const EdgeInsets.all(24),
+        actions: [
+          GestureDetector(
+            onTap: () => _navigateAndEdit(0),
+            child: Container(
+              margin: const EdgeInsets.only(right: 16),
+              padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
-                borderRadius: BorderRadius.circular(20),
+                color: Colors.white.withValues(alpha: 0.2),
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(Icons.edit_outlined, color: Colors.white, size: 18),
+            ),
+          ),
+        ],
+      ),
+      body: Column(
+        children: [
+          // ── Avatar + name card ──────────────────────
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 4, 20, 20),
+            child: Container(
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: isDark ? AppColors.darkCard : Colors.white,
+                borderRadius: BorderRadius.circular(24),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.05),
-                    blurRadius: 10,
+                    color: Colors.black.withValues(alpha: 0.08),
+                    blurRadius: 20,
                     offset: const Offset(0, 4),
                   ),
                 ],
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: Row(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  // Avatar
+                  Stack(
                     children: [
-                      Text(
-                        "health_profile".tr(),
-                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      Container(
+                        width: 68,
+                        height: 68,
+                        decoration: BoxDecoration(
+                          color: AppColors.frovyGreen.withValues(alpha: 0.15),
+                          shape: BoxShape.circle,
+                        ),
+                        child: const Icon(Icons.person_rounded,
+                            size: 40, color: AppColors.frovyGreen),
                       ),
-                      // Edit Health Button
-                      TextButton.icon(
-                        onPressed: () => _navigateAndEdit(1), // 1 = Health Tab
-                        icon: const Icon(Icons.edit, size: 16),
-                        label: Text("edit_profile".tr()),
-                        style: TextButton.styleFrom(foregroundColor: isDark ? Colors.grey[300] : Colors.grey[700]),
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: Container(
+                          padding: const EdgeInsets.all(5),
+                          decoration: const BoxDecoration(
+                            color: Colors.blue,
+                            shape: BoxShape.circle,
+                          ),
+                          child: const Icon(Icons.camera_alt_rounded,
+                              color: Colors.white, size: 13),
+                        ),
                       ),
                     ],
                   ),
-                  const Divider(),
-                  const SizedBox(height: 10),
-                  
-                  // Health Details
-                  _buildHealthItem("allergies".tr(), allergies),
-                  _buildHealthItem("medical_conditions".tr(), conditions),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          name.isEmpty ? "—" : name,
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: isDark ? Colors.white : AppColors.frovyText,
+                          ),
+                        ),
+                        const SizedBox(height: 3),
+                        Text(
+                          email.isEmpty ? "—" : email,
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Colors.grey[500],
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        // Plan badge
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 4),
+                          decoration: BoxDecoration(
+                            color: AppColors.frovyGreen.withValues(alpha: 0.12),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Text(
+                            _currentPlan,
+                            style: const TextStyle(
+                              fontSize: 11,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.frovyGreen,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
-            
-            const SizedBox(height: 40),
-          ],
-        ),
-      ),
-    );
-  }
-
-  // --- Helper Widgets ---
-
-  Widget _buildLabel(String label, String value) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            label,
-            style: TextStyle(color: Colors.grey[500], fontSize: 12),
           ),
-          const SizedBox(height: 4),
-          Text(
-            value,
-            style: TextStyle(color: isDark ? Colors.white : frovyText, fontSize: 16, fontWeight: FontWeight.w500),
+
+          // ── Scrollable body ────────────────────────
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF1A1A1A) : const Color(0xFFF2F7F2),
+                borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
+              ),
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  children: [
+                    // Stats row
+                    Row(
+                      children: [
+                        Expanded(
+                          child: _buildStatCard(
+                            _scanCount.toString(),
+                            "scans_made".tr(),
+                            Icons.qr_code_scanner_rounded,
+                            AppColors.frovyGreen,
+                            isDark,
+                          ),
+                        ),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: _buildStatCard(
+                            _currentPlan,
+                            "plan_type".tr(),
+                            Icons.workspace_premium_rounded,
+                            AppColors.frovyGold,
+                            isDark,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    const SizedBox(height: 16),
+
+                    // Personal info card
+                    _buildInfoCard(
+                      title: "personal_details".tr(),
+                      icon: Icons.person_outline_rounded,
+                      onEdit: () => _navigateAndEdit(0),
+                      isDark: isDark,
+                      children: [
+                        _buildInfoRow("full_name".tr(), name.isEmpty ? "—" : name, isDark),
+                        _buildInfoRow("phone_number".tr(), phone.isEmpty ? "—" : phone, isDark),
+                        _buildInfoRow("date_of_birth".tr(), dob.isEmpty ? "—" : dob, isDark),
+                        _buildInfoRow(
+                          "gender".tr(),
+                          _gender.isNotEmpty ? _gender.tr() : "—",
+                          isDark,
+                          isLast: true,
+                        ),
+                      ],
+                    ),
+
+                    const SizedBox(height: 16),
+
+                    // Health profile card
+                    _buildInfoCard(
+                      title: "health_profile".tr(),
+                      icon: Icons.favorite_border_rounded,
+                      onEdit: () => _navigateAndEdit(1),
+                      isDark: isDark,
+                      children: [
+                        _buildInfoRow("allergies".tr(), allergies, isDark),
+                        _buildInfoRow("medical_conditions".tr(), conditions, isDark, isLast: true),
+                      ],
+                    ),
+
+                    const SizedBox(height: 30),
+                  ],
+                ),
+              ),
+            ),
           ),
         ],
       ),
     );
   }
 
-  Widget _buildStatCard(String title, String subtitle) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+  Widget _buildStatCard(
+      String value, String label, IconData icon, Color color, bool isDark) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 16),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1A1A1A) : frovyLightBg,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Column(
-        children: [
-          Text(
-            title,
-            style: TextStyle(color: frovyGreen, fontSize: 20, fontWeight: FontWeight.bold),
+        color: isDark ? AppColors.darkCard : Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 10,
           ),
-          const SizedBox(height: 4),
-          Text(
-            subtitle,
-            style: TextStyle(color: Colors.grey[600], fontSize: 12),
+        ],
+      ),
+      child: Row(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(9),
+            decoration: BoxDecoration(
+              color: color.withValues(alpha: 0.12),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Icon(icon, color: color, size: 18),
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  value,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: color,
+                  ),
+                ),
+                Text(
+                  label,
+                  style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+                ),
+              ],
+            ),
           ),
         ],
       ),
     );
   }
 
-  Widget _buildHealthItem(String title, String value) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(title, style: TextStyle(color: Colors.grey[500], fontSize: 12)),
-          const SizedBox(height: 4),
-          Text(
-            value,
-            style: TextStyle(color: isDark ? Colors.white70 : Colors.black87, fontSize: 14),
+  Widget _buildInfoCard({
+    required String title,
+    required IconData icon,
+    required VoidCallback onEdit,
+    required bool isDark,
+    required List<Widget> children,
+  }) {
+    return Container(
+      decoration: BoxDecoration(
+        color: isDark ? AppColors.darkCard : Colors.white,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 12,
           ),
         ],
       ),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 16, 12, 12),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: AppColors.frovyGreen.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Icon(icon, color: AppColors.frovyGreen, size: 16),
+                ),
+                const SizedBox(width: 10),
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                    color: isDark ? Colors.white : AppColors.frovyText,
+                  ),
+                ),
+                const Spacer(),
+                GestureDetector(
+                  onTap: onEdit,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    decoration: BoxDecoration(
+                      color: AppColors.frovyGreen.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Row(
+                      children: [
+                        const Icon(Icons.edit_outlined,
+                            size: 12, color: AppColors.frovyGreen),
+                        const SizedBox(width: 4),
+                        Text(
+                          "edit_profile".tr(),
+                          style: const TextStyle(
+                            fontSize: 11,
+                            color: AppColors.frovyGreen,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const Divider(height: 1, indent: 16, endIndent: 16),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+            child: Column(children: children),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildInfoRow(String label, String value, bool isDark,
+      {bool isLast = false}) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: 110,
+                child: Text(
+                  label,
+                  style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                ),
+              ),
+              Expanded(
+                child: Text(
+                  value,
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w600,
+                    color: isDark ? Colors.white : AppColors.frovyText,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        if (!isLast) Divider(height: 1, color: Colors.grey.withValues(alpha: 0.1)),
+      ],
     );
   }
 }

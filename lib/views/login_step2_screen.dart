@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:frovy_app/models/user_profile.dart';
-import 'package:frovy_app/models/health_profile.dart';
-import 'package:frovy_app/services/prefs_service.dart';
 import 'package:frovy_app/util/app_colors.dart';
-import 'home_screen.dart';
+import 'login_step3_screen.dart';
 
 class LoginStep2Screen extends StatefulWidget {
   final String email;
@@ -26,115 +23,42 @@ class LoginStep2Screen extends StatefulWidget {
 }
 
 class _LoginStep2ScreenState extends State<LoginStep2Screen> {
-  // Constant for special allergy option
-  static const String _noKnownAllergies = "No Known Allergies";
-
-  // State for selected allergies
-  final Set<String> _selectedAllergies = {};
-
-  // Loading state
-  bool _isLoading = false;
-
-  // Common allergies list matching the requirements
-  final List<String> _commonAllergies = [
-    "Milk",
-    "Shellfish",
-    "Peanuts",
-    "Eggs",
-    "Tree Nuts",
-    "Wheat",
-    "Soy",
-    "Fish",
-    "Gluten",
-    "Sesame",
-    _noKnownAllergies,
-  ];
-
-  // Medical conditions controller
+  // Text controllers
+  final TextEditingController _allergiesController = TextEditingController();
   final TextEditingController _medicalConditionsController =
       TextEditingController();
 
   @override
   void dispose() {
+    _allergiesController.dispose();
     _medicalConditionsController.dispose();
     super.dispose();
   }
 
-  void _toggleAllergy(String allergy) {
-    setState(() {
-      if (allergy == _noKnownAllergies) {
-        // Selecting "No Known Allergies" clears all others
-        if (_selectedAllergies.contains(allergy)) {
-          _selectedAllergies.remove(allergy);
-        } else {
-          _selectedAllergies.clear();
-          _selectedAllergies.add(allergy);
-        }
-      } else {
-        // Selecting any other allergy deselects "No Known Allergies"
-        _selectedAllergies.remove(_noKnownAllergies);
-        if (_selectedAllergies.contains(allergy)) {
-          _selectedAllergies.remove(allergy);
-        } else {
-          _selectedAllergies.add(allergy);
-        }
-      }
-    });
-  }
-
-  bool _validateForm() {
-    if (_selectedAllergies.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text("food_allergy_select_instruction".tr()),
-          backgroundColor: AppColors.frovyRed,
-        ),
-      );
-      return false;
-    }
-    return true;
-  }
-
   Future<void> _handleContinue() async {
-    if (!_validateForm()) return;
+    // Get allergies as list (split by comma)
+    final allergiesText = _allergiesController.text.trim();
+    final allergiesList = allergiesText.isEmpty
+        ? <String>[]
+        : allergiesText.split(',').map((e) => e.trim()).where((e) => e.isNotEmpty).toList();
 
-    setState(() => _isLoading = true);
+    if (!mounted) return;
 
-    try {
-      // Save user profile
-      await PrefsService.setUserProfile(UserProfile(
-        name: widget.name,
-        email: widget.email,
-        dob: widget.dob,
-      ));
-
-      // Save health profile
-      await PrefsService.setHealthProfile(HealthProfile(
-        allergies: _selectedAllergies.toList(),
-        medicalConditions: _medicalConditionsController.text.trim(),
-        otherSensitivities: '', // Reserved for future use
-      ));
-
-      if (!mounted) return;
-
-      // Navigate to HomeScreen
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (_) => HomeScreen(cameras: widget.cameras ?? []),
+    // Navigate to Step 3 (password screen)
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => LoginStep3Screen(
+          email: widget.email,
+          name: widget.name,
+          dob: widget.dob,
+          allergies: allergiesList,
+          medicalConditions: _medicalConditionsController.text.trim(),
+          otherSensitivities: '',
+          cameras: widget.cameras,
         ),
-      );
-    } catch (e) {
-      if (!mounted) return;
-      setState(() => _isLoading = false);
-
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Failed to save profile. Please try again.'),
-          backgroundColor: AppColors.frovyRed,
-        ),
-      );
-    }
+      ),
+    );
   }
 
   void _dismissKeyboard() {
@@ -263,7 +187,7 @@ class _LoginStep2ScreenState extends State<LoginStep2Screen> {
           ClipRRect(
             borderRadius: BorderRadius.circular(3),
             child: LinearProgressIndicator(
-              value: 1.0, // 100% for step 2/2
+              value: 0.66, // 66% for step 2/3
               backgroundColor:
                   isDark ? AppColors.darkBorder : AppColors.lightProgressBg,
               valueColor:
@@ -275,9 +199,9 @@ class _LoginStep2ScreenState extends State<LoginStep2Screen> {
 
           // Step indicator text
           Semantics(
-            label: 'Progress: Step 2 of 2',
+            label: 'Progress: Step 2 of 3',
             child: Text(
-              "step_2_of_2".tr(),
+              "step_2_of_3".tr(),
               style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
@@ -294,6 +218,10 @@ class _LoginStep2ScreenState extends State<LoginStep2Screen> {
   // Food Allergies Section
   Widget _buildAllergiesSection(
       bool isDark, Color textColor, Color subtitleColor) {
+    final inputBgColor =
+        isDark ? AppColors.darkCard : AppColors.lightChipBg;
+    final inputTextColor = isDark ? Colors.white : AppColors.lightText;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -301,7 +229,7 @@ class _LoginStep2ScreenState extends State<LoginStep2Screen> {
         Semantics(
           header: true,
           child: Text(
-            "food_allergies_required".tr(),
+            "food_allergies_optional".tr(),
             style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.bold,
@@ -314,7 +242,7 @@ class _LoginStep2ScreenState extends State<LoginStep2Screen> {
 
         // Instruction text
         Text(
-          "food_allergy_select_instruction".tr(),
+          "food_allergy_text_instruction".tr(),
           style: TextStyle(
             fontSize: 13,
             color: subtitleColor,
@@ -322,79 +250,48 @@ class _LoginStep2ScreenState extends State<LoginStep2Screen> {
         ),
         const SizedBox(height: 16),
 
-        // Modern Chip Grid
+        // Text field for allergies
         Semantics(
-          label: 'Allergy selection',
-          child: Wrap(
-            spacing: 10,
-            runSpacing: 10,
-            children: _commonAllergies.map((allergy) {
-              final isSelected = _selectedAllergies.contains(allergy);
-              return _buildModernAllergyChip(allergy, isSelected, isDark);
-            }).toList(),
+          textField: true,
+          label: 'Enter food allergies',
+          child: Container(
+            decoration: BoxDecoration(
+              color: inputBgColor,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: TextField(
+              controller: _allergiesController,
+              style: TextStyle(
+                color: inputTextColor,
+                fontSize: 15,
+              ),
+              decoration: InputDecoration(
+                hintText: "enter_allergies".tr(),
+                hintStyle: TextStyle(
+                  color: subtitleColor,
+                  fontWeight: FontWeight.w400,
+                ),
+                prefixIcon: Icon(
+                  Icons.warning_amber_rounded,
+                  color: subtitleColor,
+                  size: 22,
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: BorderSide.none,
+                ),
+                filled: true,
+                fillColor: inputBgColor,
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 14,
+                ),
+              ),
+              maxLines: 2,
+            ),
           ),
         ),
       ],
-    );
-  }
-
-  // Modern Allergy Chip with checkmark
-  Widget _buildModernAllergyChip(String allergy, bool isSelected, bool isDark) {
-    // Use localization for display
-    final displayText = allergy.toLowerCase().replaceAll(' ', '_').tr();
-    final chipBgColor =
-        isDark ? AppColors.darkCard : AppColors.lightChipBg;
-    final chipBorderColor =
-        isDark ? AppColors.darkBorder : AppColors.lightBorder;
-    final unselectedTextColor =
-        isDark ? Colors.white70 : AppColors.mutedText;
-
-    return Semantics(
-      button: true,
-      selected: isSelected,
-      label: '$displayText ${isSelected ? "selected" : "not selected"}',
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 200),
-        child: InkWell(
-          onTap: () => _toggleAllergy(allergy),
-          borderRadius: BorderRadius.circular(25),
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-            decoration: BoxDecoration(
-              color: isSelected ? AppColors.frovyGreen : chipBgColor,
-              borderRadius: BorderRadius.circular(25),
-              border: Border.all(
-                color: isSelected ? AppColors.frovyGreen : chipBorderColor,
-                width: 1,
-              ),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (isSelected) ...[
-                  const Icon(
-                    Icons.check,
-                    color: Colors.white,
-                    size: 16,
-                  ),
-                  const SizedBox(width: 6),
-                ],
-                Flexible(
-                  child: Text(
-                    displayText,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
-                      color: isSelected ? Colors.white : unselectedTextColor,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
     );
   }
 
@@ -480,56 +377,44 @@ class _LoginStep2ScreenState extends State<LoginStep2Screen> {
 
   // Modern Continue Button - Full width pill button with arrow
   Widget _buildModernContinueButton(bool isDark) {
-    final bool canContinue = _selectedAllergies.isNotEmpty && !_isLoading;
-
     return Container(
       padding: const EdgeInsets.all(24),
       child: SizedBox(
         width: double.infinity,
         child: Semantics(
           button: true,
-          enabled: canContinue,
-          label: _isLoading ? 'Saving...' : 'Continue to home',
+          enabled: true,
+          label: 'Continue to password setup',
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor:
-                  canContinue ? AppColors.frovyGreen : AppColors.frovyGreen.withAlpha(128),
+              backgroundColor: AppColors.frovyGreen,
               padding: const EdgeInsets.symmetric(vertical: 16),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30), // Pill shape
               ),
               elevation: 0,
             ),
-            onPressed: canContinue ? _handleContinue : null,
-            child: _isLoading
-                ? const SizedBox(
-                    width: 24,
-                    height: 24,
-                    child: CircularProgressIndicator(
-                      strokeWidth: 2,
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                    ),
-                  )
-                : Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "continue_btn".tr(),
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          letterSpacing: 0.5,
-                        ),
-                      ),
-                      const SizedBox(width: 8),
-                      const Icon(
-                        Icons.arrow_forward_ios_rounded,
-                        color: Colors.white,
-                        size: 16,
-                      ),
-                    ],
+            onPressed: _handleContinue,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "continue_btn".tr(),
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    letterSpacing: 0.5,
                   ),
+                ),
+                const SizedBox(width: 8),
+                const Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: Colors.white,
+                  size: 16,
+                ),
+              ],
+            ),
           ),
         ),
       ),

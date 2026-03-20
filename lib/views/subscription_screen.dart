@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
+import 'package:easy_localization/easy_localization.dart';
 import '../util/app_colors.dart';
 import '../services/prefs_service.dart';
-import '../services/payment_service.dart'; // ADDED: Import your Payment Service
 
 class SubscriptionScreen extends StatefulWidget {
   const SubscriptionScreen({super.key});
@@ -12,13 +11,7 @@ class SubscriptionScreen extends StatefulWidget {
 }
 
 class _SubscriptionScreenState extends State<SubscriptionScreen> {
-  // Brand Colors
-  static const Color frovyGreen = AppColors.frovyGreen;
-  static const Color frovyGold = AppColors.frovyGold;
-  static const Color frovyLightBg = AppColors.frovyLightBg;
-
-  // State Variable to track the active plan
-  String _currentPlan = "Free"; // Defaults to Free
+  String _currentPlan = "Free";
 
   @override
   void initState() {
@@ -29,12 +22,9 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
   Future<void> _loadPlan() async {
     final plan = await PrefsService.getCurrentPlan();
     if (!mounted) return;
-    setState(() {
-      _currentPlan = plan;
-    });
+    setState(() => _currentPlan = plan);
   }
 
-  // --- TEMPORARILY DISABLED - SHOW COMING SOON ---
   void _handleUpgrade(String planName, String price) {
     showDialog(
       context: context,
@@ -42,32 +32,57 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         title: Row(
           children: [
-            Icon(Icons.rocket_launch, color: frovyGreen),
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: AppColors.frovyGreen.withValues(alpha: 0.12),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Icon(Icons.rocket_launch_rounded,
+                  color: AppColors.frovyGreen, size: 20),
+            ),
             const SizedBox(width: 10),
-            const Text('Coming Soon!'),
+            Text("coming_soon".tr(),
+                style: const TextStyle(fontWeight: FontWeight.bold)),
           ],
         ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text(
-              'Premium subscriptions are coming soon! We\'re working hard to bring you an amazing experience.',
+            Text(
+              "coming_soon_desc".tr(),
               textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.grey[600], height: 1.5),
             ),
             const SizedBox(height: 16),
-            Text(
-              '$planName - $price/month',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: frovyGreen,
+            Container(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              decoration: BoxDecoration(
+                color: AppColors.frovyGreen.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Text(
+                '$planName — $price/month',
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.frovyGreen,
+                ),
               ),
             ),
           ],
         ),
         actions: [
-          TextButton(
+          ElevatedButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Got it!', style: TextStyle(color: frovyGreen)),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppColors.frovyGreen,
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              elevation: 0,
+            ),
+            child: Text("got_it".tr()),
           ),
         ],
       ),
@@ -77,154 +92,196 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
-      backgroundColor: isDark ? null : frovyGreen,
+      backgroundColor: isDark ? AppColors.darkBackground : AppColors.frovyGreen,
       appBar: AppBar(
-        backgroundColor: isDark ? null : frovyGreen,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.pop(context),
+        leading: GestureDetector(
+          onTap: () => Navigator.pop(context),
+          child: Container(
+            margin: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.2),
+              shape: BoxShape.circle,
+            ),
+            child: const Icon(Icons.chevron_left_rounded,
+                color: Colors.white, size: 28),
+          ),
         ),
         title: Text(
           "premium_plans_title".tr(),
-          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            // Header
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 24),
-              child: Column(
-                children: [
-                  Text(
-                    "upgrade_health_journey".tr(),
-                    style: const TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,
+      body: Column(
+        children: [
+          // Hero text
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 4, 20, 20),
+            child: Column(
+              children: [
+                Text(
+                  "upgrade_health_journey".tr(),
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
-                  const SizedBox(height: 8),
-                  Text(
-                    "choose_perfect_plan".tr(),
-                    style: const TextStyle(color: Colors.white70, fontSize: 14),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-            ),
-
-            // Plan Cards
-            Container(
-              padding: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                color: isDark ? const Color(0xFF121212) : frovyLightBg,
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                  topRight: Radius.circular(30),
+                  textAlign: TextAlign.center,
                 ),
-              ),
-              child: Column(
-                children: [
-                  // --- FREE PLAN ---
-                  _buildPlanCard(
-                    context,
-                    title: "free".tr(),
-                    price: "\$0",
-                    period: "forever".tr(),
-                    icon: Icons.star_outline,
-                    iconColor: Colors.grey,
-                    features: [
-                      "10_scans_month".tr(),
-                      "basic_analysis".tr(),
-                      "manual_entry".tr(), 
-                    ],
-                    isCurrent: _currentPlan == "Free",
-                    buttonText: _currentPlan == "Free" ? "current_plan".tr() : "downgrade".tr(),
-                    onTap: () async {
-                      setState(() => _currentPlan = "Free");
-                      await PrefsService.setCurrentPlan("Free");
-                    },
+                const SizedBox(height: 6),
+                Text(
+                  "choose_perfect_plan".tr(),
+                  style: TextStyle(
+                    color: Colors.white.withValues(alpha: 0.75),
+                    fontSize: 13,
                   ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
 
-                  const SizedBox(height: 24),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                color: isDark
+                    ? const Color(0xFF1A1A1A)
+                    : const Color(0xFFF2F7F2),
+                borderRadius:
+                    const BorderRadius.vertical(top: Radius.circular(28)),
+              ),
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  children: [
+                    _buildPlanCard(
+                      context,
+                      isDark: isDark,
+                      title: "free".tr(),
+                      price: "\$0",
+                      period: "forever".tr(),
+                      icon: Icons.star_outline_rounded,
+                      iconColor: Colors.grey[500]!,
+                      features: [
+                        "10_scans_month".tr(),
+                        "basic_analysis".tr(),
+                        "manual_entry".tr(),
+                      ],
+                      isCurrent: _currentPlan == "Free",
+                      buttonText: _currentPlan == "Free"
+                          ? "current_plan".tr()
+                          : "downgrade".tr(),
+                      accentColor: Colors.grey[400]!,
+                      onTap: () async {
+                        setState(() => _currentPlan = "Free");
+                        await PrefsService.setCurrentPlan("Free");
+                      },
+                    ),
 
-                  // --- PRO PLAN ---
-                  Stack(
-                    clipBehavior: Clip.none,
-                    children: [
-                      _buildPlanCard(
-                        context,
-                        title: "pro".tr(),
-                        price: "\$2.99",
-                        period: "per_month".tr(),
-                        icon: Icons.bolt,
-                        iconColor: frovyGreen,
-                        features: [
-                          "unlimited_scans".tr(),
-                          "barcode_ocr".tr(),
-                          "detailed_insights".tr(),
-                        ],
-                        buttonColor: frovyGreen,
-                        isCurrent: _currentPlan == "Pro",
-                        buttonText: _currentPlan == "Pro" ? "current_plan".tr() : "upgrade_now".tr(),
-                        onTap: () {
-                          if (_currentPlan != "Pro") _handleUpgrade("Pro", "\$2.99");
-                        },
-                      ),
-                      Positioned(
-                        top: -12, left: 0, right: 0,
-                        child: Center(
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-                            decoration: BoxDecoration(
-                              color: const Color(0xFFFF7043),
-                              borderRadius: BorderRadius.circular(20),
+                    const SizedBox(height: 16),
+
+                    // PRO — featured
+                    Stack(
+                      clipBehavior: Clip.none,
+                      children: [
+                        _buildPlanCard(
+                          context,
+                          isDark: isDark,
+                          title: "pro".tr(),
+                          price: "\$2.99",
+                          period: "per_month".tr(),
+                          icon: Icons.bolt_rounded,
+                          iconColor: AppColors.frovyGreen,
+                          features: [
+                            "unlimited_scans".tr(),
+                            "barcode_ocr".tr(),
+                            "detailed_insights".tr(),
+                          ],
+                          isCurrent: _currentPlan == "Pro",
+                          buttonText: _currentPlan == "Pro"
+                              ? "current_plan".tr()
+                              : "upgrade_now".tr(),
+                          accentColor: AppColors.frovyGreen,
+                          onTap: () {
+                            if (_currentPlan != "Pro")
+                              _handleUpgrade("Pro", "\$2.99");
+                          },
+                          isFeatured: true,
+                        ),
+                        Positioned(
+                          top: -10,
+                          left: 0,
+                          right: 0,
+                          child: Center(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 14, vertical: 5),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFFF7043),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Text(
+                                "most_popular".tr(),
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
-                            child: Text("most_popular".tr(), style: const TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold)),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
 
-                  const SizedBox(height: 24),
+                    const SizedBox(height: 16),
 
-                  // --- PREMIUM PLAN ---
-                  _buildPlanCard(
-                    context,
-                    title: "premium".tr(),
-                    price: "\$6.99",
-                    period: "per_month".tr(),
-                    icon: Icons.workspace_premium,
-                    iconColor: frovyGold,
-                    features: [
-                      "everything_in_pro".tr(),
-                      "ai_recommendations".tr(),
-                      "dietitian_consult".tr(),
-                    ],
-                    buttonColor: frovyGold,
-                    textColor: Colors.black87,
-                    isCurrent: _currentPlan == "Premium",
-                    buttonText: _currentPlan == "Premium" ? "current_plan".tr() : "upgrade_now".tr(),
-                    onTap: () {
-                      if (_currentPlan != "Premium") _handleUpgrade("Premium", "\$6.99");
-                    },
-                  ),
-                  
-                  const SizedBox(height: 40),
-                ],
+                    _buildPlanCard(
+                      context,
+                      isDark: isDark,
+                      title: "premium".tr(),
+                      price: "\$6.99",
+                      period: "per_month".tr(),
+                      icon: Icons.workspace_premium_rounded,
+                      iconColor: AppColors.frovyGold,
+                      features: [
+                        "everything_in_pro".tr(),
+                        "ai_recommendations".tr(),
+                        "dietitian_consult".tr(),
+                      ],
+                      isCurrent: _currentPlan == "Premium",
+                      buttonText: _currentPlan == "Premium"
+                          ? "current_plan".tr()
+                          : "upgrade_now".tr(),
+                      accentColor: AppColors.frovyGold,
+                      onTap: () {
+                        if (_currentPlan != "Premium")
+                          _handleUpgrade("Premium", "\$6.99");
+                      },
+                    ),
+
+                    const SizedBox(height: 30),
+                  ],
+                ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 
   Widget _buildPlanCard(
     BuildContext context, {
+    required bool isDark,
     required String title,
     required String price,
     required String period,
@@ -233,66 +290,121 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
     required List<String> features,
     required String buttonText,
     required VoidCallback onTap,
-    Color? buttonColor,
-    Color textColor = Colors.white,
+    required Color accentColor,
     required bool isCurrent,
+    bool isFeatured = false,
   }) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
+        color: isDark ? AppColors.darkCard : Colors.white,
         borderRadius: BorderRadius.circular(20),
-        border: isCurrent ? Border.all(color: frovyGreen, width: 2) : null,
+        border: isCurrent
+            ? Border.all(color: accentColor, width: 2)
+            : isFeatured
+                ? Border.all(
+                    color: AppColors.frovyGreen.withValues(alpha: 0.3), width: 1.5)
+                : null,
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
+            blurRadius: 12,
+            offset: const Offset(0, 3),
           ),
         ],
       ),
       child: Column(
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(title, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: isDark ? Colors.white : Colors.black87)),
-                  Text(period, style: TextStyle(color: Colors.grey[600], fontSize: 12)),
-                ],
+              Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: iconColor.withValues(alpha: 0.12),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(icon, color: iconColor, size: 22),
               ),
-              Text(price, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: isDark ? Colors.white : Colors.black87)),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: isDark ? Colors.white : AppColors.frovyText,
+                      ),
+                    ),
+                    Text(
+                      period,
+                      style: TextStyle(
+                          color: Colors.grey[500], fontSize: 12),
+                    ),
+                  ],
+                ),
+              ),
+              Text(
+                price,
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: accentColor,
+                ),
+              ),
             ],
           ),
-          const SizedBox(height: 20),
-          Column(
-            children: features.map((feature) => Padding(
-              padding: const EdgeInsets.only(bottom: 8.0),
+          const SizedBox(height: 16),
+          Divider(height: 1, color: Colors.grey.withValues(alpha: 0.1)),
+          const SizedBox(height: 14),
+          ...features.map(
+            (f) => Padding(
+              padding: const EdgeInsets.only(bottom: 8),
               child: Row(
                 children: [
-                  const Icon(Icons.check, size: 16, color: frovyGreen),
-                  const SizedBox(width: 8),
-                  Expanded(child: Text(feature, style: TextStyle(color: Colors.grey[700], fontSize: 13))),
+                  Container(
+                    padding: const EdgeInsets.all(3),
+                    decoration: BoxDecoration(
+                      color: AppColors.frovyGreen.withValues(alpha: 0.12),
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Icon(Icons.check_rounded,
+                        size: 12, color: AppColors.frovyGreen),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Text(
+                      f,
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: isDark ? Colors.white70 : Colors.grey[700],
+                      ),
+                    ),
+                  ),
                 ],
               ),
-            )).toList(),
+            ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 16),
           SizedBox(
             width: double.infinity,
-            height: 45,
+            height: 46,
             child: ElevatedButton(
               onPressed: onTap,
               style: ElevatedButton.styleFrom(
-                backgroundColor: isCurrent ? Colors.grey[300] : buttonColor,
-                foregroundColor: isCurrent ? Colors.black54 : textColor,
+                backgroundColor: isCurrent ? Colors.grey[200] : accentColor,
+                foregroundColor:
+                    isCurrent ? Colors.black54 : Colors.white,
                 elevation: 0,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12)),
               ),
-              child: Text(buttonText, style: const TextStyle(fontWeight: FontWeight.bold)),
+              child: Text(
+                buttonText,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
           ),
         ],

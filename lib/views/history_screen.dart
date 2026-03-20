@@ -1,7 +1,7 @@
-import 'dart:convert'; 
+import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
-import 'result_screen.dart'; 
+import 'package:easy_localization/easy_localization.dart';
+import 'result_screen.dart';
 import '../util/app_colors.dart';
 import '../util/page_transitions.dart';
 
@@ -13,13 +13,6 @@ class HistoryScreen extends StatefulWidget {
 }
 
 class _HistoryScreenState extends State<HistoryScreen> {
-  // Brand Colors
-  final Color frovyGreen = AppColors.frovyGreen;
-  final Color frovyRed = AppColors.frovyRed;
-  final Color frovyAmber = AppColors.frovyAmber;
-
-  // --- MOCK DATA: List of History Items ---
-  // In a real app, this would come from a database (SQLite/Firebase)
   List<Map<String, dynamic>> historyItems = [
     {
       "productName": "Almond Breeze Original",
@@ -47,313 +40,341 @@ class _HistoryScreenState extends State<HistoryScreen> {
     },
   ];
 
-  // --- LOGIC: Delete Single Item ---
   void _deleteItem(int index) {
-    setState(() {
-      historyItems.removeAt(index);
-    });
+    setState(() => historyItems.removeAt(index));
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text("item_deleted".tr()), duration: const Duration(seconds: 1)),
+      SnackBar(
+        content: Text("item_deleted".tr()),
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        duration: const Duration(seconds: 1),
+      ),
     );
   }
 
-  // --- LOGIC: Clear All History ---
   void _clearAllHistory() {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text("clear_history".tr()),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: Text("clear_history".tr(), style: const TextStyle(fontWeight: FontWeight.bold)),
         content: Text("clear_history_desc".tr()),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text("cancel".tr()),
+            child: Text("cancel".tr(), style: TextStyle(color: Colors.grey[600])),
           ),
-          TextButton(
+          ElevatedButton(
             onPressed: () {
-              setState(() {
-                historyItems.clear();
-              });
+              setState(() => historyItems.clear());
               Navigator.pop(context);
             },
-            child: Text("clear_all".tr(), style: TextStyle(color: frovyRed)),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppColors.frovyRed,
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              elevation: 0,
+            ),
+            child: Text("clear_all".tr()),
           ),
         ],
       ),
     );
   }
 
-  // --- LOGIC: Navigate to Details ---
   void _navigateToResult(Map<String, dynamic> item) {
-    Map<String, dynamic> resultData = {
-      "productName": item['productName'],
-      "status": item['status'],
-      "ingredients": item['ingredients'],
-      "warnings": item['warnings']
-    };
-
     Navigator.push(
       context,
       PageTransitions.fade(
-        ResultScreen(analysisResult: jsonEncode(resultData)),
+        ResultScreen(
+          analysisResult: jsonEncode({
+            "productName": item['productName'],
+            "status": item['status'],
+            "ingredients": item['ingredients'],
+            "warnings": item['warnings'],
+          }),
+        ),
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    // Calculate Summary Stats dynamically
-    int totalScans = historyItems.length;
-    int safeCount = historyItems.where((i) => i['status'] == 'SAFE').length;
-    int flaggedCount = historyItems.where((i) => i['status'] != 'SAFE').length;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final int totalScans = historyItems.length;
 
     return Scaffold(
-      backgroundColor: isDark ? null : frovyGreen,
+      backgroundColor: isDark ? AppColors.darkBackground : AppColors.frovyGreen,
       appBar: AppBar(
-        backgroundColor: isDark ? null : frovyGreen,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: isDark ? Colors.white : Colors.black),
-          onPressed: () => Navigator.pop(context),
+        leading: GestureDetector(
+          onTap: () => Navigator.pop(context),
+          child: Container(
+            margin: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.2),
+              shape: BoxShape.circle,
+            ),
+            child: const Icon(Icons.chevron_left_rounded, color: Colors.white, size: 28),
+          ),
         ),
         title: Text(
           "analysis_history".tr(),
-          style: TextStyle(color: isDark ? Colors.white : Colors.black, fontWeight: FontWeight.bold),
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
         ),
       ),
       body: Column(
         children: [
-          // 1. Summary Statistics Card
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 10),
+          // ── List Area ──────────────────────────────────
+          Expanded(
             child: Container(
-              padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
-                borderRadius: BorderRadius.circular(20),
+                color: isDark ? const Color(0xFF1A1A1A) : const Color(0xFFF2F7F2),
+                borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
               ),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("summary".tr(), style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                  const SizedBox(height: 16),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      _buildSummaryItem(totalScans.toString(), "total_scans".tr()),
-                      _buildSummaryItem(safeCount.toString(), "safe_products".tr(), color: frovyGreen),
-                      _buildSummaryItem(flaggedCount.toString(), "flagged".tr(), color: frovyRed),
-                    ],
+                  // Section header
+                  Padding(                    padding: const EdgeInsets.fromLTRB(20, 20, 20, 12),
+                    child: Row(
+                      children: [
+                        Text(
+                          "recent_scans".tr(),
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: isDark ? Colors.white : AppColors.frovyText,
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 3),
+                          decoration: BoxDecoration(
+                            color: AppColors.frovyGreen.withValues(alpha: 0.15),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Text(
+                            totalScans.toString(),
+                            style: const TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.frovyGreen,
+                            ),
+                          ),
+                        ),
+                        const Spacer(),
+                        if (historyItems.isNotEmpty)
+                          GestureDetector(
+                            onTap: _clearAllHistory,
+                            child: Text(
+                              "clear_all_history".tr(),
+                              style: TextStyle(fontSize: 12, color: AppColors.frovyRed.withValues(alpha: 0.8)),
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+
+                  // List
+                  Expanded(
+                    child: historyItems.isEmpty
+                        ? _buildEmptyState(isDark)
+                        : ListView.builder(
+                            padding: const EdgeInsets.fromLTRB(20, 0, 20, 30),
+                            itemCount: historyItems.length,
+                            itemBuilder: (context, index) =>
+                                _buildScanCard(index, historyItems[index], isDark),
+                          ),
                   ),
                 ],
               ),
             ),
           ),
-
-          const SizedBox(height: 10),
-
-          // 2. The List of History Items
-          Expanded(
-            child: Container(
-              width: double.infinity,
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-              decoration: isDark
-                  ? null
-                  : BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [frovyGreen, frovyGreen.withValues(alpha: 0.8), const Color(0xFFFFF9C4)],
-                      ),
-                    ),
-              child: historyItems.isEmpty
-                  ? _buildEmptyState()
-                  : ListView.separated(
-                      itemCount: historyItems.length,
-                      separatorBuilder: (context, index) => const SizedBox(height: 16),
-                      itemBuilder: (context, index) {
-                        final item = historyItems[index];
-                        return _buildHistoryCard(index, item);
-                      },
-                    ),
-            ),
-          ),
-          
-          // 3. Clear History Button 
-          if (historyItems.isNotEmpty)
-            Padding(
-              padding: const EdgeInsets.fromLTRB(24, 0, 24, 40),
-              child: SizedBox(
-                width: double.infinity,
-                height: 50,
-                child: ElevatedButton(
-                  onPressed: _clearAllHistory,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black,
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  child: Text("clear_all_history".tr(), style: const TextStyle(fontWeight: FontWeight.bold)),
-                ),
-              ),
-            ),
         ],
       ),
     );
   }
 
-  // --- Helper Widgets ---
+  // ── Scan card ────────────────────────────────────────
+  Widget _buildScanCard(int index, Map<String, dynamic> item, bool isDark) {
+    final List<dynamic> ingredients = item['ingredients'] ?? [];
+    final int extraCount = ingredients.length > 3 ? ingredients.length - 3 : 0;
 
-  Widget _buildEmptyState() {
+    return GestureDetector(
+      onTap: () => _navigateToResult(item),
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 16),
+        decoration: BoxDecoration(
+          color: isDark ? AppColors.darkCard : Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.06),
+              blurRadius: 16,
+              offset: const Offset(0, 3),
+            ),
+          ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Top row: avatar + name/date
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: 48,
+                    height: 48,
+                    decoration: BoxDecoration(
+                      color: AppColors.frovyGreen.withValues(alpha: 0.1),
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Icon(Icons.inventory_2_outlined,
+                        color: AppColors.frovyGreen, size: 22),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          item['productName'],
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: isDark ? Colors.white : AppColors.frovyText,
+                          ),
+                        ),
+                        const SizedBox(height: 3),
+                        Row(
+                          children: [
+                            Icon(Icons.calendar_today_outlined,
+                                size: 11, color: Colors.grey[400]),
+                            const SizedBox(width: 4),
+                            Text(
+                              item['date'],
+                              style: TextStyle(fontSize: 12, color: Colors.grey[400]),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 14),
+
+              // Ingredient chips
+              Wrap(
+                spacing: 6,
+                runSpacing: 6,
+                children: [
+                  ...ingredients.take(3).map(
+                        (ing) => _buildChip(ing.toString(), isDark),
+                      ),
+                  if (extraCount > 0)
+                    _buildChip('+$extraCount more', isDark, isMuted: true),
+                ],
+              ),
+
+              const SizedBox(height: 14),
+
+              // Footer
+              Row(
+                children: [
+                  Icon(Icons.touch_app_outlined, size: 14, color: Colors.grey[400]),
+                  const SizedBox(width: 6),
+                  Text(
+                    "tap_to_view_analysis".tr(),
+                    style: TextStyle(fontSize: 12, color: Colors.grey[400]),
+                  ),
+                  const Spacer(),
+                  GestureDetector(
+                    onTap: () => _deleteItem(index),
+                    child: Container(
+                      padding: const EdgeInsets.all(7),
+                      decoration: BoxDecoration(
+                        color: AppColors.frovyRed.withValues(alpha: 0.1),
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(Icons.delete_outline_rounded,
+                          color: AppColors.frovyRed, size: 16),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildChip(String label, bool isDark, {bool isMuted = false}) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      decoration: BoxDecoration(
+        color: isMuted
+            ? Colors.transparent
+            : (isDark ? AppColors.darkBackground : const Color(0xFFF5F5F5)),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: isMuted
+              ? Colors.grey.withValues(alpha: 0.3)
+              : Colors.transparent,
+        ),
+      ),
+      child: Text(
+        label,
+        style: TextStyle(
+          fontSize: 12,
+          color: isMuted
+              ? Colors.grey[500]
+              : (isDark ? Colors.white70 : AppColors.frovyText),
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildEmptyState(bool isDark) {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.history_toggle_off, size: 80, color: Colors.white.withValues(alpha: 0.5)),
-          const SizedBox(height: 16),
+          Container(
+            padding: const EdgeInsets.all(28),
+            decoration: BoxDecoration(
+              color: AppColors.frovyGreen.withValues(alpha: 0.08),
+              shape: BoxShape.circle,
+            ),
+            child: Icon(Icons.history_toggle_off_rounded,
+                size: 56, color: AppColors.frovyGreen.withValues(alpha: 0.5)),
+          ),
+          const SizedBox(height: 20),
           Text(
             "no_scan_history".tr(),
-            style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: isDark ? Colors.white70 : AppColors.frovyText,
+            ),
           ),
           const SizedBox(height: 8),
           Text(
             "scan_to_see_here".tr(),
-            style: const TextStyle(color: Colors.white70),
+            style: TextStyle(color: Colors.grey[500], fontSize: 14),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _buildSummaryItem(String value, String label, {Color color = Colors.black}) {
-    return Column(
-      children: [
-        Text(
-          value,
-          style: TextStyle(color: color, fontSize: 24, fontWeight: FontWeight.bold),
-        ),
-        const SizedBox(height: 4),
-        Text(
-          label,
-          style: TextStyle(color: Colors.grey[600], fontSize: 12),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildHistoryCard(int index, Map<String, dynamic> item) {
-    String status = item['status'];
-    Color statusColor;
-    IconData statusIcon;
-    String statusLabel;
-
-    if (status == "SAFE") {
-      statusColor = frovyGreen;
-      statusIcon = Icons.check_circle_outline;
-      statusLabel = "status_good".tr();
-    } else if (status == "UNSAFE") {
-      statusColor = frovyRed;
-      statusIcon = Icons.cancel_outlined;
-      statusLabel = "status_bad".tr();
-    } else {
-      statusColor = frovyAmber;
-      statusIcon = Icons.warning_amber_rounded;
-      statusLabel = "status_medium".tr();
-    }
-
-    return GestureDetector(
-      onTap: () => _navigateToResult(item), 
-      child: Container(
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: Theme.of(context).brightness == Brightness.dark
-              ? const Color(0xFF2C2C2C)
-              : Colors.white,
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.05),
-              blurRadius: 10,
-              offset: const Offset(0, 4),
-            ),
-          ],
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(item['productName'], style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-                      const SizedBox(height: 4),
-                      Row(
-                        children: [
-                          const Icon(Icons.calendar_today, size: 12, color: Colors.grey),
-                          const SizedBox(width: 4),
-                          Text(item['date'], style: const TextStyle(color: Colors.grey, fontSize: 12)),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                // Status Badge
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                  decoration: BoxDecoration(
-                    color: statusColor,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(statusIcon, color: Colors.white, size: 16),
-                      const SizedBox(width: 4),
-                      Text(
-                        statusLabel, 
-                        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12)
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 16),
-            const Divider(),
-            const SizedBox(height: 12),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  item['summary'],
-                  style: TextStyle(
-                    color: status == "UNSAFE"
-                        ? Colors.red[700]
-                        : (Theme.of(context).brightness == Brightness.dark
-                            ? Colors.grey[400]
-                            : Colors.grey[700]),
-                    fontSize: 13,
-                  ),
-                ),
-                // Delete Icon Button
-                InkWell(
-                  onTap: () => _deleteItem(index),
-                  child: const Padding(
-                    padding: EdgeInsets.all(4.0),
-                    child: Icon(Icons.delete_outline, color: Colors.red, size: 20),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
       ),
     );
   }
