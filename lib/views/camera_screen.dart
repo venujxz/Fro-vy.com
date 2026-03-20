@@ -1,10 +1,10 @@
 import 'dart:io';
-import 'dart:convert'; // Required for jsonEncode
+import 'dart:convert';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart'; 
-import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
-import 'package:http/http.dart' as http; // IMPORT FOR BACKEND REQUESTS
+import 'package:image_picker/image_picker.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:http/http.dart' as http;
 import '../services/ocr_service.dart';
 import '../util/platform_config.dart';
 import '../services/prefs_service.dart';
@@ -25,32 +25,24 @@ class CameraScreen extends StatefulWidget {
 class CameraScreenState extends State<CameraScreen> {
   CameraController? controller;
   bool _isCameraInitialized = false;
-  final ImagePicker _picker = ImagePicker(); // For Gallery Uploads
+  bool _isProcessing = false;
+  final ImagePicker _picker = ImagePicker();
 
-  // User health data loaded from PrefsService
   List<String> _userAllergies = [];
   String _userMedicalConditions = "";
 
-  // Define Fro-vy Brand Colors based on your design
   static const Color frovyGreen = AppColors.frovyGreen;
-  static const Color frovyBeige = AppColors.frovyBeige;
-  static const Color frovyText = AppColors.frovyText;
 
   @override
   void initState() {
     super.initState();
     _loadHealthProfile();
-    // Initialize Camera
     if (widget.cameras.isNotEmpty) {
       controller = CameraController(widget.cameras[0], ResolutionPreset.high);
       controller!.initialize().then((_) {
         if (!mounted) return;
-        setState(() {
-          _isCameraInitialized = true;
-        });
-      }).catchError((e) {
-        debugPrint('Camera initialization error: $e');
-      });
+        setState(() => _isCameraInitialized = true);
+      }).catchError((e) => debugPrint('Camera init error: $e'));
     }
   }
 
@@ -69,97 +61,63 @@ class CameraScreenState extends State<CameraScreen> {
     super.dispose();
   }
 
-  // --- LOGIC: Process the Image Locally & Send to Backend ---
   Future<void> _processImage(String imagePath) async {
     if (!mounted) return;
-    
-    // 1. Show Loading UI
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('processing_image'.tr())),
-    );
+    setState(() => _isProcessing = true);
 
     try {
-      // 2. Extract Text using Google ML Kit LOCALLY on the phone
-      OCRService ocrService = OCRService();
-      String? extractedIngredients = await ocrService.processImageForText(File(imagePath));
-      
-      // Close the ML kit recognizer to free up memory
+      final OCRService ocrService = OCRService();
+      final String? extractedIngredients =
+          await ocrService.processImageForText(File(imagePath));
       ocrService.dispose();
 
       if (extractedIngredients != null && extractedIngredients.isNotEmpty) {
-        
-        // --- 3. SEND TEXT TO BACKEND API ---
-        
         final url = Uri.parse(PlatformConfig.getBackendUrl());
+        final response = await http.post(
+          url,
+          headers: {'Content-Type': 'application/json'},
+          body: jsonEncode({
+            'extractedText': extractedIngredients,
+            'allergies': _userAllergies,
+            'medicalConditions': _userMedicalConditions,
+          }),
+        ).timeout(PlatformConfig.getHttpTimeout());
 
-        try {
-          final response = await http.post(
-            url,
-            headers: {
-              'Content-Type': 'application/json',
-              // 'Authorization': 'Bearer YOUR_TOKEN_HERE', // Uncomment when Auth is ready
-            },
-            body: jsonEncode({
-              'extractedText': extractedIngredients,
-              'allergies': _userAllergies,
-              'medicalConditions': _userMedicalConditions,
-            }),
-          ).timeout(PlatformConfig.getHttpTimeout());
-
-          if (response.statusCode == 200) {
-            // Success! Pass the real JSON from the backend directly to the Result Screen
-            if (!mounted) return;
-            Navigator.push(
-              context,
-              PageTransitions.fade(ResultScreen(analysisResult: response.body)),
-            );
-          } else {
-            // Server error (e.g., 404 Not Found, or 500 Internal Server Error)
-            if (!mounted) return;
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text("Server error: ${response.statusCode}. Please check backend connection."),
-              ),
-            );
-            debugPrint("Backend Error: ${response.statusCode} - ${response.body}");
-          }
-        } on SocketException catch (e) {
-          if (!mounted) return;
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text("Network error: ${e.message}. Check internet connection."),
-            ),
-          );
-          debugPrint("Socket Error: $e");
-        } catch (e) {
-          if (!mounted) return;
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('upload_failed'.tr())),
-          );
-          debugPrint("Network/Processing Error: $e");
-        }
-
-      } else {
         if (!mounted) return;
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text("Could not read any text. Please try again.")),
-        );
+        if (response.statusCode == 200) {
+          Navigator.push(
+            context,
+            PageTransitions.fade(ResultScreen(analysisResult: response.body)),
+          );
+        } else {
+          _showError("server_error".tr(namedArgs: {'code': response.statusCode.toString()}));
+        }
+      } else {
+        _showError("ocr_failed".tr());
       }
     } catch (e) {
-      if (!mounted) return;
-      // This catches network connection errors (like if the backend isn't turned on)
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('upload_failed'.tr())),
-      );
-      debugPrint("Network/Processing Error: $e");
+      _showError('upload_failed'.tr());
+      debugPrint("Error: $e");
+    } finally {
+      if (mounted) setState(() => _isProcessing = false);
     }
+  }
+
+  void _showError(String message) {
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        backgroundColor: AppColors.frovyRed,
+      ),
+    );
   }
 
   Future<void> _pickFromGallery() async {
     final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
-    if (image != null) {
-      await _processImage(image.path);
-    }
+    if (image != null) await _processImage(image.path);
   }
 
   Future<void> _takePhoto() async {
@@ -171,202 +129,336 @@ class CameraScreenState extends State<CameraScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
+      backgroundColor: isDark ? AppColors.darkBackground : AppColors.frovyGreen,
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: isDark ? Colors.white : Colors.black),
-          onPressed: () => Navigator.of(context).pop(), 
+        centerTitle: true,
+        leading: GestureDetector(
+          onTap: () => Navigator.of(context).pop(),
+          child: Container(
+            margin: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.2),
+              shape: BoxShape.circle,
+            ),
+            child: const Icon(Icons.chevron_left_rounded, color: Colors.white, size: 28),
+          ),
         ),
         title: Text(
-          "scan_ingredients".tr(), 
-          style: TextStyle(color: isDark ? Colors.white : Colors.black, fontWeight: FontWeight.bold),
+          "scan_ingredients".tr(),
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
         ),
-        centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            children: [
-              // 1. The Camera Card Container
-              Container(
-                decoration: BoxDecoration(
-                  color: isDark ? const Color(0xFF2C2C2C) : Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
-                    if (!isDark)
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.05),
-                        blurRadius: 10,
-                        offset: const Offset(0, 4),
-                      ),
-                  ],
-                ),
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  children: [
-                    // Camera Preview Window
-                    Container(
-                      height: 300, 
+      body: Column(
+        children: [
+          // ── Camera preview card ─────────────────────
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 8, 20, 20),
+            child: Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: isDark ? AppColors.darkCard : Colors.white,
+                borderRadius: BorderRadius.circular(24),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.08),
+                    blurRadius: 20,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+              ),
+              child: Column(
+                children: [
+                  // Preview window
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: SizedBox(
+                      height: 260,
                       width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Colors.grey[300]!),
-                      ),
-                      clipBehavior: Clip.hardEdge,
                       child: _isCameraInitialized && controller != null
                           ? Stack(
                               fit: StackFit.expand,
                               children: [
                                 CameraPreview(controller!),
-                                // The Green Focus Frame
+                                // Focus frame
                                 Center(
                                   child: Container(
-                                    width: 200,
-                                    height: 200,
+                                    width: 180,
+                                    height: 180,
                                     decoration: BoxDecoration(
                                       border: Border.all(
-                                        color: Colors.white.withValues(alpha: 0.8),
+                                        color: Colors.white.withValues(alpha: 0.9),
                                         width: 2,
                                       ),
-                                      borderRadius: BorderRadius.circular(12),
+                                      borderRadius: BorderRadius.circular(14),
+                                    ),
+                                    child: Stack(
+                                      children: [
+                                        // Corner accents
+                                        _corner(Alignment.topLeft),
+                                        _corner(Alignment.topRight),
+                                        _corner(Alignment.bottomLeft),
+                                        _corner(Alignment.bottomRight),
+                                      ],
                                     ),
                                   ),
                                 ),
+                                if (_isProcessing)
+                                  Container(
+                                    color: Colors.black.withValues(alpha: 0.5),
+                                    child: const Center(
+                                      child: CircularProgressIndicator(
+                                        color: Colors.white,
+                                        strokeWidth: 2.5,
+                                      ),
+                                    ),
+                                  ),
                               ],
                             )
-                          : Center(
+                          : Container(
+                              color: isDark
+                                  ? AppColors.darkBackground
+                                  : const Color(0xFFF5F5F5),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  const Icon(Icons.camera_alt_outlined, size: 40, color: Colors.grey),
+                                  Icon(Icons.camera_alt_outlined,
+                                      size: 40,
+                                      color: Colors.grey[400]),
                                   const SizedBox(height: 8),
-                                  Text("camera_preview".tr(), style: const TextStyle(color: Colors.grey)),
+                                  Text("camera_preview".tr(),
+                                      style: TextStyle(color: Colors.grey[400])),
                                 ],
                               ),
                             ),
                     ),
-                    
-                    const SizedBox(height: 20),
+                  ),
 
-                    // "Take Photo" Button
-                    SizedBox(
-                      width: double.infinity,
-                      height: 50,
-                      child: ElevatedButton.icon(
-                        onPressed: _takePhoto,
-                        icon: const Icon(Icons.camera_alt),
-                        label: Text("take_photo".tr(), style: const TextStyle(fontSize: 16)),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: frovyGreen,
-                          foregroundColor: Colors.white,
-                          elevation: 0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
+                  const SizedBox(height: 16),
+
+                  // Action buttons
+                  Row(
+                    children: [
+                      Expanded(
+                        child: SizedBox(
+                          height: 50,
+                          child: ElevatedButton.icon(
+                            onPressed: _isProcessing ? null : _takePhoto,
+                            icon: const Icon(Icons.camera_alt_rounded, size: 18),
+                            label: Text("take_photo".tr()),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: frovyGreen,
+                              foregroundColor: Colors.white,
+                              elevation: 0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(14),
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-
-                    const SizedBox(height: 12),
-
-                    // "Upload from Gallery" Button 
-                    SizedBox(
-                      width: double.infinity,
-                      height: 50,
-                      child: OutlinedButton.icon(
-                        onPressed: _pickFromGallery,
-                        icon: const Icon(Icons.file_upload_outlined, color: frovyGreen),
-                        label: Text("upload_from_gallery".tr(), style: const TextStyle(fontSize: 16, color: frovyGreen)),
-                        style: OutlinedButton.styleFrom(
-                          side: BorderSide(color: frovyGreen.withValues(alpha: 0.5)),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
+                      const SizedBox(width: 10),
+                      SizedBox(
+                        height: 50,
+                        child: OutlinedButton(
+                          onPressed: _isProcessing ? null : _pickFromGallery,
+                          style: OutlinedButton.styleFrom(
+                            side: BorderSide(color: frovyGreen.withValues(alpha: 0.6)),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(14),
+                            ),
+                            padding: const EdgeInsets.symmetric(horizontal: 16),
                           ),
+                          child: Icon(Icons.photo_library_outlined,
+                              color: frovyGreen, size: 22),
                         ),
                       ),
-                    ),
-                  ],
-                ),
+                    ],
+                  ),
+                ],
               ),
+            ),
+          ),
 
-              const SizedBox(height: 24),
-
-              // 2. "How to scan" Instructional Box
-              Container(
-                width: double.infinity,
+          // ── Bottom sheet-style tip + manual entry ──
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF1A1A1A) : const Color(0xFFF2F7F2),
+                borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
+              ),
+              child: SingleChildScrollView(
                 padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: isDark ? const Color(0xFF2C2C2C) : frovyBeige, 
-                  borderRadius: BorderRadius.circular(12),
-                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "how_to_scan".tr(),
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: isDark ? Colors.white : frovyText,
+                    // Tips card
+                    Container(
+                      padding: const EdgeInsets.all(18),
+                      decoration: BoxDecoration(
+                        color: isDark ? AppColors.darkCard : Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.05),
+                            blurRadius: 12,
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.all(8),
+                                decoration: BoxDecoration(
+                                  color: AppColors.frovyGreen.withValues(alpha: 0.12),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: const Icon(Icons.lightbulb_outline_rounded,
+                                    color: frovyGreen, size: 18),
+                              ),
+                              const SizedBox(width: 10),
+                              Text(
+                                "how_to_scan".tr(),
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  color: isDark ? Colors.white : AppColors.frovyText,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 14),
+                          _buildTipRow("scan_instruction_1".tr(), isDark),
+                          _buildTipRow("scan_instruction_2".tr(), isDark),
+                          _buildTipRow("scan_instruction_3".tr(), isDark),
+                          _buildTipRow("scan_instruction_4".tr(), isDark),
+                        ],
                       ),
                     ),
-                    const SizedBox(height: 12),
-                    _buildBulletPoint("scan_instruction_1".tr(), isDark),
-                    _buildBulletPoint("scan_instruction_2".tr(), isDark),
-                    _buildBulletPoint("scan_instruction_3".tr(), isDark),
-                    _buildBulletPoint("scan_instruction_4".tr(), isDark),
+
+                    const SizedBox(height: 20),
+
+                    // Manual entry card
+                    GestureDetector(
+                      onTap: () => Navigator.push(
+                        context,
+                        PageTransitions.slideRight(const ManualEntryScreen()),
+                      ),
+                      child: Container(
+                        padding: const EdgeInsets.all(18),
+                        decoration: BoxDecoration(
+                          color: isDark ? AppColors.darkCard : Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withValues(alpha: 0.05),
+                              blurRadius: 12,
+                            ),
+                          ],
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: AppColors.frovyGreen.withValues(alpha: 0.12),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: const Icon(Icons.edit_outlined,
+                                  color: frovyGreen, size: 20),
+                            ),
+                            const SizedBox(width: 14),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "try_manual_entry".tr(),
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                      color: isDark ? Colors.white : AppColors.frovyText,
+                                    ),
+                                  ),
+                                  Text(
+                                    "cant_scan_label".tr(),
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.grey[500],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Icon(Icons.chevron_right_rounded,
+                                color: Colors.grey[400]),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
-              const SizedBox(height: 24),
-
-              // 3. Footer Links
-              Text(
-                "cant_scan_label".tr(),
-                style: TextStyle(color: Colors.grey[600]),
-              ),
-              TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    PageTransitions.slideRight(const ManualEntryScreen()),
-                  );
-                },
-                child: Text(
-                  "try_manual_entry".tr(),
-                  style: const TextStyle(color: frovyGreen, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ],
+  Widget _corner(Alignment alignment) {
+    final isTop = alignment == Alignment.topLeft || alignment == Alignment.topRight;
+    final isLeft = alignment == Alignment.topLeft || alignment == Alignment.bottomLeft;
+    return Align(
+      alignment: alignment,
+      child: Container(
+        width: 16,
+        height: 16,
+        decoration: BoxDecoration(
+          border: Border(
+            top: isTop ? const BorderSide(color: frovyGreen, width: 3) : BorderSide.none,
+            bottom: !isTop ? const BorderSide(color: frovyGreen, width: 3) : BorderSide.none,
+            left: isLeft ? const BorderSide(color: frovyGreen, width: 3) : BorderSide.none,
+            right: !isLeft ? const BorderSide(color: frovyGreen, width: 3) : BorderSide.none,
           ),
         ),
       ),
     );
   }
 
-  // Helper widget for the bullet points
-  Widget _buildBulletPoint(String text, bool isDark) {
+  Widget _buildTipRow(String text, bool isDark) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
+      padding: const EdgeInsets.only(bottom: 8),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
-            padding: EdgeInsets.only(top: 6.0),
-            child: Icon(Icons.circle, size: 6, color: frovyGreen),
+          Container(
+            margin: const EdgeInsets.only(top: 5),
+            width: 6,
+            height: 6,
+            decoration: const BoxDecoration(
+              color: frovyGreen,
+              shape: BoxShape.circle,
+            ),
           ),
           const SizedBox(width: 10),
           Expanded(
             child: Text(
               text,
               style: TextStyle(
-                color: isDark ? Colors.white70 : frovyText,
-                fontSize: 14,
+                fontSize: 13,
                 height: 1.4,
+                color: isDark ? Colors.white70 : AppColors.frovyText,
               ),
             ),
           ),

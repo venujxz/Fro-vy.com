@@ -118,6 +118,10 @@
   "cancel_anytime": "ඕනෑම වේලාවක අවලංගු කරන්න. ආරක්ෂිත ගෙවීම.",
   "processing_payment": "ගෙවීම සකසමින්...",
   "welcome_premium": "Premium වෙත සාදරයෙන් පිළිගනිමු!",
+  "secure_payment_stripe": "Stripe මගින් සකසන ලද ආරක්ෂිත ගෙවීම",
+  "secure_payment_payhere": "PayHere මගින් සකසන ලද ආරක්ෂිත ගෙවීම",
+  "payment_cancelled": "ගෙවීම අවලංගු කරන ලදී",
+  "payment_failed": "ගෙවීම අසාර්ථකයි. කරුණාකර නැවත උත්සාහ කරන්න.",
 
   "summary": "සාරාංශය",
   "total_scans": "මුළු ස්කෑන්",
@@ -273,5 +277,31 @@
   "check_email_instructions": "කරුණාකර ඔබේ ඊමේල් පරීක්ෂා කර ලියාපදිංචිය සම්පූර්ණ කිරීමට\nතහවුරු කිරීමේ සබැඳිය ක්ලික් කරන්න.",
   "didnt_receive": "ඊමේල් ලැබුණේ නැද්ද?",
   "resend": "නැවත යවන්න",
-  "back": "ආපසු"
+  "back": "ආපසු",
+
+  "or": "හෝ",
+  "sign_in_google": "Google සමඟ පිවිසෙන්න",
+  "google_signin_coming_soon": "Google පිවිසුම ඉක්මනින් පැමිණේ!",
+  "food_allergies_optional": "ආහාර අසාත්මිකතා (විකල්ප)",
+  "food_allergy_text_instruction": "ආහාර අසාත්මිකතා කොමාවෙන් වෙන් කර ඇතුලත් කරන්න (උදා: රටකජු, ෂෙල්ෆිෂ්, කිරි).",
+  "enter_allergies": "උදා: රටකජු, ෂෙල්ෆිෂ්, කිරි",
+  "step_2_of_3": "පියවර 2/3",
+
+  "recent_scans": "මෑත ස්කෑන්",
+  "tap_to_view_analysis": "විශ්ලේෂණය බැලීමට තට්ටු කරන්න",
+  "no_concerns_here": "මෙහි ගැටලු නොමැත",
+  "server_error": "සේවාදායක දෝෂය: {code}",
+  "ocr_failed": "පෙළ කියවිය නොහැකි විය. කරුණාකර නැවත උත්සාහ කරන්න.",
+  "feature_scan": "ස්කෑන්",
+  "feature_analyze": "විශ්ලේෂණය",
+  "feature_stay_safe": "ආරක්ෂිතව සිටින්න",
+  "coming_soon": "ඉක්මනින් පැමිණේ!",
+  "coming_soon_desc": "ප්‍රිමියම් දායකත්ව ඉක්මනින් දියත් වේ! ඔබට විශිෂ්ට අත්දැකීමක් ලබාදීමට අපි වෙහෙස මහන්සි වෙමින් සිටිමු.",
+  "got_it": "තේරුණා!",
+  "email_app_error": "ඊමේල් යෙදුම විවෘත කළ නොහැක. කරුණාකර {email} වෙත ඊමේල් කරන්න",
+  "phone_app_error": "ඩයලරය විවෘත කළ නොහැක. කරුණාකර {phone} ඇමතන්න",
+  "status_avoid": "වළකින්න",
+  "status_caution": "ප්‍රවේශම්",
+  "status_safe": "ආරක්ෂිතයි",
+  "manual_example": "උදා: සීනි, සෝඩියම්, කෘතිම වර්ණ, කිරි..."
 }

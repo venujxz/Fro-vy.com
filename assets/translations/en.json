@@ -277,5 +277,31 @@
   "check_email_instructions": "Please check your email and click the\nverification link to complete your registration.",
   "didnt_receive": "Didn't receive the email?",
   "resend": "Resend",
-  "back": "Back"
+  "back": "Back",
+
+  "or": "or",
+  "sign_in_google": "Sign in with Google",
+  "google_signin_coming_soon": "Google Sign-In coming soon!",
+  "food_allergies_optional": "FOOD ALLERGIES (Optional)",
+  "food_allergy_text_instruction": "Enter any food allergies, separated by commas (e.g., Peanuts, Shellfish, Milk).",
+  "enter_allergies": "E.g., Peanuts, Shellfish, Milk",
+  "step_2_of_3": "STEP 2 OF 3",
+
+  "recent_scans": "Recent Scans",
+  "tap_to_view_analysis": "Tap to view analysis",
+  "no_concerns_here": "No concerns here",
+  "server_error": "Server error: {code}",
+  "ocr_failed": "Could not read any text. Please try again.",
+  "feature_scan": "Scan",
+  "feature_analyze": "Analyze",
+  "feature_stay_safe": "Stay Safe",
+  "coming_soon": "Coming Soon!",
+  "coming_soon_desc": "Premium subscriptions are launching soon! We're working hard to bring you an amazing experience.",
+  "got_it": "Got it!",
+  "email_app_error": "Could not open email app. Please email us at {email}",
+  "phone_app_error": "Could not open dialler. Please call {phone}",
+  "status_avoid": "Avoid",
+  "status_caution": "Caution",
+  "status_safe": "Safe",
+  "manual_example": "e.g. Sugar, Sodium, Artificial Color, Milk..."
 }
