@@ -251,3 +251,123 @@
     "lastUpdated": "2026-02-17T11:51:23.144346"
 
   },
+  
+  {
+
+    "name": "Milk powder 1.8%",
+
+    "category": "caution",
+
+    "reason": "Dehydrated dairy with concentrated protein and calcium, but heavy processing reduces some nutritional quality.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Milk power 0.5%",
+
+    "category": "caution",
+
+    "reason": "Dehydrated dairy with concentrated protein and calcium, but heavy processing reduces some nutritional quality.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Skimmed Milk",
+
+    "category": "beneficial",
+
+    "reason": "Low-fat dairy retaining most protein and calcium of whole milk. Supports bone health with fewer calories.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Skimmed Milk Powder",
+
+    "category": "caution",
+
+    "reason": "Dehydrated low-fat dairy with useful protein and calcium. Processing reduces some nutritional integrity compared to fresh skimmed milk.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "skimmed milk powder",
+
+    "category": "caution",
+
+    "reason": "Dehydrated low-fat dairy with useful protein and calcium. Processing reduces some nutritional integrity compared to fresh skimmed milk.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Whole Milk Powder",
+
+    "category": "caution",
+
+    "reason": "Dehydrated whole dairy with saturated fat and protein. Processing reduces nutritional quality compared to fresh whole milk.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Full Cream Milk",
+
+    "category": "beneficial",
+
+    "reason": "Whole dairy with full fat content, rich in protein, calcium, and fat-soluble vitamins A and D.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Full Cream Milk Powder",
+
+    "category": "caution",
+
+    "reason": "Dehydrated full-fat dairy. Retains protein and minerals but processing reduces nutritional quality versus fresh milk.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "whey liquid",
+
+    "category": "caution",
+
+    "reason": "Liquid dairy byproduct containing whey protein and lactose. Nutritional value is present but it is a heavily processed derivative.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Whey Liquid",
+
+    "category": "caution",
+
+    "reason": "Liquid dairy byproduct containing whey protein and lactose. Nutritional value is present but it is a heavily processed derivative.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
