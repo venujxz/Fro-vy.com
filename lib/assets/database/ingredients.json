@@ -443,3 +443,556 @@
     "lastUpdated": "2026-02-17T11:51:23.144346"
 
   },
+  
+  {
+
+    "name": "Cheese",
+
+    "category": "beneficial",
+
+    "reason": "Fermented dairy providing protein, calcium, and beneficial bacteria. Moderate saturated fat content warrants portion awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cheese (cow milk",
+
+    "category": "beneficial",
+
+    "reason": "Fermented dairy providing protein, calcium, and beneficial bacteria. Moderate saturated fat content warrants portion awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cheese powder 7%",
+
+    "category": "caution",
+
+    "reason": "Highly processed cheese derivative with added salt and potential additives. Reduced nutritional quality compared to natural cheese.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cheese Powder (8.4%)",
+
+    "category": "caution",
+
+    "reason": "Highly processed cheese derivative with added salt and potential additives. Reduced nutritional quality compared to natural cheese.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cheese Powder",
+
+    "category": "caution",
+
+    "reason": "Highly processed cheese derivative with added salt and potential additives. Reduced nutritional quality compared to natural cheese.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "butter",
+
+    "category": "caution",
+
+    "reason": "Natural dairy fat high in saturated fat and fat-soluble vitamins. Safe in moderation but excessive intake may elevate LDL cholesterol.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Butter",
+
+    "category": "caution",
+
+    "reason": "Natural dairy fat high in saturated fat and fat-soluble vitamins. Safe in moderation but excessive intake may elevate LDL cholesterol.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "microbial rennet)",
+
+    "category": "beneficial",
+
+    "reason": "Enzyme from microbial fermentation used to coagulate milk in cheesemaking. Considered safe with no notable health concerns.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Curd Culture",
+
+    "category": "beneficial",
+
+    "reason": "Live bacterial cultures used in dairy fermentation. Supports gut health by contributing beneficial probiotic microorganisms.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Curd culture",
+
+    "category": "beneficial",
+
+    "reason": "Live bacterial cultures used in dairy fermentation. Supports gut health by contributing beneficial probiotic microorganisms.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "yoghurt culture",
+
+    "category": "beneficial",
+
+    "reason": "Live bacterial cultures used in yoghurt fermentation. Provides probiotic benefit supporting digestive and immune health.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Yoghurt Culture",
+
+    "category": "beneficial",
+
+    "reason": "Live bacterial cultures used in yoghurt fermentation. Provides probiotic benefit supporting digestive and immune health.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Yoghurt Culture.",
+
+    "category": "beneficial",
+
+    "reason": "Live bacterial cultures used in yoghurt fermentation. Provides probiotic benefit supporting digestive and immune health.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Probiotic yoghurt culture",
+
+    "category": "beneficial",
+
+    "reason": "Live bacterial cultures used in yoghurt fermentation. Provides probiotic benefit supporting digestive and immune health.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Yoghurt Culture (with probiotic culture)",
+
+    "category": "beneficial",
+
+    "reason": "Live bacterial cultures used in yoghurt fermentation. Provides probiotic benefit supporting digestive and immune health.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "yoghurt culture [Including probiotic Lactocaseibacillus rhamnosus HN001/DR20\u2122\ufe0f (Contains $1.0 \\times 10^6$ minimum colony forming units (cfu) per gram)]",
+
+    "category": "beneficial",
+
+    "reason": "Live bacterial cultures used in yoghurt fermentation. Provides probiotic benefit supporting digestive and immune health.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "sugar",
+
+    "category": "caution",
+
+    "reason": "Refined carbohydrate with no nutritional value beyond calories. Excessive intake raises risk of metabolic conditions.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sugar",
+
+    "category": "caution",
+
+    "reason": "Refined carbohydrate with no nutritional value beyond calories. Excessive intake raises risk of metabolic conditions.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sugar (11%)",
+
+    "category": "caution",
+
+    "reason": "Refined carbohydrate with no nutritional value beyond calories. Excessive intake raises risk of metabolic conditions.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sugar (31%)",
+
+    "category": "caution",
+
+    "reason": "Refined carbohydrate with no nutritional value beyond calories. Excessive intake raises risk of metabolic conditions.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sugar syrup",
+
+    "category": "caution",
+
+    "reason": "Concentrated liquid sugar with no nutritional value. High sugar content contributes to excess calorie intake and metabolic risk.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "sugar syrup",
+
+    "category": "caution",
+
+    "reason": "Concentrated liquid sugar with no nutritional value. High sugar content contributes to excess calorie intake and metabolic risk.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sucrose",
+
+    "category": "caution",
+
+    "reason": "Refined table sugar composed of glucose and fructose. Provides only empty calories; excessive intake linked to metabolic disease.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Glucose",
+
+    "category": "caution",
+
+    "reason": "Simple sugar used by the body for energy. Rapidly raises blood glucose; excessive intake may contribute to insulin resistance.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "glucose",
+
+    "category": "caution",
+
+    "reason": "Simple sugar used by the body for energy. Rapidly raises blood glucose; excessive intake may contribute to insulin resistance.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Glucose syrup",
+
+    "category": "caution",
+
+    "reason": "Refined liquid sweetener derived from starch with high sugar content. Provides empty calories and raises blood glucose rapidly.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "glucose syrup",
+
+    "category": "caution",
+
+    "reason": "Refined liquid sweetener derived from starch with high sugar content. Provides empty calories and raises blood glucose rapidly.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Glucose Syrup",
+
+    "category": "caution",
+
+    "reason": "Refined liquid sweetener derived from starch with high sugar content. Provides empty calories and raises blood glucose rapidly.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Glucose-Fructose Syrup",
+
+    "category": "caution",
+
+    "reason": "Highly refined sweetener similar to high-fructose corn syrup. Frequent intake associated with metabolic syndrome and weight gain.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Liquid Glucose",
+
+    "category": "caution",
+
+    "reason": "Refined liquid sweetener derived from starch with high sugar content. Provides empty calories and raises blood glucose rapidly.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Dextrose",
+
+    "category": "caution",
+
+    "reason": "Pure glucose sugar derived from starch. Rapidly raises blood sugar levels; excessive intake may contribute to metabolic issues.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Dextrose monohydrate",
+
+    "category": "caution",
+
+    "reason": "Pure glucose sugar derived from starch. Rapidly raises blood sugar levels; excessive intake may contribute to metabolic issues.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Lactose",
+
+    "category": "caution",
+
+    "reason": "Natural milk sugar providing energy. May cause digestive discomfort in lactose-intolerant individuals; otherwise generally safe.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Steviol glycoside",
+
+    "category": "beneficial",
+
+    "reason": "Plant-derived zero-calorie sweetener from stevia. Well-studied, generally recognized as safe, and does not raise blood glucose.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Steviol Glycoside",
+
+    "category": "beneficial",
+
+    "reason": "Plant-derived zero-calorie sweetener from stevia. Well-studied, generally recognized as safe, and does not raise blood glucose.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Steviol Glycoside (INS 960)",
+
+    "category": "beneficial",
+
+    "reason": "Plant-derived zero-calorie sweetener from stevia. Well-studied, generally recognized as safe, and does not raise blood glucose.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Steviol glycoside (INS 960)",
+
+    "category": "beneficial",
+
+    "reason": "Plant-derived zero-calorie sweetener from stevia. Well-studied, generally recognized as safe, and does not raise blood glucose.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permitted Sweetener Steviol Glycoside",
+
+    "category": "beneficial",
+
+    "reason": "Plant-derived zero-calorie sweetener from stevia. Well-studied, generally recognized as safe, and does not raise blood glucose.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sweetener (INS 960)",
+
+    "category": "beneficial",
+
+    "reason": "Plant-derived zero-calorie sweetener from stevia. Well-studied, generally recognized as safe, and does not raise blood glucose.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sweeteners (INS 950, INS 955)",
+
+    "category": "caution",
+
+    "reason": "Combination of acesulfame K and sucralose, both approved synthetic sweeteners. Long-term high intake may affect gut microbiome.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sweeteners (INS 955, 950)",
+
+    "category": "caution",
+
+    "reason": "Combination of acesulfame K and sucralose, both approved synthetic sweeteners. Long-term high intake may affect gut microbiome.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Aspartame-INS951",
+
+    "category": "caution",
+
+    "reason": "Synthetic sweetener approved by major food authorities. Possibly carcinogenic at very high intake per IARC 2023; safe at typical levels.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Acesulfame K - INS950",
+
+    "category": "caution",
+
+    "reason": "Approved synthetic sweetener providing zero calories. Some animal studies suggest metabolic effects; considered safe at normal intake.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Acesulfame K",
+
+    "category": "caution",
+
+    "reason": "Approved synthetic sweetener providing zero calories. Some animal studies suggest metabolic effects; considered safe at normal intake.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sucralose",
+
+    "category": "caution",
+
+    "reason": "Chlorinated synthetic sweetener approved globally. May alter gut microbiome with high long-term use; safe at typical intake levels.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sucralose (INS 955)",
+
+    "category": "caution",
+
+    "reason": "Chlorinated synthetic sweetener approved globally. May alter gut microbiome with high long-term use; safe at typical intake levels.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
