@@ -25,8 +25,8 @@ class HelpSupportScreen extends StatelessWidget {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(
-                "email_app_error".tr(namedArgs: {'email': _supportEmail})),
+            content: const Text(
+                'Could not open email app. Please email us at $_supportEmail'),
             behavior: SnackBarBehavior.floating,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -43,8 +43,8 @@ class HelpSupportScreen extends StatelessWidget {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(
-                "phone_app_error".tr(namedArgs: {'phone': _supportPhone})),
+            content: const Text(
+                'Could not open dialler. Please call $_supportPhone'),
             behavior: SnackBarBehavior.floating,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
