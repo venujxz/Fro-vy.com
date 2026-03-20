@@ -371,3 +371,75 @@
     "lastUpdated": "2026-02-17T11:51:23.144346"
 
   },
+  
+  {
+
+    "name": "whey powder",
+
+    "category": "caution",
+
+    "reason": "Dried dairy byproduct with concentrated whey protein. Processed derivative with moderate nutritional value and potential allergen concerns.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Whey Powder",
+
+    "category": "caution",
+
+    "reason": "Dried dairy byproduct with concentrated whey protein. Processed derivative with moderate nutritional value and potential allergen concerns.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "whey permeate (milk)",
+
+    "category": "caution",
+
+    "reason": "Highly processed dairy byproduct, mainly lactose and minerals with low protein content. Limited nutritional benefit.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Fresh Cream",
+
+    "category": "caution",
+
+    "reason": "High-fat dairy product with concentrated saturated fat. Nutritious in small amounts but high caloric density warrants moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "cream",
+
+    "category": "caution",
+
+    "reason": "High-fat dairy product with concentrated saturated fat. Nutritious in small amounts but high caloric density warrants moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "cheese",
+
+    "category": "beneficial",
+
+    "reason": "Fermented dairy providing protein, calcium, and beneficial bacteria. Moderate saturated fat content warrants portion awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
