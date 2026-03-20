@@ -42,17 +42,17 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyCDrcIlZ-rY7-Cn0YI4LqRTwLT2KiEx0co',
-    appId: '1:1014519853798:web:d921887d3689ff1cd38127',
+    appId: '1:1014519853798:web:04579a46bc090469d38127',
     messagingSenderId: '1014519853798',
     projectId: 'fro-vy',
     authDomain: 'fro-vy.firebaseapp.com',
     storageBucket: 'fro-vy.firebasestorage.app',
-    measurementId: 'G-V7NVNJRTFR',
+    measurementId: 'G-EVE61MT6Y5',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBmhBf_Zt6y6-Wu7FVg1iYP50QUBVGxu0o',
-    appId: '1:1014519853798:android:ef192f9c4e045044d38127',
+    appId: '1:1014519853798:android:21139fd1a2b07265d38127',
     messagingSenderId: '1014519853798',
     projectId: 'fro-vy',
     storageBucket: 'fro-vy.firebasestorage.app',
@@ -60,33 +60,33 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCF6sED2NE4KE29zoaSN1o9ezx_pZlGWQk',
-    appId: '1:1014519853798:ios:6d1df4fbb5c075afd38127',
+    appId: '1:1014519853798:ios:ad53909d3890f574d38127',
     messagingSenderId: '1014519853798',
     projectId: 'fro-vy',
     storageBucket: 'fro-vy.firebasestorage.app',
     androidClientId: '1014519853798-fdkn056dr9qbrn768esqdij3t6ugps9f.apps.googleusercontent.com',
-    iosClientId: '1014519853798-7cdv61reb50o5djpnddnp33q1tj7fi88.apps.googleusercontent.com',
-    iosBundleId: 'com.example.frovyApp',
+    iosClientId: '1014519853798-q9b2d37sej8t0p97nvpvgteql14ja04j.apps.googleusercontent.com',
+    iosBundleId: 'com.example.frovyOutputTest',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyCF6sED2NE4KE29zoaSN1o9ezx_pZlGWQk',
-    appId: '1:1014519853798:ios:6d1df4fbb5c075afd38127',
+    appId: '1:1014519853798:ios:ad53909d3890f574d38127',
     messagingSenderId: '1014519853798',
     projectId: 'fro-vy',
     storageBucket: 'fro-vy.firebasestorage.app',
     androidClientId: '1014519853798-fdkn056dr9qbrn768esqdij3t6ugps9f.apps.googleusercontent.com',
-    iosClientId: '1014519853798-7cdv61reb50o5djpnddnp33q1tj7fi88.apps.googleusercontent.com',
-    iosBundleId: 'com.example.frovyApp',
+    iosClientId: '1014519853798-q9b2d37sej8t0p97nvpvgteql14ja04j.apps.googleusercontent.com',
+    iosBundleId: 'com.example.frovyOutputTest',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
     apiKey: 'AIzaSyCDrcIlZ-rY7-Cn0YI4LqRTwLT2KiEx0co',
-    appId: '1:1014519853798:web:04579a46bc090469d38127',
+    appId: '1:1014519853798:web:089f35596a31b528d38127',
     messagingSenderId: '1014519853798',
     projectId: 'fro-vy',
     authDomain: 'fro-vy.firebaseapp.com',
     storageBucket: 'fro-vy.firebasestorage.app',
-    measurementId: 'G-EVE61MT6Y5',
+    measurementId: 'G-L24KYK0T5P',
   );
 }

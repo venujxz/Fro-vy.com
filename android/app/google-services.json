@@ -7,151 +7,28 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1014519853798:android:fbc91ac25da1f5f3d38127",
+        "mobilesdk_app_id": "1:1014519853798:android:04579a46bc090469d38127",
         "android_client_info": {
-          "package_name": "com.example.frovy"
+          "package_name": "com.example.fro_vy"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1014519853798-bf5gi573o577fuom99mm6758jslhui5v.apps.googleusercontent.com",
+          "client_id": "1014519853798-abc123def456ghi789jkl012mno345pqr.firebaseapp.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBmhBf_Zt6y6-Wu7FVg1iYP50QUBVGxu0o"
+          "current_key": "AIzaSyCDrcIlZ-rY7-Cn0YI4LqRTwLT2KiEx0co"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1014519853798-bf5gi573o577fuom99mm6758jslhui5v.apps.googleusercontent.com",
+              "client_id": "1014519853798-abc123def456ghi789jkl012mno345pqr.firebaseapp.com",
               "client_type": 3
-            },
-            {
-              "client_id": "1014519853798-7cdv61reb50o5djpnddnp33q1tj7fi88.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.frovyApp"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1014519853798:android:ef192f9c4e045044d38127",
-        "android_client_info": {
-          "package_name": "com.example.frovy_app"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1014519853798-fdkn056dr9qbrn768esqdij3t6ugps9f.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.frovy_app",
-            "certificate_hash": "6af8681463ab2e526d69a0674c6ac9d410432ab0"
-          }
-        },
-        {
-          "client_id": "1014519853798-bf5gi573o577fuom99mm6758jslhui5v.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBmhBf_Zt6y6-Wu7FVg1iYP50QUBVGxu0o"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1014519853798-bf5gi573o577fuom99mm6758jslhui5v.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "1014519853798-7cdv61reb50o5djpnddnp33q1tj7fi88.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.frovyApp"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1014519853798:android:21139fd1a2b07265d38127",
-        "android_client_info": {
-          "package_name": "com.example.frovy_output_test"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1014519853798-bf5gi573o577fuom99mm6758jslhui5v.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBmhBf_Zt6y6-Wu7FVg1iYP50QUBVGxu0o"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1014519853798-bf5gi573o577fuom99mm6758jslhui5v.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "1014519853798-7cdv61reb50o5djpnddnp33q1tj7fi88.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.frovyApp"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1014519853798:android:3be0d71898cb238ed38127",
-        "android_client_info": {
-          "package_name": "com.frovy.app"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1014519853798-bf5gi573o577fuom99mm6758jslhui5v.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBmhBf_Zt6y6-Wu7FVg1iYP50QUBVGxu0o"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1014519853798-bf5gi573o577fuom99mm6758jslhui5v.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "1014519853798-7cdv61reb50o5djpnddnp33q1tj7fi88.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.frovyApp"
-              }
             }
           ]
         }
