@@ -303,5 +303,12 @@
   "status_avoid": "Avoid",
   "status_caution": "Caution",
   "status_safe": "Safe",
-  "manual_example": "e.g. Sugar, Sodium, Artificial Color, Milk..."
+  "manual_example": "e.g. Sugar, Sodium, Artificial Color, Milk...",
+
+  "connection_error": "Could not connect to product database. Try again later.",
+  "ingredients": "ingredients",
+  "results": "results",
+  "search_products_desc": "Search our database to find products and check their ingredients against your health profile.",
+  "searching": "Searching...",
+  "try_again": "Try Again"
 }
