@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart'; // Import localization
-import 'result_screen.dart';
-import 'dart:convert';
+import 'output/output_screen.dart';
 import '../util/app_colors.dart';
 import '../util/page_transitions.dart';
 
@@ -211,10 +210,22 @@ class _SearchProductsScreenState extends State<SearchProductsScreen> {
         ),
         trailing: Icon(Icons.chevron_right, color: frovyGreen),
         onTap: () {
+          // Combine all ingredients from beneficial, caution, avoid
+          final List<String> ingredients = [
+            ...product['beneficial'] as List<String>,
+            ...product['caution'] as List<String>,
+            ...product['avoid'] as List<String>,
+          ];
           Navigator.push(
             context,
             PageTransitions.fade(
-              ResultScreen(analysisResult: jsonEncode(product)),
+              OutputScreen(
+                ingredients: ingredients,
+                isProductSearch: true,
+                productName: product['productName'] as String,
+                brandName: null, // Not in mock data
+                testUserData: null,
+              ),
             ),
           );
         },
