@@ -995,4 +995,591 @@
     "lastUpdated": "2026-02-17T11:51:23.144346"
 
   },
+{
+
+    "name": "Permitted Sweetener (Sucralose (INS 955))",
+
+    "category": "caution",
+
+    "reason": "Chlorinated synthetic sweetener approved globally. May alter gut microbiome with high long-term use; safe at typical intake levels.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Vegetable oil",
+
+    "category": "caution",
+
+    "reason": "Generic plant-derived oil of unspecified type. Health impact varies widely by source; refined versions may have reduced nutritional value.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "vegetable oil",
+
+    "category": "caution",
+
+    "reason": "Generic plant-derived oil of unspecified type. Health impact varies widely by source; refined versions may have reduced nutritional value.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Vegetable oil (Palm)",
+
+    "category": "caution",
+
+    "reason": "Refined palm oil high in saturated fat. Widely used but frequent intake may raise LDL cholesterol in some individuals.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "vegetable oil (palm)",
+
+    "category": "caution",
+
+    "reason": "Refined palm oil high in saturated fat. Widely used but frequent intake may raise LDL cholesterol in some individuals.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Vegetable Oil (Palm Oil)",
+
+    "category": "caution",
+
+    "reason": "Refined palm oil high in saturated fat. Widely used but frequent intake may raise LDL cholesterol in some individuals.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Vegetable oil (Palm, Coconut)",
+
+    "category": "caution",
+
+    "reason": "Blend of palm and coconut oils, both high in saturated fat. Regular consumption may elevate LDL cholesterol levels.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Vegetable Oil (Palm) / Vegetable Fat",
+
+    "category": "caution",
+
+    "reason": "Refined palm oil high in saturated fat. Widely used but frequent intake may raise LDL cholesterol in some individuals.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Vegetable oils (Canola oil (36%)",
+
+    "category": "caution",
+
+    "reason": "Blend of vegetable oils including canola. Health impact depends on blend composition; refined processing reduces nutritional quality.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Vegetable Oil-Soybean/Sunflower oil (non-hydrogenated)",
+
+    "category": "caution",
+
+    "reason": "Non-hydrogenated blend of soybean and sunflower oils. Refined but free of trans fats; high omega-6 content warrants moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Vegetable Fat",
+
+    "category": "caution",
+
+    "reason": "Generic processed plant fat of unspecified origin. Nutritional profile and health impact depend on source and processing method.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "vegetable fat",
+
+    "category": "caution",
+
+    "reason": "Generic processed plant fat of unspecified origin. Nutritional profile and health impact depend on source and processing method.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Vegetable fat (Palm oil)",
+
+    "category": "caution",
+
+    "reason": "Refined palm oil high in saturated fat. Widely used but frequent intake may raise LDL cholesterol in some individuals.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Vegetable fat (palm oil)",
+
+    "category": "caution",
+
+    "reason": "Refined palm oil high in saturated fat. Widely used but frequent intake may raise LDL cholesterol in some individuals.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Vegetable fat (palm)",
+
+    "category": "caution",
+
+    "reason": "Refined palm oil high in saturated fat. Widely used but frequent intake may raise LDL cholesterol in some individuals.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Vegetable fat(Palm Oil)",
+
+    "category": "caution",
+
+    "reason": "Refined palm oil high in saturated fat. Widely used but frequent intake may raise LDL cholesterol in some individuals.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Vegetable fat(Palm)",
+
+    "category": "caution",
+
+    "reason": "Refined palm oil high in saturated fat. Widely used but frequent intake may raise LDL cholesterol in some individuals.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "vegetable fat(palm)",
+
+    "category": "caution",
+
+    "reason": "Refined palm oil high in saturated fat. Widely used but frequent intake may raise LDL cholesterol in some individuals.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "hydrogenated and non-hydrogenated vegetable fat (palm)",
+
+    "category": "caution",
+
+    "reason": "Mix of hydrogenated and unhydrogenated palm fat. May contain residual trans fats from partial hydrogenation; consume with caution.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Palm based oils",
+
+    "category": "caution",
+
+    "reason": "Refined palm oil high in saturated fat. Widely used but frequent intake may raise LDL cholesterol in some individuals.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Palm based oils)",
+
+    "category": "caution",
+
+    "reason": "Refined palm oil high in saturated fat. Widely used but frequent intake may raise LDL cholesterol in some individuals.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Palm fat",
+
+    "category": "caution",
+
+    "reason": "Refined palm oil high in saturated fat. Widely used but frequent intake may raise LDL cholesterol in some individuals.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "palm fat",
+
+    "category": "caution",
+
+    "reason": "Refined palm oil high in saturated fat. Widely used but frequent intake may raise LDL cholesterol in some individuals.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Palm Olein",
+
+    "category": "caution",
+
+    "reason": "Liquid fraction of palm oil with slightly less saturated fat than palm stearin. Still high in saturated fat; use in moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "palm olein",
+
+    "category": "caution",
+
+    "reason": "Liquid fraction of palm oil with slightly less saturated fat than palm stearin. Still high in saturated fat; use in moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "RBD Palm Olein",
+
+    "category": "caution",
+
+    "reason": "Refined, bleached, and deodorized palm olein. Heavily processed with high saturated fat content; use with moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Refined Deodorized Palm Oil",
+
+    "category": "caution",
+
+    "reason": "Heavily processed palm oil with high saturated fat. Refining removes some nutrients; frequent use may raise LDL cholesterol.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Deodorized Palm Oil",
+
+    "category": "caution",
+
+    "reason": "Processed palm oil with high saturated fat content. Deodorizing removes natural antioxidants; frequent intake warrants moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sunflower oil (14.5%)",
+
+    "category": "beneficial",
+
+    "reason": "Plant oil rich in vitamin E and unsaturated fats. Supports heart health when consumed in moderation as part of a balanced diet.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "sunflower oil",
+
+    "category": "beneficial",
+
+    "reason": "Plant oil rich in vitamin E and unsaturated fats. Supports heart health when consumed in moderation as part of a balanced diet.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Rapeseed oil/Sunflower oil (48%)",
+
+    "category": "beneficial",
+
+    "reason": "Blend of rapeseed and sunflower oils, both rich in unsaturated fats. Supports heart health when used in moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Rapeseed oil/Sunflower oil (46%)",
+
+    "category": "beneficial",
+
+    "reason": "Blend of rapeseed and sunflower oils, both rich in unsaturated fats. Supports heart health when used in moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Canola oil (36%)",
+
+    "category": "beneficial",
+
+    "reason": "Low-saturated-fat plant oil rich in omega-3 and omega-6 fatty acids. Linked to heart health benefits in well-established research.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Rice Bran Oil",
+
+    "category": "beneficial",
+
+    "reason": "Plant oil from rice bran with balanced fatty acids and vitamin E. Associated with cholesterol-lowering effects in scientific studies.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Hydrogenated Palm Kernel Oil",
+
+    "category": "avoid",
+
+    "reason": "Fully hydrogenated oil very high in saturated fat. Strongly linked to elevated LDL cholesterol and increased cardiovascular disease risk.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Margarine",
+
+    "category": "caution",
+
+    "reason": "Processed fat spread that may contain partially hydrogenated oils with trans fats. Health impact depends on specific formulation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Margarine (23%)",
+
+    "category": "caution",
+
+    "reason": "Processed fat spread that may contain partially hydrogenated oils with trans fats. Health impact depends on specific formulation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "cocoa butter",
+
+    "category": "beneficial",
+
+    "reason": "Natural fat from cacao beans containing stearic acid and polyphenols. Considered heart-neutral and provides antioxidant compounds.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cocoa Butter",
+
+    "category": "beneficial",
+
+    "reason": "Natural fat from cacao beans containing stearic acid and polyphenols. Considered heart-neutral and provides antioxidant compounds.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cocoa Butter Substitute",
+
+    "category": "caution",
+
+    "reason": "Processed vegetable fat engineered to mimic cocoa butter. May lack cocoa's nutritional benefits and contain refined saturated fats.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Wheat flour",
+
+    "category": "caution",
+
+    "reason": "Refined grain flour with most fiber and nutrients removed. Provides carbohydrates but limited nutritional value compared to whole grain.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Wheat Flour",
+
+    "category": "caution",
+
+    "reason": "Refined grain flour with most fiber and nutrients removed. Provides carbohydrates but limited nutritional value compared to whole grain.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "wheat flour",
+
+    "category": "caution",
+
+    "reason": "Refined grain flour with most fiber and nutrients removed. Provides carbohydrates but limited nutritional value compared to whole grain.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Wheat Flour (45%)",
+
+    "category": "caution",
+
+    "reason": "Refined grain flour with most fiber and nutrients removed. Provides carbohydrates but limited nutritional value compared to whole grain.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Whole Meal Flour",
+
+    "category": "beneficial",
+
+    "reason": "Whole grain flour retaining bran and germ. Rich in fiber, B vitamins, and minerals; supports digestive and metabolic health.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Atta flour",
+
+    "category": "beneficial",
+
+    "reason": "Whole wheat flour traditionally used in South Asian cooking. High in fiber and nutrients; supports digestive health and satiety.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Edible Wheat Bran 6%",
+
+    "category": "beneficial",
+
+    "reason": "Outer wheat layer rich in dietary fiber, B vitamins, and minerals. Supports digestive health and helps regulate blood glucose.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Rice Flour",
+
+    "category": "beneficial",
+
+    "reason": "Gluten-free flour from ground rice. Provides easily digestible carbohydrates and is well tolerated by most individuals.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "rice",
+
+    "category": "beneficial",
+
+    "reason": "Whole grain staple food providing carbohydrates, some B vitamins, and minerals. Naturally gluten-free and widely well tolerated.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
 
