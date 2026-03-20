@@ -1,0 +1,1028 @@
+[
+  {
+    "name": "Cane Sugar",
+    "category": "caution",
+    "reason": "A simple carbohydrate that provides \"empty\" calories. While safe in small amounts, frequent consumption can lead to blood glucose spikes and contributes to caloric surplus, increasing the risk of metabolic dysfunction over time.",
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+  },
+  {
+    "name": "Natural Flavors",
+    "category": "caution",
+    "reason": "These are flavor precursors derived from food sources but are often highly processed in a lab. While generally recognized as safe (GRAS), the specific chemical constituents are often proprietary, making it difficult to track individual sensitivities.",
+    "lastUpdated": "2026-02-17T11:51:23.144371"
+  },
+  {
+    "name": "Soy Lecithin",
+    "category": "caution",
+    "reason": "An emulsifier used to improve texture. It is safe for the majority of the population, but it is often highly refined and derived from genetically modified crops, leading some to limit intake in favor of less processed alternatives.",
+    "lastUpdated": "2026-02-17T11:51:23.144377"
+  },
+  {
+    "name": "Erythritol",
+    "category": "caution",
+    "reason": "A sugar alcohol used as a low-calorie sweetener. It is generally well-tolerated, but high doses can cause gastrointestinal distress (bloating/laxative effects) and some recent studies suggest monitoring its impact on cardiovascular markers.",
+    "lastUpdated": "2026-02-17T11:51:23.144383"
+  },
+  {
+    "name": "Partially Hydrogenated Oils (Trans Fats)",
+    "category": "avoid",
+    "reason": "These are synthetic fats created through industrial hydrogenation. There is a strong scientific consensus that they raise LDL (bad) cholesterol and lower HDL (good) cholesterol, significantly increasing the risk of heart disease.",
+    "lastUpdated": "2026-02-17T11:51:23.144395"
+  },
+  {
+    "name": "High Fructose Corn Syrup (HFCS)",
+    "category": "avoid",
+    "reason": "A highly processed sweetener linked to increased rates of hepatic lipogenesis (fatty liver), insulin resistance, and obesity. Its rapid metabolism by the liver makes it more detrimental than standard sucrose.",
+    "lastUpdated": "2026-02-17T11:51:23.144402"
+  },
+  {
+    "name": "Red 40 (Allura Red AC)",
+    "category": "avoid",
+    "reason": "A synthetic azo dye derived from petroleum. It has been linked in various peer-reviewed studies to hypersensitivity reactions and potential behavioral disruptions in children, offering no nutritional value while posing unnecessary risks.",
+    "lastUpdated": "2026-02-17T11:51:23.144408"
+  },
+  {
+    "name": "Whole Meal Flour",
+    "category": "beneficial",
+    "reason": "Sources of carbohydrates and fiber; whole grains specifically provide B vitamins and aid digestion.",
+    "lastUpdated": "2026-02-17T11:51:23.144419"
+  },
+  {
+    "name": "Wheat Flour",
+    "category": "beneficial",
+    "reason": "Sources of carbohydrates and fiber; whole grains specifically provide B vitamins and aid digestion.",
+    "lastUpdated": "2026-02-17T11:51:23.144424"
+  },
+  {
+    "name": "Edible Wheat Bran",
+    "category": "beneficial",
+    "reason": "Sources of carbohydrates and fiber; whole grains specifically provide B vitamins and aid digestion.",
+    "lastUpdated": "2026-02-17T11:51:23.144428"
+  },
+  {
+    "name": "Potato Flour",
+    "category": "beneficial",
+    "reason": "Sources of carbohydrates and fiber; whole grains specifically provide B vitamins and aid digestion.",
+    "lastUpdated": "2026-02-17T11:51:23.144432"
+  },
+  {
+    "name": "Rice Flour",
+    "category": "beneficial",
+    "reason": "Sources of carbohydrates and fiber; whole grains specifically provide B vitamins and aid digestion.",
+    "lastUpdated": "2026-02-17T11:51:23.144436"
+  },
+  {
+    "name": "Vitamin & Mineral Premix",
+    "category": "beneficial",
+    "reason": "Added essential micronutrients used to fortify foods and prevent nutritional deficiencies.",
+    "lastUpdated": "2026-02-17T11:51:23.144440"
+  },
+  {
+    "name": "Milk Powder",
+    "category": "beneficial",
+    "reason": "Dairy or plant-based powders providing protein, calcium, and essential fats.",
+    "lastUpdated": "2026-02-17T11:51:23.144445"
+  },
+  {
+    "name": "Skimmed Milk Powder",
+    "category": "beneficial",
+    "reason": "Dairy or plant-based powders providing protein, calcium, and essential fats.",
+    "lastUpdated": "2026-02-17T11:51:23.144449"
+  },
+  {
+    "name": "Whey Powder",
+    "category": "beneficial",
+    "reason": "Dairy or plant-based powders providing protein, calcium, and essential fats.",
+    "lastUpdated": "2026-02-17T11:51:23.144454"
+  },
+  {
+    "name": "Coconut Milk Powder",
+    "category": "beneficial",
+    "reason": "Dairy or plant-based powders providing protein, calcium, and essential fats.",
+    "lastUpdated": "2026-02-17T11:51:23.144458"
+  },
+  {
+    "name": "Chilli Flakes",
+    "category": "beneficial",
+    "reason": "Natural spices containing antioxidants and anti-inflammatory compounds that support metabolism.",
+    "lastUpdated": "2026-02-17T11:51:23.144462"
+  },
+  {
+    "name": "Chilli Powder",
+    "category": "beneficial",
+    "reason": "Natural spices containing antioxidants and anti-inflammatory compounds that support metabolism.",
+    "lastUpdated": "2026-02-17T11:51:23.144466"
+  },
+  {
+    "name": "Pepper Powder",
+    "category": "beneficial",
+    "reason": "Natural spices containing antioxidants and anti-inflammatory compounds that support metabolism.",
+    "lastUpdated": "2026-02-17T11:51:23.144470"
+  },
+  {
+    "name": "Cumin",
+    "category": "beneficial",
+    "reason": "Natural spices containing antioxidants and anti-inflammatory compounds that support metabolism.",
+    "lastUpdated": "2026-02-17T11:51:23.144473"
+  },
+  {
+    "name": "Ginger Powder",
+    "category": "beneficial",
+    "reason": "Natural spices containing antioxidants and anti-inflammatory compounds that support metabolism.",
+    "lastUpdated": "2026-02-17T11:51:23.144477"
+  },
+  {
+    "name": "Onion",
+    "category": "beneficial",
+    "reason": "Natural spices containing antioxidants and anti-inflammatory compounds that support metabolism.",
+    "lastUpdated": "2026-02-17T11:51:23.144480"
+  },
+  {
+    "name": "Coriander",
+    "category": "beneficial",
+    "reason": "Natural spices containing antioxidants and anti-inflammatory compounds that support metabolism.",
+    "lastUpdated": "2026-02-17T11:51:23.144484"
+  },
+  {
+    "name": "Malt",
+    "category": "beneficial",
+    "reason": "Derived from germinated grains; provides some B vitamins and a natural source of energy.",
+    "lastUpdated": "2026-02-17T11:51:23.144489"
+  },
+  {
+    "name": "Malt Extract",
+    "category": "beneficial",
+    "reason": "Derived from germinated grains; provides some B vitamins and a natural source of energy.",
+    "lastUpdated": "2026-02-17T11:51:23.144493"
+  },
+  {
+    "name": "Malt (Barley) Extract",
+    "category": "beneficial",
+    "reason": "Derived from germinated grains; provides some B vitamins and a natural source of energy.",
+    "lastUpdated": "2026-02-17T11:51:23.144496"
+  },
+  {
+    "name": "Yeast",
+    "category": "beneficial",
+    "reason": "A source of B vitamins and protein; used for fermentation or as a natural flavor enhancer.",
+    "lastUpdated": "2026-02-17T11:51:23.144500"
+  },
+  {
+    "name": "Yeast Extract",
+    "category": "beneficial",
+    "reason": "A source of B vitamins and protein; used for fermentation or as a natural flavor enhancer.",
+    "lastUpdated": "2026-02-17T11:51:23.144504"
+  },
+  {
+    "name": "Rosemary Plant Extract",
+    "category": "beneficial",
+    "reason": "Natural preservatives or antioxidants that protect cells from oxidative stress and keep food fresh.",
+    "lastUpdated": "2026-02-17T11:51:23.144508"
+  },
+  {
+    "name": "Carotene",
+    "category": "beneficial",
+    "reason": "Natural preservatives or antioxidants that protect cells from oxidative stress and keep food fresh.",
+    "lastUpdated": "2026-02-17T11:51:23.144512"
+  },
+  {
+    "name": "Citric Acid",
+    "category": "beneficial",
+    "reason": "Natural preservatives or antioxidants that protect cells from oxidative stress and keep food fresh.",
+    "lastUpdated": "2026-02-17T11:51:23.144516"
+  },
+  {
+    "name": "Ascorbyl Palmitate",
+    "category": "beneficial",
+    "reason": "Natural preservatives or antioxidants that protect cells from oxidative stress and keep food fresh.",
+    "lastUpdated": "2026-02-17T11:51:23.144521"
+  },
+  {
+    "name": "Antioxidant (E306)",
+    "category": "beneficial",
+    "reason": "Natural preservatives or antioxidants that protect cells from oxidative stress and keep food fresh.",
+    "lastUpdated": "2026-02-17T11:51:23.144525"
+  },
+  {
+    "name": "Peanut Butter",
+    "category": "beneficial",
+    "reason": "Whole-food sources of healthy fats, protein, and minerals.",
+    "lastUpdated": "2026-02-17T11:51:23.144529"
+  },
+  {
+    "name": "Desiccated Coconut",
+    "category": "beneficial",
+    "reason": "Whole-food sources of healthy fats, protein, and minerals.",
+    "lastUpdated": "2026-02-17T11:51:23.144533"
+  },
+  {
+    "name": "Sugar",
+    "category": "caution",
+    "reason": "Simple carbohydrates that can lead to blood sugar spikes and weight gain if consumed in excess.",
+    "lastUpdated": "2026-02-17T11:51:23.144544"
+  },
+  {
+    "name": "Glucose",
+    "category": "caution",
+    "reason": "Simple carbohydrates that can lead to blood sugar spikes and weight gain if consumed in excess.",
+    "lastUpdated": "2026-02-17T11:51:23.144548"
+  },
+  {
+    "name": "Glucose Syrup",
+    "category": "caution",
+    "reason": "Simple carbohydrates that can lead to blood sugar spikes and weight gain if consumed in excess.",
+    "lastUpdated": "2026-02-17T11:51:23.144552"
+  },
+  {
+    "name": "Sugar Syrup",
+    "category": "caution",
+    "reason": "Simple carbohydrates that can lead to blood sugar spikes and weight gain if consumed in excess.",
+    "lastUpdated": "2026-02-17T11:51:23.144556"
+  },
+  {
+    "name": "Corn Starch",
+    "category": "caution",
+    "reason": "Simple carbohydrates that can lead to blood sugar spikes and weight gain if consumed in excess.",
+    "lastUpdated": "2026-02-17T11:51:23.144559"
+  },
+  {
+    "name": "Tapioca Starch",
+    "category": "caution",
+    "reason": "Simple carbohydrates that can lead to blood sugar spikes and weight gain if consumed in excess.",
+    "lastUpdated": "2026-02-17T11:51:23.144563"
+  },
+  {
+    "name": "Vegetable Fat (Palm)",
+    "category": "caution",
+    "reason": "High in saturated fats; while stable for cooking, excessive intake is linked to increased LDL cholesterol.",
+    "lastUpdated": "2026-02-17T11:51:23.144567"
+  },
+  {
+    "name": "Palm Olein",
+    "category": "caution",
+    "reason": "High in saturated fats; while stable for cooking, excessive intake is linked to increased LDL cholesterol.",
+    "lastUpdated": "2026-02-17T11:51:23.144571"
+  },
+  {
+    "name": "Vegetable Oil",
+    "category": "caution",
+    "reason": "High in saturated fats; while stable for cooking, excessive intake is linked to increased LDL cholesterol.",
+    "lastUpdated": "2026-02-17T11:51:23.144575"
+  },
+  {
+    "name": "Coconut Oil",
+    "category": "caution",
+    "reason": "High in saturated fats; while stable for cooking, excessive intake is linked to increased LDL cholesterol.",
+    "lastUpdated": "2026-02-17T11:51:23.144579"
+  },
+  {
+    "name": "Salt",
+    "category": "caution",
+    "reason": "Essential for electrolyte balance, but high intake is a primary contributor to hypertension (high blood pressure).",
+    "lastUpdated": "2026-02-17T11:51:23.144583"
+  },
+  {
+    "name": "Iodized Salt",
+    "category": "caution",
+    "reason": "Essential for electrolyte balance, but high intake is a primary contributor to hypertension (high blood pressure).",
+    "lastUpdated": "2026-02-17T11:51:23.144587"
+  },
+  {
+    "name": "Butter",
+    "category": "caution",
+    "reason": "High in saturated fats and sodium; margarine may contain trace trans fats depending on processing.",
+    "lastUpdated": "2026-02-17T11:51:23.144592"
+  },
+  {
+    "name": "Margarine",
+    "category": "caution",
+    "reason": "High in saturated fats and sodium; margarine may contain trace trans fats depending on processing.",
+    "lastUpdated": "2026-02-17T11:51:23.144596"
+  },
+  {
+    "name": "Cheese Powder",
+    "category": "caution",
+    "reason": "High in saturated fats and sodium; margarine may contain trace trans fats depending on processing.",
+    "lastUpdated": "2026-02-17T11:51:23.144600"
+  },
+  {
+    "name": "Leavening Agents (E500)",
+    "category": "caution",
+    "reason": "Mineral salts used to make dough rise; generally harmless but contribute to total sodium intake.",
+    "lastUpdated": "2026-02-17T11:51:23.144604"
+  },
+  {
+    "name": "Leavening Agents (INS 500ii)",
+    "category": "caution",
+    "reason": "Mineral salts used to make dough rise; generally harmless but contribute to total sodium intake.",
+    "lastUpdated": "2026-02-17T11:51:23.144608"
+  },
+  {
+    "name": "Leavening Agents (Sodium Bicarbonate)",
+    "category": "caution",
+    "reason": "Mineral salts used to make dough rise; generally harmless but contribute to total sodium intake.",
+    "lastUpdated": "2026-02-17T11:51:23.144612"
+  },
+  {
+    "name": "Emulsifiers (INS 322)",
+    "category": "caution",
+    "reason": "Used to blend oil and water; generally recognized as safe but may affect gut microbiota in very high amounts.",
+    "lastUpdated": "2026-02-17T11:51:23.144616"
+  },
+  {
+    "name": "Emulsifiers (481i)",
+    "category": "caution",
+    "reason": "Used to blend oil and water; generally recognized as safe but may affect gut microbiota in very high amounts.",
+    "lastUpdated": "2026-02-17T11:51:23.144620"
+  },
+  {
+    "name": "Emulsifiers (Soy/Soya Lecithin)",
+    "category": "caution",
+    "reason": "Used to blend oil and water; generally recognized as safe but may affect gut microbiota in very high amounts.",
+    "lastUpdated": "2026-02-17T11:51:23.144624"
+  },
+  {
+    "name": "Glycerol",
+    "category": "caution",
+    "reason": "Used to blend oil and water; generally recognized as safe but may affect gut microbiota in very high amounts.",
+    "lastUpdated": "2026-02-17T11:51:23.144628"
+  },
+  {
+    "name": "Natural Lemon",
+    "category": "caution",
+    "reason": "Derived from natural sources but are concentrated extracts used to enhance taste without adding nutritional value.",
+    "lastUpdated": "2026-02-17T11:51:23.144632"
+  },
+  {
+    "name": "Chilli",
+    "category": "caution",
+    "reason": "Derived from natural sources but are concentrated extracts used to enhance taste without adding nutritional value.",
+    "lastUpdated": "2026-02-17T11:51:23.144636"
+  },
+  {
+    "name": "Butter Flavours",
+    "category": "caution",
+    "reason": "Derived from natural sources but are concentrated extracts used to enhance taste without adding nutritional value.",
+    "lastUpdated": "2026-02-17T11:51:23.144640"
+  },
+  {
+    "name": "Caramel Colour (E150d)",
+    "category": "caution",
+    "reason": "A widely used coloring agent; while approved, some processes involve ammonia which leads to debates over long-term high-exposure limits.",
+    "lastUpdated": "2026-02-17T11:51:23.144644"
+  },
+  {
+    "name": "Caramel Colour (Class IV)",
+    "category": "caution",
+    "reason": "A widely used coloring agent; while approved, some processes involve ammonia which leads to debates over long-term high-exposure limits.",
+    "lastUpdated": "2026-02-17T11:51:23.144649"
+  },
+  {
+    "name": "Nature Identical Flavours (Cheese)",
+    "category": "caution",
+    "reason": "Synthetically manufactured to be chemically identical to natural flavors; safe but indicates a highly processed product.",
+    "lastUpdated": "2026-02-17T11:51:23.144658"
+  },
+  {
+    "name": "Nature Identical Flavours (Chicken)",
+    "category": "caution",
+    "reason": "Synthetically manufactured to be chemically identical to natural flavors; safe but indicates a highly processed product.",
+    "lastUpdated": "2026-02-17T11:51:23.144666"
+  },
+  {
+    "name": "Nature Identical Flavours (Chocolate)",
+    "category": "caution",
+    "reason": "Synthetically manufactured to be chemically identical to natural flavors; safe but indicates a highly processed product.",
+    "lastUpdated": "2026-02-17T11:51:23.144673"
+  },
+  {
+    "name": "Permitted Colours (E160a/Carotene)",
+    "category": "caution",
+    "reason": "Often derived from plants (carrots/turmeric) but used as additives to alter visual appeal.",
+    "lastUpdated": "2026-02-17T11:51:23.144679"
+  },
+  {
+    "name": "Permitted Colours (E100/Curcumin)",
+    "category": "caution",
+    "reason": "Often derived from plants (carrots/turmeric) but used as additives to alter visual appeal.",
+    "lastUpdated": "2026-02-17T11:51:23.144686"
+  },
+  {
+    "name": "Hydrogenated Palm Kernel Oil",
+    "category": "avoid",
+    "reason": "The hydrogenation process often creates trans fats, which are strongly linked to heart disease, systemic inflammation, and \"bad\" cholesterol.",
+    "lastUpdated": "2026-02-17T11:51:23.144699"
+  },
+  {
+    "name": "Artificial Flavouring (Lemon, Chocolate, Vanilla, Milk, etc.)",
+    "category": "avoid",
+    "reason": "Purely synthetic chemicals; while legal, they offer no nutrition and are markers of ultra-processed foods that encourage overeating.",
+    "lastUpdated": "2026-02-17T11:51:23.144704"
+  },
+  {
+    "name": "Vanillin",
+    "category": "avoid",
+    "reason": "Often a synthetic byproduct (sometimes from wood pulp or petrochemicals) used as a cheap substitute for real vanilla bean.",
+    "lastUpdated": "2026-02-17T11:51:23.144708"
+  },
+  {
+    "name": "Artificial Vanilla",
+    "category": "avoid",
+    "reason": "Often a synthetic byproduct (sometimes from wood pulp or petrochemicals) used as a cheap substitute for real vanilla bean.",
+    "lastUpdated": "2026-02-17T11:51:23.144712"
+  },
+  {
+    "name": "Sodium Metabisulphite",
+    "category": "avoid",
+    "reason": "A preservative that can trigger severe respiratory issues or allergic reactions in sensitive individuals or those with asthma.",
+    "lastUpdated": "2026-02-17T11:51:23.144717"
+  },
+  {
+    "name": "Tomatoes",
+    "category": "beneficial",
+    "reason": "Nutrient-dense fruits rich in lycopene, an antioxidant that supports heart health and reduces oxidative stress.",
+    "lastUpdated": "2026-02-17T11:51:23.144726"
+  },
+  {
+    "name": "Tomato Paste",
+    "category": "beneficial",
+    "reason": "Nutrient-dense fruits rich in lycopene, an antioxidant that supports heart health and reduces oxidative stress.",
+    "lastUpdated": "2026-02-17T11:51:23.144730"
+  },
+  {
+    "name": "Tomato Puree",
+    "category": "beneficial",
+    "reason": "Nutrient-dense fruits rich in lycopene, an antioxidant that supports heart health and reduces oxidative stress.",
+    "lastUpdated": "2026-02-17T11:51:23.144733"
+  },
+  {
+    "name": "Garlic",
+    "category": "beneficial",
+    "reason": "A bulbous vegetable containing allicin, known for its antimicrobial properties and ability to support healthy blood pressure.",
+    "lastUpdated": "2026-02-17T11:51:23.144737"
+  },
+  {
+    "name": "Garlic Powder",
+    "category": "beneficial",
+    "reason": "A bulbous vegetable containing allicin, known for its antimicrobial properties and ability to support healthy blood pressure.",
+    "lastUpdated": "2026-02-17T11:51:23.144743"
+  },
+  {
+    "name": "Garlic Pulp",
+    "category": "beneficial",
+    "reason": "A bulbous vegetable containing allicin, known for its antimicrobial properties and ability to support healthy blood pressure.",
+    "lastUpdated": "2026-02-17T11:51:23.144747"
+  },
+  {
+    "name": "Onion Powder",
+    "category": "beneficial",
+    "reason": "Root vegetables high in quercetin and flavonoids that provide anti-inflammatory benefits and support immune function.",
+    "lastUpdated": "2026-02-17T11:51:23.144754"
+  },
+  {
+    "name": "Ginger",
+    "category": "beneficial",
+    "reason": "A root known for its bioactive compounds like gingerol, which aids digestion and helps reduce nausea and inflammation.",
+    "lastUpdated": "2026-02-17T11:51:23.144759"
+  },
+  {
+    "name": "Turmeric",
+    "category": "beneficial",
+    "reason": "A bright yellow spice containing curcumin, a potent anti-inflammatory and antioxidant compound that supports joint and brain health.",
+    "lastUpdated": "2026-02-17T11:51:23.144768"
+  },
+  {
+    "name": "Cinnamon",
+    "category": "beneficial",
+    "reason": "Warming spices rich in polyphenols that help regulate blood sugar and provide antimicrobial benefits.",
+    "lastUpdated": "2026-02-17T11:51:23.144772"
+  },
+  {
+    "name": "Cardamom",
+    "category": "beneficial",
+    "reason": "Warming spices rich in polyphenols that help regulate blood sugar and provide antimicrobial benefits.",
+    "lastUpdated": "2026-02-17T11:51:23.144776"
+  },
+  {
+    "name": "Cloves",
+    "category": "beneficial",
+    "reason": "Warming spices rich in polyphenols that help regulate blood sugar and provide antimicrobial benefits.",
+    "lastUpdated": "2026-02-17T11:51:23.144780"
+  },
+  {
+    "name": "Clove Powder",
+    "category": "beneficial",
+    "reason": "Warming spices rich in polyphenols that help regulate blood sugar and provide antimicrobial benefits.",
+    "lastUpdated": "2026-02-17T11:51:23.144783"
+  },
+  {
+    "name": "Nutmeg",
+    "category": "beneficial",
+    "reason": "Warming spices rich in polyphenols that help regulate blood sugar and provide antimicrobial benefits.",
+    "lastUpdated": "2026-02-17T11:51:23.144787"
+  },
+  {
+    "name": "Nutmeg Powder",
+    "category": "beneficial",
+    "reason": "Warming spices rich in polyphenols that help regulate blood sugar and provide antimicrobial benefits.",
+    "lastUpdated": "2026-02-17T11:51:23.144791"
+  },
+  {
+    "name": "Pepper",
+    "category": "beneficial",
+    "reason": "Peppers contain capsaicin and Vitamin C, which boost metabolism and help manage pain signals.",
+    "lastUpdated": "2026-02-17T11:51:23.144795"
+  },
+  {
+    "name": "Chilli",
+    "category": "beneficial",
+    "reason": "Peppers contain capsaicin and Vitamin C, which boost metabolism and help manage pain signals.",
+    "lastUpdated": "2026-02-17T11:51:23.144808"
+  },
+  {
+    "name": "Kochchi Chilli",
+    "category": "beneficial",
+    "reason": "Peppers contain capsaicin and Vitamin C, which boost metabolism and help manage pain signals.",
+    "lastUpdated": "2026-02-17T11:51:23.144821"
+  },
+  {
+    "name": "Green Chilli Pulp",
+    "category": "beneficial",
+    "reason": "Peppers contain capsaicin and Vitamin C, which boost metabolism and help manage pain signals.",
+    "lastUpdated": "2026-02-17T11:51:23.144827"
+  },
+  {
+    "name": "Nai Miris Paste",
+    "category": "beneficial",
+    "reason": "Peppers contain capsaicin and Vitamin C, which boost metabolism and help manage pain signals.",
+    "lastUpdated": "2026-02-17T11:51:23.144837"
+  },
+  {
+    "name": "Paprika",
+    "category": "beneficial",
+    "reason": "Peppers contain capsaicin and Vitamin C, which boost metabolism and help manage pain signals.",
+    "lastUpdated": "2026-02-17T11:51:23.144851"
+  },
+  {
+    "name": "Fenugreek",
+    "category": "beneficial",
+    "reason": "Seed-based spices that assist in digestion, improve glycemic control, and provide essential minerals.",
+    "lastUpdated": "2026-02-17T11:51:23.144871"
+  },
+  {
+    "name": "Fennel",
+    "category": "beneficial",
+    "reason": "Seed-based spices that assist in digestion, improve glycemic control, and provide essential minerals.",
+    "lastUpdated": "2026-02-17T11:51:23.144877"
+  },
+  {
+    "name": "Curry Leaves",
+    "category": "beneficial",
+    "reason": "Aromatic herbs packed with volatile oils and antioxidants that protect cells from damage.",
+    "lastUpdated": "2026-02-17T11:51:23.144881"
+  },
+  {
+    "name": "Lemongrass",
+    "category": "beneficial",
+    "reason": "Aromatic herbs packed with volatile oils and antioxidants that protect cells from damage.",
+    "lastUpdated": "2026-02-17T11:51:23.144885"
+  },
+  {
+    "name": "Pandan Leaves",
+    "category": "beneficial",
+    "reason": "Aromatic herbs packed with volatile oils and antioxidants that protect cells from damage.",
+    "lastUpdated": "2026-02-17T11:51:23.144889"
+  },
+  {
+    "name": "Basil",
+    "category": "beneficial",
+    "reason": "Aromatic herbs packed with volatile oils and antioxidants that protect cells from damage.",
+    "lastUpdated": "2026-02-17T11:51:23.144892"
+  },
+  {
+    "name": "Thyme",
+    "category": "beneficial",
+    "reason": "Aromatic herbs packed with volatile oils and antioxidants that protect cells from damage.",
+    "lastUpdated": "2026-02-17T11:51:23.144896"
+  },
+  {
+    "name": "Rosemary",
+    "category": "beneficial",
+    "reason": "Aromatic herbs packed with volatile oils and antioxidants that protect cells from damage.",
+    "lastUpdated": "2026-02-17T11:51:23.144899"
+  },
+  {
+    "name": "Oregano",
+    "category": "beneficial",
+    "reason": "Aromatic herbs packed with volatile oils and antioxidants that protect cells from damage.",
+    "lastUpdated": "2026-02-17T11:51:23.144903"
+  },
+  {
+    "name": "Garcinia",
+    "category": "beneficial",
+    "reason": "Natural acids and fruits that aid in digestion, provide Vitamin C, and can help with appetite regulation.",
+    "lastUpdated": "2026-02-17T11:51:23.144908"
+  },
+  {
+    "name": "Tamarind n",
+    "category": "beneficial",
+    "reason": "Natural acids and fruits that aid in digestion, provide Vitamin C, and can help with appetite regulation.",
+    "lastUpdated": "2026-02-17T11:51:23.144912"
+  },
+  {
+    "name": "Vinegar",
+    "category": "beneficial",
+    "reason": "Natural acids and fruits that aid in digestion, provide Vitamin C, and can help with appetite regulation.",
+    "lastUpdated": "2026-02-17T11:51:23.144916"
+  },
+  {
+    "name": "Lemon",
+    "category": "beneficial",
+    "reason": "Natural acids and fruits that aid in digestion, provide Vitamin C, and can help with appetite regulation.",
+    "lastUpdated": "2026-02-17T11:51:23.144920"
+  },
+  {
+    "name": "Mango",
+    "category": "beneficial",
+    "reason": "Whole fruits providing natural sugars, fiber, and a wide array of vitamins like Vitamin A and C.",
+    "lastUpdated": "2026-02-17T11:51:23.144924"
+  },
+  {
+    "name": "Mango Paste",
+    "category": "beneficial",
+    "reason": "Whole fruits providing natural sugars, fiber, and a wide array of vitamins like Vitamin A and C.",
+    "lastUpdated": "2026-02-17T11:51:23.144928"
+  },
+  {
+    "name": "Pineapple",
+    "category": "beneficial",
+    "reason": "Whole fruits providing natural sugars, fiber, and a wide array of vitamins like Vitamin A and C.",
+    "lastUpdated": "2026-02-17T11:51:23.144937"
+  },
+  {
+    "name": "Dates",
+    "category": "beneficial",
+    "reason": "Whole fruits providing natural sugars, fiber, and a wide array of vitamins like Vitamin A and C.",
+    "lastUpdated": "2026-02-17T11:51:23.144943"
+  },
+  {
+    "name": "Sesame",
+    "category": "beneficial",
+    "reason": "Sources of healthy fats, high-quality protein, and essential minerals like calcium and iron for bone and muscle health.",
+    "lastUpdated": "2026-02-17T11:51:23.144949"
+  },
+  {
+    "name": "Sprats",
+    "category": "beneficial",
+    "reason": "Sources of healthy fats, high-quality protein, and essential minerals like calcium and iron for bone and muscle health.",
+    "lastUpdated": "2026-02-17T11:51:23.144956"
+  },
+  {
+    "name": "Soya Beans",
+    "category": "beneficial",
+    "reason": "Sources of healthy fats, high-quality protein, and essential minerals like calcium and iron for bone and muscle health.",
+    "lastUpdated": "2026-02-17T11:51:23.144964"
+  },
+  {
+    "name": "Egg",
+    "category": "beneficial",
+    "reason": "A complete protein source containing all essential amino acids and choline, which is vital for brain development and cellular function.",
+    "lastUpdated": "2026-02-17T11:51:23.144971"
+  },
+  {
+    "name": "Mustard Powder",
+    "category": "beneficial",
+    "reason": "Made from mustard seeds, these provide glucosinolates and omega-3 fatty acids that support metabolic health.",
+    "lastUpdated": "2026-02-17T11:51:23.144976"
+  },
+  {
+    "name": "Mustard",
+    "category": "beneficial",
+    "reason": "Made from mustard seeds, these provide glucosinolates and omega-3 fatty acids that support metabolic health.",
+    "lastUpdated": "2026-02-17T11:51:23.144980"
+  },
+  {
+    "name": "Iodized Table Salt",
+    "category": "beneficial",
+    "reason": "Essential sodium fortified with iodine, which is critical for preventing thyroid disorders and ensuring proper metabolic rate.",
+    "lastUpdated": "2026-02-17T11:51:23.144985"
+  },
+  {
+    "name": "Kithul Treacle",
+    "category": "beneficial",
+    "reason": "A natural sap-based sweetener from the Fishtail Palm; it has a lower glycemic index than refined sugar and contains trace minerals.",
+    "lastUpdated": "2026-02-17T11:51:23.144993"
+  },
+  {
+    "name": "Rapeseed Oil",
+    "category": "avoid",
+    "reason": "Refined seed oils high in Omega-6 fatty acids. While safe, excessive intake relative to Omega-3s may promote inflammation.",
+    "lastUpdated": "2026-02-17T11:51:23.144999"
+  },
+  {
+    "name": "Sunflower Oil",
+    "category": "avoid",
+    "reason": "Refined seed oils high in Omega-6 fatty acids. While safe, excessive intake relative to Omega-3s may promote inflammation.",
+    "lastUpdated": "2026-02-17T11:51:23.145014"
+  },
+  {
+    "name": "Soybean Oil",
+    "category": "avoid",
+    "reason": "Refined seed oils high in Omega-6 fatty acids. While safe, excessive intake relative to Omega-3s may promote inflammation.",
+    "lastUpdated": "2026-02-17T11:51:23.145018"
+  },
+  {
+    "name": "Canola Oil",
+    "category": "avoid",
+    "reason": "Refined seed oils high in Omega-6 fatty acids. While safe, excessive intake relative to Omega-3s may promote inflammation.",
+    "lastUpdated": "2026-02-17T11:51:23.145023"
+  },
+  {
+    "name": "Vegetable Oil",
+    "category": "avoid",
+    "reason": "Refined seed oils high in Omega-6 fatty acids. While safe, excessive intake relative to Omega-3s may promote inflammation.",
+    "lastUpdated": "2026-02-17T11:51:23.145027"
+  },
+  {
+    "name": "Palm Oil",
+    "category": "avoid",
+    "reason": "A stable vegetable oil high in saturated fats. Excessive consumption is linked to increased LDL cholesterol levels in some populations.",
+    "lastUpdated": "2026-02-17T11:51:23.145031"
+  },
+  {
+    "name": "Margarine",
+    "category": "avoid",
+    "reason": "A processed spread often containing emulsifiers and solidified fats; while modern versions lack trans-fats, it remains a highly processed calorie source.",
+    "lastUpdated": "2026-02-17T11:51:23.145036"
+  },
+  {
+    "name": "Sugar",
+    "category": "avoid",
+    "reason": "Simple carbohydrates that provide quick energy but can lead to insulin resistance and weight gain if consumed in high quantities.",
+    "lastUpdated": "2026-02-17T11:51:23.145040"
+  },
+  {
+    "name": "Maltodextrin",
+    "category": "avoid",
+    "reason": "Simple carbohydrates that provide quick energy but can lead to insulin resistance and weight gain if consumed in high quantities.",
+    "lastUpdated": "2026-02-17T11:51:23.145045"
+  },
+  {
+    "name": "Wheat Flour",
+    "category": "avoid",
+    "reason": "Refined starches that provide energy but lack the fiber and nutrients found in whole-grain versions.",
+    "lastUpdated": "2026-02-17T11:51:23.145049"
+  },
+  {
+    "name": "Wheat Starch",
+    "category": "avoid",
+    "reason": "Refined starches that provide energy but lack the fiber and nutrients found in whole-grain versions.",
+    "lastUpdated": "2026-02-17T11:51:23.145053"
+  },
+  {
+    "name": "Corn Flour",
+    "category": "avoid",
+    "reason": "Refined starches that provide energy but lack the fiber and nutrients found in whole-grain versions.",
+    "lastUpdated": "2026-02-17T11:51:23.145057"
+  },
+  {
+    "name": "Corn Starch",
+    "category": "avoid",
+    "reason": "Refined starches that provide energy but lack the fiber and nutrients found in whole-grain versions.",
+    "lastUpdated": "2026-02-17T11:51:23.145061"
+  },
+  {
+    "name": "Tapioca Starch",
+    "category": "avoid",
+    "reason": "Refined starches that provide energy but lack the fiber and nutrients found in whole-grain versions.",
+    "lastUpdated": "2026-02-17T11:51:23.145064"
+  },
+  {
+    "name": "Seed Tapioca (Sago)",
+    "category": "avoid",
+    "reason": "Refined starches that provide energy but lack the fiber and nutrients found in whole-grain versions.",
+    "lastUpdated": "2026-02-17T11:51:23.145068"
+  },
+  {
+    "name": "Modified Maize Starch (INS 1442, 1450)",
+    "category": "avoid",
+    "reason": "Chemically or physically altered starches used as thickeners; they are safe but offer no nutritional value.",
+    "lastUpdated": "2026-02-17T11:51:23.145073"
+  },
+  {
+    "name": "Sodium Carboxymethyl Cellulose (INS 466)",
+    "category": "avoid",
+    "reason": "Chemically or physically altered starches used as thickeners; they are safe but offer no nutritional value.",
+    "lastUpdated": "2026-02-17T11:51:23.145078"
+  },
+  {
+    "name": "Xanthan Gum (INS 415)",
+    "category": "avoid",
+    "reason": "Natural thickeners and fibers; generally safe, though excessive amounts can cause minor digestive upset in sensitive individuals.",
+    "lastUpdated": "2026-02-17T11:51:23.145082"
+  },
+  {
+    "name": "Pectin (INS 440)",
+    "category": "avoid",
+    "reason": "Natural thickeners and fibers; generally safe, though excessive amounts can cause minor digestive upset in sensitive individuals.",
+    "lastUpdated": "2026-02-17T11:51:23.145087"
+  },
+  {
+    "name": "Sodium Citrate (INS 331)",
+    "category": "avoid",
+    "reason": "Sources of sodium necessary for fluid balance, but high intake is a primary driver of hypertension (high blood pressure).",
+    "lastUpdated": "2026-02-17T11:51:23.145091"
+  },
+  {
+    "name": "Common Salt",
+    "category": "avoid",
+    "reason": "Sources of sodium necessary for fluid balance, but high intake is a primary driver of hypertension (high blood pressure).",
+    "lastUpdated": "2026-02-17T11:51:23.145095"
+  },
+  {
+    "name": "Citric Acid (INS 330)",
+    "category": "avoid",
+    "reason": "Common food acids used for preservation and flavor; safe in standard amounts but can affect tooth enamel if very concentrated.",
+    "lastUpdated": "2026-02-17T11:51:23.145100"
+  },
+  {
+    "name": "Acetic Acid (INS 260)",
+    "category": "avoid",
+    "reason": "Common food acids used for preservation and flavor; safe in standard amounts but can affect tooth enamel if very concentrated.",
+    "lastUpdated": "2026-02-17T11:51:23.145104"
+  },
+  {
+    "name": "Potassium Sorbate (INS 202)",
+    "category": "avoid",
+    "reason": "Preservatives that prevent spoilage and oxidation; they are strictly regulated but some individuals may have sensitivities.",
+    "lastUpdated": "2026-02-17T11:51:23.145109"
+  },
+  {
+    "name": "Sodium Metabisulphite (INS 223)",
+    "category": "avoid",
+    "reason": "Preservatives that prevent spoilage and oxidation; they are strictly regulated but some individuals may have sensitivities.",
+    "lastUpdated": "2026-02-17T11:51:23.145114"
+  },
+  {
+    "name": "Calcium Disodium EDTA (INS 385)",
+    "category": "avoid",
+    "reason": "Preservatives that prevent spoilage and oxidation; they are strictly regulated but some individuals may have sensitivities.",
+    "lastUpdated": "2026-02-17T11:51:23.145126"
+  },
+  {
+    "name": "Soya Sauce Extract",
+    "category": "avoid",
+    "reason": "A fermented condiment that provides umami flavor but is extremely high in sodium, requiring careful portion control.",
+    "lastUpdated": "2026-02-17T11:51:23.145130"
+  },
+  {
+    "name": "Natural Caramel Colour (INS 150c)",
+    "category": "avoid",
+    "reason": "Colorants derived from natural sources; while generally safe, some (like Annatto) can cause rare allergic reactions.",
+    "lastUpdated": "2026-02-17T11:51:23.145135"
+  },
+  {
+    "name": "Annatto Extract (INS 160b)",
+    "category": "avoid",
+    "reason": "Colorants derived from natural sources; while generally safe, some (like Annatto) can cause rare allergic reactions.",
+    "lastUpdated": "2026-02-17T11:51:23.145139"
+  },
+  {
+    "name": "Natural",
+    "category": "avoid",
+    "reason": "Flavor compounds that mimic natural tastes; they are safe for consumption but signify a more highly processed food product.",
+    "lastUpdated": "2026-02-17T11:51:23.145143"
+  },
+  {
+    "name": "Nature Identical Flavourings",
+    "category": "avoid",
+    "reason": "Flavor compounds that mimic natural tastes; they are safe for consumption but signify a more highly processed food product.",
+    "lastUpdated": "2026-02-17T11:51:23.145147"
+  },
+  {
+    "name": "Carmoisine (INS 122)",
+    "category": "avoid",
+    "reason": "Synthetic \"Azo\" dyes used for coloring. They have been linked to hyperactivity in children and various allergic reactions.",
+    "lastUpdated": "2026-02-17T11:51:23.145169"
+  },
+  {
+    "name": "Tartrazine (INS 102)",
+    "category": "avoid",
+    "reason": "Synthetic \"Azo\" dyes used for coloring. They have been linked to hyperactivity in children and various allergic reactions.",
+    "lastUpdated": "2026-02-17T11:51:23.145173"
+  },
+  {
+    "name": "Permitted Colour (INS 133)",
+    "category": "avoid",
+    "reason": "Synthetic \"Azo\" dyes used for coloring. They have been linked to hyperactivity in children and various allergic reactions.",
+    "lastUpdated": "2026-02-17T11:51:23.145177"
+  },
+  {
+    "name": "Natural Smoke Flavour",
+    "category": "avoid",
+    "reason": "While used for taste, some concentrated smoke flavorings can contain polycyclic aromatic hydrocarbons (PAHs), which are potential carcinogens.",
+    "lastUpdated": "2026-02-17T11:51:23.145182"
+  },
+  {
+    "name": "Nature Identical Smoke Flavour",
+    "category": "avoid",
+    "reason": "While used for taste, some concentrated smoke flavorings can contain polycyclic aromatic hydrocarbons (PAHs), which are potential carcinogens.",
+    "lastUpdated": "2026-02-17T11:51:23.145186"
+  },
+  {
+    "name": "Chicken",
+    "category": "beneficial",
+    "reason": "A primary source of high-quality complete protein containing all essential amino acids and B vitamins (like B12 and Niacin). It supports muscle maintenance, repair, and overall metabolic function.",
+    "lastUpdated": "2026-02-17T11:51:23.145192"
+  },
+  {
+    "name": "Halal Chicken",
+    "category": "beneficial",
+    "reason": "A primary source of high-quality complete protein containing all essential amino acids and B vitamins (like B12 and Niacin). It supports muscle maintenance, repair, and overall metabolic function.",
+    "lastUpdated": "2026-02-17T11:51:23.145197"
+  },
+  {
+    "name": "Chicken Wings",
+    "category": "beneficial",
+    "reason": "A primary source of high-quality complete protein containing all essential amino acids and B vitamins (like B12 and Niacin). It supports muscle maintenance, repair, and overall metabolic function.",
+    "lastUpdated": "2026-02-17T11:51:23.145201"
+  },
+  {
+    "name": "Soy Protein",
+    "category": "beneficial",
+    "reason": "Plant-based protein sources that are low in saturated fat and cholesterol-free. They provide essential amino acids and isoflavones, which may support heart health and help maintain healthy cholesterol levels.",
+    "lastUpdated": "2026-02-17T11:51:23.145208"
+  },
+  {
+    "name": "Isolated Soya Protein",
+    "category": "beneficial",
+    "reason": "Plant-based protein sources that are low in saturated fat and cholesterol-free. They provide essential amino acids and isoflavones, which may support heart health and help maintain healthy cholesterol levels.",
+    "lastUpdated": "2026-02-17T11:51:23.145213"
+  },
+  {
+    "name": "Textured Vegetable Protein",
+    "category": "beneficial",
+    "reason": "Plant-based protein sources that are low in saturated fat and cholesterol-free. They provide essential amino acids and isoflavones, which may support heart health and help maintain healthy cholesterol levels.",
+    "lastUpdated": "2026-02-17T11:51:23.145217"
+  },
+  {
+    "name": "Soy Milk Protein",
+    "category": "beneficial",
+    "reason": "Plant-based protein sources that are low in saturated fat and cholesterol-free. They provide essential amino acids and isoflavones, which may support heart health and help maintain healthy cholesterol levels.",
+    "lastUpdated": "2026-02-17T11:51:23.145221"
+  },
+  {
+    "name": "Spices",
+    "category": "beneficial",
+    "reason": "Natural flavor enhancers rich in antioxidants and bioactive compounds (like allicin in garlic). They provide anti-inflammatory and immune-supporting benefits without adding empty calories or sodium.",
+    "lastUpdated": "2026-02-17T11:51:23.145236"
+  },
+  {
+    "name": "Herbs",
+    "category": "beneficial",
+    "reason": "Natural flavor enhancers rich in antioxidants and bioactive compounds (like allicin in garlic). They provide anti-inflammatory and immune-supporting benefits without adding empty calories or sodium.",
+    "lastUpdated": "2026-02-17T11:51:23.145239"
+  },
+  {
+    "name": "Tomato Sauce",
+    "category": "beneficial",
+    "reason": "A concentrated source of lycopene, a powerful antioxidant associated with reduced risk of cardiovascular disease. It also provides vitamins A and C, supporting immune health.",
+    "lastUpdated": "2026-02-17T11:51:23.145252"
+  },
+  {
+    "name": "Natural Color (Beetroot Red)",
+    "category": "beneficial",
+    "reason": "A natural pigment derived from beets containing betalains, which are antioxidants. It serves as a safe, plant-based alternative to synthetic dyes and poses no toxicity risks.",
+    "lastUpdated": "2026-02-17T11:51:23.145257"
+  },
+  {
+    "name": "+1",
+    "category": "beneficial",
+    "reason": "Ascorbic Acid (INS 300) - Forms of Vitamin C used here as antioxidants to prevent spoilage and color loss. While used as additives, they are essential nutrients that support the immune system and are safe for consumption.",
+    "lastUpdated": "2026-02-17T11:51:23.145272"
+  },
+  {
+    "name": "Sodium Ascorbate (INS 301)",
+    "category": "beneficial",
+    "reason": "Forms of Vitamin C used here as antioxidants to prevent spoilage and color loss. While used as additives, they are essential nutrients that support the immune system and are safe for consumption.",
+    "lastUpdated": "2026-02-17T11:51:23.145279"
+  },
+  {
+    "name": "Seaweed Extract",
+    "category": "beneficial",
+    "reason": "Used as a natural thickening agent, it is a source of iodine and trace minerals. It typically contains soluble fibers that can support gut health and is a safer alternative to synthetic thickeners.",
+    "lastUpdated": "2026-02-17T11:51:23.145285"
+  },
+  {
+    "name": "Cheese",
+    "category": "beneficial",
+    "reason": "Sources of calcium and protein derived from dairy. While they provide essential nutrients for bone health, they should be consumed in balance due to their naturally higher saturated fat content.",
+    "lastUpdated": "2026-02-17T11:51:23.145293"
+  },
+  {
+    "name": "Full Cream Milk Powder",
+    "category": "beneficial",
+    "reason": "Sources of calcium and protein derived from dairy. While they provide essential nutrients for bone health, they should be consumed in balance due to their naturally higher saturated fat content.",
+    "lastUpdated": "2026-02-17T11:51:23.145297"
+  }
+]
