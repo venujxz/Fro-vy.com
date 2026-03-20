@@ -227,7 +227,16 @@ class _HistoryScreenState extends State<HistoryScreen>
           ),
           ElevatedButton(
             onPressed: () {
-              setState(() => historyItems.clear());
+              setState(() {
+                // Dispose all per-card animation controllers before clearing.
+                for (final ctrl in _cardCtrls) {
+                  ctrl.dispose();
+                }
+                _cardCtrls.clear();
+                _cardFades.clear();
+                _cardSlides.clear();
+                historyItems.clear();
+              });
               Navigator.pop(ctx);
             },
             style: ElevatedButton.styleFrom(
