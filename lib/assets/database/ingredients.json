@@ -1,97 +1,253 @@
 [
+
   {
+
     "name": "Whole Milk",
+
     "category": "beneficial",
-    "reason": "Whole milk is a natural dairy product rich in protein, calcium, and essential fat-soluble vitamins like A and D. It provides a complete source of nutrition that supports bone health, muscle development, and overall physical growth. Classified as beneficial as it is a minimally processed, nutrient-dense whole food.",
+
+    "reason": "Natural dairy rich in protein, calcium, and vitamins A and D. Supports l
+
     "lastUpdated": "2026-02-17T11:51:23.144346"
+
   },
+
   {
+
     "name": "Raw milk",
+
     "category": "beneficial",
-    "reason": "Whole milk is a natural dairy product rich in protein, calcium, and essential fat-soluble vitamins like A and D. It provides a complete source of nutrition that supports bone health, muscle development, and overall physical growth. Classified as beneficial as it is a minimally processed, nutrient-dense whole food.",
+
+    "reason": "Natural dairy rich in protein, calcium, and vitamins A and D. Supports bone and muscle health.",
+
     "lastUpdated": "2026-02-17T11:51:23.144346"
+
   },
+
   {
+
     "name": "Fresh milk",
+
     "category": "beneficial",
-    "reason": "Whole milk is a natural dairy product rich in protein, calcium, and essential fat-soluble vitamins like A and D. It provides a complete source of nutrition that supports bone health, muscle development, and overall physical growth. Classified as beneficial as it is a minimally processed, nutrient-dense whole food.",
+
+    "reason": "Natural dairy rich in protein, calcium, and vitamins A and D. Supports bone and muscle health.",
+
     "lastUpdated": "2026-02-17T11:51:23.144346"
+
   },
+
   {
+
     "name": "Fresh Milk",
+
     "category": "beneficial",
-    "reason": "Whole milk is a natural dairy product rich in protein, calcium, and essential fat-soluble vitamins like A and D. It provides a complete source of nutrition that supports bone health, muscle development, and overall physical growth. Classified as beneficial as it is a minimally processed, nutrient-dense whole food.",
+
+    "reason": "Natural dairy rich in protein, calcium, and vitamins A and D. Supports bone and muscle health.",
+
     "lastUpdated": "2026-02-17T11:51:23.144346"
+
   },
+
   {
+
     "name": "Fresh Cow's Milk",
+
     "category": "beneficial",
-    "reason": "Whole milk is a natural dairy product rich in protein, calcium, and essential fat-soluble vitamins like A and D. It provides a complete source of nutrition that supports bone health, muscle development, and overall physical growth. Classified as beneficial as it is a minimally processed, nutrient-dense whole food.",
+
+    "reason": "Natural dairy rich in protein, calcium, and vitamins A and D. Supports bone and muscle health.",
+
     "lastUpdated": "2026-02-17T11:51:23.144346"
+
   },
+
   {
+
     "name": "Pasteurized Fresh Cow's Milk",
+
     "category": "beneficial",
-    "reason": "Whole milk is a natural dairy product rich in protein, calcium, and essential fat-soluble vitamins like A and D. It provides a complete source of nutrition that supports bone health, muscle development, and overall physical growth. Classified as beneficial as it is a minimally processed, nutrient-dense whole food.",
+
+    "reason": "Natural dairy rich in protein, calcium, and vitamins A and D. Supports bone and muscle health.",
+
     "lastUpdated": "2026-02-17T11:51:23.144346"
+
   },
+
   {
+
     "name": "milk fat",
-    "category": "beneficial",
-    "reason": "Milk fat is the natural fat component of dairy, containing essential fatty acids and fat-soluble vitamins like A, D, and K. It serves as an efficient energy source and supports various cellular and metabolic functions in the body. Classified as beneficial as it is a natural part of a whole-food nutritional profile.",
+
+    "category": "caution",
+
+    "reason": "Concentrated saturated fat from dairy. Safe in moderation but excessive intake may raise LDL cholesterol levels.",
+
     "lastUpdated": "2026-02-17T11:51:23.144346"
+
   },
+
   {
+
     "name": "Milk Fat",
-    "category": "beneficial",
-    "reason": "Milk fat is the natural fat component of dairy, containing essential fatty acids and fat-soluble vitamins like A, D, and K. It serves as an efficient energy source and supports various cellular and metabolic functions in the body. Classified as beneficial as it is a natural part of a whole-food nutritional profile.",
+
+    "category": "caution",
+
+    "reason": "Concentrated saturated fat from dairy. Safe in moderation but excessive intake may raise LDL cholesterol levels.",
+
     "lastUpdated": "2026-02-17T11:51:23.144346"
+
   },
+
   {
+
     "name": "milk solids",
-    "category": "beneficial",
-    "reason": "Milk solids represent the combined protein, mineral, and lactose content of milk, providing a concentrated source of dairy nutrients. They support bone density and muscle maintenance by delivering essential amino acids and calcium. Classified as beneficial for their high nutritional density and contribution to a complete diet.",
+
+    "category": "caution",
+
+    "reason": "Processed dairy concentrate retaining protein and minerals but heavily reduced. Nutritional quality depends on processing degree.",
+
     "lastUpdated": "2026-02-17T11:51:23.144346"
+
   },
+
   {
+
     "name": "Milk Solids",
-    "category": "beneficial",
-    "reason": "Milk solids represent the combined protein, mineral, and lactose content of milk, providing a concentrated source of dairy nutrients. They support bone density and muscle maintenance by delivering essential amino acids and calcium. Classified as beneficial for their high nutritional density and contribution to a complete diet.",
+
+    "category": "caution",
+
+    "reason": "Processed dairy concentrate retaining protein and minerals but heavily reduced. Nutritional quality depends on processing degree.",
+
     "lastUpdated": "2026-02-17T11:51:23.144346"
+
   },
+
   {
+
     "name": "Milk Solids(21%)",
-    "category": "beneficial",
-    "reason": "Milk solids represent the combined protein, mineral, and lactose content of milk, providing a concentrated source of dairy nutrients. They support bone density and muscle maintenance by delivering essential amino acids and calcium. Classified as beneficial for their high nutritional density and contribution to a complete diet.",
+
+    "category": "caution",
+
+    "reason": "Processed dairy concentrate retaining protein and minerals but heavily reduced. Nutritional quality depends on processing degree.",
+
     "lastUpdated": "2026-02-17T11:51:23.144346"
+
   },
+
   {
+
     "name": "Milk Solid",
-    "category": "beneficial",
-    "reason": "Milk solids represent the combined protein, mineral, and lactose content of milk, providing a concentrated source of dairy nutrients. They support bone density and muscle maintenance by delivering essential amino acids and calcium. Classified as beneficial for their high nutritional density and contribution to a complete diet.",
+
+    "category": "caution",
+
+    "reason": "Processed dairy concentrate retaining protein and minerals but heavily reduced. Nutritional quality depends on processing degree.",
+
     "lastUpdated": "2026-02-17T11:51:23.144346"
+
   },
+
   {
+
     "name": "Milk Powder",
-    "category": "beneficial",
-    "reason": "Milk powder is produced by dehydrating milk while retaining the essential proteins, calcium, and vitamins of the original product. It provides a convenient, shelf-stable source of comprehensive nutrition that supports muscular and skeletal health. Classified as beneficial as a concentrated form of nutrient-dense whole dairy.",
+
+    "category": "caution",
+
+    "reason": "Dehydrated dairy with concentrated protein and calcium, but heavy processing reduces some nutritional quality.",
+
     "lastUpdated": "2026-02-17T11:51:23.144346"
+
   },
+
   {
+
     "name": "Milk powder",
-    "category": "beneficial",
-    "reason": "Milk powder is produced by dehydrating milk while retaining the essential proteins, calcium, and vitamins of the original product. It provides a convenient, shelf-stable source of comprehensive nutrition that supports muscular and skeletal health. Classified as beneficial as a concentrated form of nutrient-dense whole dairy.",
+
+    "category": "caution",
+
+    "reason": "Dehydrated dairy with concentrated protein and calcium, but heavy processing reduces some nutritional quality.",
+
     "lastUpdated": "2026-02-17T11:51:23.144346"
+
   },
+
   {
+
     "name": "Milk powder 0.4%",
-    "category": "beneficial",
-    "reason": "Milk powder is produced by dehydrating milk while retaining the essential proteins, calcium, and vitamins of the original product. It provides a convenient, shelf-stable source of comprehensive nutrition that supports muscular and skeletal health. Classified as beneficial as a concentrated form of nutrient-dense whole dairy.",
+
+    "category": "caution",
+
+    "reason": "Dehydrated dairy with concentrated protein and calcium, but heavy processing reduces some nutritional quality.",
+
     "lastUpdated": "2026-02-17T11:51:23.144346"
+
   },
+
   {
+
     "name": "Milk Powder (0.5%)",
-    "category": "beneficial",
-    "reason": "Milk powder is produced by dehydrating milk while retaining the essential proteins, calcium, and vitamins of the original product. It provides a convenient, shelf-stable source of comprehensive nutrition that supports muscular and skeletal health. Classified as beneficial as a concentrated form of nutrient-dense whole dairy.",
+
+    "category": "caution",
+
+    "reason": "Dehydrated dairy with concentrated protein and calcium, but heavy processing reduces some nutritional quality.",
+
     "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Milk powder 1.5%",
+
+    "category": "caution",
+
+    "reason": "Dehydrated dairy with concentrated protein and calcium, but heavy processing reduces some nutritional quality.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Milk powder 1.8%",
+
+    "category": "caution",
+
+    "reason": "Dehydrated dairy with concentrated protein and calcium, but heavy processing reduces some nutritional quality.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Milk Powder (14%)",
+
+    "category": "caution",
+
+    "reason": "Dehydrated dairy with concentrated protein and calcium, but heavy processing reduces some nutritional quality.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Milk Powder (17%)",
+
+    "category": "caution",
+
+    "reason": "Dehydrated dairy with concentrated protein and calcium, but heavy processing reduces some nutritional quality.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Milk powder 1.5%",
+
+    "category": "caution",
+
+    "reason": "Dehydrated dairy with concentrated protein and calcium, but heavy processing reduces some nutritional quality.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
   },
