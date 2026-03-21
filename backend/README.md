@@ -1,11 +1,13 @@
-# Fro-vy PayHere Payment Backend
+# Fro-vy Backend Server
 
-Node.js/Express backend server for handling PayHere payments in the Fro-vy app (Sri Lanka).
+Node.js/Express backend server for handling PayHere payments and OCR ingredient analysis in the Fro-vy app (Sri Lanka).
 
 ## Prerequisites
 
 - Node.js 18+ installed
 - A PayHere merchant account (https://www.payhere.lk)
+- A Google Cloud account with Vision API enabled
+- Firebase Admin SDK service account key
 
 ## Setup
 
@@ -16,7 +18,25 @@ cd backend
 npm install
 ```
 
-### 2. Configure PayHere credentials
+### 2. Configure Google Cloud Vision API
+
+1. **Enable the Vision API**:
+   - Go to [Google Cloud Console](https://console.cloud.google.com/)
+   - Create a new project or select an existing one
+   - Enable the Cloud Vision API from APIs & Services
+
+2. **Create a Service Account**:
+   - Go to IAM & Admin > Service Accounts
+   - Create a new service account
+   - Grant it the "Cloud Vision AI User" role
+   - Create and download a JSON key file
+
+3. **Configure the key path**:
+   - You can use the same `firebase-key.json` if it has Vision API permissions
+   - Or place your Vision API key in the backend folder
+   - Update `GOOGLE_VISION_KEY_PATH` in your `.env` file
+
+### 3. Configure PayHere credentials
 
 1. **For Testing (Sandbox)**:
    - Go to [PayHere Sandbox](https://sandbox.payhere.lk)
@@ -28,22 +48,25 @@ npm install
    - Complete merchant verification
    - Get your live credentials from Settings > API Keys
 
-3. Create a `.env` file:
+### 4. Create environment file
+
+1. Create a `.env` file:
 
 ```bash
 cp .env.example .env
 ```
 
-4. Edit `.env` with your credentials:
+2. Edit `.env` with your credentials:
 
 ```env
 PAYHERE_MERCHANT_ID=YOUR_MERCHANT_ID
 PAYHERE_MERCHANT_SECRET=YOUR_MERCHANT_SECRET
 PAYHERE_SANDBOX=true
 PORT=3000
+GOOGLE_VISION_KEY_PATH=./firebase-key.json
 ```
 
-### 3. Update Flutter app configuration
+### 5. Update Flutter app configuration
 
 Open `lib/config/payhere_config.dart` and update:
 
@@ -52,7 +75,7 @@ static const String merchantId = 'YOUR_MERCHANT_ID';
 static const bool isSandbox = true;  // false for production
 ```
 
-### 4. Run the server
+### 6. Run the server
 
 Development (with auto-reload):
 ```bash
@@ -115,14 +138,131 @@ Response:
 GET /payhere/payments
 ```
 
+### Analyze Image (OCR)
+```
+POST /analyze-image
+Content-Type: multipart/form-data
+
+Body:
+- image (file): The product label image
+
+Response:
+{
+  "status": "Success",
+  "extractedText": "Ingredients: Sugar, Milk, Wheat...",
+  "safetyLevel": "Safe" | "Caution" | "Unsafe" | "Unknown",
+  "analysis": "No harmful ingredients detected.",
+  "harmfulIngredients": [],
+  "allergens": ["milk", "wheat"],
+  "ingredients": ["sugar", "milk", "wheat"]
+}
+```
+
+**Safety Levels:**
+- `Safe`: No harmful ingredients or allergens detected
+- `Caution`: Contains common allergens
+- `Unsafe`: Contains potentially harmful ingredients
+- `Unknown`: No text detected in image
+
+### Get User Subscription
+```
+GET /user/:userId/subscription
+
+Response:
+{
+  "plan": "Pro",
+  "isActive": true,
+  "subscriptionEndDate": "2026-04-20T12:00:00.000Z",
+  "scansPerMonth": -1,
+  "hasUnlimitedScans": true,
+  "hasBarcodeOCR": true,
+  "hasDetailedInsights": true,
+  "hasAIRecommendations": false,
+  "hasDietitianConsult": false
+}
+```
+
+**Note:** Returns Free plan defaults if user doesn't exist or subscription is expired.
+
+### Search Ingredients
+```
+GET /ingredients/search?query=sugar&category=caution
+
+Response:
+{
+  "query": "sugar",
+  "count": 3,
+  "results": [
+    {
+      "id": "abc123",
+      "name": "Cane Sugar",
+      "searchName": "cane sugar",
+      "category": "caution",
+      "reason": "A simple carbohydrate that provides...",
+      "lastUpdated": "2026-02-17T11:51:23.144346"
+    }
+  ]
+}
+```
+
+**Parameters:**
+- `query` (required): Search term
+- `category` (optional): Filter by category (beneficial, caution, avoid)
+
+### Get All Ingredients
+```
+GET /ingredients/all?category=avoid&limit=100
+
+Response:
+{
+  "count": 12,
+  "results": [...]
+}
+```
+
+**Parameters:**
+- `category` (optional): Filter by category
+- `limit` (optional): Maximum results (default: 50)
+
+## Setting Up Ingredients Database
+
+Before the ingredient search feature works, you need to populate Firestore:
+
+```bash
+cd backend
+node populate-ingredients.js
+```
+
+This script will:
+- Read from `IngredientDatabase/ingredients.json`
+- Upload all ingredients to Firestore `ingredients` collection
+- Create searchable entries with lowercase names
+
+After running the script, create these indexes in Firebase Console:
+1. Collection: `ingredients`
+2. Fields: `searchName` (Ascending), `category` (Ascending)
+
+## OCR & Ingredient Analysis Flow
+
+1. User captures/selects a product label image in the app
+2. App compresses the image to reduce bandwidth
+3. App sends the image to `/analyze-image`
+4. Backend uses Google Cloud Vision API to extract text
+5. Backend analyzes ingredients for harmful substances and allergens
+6. Backend returns safety analysis to the app
+7. App displays results to the user
+
 ## PayHere Payment Flow
 
 1. User selects a plan in the app
 2. App calls `/payhere/generate-hash` to get secure hash
 3. App opens PayHere payment SDK with the hash
+   - `custom_1`: Plan name ('Pro' or 'Premium')
+   - `custom_2`: User ID (required for subscription updates)
 4. User completes payment on PayHere
 5. PayHere sends notification to `/payhere/notify`
-6. App verifies payment via `/payhere/verify/:orderId`
+6. Backend updates user subscription in Firestore
+7. App verifies payment via `/payhere/verify/:orderId`
 
 ## Payment Status Codes
 

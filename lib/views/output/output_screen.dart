@@ -83,22 +83,8 @@ class _OutputScreenState extends State<OutputScreen> {
         if (uid != null) {
           final user = await db.getUser(uid);
           _userData = user?.toMap();
-
-          // 4. Save to search history (only if real user)
-          try {
-            await db.addToSearchHistory(uid, {
-              'productName': widget.productName ?? 'Manual / Scan Entry',
-              'brandName': widget.brandName ?? '',
-              'ingredients': widget.ingredients,
-              'timestamp': DateTime.now().toIso8601String(),
-              'beneficialCount': result.beneficial.length,
-              'cautionCount': result.caution.length,
-              'avoidCount': result.avoid.length,
-              'unknownCount': result.unknown.length,
-            });
-          } catch (_) {
-            // History save failing should not crash the screen
-          }
+          // Note: scan history is saved by ResultScreen via HistoryService.saveScan()
+          // to the users/{uid}/scanHistory subcollection. No duplicate save needed here.
         }
       }
 
@@ -299,7 +285,7 @@ class _OutputScreenState extends State<OutputScreen> {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.06),
+            color: Colors.black.withValues(alpha: 0.06),
             blurRadius: 10,
             offset: const Offset(0, 3),
           ),
@@ -310,7 +296,7 @@ class _OutputScreenState extends State<OutputScreen> {
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: _aiColor.withOpacity(0.1),
+              color: _aiColor.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
             ),
             child: const Icon(
@@ -352,7 +338,7 @@ class _OutputScreenState extends State<OutputScreen> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 3),
           ),
@@ -494,9 +480,9 @@ class _OutputScreenState extends State<OutputScreen> {
       duration: const Duration(milliseconds: 200),
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: slice.color.withOpacity(0.08),
+        color: slice.color.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: slice.color.withOpacity(0.3)),
+        border: Border.all(color: slice.color.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -550,7 +536,7 @@ class _OutputScreenState extends State<OutputScreen> {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 6,
             offset: const Offset(0, 2),
           ),
@@ -586,7 +572,7 @@ class _OutputScreenState extends State<OutputScreen> {
     return Container(
       padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
       decoration: BoxDecoration(
-        border: Border(top: BorderSide(color: Colors.grey.withOpacity(0.12))),
+        border: Border(top: BorderSide(color: Colors.grey.withValues(alpha: 0.12))),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -635,7 +621,7 @@ class _OutputScreenState extends State<OutputScreen> {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 6,
             offset: const Offset(0, 2),
           ),
@@ -666,7 +652,7 @@ class _OutputScreenState extends State<OutputScreen> {
               padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
               decoration: BoxDecoration(
                 border: Border(
-                  top: BorderSide(color: Colors.grey.withOpacity(0.12)),
+                  top: BorderSide(color: Colors.grey.withValues(alpha: 0.12)),
                 ),
               ),
               child: Row(
@@ -732,7 +718,7 @@ class _OutputScreenState extends State<OutputScreen> {
             borderRadius: BorderRadius.circular(16),
           ),
           elevation: 4,
-          shadowColor: _aiColor.withOpacity(0.4),
+          shadowColor: _aiColor.withValues(alpha: 0.4),
         ),
       ),
     );
@@ -749,7 +735,7 @@ class _OutputScreenState extends State<OutputScreen> {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
           decoration: BoxDecoration(
-            color: _aiColor.withOpacity(0.1),
+            color: _aiColor.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(8),
           ),
           child: const Text(
@@ -772,10 +758,10 @@ class _OutputScreenState extends State<OutputScreen> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: _aiColor.withOpacity(0.2)),
+        border: Border.all(color: _aiColor.withValues(alpha: 0.2)),
         boxShadow: [
           BoxShadow(
-            color: _aiColor.withOpacity(0.07),
+            color: _aiColor.withValues(alpha: 0.07),
             blurRadius: 8,
             offset: const Offset(0, 3),
           ),
@@ -793,7 +779,7 @@ class _OutputScreenState extends State<OutputScreen> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: _aiColor.withOpacity(0.1),
+                  color: _aiColor.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: const Row(
@@ -862,7 +848,7 @@ class _PieBadge extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         boxShadow: [
           BoxShadow(
-            color: color.withOpacity(0.4),
+            color: color.withValues(alpha: 0.4),
             blurRadius: 4,
             offset: const Offset(0, 2),
           ),

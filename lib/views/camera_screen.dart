@@ -1,10 +1,17 @@
-// ignore_for_file: deprecated_member_use
 import 'dart:io';
+import 'dart:convert';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:http/http.dart' as http;
 import '../services/ocr_service.dart';
+import '../util/platform_config.dart';
+import '../services/prefs_service.dart';
 import 'result_screen.dart';
+import 'manual_entry_screen.dart';
+import '../util/app_colors.dart';
+import '../util/page_transitions.dart';
 
 class CameraScreen extends StatefulWidget {
   final List<CameraDescription> cameras;
@@ -16,349 +23,442 @@ class CameraScreen extends StatefulWidget {
 }
 
 class CameraScreenState extends State<CameraScreen> {
-  // Nullable so we can safely check before disposing
-  CameraController? _controller;
+  CameraController? controller;
   bool _isCameraInitialized = false;
   bool _isProcessing = false;
   final ImagePicker _picker = ImagePicker();
 
-  // Fro-vy Brand Colors
-  static const Color frovyGreen = Color(0xFF6AA15E);
-  static const Color frovyBeige = Color(0xFFEEE8D6);
-  static const Color frovyText  = Color(0xFF2C3E28);
+  List<String> _userAllergies = [];
+  String _userMedicalConditions = "";
 
-  // ─────────────────────────────────────────
-  // Lifecycle
-  // ─────────────────────────────────────────
+  static const Color frovyGreen = AppColors.frovyGreen;
 
   @override
   void initState() {
     super.initState();
-    _initCamera();
+    _loadHealthProfile();
+    if (widget.cameras.isNotEmpty) {
+      controller = CameraController(widget.cameras[0], ResolutionPreset.high);
+      controller!.initialize().then((_) {
+        if (!mounted) return;
+        setState(() => _isCameraInitialized = true);
+      }).catchError((e) => debugPrint('Camera init error: $e'));
+    }
   }
 
-  Future<void> _initCamera() async {
-    if (widget.cameras.isEmpty) return;
-
-    final controller = CameraController(
-      widget.cameras[0],
-      ResolutionPreset.high,
-      enableAudio: false,
-    );
-
-    try {
-      await controller.initialize();
-      if (!mounted) {
-        await controller.dispose();
-        return;
-      }
-      _controller = controller;
-      setState(() => _isCameraInitialized = true);
-    } catch (e) {
-      debugPrint('Camera init error: $e');
-      await controller.dispose();
-    }
+  Future<void> _loadHealthProfile() async {
+    final healthProfile = await PrefsService.getHealthProfile();
+    if (!mounted) return;
+    setState(() {
+      _userAllergies = healthProfile.allergies;
+      _userMedicalConditions = healthProfile.medicalConditions;
+    });
   }
 
   @override
   void dispose() {
-    // Safe: only disposes if controller was successfully created
-    _controller?.dispose();
+    controller?.dispose();
     super.dispose();
   }
 
-  // ─────────────────────────────────────────
-  // Image Processing
-  // ─────────────────────────────────────────
-
   Future<void> _processImage(String imagePath) async {
-    if (!mounted || _isProcessing) return;
-
+    if (!mounted) return;
     setState(() => _isProcessing = true);
 
     try {
-      final String? result = await OCRService().uploadImage(File(imagePath));
+      final OCRService ocrService = OCRService();
+      final String? extractedIngredients =
+          await ocrService.uploadImage(File(imagePath));
 
-if (!mounted) return; // ← check mounted BEFORE using context
-if (result != null) {
-  final String analysisResult = result; // extract to non-nullable local
-  Navigator.push(
-    context,
-    MaterialPageRoute(
-      builder: (_) => ResultScreen(analysisResult: analysisResult),
-    ),
-  );
-} else {
-  _showSnackBar('Upload failed. Please check your connection.');
-}
+      if (extractedIngredients != null && extractedIngredients.isNotEmpty) {
+        final url = Uri.parse(PlatformConfig.getBackendUrl());
+        final response = await http.post(
+          url,
+          headers: {'Content-Type': 'application/json'},
+          body: jsonEncode({
+            'extractedText': extractedIngredients,
+            'allergies': _userAllergies,
+            'medicalConditions': _userMedicalConditions,
+          }),
+        ).timeout(PlatformConfig.getHttpTimeout());
+
+        if (!mounted) return;
+        if (response.statusCode == 200) {
+          Navigator.push(
+            context,
+            PageTransitions.fade(ResultScreen(analysisResult: response.body)),
+          );
+        } else {
+          _showError("server_error".tr(namedArgs: {'code': response.statusCode.toString()}));
+        }
+      } else {
+        _showError("ocr_failed".tr());
+      }
     } catch (e) {
-      debugPrint('Image processing error: $e');
-      if (mounted) _showSnackBar('Something went wrong. Please try again.');
+      _showError('upload_failed'.tr());
+      debugPrint("Error: $e");
     } finally {
       if (mounted) setState(() => _isProcessing = false);
     }
   }
 
+  void _showError(String message) {
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        backgroundColor: AppColors.frovyRed,
+      ),
+    );
+  }
+
   Future<void> _pickFromGallery() async {
-    try {
-      final XFile? image =
-          await _picker.pickImage(source: ImageSource.gallery);
-      if (image != null) await _processImage(image.path);
-    } catch (e) {
-      debugPrint('Gallery picker error: $e');
-      if (mounted) _showSnackBar('Could not open gallery. Please try again.');
-    }
+    final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+    if (image != null) await _processImage(image.path);
   }
 
   Future<void> _takePhoto() async {
-    if (!_isCameraInitialized || _isProcessing || _controller == null) return;
-
-    try {
-      final XFile image = await _controller!.takePicture();
-      await _processImage(image.path);
-    } catch (e) {
-      debugPrint('Take photo error: $e');
-      if (mounted) _showSnackBar('Could not take photo. Please try again.');
-    }
+    if (!_isCameraInitialized || controller == null) return;
+    final XFile image = await controller!.takePicture();
+    await _processImage(image.path);
   }
-
-  void _showSnackBar(String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message)),
-    );
-  }
-
-  // ─────────────────────────────────────────
-  // Build
-  // ─────────────────────────────────────────
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
-      backgroundColor: const Color(0xFFF8F9FA),
+      backgroundColor: isDark ? AppColors.darkBackground : AppColors.frovyGreen,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
-        title: const Text(
-          'Scan Ingredients',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-        ),
         centerTitle: true,
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            children: [
-              _buildCameraCard(),
-              const SizedBox(height: 24),
-              _buildInstructionsBox(),
-              const SizedBox(height: 24),
-              _buildFooter(),
-            ],
+        leading: GestureDetector(
+          onTap: () => Navigator.of(context).pop(),
+          child: Container(
+            margin: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.2),
+              shape: BoxShape.circle,
+            ),
+            child: const Icon(Icons.chevron_left_rounded, color: Colors.white, size: 28),
+          ),
+        ),
+        title: Text(
+          "scan_ingredients".tr(),
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
           ),
         ),
       ),
-    );
-  }
-
-  // ─────────────────────────────────────────
-  // Widgets
-  // ─────────────────────────────────────────
-
-  Widget _buildCameraCard() {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      padding: const EdgeInsets.all(16),
-      child: Column(
+      body: Column(
         children: [
-          _buildCameraPreview(),
-          const SizedBox(height: 20),
-          _buildTakePhotoButton(),
-          const SizedBox(height: 12),
-          _buildGalleryButton(),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildCameraPreview() {
-    return Container(
-      height: 300,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: Colors.grey[200],
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.grey[300]!),
-      ),
-      clipBehavior: Clip.hardEdge,
-      child: _isCameraInitialized && _controller != null
-          ? Stack(
-              fit: StackFit.expand,
-              children: [
-                CameraPreview(_controller!),
-                // Focus frame overlay
-                Center(
-                  child: Container(
-                    width: 200,
-                    height: 200,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.white.withOpacity(0.8),
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
+          // ── Camera preview card ─────────────────────
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 8, 20, 20),
+            child: Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: isDark ? AppColors.darkCard : Colors.white,
+                borderRadius: BorderRadius.circular(24),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.08),
+                    blurRadius: 20,
+                    offset: const Offset(0, 4),
                   ),
-                ),
-                // Processing overlay
-                if (_isProcessing)
-                  Container(
-                    color: Colors.black45,
-                    child: const Center(
-                      child: CircularProgressIndicator(color: Colors.white),
-                    ),
-                  ),
-              ],
-            )
-          : const Center(
+                ],
+              ),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.camera_alt_outlined, size: 40, color: Colors.grey),
-                  SizedBox(height: 8),
-                  Text(
-                    'Camera preview',
-                    style: TextStyle(color: Colors.grey),
+                  // Preview window
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: SizedBox(
+                      height: 260,
+                      width: double.infinity,
+                      child: _isCameraInitialized && controller != null
+                          ? Stack(
+                              fit: StackFit.expand,
+                              children: [
+                                CameraPreview(controller!),
+                                // Focus frame
+                                Center(
+                                  child: Container(
+                                    width: 180,
+                                    height: 180,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors.white.withValues(alpha: 0.9),
+                                        width: 2,
+                                      ),
+                                      borderRadius: BorderRadius.circular(14),
+                                    ),
+                                    child: Stack(
+                                      children: [
+                                        // Corner accents
+                                        _corner(Alignment.topLeft),
+                                        _corner(Alignment.topRight),
+                                        _corner(Alignment.bottomLeft),
+                                        _corner(Alignment.bottomRight),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                if (_isProcessing)
+                                  Container(
+                                    color: Colors.black.withValues(alpha: 0.5),
+                                    child: const Center(
+                                      child: CircularProgressIndicator(
+                                        color: Colors.white,
+                                        strokeWidth: 2.5,
+                                      ),
+                                    ),
+                                  ),
+                              ],
+                            )
+                          : Container(
+                              color: isDark
+                                  ? AppColors.darkBackground
+                                  : const Color(0xFFF5F5F5),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.camera_alt_outlined,
+                                      size: 40,
+                                      color: Colors.grey[400]),
+                                  const SizedBox(height: 8),
+                                  Text("camera_preview".tr(),
+                                      style: TextStyle(color: Colors.grey[400])),
+                                ],
+                              ),
+                            ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 16),
+
+                  // Action buttons
+                  Row(
+                    children: [
+                      Expanded(
+                        child: SizedBox(
+                          height: 50,
+                          child: ElevatedButton.icon(
+                            onPressed: _isProcessing ? null : _takePhoto,
+                            icon: const Icon(Icons.camera_alt_rounded, size: 18),
+                            label: Text("take_photo".tr()),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: frovyGreen,
+                              foregroundColor: Colors.white,
+                              elevation: 0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(14),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      SizedBox(
+                        height: 50,
+                        child: OutlinedButton(
+                          onPressed: _isProcessing ? null : _pickFromGallery,
+                          style: OutlinedButton.styleFrom(
+                            side: BorderSide(color: frovyGreen.withValues(alpha: 0.6)),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(14),
+                            ),
+                            padding: const EdgeInsets.symmetric(horizontal: 16),
+                          ),
+                          child: Icon(Icons.photo_library_outlined,
+                              color: frovyGreen, size: 22),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
-    );
-  }
-
-  Widget _buildTakePhotoButton() {
-    return SizedBox(
-      width: double.infinity,
-      height: 50,
-      child: ElevatedButton.icon(
-        onPressed: _isProcessing ? null : _takePhoto,
-        icon: const Icon(Icons.camera_alt),
-        label: const Text('Take Photo', style: TextStyle(fontSize: 16)),
-        style: ElevatedButton.styleFrom(
-          backgroundColor: frovyGreen,
-          foregroundColor: Colors.white,
-          disabledBackgroundColor: frovyGreen.withOpacity(0.5),
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
           ),
-        ),
-      ),
-    );
-  }
 
-  Widget _buildGalleryButton() {
-    return SizedBox(
-      width: double.infinity,
-      height: 50,
-      child: OutlinedButton.icon(
-        onPressed: _isProcessing ? null : _pickFromGallery,
-        icon: const Icon(Icons.file_upload_outlined, color: frovyGreen),
-        label: const Text(
-          'Upload from Gallery',
-          style: TextStyle(fontSize: 16, color: frovyGreen),
-        ),
-        style: OutlinedButton.styleFrom(
-          side: BorderSide(color: frovyGreen.withOpacity(0.5)),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
-          ),
-        ),
-      ),
-    );
-  }
+          // ── Bottom sheet-style tip + manual entry ──
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF1A1A1A) : const Color(0xFFF2F7F2),
+                borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
+              ),
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Tips card
+                    Container(
+                      padding: const EdgeInsets.all(18),
+                      decoration: BoxDecoration(
+                        color: isDark ? AppColors.darkCard : Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.05),
+                            blurRadius: 12,
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.all(8),
+                                decoration: BoxDecoration(
+                                  color: AppColors.frovyGreen.withValues(alpha: 0.12),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: const Icon(Icons.lightbulb_outline_rounded,
+                                    color: frovyGreen, size: 18),
+                              ),
+                              const SizedBox(width: 10),
+                              Text(
+                                "how_to_scan".tr(),
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  color: isDark ? Colors.white : AppColors.frovyText,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 14),
+                          _buildTipRow("scan_instruction_1".tr(), isDark),
+                          _buildTipRow("scan_instruction_2".tr(), isDark),
+                          _buildTipRow("scan_instruction_3".tr(), isDark),
+                          _buildTipRow("scan_instruction_4".tr(), isDark),
+                        ],
+                      ),
+                    ),
 
-  Widget _buildInstructionsBox() {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: frovyBeige,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'How to scan',
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: frovyText,
+                    const SizedBox(height: 20),
+
+                    // Manual entry card
+                    GestureDetector(
+                      onTap: () => Navigator.push(
+                        context,
+                        PageTransitions.slideRight(const ManualEntryScreen()),
+                      ),
+                      child: Container(
+                        padding: const EdgeInsets.all(18),
+                        decoration: BoxDecoration(
+                          color: isDark ? AppColors.darkCard : Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withValues(alpha: 0.05),
+                              blurRadius: 12,
+                            ),
+                          ],
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: AppColors.frovyGreen.withValues(alpha: 0.12),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: const Icon(Icons.edit_outlined,
+                                  color: frovyGreen, size: 20),
+                            ),
+                            const SizedBox(width: 14),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "try_manual_entry".tr(),
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                      color: isDark ? Colors.white : AppColors.frovyText,
+                                    ),
+                                  ),
+                                  Text(
+                                    "cant_scan_label".tr(),
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.grey[500],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Icon(Icons.chevron_right_rounded,
+                                color: Colors.grey[400]),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
-          const SizedBox(height: 12),
-          _buildBulletPoint('Position the ingredient list within the frame'),
-          _buildBulletPoint('Ensure good lighting for best results'),
-          _buildBulletPoint('Hold your device steady when capturing'),
-          _buildBulletPoint('The text should be clear and readable'),
         ],
       ),
     );
   }
 
-  Widget _buildFooter() {
-    return Column(
-      children: [
-        Text(
-          "Can't scan the label?",
-          style: TextStyle(color: Colors.grey[600]),
-        ),
-        TextButton(
-          onPressed: () {
-          },
-          child: const Text(
-            'Try manual entry instead',
-            style: TextStyle(
-              color: frovyGreen,
-              fontWeight: FontWeight.bold,
-            ),
+  Widget _corner(Alignment alignment) {
+    final isTop = alignment == Alignment.topLeft || alignment == Alignment.topRight;
+    final isLeft = alignment == Alignment.topLeft || alignment == Alignment.bottomLeft;
+    return Align(
+      alignment: alignment,
+      child: Container(
+        width: 16,
+        height: 16,
+        decoration: BoxDecoration(
+          border: Border(
+            top: isTop ? const BorderSide(color: frovyGreen, width: 3) : BorderSide.none,
+            bottom: !isTop ? const BorderSide(color: frovyGreen, width: 3) : BorderSide.none,
+            left: isLeft ? const BorderSide(color: frovyGreen, width: 3) : BorderSide.none,
+            right: !isLeft ? const BorderSide(color: frovyGreen, width: 3) : BorderSide.none,
           ),
         ),
-      ],
+      ),
     );
   }
 
-  Widget _buildBulletPoint(String text) {
+  Widget _buildTipRow(String text, bool isDark) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
+      padding: const EdgeInsets.only(bottom: 8),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
-            padding: EdgeInsets.only(top: 6.0),
-            child: Icon(Icons.circle, size: 6, color: frovyGreen),
+          Container(
+            margin: const EdgeInsets.only(top: 5),
+            width: 6,
+            height: 6,
+            decoration: const BoxDecoration(
+              color: frovyGreen,
+              shape: BoxShape.circle,
+            ),
           ),
           const SizedBox(width: 10),
           Expanded(
             child: Text(
               text,
-              style: const TextStyle(color: frovyText, fontSize: 14, height: 1.4),
+              style: TextStyle(
+                fontSize: 13,
+                height: 1.4,
+                color: isDark ? Colors.white70 : AppColors.frovyText,
+              ),
             ),
           ),
         ],

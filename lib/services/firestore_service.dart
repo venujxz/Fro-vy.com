@@ -35,16 +35,6 @@ class FirestoreService {
     return UserModel.fromMap(doc.data()!);
   }
 
-  /// Saves a check to the user's search history
-  Future<void> addToSearchHistory(
-    String uid,
-    Map<String, dynamic> entry,
-  ) async {
-    await _db.collection('users').doc(uid).update({
-      'searchHistory': FieldValue.arrayUnion([entry]),
-    });
-  }
-
   /// Searches products by name (case insensitive, contains)
   Future<List<Map<String, dynamic>>> searchProducts(String query) async {
     try {

@@ -13,9 +13,8 @@
       "Trisodium Phosphate (INS339 (iii))",
       "Nature Identical Rose Flavour",
       "Perimtted Food Colour (Carmoisine-INS122)"
-    ], 
-  }
-
+    ]
+  },
   {
     "brandName": "Kotmale",
     "productName": "Vanilla milk",
@@ -32,9 +31,8 @@
       "Trisodium Phosphate (INS339 (iii))",
       "Trisodium Citrate (INS 331(iii))",
       "Permitted Natural Food Color (Curcumin-INS100)"
-    ],
+    ]
   },
-  
   {
     "brandName": "Kotmale",
     "productName": "Chocolate milk",
@@ -51,10 +49,9 @@
       "Artificial Chocolate Flavour",
       "Trisodium Phosphate(INS 341(iii))",
       "Trisodium Citrate (INS 331(iii))"
-    ],
-    
+    ]
   },
-   {
+  {
     "brandName": "Kotmale",
     "productName": "Curd",
     "ingredients": [
@@ -63,7 +60,7 @@
       "Skimmed Milk",
       "Permitted Food Preservative( Potassium Sorbate-INS202)",
       "Curd Culture"
-    ],
+    ]
   },
   {
     "brandName": "Ambewela",
@@ -81,21 +78,21 @@
       "Potassium Sorbate - INS 202",
       "Citric Acid - INS 330",
       "Carotenes - INS 160 a (ii)."
-    ],
+    ]
   },
   {
     "brandName": "Maliban",
     "productName": "Kiri",
     "ingredients": [
       "Whole Milk Powder"
-    ],
+    ]
   },
   {
     "brandName": "Pelwatte",
     "productName": "Full Cream Powder",
     "ingredients": [
       "Full Cream Milk"
-    ],
+    ]
   },
   {
     "brandName": "Nestle",
@@ -116,7 +113,7 @@
       "B12)",
       "Disodium Phosphate (INS 339ii)",
       "Sodium Carbonate (INS 500i)."
-    ],
+    ]
   },
   {
     "brandName": "Anchor",
@@ -124,7 +121,7 @@
     "ingredients": [
       "Anchor Hot Chocolate",
       "Hot Water 220ml"
-    ],
+    ]
   },
   {
     "brandName": "The Bakerchik Collection",
@@ -134,7 +131,7 @@
       "Cocoa powder",
       "Artificial Vanilla flavor",
       "Salt."
-    ],
+    ]
   },
   {
     "brandName": "Kotmale",
@@ -147,7 +144,7 @@
       "Yoghurt Culture (with probiotic culture)",
       "Permitted Food Preservative (Potassium Sorbate-INS 202)",
       "Natural Vanilla Flavour."
-    ],
+    ]
   },
   {
     "brandName": "Anchor",
@@ -161,7 +158,7 @@
       "nature identical vanilla flavour",
       "potassium sorbate - INS 202",
       "artificial milk flavour & yoghurt culture [Including probiotic Lactocaseibacillus rhamnosus HN001/DR20™ (Contains $1.0 \\times 10^6$ minimum colony forming units (cfu) per gram)]."
-    ],
+    ]
   },
   {
     "brandName": "Highland",
@@ -173,7 +170,7 @@
       "Gelatine (INS 428)",
       "Nature Identical Vanilla Flavour",
       "Yoghurt Culture."
-    ],
+    ]
   },
   {
     "brandName": "Ambewela",
@@ -187,7 +184,7 @@
       "Potassium Sorbate-INS 202",
       "Yoghurt Culture",
       "Curcumin-INS 100(i)."
-    ],
+    ]
   },
   {
     "brandName": "Happy Cow",
@@ -205,7 +202,7 @@
       "whey powder",
       "salt",
       "acidifier: citric acid."
-    ],
+    ]
   },
   {
     "brandName": "Kotmale",
@@ -220,7 +217,7 @@
       "Nature Identical Cheese Flavour",
       "Salt",
       "Pepper and Permitted Food Additive (INS202)."
-    ],
+    ]
   },
   {
     "brandName": "Astra",
@@ -241,7 +238,7 @@
       "D)",
       "EDTA (INS 385)",
       "Nature identical butter flavours."
-    ],
+    ]
   },
   {
     "brandName": "Flora",
@@ -264,7 +261,7 @@
       "Nature identical butter flavours",
       "Annatto red (INS 160b)",
       "EDTA (INS 385)."
-    ],
+    ]
   },
   {
     "brandName": "Ciao",
@@ -272,7 +269,7 @@
     "ingredients": [
       "Pasteurized Fresh Cow's Milk",
       "Yoghurt Culture."
-    ],
+    ]
   },
   {
     "brandName": "Ambewela",
@@ -287,7 +284,7 @@
       "Permitted food preservative (Potassium sorbate - INS 202)",
       "Yoghurt culture",
       "Permitted natural food colour (Anthocyanin - INS 163 (i))."
-    ],
+    ]
   },
   {
     "brandName": "Chello",
@@ -301,8 +298,8 @@
       "Permitted food preservatives (INS 202)",
       "Nature identical mango flavor",
       "Permitted food colour (INS 110)."
-    ],
-  }, 
+    ]
+  },
   {
     "brandName": "Chicken Sandwich Slices",
     "productName": "Keells Food Products PLC",
@@ -317,7 +314,7 @@
       "Sugar",
       "Sodium Nitrite (INS 250)",
       "Mixed Spices."
-    ],
+    ]
   },
   {
     "brandName": "Crispy Chicken Bacon",
@@ -335,7 +332,7 @@
       "Ascorbic Acid (INS 300)",
       "Sodium Nitrite (INS 250)",
       "Mixed Spices."
-    ],
+    ]
   },
   {
     "brandName": "Chicken Meatballs",
@@ -352,7 +349,7 @@
       "Sodium Ascorbate (INS 301)",
       "Natural Color (Beetroot Red)",
       "Permitted Food Color (INS 161g)."
-    ],
+    ]
   },
   {
     "brandName": "Frankie Cheesy Blast Chicken Sausages",
@@ -373,7 +370,7 @@
       "Sodium Ascorbate (INS 301)",
       "Ascorbic Acid (INS 300)",
       "Permitted Food Colour (INS 161g)."
-    ],
+    ]
   },
   {
     "brandName": "Garlic Chicken Sausages",
@@ -395,7 +392,7 @@
       "INS 452 ii)",
       "Nature Identical Chicken Flavour",
       "Natural Color (Beetroot Red)."
-    ],
+    ]
   },
   {
     "brandName": "Chicken Sandwich Slices",
@@ -412,7 +409,7 @@
       "INS 452)",
       "Curing Salt (INS 250)",
       "Permitted Colouring (INS 122)."
-    ],
+    ]
   },
   {
     "brandName": "Vegetarian Sausages",
@@ -426,7 +423,7 @@
       "Seaweed Extract",
       "Sugar",
       "Common Salt."
-    ],
+    ]
   },
   {
     "brandName": "Chicken Slices",
@@ -445,7 +442,7 @@
       "Permitted Food Colors (INS 161g)",
       "Ascorbic Acid (INS 300)",
       "Sodium Ascorbate (INS 301)."
-    ],
+    ]
   },
   {
     "brandName": "Chicken Bratwurst",
@@ -460,7 +457,7 @@
       "Ascorbic Acid (INS 300)",
       "Yeast Extract",
       "Sodium Ascorbate (INS 301)."
-    ],
+    ]
   },
   {
     "brandName": "Smoky Cheesy Chicken Sausages",
@@ -479,7 +476,7 @@
       "Yeast Extract",
       "Ascorbic Acid (INS 300)",
       "Sodium Ascorbate (INS 301)."
-    ],
+    ]
   },
   {
     "brandName": "Chicken Sausage Meat",
@@ -497,7 +494,7 @@
       "Natural Color (Beetroot Red)",
       "Permitted Food Color (INS 161g)",
       "Yeast Extract."
-    ],
+    ]
   },
   {
     "brandName": "Heat & Eat Devilled Chicken",
@@ -517,8 +514,8 @@
       "Tri- and Polyphosphates (INS 450",
       "INS 451",
       "INS 452)."
-    ],
-  }
+    ]
+  },
   {
     "brandName": "Heat & Eat Chicken Kheema",
     "productName": "Crescent Fine Foods",
@@ -535,7 +532,7 @@
       "Ginger",
       "Herbs",
       "Corn Flour."
-    ],
+    ]
   },
   {
     "brandName": "Chicken Wings (Marinated)",
@@ -555,7 +552,7 @@
       "Permitted Colouring (INS 110",
       "INS 122",
       "INS 102)."
-    ],
+    ]
   },
   {
     "brandName": "Popcorn Chicken",
@@ -572,7 +569,7 @@
       "Baking Powder (INS 500(i))",
       "Yeast Extract",
       "Soy Protein."
-    ],
+    ]
   },
   {
     "brandName": "Bairaha",
@@ -586,20 +583,20 @@
       "Sunset Yellow Colorant (INS 110)",
       "Flashed Fried in Vegetable Oil (RBD Palm Olein)"
     ]
-  }
+  },
   {
     "brandName": "Maliban",
     "productName": "Bran Cracker",
     "ingredients": [
       "Wheat Flour",
-      "Atta flour"
+      "Atta flour",
       "Whole Meal Flour",
       "Edible Wheat Bran 6%",
       "Malt Extract",
       "Vegetable oil (Palm)",
       "Salt",
       "Yeast",
-      "Leavening agent(Sodium Bicarbonate-INS 500ii)",
+      "Leavening agent(Sodium Bicarbonate-INS 500ii)"
     ]
   },
   {
@@ -851,7 +848,7 @@
       "Leavening agents (Sodium bicarbonate - INS 500ii",
       "Ammonium bicarbonate-INS 503ii",
       "Salt",
-      "Nature identical chocolate flavour",
+      "Nature identical chocolate flavour"
     ]
   },
   {
@@ -1005,7 +1002,7 @@
       "Banana Pulp Powder (0.04%)",
       "Yeast."
     ]
-  }
+  },
   {
     "brandName": "Maliban",
     "productName": "Real Chocolate CREAM BISCUIT (30% Less Sugar)",
@@ -1101,7 +1098,7 @@
       "Nature Identical (Vanilla) Flavour",
       "and Plant Extract (Rosemary)."
     ]
-  }
+  },
   {
     "brandName": "Munchee",
     "productName": "CHOCOLATE MARIE BISCUIT",
@@ -1167,7 +1164,7 @@
       "Emulsifier [Soya Lecithin (322)]",
       "and Nature Identical (Vanilla) Flavour."
     ]
-  }
+  },
   {
     "brandName": "Edinborough",
     "productName": "Mayonnaise",
@@ -1252,7 +1249,7 @@
       "lemon (1%)",
       "Stabilisers (xanthan gum INS-415 pectin INS-440)"
     ]
-  }
+  },
   {
     "brandName": "Dad's Garden by MA'S Kitchen",
     "productName": "Teriyaki Cooking Sauce",
@@ -1333,7 +1330,7 @@
       "Natural Ginger Extract",
       "Stabilizer (INS 415)"
     ]
-  }
+  },
   {
     "brandName": "Dad's Garden by MA'S Kitchen",
     "productName": "Thai Sweet Chilli Sauce",
@@ -1411,7 +1408,7 @@
       "Nutmeg",
       "Permitted Colours (E 102, E 133)"
     ]
-  }
+  },
   {
     "brandName": "MD",
     "productName": "Original Tomato Ketchup",
@@ -1495,7 +1492,7 @@
       "Potassium sorbate (INS 202)",
       "Calcium disodium EDTA (INS 385)"
     ]
-  }
+  },
   {
     "brandName": "Keells",
     "productName": "Nai Miris Red Sauce",
@@ -1520,7 +1517,6 @@
       "Cinnamon Powder"
     ]
   },
-  [
   {
     "brandName": "Ritzbury",
     "productName": "Chit-Chat with Real Hazelnut Cream",
@@ -1566,10 +1562,10 @@
       "palm fat",
       "salt",
       "emulsifier (soya lecithin)",
-      "egg white powder"
+      "egg white powder",
       "hazelnuts"
     ]
-  }
+  },
   {
     "brandName": "Kandos",
     "productName": "Cashewnut Chocolate",
@@ -1631,7 +1627,7 @@
       "Nature Identical Vanilla & Strawberry Flavours",
       "Permitted Food Colours (Carmoisine - INS122, Tartrazine - INS102, Brilliant Blue FCF - INS133)"
     ]
-  }
+  },
   {
     "brandName": "Zellers",
     "productName": "Cashew Nut Chocolate",
@@ -1700,7 +1696,7 @@
       "Salt",
       "and Nature Identical (Vanilla) Flavour"
     ]
-  }
+  },
   {
     "brandName": "Ritzbury",
     "productName": "Roccoa with Fruit & Nut",
@@ -1732,7 +1728,7 @@
       "Nature Identical (Vanilla) Flavour",
       "and Salt"
     ]
-  }
+  },
   {
     "brandName": "7up",
     "productName": "Carbonated Beverage",
@@ -1780,7 +1776,7 @@
       "Sweeteners (INS 955, 950)",
       "Permitted Colour (INS 129)"
     ]
-  }
+  },
   {
     "brandName": "Mirinda",
     "productName": "Orange Flavour Carbonated Beverage",
@@ -1857,8 +1853,7 @@
       "Riboflavin (Vit. B2)",
       "Cyanocobalamin (Vit. B12)"
     ]
-  }
-  [
+  },
   {
     "brandName": "Edinborough",
     "productName": "Mayonnaise",
@@ -2259,7 +2254,7 @@
       "Caffeine",
       "Natural Cola Flavour"
     ]
-  }
+  },
   {
     "brandName": "Fanta",
     "productName": "Cream Soda",
@@ -2324,7 +2319,7 @@
       "Sodium benzoate (INS 211)",
       "Natural lemon flavours"
     ]
-  }
+  },
   {
     "brandName": "Ride",
     "productName": "Glow Apple",
@@ -2383,7 +2378,7 @@
       "Vitamin B2 (Riboflavin)",
       "Vitamin B12 (Cobalamin)"
     ]
-  }
+  },
   {
     "brandName": "KIST",
     "productName": "Apple Nectar",
@@ -2576,8 +2571,4 @@
       "Natural colour (carmine (INS 120) (animal origin))"
     ]
   }
-
 ]
-
-
-  

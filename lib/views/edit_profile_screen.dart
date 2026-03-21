@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart'; // IMPORT FOR .tr()
 import '../util/app_colors.dart';
@@ -32,12 +30,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
   final TextEditingController _dobController = TextEditingController();
 
   // Health Data State
-  // We use a Set for allergies so we can toggle them on/off easily
-  final Set<String> _selectedAllergies = {};
-  final List<String> _commonAllergies = [
-    "Peanuts", "Shellfish", "Milk", "Eggs", "Soy", "Wheat", "Fish", "Tree Nuts", "Gluten"
-  ];
-
+  final TextEditingController _allergiesController = TextEditingController();
   final TextEditingController _medicalConditionsController = TextEditingController();
 
   // Gender selection: store the KEY, not the translated string
@@ -61,7 +54,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
       _phoneController.text = userProfile.phone;
       _dobController.text = userProfile.dob;
       _selectedGender = userProfile.gender.isNotEmpty ? userProfile.gender : "male";
-      _selectedAllergies.addAll(healthProfile.allergies);
+      _allergiesController.text = healthProfile.allergies.join(', ');
       _medicalConditionsController.text = healthProfile.medicalConditions;
     });
   }
@@ -73,6 +66,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
     _emailController.dispose();
     _phoneController.dispose();
     _dobController.dispose();
+    _allergiesController.dispose();
     _medicalConditionsController.dispose();
     super.dispose();
   }
@@ -102,13 +96,19 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
                 return;
               }
 
+              // Parse allergies from comma-separated text
+              final allergiesText = _allergiesController.text.trim();
+              final allergiesList = allergiesText.isEmpty
+                  ? <String>[]
+                  : allergiesText.split(',').map((e) => e.trim()).where((e) => e.isNotEmpty).toList();
+
               Map<String, dynamic> updatedData = {
                 "name": _nameController.text.trim(),
                 "email": _emailController.text.trim(),
                 "phone": _phoneController.text.trim(),
                 "dob": _dobController.text.trim(),
                 "gender": _selectedGender,
-                "allergies": _selectedAllergies.toList(),
+                "allergies": allergiesList,
                 "conditions": _medicalConditionsController.text.trim(),
               };
 
@@ -210,43 +210,18 @@ class _EditProfileScreenState extends State<EditProfileScreen> with SingleTicker
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("food_allergies".tr(), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                Text("food_allergies_optional".tr(), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
                 const SizedBox(height: 8),
-                Text("allergy_instruction".tr(), 
+                Text("food_allergy_text_instruction".tr(),
                   style: const TextStyle(color: Colors.grey, fontSize: 12)),
                 const SizedBox(height: 16),
-                
-                // Interactive Chip Grid (Ingredients stay in English or map to DB values later)
-                Wrap(
-                  spacing: 8,
-                  runSpacing: 8,
-                  children: _commonAllergies.map((allergy) {
-                    final isSelected = _selectedAllergies.contains(allergy);
-                    return FilterChip(
-                      label: Text(allergy),
-                      selected: isSelected,
-                      selectedColor: frovyGreen.withValues(alpha: 0.2),
-                      checkmarkColor: frovyGreen,
-                      labelStyle: TextStyle(
-                        color: isSelected ? frovyGreen : (isDark ? Colors.white70 : Colors.black87),
-                        fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                      ),
-                      onSelected: (bool selected) {
-                        setState(() {
-                          if (selected) {
-                            _selectedAllergies.add(allergy);
-                          } else {
-                            _selectedAllergies.remove(allergy);
-                          }
-                        });
-                      },
-                    );
-                  }).toList(),
-                ),
+
+                // Text field for allergies
+                _buildValidatedField("enter_allergies".tr(), _allergiesController, Icons.warning_amber_rounded, maxLines: 2),
 
                 const SizedBox(height: 30),
-                
-                Text("medical_conditions".tr(), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+
+                Text("medical_conditions_optional".tr(), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
                 const SizedBox(height: 8),
                 _buildValidatedField("enter_conditions".tr(), _medicalConditionsController, Icons.medical_services_outlined, maxLines: 2),
               ],

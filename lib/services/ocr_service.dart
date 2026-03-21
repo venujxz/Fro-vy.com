@@ -4,12 +4,11 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
+import '../util/platform_config.dart';
 
 class OCRService {
-  // This URL will point to Thisal's backend.
-  // For iOS Simulator, 'localhost' works.
-  // For Android Emulator, use '10.0.2.2'.
-  final String _baseUrl = 'http://localhost:3000';
+  // Uses PlatformConfig so Android emulator, physical device, and iOS all work correctly.
+  String get _baseUrl => PlatformConfig.getBackendUrl(path: '');
 
   // ─────────────────────────────────────────
   // 1. Compress the image to meet NFR-01 (Speed)
@@ -38,11 +37,9 @@ class OCRService {
   // ─────────────────────────────────────────
 
   Future<String?> uploadImage(File imageFile) async {
-    // A. Compress first
     final File? processedFile = await compressImage(imageFile);
     if (processedFile == null) return null;
 
-    // B. Prepare the POST request
     final uri = Uri.parse('$_baseUrl/analyze-image');
     final request = http.MultipartRequest('POST', uri);
 

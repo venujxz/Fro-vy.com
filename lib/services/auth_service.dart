@@ -9,8 +9,13 @@ class AuthService {
 
   Future<String?> signInWithGoogle() async {
   try {
+    // Client ID is injected at build time via --dart-define=GOOGLE_CLIENT_ID=...
+    // For Android this is usually not needed (uses google-services.json).
+    // For Web / macOS / iOS set:  --dart-define=GOOGLE_CLIENT_ID=<your_client_id>
+    const googleClientId = String.fromEnvironment('GOOGLE_CLIENT_ID', defaultValue: '');
+
     final GoogleSignIn googleSignIn = GoogleSignIn(
-      clientId: '1014519853798-7cdv61reb50o5djpnddnp33q1tj7fi88.apps.googleusercontent.com',
+      clientId: googleClientId.isNotEmpty ? googleClientId : null,
       scopes: ['email', 'profile'],
     );
 

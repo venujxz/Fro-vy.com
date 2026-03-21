@@ -1,12 +1,24 @@
+import 'dart:async';
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 class GeminiService {
-  // Using environment variable for API key - set with --dart-define
+  // Set at build time: --dart-define=GEMINI_API_KEY=your_key_here
+  // or add to secrets.json and use --dart-define-from-file=secrets.json
   static const String _apiKey = String.fromEnvironment(
-    'api_key',
+    'GEMINI_API_KEY',
     defaultValue: '',
   );
+
+  // Two stable model endpoints tried in parallel — whichever responds first wins.
+  // This eliminates the old behaviour of trying 5 endpoints one-by-one sequentially.
+  static const List<String> _endpoints = [
+    '/v1beta/models/gemini-2.0-flash:generateContent',
+    '/v1beta/models/gemini-1.5-flash:generateContent',
+  ];
+
+  static const Duration _timeout = Duration(seconds: 20);
 
   Future<List<String>> getPersonalisedWarnings({
     required String userName,
@@ -18,18 +30,105 @@ class GeminiService {
     required List<String> cautionIngredients,
     required List<String> allIngredients,
   }) async {
-    // 1. THE FIX: The 'if' check must be INSIDE the function body, not the parameter list.
     if (_apiKey.isEmpty) {
       return [
-        'Error: Gemini API key is missing. Ensure you run with --dart-define-from-file=secrets.json',
+        'Gemini API key is missing. '
+        'Run with --dart-define=GEMINI_API_KEY=<your_key> '
+        'or add it to secrets.json.',
       ];
     }
 
     final age = _calculateAge(dob);
+    final prompt = _buildPrompt(
+      userName: userName,
+      age: age,
+      gender: gender,
+      conditions: conditions,
+      foodAllergies: foodAllergies,
+      allIngredients: allIngredients,
+      avoidIngredients: avoidIngredients,
+      cautionIngredients: cautionIngredients,
+    );
 
-    final prompt =
-        '''
-You are a health and nutrition advisor for an app called Frovy.
+    final body = jsonEncode({
+      'contents': [
+        {
+          'parts': [
+            {'text': prompt}
+          ]
+        }
+      ],
+      'generationConfig': {'temperature': 0.1},
+    });
+
+    // Fire both endpoints in parallel — take the first successful response.
+    final futures = _endpoints.map((endpoint) => _callEndpoint(endpoint, body));
+
+    try {
+      // completer lets us resolve as soon as ANY future succeeds
+      final completer = Completer<List<String>>();
+      int failures = 0;
+      String lastError = '';
+
+      for (final future in futures) {
+        future.then((result) {
+          if (!completer.isCompleted) completer.complete(result);
+        }).catchError((e) {
+          lastError = e.toString();
+          failures++;
+          if (failures == _endpoints.length && !completer.isCompleted) {
+            completer.completeError(lastError);
+          }
+        });
+      }
+
+      return await completer.future;
+    } catch (e) {
+      debugPrint('GeminiService error: $e');
+      return ['Could not generate personalised analysis. Please try again later.'];
+    }
+  }
+
+  Future<List<String>> _callEndpoint(String endpoint, String body) async {
+    final url = Uri.https(
+      'generativelanguage.googleapis.com',
+      endpoint,
+      {'key': _apiKey},
+    );
+
+    final response = await http
+        .post(url, headers: {'Content-Type': 'application/json'}, body: body)
+        .timeout(_timeout);
+
+    if (response.statusCode != 200) {
+      throw Exception('HTTP ${response.statusCode}: ${response.body}');
+    }
+
+    final data = jsonDecode(response.body);
+    final String rawText =
+        data['candidates'][0]['content']['parts'][0]['text'] as String;
+
+    try {
+      final List<dynamic> list = jsonDecode(rawText.trim());
+      return list.cast<String>();
+    } catch (_) {
+      // Model returned plain text instead of JSON — wrap it
+      return [rawText.trim()];
+    }
+  }
+
+  String _buildPrompt({
+    required String userName,
+    required int age,
+    required String gender,
+    required List<String> conditions,
+    required List<String> foodAllergies,
+    required List<String> allIngredients,
+    required List<String> avoidIngredients,
+    required List<String> cautionIngredients,
+  }) {
+    return '''
+You are a health and nutrition advisor for an app called Fro-vy.
 
 User Profile:
 - Name: $userName
@@ -44,80 +143,20 @@ Flagged AVOID: ${avoidIngredients.isEmpty ? 'None' : avoidIngredients.join(', ')
 Flagged CAUTION: ${cautionIngredients.isEmpty ? 'None' : cautionIngredients.join(', ')}
 
 Instructions:
-- Look at the flagged ingredients and check if any of them specifically interact with this user's conditions or allergies.
-- For EACH issue you find, write one warning that is 2-3 sentences long.
-- Each warning must address ONE specific issue only — do not combine multiple issues in one warning.
+- Check if any flagged ingredients specifically interact with this user's conditions or allergies.
+- Write one warning per issue, 2-3 sentences each.
 - Maximum 5 warnings total.
-- If you find no issues specific to this user's profile, return exactly: ["No specific concerns found for your health profile."]
-- Write in a friendly, informative tone. Do not be alarmist.
-- Return ONLY a valid JSON array of strings. No extra text, no markdown, no code blocks.
+- If no issues found, return exactly: ["No specific concerns found for your health profile."]
+- Friendly tone. Not alarmist.
+- Return ONLY a valid JSON array of strings. No markdown, no code blocks, no preamble.
 
-Example format:
-["Warning about ingredient X for this user.", "Warning about ingredient Y for this user."]
-
+Example: ["Warning about ingredient X.", "Warning about ingredient Y."]
 ''';
-
-    // Model endpoints
-    final endpoints = [
-      '/v1beta/models/gemini-2.5-flash:generateContent',
-      '/v1/models/gemini-2.5-flash:generateContent',
-      // 1. Try the most stable current alias
-      '/v1beta/models/gemini-1.5-flash:generateContent',
-      // 2. Try the general "latest" alias (often fixes 404s)
-      '/v1beta/models/gemini-flash-latest:generateContent',
-      // 3. Try the stable v1 version
-      '/v1/models/gemini-1.5-flash:generateContent',
-    ];
-
-    String lastError = '';
-
-    for (var endpoint in endpoints) {
-      try {
-        final url = Uri.https('generativelanguage.googleapis.com', endpoint, {
-          'key': _apiKey,
-        });
-
-        final response = await http.post(
-          url,
-          headers: {'Content-Type': 'application/json'},
-          body: jsonEncode({
-            'contents': [
-              {
-                'parts': [
-                  {'text': prompt},
-                ],
-              },
-            ],
-            'generationConfig': {'temperature': 0.1},
-          }),
-        );
-
-        if (response.statusCode == 200) {
-          final data = jsonDecode(response.body);
-          final String rawText =
-              data['candidates'][0]['content']['parts'][0]['text'];
-
-          try {
-            final List<dynamic> list = jsonDecode(rawText.trim());
-            return list.cast<String>();
-          } catch (e) {
-            return [rawText]; // Fallback to raw text if JSON parse fails
-          }
-        } else {
-          lastError = 'Status ${response.statusCode}: ${response.body}';
-          continue;
-        }
-      } catch (e) {
-        lastError = e.toString();
-      }
-    }
-
-    return ['Error: $lastError'];
   }
 
   int _calculateAge(String dob) {
     try {
-      DateTime birthDate = DateTime.parse(dob);
+      final birthDate = DateTime.parse(dob);
       final today = DateTime.now();
       int age = today.year - birthDate.year;
       if (today.month < birthDate.month ||
@@ -125,7 +164,7 @@ Example format:
         age--;
       }
       return age;
-    } catch (e) {
+    } catch (_) {
       return 0;
     }
   }

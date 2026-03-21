@@ -1,33 +1,22 @@
-// ignore_for_file: deprecated_member_use
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:camera/camera.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'login_step2_screen.dart';
-import 'login_screen.dart';
-import 'home_screen.dart';
-import '../services/auth_service.dart';
-
 
 class LoginStep1Screen extends StatefulWidget {
-  const LoginStep1Screen({super.key});
+  final List<CameraDescription>? cameras;
+
+  const LoginStep1Screen({super.key, this.cameras});
 
   @override
   State<LoginStep1Screen> createState() => _LoginStep1ScreenState();
 }
 
 class _LoginStep1ScreenState extends State<LoginStep1Screen> {
-  final _formKey  = GlobalKey<FormState>();
-  final _nameCtrl  = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+  final _nameCtrl = TextEditingController();
   final _emailCtrl = TextEditingController();
-  final _dobCtrl   = TextEditingController();
-  DateTime? _dob;
-  bool _isGoogleLoading = false;
-
-  static const Color _green = Color(0xFF4CAF50);
-
-  // ─────────────────────────────────────────
-  // Lifecycle
-  // ─────────────────────────────────────────
+  final _dobCtrl = TextEditingController();
 
   @override
   void dispose() {
@@ -37,10 +26,6 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
     super.dispose();
   }
 
-  // ─────────────────────────────────────────
-  // Logic
-  // ─────────────────────────────────────────
-
   Future<void> _pickDob() async {
     final now = DateTime.now();
     final picked = await showDatePicker(
@@ -49,82 +34,203 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
       firstDate: DateTime(1900),
       lastDate: now,
     );
-    if (!mounted) return;
     if (picked != null) {
       setState(() {
-        _dob = picked;
         _dobCtrl.text = DateFormat('yyyy-MM-dd').format(picked);
       });
     }
   }
 
-  void _handleContinue() {
-    if (_formKey.currentState!.validate()) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (_) => LoginStep2Screen(
-            name: _nameCtrl.text.trim(),
-            email: _emailCtrl.text.trim(),
-            dob: _dob!,
-          ),
-        ),
-      );
-    }
-  }
-
-  Future<void> _handleGoogleSignIn() async {
-    setState(() => _isGoogleLoading = true);
-    try {
-      final authService = AuthService();
-      final uid = await authService.signInWithGoogle();
-      if (!mounted) return;
-      if (uid != null) {
-        Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(
-            builder: (_) => HomeScreen(cameras: const <CameraDescription>[]),
-          ),
-          (route) => false,
-        );
-      }
-    } catch (e) {
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(e.toString().replaceAll('Exception: ', ''))),
-      );
-    } finally {
-      if (mounted) setState(() => _isGoogleLoading = false);
-    }
-  }
-
-  // ─────────────────────────────────────────
-  // Build
-  // ─────────────────────────────────────────
-
   @override
   Widget build(BuildContext context) {
+    const green = Color(0xFF4CAF50);
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final bgColor = isDark ? const Color(0xFF121212) : Colors.white;
+    final textColor = isDark ? Colors.white : const Color(0xFF0F172A);
+    final subtitleColor = isDark ? Colors.grey[400]! : const Color(0xFF64748B);
+    final inputFill = isDark ? const Color(0xFF2C2C2C) : const Color(0xFFF1F5F9);
+    final inputTextColor = isDark ? Colors.white : Colors.black;
+    final inactiveDot = isDark ? const Color(0xFF3A3A3A) : const Color(0xFFE2E8F0);
+
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: bgColor,
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
           child: Column(
             children: [
               const SizedBox(height: 18),
-              _buildLogo(),
+              Container(
+                height: 56,
+                width: 56,
+                decoration: const BoxDecoration(
+                  color: Color(0xFFE8F5E9),
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(Icons.person_outline, size: 44, color: green),
+              ),
               const SizedBox(height: 12),
-              _buildTitle(),
-              const SizedBox(height: 18),
-              _buildStepIndicator(),
-              const SizedBox(height: 18),
-              _buildFormCard(),
-              const SizedBox(height: 18),
-              _buildDivider(),
+              Text(
+                "welcome_title".tr(),
+                style: const TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w700,
+                  color: green,
+                ),
+              ),
               const SizedBox(height: 14),
-              _buildGoogleButton(),
+              Text(
+                "provide_details".tr(),
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 15, color: subtitleColor),
+              ),
               const SizedBox(height: 18),
-              _buildLoginRow(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  _stepDot(active: true, label: "1", inactiveColor: inactiveDot, inactiveTextColor: subtitleColor),
+                  _stepLine(inactiveColor: inactiveDot),
+                  _stepDot(active: false, label: "2", inactiveColor: inactiveDot, inactiveTextColor: subtitleColor),
+                  _stepLine(inactiveColor: inactiveDot),
+                  _stepDot(active: false, label: "3", inactiveColor: inactiveDot, inactiveTextColor: subtitleColor),
+                ],
+              ),
+              const SizedBox(height: 18),
+              Form(
+                key: _formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _label("full_name_label".tr(), color: textColor),
+                    TextFormField(
+                      controller: _nameCtrl,
+                      style: TextStyle(color: inputTextColor, fontWeight: FontWeight.w500),
+                      decoration: _inputDeco("enter_full_name".tr(), fillColor: inputFill, hintColor: subtitleColor),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "please_enter_name".tr();
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(height: 14),
+                    _label("email_label".tr(), color: textColor),
+                    TextFormField(
+                      controller: _emailCtrl,
+                      style: TextStyle(color: inputTextColor, fontWeight: FontWeight.w500),
+                      decoration: _inputDeco("enter_email".tr(), fillColor: inputFill, hintColor: subtitleColor),
+                      keyboardType: TextInputType.emailAddress,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "please_enter_email".tr();
+                        }
+                        if (!RegExp(r'^[^@]+@[^@]+\.[^@]+$').hasMatch(value)) {
+                          return "invalid_email".tr();
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(height: 14),
+                    _label("dob_label".tr(), color: textColor),
+                    TextFormField(
+                      controller: _dobCtrl,
+                      style: TextStyle(color: inputTextColor, fontWeight: FontWeight.w500),
+                      decoration: _inputDeco("select_dob".tr(), fillColor: inputFill, hintColor: subtitleColor),
+                      readOnly: true,
+                      onTap: _pickDob,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "please_select_dob".tr();
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(height: 18),
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: green,
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => LoginStep2Screen(
+                                  email: _emailCtrl.text.trim(),
+                                  name: _nameCtrl.text.trim(),
+                                  dob: _dobCtrl.text.trim(),
+                                  cameras: widget.cameras,
+                                ),
+                              ),
+                            );
+                          }
+                        },
+                        child: Text(
+                          "next".tr(),
+                          style: const TextStyle(fontSize: 16, color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 18),
+                    Row(
+                      children: [
+                        Expanded(child: Divider(color: subtitleColor.withAlpha(100))),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 12),
+                          child: Text(
+                            "or".tr(),
+                            style: TextStyle(color: subtitleColor, fontSize: 14),
+                          ),
+                        ),
+                        Expanded(child: Divider(color: subtitleColor.withAlpha(100))),
+                      ],
+                    ),
+                    const SizedBox(height: 18),
+                    SizedBox(
+                      width: double.infinity,
+                      child: OutlinedButton.icon(
+                        style: OutlinedButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          side: BorderSide(color: isDark ? Colors.grey[600]! : const Color(0xFFE2E8F0)),
+                        ),
+                        onPressed: () {
+                          // TODO: Implement Google Sign-In
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text("google_signin_coming_soon".tr())),
+                          );
+                        },
+                        icon: Image.asset(
+                          'assets/images/google_logo.png',
+                          height: 20,
+                          width: 20,
+                          errorBuilder: (context, error, stackTrace) => Icon(
+                            Icons.g_mobiledata,
+                            size: 24,
+                            color: textColor,
+                          ),
+                        ),
+                        label: Text(
+                          "sign_in_google".tr(),
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: textColor,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
@@ -132,235 +238,67 @@ class _LoginStep1ScreenState extends State<LoginStep1Screen> {
     );
   }
 
-  // ─────────────────────────────────────────
-  // Section Widgets
-  // ─────────────────────────────────────────
+  // ---- helpers ----
 
-  Widget _buildLogo() {
-    return Container(
-      height: 88,
-      width: 88,
-      decoration: BoxDecoration(
-        color: _green.withOpacity(0.25),
-        borderRadius: BorderRadius.circular(24),
-      ),
-      child: const Icon(Icons.person_outline, size: 44, color: _green),
-    );
-  }
-
-  Widget _buildTitle() {
-    return const Column(
-      children: [
-        Text(
-          'FRO-VY',
-          style: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.w700,
-            color: _green,
-          ),
-        ),
-        SizedBox(height: 14),
-        Text(
-          "Let's start by getting to know you",
-          style: TextStyle(fontSize: 16, color: Color(0xFF475569)),
-          textAlign: TextAlign.center,
-        ),
-      ],
-    );
-  }
-
-  Widget _buildStepIndicator() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        _stepDot(active: true, label: '1'),
-        _stepLine(),
-        _stepDot(active: false, label: '2'),
-        _stepLine(),
-        _stepDot(active: false, label: '3'),
-      ],
-    );
-  }
-
-  Widget _buildFormCard() {
-    return Container(
-      padding: const EdgeInsets.all(18),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(18),
-        border: Border.all(color: const Color(0xFFE2E8F0)),
-        boxShadow: const [
-          BoxShadow(blurRadius: 10, offset: Offset(0, 4), color: Colors.black12),
-        ],
-      ),
-      child: Form(
-        key: _formKey,
-        child: Column(
-          children: [
-            _label('Full Name'),
-            TextFormField(
-              controller: _nameCtrl,
-              decoration: _input('John Doe'),
-              validator: (v) =>
-                  (v == null || v.trim().isEmpty) ? 'Enter name' : null,
-            ),
-            const SizedBox(height: 14),
-            _label('Date of Birth'),
-            TextFormField(
-              controller: _dobCtrl,
-              readOnly: true,
-              onTap: _pickDob,
-              decoration: _input('Select date').copyWith(
-                suffixIcon: const Icon(Icons.calendar_month),
-              ),
-              validator: (_) => (_dob == null) ? 'Select DOB' : null,
-            ),
-            const SizedBox(height: 14),
-            _label('Email Address'),
-            TextFormField(
-              controller: _emailCtrl,
-              keyboardType: TextInputType.emailAddress,
-              decoration: _input('john.doe@example.com'),
-              validator: (v) {
-                final email = (v ?? '').trim();
-                final ok = RegExp(r'^\S+@\S+\.\S+$').hasMatch(email);
-                if (!ok) return 'Enter a valid email';
-                return null;
-              },
-            ),
-            const SizedBox(height: 18),
-            SizedBox(
-              width: double.infinity,
-              height: 48,
-              child: ElevatedButton(
-                onPressed: _handleContinue,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: _green,
-                  foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-                child: const Text('Continue'),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildDivider() {
-    return const Row(
-      children: [
-        Expanded(child: Divider()),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10),
-          child: Text('Or continue with'),
-        ),
-        Expanded(child: Divider()),
-      ],
-    );
-  }
-
-  Widget _buildGoogleButton() {
-    return SizedBox(
-      width: double.infinity,
-      height: 48,
-      child: OutlinedButton.icon(
-        onPressed: _isGoogleLoading ? null : _handleGoogleSignIn,
-        icon: _isGoogleLoading
-            ? const SizedBox(
-                height: 18,
-                width: 18,
-                child: CircularProgressIndicator(strokeWidth: 2),
-              )
-            : const Icon(Icons.g_mobiledata),
-        label: Text(_isGoogleLoading ? 'Signing in...' : 'Continue with Google'),
-        style: OutlinedButton.styleFrom(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-        ),
-      ),
-    );
-  }
-
-  
-
-  Widget _buildLoginRow() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text("Already have an account? "),
-        TextButton(
-  onPressed: () {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (_) => const LoginScreen()),
-    );
-  },
-  child: const Text(
-    'Log in',
-            style: TextStyle(color: _green, fontWeight: FontWeight.w600),
-          ),
-        ),
-      ],
-    );
-  }
-
-  // ─────────────────────────────────────────
-  // UI Helpers
-  // ─────────────────────────────────────────
-
-  static Widget _stepDot({required bool active, required String label}) {
+  static Widget _stepDot({
+    required bool active,
+    required String label,
+    required Color inactiveColor,
+    required Color inactiveTextColor,
+  }) {
+    const green = Color(0xFF4CAF50);
     return Container(
       height: 28,
       width: 28,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: active ? _green : const Color(0xFFE2E8F0),
+        color: active ? green : inactiveColor,
         shape: BoxShape.circle,
       ),
       child: Text(
         label,
         style: TextStyle(
-          color: active ? Colors.white : const Color(0xFF64748B),
+          color: active ? Colors.white : inactiveTextColor,
           fontWeight: FontWeight.w700,
         ),
       ),
     );
   }
 
-  static Widget _stepLine() => Container(
+  static Widget _stepLine({required Color inactiveColor}) => Container(
         width: 56,
         height: 3,
         margin: const EdgeInsets.symmetric(horizontal: 10),
         decoration: BoxDecoration(
-          color: const Color(0xFFE2E8F0),
+          color: inactiveColor,
           borderRadius: BorderRadius.circular(10),
         ),
       );
 
-  static Widget _label(String text) => Align(
+  static Widget _label(String text, {required Color color}) => Align(
         alignment: Alignment.centerLeft,
         child: Padding(
           padding: const EdgeInsets.only(bottom: 6),
           child: Text(
             text,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w600,
-              color: Color(0xFF0F172A),
+              color: color,
             ),
           ),
         ),
       );
 
-  static InputDecoration _input(String hint) => InputDecoration(
+  static InputDecoration _inputDeco(String hint, {required Color fillColor, required Color hintColor}) =>
+      InputDecoration(
         hintText: hint,
+        hintStyle: TextStyle(
+          color: hintColor,
+          fontWeight: FontWeight.w400,
+        ),
         filled: true,
-        fillColor: const Color(0xFFF1F5F9),
+        fillColor: fillColor,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide.none,

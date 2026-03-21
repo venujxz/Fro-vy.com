@@ -10,27 +10,23 @@
   "help_support": "උදව් මற්றும් සහාය",
   "logout": "පිටවීම",
   "free_plan": "නොමිලේ සැලසුම",
-
   "scan_ingredients": "අමුද්‍රව්‍ය ස්කෑන්",
   "scan_subtitle": "ලේබල් ස්කෑන් කරන්න",
   "search_products": "නිෂ්පාදන සොයන්න",
   "search_subtitle": "දත්ත ගබඩාවේ සොයන්න",
   "manual_entry": "අතින් ඇතුල්",
   "manual_subtitle": "අමුද්‍රව්‍ය ටයිප් කරන්න",
-
   "health_profile": "සෞඛ්‍ය පැතිකඩ",
   "edit_profile": "සංස්කරණය",
   "allergies": "ඇලර්ජි",
   "medical_conditions": "රෝග තත්ත්ව",
   "other_sensitivities": "වෙනත් සංවේදීතා",
-
   "how_check_ingredients": "අමුද්‍රව්‍ය පරීක්ෂා කරන ආකාරය",
   "header_description": "ස්කෑන් හෝ ඇතුල් කර පරීක්ෂා කරන්න",
   "how_it_works": "කෙසේ ක්‍රියා කරයි",
   "step_1": "ඇතුල් ක්‍රමයක් තෝරන්න",
   "step_2": "අමුද්‍රව්‍ය විශ්ලේෂණය කරයි",
   "step_3": "ක්ෂණික ප්‍රතිඵල",
-
   "analysis_results": "විශ්ලේෂණ ප්‍රතිඵල",
   "analysis_results_title": "පරීක්ෂණ ප්‍රතිඵල",
   "scanned_product": "පරීක්ෂිත භාණ්ඩය",
@@ -49,7 +45,6 @@
   "all_ingredients": "අමුද්‍රව්‍ය ලැයිස්තුව",
   "check_another_product": "තවත් එකක් පරීක්ෂා කරන්න",
   "medical_disclaimer": "මෙම දත්ත ඔබ ලබාදුන් තොරතුරු මත පදනම් වේ. වෛද්‍ය උපදෙස් සඳහා වෛද්‍යවරයකු හමුවන්න.",
-
   "processing_image": "රූපය සැකසෙමින්...",
   "upload_failed": "උඩුගත කිරීම අසාර්ථකයි",
   "camera_preview": "කැමරා පෙරදසුන",
@@ -62,11 +57,9 @@
   "scan_instruction_4": "පෙළ පැහැදිලි සහ කියවිය හැකි විය යුතුයි",
   "cant_scan_label": "ලේබලය ස්කෑන් කළ නොහැකිද?",
   "try_manual_entry": "ඒ වෙනුවට අතින් ඇතුල් කිරීම උත්සාහ කරන්න",
-
   "account_statistics": "ගිණුම් සංඛ්‍යාත",
   "scans_made": "ස්කෑන්",
   "plan_type": "සැලසුම",
-
   "save": "සුරකින්න",
   "profile_updated": "පැතිකඩ යාවත්කාලීනයි!",
   "personal_details": "පුද්ගලික විස්තර",
@@ -83,7 +76,6 @@
   "allergy_instruction": "අදාළ සියල්ල තෝරන්න. මෙම අමුද්‍රව්‍ය අඩංගු නම් අපි ඔබට අනතුරු අඟවන්නෙමු.",
   "enter_conditions": "වෛද්‍ය තත්ත්වයන් ඇතුලත් කරන්න...",
   "enter_sensitivities": "උදා: ලැක්ටෝස්, කැෆේන්",
-
   "upgrade_health_journey": "ඔබේ සෞඛ්‍ය ගමන සාර්ථක කරගන්න",
   "choose_perfect_plan": "ඔබට ගැළපෙන සැලසුම තෝරාගන්න",
   "free": "නොමිලේ",
@@ -103,7 +95,6 @@
   "everything_in_pro": "Pro සැලසුමේ ඇති සියල්ල",
   "ai_recommendations": "AI මගින් මෙහෙයවන නිර්දේශ",
   "dietitian_consult": "පෝෂණවේදී උපදේශනය",
-
   "checkout": "මිලදී ගැනීම",
   "complete_purchase": "මිලදී ගැනීම සම්පූර්ණ කරන්න",
   "review_plan_payment": "ඔබේ සැලසුම සහ ගෙවීම් ක්‍රමය සමාලෝචනය කරන්න",
@@ -122,7 +113,6 @@
   "secure_payment_payhere": "PayHere මගින් සකසන ලද ආරක්ෂිත ගෙවීම",
   "payment_cancelled": "ගෙවීම අවලංගු කරන ලදී",
   "payment_failed": "ගෙවීම අසාර්ථකයි. කරුණාකර නැවත උත්සාහ කරන්න.",
-
   "summary": "සාරාංශය",
   "total_scans": "මුළු ස්කෑන්",
   "safe_products": "ආරක්ෂිත ඒවා",
@@ -140,7 +130,6 @@
   "status_good": "හොඳයි",
   "status_bad": "නරකයි",
   "status_medium": "මධ්‍යස්ථයි",
-
   "appearance": "පෙනුම",
   "dark_mode": "අඳුරු මාදිලිය",
   "switch_dark_theme": "අඳුරු තේමාවට මාරු වන්න",
@@ -152,7 +141,6 @@
   "language": "භාෂාව",
   "danger_zone": "අනතුරුදායක කලාපය",
   "delete_account": "ගිණුම මකන්න",
-
   "contact_us": "අපව සම්බන්ධ කරගන්න",
   "live_chat": "සජීවී කතාබහ",
   "available_time": "පෙ.ව. 9 සිට ප.ව. 6 දක්වා (EST)",
@@ -181,7 +169,6 @@
   "feedback_submit": "ප්‍රතිපෝෂණය ඉදිරිපත් කරන්න",
   "feedback_empty_error": "කරුණාකර ශ්‍රේණිගත කිරීමක් හෝ ප්‍රතිපෝෂණයක් ලබා දෙන්න.",
   "feedback_thank_you": "ඔබේ ප්‍රතිපෝෂණයට ස්තූතියි! 🎉",
-
   "search_title": "නිෂ්පාදන සොයන්න",
   "search_hint": "නිෂ්පාදනයක් සොයන්න...",
   "cat_all": "සියල්ල",
@@ -189,31 +176,25 @@
   "cat_snacks": "කෙටි ආහාර",
   "cat_beverages": "බීම වර්ග",
   "cat_bakery": "බේකරි",
-
   "manual_title": "අතින් ඇතුල් කිරීම",
   "manual_hint": "අමුද්‍රව්‍ය ලැයිස්තුව කොමාවෙන් වෙන් කර මෙහි ඇතුලත් කරන්න...",
   "analyze_btn": "අමුද්‍රව්‍ය විශ්ලේෂණය කරන්න",
   "error_empty": "කරුණාකර පළමුව අමුද්‍රව්‍ය ඇතුලත් කරන්න.",
   "manual_product_name": "අතින් ඇතුලත් කළ නිෂ්පාදනය",
-
   "logout_confirm": "ඔබට පිටවීමට අවශ්‍ය බව විශ්වාසද?",
   "logout_success": "ඔබ සාර්ථකව පිටවී ඇත.",
   "delete_account_confirm": "මෙය ඔබේ ගිණුම සහ ස්කෑන් ඉතිහාසය, සෞඛ්‍ය පැතිකඩ, සහ මනාපයන් ඇතුළු සියලු දත්ත ස්ථිරවම මකා දමයි. මෙම ක්‍රියාව නැවත අහෝසි කළ නොහැක.",
   "delete_account_btn": "ඔව්, මගේ ගිණුම මකන්න",
   "delete_account_success": "ඔබේ ගිණුම මකා දමා ඇත.",
-
   "no_results_found": "නිෂ්පාදන හමු නොවීය",
   "try_different_search": "වෙනත් සෙවුම් පදයක් හෝ වර්ගයක් උත්සාහ කරන්න",
-
   "result_beneficial": "ප්‍රයෝජනවත්",
   "result_caution": "ප්‍රවේශම් වන්න",
   "result_avoid": "වළකින්න",
-
   "welcome_tagline": "ඔබේ පුද්ගලික සෞඛ්‍ය ආරක්ෂකයා",
   "welcome_description": "ඔබේ සෞඛ්‍ය පැතිකඩට එරෙහිව ආහාර නිෂ්පාදන ක්ෂණිකව විශ්ලේෂණය කරන්න. ආරක්ෂිත ආහාර තේරීම් සඳහා ක්ෂණික අවදානම් තක්සේරු ලබාගන්න.",
   "get_started": "ආරම්භ කරන්න",
   "copyright": "© 2025 Fro-vy. සියලුම හිමිකම් ඇවිරිණි.",
-
   "welcome_title": "ආයුබෝවන්!",
   "provide_details": "ඉදිරියට යාමට ඔබේ විස්තර ලබා දෙන්න",
   "full_name_label": "සම්පූර්ණ නම",
@@ -227,7 +208,6 @@
   "select_dob": "ඔබේ උපන් දිනය තෝරන්න",
   "please_select_dob": "කරුණාකර ඔබේ උපන් දිනය තෝරන්න",
   "next": "ඊළඟ",
-
   "health_profile_title": "සෞඛ්‍ය පැතිකඩ",
   "health_profile_subtitle": "ඔබේ රෝග, ඇලර්ජි සහ වෙනත් සටහන් එක් කරන්න",
   "health_profile_setup": "පියවර 2/2 සෞඛ්‍ය පැතිකඩ සකසන්න",
@@ -248,6 +228,7 @@
   "sesame": "තල",
   "no_known_allergies": "දන්නා අසාත්මිකතා නොමැත",
   "medical_conditions_required": "වෛද්‍ය තත්ත්වයන් (අනිවාර්යයි)",
+  "medical_conditions_optional": "වෛද්‍ය තත්ත්වයන් (විකල්ප)",
   "medical_conditions_instruction": "අදාළ වෛද්‍ය තත්ත්වයන් ඇතුළත් කරන්න (උදා: දියවැඩියාව, අධි රුධිර පීඩනය).",
   "continue_btn": "ඉදිරියට යන්න",
   "medical_conditions_label": "රෝග තත්ත්ව",
@@ -259,7 +240,6 @@
   "other_notes_label": "වෙනත් සටහන්",
   "other_notes_hint": "උදා: ලැක්ටෝස් අසහිෂ්ණුතාව",
   "add_other_notes": "වෙනත් සටහන් එක් කරන්න",
-
   "secure_account": "ඔබේ ගිණුම ආරක්ෂා කරන්න",
   "create_strong_password": "ඔබේ දත්ත ආරක්ෂා කිරීමට ශක්තිමත් මුරපදයක් සාදන්න",
   "password_label": "මුරපදය",
@@ -271,14 +251,12 @@
   "please_confirm_password": "කරුණාකර ඔබේ මුරපදය තහවුරු කරන්න",
   "passwords_not_match": "මුරපද නොගැළපේ",
   "submit": "ඉදිරිපත් කරන්න",
-
   "verification_sent": "තහවුරු කිරීමේ ඊමේල් යවන ලදී!",
   "verification_link_sent": "තහවුරු කිරීමේ සබැඳියක් {email} වෙත යවන ලදී",
   "check_email_instructions": "කරුණාකර ඔබේ ඊමේල් පරීක්ෂා කර ලියාපදිංචිය සම්පූර්ණ කිරීමට\nතහවුරු කිරීමේ සබැඳිය ක්ලික් කරන්න.",
   "didnt_receive": "ඊමේල් ලැබුණේ නැද්ද?",
   "resend": "නැවත යවන්න",
   "back": "ආපසු",
-
   "or": "හෝ",
   "sign_in_google": "Google සමඟ පිවිසෙන්න",
   "google_signin_coming_soon": "Google පිවිසුම ඉක්මනින් පැමිණේ!",
@@ -286,7 +264,6 @@
   "food_allergy_text_instruction": "ආහාර අසාත්මිකතා කොමාවෙන් වෙන් කර ඇතුලත් කරන්න (උදා: රටකජු, ෂෙල්ෆිෂ්, කිරි).",
   "enter_allergies": "උදා: රටකජු, ෂෙල්ෆිෂ්, කිරි",
   "step_2_of_3": "පියවර 2/3",
-
   "recent_scans": "මෑත ස්කෑන්",
   "tap_to_view_analysis": "විශ්ලේෂණය බැලීමට තට්ටු කරන්න",
   "no_concerns_here": "මෙහි ගැටලු නොමැත",
@@ -304,11 +281,11 @@
   "status_caution": "ප්‍රවේශම්",
   "status_safe": "ආරක්ෂිතයි",
   "manual_example": "උදා: සීනි, සෝඩියම්, කෘතිම වර්ණ, කිරි...",
-
   "connection_error": "නිෂ්පාදන දත්ත සමුදායට සම්බන්ධ විය නොහැක. පසුව නැවත උත්සාහ කරන්න.",
   "ingredients": "අමුද්‍රව්‍ය",
   "results": "ප්‍රතිඵල",
   "search_products_desc": "ඔබගේ සෞඛ්‍ය පැතිකඩට අනුව නිෂ්පාදන සෙවීමට සහ ඒවායේ අමුද්‍රව්‍ය පරීක්ෂා කිරීමට අපගේ දත්ත සමුදාය සොයන්න.",
   "searching": "සොයමින්...",
-  "try_again": "නැවත උත්සාහ කරන්න"
+  "try_again": "නැවත උත්සාහ කරන්න",
+  "coming_soon_btn": "Coming Soon"
 }
