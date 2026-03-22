@@ -4033,3 +4033,1516 @@
 
   },
 
+  {
+
+    "name": "chocolate (0.1%)",
+
+    "category": "caution",
+
+    "reason": "Processed confection combining cocoa with sugar and fat. Contains beneficial cocoa flavanols but added sugar and saturated fat mean regular consumption warrants moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Chocolate Chips",
+
+    "category": "caution",
+
+    "reason": "Processed chocolate pieces combining cocoa with sugar, fat, and often emulsifiers. Contains some beneficial cocoa flavanols but added ingredients mean moderation is recommended.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "fruit cocktail flavourings",
+
+    "category": "caution",
+
+    "reason": "Artificial or nature-identical flavoring blend designed to mimic mixed fruit taste. Provides no nutritional value and may contain synthetic chemical compounds warranting moderate awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "jam",
+
+    "category": "caution",
+
+    "reason": "Fruit preserve typically very high in added sugar with reduced fiber compared to whole fruit. Provides minimal nutritional value beyond calories; regular high consumption warrants moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Jam",
+
+    "category": "caution",
+
+    "reason": "Fruit preserve typically very high in added sugar with reduced fiber compared to whole fruit. Provides minimal nutritional value beyond calories; regular high consumption warrants moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "fruit mix (mango pulp, orange juice concentrate, pineapple juice, passion fruit juice) 16%",
+
+    "category": "beneficial",
+
+    "reason": "Multi-fruit blend providing vitamin C, beta-carotene, and natural antioxidants from several whole fruit sources. Nutritious but juice concentrates contain elevated natural sugars and reduced fiber.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "orange juice from concentrate",
+
+    "category": "caution",
+
+    "reason": "Reconstituted orange juice retaining vitamin C but with natural fiber removed and sugars concentrated. Provides some micronutrients but elevated sugar content and absent fiber warrant moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "orange juice concentrate",
+
+    "category": "caution",
+
+    "reason": "Concentrated orange juice with natural fiber removed and sugar content significantly elevated. Retains vitamin C and some micronutrients but concentrated sugars clearly warrant moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "concentrated orange juice",
+
+    "category": "caution",
+
+    "reason": "Concentrated orange juice with natural fiber removed and sugar content significantly elevated. Retains vitamin C and some micronutrients but concentrated sugars clearly warrant moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "apple juice from concentrate",
+
+    "category": "caution",
+
+    "reason": "Reconstituted apple juice retaining some vitamins but with natural fiber removed and sugars concentrated. Provides modest micronutrients but elevated sugar content and absent fiber warrant moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "apple juice from concentrate",
+
+    "category": "caution",
+
+    "reason": "Reconstituted apple juice retaining some vitamins but with natural fiber removed and sugars concentrated. Provides modest micronutrients but elevated sugar content and absent fiber warrant moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "natural apple juice concentrate 6%",
+
+    "category": "caution",
+
+    "reason": "Reconstituted apple juice retaining some vitamins but with natural fiber removed and sugars concentrated. Provides modest micronutrients but elevated sugar content and absent fiber warrant moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "passion fruit juice from concentrate",
+
+    "category": "caution",
+
+    "reason": "Concentrated passion fruit juice retaining vitamin C and antioxidants but with fiber removed and sugars elevated. Nutritious but concentrated sugar content means moderation is recommended.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "grape juice from concentrate",
+
+    "category": "caution",
+
+    "reason": "Concentrated grape juice retaining polyphenol antioxidants but with fiber removed and natural sugars significantly elevated. Some nutritional benefit but concentrated sugar content warrants moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "blackcurrant and grape juice from concentrate",
+
+    "category": "caution",
+
+    "reason": "Blend of concentrated berry juices retaining some vitamin C and antioxidants but with fiber removed. Nutritious but concentrated natural sugar content from both sources warrants moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "black carrot concentrate",
+
+    "category": "beneficial",
+
+    "reason": "Concentrated extract from black carrots rich in anthocyanin antioxidants and natural colorants. A minimally processed natural ingredient with recognized antioxidant and cardiovascular health properties.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "lemon juice from concentrate",
+
+    "category": "beneficial",
+
+    "reason": "Reconstituted lemon juice retaining vitamin C and citric acid from the whole fruit. A natural acidulant providing meaningful antioxidant and immune-supporting nutritional benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "mandarin and apple juice from concentrate",
+
+    "category": "caution",
+
+    "reason": "Blend of concentrated citrus and apple juices retaining some vitamins but with fiber removed. Provides modest micronutrients but elevated sugar content and absent fiber warrant moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Fruit juices (passion fruit, apple, grape and lemon juice from concentrate)",
+
+    "category": "caution",
+
+    "reason": "Multi-fruit juice blend from concentrates retaining some vitamins and antioxidants but without natural fiber. Provides some micronutrients but the concentrated natural sugars from multiple sources warrant moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Fruit juice (pineapple, orange, and passion fruit juice from concentrate and mango, banana, and apricot puree)",
+
+    "category": "caution",
+
+    "reason": "Multi-fruit blend combining juice concentrates and whole fruit purees. Provides useful vitamins and antioxidants but concentrated natural sugars from multiple fruit sources warrant moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Pulp / Juices of Pineapple, Mango, Papaya, Passion Fruit, Lime (minimum of 4 fruits)",
+
+    "category": "beneficial",
+
+    "reason": "Multi-fruit blend using whole pulps and juices providing vitamin C, beta-carotene, enzymes, and antioxidants. Retains more fiber than concentrates; a nutritious multi-fruit ingredient.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Pure Ceylon Green Tea Extract 0.2%",
+
+    "category": "beneficial",
+
+    "reason": "Natural extract from green tea rich in catechins, EGCG, and antioxidants. Well-documented for cardiovascular, metabolic, and anti-inflammatory health benefits at normal dietary amounts.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permited Food Stabilizers (Mono and Diglycerides of Fatty Acids-INS471",
+
+    "category": "caution",
+
+    "reason": "Mono and diglycerides of fatty acids are approved emulsifiers derived from fats. Generally recognized as safe by global food authorities but represent highly processed fat derivatives.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium Alginate-INS401",
+
+    "category": "caution",
+
+    "reason": "Seaweed-derived polysaccharide used as a thickener and stabilizer in food products. Approved globally and generally recognized as safe; provides some dietary fiber with no significant concerns.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Carrageenan-INS471",
+
+    "category": "caution",
+
+    "reason": "Seaweed-derived thickener approved by major food safety authorities. Some research links prolonged high consumption to intestinal inflammation; warrants moderate awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Guar Gum-INS412)",
+
+    "category": "caution",
+
+    "reason": "Natural thickener derived from guar beans and approved by global food authorities. Generally recognized as safe but may cause bloating or digestive discomfort in high amounts.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permitted Food Emulsifier & stabilizers (Sodium Alginate-INS401",
+
+    "category": "caution",
+
+    "reason": "Seaweed-derived polysaccharide used as a thickener and stabilizer in food products. Approved globally and generally recognized as safe; provides some dietary fiber with no significant concerns.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Mono and diglycerides of Fatty acids-INS471)",
+
+    "category": "caution",
+
+    "reason": "Mono and diglycerides of fatty acids are approved emulsifiers derived from fats. Generally recognized as safe by global food authorities but represent highly processed fat derivatives.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permitted Food Emulsifiers and Stabilizers (Sodium Alginate-INS401",
+
+    "category": "caution",
+
+    "reason": "Seaweed-derived polysaccharide used as a thickener and stabilizer in food products. Approved globally and generally recognized as safe; provides some dietary fiber with no significant concerns.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Carrageenan-INS 407",
+
+    "category": "caution",
+
+    "reason": "Seaweed-derived thickener approved by major food safety authorities. Some research links prolonged high consumption to intestinal inflammation; warrants moderate awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Guar Gum-INS 412",
+
+    "category": "caution",
+
+    "reason": "Natural thickener derived from guar beans and approved by global food authorities. Generally recognized as safe but may cause bloating or digestive discomfort in high amounts.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Mono-and diglycerides of fatty acids-INS 471)",
+
+    "category": "caution",
+
+    "reason": "Mono and diglycerides of fatty acids are approved emulsifiers derived from fats. Generally recognized as safe by global food authorities but represent highly processed fat derivatives.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permitted Stabilizers (Sodium Phosphates - INS 339",
+
+    "category": "caution",
+
+    "reason": "Sodium phosphate salts approved as food additives for emulsification and pH control. High phosphate intake from processed foods is associated with kidney strain and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Polyphosphates - INS 452)",
+
+    "category": "caution",
+
+    "reason": "Polyphosphate salts approved as food additives for moisture retention and stabilization. Elevated phosphate intake from multiple processed food sources is linked to kidney and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permitted emulsifier & Stabilizer (INS452",
+
+    "category": "caution",
+
+    "reason": "Polyphosphate salts approved as food additives for moisture retention and stabilization. Elevated phosphate intake from multiple processed food sources is linked to kidney and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "INS450",
+
+    "category": "caution",
+
+    "reason": "Diphosphate salts approved as food additives used as leavening agents and emulsifiers. High cumulative phosphate intake from processed foods may be associated with kidney and cardiovascular health concerns.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "INS471)",
+
+    "category": "caution",
+
+    "reason": "Mono and diglycerides of fatty acids are approved emulsifiers derived from fats. Generally recognized as safe by global food authorities but represent highly processed fat derivatives.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium Phosphates - INS 339",
+
+    "category": "caution",
+
+    "reason": "Sodium phosphate salts approved as food additives for emulsification and pH control. High phosphate intake from processed foods is associated with kidney strain and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Trisodium Phosphate (INS339 (iii))",
+
+    "category": "caution",
+
+    "reason": "Sodium phosphate salts approved as food additives for emulsification and pH control. High phosphate intake from processed foods is associated with kidney strain and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Trisodium Phosphate(INS 341(iii))",
+
+    "category": "caution",
+
+    "reason": "Sodium phosphate salts approved as food additives for emulsification and pH control. High phosphate intake from processed foods is associated with kidney strain and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Disodium Phosphate (INS 339ii)",
+
+    "category": "caution",
+
+    "reason": "Sodium phosphate salts approved as food additives for emulsification and pH control. High phosphate intake from processed foods is associated with kidney strain and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium Carbonate (INS 500i).",
+
+    "category": "caution",
+
+    "reason": "Sodium carbonate used as a leavening agent and acidity regulator in processed foods. Approved and generally safe at regulated food-grade levels but contributes to overall sodium intake.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium Di-",
+
+    "category": "caution",
+
+    "reason": "Sodium phosphate salt fragment used as a food additive for emulsification and pH control. High phosphate intake from processed foods is associated with kidney strain and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Tri- and Polyphosphates (INS 450",
+
+    "category": "caution",
+
+    "reason": "Blend of diphosphate and polyphosphate food additives used for moisture retention and stabilization. Elevated cumulative phosphate intake from processed foods is linked to kidney and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "INS 451",
+
+    "category": "caution",
+
+    "reason": "Triphosphate salts approved as food additives used for moisture retention and stabilization in processed meats. Elevated cumulative phosphate intake from processed foods is linked to kidney and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "INS 451 i",
+
+    "category": "caution",
+
+    "reason": "Triphosphate salts approved as food additives used for moisture retention and stabilization in processed meats. Elevated cumulative phosphate intake from processed foods is linked to kidney and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "INS 452",
+
+    "category": "caution",
+
+    "reason": "Polyphosphate salts approved as food additives for moisture retention and stabilization. Elevated phosphate intake from multiple processed food sources is linked to kidney and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "INS 452).",
+
+    "category": "caution",
+
+    "reason": "Polyphosphate salts approved as food additives for moisture retention and stabilization. Elevated phosphate intake from multiple processed food sources is linked to kidney and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "INS 452 ii)",
+
+    "category": "caution",
+
+    "reason": "Polyphosphate salts approved as food additives for moisture retention and stabilization. Elevated phosphate intake from multiple processed food sources is linked to kidney and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Polyphosphates - INS 452",
+
+    "category": "caution",
+
+    "reason": "Polyphosphate salts approved as food additives for moisture retention and stabilization. Elevated phosphate intake from multiple processed food sources is linked to kidney and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium Phosphates",
+
+    "category": "caution",
+
+    "reason": "Sodium phosphate salts approved as food additives for emulsification and pH control. High phosphate intake from processed foods is associated with kidney strain and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Polyphosphates",
+
+    "category": "caution",
+
+    "reason": "Polyphosphate salts approved as food additives for moisture retention and stabilization. Elevated phosphate intake from multiple processed food sources is linked to kidney and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Phosphate Binders (INS 451)",
+
+    "category": "caution",
+
+    "reason": "Triphosphate salts approved as food additives used for moisture retention and stabilization in processed meats. Elevated cumulative phosphate intake from processed foods is linked to kidney and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Phosphate Binders (INS 451 i)",
+
+    "category": "caution",
+
+    "reason": "Triphosphate salts approved as food additives used for moisture retention and stabilization in processed meats. Elevated cumulative phosphate intake from processed foods is linked to kidney and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "mixed phosphate binders (INS 451)",
+
+    "category": "caution",
+
+    "reason": "Triphosphate salts approved as food additives used for moisture retention and stabilization in processed meats. Elevated cumulative phosphate intake from processed foods is linked to kidney and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Phosphates (INS 450",
+
+    "category": "caution",
+
+    "reason": "Diphosphate salts approved as food additives used as leavening agents and emulsifiers. High cumulative phosphate intake from processed foods may be associated with kidney and cardiovascular health concerns.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Phosphates (INS 450 i",
+
+    "category": "caution",
+
+    "reason": "Diphosphate salts approved as food additives used as leavening agents and emulsifiers. High cumulative phosphate intake from processed foods may be associated with kidney and cardiovascular health concerns.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "iii",
+
+    "category": "caution",
+
+    "reason": "Diphosphate salt fragment code referring to a food additive used for leavening and emulsification. High cumulative phosphate intake from processed foods may raise kidney and cardiovascular health concerns.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Phosphates (INS 451)",
+
+    "category": "caution",
+
+    "reason": "Triphosphate salts approved as food additives used for moisture retention and stabilization in processed meats. Elevated cumulative phosphate intake from processed foods is linked to kidney and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Binder (INS 451)",
+
+    "category": "caution",
+
+    "reason": "Triphosphate salts approved as food additives used for moisture retention and stabilization in processed meats. Elevated cumulative phosphate intake from processed foods is linked to kidney and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Trisodium Citrate (INS 331(iii))",
+
+    "category": "caution",
+
+    "reason": "Sodium salt of citric acid used as an acidity regulator and emulsifying salt in processed foods. Generally recognized as safe but contributes to overall sodium intake and warrants moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Tri Sodium Citrate (INS 331(iii))",
+
+    "category": "caution",
+
+    "reason": "Sodium salt of citric acid used as an acidity regulator and emulsifying salt in processed foods. Generally recognized as safe but contributes to overall sodium intake and warrants moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Tri-sodium citrate (INS 331iii)",
+
+    "category": "caution",
+
+    "reason": "Sodium salt of citric acid used as an acidity regulator and emulsifying salt in processed foods. Generally recognized as safe but contributes to overall sodium intake and warrants moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium Citrate",
+
+    "category": "caution",
+
+    "reason": "Sodium salt of citric acid used as an acidity regulator and emulsifying salt in processed foods. Generally recognized as safe but contributes to overall sodium intake and warrants moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  }
+
+
+
+{
+
+    "name": "Sodium Citrate (INS331)",
+
+    "category": "caution",
+
+    "reason": "Sodium salt of citric acid used as an acidity regulator and emulsifying salt in processed foods. Generally recognized as safe but contributes to overall sodium intake and warrants moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Potassium Citrate (INS 332(ii))",
+
+    "category": "caution",
+
+    "reason": "Potassium salt of citric acid used as an acidity regulator and stabilizer in processed foods. Generally recognized as safe at regulated levels; contributes to potassium intake with minimal concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "potassium dihydrogen citrate (INS 332(i))",
+
+    "category": "caution",
+
+    "reason": "Potassium salt of citric acid used as an acidity regulator and stabilizer in processed foods. Generally recognized as safe at regulated levels; contributes to potassium intake with minimal concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "potassium dihydrogen citrate (INS 332(ii))",
+
+    "category": "caution",
+
+    "reason": "Potassium salt of citric acid used as an acidity regulator and stabilizer in processed foods. Generally recognized as safe at regulated levels; contributes to potassium intake with minimal concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "citrate",
+
+    "category": "caution",
+
+    "reason": "Generic label for citrate salts used as acidity regulators and stabilizers in processed foods. Generally recognized as safe but specific health impact depends on the particular citrate salt used.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium Nitrite (INS 250)",
+
+    "category": "avoid",
+
+    "reason": "Synthetic curing agent strongly linked to formation of carcinogenic nitrosamines in processed meats. Major international health bodies classify processed meat preserved with nitrites as a Group 1 carcinogen.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Curing Salt (INS 250)",
+
+    "category": "avoid",
+
+    "reason": "Synthetic curing agent strongly linked to formation of carcinogenic nitrosamines in processed meats. Major international health bodies classify processed meat preserved with nitrites as a Group 1 carcinogen.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Monoglyceride (INS 471)",
+
+    "category": "caution",
+
+    "reason": "Mono and diglycerides of fatty acids are approved emulsifiers derived from fats. Generally recognized as safe by global food authorities but represent highly processed fat derivatives.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Mono and Diglycerides of Fatty Acids (471)",
+
+    "category": "caution",
+
+    "reason": "Mono and diglycerides of fatty acids are approved emulsifiers derived from fats. Generally recognized as safe by global food authorities but represent highly processed fat derivatives.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Mono and diglycerides of Fatty acids (INS 471)",
+
+    "category": "caution",
+
+    "reason": "Mono and diglycerides of fatty acids are approved emulsifiers derived from fats. Generally recognized as safe by global food authorities but represent highly processed fat derivatives.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Polyglycerol Polyricinoleate (476)",
+
+    "category": "caution",
+
+    "reason": "Approved emulsifier derived from castor oil used mainly in chocolate to reduce viscosity. Recognized as safe at regulated amounts by global food authorities; a highly processed additive.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Polyglycerol Polyricinoleate INS476",
+
+    "category": "caution",
+
+    "reason": "Approved emulsifier derived from castor oil used mainly in chocolate to reduce viscosity. Recognized as safe at regulated amounts by global food authorities; a highly processed additive.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Polyglycerol polyricinoleate (INS 476)",
+
+    "category": "caution",
+
+    "reason": "Approved emulsifier derived from castor oil used mainly in chocolate to reduce viscosity. Recognized as safe at regulated amounts by global food authorities; a highly processed additive.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Polyglycerol Esters of Fatty Acids (475)",
+
+    "category": "caution",
+
+    "reason": "Approved emulsifier made by reacting polyglycerol with fatty acids. Recognized as safe by global food authorities at regulated levels; a highly processed fat-derived additive.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Emulsifiers [Soya Lecithin (322), Polyglycerol Polyricinoleate (476)]",
+
+    "category": "caution",
+
+    "reason": "Blend of soya lecithin and PGPR, both globally approved emulsifiers. Generally recognized as safe at regulated levels but this is a combination of two highly processed food additives.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Emulsifiers (Soya Lecithin (INS 322), Polyglycerol polyricinoleate (INS 476))",
+
+    "category": "caution",
+
+    "reason": "Blend of soya lecithin and PGPR, both globally approved emulsifiers. Generally recognized as safe at regulated levels but this is a combination of two highly processed food additives.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Emulsifiers (Soya Lecithin INS322, Polyglycerol Polyricinoleate INS476)",
+
+    "category": "caution",
+
+    "reason": "Blend of soya lecithin and PGPR, both globally approved emulsifiers. Generally recognized as safe at regulated levels but this is a combination of two highly processed food additives.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Emulsifiers [Polyglycerol Polyricinoleate (476), Soya Lecithin (322)]",
+
+    "category": "caution",
+
+    "reason": "Blend of soya lecithin and PGPR, both globally approved emulsifiers. Generally recognized as safe at regulated levels but this is a combination of two highly processed food additives.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Emulsifier (INS 481i)",
+
+    "category": "caution",
+
+    "reason": "Sodium stearoyl lactylate is an approved emulsifier derived from lactic and stearic acids. Generally recognized as safe by global food authorities; a highly processed synthetic emulsifier.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Leavening agent(Sodium Bicarbonate-INS 500ii)",
+
+    "category": "caution",
+
+    "reason": "Sodium bicarbonate is a widely used leavening agent that releases carbon dioxide when heated. Generally safe but contributes to dietary sodium intake and may cause digestive discomfort in excess.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Leavening Agent (INS 500ii)",
+
+    "category": "caution",
+
+    "reason": "Sodium bicarbonate is a widely used leavening agent that releases carbon dioxide when heated. Generally safe but contributes to dietary sodium intake and may cause digestive discomfort in excess.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Leavening agent (Sodium bicarbonate-INS 500ii)",
+
+    "category": "caution",
+
+    "reason": "Sodium bicarbonate is a widely used leavening agent that releases carbon dioxide when heated. Generally safe but contributes to dietary sodium intake and may cause digestive discomfort in excess.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Leavening Agent (500ii)",
+
+    "category": "caution",
+
+    "reason": "Sodium bicarbonate is a widely used leavening agent that releases carbon dioxide when heated. Generally safe but contributes to dietary sodium intake and may cause digestive discomfort in excess.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Leavening Agent [Sodium Bicarbonate (500ii)]",
+
+    "category": "caution",
+
+    "reason": "Sodium bicarbonate is a widely used leavening agent that releases carbon dioxide when heated. Generally safe but contributes to dietary sodium intake and may cause digestive discomfort in excess.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Leavening agent (Sodium bicarbonate- INS 500ii)",
+
+    "category": "caution",
+
+    "reason": "Sodium bicarbonate is a widely used leavening agent that releases carbon dioxide when heated. Generally safe but contributes to dietary sodium intake and may cause digestive discomfort in excess.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Leavening agent (Sodium bicarbonate -INS 500ii)",
+
+    "category": "caution",
+
+    "reason": "Sodium bicarbonate is a widely used leavening agent that releases carbon dioxide when heated. Generally safe but contributes to dietary sodium intake and may cause digestive discomfort in excess.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Leavening Agents [Ammonium Bicarbonate (INS 503(ii))",
+
+    "category": "caution",
+
+    "reason": "Blend of ammonium bicarbonate and sodium bicarbonate leavening agents used in baking. Both are approved and generally safe; ammonium bicarbonate fully decomposes during baking leaving no residue.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium Bicarbonate (INS 500(ii))",
+
+    "category": "caution",
+
+    "reason": "Sodium bicarbonate is a widely used leavening agent that releases carbon dioxide when heated. Generally safe but contributes to dietary sodium intake and may cause digestive discomfort in excess.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Disodium Diphosphate (INS 450(i))]",
+
+    "category": "caution",
+
+    "reason": "Diphosphate salt approved as a food additive used as a leavening agent and emulsifier. High cumulative phosphate intake from processed foods may be associated with kidney and cardiovascular health concerns.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Leavening Agents (Sodium Bicarbonate (500ii)",
+
+    "category": "caution",
+
+    "reason": "Blend of ammonium bicarbonate and sodium bicarbonate leavening agents used in baking. Both are approved and generally safe; ammonium bicarbonate fully decomposes during baking leaving no residue.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Ammonium Bicarbonate (503ii))",
+
+    "category": "caution",
+
+    "reason": "Ammonium bicarbonate is an approved leavening agent that decomposes completely into gas during baking. Generally recognized as safe as it leaves no residue in the final baked product.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Leavening Agents [Sodium Bicarbonate (500ii)",
+
+    "category": "caution",
+
+    "reason": "Blend of ammonium bicarbonate and sodium bicarbonate leavening agents used in baking. Both are approved and generally safe; ammonium bicarbonate fully decomposes during baking leaving no residue.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Ammonium Bicarbonate (503ii)]",
+
+    "category": "caution",
+
+    "reason": "Ammonium bicarbonate is an approved leavening agent that decomposes completely into gas during baking. Generally recognized as safe as it leaves no residue in the final baked product.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Leavening Agents [Ammonium Bicarbonate (INS503(ii))",
+
+    "category": "caution",
+
+    "reason": "Blend of ammonium bicarbonate and sodium bicarbonate leavening agents used in baking. Both are approved and generally safe; ammonium bicarbonate fully decomposes during baking leaving no residue.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium Bicarbonate (INS500(ii))]",
+
+    "category": "caution",
+
+    "reason": "Sodium bicarbonate is a widely used leavening agent that releases carbon dioxide when heated. Generally safe but contributes to dietary sodium intake and may cause digestive discomfort in excess.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Leavening Agents [Ammonium bicarbonate (INS 503ii)",
+
+    "category": "caution",
+
+    "reason": "Blend of ammonium bicarbonate and sodium bicarbonate leavening agents used in baking. Both are approved and generally safe; ammonium bicarbonate fully decomposes during baking leaving no residue.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium bicarbonate (INS 500ii)]",
+
+    "category": "caution",
+
+    "reason": "Sodium bicarbonate is a widely used leavening agent that releases carbon dioxide when heated. Generally safe but contributes to dietary sodium intake and may cause digestive discomfort in excess.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Raising Agents (Sodium and Ammonium Bicarbonate)",
+
+    "category": "caution",
+
+    "reason": "Blend of ammonium bicarbonate and sodium bicarbonate leavening agents used in baking. Both are approved and generally safe; ammonium bicarbonate fully decomposes during baking leaving no residue.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Leavening Agents (Ammonium Bicarbonate (INS 503(ii))",
+
+    "category": "caution",
+
+    "reason": "Blend of ammonium bicarbonate and sodium bicarbonate leavening agents used in baking. Both are approved and generally safe; ammonium bicarbonate fully decomposes during baking leaving no residue.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium Bicarbonate (INS 500(ii)))",
+
+    "category": "caution",
+
+    "reason": "Sodium bicarbonate is a widely used leavening agent that releases carbon dioxide when heated. Generally safe but contributes to dietary sodium intake and may cause digestive discomfort in excess.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Leavening agents (Sodium bicarbonate - INS 500ii",
+
+    "category": "caution",
+
+    "reason": "Blend of ammonium bicarbonate and sodium bicarbonate leavening agents used in baking. Both are approved and generally safe; ammonium bicarbonate fully decomposes during baking leaving no residue.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Ammonium bicarbonate - INS 503ii)",
+
+    "category": "caution",
+
+    "reason": "Ammonium bicarbonate is an approved leavening agent that decomposes completely into gas during baking. Generally recognized as safe as it leaves no residue in the final baked product.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Leavening agents (Sodium bicarbonate - INS 500ii",
+
+    "category": "caution",
+
+    "reason": "Blend of ammonium bicarbonate and sodium bicarbonate leavening agents used in baking. Both are approved and generally safe; ammonium bicarbonate fully decomposes during baking leaving no residue.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Ammonium bicarbonate-INS 503ii)",
+
+    "category": "caution",
+
+    "reason": "Ammonium bicarbonate is an approved leavening agent that decomposes completely into gas during baking. Generally recognized as safe as it leaves no residue in the final baked product.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Leavening agents (Sodium bicarbonate-INS 500ii",
+
+    "category": "caution",
+
+    "reason": "Blend of ammonium bicarbonate and sodium bicarbonate leavening agents used in baking. Both are approved and generally safe; ammonium bicarbonate fully decomposes during baking leaving no residue.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Ammonium bicarbonate-INS 503ii)",
+
+    "category": "caution",
+
+    "reason": "Ammonium bicarbonate is an approved leavening agent that decomposes completely into gas during baking. Generally recognized as safe as it leaves no residue in the final baked product.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Leavening Agents (INS 500ii, INS 503ii)",
+
+    "category": "caution",
+
+    "reason": "Blend of ammonium bicarbonate and sodium bicarbonate leavening agents used in baking. Both are approved and generally safe; ammonium bicarbonate fully decomposes during baking leaving no residue.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Leavening agents (Ammonium bicarbonate-INS 503ii",
+
+    "category": "caution",
+
+    "reason": "Blend of ammonium bicarbonate and sodium bicarbonate leavening agents used in baking. Both are approved and generally safe; ammonium bicarbonate fully decomposes during baking leaving no residue.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium bicarbonate-INS 500ii)",
+
+    "category": "caution",
+
+    "reason": "Sodium bicarbonate is a widely used leavening agent that releases carbon dioxide when heated. Generally safe but contributes to dietary sodium intake and may cause digestive discomfort in excess.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Baking Powder (INS 500(i))",
+
+    "category": "caution",
+
+    "reason": "Baking powder is a leavening blend typically containing sodium carbonate, acid salts, and starch. Approved and generally safe for use in baking; contributes a small amount to dietary sodium intake.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "sodium bicarbonate",
+
+    "category": "caution",
+
+    "reason": "Sodium bicarbonate is a widely used leavening agent that releases carbon dioxide when heated. Generally safe but contributes to dietary sodium intake and may cause digestive discomfort in excess.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium Bicarbonate",
+
+    "category": "caution",
+
+    "reason": "Sodium bicarbonate is a widely used leavening agent that releases carbon dioxide when heated. Generally safe but contributes to dietary sodium intake and may cause digestive discomfort in excess.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium Bicarbonate (INS 500 (ii))",
+
+    "category": "caution",
+
+    "reason": "Sodium bicarbonate is a widely used leavening agent that releases carbon dioxide when heated. Generally safe but contributes to dietary sodium intake and may cause digestive discomfort in excess.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium Bicarbonate-INS 500ii",
+
+    "category": "caution",
+
+    "reason": "Sodium bicarbonate is a widely used leavening agent that releases carbon dioxide when heated. Generally safe but contributes to dietary sodium intake and may cause digestive discomfort in excess.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "and Leavening Agents [Sodium Bicarbonate (500ii), Ammonium Bicarbonate (503ii)]",
+
+    "category": "caution",
+
+    "reason": "Blend of ammonium bicarbonate and sodium bicarbonate leavening agents used in baking. Both are approved and generally safe; ammonium bicarbonate fully decomposes during baking leaving no residue.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Emulsifier (Soya lecithin-INS 322)",
+
+    "category": "caution",
+
+    "reason": "Soya lecithin is a naturally derived phospholipid emulsifier extracted from soybeans. Generally recognized as safe; a highly processed soy derivative that is one of the most common food emulsifiers.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Emulsifier (Soy lecithin- INS 322)",
+
+    "category": "caution",
+
+    "reason": "Soya lecithin is a naturally derived phospholipid emulsifier extracted from soybeans. Generally recognized as safe; a highly processed soy derivative that is one of the most common food emulsifiers.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Emulsifier (Soya lecithin - INS 322)",
+
+    "category": "caution",
+
+    "reason": "Soya lecithin is a naturally derived phospholipid emulsifier extracted from soybeans. Generally recognized as safe; a highly processed soy derivative that is one of the most common food emulsifiers.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Emulsifier (Soya lecithin -INS 322)",
+
+    "category": "caution",
+
+    "reason": "Soya lecithin is a naturally derived phospholipid emulsifier extracted from soybeans. Generally recognized as safe; a highly processed soy derivative that is one of the most common food emulsifiers.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Emulsifier (Soya lecithin)",
+
+    "category": "caution",
+
+    "reason": "Soya lecithin is a naturally derived phospholipid emulsifier extracted from soybeans. Generally recognized as safe; a highly processed soy derivative that is one of the most common food emulsifiers.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Emulsifier (Soya lecithin- INS 322)",
+
+    "category": "caution",
+
+    "reason": "Soya lecithin is a naturally derived phospholipid emulsifier extracted from soybeans. Generally recognized as safe; a highly processed soy derivative that is one of the most common food emulsifiers.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Emulsifier (Soya lecithin-INS 322)",
+
+    "category": "caution",
+
+    "reason": "Soya lecithin is a naturally derived phospholipid emulsifier extracted from soybeans. Generally recognized as safe; a highly processed soy derivative that is one of the most common food emulsifiers.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
