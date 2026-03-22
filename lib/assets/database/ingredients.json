@@ -6027,3 +6027,1385 @@
 
   },
 
+  {
+
+    "name": "Stabilizer (INS 415)",
+
+    "category": "caution",
+
+    "reason": "Xanthan gum is a microbially fermented polysaccharide thickener approved by global food authorities. Generally recognized as safe at regulated levels; may cause digestive discomfort in large amounts.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Stabilizer (INS 444)",
+
+    "category": "caution",
+
+    "reason": "Sucrose acetate isobutyrate is an approved food additive used as a weighting agent in beverages. Recognized as safe at regulated levels by major food authorities; a highly processed ester compound.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Stabilizer (INS 440)",
+
+    "category": "beneficial",
+
+    "reason": "Natural soluble fiber derived from fruit cell walls with well-documented cholesterol-lowering and gut health benefits. Approved globally and widely recognized as a nutritious functional food ingredient.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Stabilizer/Emulsifier (INS 1450, INS 445)",
+
+    "category": "caution",
+
+    "reason": "Blend of starch sodium octenyl succinate and glycerol esters of wood rosins used as stabilizers in beverages. Both approved by food authorities; highly processed additives warranting general awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium carboxymethyl cellulose (INS 466)",
+
+    "category": "caution",
+
+    "reason": "Chemically modified cellulose used as a thickener and stabilizer in processed foods. Approved globally and generally recognized as safe; some emerging research suggests possible gut microbiome effects.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "and stabilisers (xanthan gum INS-415, sodium carboxymethyl cellulose INS-466)",
+
+    "category": "caution",
+
+    "reason": "Blend of xanthan gum and sodium carboxymethyl cellulose stabilizers. Both are approved processed food additives; generally recognized as safe but emerging research warrants mild awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Stabilizers (Sodium Carboxy Methyl Cellulose (INS 466), Xanthan Gum (INS 415))",
+
+    "category": "caution",
+
+    "reason": "Blend of xanthan gum and sodium carboxymethyl cellulose stabilizers. Both are approved processed food additives; generally recognized as safe but emerging research warrants mild awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Stabilizer (cellulose gum (INS 466), guar gum (INS 412), pectin (INS 440))",
+
+    "category": "caution",
+
+    "reason": "Blend of CMC, guar gum, and pectin stabilizers. Pectin is a beneficial natural fiber; the others are processed additives. All are approved and generally safe at regulated food levels.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Stabilizer (cellulose gum (INS 466), pectin (INS 440), guar gum (INS 412))",
+
+    "category": "caution",
+
+    "reason": "Blend of CMC, guar gum, and pectin stabilizers. Pectin is a beneficial natural fiber; the others are processed additives. All are approved and generally safe at regulated food levels.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "cellulose gum (INS 466)",
+
+    "category": "caution",
+
+    "reason": "Chemically modified cellulose used as a thickener and stabilizer in processed foods. Approved globally and generally recognized as safe; some emerging research suggests possible gut microbiome effects.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "citric acid",
+
+    "category": "beneficial",
+
+    "reason": "Naturally occurring organic acid found in citrus fruits used as a safe acidulant and preservative. Widely recognized as safe; also functions as an antioxidant preserving food freshness and nutritional quality.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Citric Acid",
+
+    "category": "beneficial",
+
+    "reason": "Naturally occurring organic acid found in citrus fruits used as a safe acidulant and preservative. Widely recognized as safe; also functions as an antioxidant preserving food freshness and nutritional quality.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Citric acid",
+
+    "category": "beneficial",
+
+    "reason": "Naturally occurring organic acid found in citrus fruits used as a safe acidulant and preservative. Widely recognized as safe; also functions as an antioxidant preserving food freshness and nutritional quality.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Citric Acid - INS 330",
+
+    "category": "beneficial",
+
+    "reason": "Naturally occurring organic acid found in citrus fruits used as a safe acidulant and preservative. Widely recognized as safe; also functions as an antioxidant preserving food freshness and nutritional quality.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Citric acid (INS 330)",
+
+    "category": "beneficial",
+
+    "reason": "Naturally occurring organic acid found in citrus fruits used as a safe acidulant and preservative. Widely recognized as safe; also functions as an antioxidant preserving food freshness and nutritional quality.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "acidity regulator (citric acid INS-330)",
+
+    "category": "beneficial",
+
+    "reason": "Naturally occurring organic acid found in citrus fruits used as a safe acidulant and preservative. Widely recognized as safe; also functions as an antioxidant preserving food freshness and nutritional quality.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Acidity regulator (citric acid (INS 330), potassium dihydrogen citrate (INS 332(i)))",
+
+    "category": "caution",
+
+    "reason": "Blend of citric acid and potassium citrate used for acidity regulation. Citric acid is beneficial but the blend includes processed potassium citrate salt; both are globally approved and generally safe.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Acidity regulator (citric acid (INS 330), potassium dihydrogen citrate (INS 332(ii)))",
+
+    "category": "caution",
+
+    "reason": "Blend of citric acid and potassium citrate used for acidity regulation. Citric acid is beneficial but the blend includes processed potassium citrate salt; both are globally approved and generally safe.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Acidity Regulator [Citric Acid (330)]",
+
+    "category": "beneficial",
+
+    "reason": "Naturally occurring organic acid found in citrus fruits used as a safe acidulant and preservative. Widely recognized as safe; also functions as an antioxidant preserving food freshness and nutritional quality.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Acidity regulator (Citric acid-INS 330).",
+
+    "category": "beneficial",
+
+    "reason": "Naturally occurring organic acid found in citrus fruits used as a safe acidulant and preservative. Widely recognized as safe; also functions as an antioxidant preserving food freshness and nutritional quality.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "acidifier: citric acid.",
+
+    "category": "beneficial",
+
+    "reason": "Naturally occurring organic acid found in citrus fruits used as a safe acidulant and preservative. Widely recognized as safe; also functions as an antioxidant preserving food freshness and nutritional quality.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Acidity regulators (Citric acid - INS 330)",
+
+    "category": "beneficial",
+
+    "reason": "Naturally occurring organic acid found in citrus fruits used as a safe acidulant and preservative. Widely recognized as safe; also functions as an antioxidant preserving food freshness and nutritional quality.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Phosphoric Acid (INS 338)",
+
+    "category": "caution",
+
+    "reason": "Inorganic acid used as an acidity regulator mainly in carbonated drinks. High intake from beverages is associated with reduced bone mineral density and kidney health concerns.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Acidity Regulator (INS 338)",
+
+    "category": "caution",
+
+    "reason": "Phosphoric acid used as an acidity regulator mainly in carbonated drinks. High intake from beverages is associated with reduced bone mineral density and kidney health concerns.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "acetic acid (INS 260)",
+
+    "category": "beneficial",
+
+    "reason": "Naturally occurring organic acid and the main component of vinegar. Safe at food-use levels with evidence-backed benefits for blood glucose regulation, digestion, and food preservation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Acetic Acid (INS 260)",
+
+    "category": "beneficial",
+
+    "reason": "Naturally occurring organic acid and the main component of vinegar. Safe at food-use levels with evidence-backed benefits for blood glucose regulation, digestion, and food preservation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Acetic acid (INS 260)",
+
+    "category": "beneficial",
+
+    "reason": "Naturally occurring organic acid and the main component of vinegar. Safe at food-use levels with evidence-backed benefits for blood glucose regulation, digestion, and food preservation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Acetic Acid (INS260)",
+
+    "category": "beneficial",
+
+    "reason": "Naturally occurring organic acid and the main component of vinegar. Safe at food-use levels with evidence-backed benefits for blood glucose regulation, digestion, and food preservation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Acidity Regulators (INS 330, INS 331 (iii), INS 296)",
+
+    "category": "caution",
+
+    "reason": "Blend of citric acid, sodium citrate, and malic acid used as acidity regulators. All three are approved and individually safe; the combination is a processed multi-additive system warranting mild awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Acidity Regulators (INS 330, INS 331 (iii))",
+
+    "category": "caution",
+
+    "reason": "Blend of citric acid and sodium citrate used as acidity regulators. Both are approved and generally safe; citric acid is beneficial but sodium citrate contributes to overall sodium intake.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Polyphosphates - INS 452)",
+
+    "category": "caution",
+
+    "reason": "Polyphosphate salts approved as food additives for moisture retention and stabilization. Elevated phosphate intake from multiple processed food sources is linked to kidney and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Polyphosphates - INS 452",
+
+    "category": "caution",
+
+    "reason": "Polyphosphate salts approved as food additives for moisture retention and stabilization. Elevated phosphate intake from multiple processed food sources is linked to kidney and cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sequestering Agent (E385)",
+
+    "category": "caution",
+
+    "reason": "Calcium disodium EDTA is a synthetic chelating agent used to preserve color and flavor in foods. Approved at regulated levels but may reduce absorption of essential dietary minerals.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "EDTA (INS 385)",
+
+    "category": "caution",
+
+    "reason": "Calcium disodium EDTA is a synthetic chelating agent used to preserve color and flavor in foods. Approved at regulated levels but may reduce absorption of essential dietary minerals.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "EDTA (INS 385).",
+
+    "category": "caution",
+
+    "reason": "Calcium disodium EDTA is a synthetic chelating agent used to preserve color and flavor in foods. Approved at regulated levels but may reduce absorption of essential dietary minerals.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Calcium disodium EDTA (INS 385)",
+
+    "category": "caution",
+
+    "reason": "Calcium disodium EDTA is a synthetic chelating agent used to preserve color and flavor in foods. Approved at regulated levels but may reduce absorption of essential dietary minerals.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sequestrants (INS 452 (i), INS 385)",
+
+    "category": "caution",
+
+    "reason": "Blend of polyphosphate and calcium disodium EDTA sequestrants used for preservation. Both are approved additives but EDTA may reduce mineral absorption and high phosphate intake raises cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Potassium Sorbate - INS 202",
+
+    "category": "caution",
+
+    "reason": "Widely used potassium salt of sorbic acid approved as a preservative by global food authorities. Generally recognized as safe at regulated levels with no strong evidence of significant health harm.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "potassium sorbate - INS 202",
+
+    "category": "caution",
+
+    "reason": "Widely used potassium salt of sorbic acid approved as a preservative by global food authorities. Generally recognized as safe at regulated levels with no strong evidence of significant health harm.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Potassium Sorbate (INS 202)",
+
+    "category": "caution",
+
+    "reason": "Widely used potassium salt of sorbic acid approved as a preservative by global food authorities. Generally recognized as safe at regulated levels with no strong evidence of significant health harm.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "potassium sorbate (INS 202)",
+
+    "category": "caution",
+
+    "reason": "Widely used potassium salt of sorbic acid approved as a preservative by global food authorities. Generally recognized as safe at regulated levels with no strong evidence of significant health harm.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Potassium Sorbate-INS 202",
+
+    "category": "caution",
+
+    "reason": "Widely used potassium salt of sorbic acid approved as a preservative by global food authorities. Generally recognized as safe at regulated levels with no strong evidence of significant health harm.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Potassium sorbate (INS 202)",
+
+    "category": "caution",
+
+    "reason": "Widely used potassium salt of sorbic acid approved as a preservative by global food authorities. Generally recognized as safe at regulated levels with no strong evidence of significant health harm.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Preservative (INS 202)",
+
+    "category": "caution",
+
+    "reason": "Widely used potassium salt of sorbic acid approved as a preservative by global food authorities. Generally recognized as safe at regulated levels with no strong evidence of significant health harm.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Preservative (E202)",
+
+    "category": "caution",
+
+    "reason": "Widely used potassium salt of sorbic acid approved as a preservative by global food authorities. Generally recognized as safe at regulated levels with no strong evidence of significant health harm.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permitted food preservatives (INS 202)",
+
+    "category": "caution",
+
+    "reason": "Widely used potassium salt of sorbic acid approved as a preservative by global food authorities. Generally recognized as safe at regulated levels with no strong evidence of significant health harm.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permitted Food Preservative (Potassium Sorbate-INS 202)",
+
+    "category": "caution",
+
+    "reason": "Widely used potassium salt of sorbic acid approved as a preservative by global food authorities. Generally recognized as safe at regulated levels with no strong evidence of significant health harm.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permitted food preservative (Potassium sorbate - INS 202)",
+
+    "category": "caution",
+
+    "reason": "Widely used potassium salt of sorbic acid approved as a preservative by global food authorities. Generally recognized as safe at regulated levels with no strong evidence of significant health harm.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permitted Food Preservative( Potassium Sorbate-INS202)",
+
+    "category": "caution",
+
+    "reason": "Widely used potassium salt of sorbic acid approved as a preservative by global food authorities. Generally recognized as safe at regulated levels with no strong evidence of significant health harm.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permitted Food Additive (INS202).",
+
+    "category": "caution",
+
+    "reason": "Widely used potassium salt of sorbic acid approved as a preservative by global food authorities. Generally recognized as safe at regulated levels with no strong evidence of significant health harm.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permitted Preservatives [Potassium Sorbate (202), Sodium Propionate (281)]",
+
+    "category": "caution",
+
+    "reason": "Blend of potassium sorbate and sodium propionate preservatives, both approved by global food authorities. Generally safe at regulated levels but sodium propionate has some minor sensitivity concerns.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium metabisulphite (INS 223)",
+
+    "category": "caution",
+
+    "reason": "Sulfite preservative approved for use in flour treatment and food preservation. Generally recognized as safe but may trigger respiratory reactions in sulfite-sensitive individuals and asthmatics.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium Metabisulphite (INS 223)",
+
+    "category": "caution",
+
+    "reason": "Sulfite preservative approved for use in flour treatment and food preservation. Generally recognized as safe but may trigger respiratory reactions in sulfite-sensitive individuals and asthmatics.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium Metabisulfite (INS223)",
+
+    "category": "caution",
+
+    "reason": "Sulfite preservative approved for use in flour treatment and food preservation. Generally recognized as safe but may trigger respiratory reactions in sulfite-sensitive individuals and asthmatics.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Flour treatment agent (Sodium metabisulphite-INS 223)",
+
+    "category": "caution",
+
+    "reason": "Sulfite preservative approved for use in flour treatment and food preservation. Generally recognized as safe but may trigger respiratory reactions in sulfite-sensitive individuals and asthmatics.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Flour treatment agent (Sodium metabisulphite -INS 223).",
+
+    "category": "caution",
+
+    "reason": "Sulfite preservative approved for use in flour treatment and food preservation. Generally recognized as safe but may trigger respiratory reactions in sulfite-sensitive individuals and asthmatics.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Flour treatment agent (Sodium metabisulphite - INS 223)",
+
+    "category": "caution",
+
+    "reason": "Sulfite preservative approved for use in flour treatment and food preservation. Generally recognized as safe but may trigger respiratory reactions in sulfite-sensitive individuals and asthmatics.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Flour treatment agent (Sodium Metabisulphite - INS 223).",
+
+    "category": "caution",
+
+    "reason": "Sulfite preservative approved for use in flour treatment and food preservation. Generally recognized as safe but may trigger respiratory reactions in sulfite-sensitive individuals and asthmatics.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Flour Treatment Agent [Sodium Metabisulphite (223)]",
+
+    "category": "caution",
+
+    "reason": "Sulfite preservative approved for use in flour treatment and food preservation. Generally recognized as safe but may trigger respiratory reactions in sulfite-sensitive individuals and asthmatics.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permitted Preservative (INS 223)",
+
+    "category": "caution",
+
+    "reason": "Sulfite preservative approved for use in flour treatment and food preservation. Generally recognized as safe but may trigger respiratory reactions in sulfite-sensitive individuals and asthmatics.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permitted Preservative - Sodium Metabisulfite (INS223)",
+
+    "category": "caution",
+
+    "reason": "Sulfite preservative approved for use in flour treatment and food preservation. Generally recognized as safe but may trigger respiratory reactions in sulfite-sensitive individuals and asthmatics.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permitted Preservative Sodium Metabisulphite (INS 223)",
+
+    "category": "caution",
+
+    "reason": "Sulfite preservative approved for use in flour treatment and food preservation. Generally recognized as safe but may trigger respiratory reactions in sulfite-sensitive individuals and asthmatics.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permitted Preservatives Sodium Metabisulphite (INS 223)",
+
+    "category": "caution",
+
+    "reason": "Sulfite preservative approved for use in flour treatment and food preservation. Generally recognized as safe but may trigger respiratory reactions in sulfite-sensitive individuals and asthmatics.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permitted Preservatives (INS 223, INS 202)",
+
+    "category": "caution",
+
+    "reason": "Blend of sodium metabisulphite and potassium sorbate preservatives, both globally approved. Generally safe at regulated levels; sulfite component may affect sensitive individuals and asthmatics.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permitted dough conditioner [Sodium Metabisulfite (INS223)].",
+
+    "category": "caution",
+
+    "reason": "Sulfite preservative approved for use in flour treatment and food preservation. Generally recognized as safe but may trigger respiratory reactions in sulfite-sensitive individuals and asthmatics.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permitted Dough Conditioner [Sodium Metabisulfite (INS223)].",
+
+    "category": "caution",
+
+    "reason": "Sulfite preservative approved for use in flour treatment and food preservation. Generally recognized as safe but may trigger respiratory reactions in sulfite-sensitive individuals and asthmatics.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "sodium benzoate (INS 211)",
+
+    "category": "caution",
+
+    "reason": "Approved synthetic preservative that can form benzene, a carcinogen, when combined with ascorbic acid. Safe at regulated levels alone but regular consumption in processed foods warrants awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium benzoate (INS 211)",
+
+    "category": "caution",
+
+    "reason": "Approved synthetic preservative that can form benzene, a carcinogen, when combined with ascorbic acid. Safe at regulated levels alone but regular consumption in processed foods warrants awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permitted Preservative - Sodium Benzoate (INS211)",
+
+    "category": "caution",
+
+    "reason": "Approved synthetic preservative that can form benzene, a carcinogen, when combined with ascorbic acid. Safe at regulated levels alone but regular consumption in processed foods warrants awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Permitted Preservative (Sodium Benzoate - INS 211)",
+
+    "category": "caution",
+
+    "reason": "Approved synthetic preservative that can form benzene, a carcinogen, when combined with ascorbic acid. Safe at regulated levels alone but regular consumption in processed foods warrants awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Preservative (INS 211)",
+
+    "category": "caution",
+
+    "reason": "Approved synthetic preservative that can form benzene, a carcinogen, when combined with ascorbic acid. Safe at regulated levels alone but regular consumption in processed foods warrants awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sorbic Acid",
+
+    "category": "caution",
+
+    "reason": "Naturally occurring organic acid used as a preservative to inhibit mold and yeast growth. Approved globally and generally recognized as safe at food-grade regulated levels with no strong health concerns.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Benzoic Acid",
+
+    "category": "caution",
+
+    "reason": "Naturally occurring preservative acid that can form benzene when combined with vitamin C in acidic products. Generally safe at regulated food-grade levels but regular high consumption warrants awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Antioxidant 0.02% (Ascorbyl Palmitate INS304)",
+
+    "category": "caution",
+
+    "reason": "Fat-soluble ester of vitamin C used as a synthetic antioxidant to prevent fat oxidation in foods. Approved globally and generally safe; used at very small amounts with limited nutritional benefit.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Ascorbyl palmitate (INS 304)",
+
+    "category": "caution",
+
+    "reason": "Fat-soluble ester of vitamin C used as a synthetic antioxidant to prevent fat oxidation in foods. Approved globally and generally safe; used at very small amounts with limited nutritional benefit.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Ascorbic Acid (INS 300)",
+
+    "category": "beneficial",
+
+    "reason": "Vitamin C is an essential water-soluble vitamin with potent antioxidant properties. Widely recognized as important for immune function, collagen synthesis, and iron absorption; beneficial at all normal food levels.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Ascorbic Acid (INS300)",
+
+    "category": "beneficial",
+
+    "reason": "Vitamin C is an essential water-soluble vitamin with potent antioxidant properties. Widely recognized as important for immune function, collagen synthesis, and iron absorption; beneficial at all normal food levels.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Ascorbic Acid (Vitamin C/INS 300)",
+
+    "category": "beneficial",
+
+    "reason": "Vitamin C is an essential water-soluble vitamin with potent antioxidant properties. Widely recognized as important for immune function, collagen synthesis, and iron absorption; beneficial at all normal food levels.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "ascorbic acid (INS 300)",
+
+    "category": "beneficial",
+
+    "reason": "Vitamin C is an essential water-soluble vitamin with potent antioxidant properties. Widely recognized as important for immune function, collagen synthesis, and iron absorption; beneficial at all normal food levels.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium Ascorbate (INS 301)",
+
+    "category": "beneficial",
+
+    "reason": "Sodium salt of vitamin C used as an antioxidant and preservative in food products. Retains the antioxidant benefits of vitamin C while contributing a small amount to total sodium intake.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium Ascorbate (INS 301).",
+
+    "category": "beneficial",
+
+    "reason": "Sodium salt of vitamin C used as an antioxidant and preservative in food products. Retains the antioxidant benefits of vitamin C while contributing a small amount to total sodium intake.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "antioxidant (succinic acid INS-363)",
+
+    "category": "caution",
+
+    "reason": "Succinic acid is a naturally occurring organic acid used as an acidity regulator and flavor enhancer. Approved globally and generally recognized as safe; a moderately processed food additive.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Quillaia extract type 1 (INS 999 i)",
+
+    "category": "caution",
+
+    "reason": "Plant-derived saponin extract used as a foaming agent in beverages. Approved at low regulated levels but saponins may irritate mucous membranes and affect cholesterol absorption at higher doses.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Soft Dough Conditioner [Sodium Metabisulfite (INS223)]",
+
+    "category": "caution",
+
+    "reason": "Sulfite preservative approved for use in flour treatment and food preservation. Generally recognized as safe but may trigger respiratory reactions in sulfite-sensitive individuals and asthmatics.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Flour Treatment Agent [Sodium Metabisulphite (223)]",
+
+    "category": "caution",
+
+    "reason": "Sulfite preservative approved for use in flour treatment and food preservation. Generally recognized as safe but may trigger respiratory reactions in sulfite-sensitive individuals and asthmatics.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "jam",
+
+    "category": "caution",
+
+    "reason": "Fruit preserve typically very high in added sugar with reduced fiber compared to whole fruit. Provides minimal nutritional value beyond calories; regular high consumption warrants moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Propylene Glycol (1520)",
+
+    "category": "caution",
+
+    "reason": "Synthetic solvent used as a humectant and carrier for flavorings in processed foods. Approved by food authorities at regulated levels but is a petrochemical-derived compound with limited nutritional value.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Nature Identical Rose Flavour",
+
+    "category": "caution",
+
+    "reason": "Synthetic flavoring chemically identical to natural rose compounds but produced artificially. Provides no nutritional value and contains synthetic chemical compounds; approved but warrants general awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Natural Identical Vanilla Flavour",
+
+    "category": "caution",
+
+    "reason": "Synthetic flavoring chemically identical to natural vanilla compounds but produced artificially. Provides no nutritional value and is a processed chemical substitute for natural vanilla extract.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Nature Identical Vanilla Flavour",
+
+    "category": "caution",
+
+    "reason": "Synthetic flavoring chemically identical to natural vanilla compounds but produced artificially. Provides no nutritional value and is a processed chemical substitute for natural vanilla extract.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "nature identical vanilla flavour",
+
+    "category": "caution",
+
+    "reason": "Synthetic flavoring chemically identical to natural vanilla compounds but produced artificially. Provides no nutritional value and is a processed chemical substitute for natural vanilla extract.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Natural Vanilla Flavour",
+
+    "category": "caution",
+
+    "reason": "Flavoring derived from natural vanilla beans or natural vanilla-containing sources. Provides no significant nutritional value but contains naturally occurring vanillin without synthetic chemical production.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Natural Vanilla Flavour.",
+
+    "category": "caution",
+
+    "reason": "Flavoring derived from natural vanilla beans or natural vanilla-containing sources. Provides no significant nutritional value but contains naturally occurring vanillin without synthetic chemical production.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "nature identical vanilla flavour.",
+
+    "category": "caution",
+
+    "reason": "Synthetic flavoring chemically identical to natural vanilla compounds but produced artificially. Provides no nutritional value and is a processed chemical substitute for natural vanilla extract.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "and Nature Identical (Vanilla) Flavour",
+
+    "category": "caution",
+
+    "reason": "Synthetic flavoring chemically identical to natural vanilla compounds but produced artificially. Provides no nutritional value and is a processed chemical substitute for natural vanilla extract.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "and Nature Identical (Vanilla) Flavour.",
+
+    "category": "caution",
+
+    "reason": "Synthetic flavoring chemically identical to natural vanilla compounds but produced artificially. Provides no nutritional value and is a processed chemical substitute for natural vanilla extract.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Nature Identical (Vanilla) Flavour",
+
+    "category": "caution",
+
+    "reason": "Synthetic flavoring chemically identical to natural vanilla compounds but produced artificially. Provides no nutritional value and is a processed chemical substitute for natural vanilla extract.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Nature identical (Vanilla) Flavour",
+
+    "category": "caution",
+
+    "reason": "Synthetic flavoring chemically identical to natural vanilla compounds but produced artificially. Provides no nutritional value and is a processed chemical substitute for natural vanilla extract.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  }
+
+
+
+{
+
+    "name": "Nature identical (Vanilla) Flavour.",
+
+    "category": "caution",
+
+    "reason": "Synthetic flavoring chemically identical to natural vanilla compounds but produced artificially. Provides no nutritional value and is a processed chemical substitute for natural vanilla extract.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "and Nature Identical (Milk and Vanilla) Flavours.",
+
+    "category": "caution",
+
+    "reason": "Synthetic flavoring blend mimicking milk and vanilla compounds but produced artificially. Provides no nutritional value and represents a processed chemical substitute for natural dairy and vanilla flavors.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Nature identical (Milk, Vanilla) flavours",
+
+    "category": "caution",
+
+    "reason": "Synthetic flavoring blend mimicking milk and vanilla compounds but produced artificially. Provides no nutritional value and represents a processed chemical substitute for natural dairy and vanilla flavors.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "nature identical (Milk, Vanilla) flavours",
+
+    "category": "caution",
+
+    "reason": "Synthetic flavoring blend mimicking milk and vanilla compounds but produced artificially. Provides no nutritional value and represents a processed chemical substitute for natural dairy and vanilla flavors.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Nature identical (Milk, Marie, Vanilla, Butter) flavours",
+
+    "category": "caution",
+
+    "reason": "Multi-component synthetic flavoring blend mimicking milk, vanilla, and butter compounds artificially. Provides no nutritional value; a complex processed chemical flavoring system with no health benefit.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Artificial Vanilla flavor",
+
+    "category": "caution",
+
+    "reason": "Artificially synthesized vanilla flavoring, typically vanillin derived from chemical or wood pulp processes. Provides no nutritional value; a wholly synthetic flavoring compound with no health benefit.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Artificial (Vanilla, Custard, Butter) flavors",
+
+    "category": "caution",
+
+    "reason": "Multi-component artificial flavoring blend synthesized to mimic vanilla, custard, and butter taste profiles. Provides no nutritional value; wholly synthetic compounds with no established health benefit.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Artificial Flavor (Vanillin).",
+
+    "category": "caution",
+
+    "reason": "Artificially synthesized vanilla flavoring, typically vanillin derived from chemical or wood pulp processes. Provides no nutritional value; a wholly synthetic flavoring compound with no health benefit.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Nature Identical (Vanilla & Strawberry) Flavours",
+
+    "category": "caution",
+
+    "reason": "Synthetic flavoring blend mimicking vanilla and strawberry compounds but produced artificially. Provides no nutritional value and is a processed chemical substitute for natural vanilla and strawberry flavors.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Nature Identical Vanilla & Strawberry Flavours",
+
+    "category": "caution",
+
+    "reason": "Synthetic flavoring blend mimicking vanilla and strawberry compounds but produced artificially. Provides no nutritional value and is a processed chemical substitute for natural vanilla and strawberry flavors.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Nature Identical (Vanilla & Chocolate) Flavours",
+
+    "category": "caution",
+
+    "reason": "Synthetic flavoring blend mimicking vanilla and chocolate compounds but produced artificially. Provides no nutritional value and is a processed chemical substitute for natural vanilla and chocolate flavors.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Nature identical (Chocolate, Milk, Vanilla) flavours",
+
+    "category": "caution",
+
+    "reason": "Multi-component synthetic flavoring blend mimicking chocolate, milk, and vanilla compounds artificially. Provides no nutritional value; a complex processed chemical flavoring system with no health benefit.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Nature identical (Chocolate, Milk, Vanilla) flavours.",
+
+    "category": "caution",
+
+    "reason": "Multi-component synthetic flavoring blend mimicking chocolate, milk, and vanilla compounds artificially. Provides no nutritional value; a complex processed chemical flavoring system with no health benefit.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Nature identical cheese flavour",
+
+    "category": "caution",
+
+    "reason": "Synthetic flavoring chemically mimicking cheese taste compounds but produced artificially. Provides no nutritional value and is a wholly processed chemical substitute for natural cheese flavoring.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "nature identical cheese flavour",
+
+    "category": "caution",
+
+    "reason": "Synthetic flavoring chemically mimicking cheese taste compounds but produced artificially. Provides no nutritional value and is a wholly processed chemical substitute for natural cheese flavoring.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Nature Identical Cheese Flavour",
+
+    "category": "caution",
+
+    "reason": "Synthetic flavoring chemically mimicking cheese taste compounds but produced artificially. Provides no nutritional value and is a wholly processed chemical substitute for natural cheese flavoring.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Nature Identical (Cheese) Flavour",
+
+    "category": "caution",
+
+    "reason": "Synthetic flavoring chemically mimicking cheese taste compounds but produced artificially. Provides no nutritional value and is a wholly processed chemical substitute for natural cheese flavoring.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
