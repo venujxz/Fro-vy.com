@@ -2351,3 +2351,1685 @@
 
   },
 
+  {
+
+    "name": "Soya",
+
+    "category": "caution",
+
+    "reason": "Processed soy ingredient providing plant protein. A recognized common allergen; most soy is genetically modified and heavily processed.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "soybean",
+
+    "category": "caution",
+
+    "reason": "Processed soy ingredient providing plant protein. A recognized common allergen; most soy is genetically modified and heavily processed.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "soya beans",
+
+    "category": "caution",
+
+    "reason": "Processed soy ingredient providing plant protein. A recognized common allergen; most soy is genetically modified and heavily processed.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Soya bean sauce",
+
+    "category": "caution",
+
+    "reason": "Fermented soy condiment high in sodium. Adds flavor and some fermentation benefits but high salt content warrants moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  }
+
+
+
+{
+
+    "name": "Soy Sauce",
+
+    "category": "caution",
+
+    "reason": "Fermented soy-based condiment providing umami flavor and trace beneficial compounds. Very high in sodium; frequent daily consumption clearly warrants careful moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Tomato & Soya Sauce",
+
+    "category": "caution",
+
+    "reason": "Processed condiment combining tomato and soy sauce bases. Contains useful antioxidants from tomato but is very high in sodium and added sugars.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Natural Fish Extract (65%)",
+
+    "category": "beneficial",
+
+    "reason": "Concentrated extract derived from fish providing natural protein, minerals, and omega-3 fatty acids. A nutritionally rich ingredient with well-documented health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sea food extract (5%)",
+
+    "category": "beneficial",
+
+    "reason": "Concentrated extract from seafood providing natural protein, minerals, and omega-3 fatty acids. A nutritionally rich ingredient with well-documented health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Extract of Soya & Wheat/ Rice",
+
+    "category": "caution",
+
+    "reason": "Processed extract combining soy with wheat or rice starch. Provides some plant protein but is a highly processed ingredient with variable nutritional composition.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "tomato",
+
+    "category": "beneficial",
+
+    "reason": "Whole fruit naturally rich in lycopene, vitamin C, potassium, and antioxidants. Widely recognized as a nutritious whole food with multiple well-documented health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Tomato (Tomato Paste + Water)",
+
+    "category": "beneficial",
+
+    "reason": "Reconstituted tomato product retaining lycopene and vitamin C from the original fruit. A minimally processed tomato ingredient with meaningful antioxidant nutritional value.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Tomato Paste",
+
+    "category": "beneficial",
+
+    "reason": "Concentrated cooked tomato product with elevated lycopene content compared to fresh tomato. Retains meaningful levels of antioxidants, vitamins, and beneficial plant compounds.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "tomato paste",
+
+    "category": "beneficial",
+
+    "reason": "Concentrated cooked tomato product with elevated lycopene content compared to fresh tomato. Retains meaningful levels of antioxidants, vitamins, and beneficial plant compounds.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Tomato Sauce",
+
+    "category": "caution",
+
+    "reason": "Processed tomato product that typically contains added sugar, salt, and preservatives. Contains beneficial lycopene but added ingredients warrant moderate consumption.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "onion",
+
+    "category": "beneficial",
+
+    "reason": "Whole vegetable naturally rich in quercetin, sulfur compounds, fiber, and vitamin C. Broadly recognized as nutritious with anti-inflammatory and cardiovascular health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Onion",
+
+    "category": "beneficial",
+
+    "reason": "Whole vegetable naturally rich in quercetin, sulfur compounds, fiber, and vitamin C. Broadly recognized as nutritious with anti-inflammatory and cardiovascular health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "B. Onion",
+
+    "category": "beneficial",
+
+    "reason": "Whole vegetable naturally rich in quercetin, sulfur compounds, fiber, and vitamin C. Broadly recognized as nutritious with anti-inflammatory and cardiovascular health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "garlic",
+
+    "category": "beneficial",
+
+    "reason": "Whole plant ingredient rich in allicin and sulfur compounds with well-documented antimicrobial and cardiovascular health benefits. Widely recognized as a nutritious whole food.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Garlic",
+
+    "category": "beneficial",
+
+    "reason": "Whole plant ingredient rich in allicin and sulfur compounds with well-documented antimicrobial and cardiovascular health benefits. Widely recognized as a nutritious whole food.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Garlic powder",
+
+    "category": "beneficial",
+
+    "reason": "Dehydrated garlic retaining allicin precursors and beneficial sulfur compounds. A concentrated plant flavoring with meaningful antimicrobial and cardiovascular health properties.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Fresh Garlic",
+
+    "category": "beneficial",
+
+    "reason": "Whole plant ingredient rich in allicin and sulfur compounds with well-documented antimicrobial and cardiovascular health benefits. Widely recognized as a nutritious whole food.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Ginger",
+
+    "category": "beneficial",
+
+    "reason": "Whole root naturally rich in gingerols and shogaols with well-documented anti-inflammatory and digestive health benefits. Recognized as a nutritious and functional whole food.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "ginger",
+
+    "category": "beneficial",
+
+    "reason": "Whole root naturally rich in gingerols and shogaols with well-documented anti-inflammatory and digestive health benefits. Recognized as a nutritious and functional whole food.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Ginger Powder",
+
+    "category": "beneficial",
+
+    "reason": "Dehydrated ginger retaining its active gingerol and shogaol compounds. A concentrated spice with recognized anti-inflammatory and digestive health supporting properties.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Ginger & Garlic Paste",
+
+    "category": "beneficial",
+
+    "reason": "Blend of ginger and garlic combining gingerols and allicin compounds. Both ingredients are well-recognized for anti-inflammatory and cardiovascular health supporting benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Green Chilli Pulp",
+
+    "category": "beneficial",
+
+    "reason": "Processed fresh green chilli retaining capsaicin, vitamin C, and antioxidants. Has well-documented anti-inflammatory and metabolism-boosting properties at normal dietary amounts.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Chilli",
+
+    "category": "beneficial",
+
+    "reason": "Whole chilli pepper naturally rich in capsaicin, vitamin C, and antioxidants. Well-recognized for anti-inflammatory and metabolism-supporting properties at normal dietary amounts.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "chilli",
+
+    "category": "beneficial",
+
+    "reason": "Whole chilli pepper naturally rich in capsaicin, vitamin C, and antioxidants. Well-recognized for anti-inflammatory and metabolism-supporting properties at normal dietary amounts.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "chilli powder",
+
+    "category": "beneficial",
+
+    "reason": "Ground dried chilli retaining capsaicin and antioxidant compounds from the whole pepper. A flavorful spice with recognized anti-inflammatory and metabolism-supporting health properties.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Chilli Powder",
+
+    "category": "beneficial",
+
+    "reason": "Ground dried chilli retaining capsaicin and antioxidant compounds from the whole pepper. A flavorful spice with recognized anti-inflammatory and metabolism-supporting health properties.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Chilli Powder (1.5%)",
+
+    "category": "beneficial",
+
+    "reason": "Ground dried chilli retaining capsaicin and antioxidant compounds from the whole pepper. A flavorful spice with recognized anti-inflammatory and metabolism-supporting health properties.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Chili flakes",
+
+    "category": "beneficial",
+
+    "reason": "Crushed dried chilli pepper retaining capsaicin, antioxidants, and vitamin C. A whole-food spice with recognized anti-inflammatory and metabolism-supporting health properties.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Red Chilli Paste",
+
+    "category": "beneficial",
+
+    "reason": "Processed paste made from red chilli peppers retaining capsaicin and antioxidant compounds. Beneficial in normal dietary amounts with recognized anti-inflammatory health properties.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Kochchi Paste",
+
+    "category": "beneficial",
+
+    "reason": "Paste made from small fiery kochchi chillies naturally rich in capsaicin and vitamin C. Beneficial in normal dietary amounts with recognized anti-inflammatory health properties.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Spices",
+
+    "category": "beneficial",
+
+    "reason": "General term for dried plant-derived flavorings that are naturally rich in antioxidants and bioactive compounds. Broadly recognized as beneficial functional ingredients at typical dietary use levels.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "spices",
+
+    "category": "beneficial",
+
+    "reason": "General term for dried plant-derived flavorings that are naturally rich in antioxidants and bioactive compounds. Broadly recognized as beneficial functional ingredients at typical dietary use levels.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Mixed Spices",
+
+    "category": "beneficial",
+
+    "reason": "Blend of dried plant-derived spices naturally rich in antioxidants and bioactive compounds. Broadly recognized as beneficial functional ingredients at the levels used in food products.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "mixed spices",
+
+    "category": "beneficial",
+
+    "reason": "Blend of dried plant-derived spices naturally rich in antioxidants and bioactive compounds. Broadly recognized as beneficial functional ingredients at the levels used in food products.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Mixed Spices.",
+
+    "category": "beneficial",
+
+    "reason": "Blend of dried plant-derived spices naturally rich in antioxidants and bioactive compounds. Broadly recognized as beneficial functional ingredients at the levels used in food products.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Natural spices(Chili,Pepper,Cumin)",
+
+    "category": "beneficial",
+
+    "reason": "Blend of dried plant-derived spices naturally rich in antioxidants and bioactive compounds. Broadly recognized as beneficial functional ingredients at the levels used in food products.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Natural spices (Pepper, Chili)",
+
+    "category": "beneficial",
+
+    "reason": "Blend of dried plant-derived spices naturally rich in antioxidants and bioactive compounds. Broadly recognized as beneficial functional ingredients at the levels used in food products.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "mixed spices",
+
+    "category": "beneficial",
+
+    "reason": "Blend of dried plant-derived spices naturally rich in antioxidants and bioactive compounds. Broadly recognized as beneficial functional ingredients at the levels used in food products.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Spices & herbs (mustard [4.4%], ginger, turmeric)",
+
+    "category": "beneficial",
+
+    "reason": "Blend of dried plant-derived spices naturally rich in antioxidants and bioactive compounds. Broadly recognized as beneficial functional ingredients at the levels used in food products.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "spices & herbs (chilli, ginger)",
+
+    "category": "beneficial",
+
+    "reason": "Blend of dried plant-derived spices naturally rich in antioxidants and bioactive compounds. Broadly recognized as beneficial functional ingredients at the levels used in food products.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "spices & herbs (chilli [0.7%])",
+
+    "category": "beneficial",
+
+    "reason": "Blend of dried plant-derived spices naturally rich in antioxidants and bioactive compounds. Broadly recognized as beneficial functional ingredients at the levels used in food products.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "spices & herbs (ginger, tamarind, pepper, mustard, chilli)",
+
+    "category": "beneficial",
+
+    "reason": "Blend of dried plant-derived spices naturally rich in antioxidants and bioactive compounds. Broadly recognized as beneficial functional ingredients at the levels used in food products.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Spice & Herbs (Ginger, Chilli, Pepper, Turmeric)",
+
+    "category": "beneficial",
+
+    "reason": "Blend of dried plant-derived spices naturally rich in antioxidants and bioactive compounds. Broadly recognized as beneficial functional ingredients at the levels used in food products.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Spices (Chilli (0.29%)",
+
+    "category": "beneficial",
+
+    "reason": "Blend of dried plant-derived spices naturally rich in antioxidants and bioactive compounds. Broadly recognized as beneficial functional ingredients at the levels used in food products.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "pepper",
+
+    "category": "beneficial",
+
+    "reason": "Whole spice naturally rich in piperine, antioxidants, and anti-inflammatory compounds. Widely used and recognized as a beneficial flavoring ingredient with documented health properties.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Pepper",
+
+    "category": "beneficial",
+
+    "reason": "Whole spice naturally rich in piperine, antioxidants, and anti-inflammatory compounds. Widely used and recognized as a beneficial flavoring ingredient with documented health properties.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Pepper powder",
+
+    "category": "beneficial",
+
+    "reason": "Ground black pepper retaining piperine and its natural antioxidant and anti-inflammatory compounds. A widely recognized beneficial spice used at normal dietary amounts.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Pepper Powder",
+
+    "category": "beneficial",
+
+    "reason": "Ground black pepper retaining piperine and its natural antioxidant and anti-inflammatory compounds. A widely recognized beneficial spice used at normal dietary amounts.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Pepper Pieces(1%)",
+
+    "category": "beneficial",
+
+    "reason": "Crushed whole black pepper retaining piperine and its natural antioxidant and anti-inflammatory compounds. A widely recognized beneficial spice used at normal dietary amounts.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "and Coriander)",
+
+    "category": "beneficial",
+
+    "reason": "Coriander seed or leaf naturally rich in antioxidants, flavonoids, and essential oils. A whole-food spice with recognized digestive and anti-inflammatory health supporting properties.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Capsicum",
+
+    "category": "beneficial",
+
+    "reason": "Whole pepper vegetable rich in vitamin C, capsaicin, and antioxidant carotenoids. A nutritious whole food with well-documented anti-inflammatory and immune-supporting health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "mustard",
+
+    "category": "beneficial",
+
+    "reason": "Whole mustard seed rich in glucosinolates, antioxidants, and selenium. A whole-food spice with recognized anti-inflammatory and digestive health supporting properties.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Mustard",
+
+    "category": "beneficial",
+
+    "reason": "Whole mustard seed rich in glucosinolates, antioxidants, and selenium. A whole-food spice with recognized anti-inflammatory and digestive health supporting properties.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Mustard (1%)",
+
+    "category": "beneficial",
+
+    "reason": "Whole mustard seed rich in glucosinolates, antioxidants, and selenium. A whole-food spice with recognized anti-inflammatory and digestive health supporting properties.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Mustard powder (4%)",
+
+    "category": "beneficial",
+
+    "reason": "Ground mustard seed retaining glucosinolates, antioxidants, and beneficial selenium content. A concentrated spice with recognized anti-inflammatory and digestive health supporting properties.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "cinnamon",
+
+    "category": "beneficial",
+
+    "reason": "Whole spice rich in cinnamaldehyde and polyphenols with well-documented blood sugar regulating and anti-inflammatory properties. Widely recognized as a beneficial functional ingredient.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cinnamon",
+
+    "category": "beneficial",
+
+    "reason": "Whole spice rich in cinnamaldehyde and polyphenols with well-documented blood sugar regulating and anti-inflammatory properties. Widely recognized as a beneficial functional ingredient.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cinnamon Powder",
+
+    "category": "beneficial",
+
+    "reason": "Ground cinnamon retaining cinnamaldehyde and polyphenol compounds with documented blood sugar and anti-inflammatory benefits. A widely recognized beneficial functional spice ingredient.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Nutmeg",
+
+    "category": "caution",
+
+    "reason": "Aromatic spice containing myristicin, a psychoactive compound that is toxic in large quantities. Safe and flavorful at normal culinary amounts but excessive intake can cause harm.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Nutmeg Powder",
+
+    "category": "caution",
+
+    "reason": "Ground nutmeg containing myristicin, a psychoactive compound toxic in large quantities. Safe and flavorful at normal culinary amounts but excessive intake can cause toxicity.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cardamom",
+
+    "category": "beneficial",
+
+    "reason": "Aromatic spice naturally rich in antioxidants, essential oils, and digestive-supporting compounds. Widely used and recognized as a beneficial functional spice with no significant safety concerns.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cardamom Powder",
+
+    "category": "beneficial",
+
+    "reason": "Ground cardamom retaining its natural antioxidants, essential oils, and digestive-supporting compounds. A widely recognized beneficial functional spice with no significant safety concerns at normal use.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Clove",
+
+    "category": "beneficial",
+
+    "reason": "Whole spice naturally very rich in eugenol, a potent antioxidant and anti-inflammatory compound. Widely recognized as one of the most antioxidant-dense functional spices available.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cloves",
+
+    "category": "beneficial",
+
+    "reason": "Whole spice naturally very rich in eugenol, a potent antioxidant and anti-inflammatory compound. Widely recognized as one of the most antioxidant-dense functional spices available.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Clove Powder",
+
+    "category": "beneficial",
+
+    "reason": "Ground cloves retaining their high eugenol content and potent antioxidant and anti-inflammatory properties. Widely recognized as one of the most antioxidant-dense functional spice ingredients.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "salt",
+
+    "category": "caution",
+
+    "reason": "Essential mineral required for fluid balance and nerve function but most people consume far too much. High dietary sodium intake is strongly associated with elevated blood pressure.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Salt",
+
+    "category": "caution",
+
+    "reason": "Essential mineral required for fluid balance and nerve function but most people consume far too much. High dietary sodium intake is strongly associated with elevated blood pressure.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Salt.",
+
+    "category": "caution",
+
+    "reason": "Essential mineral required for fluid balance and nerve function but most people consume far too much. High dietary sodium intake is strongly associated with elevated blood pressure.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "and Salt",
+
+    "category": "caution",
+
+    "reason": "Essential mineral required for fluid balance and nerve function but most people consume far too much. High dietary sodium intake is strongly associated with elevated blood pressure.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Common Salt",
+
+    "category": "caution",
+
+    "reason": "Essential mineral required for fluid balance and nerve function but most people consume far too much. High dietary sodium intake is strongly associated with elevated blood pressure.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "common salt",
+
+    "category": "caution",
+
+    "reason": "Essential mineral required for fluid balance and nerve function but most people consume far too much. High dietary sodium intake is strongly associated with elevated blood pressure.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Common Salt.",
+
+    "category": "caution",
+
+    "reason": "Essential mineral required for fluid balance and nerve function but most people consume far too much. High dietary sodium intake is strongly associated with elevated blood pressure.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Iodized Salt",
+
+    "category": "caution",
+
+    "reason": "Sodium chloride fortified with iodine to prevent deficiency disorders. Essential mineral with added public health benefit but high intake of sodium remains a cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Iodized salt",
+
+    "category": "caution",
+
+    "reason": "Sodium chloride fortified with iodine to prevent deficiency disorders. Essential mineral with added public health benefit but high intake of sodium remains a cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Iodized Salt(23%)",
+
+    "category": "caution",
+
+    "reason": "Sodium chloride fortified with iodine to prevent deficiency disorders. Essential mineral with added public health benefit but high intake of sodium remains a cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Iodized table salt",
+
+    "category": "caution",
+
+    "reason": "Sodium chloride fortified with iodine to prevent deficiency disorders. Essential mineral with added public health benefit but high intake of sodium remains a cardiovascular concern.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Crystal salt",
+
+    "category": "caution",
+
+    "reason": "Essential mineral required for fluid balance and nerve function but most people consume far too much. High dietary sodium intake is strongly associated with elevated blood pressure.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Table Salt",
+
+    "category": "caution",
+
+    "reason": "Essential mineral required for fluid balance and nerve function but most people consume far too much. High dietary sodium intake is strongly associated with elevated blood pressure.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Sodium Chloride",
+
+    "category": "caution",
+
+    "reason": "Essential mineral required for fluid balance and nerve function but most people consume far too much. High dietary sodium intake is strongly associated with elevated blood pressure.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "sodium chloride",
+
+    "category": "caution",
+
+    "reason": "Essential mineral required for fluid balance and nerve function but most people consume far too much. High dietary sodium intake is strongly associated with elevated blood pressure.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Vinegar",
+
+    "category": "beneficial",
+
+    "reason": "Fermented acidic liquid containing acetic acid with evidence-backed benefits for blood sugar regulation and digestion. Safe and beneficial at normal culinary dietary amounts.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Natural Vinegar",
+
+    "category": "beneficial",
+
+    "reason": "Fermented acidic liquid containing acetic acid with evidence-backed benefits for blood sugar regulation and digestion. Safe and beneficial at normal culinary dietary amounts.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "lemon (1%)",
+
+    "category": "beneficial",
+
+    "reason": "Citrus fruit naturally rich in vitamin C, flavonoids, and citric acid. A nutritious whole-food ingredient with well-recognized antioxidant and immune-supporting health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "lime",
+
+    "category": "beneficial",
+
+    "reason": "Citrus fruit naturally rich in vitamin C, flavonoids, and citric acid. A nutritious whole-food ingredient with well-recognized antioxidant and immune-supporting health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Pineapple",
+
+    "category": "beneficial",
+
+    "reason": "Tropical fruit rich in vitamin C, manganese, and bromelain enzyme with documented anti-inflammatory properties. A naturally nutritious whole fruit with well-recognized health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "pineapple",
+
+    "category": "beneficial",
+
+    "reason": "Tropical fruit rich in vitamin C, manganese, and bromelain enzyme with documented anti-inflammatory properties. A naturally nutritious whole fruit with well-recognized health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Mango (11%)",
+
+    "category": "beneficial",
+
+    "reason": "Tropical fruit rich in vitamin C, beta-carotene, folate, and dietary fiber. A nutritious whole fruit with well-documented antioxidant and immune-supporting health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "mango (11%)",
+
+    "category": "beneficial",
+
+    "reason": "Tropical fruit rich in vitamin C, beta-carotene, folate, and dietary fiber. A nutritious whole fruit with well-documented antioxidant and immune-supporting health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Mango Paste",
+
+    "category": "beneficial",
+
+    "reason": "Processed mango product retaining vitamin C, beta-carotene, and natural fruit fiber. A minimally processed ingredient that preserves meaningful nutritional value from the whole fruit.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Mango Pulp",
+
+    "category": "beneficial",
+
+    "reason": "Processed mango product retaining vitamin C, beta-carotene, and natural fruit fiber. A minimally processed ingredient that preserves meaningful nutritional value from the whole fruit.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "mango puree",
+
+    "category": "beneficial",
+
+    "reason": "Processed mango product retaining vitamin C, beta-carotene, and natural fruit fiber. A minimally processed ingredient that preserves meaningful nutritional value from the whole fruit.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Papaya",
+
+    "category": "beneficial",
+
+    "reason": "Tropical fruit rich in papain enzyme, vitamin C, beta-carotene, and dietary fiber. Widely recognized as a nutritious whole food with anti-inflammatory and digestive health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "apricot puree",
+
+    "category": "beneficial",
+
+    "reason": "Pureed apricot retaining beta-carotene, vitamin C, and dietary fiber from the whole fruit. A minimally processed ingredient preserving meaningful antioxidant nutritional value.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Guava puree and strawberry, grape and apple juice from concentrate",
+
+    "category": "beneficial",
+
+    "reason": "Multi-fruit blend providing vitamin C, antioxidants, and natural fruit sugars from several whole fruit sources. Nutritious but juice concentrates have reduced fiber compared to whole fruit.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Banana Pulp Powder (0.04%)",
+
+    "category": "beneficial",
+
+    "reason": "Dehydrated banana pulp retaining potassium, vitamin B6, and natural fruit fiber. A nutritious dried fruit ingredient used in very small amounts within food products.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "strawberry",
+
+    "category": "beneficial",
+
+    "reason": "Whole berry fruit naturally rich in vitamin C, anthocyanins, folate, and dietary fiber. A widely recognized nutritious whole food with strong antioxidant and cardiovascular health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Strawberry",
+
+    "category": "beneficial",
+
+    "reason": "Whole berry fruit naturally rich in vitamin C, anthocyanins, folate, and dietary fiber. A widely recognized nutritious whole food with strong antioxidant and cardiovascular health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "apple",
+
+    "category": "beneficial",
+
+    "reason": "Whole fruit rich in dietary fiber, quercetin, and vitamin C. Widely recognized as a nutritious whole food associated with cardiovascular and digestive health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Apple Concentrate",
+
+    "category": "caution",
+
+    "reason": "Concentrated apple juice with significantly reduced fiber and elevated natural sugar content compared to whole apple. Provides some vitamins but concentrated sugars warrant moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Pear Juice Concentrate",
+
+    "category": "caution",
+
+    "reason": "Concentrated pear juice with elevated natural sugar content and significantly reduced fiber compared to whole fruit. Provides some vitamins but concentrated sugars warrant moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Passion fruit",
+
+    "category": "beneficial",
+
+    "reason": "Tropical fruit naturally rich in vitamin C, beta-carotene, dietary fiber, and antioxidant compounds. A nutritious whole fruit with well-recognized immune and digestive health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Blackcurrant",
+
+    "category": "beneficial",
+
+    "reason": "Berry fruit exceptionally rich in vitamin C and anthocyanin antioxidants. Widely recognized as one of the most nutrient-dense whole fruits with strong cardiovascular health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Raisins",
+
+    "category": "caution",
+
+    "reason": "Dried grapes concentrated in natural sugars, fiber, and iron. Nutritious but high sugar content and caloric density mean they should be consumed in mindful moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "coconut",
+
+    "category": "caution",
+
+    "reason": "Whole coconut naturally high in saturated medium-chain triglycerides and dietary fiber. Nutritious in moderate amounts but high saturated fat content warrants mindful consumption.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Desiccated Coconut",
+
+    "category": "caution",
+
+    "reason": "Dried shredded coconut flesh concentrated in saturated fat and dietary fiber. Provides useful fiber and minerals but high saturated fat content warrants mindful moderate consumption.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Desiccated Coconut (16%)",
+
+    "category": "caution",
+
+    "reason": "Dried shredded coconut flesh concentrated in saturated fat and dietary fiber. Provides useful fiber and minerals but high saturated fat content warrants mindful moderate consumption.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cashewnut",
+
+    "category": "beneficial",
+
+    "reason": "Tree nut naturally rich in monounsaturated fats, magnesium, zinc, and plant protein. Widely recognized as a heart-healthy whole food with strong nutritional benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cashew Nut",
+
+    "category": "beneficial",
+
+    "reason": "Tree nut naturally rich in monounsaturated fats, magnesium, zinc, and plant protein. Widely recognized as a heart-healthy whole food with strong nutritional benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "cashew",
+
+    "category": "beneficial",
+
+    "reason": "Tree nut naturally rich in monounsaturated fats, magnesium, zinc, and plant protein. Widely recognized as a heart-healthy whole food with strong nutritional benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "peanut 20%",
+
+    "category": "beneficial",
+
+    "reason": "Legume-based nut naturally rich in plant protein, healthy monounsaturated fats, and niacin. A nutritionally dense whole food widely recognized for cardiovascular health supporting benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "peanuts (22%)",
+
+    "category": "beneficial",
+
+    "reason": "Legume-based nut naturally rich in plant protein, healthy monounsaturated fats, and niacin. A nutritionally dense whole food widely recognized for cardiovascular health supporting benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "hazelnut",
+
+    "category": "beneficial",
+
+    "reason": "Tree nut rich in monounsaturated fats, vitamin E, magnesium, and antioxidant compounds. A nutritionally dense whole food widely recognized for cardiovascular and antioxidant health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "hazelnuts",
+
+    "category": "beneficial",
+
+    "reason": "Tree nut rich in monounsaturated fats, vitamin E, magnesium, and antioxidant compounds. A nutritionally dense whole food widely recognized for cardiovascular and antioxidant health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Hazelnut Paste (5%)",
+
+    "category": "caution",
+
+    "reason": "Ground hazelnut paste typically combined with sugar and other ingredients to form a spread. Retains some nut nutrition but added sugars and processing reduce overall health profile.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "sesame",
+
+    "category": "beneficial",
+
+    "reason": "Whole seed naturally rich in healthy fats, calcium, iron, zinc, and beneficial lignans. A nutritionally dense whole food with well-documented cardiovascular and antioxidant health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "basil seeds",
+
+    "category": "beneficial",
+
+    "reason": "Whole seeds rich in dietary fiber, omega-3 alpha-linolenic acid, and essential minerals. Provide meaningful digestive and cardiovascular benefits and are nutritionally valuable at typical amounts.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Seaweed Extract",
+
+    "category": "caution",
+
+    "reason": "Concentrated extract derived from seaweed that may contain iodine, carrageenan, and bioactive compounds. Composition and iodine content vary widely; excess iodine intake warrants awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Rosemary extract (INS 392)",
+
+    "category": "beneficial",
+
+    "reason": "Natural antioxidant extract from rosemary herb rich in carnosic acid and rosmarinic acid. Approved globally as a safe food antioxidant with documented anti-inflammatory health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "rosemary extract (INS 392)",
+
+    "category": "beneficial",
+
+    "reason": "Natural antioxidant extract from rosemary herb rich in carnosic acid and rosmarinic acid. Approved globally as a safe food antioxidant with documented anti-inflammatory health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Plant Extract(Rosemary)",
+
+    "category": "beneficial",
+
+    "reason": "Natural antioxidant extract from rosemary herb rich in carnosic acid and rosmarinic acid. Approved globally as a safe food antioxidant with documented anti-inflammatory health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Plant Extract (Rosemary).",
+
+    "category": "beneficial",
+
+    "reason": "Natural antioxidant extract from rosemary herb rich in carnosic acid and rosmarinic acid. Approved globally as a safe food antioxidant with documented anti-inflammatory health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "and Plant Extract (Rosemary).",
+
+    "category": "beneficial",
+
+    "reason": "Natural antioxidant extract from rosemary herb rich in carnosic acid and rosmarinic acid. Approved globally as a safe food antioxidant with documented anti-inflammatory health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cocoa powder",
+
+    "category": "beneficial",
+
+    "reason": "Unsweetened cocoa rich in flavanols, magnesium, and antioxidants with well-documented cardiovascular and anti-inflammatory benefits. A nutritious ingredient when consumed without excessive added sugar.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "cocoa powder",
+
+    "category": "beneficial",
+
+    "reason": "Unsweetened cocoa rich in flavanols, magnesium, and antioxidants with well-documented cardiovascular and anti-inflammatory benefits. A nutritious ingredient when consumed without excessive added sugar.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cocoa Powder (9%)",
+
+    "category": "beneficial",
+
+    "reason": "Unsweetened cocoa rich in flavanols, magnesium, and antioxidants with well-documented cardiovascular and anti-inflammatory benefits. A nutritious ingredient when consumed without excessive added sugar.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cocoa Powder (7%)",
+
+    "category": "beneficial",
+
+    "reason": "Unsweetened cocoa rich in flavanols, magnesium, and antioxidants with well-documented cardiovascular and anti-inflammatory benefits. A nutritious ingredient when consumed without excessive added sugar.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cocoa Powder (7.2%)",
+
+    "category": "beneficial",
+
+    "reason": "Unsweetened cocoa rich in flavanols, magnesium, and antioxidants with well-documented cardiovascular and anti-inflammatory benefits. A nutritious ingredient when consumed without excessive added sugar.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cocoa powder coating (23%)",
+
+    "category": "caution",
+
+    "reason": "Cocoa-based coating that typically contains added sugar, fats, and emulsifiers. Contains beneficial cocoa flavanols but added ingredients significantly reduce the overall health profile.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cocoa Powder coating (23%) {Sugar, Hydrogenated Palm Kernel Oil, Milk Powder, Cocoa Powder, Emulsifier [Polyglycerol Polyricinoleate (476)], Iodized Salt and Nature Identical (Vanilla) Flavour}",
+
+    "category": "caution",
+
+    "reason": "Cocoa-based coating containing hydrogenated palm kernel oil, sugar, emulsifiers, and artificial flavoring. A heavily processed compound coating with multiple concerning ingredients including hydrogenated fat.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "fat-reduced cocoa powder",
+
+    "category": "beneficial",
+
+    "reason": "Cocoa powder with fat partially removed, retaining most flavanols, magnesium, and antioxidant compounds. A nutritious ingredient with documented cardiovascular and anti-inflammatory health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "cocoa mass",
+
+    "category": "beneficial",
+
+    "reason": "Pure ground cocoa beans containing natural cocoa butter and high levels of flavanols and antioxidants. A minimally processed ingredient with strong nutritional and cardiovascular health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cocoa Mass",
+
+    "category": "beneficial",
+
+    "reason": "Pure ground cocoa beans containing natural cocoa butter and high levels of flavanols and antioxidants. A minimally processed ingredient with strong nutritional and cardiovascular health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Cocoa Mass (1.6%)",
+
+    "category": "beneficial",
+
+    "reason": "Pure ground cocoa beans containing natural cocoa butter and high levels of flavanols and antioxidants. A minimally processed ingredient with strong nutritional and cardiovascular health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "chocolate",
+
+    "category": "caution",
+
+    "reason": "Processed confection combining cocoa with sugar and fat. Contains beneficial cocoa flavanols but added sugar and saturated fat mean regular consumption warrants moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Chocolate",
+
+    "category": "caution",
+
+    "reason": "Processed confection combining cocoa with sugar and fat. Contains beneficial cocoa flavanols but added sugar and saturated fat mean regular consumption warrants moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Chocolate 0.5%",
+
+    "category": "caution",
+
+    "reason": "Processed confection combining cocoa with sugar and fat. Contains beneficial cocoa flavanols but added sugar and saturated fat mean regular consumption warrants moderation.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
