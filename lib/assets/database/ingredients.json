@@ -9328,3 +9328,580 @@
 
   },
 
+  {
+
+    "name": "Caffeine (30 mg/100 ml)",
+
+    "category": "caution",
+
+    "reason": "Central nervous system stimulant naturally found in coffee, tea, and cocoa. Moderate intake is generally safe but high consumption may cause insomnia, anxiety, elevated heart rate, and dependency.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Caffeine (32.00mg/100ml)",
+
+    "category": "caution",
+
+    "reason": "Central nervous system stimulant naturally found in coffee, tea, and cocoa. Moderate intake is generally safe but high consumption may cause insomnia, anxiety, elevated heart rate, and dependency.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "taurine",
+
+    "category": "caution",
+
+    "reason": "Amino acid-like compound found naturally in the body and added to energy drinks. Generally recognized as safe at food amounts but evidence for supplemental health benefit is limited.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Taurine",
+
+    "category": "caution",
+
+    "reason": "Amino acid-like compound found naturally in the body and added to energy drinks. Generally recognized as safe at food amounts but evidence for supplemental health benefit is limited.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Taurine (0.4%)",
+
+    "category": "caution",
+
+    "reason": "Amino acid-like compound found naturally in the body and added to energy drinks. Generally recognized as safe at food amounts but evidence for supplemental health benefit is limited.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Taurine (400.00mg/100ml)",
+
+    "category": "caution",
+
+    "reason": "Amino acid-like compound found naturally in the body and added to energy drinks. Generally recognized as safe at food amounts but evidence for supplemental health benefit is limited.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Taurine (401 mg/100 ml)",
+
+    "category": "caution",
+
+    "reason": "Amino acid-like compound found naturally in the body and added to energy drinks. Generally recognized as safe at food amounts but evidence for supplemental health benefit is limited.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "inositol",
+
+    "category": "caution",
+
+    "reason": "Naturally occurring sugar alcohol with roles in cell signaling and insulin sensitivity. Generally recognized as safe in food amounts; evidence for health benefits at supplemental levels remains limited.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Inositol",
+
+    "category": "caution",
+
+    "reason": "Naturally occurring sugar alcohol with roles in cell signaling and insulin sensitivity. Generally recognized as safe in food amounts; evidence for health benefits at supplemental levels remains limited.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Inositol (2 mg/100 ml)",
+
+    "category": "caution",
+
+    "reason": "Naturally occurring sugar alcohol with roles in cell signaling and insulin sensitivity. Generally recognized as safe in food amounts; evidence for health benefits at supplemental levels remains limited.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "L-Carnitine",
+
+    "category": "caution",
+
+    "reason": "Naturally synthesized amino acid derivative involved in fatty acid transport to mitochondria. Generally safe at food levels but supplemental doses have limited evidence for health benefit in healthy individuals.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Panax Ginseng Extract (82 mg/100 ml)",
+
+    "category": "caution",
+
+    "reason": "Herbal extract from ginseng root with some evidence for cognitive and energy-supporting effects. Generally safe at low food levels but may interact with medications and warrants awareness at higher doses.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Guarana Seed Extract (2 mg/100 ml)",
+
+    "category": "caution",
+
+    "reason": "Plant extract naturally high in caffeine and used in energy drinks. May contribute significantly to total caffeine intake; high consumption may cause insomnia, anxiety, and elevated heart rate.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Glucuronolactone (2 mg/100 ml)",
+
+    "category": "caution",
+
+    "reason": "Naturally occurring compound produced from glucose metabolism and added to energy drinks. Generally recognized as safe at low food amounts but long-term effects at supplemental doses are insufficiently studied.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Minerals(Dicalcium Phosphate",
+
+    "category": "caution",
+
+    "reason": "Calcium and phosphorus mineral supplement used for food fortification. Beneficial in appropriate amounts for bone health but excess phosphate intake from multiple processed food sources warrants awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Dicalcium Phosphate",
+
+    "category": "caution",
+
+    "reason": "Calcium and phosphorus mineral supplement used for food fortification. Beneficial in appropriate amounts for bone health but excess phosphate intake from multiple processed food sources warrants awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Ferric Pyrophosphate)",
+
+    "category": "beneficial",
+
+    "reason": "Iron mineral compound used to fortify foods and address iron deficiency. A well-recognized beneficial form of supplemental iron with good bioavailability and an established public health benefit.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "magnesium carbonate",
+
+    "category": "beneficial",
+
+    "reason": "Magnesium mineral compound used as a food additive and fortification ingredient. Magnesium is an essential mineral supporting over 300 enzymatic reactions, muscle function, and bone health.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Magnesium Carbonate",
+
+    "category": "beneficial",
+
+    "reason": "Magnesium mineral compound used as a food additive and fortification ingredient. Magnesium is an essential mineral supporting over 300 enzymatic reactions, muscle function, and bone health.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Magnesium Sulphate",
+
+    "category": "caution",
+
+    "reason": "Magnesium salt used as a mineral supplement and food additive. Provides beneficial magnesium but excess intake may cause digestive discomfort; large doses act as a laxative.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Potassium Phosphate",
+
+    "category": "caution",
+
+    "reason": "Potassium salt of phosphoric acid used as a food additive and mineral supplement. Provides beneficial potassium but cumulative phosphate intake from multiple processed food sources warrants general awareness.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Calcium chloride",
+
+    "category": "caution",
+
+    "reason": "Calcium salt used as a firming agent and mineral supplement in processed foods. Provides useful calcium but high intake may contribute to mineral imbalance; generally safe at regulated food-grade levels.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Calcium Chloride",
+
+    "category": "caution",
+
+    "reason": "Calcium salt used as a firming agent and mineral supplement in processed foods. Provides useful calcium but high intake may contribute to mineral imbalance; generally safe at regulated food-grade levels.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "sodium",
+
+    "category": "caution",
+
+    "reason": "Essential mineral required for fluid balance, nerve conduction, and muscle function. Most people consume excess sodium through processed foods, and high intake is strongly associated with elevated blood pressure.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Carbonated Water",
+
+    "category": "caution",
+
+    "reason": "Water infused with carbon dioxide creating carbonic acid. Generally safe for most people but mild acidity may affect dental enamel with very frequent consumption; no significant nutritional value.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "carbonated water",
+
+    "category": "caution",
+
+    "reason": "Water infused with carbon dioxide creating carbonic acid. Generally safe for most people but mild acidity may affect dental enamel with very frequent consumption; no significant nutritional value.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Water",
+
+    "category": "beneficial",
+
+    "reason": "Pure water is the most essential nutrient required for all physiological processes. Universally recognized as the single most important dietary component for maintaining health and life.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "water",
+
+    "category": "beneficial",
+
+    "reason": "Pure water is the most essential nutrient required for all physiological processes. Universally recognized as the single most important dietary component for maintaining health and life.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Hot Water 220ml",
+
+    "category": "beneficial",
+
+    "reason": "Pure water is the most essential nutrient required for all physiological processes. Universally recognized as the single most important dietary component for maintaining health and life.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "cold water",
+
+    "category": "beneficial",
+
+    "reason": "Pure water is the most essential nutrient required for all physiological processes. Universally recognized as the single most important dietary component for maintaining health and life.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "ice & water",
+
+    "category": "beneficial",
+
+    "reason": "Pure water is the most essential nutrient required for all physiological processes. Universally recognized as the single most important dietary component for maintaining health and life.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Ice & Water",
+
+    "category": "beneficial",
+
+    "reason": "Pure water is the most essential nutrient required for all physiological processes. Universally recognized as the single most important dietary component for maintaining health and life.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "natural smoke flavour",
+
+    "category": "caution",
+
+    "reason": "Concentrated flavoring produced by condensing natural wood smoke. May contain trace polycyclic aromatic hydrocarbons; approved at regulated levels but warrants awareness with frequent consumption.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Alcohol (1.1%)",
+
+    "category": "caution",
+
+    "reason": "Ethanol present at a very low 1.1% level used as a solvent or flavoring carrier. Recognized as safe at these trace food-use amounts by major global food safety authorities.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "malt",
+
+    "category": "caution",
+
+    "reason": "Germinated and kiln-dried grain rich in natural sugars, amylase enzymes, and B vitamins. Contains fermentable sugars and gluten-forming proteins; moderation in consumption is generally recommended.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "and Coriander)",
+
+    "category": "beneficial",
+
+    "reason": "Coriander seed or leaf naturally rich in antioxidants, flavonoids, and essential oils. A whole-food spice with recognized digestive and anti-inflammatory health supporting properties.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Natural Gherkin",
+
+    "category": "beneficial",
+
+    "reason": "Whole pickled cucumber providing dietary fiber, vitamin K, and antioxidants. A low-calorie whole vegetable ingredient that is naturally nutritious and widely recognized as a healthful food.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "iii",
+
+    "category": "caution",
+
+    "reason": "Diphosphate salt fragment code referring to a food additive used for leavening and emulsification. High cumulative phosphate intake from processed foods may raise kidney and cardiovascular health concerns.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "sesames",
+
+    "category": "beneficial",
+
+    "reason": "Whole seeds naturally rich in healthy unsaturated fats, calcium, iron, zinc, and beneficial lignans. Broadly recognized as a nutritionally dense whole food with well-documented cardiovascular and antioxidant benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "B-Vitamin Premix",
+
+    "category": "beneficial",
+
+    "reason": "Blend of B-group vitamins including thiamine, riboflavin, niacin, and others essential for energy metabolism and nervous system function. Widely recognized as a nutritionally beneficial supplementation ingredient.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Choco Filling (33%) [Sugar, Palm Olein",
+
+    "category": "caution",
+
+    "reason": "Processed chocolate filling compound containing sugar and palm olein as primary ingredients. High in refined sugar and saturated fat from palm oil; a heavily processed confectionery ingredient.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Coca powder 2%",
+
+    "category": "beneficial",
+
+    "reason": "Unsweetened cocoa powder rich in flavanols, magnesium, and antioxidants with well-documented cardiovascular and anti-inflammatory benefits. A nutritious ingredient when consumed without excessive added sugar.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "D)",
+
+    "category": "beneficial",
+
+    "reason": "Essential fat-soluble vitamin critical for calcium absorption, bone health, and immune system regulation. Widely recognized as vital to human health with strong evidence for multiple health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Milk Solid",
+
+    "category": "beneficial",
+
+    "reason": "Dried dairy solids that retain protein, calcium, and B vitamins from milk. A nutritious dairy-derived ingredient typically used in small product amounts.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "Soy Protein.",
+
+    "category": "beneficial",
+
+    "reason": "Complete plant-based protein from soybeans providing all nine essential amino acids the body needs. Supports muscle health and serves as a well-established nutritious alternative to animal protein.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "and Plant Extract (Rosemary).",
+
+    "category": "beneficial",
+
+    "reason": "Natural antioxidant extract from rosemary herb rich in carnosic acid and rosmarinic acid. Approved globally as a safe food antioxidant with documented anti-inflammatory health benefits.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "and Salt",
+
+    "category": "caution",
+
+    "reason": "Essential mineral required for fluid balance and nerve function but most people consume far too much. High dietary sodium intake is strongly associated with elevated blood pressure.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  },
+
+  {
+
+    "name": "and Yeast.",
+
+    "category": "beneficial",
+
+    "reason": "Single-celled fungus used in fermentation, rich in B vitamins and minerals. Safe and nutritionally valuable in the amounts used in food production.",
+
+    "lastUpdated": "2026-02-17T11:51:23.144346"
+
+  }
+
+]
